@@ -16,12 +16,30 @@
  * NIE podpinaj tego skryptu do arkusza z danymi osobowymi uczestników.
  */
 
+/** Arkusz „ŚDM 2027 – dane strony organizatorów” (konto Gmail Jakuba). */
+var ARKUSZ_ID = '1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs';
+function ss_() {
+  try { return SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty('ARKUSZ_ID') || ARKUSZ_ID); }
+  catch (e) { return SpreadsheetApp.getActiveSpreadsheet(); }
+}
+
 var TABS = ['Dni', 'Miejsca', 'Transport', 'Noclegi', 'Decyzje', 'Koszty', 'Wpłaty', 'Checklista', 'Ustawienia'];
 var OSOBY = ['Artur', 'Jakub Ś.', 'Jakub Ż.', 'Staszek', 'Robert', 'Kinga', 'Dorota', 'Kasia', 'Judyta', 'Basia'];
 
 function doGet(e) {
   var action = (e && e.parameter && e.parameter.action) || 'tabele';
-  if (action === 'tabele') return json_(readTabs_());
+  if (action === 'tabele') {
+    // Odczyt publiczny: bez komentarzy z checklisty (mogą zawierać wewnętrzne ustalenia).
+    var kod = PropertiesService.getScriptProperties().getProperty('KOD_ORGANIZATOROW') || '';
+    var full = kod && e && e.parameter && e.parameter.kod === kod;
+    var out = readTabs_();
+    if (!full && out.tabele.Checklista && out.tabele.Checklista.length) {
+      var h = out.tabele.Checklista[0];
+      var ci = h.indexOf('Komentarz');
+      if (ci >= 0) out.tabele.Checklista = out.tabele.Checklista.map(function (r, i) { var c = r.slice(); if (i > 0 && c[ci]) c[ci] = '(komentarz widoczny po podaniu kodu)'; return c; });
+    }
+    return json_(out);
+  }
   if (action === 'ping') return json_({ ok: true });
   return json_({ ok: false, error: 'UNKNOWN_ACTION' });
 }
@@ -43,7 +61,7 @@ function doPost(e) {
 }
 
 function readTabs_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = ss_();
   var out = { ok: true, tabele: {} };
   TABS.forEach(function (name) {
     var sh = ss.getSheetByName(name);
@@ -73,7 +91,7 @@ function ensureCol_(sh, heads, name) {
 function now_() { return Utilities.formatDate(new Date(), 'Europe/Warsaw', 'yyyy-MM-dd HH:mm'); }
 
 function saveChecklist_(p) {
-  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Checklista');
+  var sh = ss_().getSheetByName('Checklista');
   if (!sh) return { ok: false, error: 'MISSING_SHEET' };
   var heads = heads_(sh);
   var cId = col_(heads, ['ID']);
@@ -103,7 +121,7 @@ function saveChecklist_(p) {
 }
 
 function saveDecisions_(p) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = ss_();
   var sh = ss.getSheetByName('Decyzje');
   if (!sh) return { ok: false, error: 'MISSING_SHEET' };
   var heads = heads_(sh);

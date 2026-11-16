@@ -27,7 +27,7 @@
     "uwaga_wplat": "Brak potwierdzonego, aktualnego zbiorczego stanu wpłat (stan na 15.11.2026). W Gmailu i na Dysku nie znaleziono sumy zebranej ani liczby wpłaconych rat pasującej do harmonogramu z 22.09. Organizatorzy uzupełniają kolumny „Liczba wpłaconych” i „Suma wpłynęła” w karcie Wpłaty arkusza — bez nazwisk.",
     "privatePanelUrl": "",
     "private_sheet_note": "Dane osobowe są wyłącznie w osobnym, niepublikowanym arkuszu. To pole privatePanelUrl to tylko adres web appa (pusty, dopóki Jakub go nie wdroży).",
-    "private_sheet_url": "https://docs.google.com/spreadsheets/d/1WSchAIbuUpfZtqEY6Xd8Mvj_-Ap8-ckFXx0AgttHpKo/edit",
+    "private_sheet_url": "https://docs.google.com/spreadsheets/d/1yTlwsYqsuSs5nvESWlcCOPF_yIC-4dyoUllngWTmjuo/edit",
     "checklistAppUrl": "",
     "preset_oszczedny": {
       "nagasaki": "tani",
@@ -40,7 +40,19 @@
     },
     "zapisAppUrl": "",
     "zapisAppUrl_uwaga": "Adres aplikacji internetowej Apps Script z apps-script/Zapis.gs (kończy się na /exec). Pusty = strona czyta data.json, a zapis checklisty jest tylko w tej przeglądarce.",
-    "spreadsheet_folder": "https://drive.google.com/drive/folders/1jTALr6IGrv8o9KByTqQB5LvYFYYicMkz"
+    "spreadsheet_folder": "https://drive.google.com/drive/folders/1jTALr6IGrv8o9KByTqQB5LvYFYYicMkz",
+    "lista_snapshot": {
+      "data": "16.11.2026",
+      "zrodlo": "lista Seul 27 (liczby zbiorcze, bez danych osobowych)",
+      "zapisanych": 95,
+      "z_numerem": 80,
+      "rezygnacje": 3,
+      "glowna": 77,
+      "bez_numeru": 15,
+      "niepelnoletni_glowna": 27,
+      "bez_wieku_glowna": 9
+    },
+    "lista_url": "https://docs.google.com/spreadsheets/d/1SEGl2NcbZMEkPQN7qO5v2knHl6xCdRRdZCIlYKK3stg/edit"
   },
   "dni": [
     {

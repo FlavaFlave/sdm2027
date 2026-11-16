@@ -59,7 +59,33 @@ function privatePanelUrl(data) {
   return fromMeta || fromRoot || "";
 }
 
+function renderParticipantsTab(data) {
+  const card = $("#ucz-panel-card");
+  if (card) {
+    const url = privatePanelUrl(data);
+    const priv = (data && data.meta && data.meta.private_sheet_url) || PRIVATE_SHEET;
+    card.innerHTML = `<h3>Lista jadących — panel prywatny</h3>
+      ${url ? `<p>Otwiera się w nowej karcie po zalogowaniu na konto Google z dostępem do prywatnego arkusza.</p><a class="btn btn-gold" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Otwórz listę jadących</a>`
+            : `<p>Panel nie jest jeszcze wdrożony w prywatnym arkuszu. Po wdrożeniu (apps-script/INSTRUKCJA.md) wpisz jego adres w <code>data.json → meta.privatePanelUrl</code>.</p>`}
+      <a class="btn" href="${escapeHtml((data.meta && data.meta.lista_url) || priv)}" target="_blank" rel="noopener">Otwórz listę Seul 27 (edycja)</a>
+      <a class="btn" href="${escapeHtml(priv)}" target="_blank" rel="noopener">Otwórz prywatny arkusz wpłat</a>`;
+  }
+  const snap = $("#ucz-snapshot");
+  const s = data && data.meta && data.meta.lista_snapshot;
+  if (snap && s) {
+    snap.innerHTML = `<h3>Stan listy z ${escapeHtml(s.data)} (tylko liczby)</h3>
+      <div class="people-summary">
+        <span>zapisanych: <strong>${s.zapisanych}</strong></span>
+        <span>lista główna: <strong>${s.glowna}</strong> (z numerem ${s.z_numerem}, rezygnacje ${s.rezygnacje})</span>
+        <span>bez numeru (rezerwowa / do potwierdzenia): <strong>${s.bez_numeru}</strong></span>
+        <span>niepełnoletni na liście głównej: <strong>${s.niepelnoletni_glowna}</strong>, bez podanego wieku: ${s.bez_wieku_glowna}</span>
+      </div>
+      <p class="muted">Główna lista ${s.glowna} + ${s.bez_numeru} bez numeru = ${s.glowna + s.bez_numeru} osób przy pułapie 90. Aktualne liczby są w panelu prywatnym.</p>`;
+  }
+}
+
 function renderPrivatePanelCard(data) {
+  renderParticipantsTab(data);
   const el = $("#private-panel-card");
   if (!el) return;
   const url = privatePanelUrl(data);
@@ -78,7 +104,7 @@ function renderPrivatePanelCard(data) {
 
 
 const PUBLIC_SHEET = "https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit";
-const PRIVATE_SHEET = "https://docs.google.com/spreadsheets/d/1WSchAIbuUpfZtqEY6Xd8Mvj_-Ap8-ckFXx0AgttHpKo/edit";
+const PRIVATE_SHEET = "https://docs.google.com/spreadsheets/d/1yTlwsYqsuSs5nvESWlcCOPF_yIC-4dyoUllngWTmjuo/edit";
 
 function renderBudgetSheetLinks(data) {
   const el = $("#budget-sheet-links");

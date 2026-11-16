@@ -4,7 +4,7 @@ Panel pokazuje nazwiska i wpłaty imienne **tylko** osobom, którym udostępnion
 
 ## Osiem kroków
 
-1. Otwórz prywatny arkusz [ŚDM 2027 – dane osobowe (PRYWATNE)](https://docs.google.com/spreadsheets/d/1WSchAIbuUpfZtqEY6Xd8Mvj_-Ap8-ckFXx0AgttHpKo/edit). To jest inny plik niż publiczny arkusz z trasą i kosztami.
+1. Otwórz prywatny arkusz [ŚDM 2027 – dane osobowe (PRYWATNE)](https://docs.google.com/spreadsheets/d/1yTlwsYqsuSs5nvESWlcCOPF_yIC-4dyoUllngWTmjuo/edit). To jest inny plik niż publiczny arkusz z trasą i kosztami.
 
 2. W menu wybierz **Rozszerzenia → Apps Script**. Otworzy się edytor z plikiem `Code.gs`. Skasuj przykładową treść (`function myFunction() { … }`).
 
@@ -30,3 +30,19 @@ Panel pokazuje nazwiska i wpłaty imienne **tylko** osobom, którym udostępnion
 **Wdróż → Zarządzaj wdrożeniami →** ikona ołówka → **Wersja: Nowa wersja → Wdróż**. Adres URL zostaje ten sam.
 
 Przed wpisywaniem prawdziwych danych usuń wiersze oznaczone **PRZYKŁAD – usuń** na kartach Uczestnicy i Wpłaty.
+
+## Lista jadących (16.11.2026)
+
+Źródłem listy jest arkusz **„Lista Seul 27”** (https://docs.google.com/spreadsheets/d/1SEGl2NcbZMEkPQN7qO5v2knHl6xCdRRdZCIlYKK3stg/edit), pierwsza karta. Listę edytuje się tylko tam. Panel ją czyta i łączy z kartą Wpłaty prywatnego arkusza.
+
+1. Udostępnij „Lista Seul 27” tym samym organizatorom co prywatny arkusz (edycja albo podgląd).
+2. Wklej na nowo `Panel.gs` i `panel.html` w Apps Script **prywatnego arkusza** i wdróż **nową wersję** (Wdróż → Zarządzaj wdrożeniami → edytuj → Wersja: nowa). Przy autoryzacji zgódź się na dostęp do arkuszy.
+3. Otwórz panel jako edytor listy. Za pierwszym razem panel sam:
+   - nazwie kolumnę z uwagami („nieletnia”, „zgłosiła rezygnację”) nagłówkiem `uwagi`,
+   - dopisze na końcu brakujące kolumny: id, lista, płeć, data urodzenia, opiekun, bilet, paszport ważny do, K-ETA, Visit Japan Web, ubezpieczenie, zgody, regulamin podpisany, zgoda rodziców, uwagi zdrowotne/dieta,
+   - nada każdej osobie stałe `id` (U001…). Tego id używaj w karcie Wpłaty przy wpłatach imiennych.
+   Istniejących kolumn i danych nie zmienia.
+4. Lista główna / rezerwowa / rezygnacja: jeśli kolumna `lista` jest pusta, panel liczy ją sam — z numerem = główna, bez numeru = rezerwowa, „rezygn” w uwagach = rezygnacja. Wpisanie wartości w kolumnie `lista` ma pierwszeństwo.
+5. Terminy, po których brak zmienia się z „do zrobienia” na „po terminie”, i harmonogram rat są na początku `Panel.gs` (`TERMINY`, `RATY`). ID arkuszy: `ARKUSZ_ID` (prywatny) i `LISTA_ID` (lista) — albo właściwości skryptu o tych nazwach.
+
+Plik `Uczestnicy_do_importu.xlsx` z czatu nie jest już potrzebny — usuń go.

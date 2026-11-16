@@ -41,6 +41,7 @@
     <button type="button" class="tab" data-tab="japonia">Japonia</button>
     <button type="button" class="tab" data-tab="korea">Korea</button>
     <button type="button" class="tab" data-tab="decyzje">Decyzje</button>
+    <button type="button" class="tab" data-tab="uczestnicy">Uczestnicy</button>
     <button type="button" class="tab" data-tab="budzet">Budżet i wpłaty</button>
     <button type="button" class="tab" data-tab="checklista">Checklista</button>
     <button type="button" class="tab" data-tab="logistyka">Logistyka</button>
@@ -176,6 +177,29 @@
     </section>
 
     <!-- Budżet: raty z udziałów Artura, kwoty z aktualnego scenariusza, status tylko zbiorczy. -->
+    <section id="uczestnicy" class="panel" hidden aria-labelledby="h-uczestnicy">
+      <div class="wrap">
+        <p class="kicker">Lista jadących · tylko organizatorzy</p>
+        <h2 id="h-uczestnicy">Uczestnicy</h2>
+        <p class="lead">Pełna lista z nazwiskami jest w prywatnym panelu, który otwiera się tylko po zalogowaniu na konto Google z dostępem do prywatnego arkusza. Ta strona jest publiczna, więc nie ma na niej nazwisk, wieku konkretnych osób ani wpłat imiennych.</p>
+        <div class="people-box" id="ucz-panel-card"></div>
+        <div class="people-box">
+          <h3>Co pokazuje panel dla każdej osoby</h3>
+          <ul class="dec-facts">
+            <li><strong>Lista:</strong> główna, rezerwowa albo rezygnacja; wspólnota, płeć, kontakt.</li>
+            <li><strong>Wiek</strong> w dniu wyjazdu (z daty urodzenia) i oznaczenie niepełnoletnich — z opiekunem i zgodą rodziców.</li>
+            <li><strong>Bilet:</strong> imienny (jeden z 21 bez zmiany nazwiska) albo grupowy (jedno z 69 miejsc).</li>
+            <li><strong>Dokumenty:</strong> paszport ważny do co najmniej 21.02.2028, K-ETA (Korea), Visit Japan Web, ubezpieczenie.</li>
+            <li><strong>Zgody:</strong> RODO i wizerunek, regulamin, zgoda rodziców.</li>
+            <li><strong>Wpłaty:</strong> ile wpłacono imiennie, ile należy do dziś według rat i ile w sumie.</li>
+            <li>Statusy: ✓ gotowe · … do zrobienia (termin nie minął) · ! po terminie. Filtry: zaległości, niepełnoletni, bilety imienne, zaległe wpłaty, rezerwa, rezygnacje.</li>
+          </ul>
+          <p class="muted">Listę edytuje się w arkuszu „Lista Seul 27” (jedno źródło). Wpłaty imienne — w karcie Wpłaty prywatnego arkusza „ŚDM 2027 – dane osobowe (PRYWATNE)”. Instrukcja wdrożenia panelu: <code>apps-script/INSTRUKCJA.md</code>.</p>
+        </div>
+        <div class="people-box" id="ucz-snapshot"></div>
+      </div>
+    </section>
+
     <section id="budzet" class="panel" hidden aria-labelledby="h-budzet">
       <div class="wrap">
         <div class="section-head">

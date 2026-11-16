@@ -154,6 +154,16 @@
     td.num { text-align: right; white-space: nowrap; }
     tr.is-example { background: #f8ecc8; }
     tr.has-gap td.braki { color: var(--wine); font-weight: 600; }
+    .chip { display: inline-block; min-width: 1.4em; text-align: center; font-size: 0.75rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; margin: 1px 2px 1px 0; white-space: nowrap; }
+    .chip.ok { background: #e3efe6; color: var(--ok); }
+    .chip.todo { background: var(--paper-2); color: var(--ink-soft); }
+    .chip.late { background: #f3d9d9; color: var(--wine); }
+    .chip.nd { background: #f2f2f2; color: #9a9a9a; }
+    td .row { display: block; white-space: nowrap; font-size: 0.85rem; }
+    tr.is-res td { opacity: 0.7; }
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 1px 7px; border-radius: 999px; background: var(--paper-2); color: var(--ink-soft); margin-left: 4px; }
+    .tag.nl { background: #f6e9cf; color: var(--warn); }
+    .tag.im { background: var(--navy); color: var(--gold-2); }
     .badge {
       display: inline-block;
       font-size: 0.75rem;
@@ -245,13 +255,20 @@
 
         <div class="section-head">
           <p class="kicker">Uczestnicy</p>
-          <h2>Lista i saldo</h2>
-          <p class="muted">Saldo to suma wpłat imiennych minus cena na osobę z parametru w karcie Podsumowanie. Wpłaty ogólne (darczyńcy, sponsorzy) nie są przypisywane do osób.</p>
+          <h2>Lista jadących</h2>
+          <p class="muted">Dla każdej osoby: lista (główna / rezerwowa / rezygnacja), wiek, rodzaj biletu, dokumenty, zgody i wpłaty. <span class="chip ok">✓</span> gotowe · <span class="chip todo">…</span> do zrobienia, termin jeszcze nie minął · <span class="chip late">!</span> po terminie · <span class="chip nd">–</span> nie dotyczy. Dane edytujesz w karcie Uczestnicy prywatnego arkusza; panel odświeża się po przeładowaniu.</p>
         </div>
+        <div class="stat-grid" id="stats-lista"></div>
         <div class="toolbar" role="group" aria-label="Filtr listy">
-          <button type="button" class="btn is-on" data-filter="wszyscy">Wszyscy</button>
-          <button type="button" class="btn" data-filter="braki">Tylko z brakami</button>
-          <button type="button" class="btn" data-filter="przyklady">Przykłady do usunięcia</button>
+          <button type="button" class="btn is-on" data-filter="glowna">Lista główna</button>
+          <button type="button" class="btn" data-filter="braki">Z zaległościami</button>
+          <button type="button" class="btn" data-filter="nl">Niepełnoletni</button>
+          <button type="button" class="btn" data-filter="imienny">Bilet imienny</button>
+          <button type="button" class="btn" data-filter="wplaty">Zaległe wpłaty</button>
+          <button type="button" class="btn" data-filter="rezerwowa">Rezerwowa</button>
+          <button type="button" class="btn" data-filter="rezygnacja">Rezygnacje</button>
+          <button type="button" class="btn" data-filter="wszyscy">Wszyscy</button>
+          <input type="search" id="q" placeholder="Szukaj nazwiska…" style="max-width:220px" />
         </div>
         <div class="table-scroll">
           <table id="tbl-uczestnicy">
@@ -259,11 +276,12 @@
               <tr>
                 <th>Id</th>
                 <th>Osoba</th>
-                <th>Wspólnota</th>
-                <th>Status</th>
-                <th>Wpłacono imiennie</th>
-                <th>Saldo</th>
-                <th>Braki</th>
+                <th>Wiek</th>
+                <th>Bilet</th>
+                <th>Dokumenty</th>
+                <th>Zgody</th>
+                <th>Wpłaty</th>
+                <th>Po terminie</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -383,7 +401,10 @@
           dataUrodzenia: "2000-01-15", niepelnoletni: "NIE", opiekun: "", paszportWaznyDo: "2030-06-01",
           kEta: "TAK", zgody: "nie dotyczy", uwagi: "PRZYKŁAD – usuń. Brak uwag zdrowotnych.",
           telefon: "000 000 000", email: "jan.przyklad@example.com", status: "PRZYKŁAD – usuń",
-          braki: "", przyklad: true, wplaconoImiennie: 3234, naleznosc: 16170, saldo: 3234 - 16170
+          braki: "", przyklad: true, wplaconoImiennie: 3234, naleznosc: 16170, saldo: 3234 - 16170,
+          lista: "główna", plec: "M", wiekLiczba: 27, bilet: "imienny", naleznoDoDzis: 3234, niepelnoletniBool: false,
+          checks: { plec: "ok", wiek: "ok", bilet: "ok", paszport: "ok", kEta: "todo", vjw: "todo", zgody: "ok", zgodaRodzicow: "nd", opiekun: "nd", regulamin: "ok", ubezpieczenie: "todo", kontakt: "ok", wplaty: "ok" },
+          zalegle: []
         },
         {
           id: "P-PRZYKŁAD-2", imie: "Anna", nazwisko: "Demonstracyjna", wspolnota: "Przykładów",
@@ -391,9 +412,13 @@
           kEta: "", zgody: "", uwagi: "PRZYKŁAD – usuń. Celowo nieuzupełnione, żeby pokazać kolumnę braków.",
           telefon: "", email: "anna.przyklad@example.com", status: "PRZYKŁAD – usuń",
           braki: "opiekun, paszport ważny do, K-ETA, zgody, telefon", przyklad: true,
-          wplaconoImiennie: 0, naleznosc: 16170, saldo: -16170
+          wplaconoImiennie: 0, naleznosc: 16170, saldo: -16170,
+          lista: "główna", plec: "K", wiekLiczba: 15, bilet: "", naleznoDoDzis: 3234, niepelnoletniBool: true,
+          checks: { plec: "ok", wiek: "ok", bilet: "todo", paszport: "todo", kEta: "todo", vjw: "todo", zgody: "todo", zgodaRodzicow: "late", opiekun: "late", regulamin: "todo", ubezpieczenie: "todo", kontakt: "ok", wplaty: "late" },
+          zalegle: ["zgoda rodziców", "opiekun", "wpłaty"]
         }
       ],
+      stats: { glowna: 2, rezerwowa: 0, rezygnacja: 0, niepelnoletni: 1, nlK: 1, nlM: 0, opiekunowieMin: 1, bezWieku: 0, imienne: 1, grupowe: 0, bezBiletu: 1, zalegli: 1, zBrakami: 1, paszportyOk: 1, zgodyOk: 1, udzialDoDzis: 20 },
       wplaty: [
         { data: "2026-11-10", typ: "imienna", typEtykieta: "imienna", kto: "P-PRZYKŁAD-1", kwota: 3234, rata: "I", forma: "przelew", uwagi: "PRZYKŁAD – usuń (I rata Jana Przykładowskiego)", przyklad: true },
         { data: "2026-11-12", typ: "ogolna", typEtykieta: "ogólna", kto: "Fundacja Przykładowa", kwota: 5000, rata: "", forma: "przelew", uwagi: "PRZYKŁAD – usuń (darowizna na pielgrzymkę, bez przypisania do osoby)", przyklad: true }
@@ -401,7 +426,7 @@
     };
 
     var IS_APPS = typeof google !== "undefined" && google.script && google.script.run;
-    var state = { data: null, filter: "wszyscy" };
+    var state = { data: null, filter: "glowna" };
 
     function $(id) { return document.getElementById(id); }
     function esc(s) {
@@ -426,34 +451,73 @@
       }
     }
 
+    var MARK = { ok: "✓", todo: "…", late: "!", nd: "–" };
+    function chip(st, label) { return '<span class="chip ' + (st || "todo") + '" title="' + esc(label) + '">' + MARK[st || "todo"] + "</span>" + esc(label); }
     function applyFilter() {
+      var q = ($("q") && $("q").value || "").trim().toLowerCase();
       var list = (state.data.uczestnicy || []).filter(function (u) {
-        if (state.filter === "braki") return String(u.braki || "").trim() !== "";
-        if (state.filter === "przyklady") return !!u.przyklad;
-        return true;
+        if (q && (String(u.imie) + " " + String(u.nazwisko) + " " + String(u.id)).toLowerCase().indexOf(q) === -1) return false;
+        switch (state.filter) {
+          case "glowna": return u.lista === "główna";
+          case "braki": return u.lista === "główna" && (u.zalegle || []).length > 0;
+          case "nl": return u.lista === "główna" && u.niepelnoletniBool;
+          case "imienny": return u.bilet === "imienny";
+          case "wplaty": return u.lista === "główna" && u.checks && u.checks.wplaty === "late";
+          case "rezerwowa": return u.lista === "rezerwowa";
+          case "rezygnacja": return u.lista === "rezygnacja";
+          default: return true;
+        }
       });
       var tb = $("tbl-uczestnicy").querySelector("tbody");
       if (!list.length) {
-        tb.innerHTML = '<tr><td colspan="7" class="muted">Brak wierszy przy tym filtrze.</td></tr>';
+        tb.innerHTML = '<tr><td colspan="8" class="muted">Brak osób przy tym filtrze.</td></tr>';
         return;
       }
       tb.innerHTML = list.map(function (u) {
+        var c = u.checks || {};
         var name = esc(u.imie) + " " + esc(u.nazwisko);
-        var cls = (u.przyklad ? " is-example" : "") + (String(u.braki || "").trim() ? " has-gap" : "");
-        var badge = u.przyklad ? ' <span class="badge">PRZYKŁAD – usuń</span>' : "";
+        var cls = (u.przyklad ? " is-example" : "") + ((u.zalegle || []).length ? " has-gap" : "") + (u.lista !== "główna" ? " is-res" : "");
+        var tags = (u.lista !== "główna" ? '<span class="tag">' + esc(u.lista) + "</span>" : "") +
+          (u.niepelnoletniBool ? '<span class="tag nl">niepełnoletni</span>' : "") +
+          (u.bilet === "imienny" ? '<span class="tag im">bilet imienny</span>' : "");
         return "<tr class=\"" + cls + "\">" +
           "<td>" + esc(u.id) + "</td>" +
-          "<td><strong>" + name + "</strong>" + badge +
-            (u.niepelnoletni === "TAK" ? "<div class=\"muted\">niepełnoletni" + (u.opiekun ? " · opiekun: " + esc(u.opiekun) : "") + "</div>" : "") +
-            (u.email || u.telefon ? "<div class=\"muted\">" + esc(u.email) + (u.telefon ? " · " + esc(u.telefon) : "") + "</div>" : "") +
+          "<td><strong>" + name + "</strong>" + tags +
+            '<div class="muted">' + esc(u.wspolnota || "") + (u.plec ? " · " + esc(u.plec) : "") + "</div>" +
+            (u.niepelnoletniBool && u.opiekun ? '<div class="muted">opiekun: ' + esc(u.opiekun) + "</div>" : "") +
+            (u.email || u.telefon ? '<div class="muted">' + esc(u.email) + (u.telefon ? " · " + esc(u.telefon) : "") + "</div>" : "") +
           "</td>" +
-          "<td>" + esc(u.wspolnota) + "</td>" +
-          "<td>" + esc(u.status) + "</td>" +
-          "<td class=\"num\">" + zl(u.wplaconoImiennie) + "</td>" +
-          "<td class=\"num\">" + zl(u.saldo) + "</td>" +
-          "<td class=\"braki\">" + esc(u.braki || "—") + "</td>" +
+          '<td class="num">' + (u.wiekLiczba != null ? esc(u.wiekLiczba) : chip(c.wiek, "")) + "</td>" +
+          "<td>" + (u.bilet === "imienny" || u.bilet === "grupowy" ? esc(u.bilet) : chip(c.bilet, "brak")) + "</td>" +
+          "<td>" +
+            '<span class="row">' + chip(c.paszport, " paszport" + (u.paszportWaznyDo ? " do " + esc(u.paszportWaznyDo) : "")) + "</span>" +
+            '<span class="row">' + chip(c.kEta, " K-ETA (Korea)") + "</span>" +
+            '<span class="row">' + chip(c.vjw, " Visit Japan Web") + "</span>" +
+            '<span class="row">' + chip(c.ubezpieczenie, " ubezpieczenie") + "</span>" +
+          "</td>" +
+          "<td>" +
+            '<span class="row">' + chip(c.zgody, " zgody RODO/wizerunek") + "</span>" +
+            '<span class="row">' + chip(c.regulamin, " regulamin") + "</span>" +
+            (u.niepelnoletniBool ? '<span class="row">' + chip(c.zgodaRodzicow, " zgoda rodziców") + "</span>" + '<span class="row">' + chip(c.opiekun, " opiekun") + "</span>" : "") +
+          "</td>" +
+          '<td class="num">' + zl(u.wplaconoImiennie) + '<div class="muted">należne do dziś ' + zl(u.naleznoDoDzis) + "</div>" +
+            '<div class="muted">całość ' + zl(u.naleznosc) + "</div>" + (c.wplaty === "late" ? '<span class="chip late">zaległość ' + zl(u.naleznoDoDzis - u.wplaconoImiennie) + "</span>" : "") + "</td>" +
+          '<td class="braki">' + esc((u.zalegle || []).join(", ") || "—") + "</td>" +
         "</tr>";
       }).join("");
+    }
+
+    function renderListStats(data) {
+      var s = data.stats;
+      if (!s) { $("stats-lista").innerHTML = ""; return; }
+      $("stats-lista").innerHTML =
+        '<article class="stat-card is-navy"><p class="lbl">Lista główna</p><p class="val">' + s.glowna + ' / 90</p><p class="sub">rezerwowa: ' + s.rezerwowa + " · rezygnacje: " + s.rezygnacja + "</p></article>" +
+        '<article class="stat-card"><p class="lbl">Niepełnoletni</p><p class="val">' + s.niepelnoletni + '</p><p class="sub">K ' + s.nlK + " · M " + s.nlM + " · opiekunów min. " + s.opiekunowieMin + " (1:5 tej samej płci)" + (s.bezWieku ? " · bez wieku: " + s.bezWieku : "") + "</p></article>" +
+        '<article class="stat-card"><p class="lbl">Bilety</p><p class="val">' + s.imienne + ' / 21 imiennych</p><p class="sub">grupowe: ' + s.grupowe + " · nieprzypisane: " + s.bezBiletu + "</p></article>" +
+        '<article class="stat-card ' + (s.zalegli ? "is-warn" : "is-ok") + '"><p class="lbl">Wpłaty</p><p class="val">' + s.zalegli + ' zaległych</p><p class="sub">należne do dziś: ' + s.udzialDoDzis + "% ceny</p></article>" +
+        '<article class="stat-card"><p class="lbl">Paszporty ważne</p><p class="val">' + s.paszportyOk + " / " + s.glowna + '</p><p class="sub">do co najmniej 21.02.2028</p></article>' +
+        '<article class="stat-card"><p class="lbl">Zgody komplet</p><p class="val">' + s.zgodyOk + " / " + s.glowna + '</p><p class="sub">u niepełnoletnich z zgodą rodziców</p></article>' +
+        '<article class="stat-card ' + (s.zBrakami ? "is-warn" : "is-ok") + '"><p class="lbl">Po terminie</p><p class="val">' + s.zBrakami + ' osób</p><p class="sub">coś zaległego (filtr „Z zaległościami”)</p></article>';
     }
 
     function fillPayments(data) {
@@ -496,6 +560,7 @@
 
       fillSelect(data);
       fillPayments(data);
+      renderListStats(data);
       applyFilter();
 
       if (!data.mozeEdytowac) {
@@ -572,6 +637,7 @@
       $("f-data").value = todayISO();
       $("f-typ").addEventListener("change", typChanged);
       $("form-wplata").addEventListener("submit", onSubmit);
+      if ($("q")) $("q").addEventListener("input", function () { if (state.data) applyFilter(); });
       document.querySelectorAll(".toolbar .btn").forEach(function (btn) {
         btn.addEventListener("click", function () {
           state.filter = btn.getAttribute("data-filter");

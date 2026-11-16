@@ -67,7 +67,8 @@ export async function fetchTables(url, timeoutMs = 6000) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
-    const r = await fetch(url + (url.includes("?") ? "&" : "?") + "action=tabele", { signal: ctrl.signal });
+    const kod = getCred().kod || "";
+    const r = await fetch(url + (url.includes("?") ? "&" : "?") + "action=tabele" + (kod ? "&kod=" + encodeURIComponent(kod) : ""), { signal: ctrl.signal });
     const j = await r.json();
     return j && j.ok ? j.tabele : null;
   } catch (_) {
