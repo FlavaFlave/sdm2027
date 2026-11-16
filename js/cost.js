@@ -8,7 +8,7 @@ import { N_GROUP, FUJI_PER, CHOICE_IDS, num } from "./util.js";
 export function groupDecisions(rows) {
   const order = [];
   const map = {};
-  const hoist = ["kontekst", "opis", "ograniczenia", "wplyw_inne", "rekomendacja_tekst"];
+  const hoist = ["kontekst", "opis", "tlo", "ograniczenia", "wplyw_inne", "rekomendacja_tekst"];
   (rows || []).forEach((r) => {
     if (!map[r.id]) {
       map[r.id] = { id: r.id, nazwa: r.decyzja, termin: r.termin || "", opcje: [] };

@@ -41,7 +41,7 @@ function renderBudgetChart(cost) {
       maintainAspectRatio: false,
       animation: false,
       plugins: {
-        legend: { position: "right", labels: { font: { family: "Source Sans 3", size: 12 } } },
+        legend: { position: "right", labels: { font: { family: "Lato", size: 12 } } },
         tooltip: { callbacks: { label: (ctx) => ` ${ctx.label}: ${formatZl(ctx.parsed)}` } },
       },
     },
@@ -77,7 +77,7 @@ function renderPrivatePanelCard(data) {
 }
 
 
-const PUBLIC_SHEET = "https://docs.google.com/spreadsheets/d/1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE/edit";
+const PUBLIC_SHEET = "https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit";
 const PRIVATE_SHEET = "https://docs.google.com/spreadsheets/d/1WSchAIbuUpfZtqEY6Xd8Mvj_-Ap8-ckFXx0AgttHpKo/edit";
 
 function renderBudgetSheetLinks(data) {
@@ -85,15 +85,20 @@ function renderBudgetSheetLinks(data) {
   if (!el) return;
   const pub = (data && data.meta && data.meta.spreadsheet_url) || PUBLIC_SHEET;
   const priv = (data && data.meta && data.meta.private_sheet_url) || PRIVATE_SHEET;
+  const live = !!(data && data.meta && data.meta.sheetLive);
+  const status = live
+    ? `<span class="save-mode is-live">Strona czyta arkusz</span> Kwoty, raty i sumy wpłat poniżej pochodzą z arkusza (${escapeHtml(data.meta.source || "")}). Po zmianie w arkuszu wystarczy odświeżyć stronę.`
+    : `<span class="save-mode is-local">Strona nie czyta jeszcze arkusza</span> Liczby poniżej są z kopii w pliku data.json. Żeby strona pobierała kwoty z arkusza, wybierz jedno: (1) podłącz skrypt zapisu — arkusz zostaje prywatny (apps-script/INSTRUKCJA-zapis.md), albo (2) w arkuszu kliknij Udostępnij → „Każda osoba mająca link” → Przeglądający (w tym arkuszu nie ma danych osobowych).`;
   el.innerHTML = `
+    <div class="sheet-status">${status}</div>
     <a class="sheet-link-card" href="${escapeHtml(pub)}" target="_blank" rel="noopener">
-      <h3>Arkusz publiczny — koszty, raty, zbiorcze wpłaty</h3>
-      <p>Tu organizatorzy wpisują stawki, harmonogram rat i sumy zbiorcze. Gdy arkusz jest opublikowany jako CSV, strona pobiera stąd te liczby (inaczej korzysta z kopii w data.json). Bez nazwisk uczestników.</p>
-      <span class="btn btn-gold">Otwórz arkusz kosztów</span>
+      <h3>Tu wpisujesz kwoty: arkusz kosztów, rat i wpłat zbiorczych</h3>
+      <p>Karta <strong>Koszty</strong> — stawki pozycji budżetu (kolumna Kwota). Karta <strong>Wpłaty</strong> — dla każdej raty: liczba osób, które wpłaciły, suma, która wpłynęła, i „Kwota zamrożona (zł/os.)” po wysłaniu raty rodzicom. Karta <strong>Decyzje</strong> — kolumna „Wybrana”. Bez nazwisk uczestników.</p>
+      <span class="btn btn-gold">Otwórz arkusz kosztów i wpłat</span>
     </a>
     <a class="sheet-link-card is-private" href="${escapeHtml(priv)}" target="_blank" rel="noopener">
-      <h3>Arkusz prywatny — wpłaty imienne i uczestnicy</h3>
-      <p>Tu wpisuje się, kto ile wpłacił (wpłata imienna albo ogólna od darczyńcy) oraz dane uczestników. Arkusz otworzy się tylko osobom, którym go udostępniono. Publiczna strona nie pobiera stąd nazwisk ani kwot imiennych — te widać w panelu organizatorów.</p>
+      <h3>Arkusz prywatny — wpłaty imienne i dane uczestników</h3>
+      <p>Kto ile wpłacił (imiennie albo od darczyńcy) i dane uczestników. Otwiera się tylko osobom, którym go udostępniono. Strona nie pobiera z niego nazwisk ani kwot imiennych.</p>
       <span class="btn">Otwórz prywatny arkusz wpłat</span>
     </a>`;
 }

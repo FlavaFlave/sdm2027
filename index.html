@@ -15,7 +15,7 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -23,7 +23,7 @@
   <header class="hero">
     <div class="hero-ornament" aria-hidden="true"></div>
     <div class="hero-inner">
-      <p class="eyebrow">Strona organizatorów · plan v3 · etap 6 · 16.11.2026</p>
+      <p class="eyebrow">Strona organizatorów · plan z 15.11 · etap 7 · 16.11.2026</p>
       <h1>ŚDM 2027</h1>
       <p class="lede">Pielgrzymka Japonia <span class="amp">&amp;</span> Korea</p>
       <p class="hero-sub">Akita po drodze, nie zamiast. Autokary zamiast pociągów. Powitanie Papieża 5 sierpnia jako must see.</p>
@@ -112,16 +112,24 @@
             <p class="cost-fuji" id="cost-fuji" hidden></p>
             <p class="cost-note" id="preview-note">Podgląd zmian: cena powyżej i lista „Co się zmienia” liczą się na bieżąco względem planu bazowego. Nic z tego nie zapisuje się samo w arkuszu.</p>
             <div class="cost-actions">
-              <button type="button" class="btn btn-gold" id="btn-preset-save">Pokaż wariant oszczędny</button>
-              <p class="action-hint">Włącza dźwignie kosztu, które nie wycinają punktów programu (noclegi, posiłki, przewodnik, eSIM, przewoźnik). Można potem cofać pojedynczo.</p>
-              <button type="button" class="btn btn-gold" id="btn-save-scenario">Zapisz jako wariant roboczy</button>
-              <p class="action-hint">Zapis w tej przeglądarce, pod nazwą. Można trzymać do trzech wariantów i je porównać poniżej.</p>
-              <button type="button" class="btn" id="btn-copy-link">Udostępnij wariant (link)</button>
-              <p class="action-hint">Kopiuje adres strony z obecnymi wyborami. Osoba z linkiem zobaczy ten sam podgląd. To nie jest zapis planu w arkuszu.</p>
-              <button type="button" class="btn" id="btn-undo-save">Cofnij do ostatniego zapisu</button>
-              <p class="action-hint">Przywraca ostatni wariant roboczy zapisany w tej przeglądarce.</p>
-              <button type="button" class="btn" id="btn-reset">Wyczyść wszystkie zmiany (wróć do planu bazowego)</button>
-              <p class="action-hint">Wraca do opcji bazowych. Nie zmienia arkusza.</p>
+              <p class="state-line" id="state-line">Oglądasz plan bazowy.</p>
+              <p class="action-hint is-lead">Każda zmiana w decyzjach albo w liczbie osób od razu pokazuje skutki: cenę, trasę, dni i ostrzeżenia. Nic nie trzeba klikać, żeby sprawdzić wpływ — i nic się samo nie zapisuje.</p>
+
+              <p class="action-group">Porównywanie (tylko na tym komputerze)</p>
+              <button type="button" class="btn btn-gold" id="btn-save-scenario">Zapamiętaj ten wariant do porównania</button>
+              <p class="action-hint">Zapisuje obecne wybory pod nazwą w tej przeglądarce (do 3 wariantów) i pokazuje je w tabeli „Porównanie wariantów” niżej. Nie zmienia planu.</p>
+              <button type="button" class="btn" id="btn-undo-save">Cofnij zmiany od ostatniego zapamiętania</button>
+              <p class="action-hint">Wraca do ostatnio zapamiętanego wariantu.</p>
+              <button type="button" class="btn" id="btn-reset">Wyczyść wszystkie zmiany — wróć do planu bazowego</button>
+              <p class="action-hint">Plan bazowy to rekomendacja planu v3 dla 90 osób.</p>
+              <button type="button" class="btn" id="btn-preset-save">Pokaż wariant oszczędny</button>
+              <p class="action-hint">Włącza tańsze opcje, które nie wycinają punktów programu (noclegi, posiłki, przewodnik, eSIM, przewoźnik). Każdą można potem cofnąć osobno.</p>
+
+              <p class="action-group">Dzielenie się i decyzja</p>
+              <button type="button" class="btn" id="btn-copy-link">Skopiuj link do tego wariantu</button>
+              <p class="action-hint">Kopiuje adres strony z obecnymi wyborami. Kto go otworzy, zobaczy dokładnie to samo. Nic nie zapisuje.</p>
+              <button type="button" class="btn btn-wine" id="btn-approve">Zatwierdź jako obowiązujący plan</button>
+              <p class="action-hint">Zapisuje wybory na stałe w arkuszu (kolumna „Wybrana” i karta „Historia decyzji”) — widzą je wszyscy organizatorzy. Używaj tylko po wspólnej DECYZJI.</p>
             </div>
             <p class="cost-share" id="copy-status" hidden></p>
             <div class="official-plan-note" id="official-plan-note"></div>

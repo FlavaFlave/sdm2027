@@ -1,5 +1,5 @@
 /**
- * Mapy Leaflet. Kafelki: Esri World Street Map (etykiety łacińskie / angielskie).
+ * Mapy Leaflet. Kafelki Esri Light Gray bez napisów + własne angielskie etykiety miast (bez pisma japońskiego i koreańskiego).
  * Przy zmianie decyzji przebudowują się warstwy markerów i tras.
  * Kolory pinów: -- Japan #1f4e79, Korea #8b2a32, lotniska #c6a15b.
  */
@@ -37,22 +37,77 @@ function popHtml(p) {
 
 export function getMaps() { return maps; }
 
+/** Angielskie etykiety bazowe (kafelki są bez napisów, żeby nie było japońskiego i koreańskiego pisma). */
+const EN_LABELS = [
+  { n: "Tokyo", lat: 35.68, lng: 139.76, z: 4 }, { n: "Osaka", lat: 34.69, lng: 135.5, z: 5 },
+  { n: "Kyoto", lat: 35.01, lng: 135.77, z: 6 }, { n: "Nagoya", lat: 35.18, lng: 136.9, z: 6 },
+  { n: "Sendai", lat: 38.27, lng: 140.87, z: 5 }, { n: "Akita", lat: 39.72, lng: 140.1, z: 5 },
+  { n: "Fukushima", lat: 37.75, lng: 140.47, z: 7 }, { n: "Niigata", lat: 37.9, lng: 139.02, z: 7 },
+  { n: "Hiroshima", lat: 34.39, lng: 132.46, z: 5 }, { n: "Fukuoka", lat: 33.59, lng: 130.4, z: 5 },
+  { n: "Nagasaki", lat: 32.75, lng: 129.87, z: 5 }, { n: "Kagoshima", lat: 31.6, lng: 130.56, z: 7 },
+  { n: "Sapporo", lat: 43.06, lng: 141.35, z: 5 }, { n: "Kobe", lat: 34.69, lng: 135.19, z: 7 },
+  { n: "Seoul", lat: 37.57, lng: 126.98, z: 4 }, { n: "Busan", lat: 35.18, lng: 129.08, z: 5 },
+  { n: "Daejeon", lat: 36.35, lng: 127.38, z: 7 }, { n: "Daegu", lat: 35.87, lng: 128.6, z: 7 },
+  { n: "Incheon", lat: 37.46, lng: 126.7, z: 8 }, { n: "Gwangju", lat: 35.16, lng: 126.85, z: 7 },
+  { n: "Doha", lat: 25.29, lng: 51.53, z: 3 }, { n: "Warsaw", lat: 52.23, lng: 21.01, z: 3 },
+];
+function addEnglishLabels(map) {
+  const layer = L.layerGroup().addTo(map);
+  const draw = () => {
+    layer.clearLayers();
+    const z = map.getZoom();
+    EN_LABELS.filter((l) => z >= l.z && !(l.cls === "country" && z > 8)).forEach((l) => {
+      L.marker([l.lat, l.lng], {
+        icon: L.divIcon({ className: `map-label ${l.cls || "city"}`, html: `<span>${l.n}</span>`, iconSize: null }),
+        interactive: false, keyboard: false,
+      }).addTo(layer);
+    });
+  };
+  map.on("zoomend", draw);
+  draw();
+}
+
+/** Widoki krajów — gdy wejdziesz w zakładkę, mapa przybliża się do tego obszaru. */
+export const COUNTRY_VIEW = {
+  "map-jp": [[30.8, 128.6], [41.2, 141.6]],
+  "map-kr": [[33.9, 125.6], [38.3, 129.7]],
+  "map-all": [[30.5, 124.5], [41.5, 141.8]],
+};
+
 export function ensureMap(elId) {
   if (maps[elId]) return maps[elId];
   const el = document.getElementById(elId);
   if (!el) return null;
   const map = L.map(el, { scrollWheelZoom: false, zoomControl: true });
   map.setView([35.5, 132], 5);
-  // Esri World Street Map: darmowe kafelki z łacińskimi / angielskimi etykietami (Tokio, Seul itd.).
-  // Kolejność w URL to {z}/{y}/{x}, nie {z}/{x}/{y}.
-  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
-    attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, TomTom',
-    maxZoom: 19,
+  // Esri Light Gray Canvas bez warstwy napisów + własne etykiety po angielsku (zob. EN_LABELS).
+  // Kolejność w URL to {z}/{y}/{x}.
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+    attribution: "Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors",
+    maxZoom: 16,
   }).addTo(map);
+  addEnglishLabels(map);
   maps[elId] = map;
+  // Gdy kontener dostanie rozmiar (po pokazaniu zakładki), dopasuj widok kraju.
+  if (typeof ResizeObserver !== "undefined") {
+    let had = false;
+    new ResizeObserver(() => {
+      const ok = el.offsetWidth > 0 && el.offsetHeight > 0;
+      if (ok && !had) { map.invalidateSize(); fitCountry(elId); }
+      had = ok;
+    }).observe(el);
+  }
   return map;
 }
 
+export function fitCountry(elId, animate) {
+  const map = maps[elId];
+  const b = COUNTRY_VIEW[elId];
+  if (!map || !b) return;
+  map.invalidateSize();
+  if (!map.getSize().x) return;
+  map.fitBounds(b, { animate: !!animate, padding: [10, 10] });
+}
 
 /** Miejsca na mapie zakładki Japonia — bez Polski, Kataru i Korei, żeby przybliżenie trafiało w Japonię. */
 export function isJapanPlace(p) {
@@ -64,27 +119,11 @@ export function isKoreaPlace(p) {
 }
 
 /** Po kliknięciu zakładki: dopasuj widok do podanych punktów (po unhide mapa musi dostać invalidateSize). */
-export function focusMap(elId, places) {
+/** Po kliknięciu zakładki: przybliż do kraju (Japonia / Korea), a w Przeglądzie do obu krajów. */
+export function focusMap(elId) {
   const map = maps[elId];
   if (!map) return;
-  const pts = (places || []).filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng));
-  const apply = (animate) => {
-    map.invalidateSize();
-    const size = map.getSize();
-    if (!size.x || !size.y) return false;
-    if (!pts.length) return true;
-    try {
-      map.fitBounds(L.latLngBounds(pts.map((p) => [p.lat, p.lng])).pad(0.18), { animate: !!animate, duration: 0.55 });
-    } catch (_) {
-      map.setView([pts[0].lat, pts[0].lng], 6);
-    }
-    return true;
-  };
-  // Na starcie kontener bywa jeszcze ukryty (display:none) — powtarzamy, aż będzie miał rozmiar.
-  apply(false);
-  setTimeout(() => apply(false), 80);
-  setTimeout(() => apply(true), 200);
-  setTimeout(() => apply(false), 450);
+  [0, 120, 350].forEach((t, i) => setTimeout(() => fitCountry(elId, i === 1), t));
 }
 
 export function updateMap(elId, places, lines) {
@@ -111,14 +150,7 @@ export function updateMap(elId, places, lines) {
   group.addTo(map);
   mapLayers[elId] = group;
   const sized = map.getContainer().offsetWidth > 0 && map.getContainer().offsetHeight > 0;
-  if (sized) {
-    if (group.getLayers().length) {
-      try { map.fitBounds(group.getBounds().pad(0.12), { animate: false }); } catch (_) { map.setView([35.5, 132], 5); }
-    } else {
-      map.setView([35.5, 132], 5);
-    }
-    setTimeout(() => map.invalidateSize(), 80);
-  }
+  if (sized && !map._sdmFitted) { fitCountry(elId); map._sdmFitted = true; }
 }
 
 export function eastLine(choices) {

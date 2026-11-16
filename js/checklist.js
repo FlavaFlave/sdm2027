@@ -3,7 +3,28 @@
  * Źródło prawdy: karta Checklista publicznego arkusza (osoba, zrobione, komentarz, data zmiany).
  * Imiona organizatorów są dopuszczalne; danych uczestników tu nie ma.
  */
-import { $, $$, escapeHtml, num, todayISO, formatDatePL } from "./util.js";
+import { $, $$, escapeHtml, num, todayISO, formatDatePL, ORGANIZATORZY } from "./util.js";
+import { post, hasApp, askCred, getCred } from "./zapis.js";
+import { parseChecklistSheet } from "./cost.js";
+
+const LOCAL_KEY = "sdm2027-org-check-local";
+function loadLocal() { try { return JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}"); } catch (_) { return {}; } }
+function saveLocal(o) { try { localStorage.setItem(LOCAL_KEY, JSON.stringify(o)); } catch (_) {} }
+function nowStamp() {
+  const d = new Date(); const z = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${z(d.getMonth() + 1)}-${z(d.getDate())} ${z(d.getHours())}:${z(d.getMinutes())}`;
+}
+/** Nakłada lokalne (niewysłane) zmiany na dane z arkusza. */
+function withLocal(items) {
+  if (hasApp()) return items;
+  const loc = loadLocal();
+  return items.map((it) => {
+    const l = loc[it.id];
+    if (!l) return it;
+    const kom = [it.komentarz, ...(l.komentarze || [])].filter(Boolean).join("\n");
+    return { ...it, osoba: l.osoba ?? it.osoba, zrobione: l.zrobione ?? it.zrobione, status: (l.zrobione ?? it.zrobione) ? "zrobione" : (it.status === "zrobione" ? "do zrobienia" : it.status), komentarz: kom, zmieniono: l.zmieniono || it.zmieniono, lokalnie: true };
+  });
+}
 
 const STATUS_CLASS = {
   "do zrobienia": "badge-todo",
@@ -13,9 +34,9 @@ const STATUS_CLASS = {
   "nie dotyczy": "badge-na",
 };
 
-export const CHECKLIST_OSOBY = ["Artur", "Jakub Ś.", "Jakub Ż.", "Staszek", "Robert", "Kinga", "Dorota", "Kasia", "Judyta", "Basia"];
+export const CHECKLIST_OSOBY = ORGANIZATORZY;
 
-const SHEET_CHECK_URL = "https://docs.google.com/spreadsheets/d/1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE/edit#gid=215408221";
+const SHEET_CHECK_URL = "https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit#gid=215408221";
 
 function urgency(item, today) {
   const done = item.zrobione || item.status === "zrobione" || item.status === "nie dotyczy";
@@ -49,7 +70,7 @@ let cachedMeta = {};
 export function renderChecklist(items, meta) {
   if (items) cachedItems = items;
   if (meta) cachedMeta = meta;
-  const list = cachedItems || [];
+  const list = withLocal(cachedItems || []);
   const today = todayISO();
   const counts = { wszystkie: list.length, "do zrobienia": 0, "w toku": 0, zrobione: 0, "do uzupełnienia": 0, "nie dotyczy": 0, "po terminie": 0 };
   list.forEach((it) => {
@@ -69,14 +90,18 @@ export function renderChecklist(items, meta) {
 
   const toolbar = $("#check-toolbar");
   if (toolbar) {
-    const appUrl = (cachedMeta && (cachedMeta.checklistAppUrl || cachedMeta.checklist_app_url)) || "";
-    const editApp = appUrl
-      ? `<a class="btn btn-gold" href="${escapeHtml(appUrl)}" target="_blank" rel="noopener">Edytuj w panelu checklisty</a>`
-      : `<span class="muted">Zapis ze strony będzie możliwy po wdrożeniu skryptu (apps-script/INSTRUKCJA-checklista.md).</span>`;
+    const cred = getCred();
+    const mode = hasApp()
+      ? `<span class="save-mode is-live">Zapis do arkusza włączony</span> Zmiany zapisują się w karcie Checklista i widzą je wszyscy organizatorzy.`
+      : `<span class="save-mode is-local">Zapis tylko w tej przeglądarce</span> Skrypt zapisu nie jest jeszcze podłączony (apps-script/INSTRUKCJA-zapis.md, ok. 5 min). Do tego czasu zmiany widzisz tylko Ty, na tym komputerze.`;
     toolbar.innerHTML = `
-      <a class="btn btn-gold" href="${SHEET_CHECK_URL}" target="_blank" rel="noopener">Edytuj w arkuszu</a>
-      ${editApp}
-      <p class="muted" style="margin:8px 0 0">Źródło prawdy: karta Checklista w publicznym arkuszu. Zmiany zapisane w arkuszu pojawią się na stronie po publikacji CSV (albo po odświeżeniu, gdy arkusz jest już opublikowany).</p>`;
+      <p class="save-line">${mode}</p>
+      <div class="toolbar-row">
+        <span class="muted">Zapisujesz jako: <strong>${escapeHtml(cred.autor || "— nie wybrano —")}</strong></span>
+        <button type="button" class="btn" id="btn-cred">Zmień, kto zapisuje</button>
+        <a class="btn" href="${SHEET_CHECK_URL}" target="_blank" rel="noopener">Otwórz kartę Checklista w arkuszu</a>
+      </div>`;
+    $("#btn-cred", toolbar).onclick = async () => { await askCred(true); renderChecklist(); };
   }
 
   const filters = $("#check-filters");
@@ -169,22 +194,74 @@ export function renderChecklist(items, meta) {
       const soon = urg === "soon" && !done ? ` <span class="badge badge-soon">zbliża się</span>` : "";
       const osoba = assignee(it) || "nieprzypisane";
       const rola = (it.kto && it.kto !== osoba) ? `<span class="muted"> (w opisie zadania: ${escapeHtml(it.kto)})</span>` : "";
-      const komentarz = it.komentarz ? `<p class="note"><strong>Komentarz:</strong> ${escapeHtml(it.komentarz)}</p>` : "";
+      const komentarz = it.komentarz
+        ? `<ul class="comment-log">${String(it.komentarz).split(/\n+/).filter(Boolean).map((c) => `<li>${escapeHtml(c)}</li>`).join("")}</ul>`
+        : "";
       const zmieniono = it.zmieniono ? `<p class="changed">Ostatnia zmiana: ${escapeHtml(it.zmieniono)}</p>` : "";
       return `<article class="${cls}">
         <div class="when"><b>${escapeHtml(formatDatePL(it.termin))}</b>${escapeHtml(it.termin_etykieta || "")}</div>
         <div>
           <h4>${escapeHtml(it.zadanie)}</h4>
-          <p class="who">Osoba odpowiedzialna: <strong>${escapeHtml(osoba)}</strong>${rola}</p>
-          <p class="done-line">${done ? "☑ Zrobione" : "☐ Niezrobione"}</p>
           ${it.uwagi ? `<p class="note">${escapeHtml(it.uwagi)}</p>` : ""}
-          ${komentarz}
-          ${zmieniono}
           ${agg}
+          <div class="check-edit" data-id="${escapeHtml(it.id)}">
+            <label>Kto robi
+              <select data-f="osoba"><option value="">— nieprzypisane —</option>${ORGANIZATORZY.map((n) => `<option ${assignee(it) === n ? "selected" : ""}>${escapeHtml(n)}</option>`).join("")}</select>
+            </label>
+            <label class="chk"><input type="checkbox" data-f="zrobione" ${done ? "checked" : ""} /> Zrobione</label>
+            ${rola}
+          </div>
+          ${komentarz}
+          <div class="check-comment" data-id="${escapeHtml(it.id)}">
+            <textarea data-f="komentarz" rows="2" placeholder="Komentarz: polecenie dla osoby, która to robi, albo wnioski i decyzje po wykonaniu"></textarea>
+            <button type="button" class="btn btn-gold" data-save="${escapeHtml(it.id)}">Zapisz</button>
+          </div>
+          ${zmieniono}${it.lokalnie ? `<p class="changed">Zmiana zapisana tylko w tej przeglądarce.</p>` : ""}
         </div>
         <div class="side">${badge(it, urg)}${soon}</div>
       </article>`;
     }).join("");
     return `<div class="check-group"><h3>${escapeHtml(kat)}</h3>${cards}</div>`;
   }).join("") || `<p class="muted">Brak pozycji w tym filtrze.</p>`;
+  if (!board.dataset.bound) {
+    board.dataset.bound = "1";
+    board.addEventListener("change", (e) => {
+      const box = e.target.closest(".check-edit");
+      if (!box) return;
+      const f = e.target.dataset.f;
+      saveItem(box.dataset.id, f === "osoba" ? { osoba: e.target.value } : { zrobione: e.target.checked });
+    });
+    board.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-save]");
+      if (!b) return;
+      const ta = b.parentElement.querySelector("textarea");
+      const txt = (ta.value || "").trim();
+      if (!txt) { ta.focus(); return; }
+      saveItem(b.dataset.save, { komentarz: txt });
+    });
+  }
+}
+
+async function saveItem(id, patch) {
+  const cred = await askCred(false);
+  if (!cred) { renderChecklist(); return; }
+  if (hasApp()) {
+    const res = await post("checklista", { id, ...patch });
+    if (res && res.ok && res.tabele && res.tabele.Checklista) {
+      const rows = res.tabele.Checklista.map((r) => r.map((c) => String(c)));
+      cachedItems = parseChecklistSheet(rows);
+    } else {
+      alert("Nie udało się zapisać w arkuszu: " + ((res && (res.message || res.error)) || "błąd") + ". Spróbuj ponownie.");
+    }
+  } else {
+    const loc = loadLocal();
+    const l = loc[id] || {};
+    if (patch.osoba !== undefined) l.osoba = patch.osoba;
+    if (patch.zrobione !== undefined) l.zrobione = patch.zrobione;
+    if (patch.komentarz) (l.komentarze = l.komentarze || []).push(`${nowStamp()} · ${cred.autor}: ${patch.komentarz}`);
+    l.zmieniono = `${nowStamp()} (${cred.autor})`;
+    loc[id] = l;
+    saveLocal(loc);
+  }
+  renderChecklist();
 }

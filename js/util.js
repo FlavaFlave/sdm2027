@@ -9,7 +9,9 @@ export const N_GROUP = 90;
 export const FUJI_PER = 1500;
 export const CHOICE_IDS = ["petla", "noc_2", "sen", "nagasaki", "seul_stawka", "pakiet", "fuji", "sklad", "biuro", "polisa", "rezerwa",
   "hotele_zachod", "posilki", "kadra_lok", "esim", "przewoznik", "nagasaki_miasto"];
-export const SHEET_ID = "1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE";
+/** Organizatorzy (do przypisywania zadań i podpisu zmian). */
+export const ORGANIZATORZY = ["Artur", "Jakub Ś.", "Jakub Ż.", "Staszek", "Robert", "Kinga", "Dorota", "Kasia", "Judyta", "Basia"];
+export const SHEET_ID = "1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8";
 export const TAB_NAMES = ["Dni", "Miejsca", "Transport", "Noclegi", "Decyzje", "Koszty", "Wpłaty", "Checklista"];
 
 export const $ = (sel, root = document) => root.querySelector(sel);
@@ -38,10 +40,18 @@ export function formatZlDelta(n) {
   return sign + Math.abs(v).toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł";
 }
 
+/** Liczba z arkusza: „4 900,50”, „4,900.50”, „4.900,50”, „712,5”, „12%” → number. */
 export function num(v) {
   if (v === "" || v == null) return null;
   if (typeof v === "number") return v;
-  const s = String(v).replace(/\s/g, "").replace(",", ".");
+  let s = String(v).replace(/[\s\u00a0zł%]/g, "");
+  const lc = s.lastIndexOf(","), ld = s.lastIndexOf(".");
+  if (lc >= 0 && ld >= 0) {
+    // separator dziesiętny to ten, który jest później
+    s = lc > ld ? s.replace(/\./g, "").replace(",", ".") : s.replace(/,/g, "");
+  } else if (lc >= 0) {
+    s = /^-?\d{1,3}(,\d{3})+$/.test(s) ? s.replace(/,/g, "") : s.replace(",", ".");
+  }
   const n = parseFloat(s);
   return Number.isFinite(n) ? n : null;
 }

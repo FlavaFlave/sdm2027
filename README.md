@@ -86,14 +86,14 @@ Hasło URL: `#tab=budzet` albo `#tab=checklista&petla=E4`. Nie zmieniaj wartośc
 
 HTML w `index.html` odpowiada za kolejność bloków i teksty stałe (hero, śródtytuły). Nie wkładaj tu dużych reguł CSS — trzymaj je w `css/style.css`.
 
-Libraries loaded from a CDN (leave them unless you self-host): Cormorant Garamond + Source Sans 3, Leaflet, Chart.js.
+Libraries loaded from a CDN (leave them unless you self-host): Cormorant Garamond + Lato, Leaflet, Chart.js.
 
 ---
 
 ## Przepływ danych z arkusza / Data flow from the Sheet
 
 1. Przy starcie `js/app.js` próbuje wczytać opublikowany CSV arkusza Google  
-   [ŚDM 2027 – dane strony organizatorów](https://docs.google.com/spreadsheets/d/1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE/edit)  
+   [ŚDM 2027 – dane strony organizatorów](https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit)  
    (karty: Dni, Miejsca, Transport, Noclegi, Decyzje, Koszty, **Wpłaty**, **Checklista**).
 2. Jeśli arkusz nie jest opublikowany do sieci (domyślny stan — **nie publikować strony ani arkusza bez decyzji organizatorów**), używany jest `data/data.json`.
 3. Model kosztów i warianty trasy są w JSON-ie; stawki z karty Koszty i reguły z karty Decyzje nadpisują je po publikacji CSV.
@@ -205,7 +205,7 @@ Plik `.nojekyll` każe Pages serwować pliki tak, jak leżą. `js/` to ES module
 - Model etapu 2: pozycje sumujące się do 16 169,87 zł/os. w wariancie bazowym (z rezerwą).
 - Checklista: terminy z planu v3 (30.11, 15.12, 31.01 itd.), paszporty do II 2028, zgody (ok. 29 niepełnoletnich wg wieku z listy, bez dat urodzenia — do weryfikacji), K-ETA, luki w polisie (terror, rezygnacja), KBO 15.05 / LOC 31.05.2027, faks do Akity 018-868-4728.
 
-Arkusz: <https://docs.google.com/spreadsheets/d/1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE/edit>
+Arkusz: <https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit>
 
 ---
 
@@ -231,3 +231,16 @@ Arkusz: <https://docs.google.com/spreadsheets/d/1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5G
 - 8.08 Msza z papieżem Leonem XIV i 9.08 spotkanie z Kiko Argüello: miejsce na zdjęcie. Wklej `kafelek.zdjecie_url` i `kafelek.zdjecie_zrodlo` — zdjęcie, do którego macie prawa.
 
 **Arkusz:** gdy arkusz zostanie opublikowany jako CSV, pola, których w nim nie ma (kierowcy, posiłki, bufory, kafelki, nowe decyzje), są dokładane z `data.json`. W karcie Wpłaty można dodać kolumnę „Kwota zamrożona (zł/os.)”.
+
+---
+
+## Etap 7 (16.11.2026) — co się zmieniło
+
+- **Arkusz** kosztów, rat, wpłat zbiorczych i checklisty: kopia w folderze Jakuba na Dysku (`meta.spreadsheet_folder`), ID w `js/util.js` (`SHEET_ID`). **Podział ról:** teksty (program dni, opisy miejsc, decyzji) są w `data.json`; liczby i stany (kwoty kosztów, raty, wpłaty, checklista, „Wybrana” przy decyzjach) — w arkuszu.
+- **Zapis ze strony** (`apps-script/Zapis.gs`, instrukcja `INSTRUKCJA-zapis.md`): odczyt arkusza bez publicznego udostępniania, checklista (osoba, zrobione, komentarze z podpisem), „Zatwierdź jako obowiązujący plan” (kolumna Wybrana + karta Historia decyzji). Adres w `meta.zapisAppUrl`. Bez niego zapis checklisty działa tylko w tej przeglądarce.
+- **Mapy**: kafelki bez napisów lokalnym pismem, etykiety miast po angielsku, zakładka Japonia/Korea przybliża do kraju, mapa nie zasłania menu.
+- **Decyzje** opisane dla osoby, która nie zna Japonii i Korei: o co decydujemy, co trzeba wiedzieć, tabela możliwości z różnicą ceny, od czego zależy, na co wpływa, rekomendacja i dlaczego (`decyzje[].tlo` i pozostałe pola).
+- **Przyciski wariantów** nazwane według tego, co robią; pasek „ile zmian względem planu bazowego”.
+- **Dni klikalne** (oś czasu w Przeglądzie i karty dni): okno z sensem dnia, programem, posiłkami, kontrolą harmonogramu i opisem każdego miejsca (`miejsca[].szczegoly`: co, historia, dlaczego, robimy, praktyczne; `dni[].sens`). Link do dnia: `#tab=przeglad&dzien=2027-08-14`.
+- Teksty bez skrótów roboczych (E1–E4 → warianty 1–4, „Fable”, „v3”, KBO/LOC rozwinięte), wyjaśniony odcinek autostrady obok Fukushimy.
+- Liczby z arkusza czytane poprawnie także w formacie „4,900.00”.
