@@ -7,7 +7,9 @@ import { $, $$, escapeHtml, formatZl, formatZlDelta, parseCsv, rowsToObjects, nu
 import {
   groupDecisions, defaultChoices, parseHash, writeHash, computeCost, baselineCost,
   activeEffects, applyDays, scenarioLogs, normalizeChoices, parseWplatySheet, parseChecklistSheet,
+  disabledGroups, defaultPeople, priceCurve,
 } from "./cost.js";
+import { validateDays, dayChecksHtml, mealsHtml, renderFlags } from "./checks.js";
 import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace } from "./maps.js";
 import { renderBudget, resizeBudgetChart } from "./budget.js";
 import { renderChecklist } from "./checklist.js";
@@ -154,6 +156,19 @@ async function loadData() {
     const parsed = fromSheetTables(tables);
     const fallback = await (await fetch("./data/data.json")).json();
     const miejsca = parsed.miejsca.length ? mergePlaces(fallback.miejsca, parsed.miejsca) : fallback.miejsca;
+    // Pola, których arkusz nie ma (kierowcy, posiłki, bufory, kafelki), bierzemy z data.json po dacie.
+    if (parsed.dni.length) {
+      const byDate = Object.fromEntries((fallback.dni || []).map((x) => [x.data, x]));
+      parsed.dni = parsed.dni.map((x) => {
+        const f = byDate[x.data] || {};
+        return { kierowcy: f.kierowcy, bufory: f.bufory, posilki: f.posilki, kafelek: f.kafelek, ...x };
+      });
+    } else parsed.dni = fallback.dni;
+    // Decyzje dodane w data.json, których arkusz jeszcze nie ma (np. dźwignie kosztów), dokładamy na końcu.
+    if (parsed.decyzje.length) {
+      const have = new Set(parsed.decyzje.map((x) => x.id + "|" + x.opcja_id));
+      (fallback.decyzje || []).forEach((x) => { if (!have.has(x.id + "|" + x.opcja_id)) parsed.decyzje.push(x); });
+    } else parsed.decyzje = fallback.decyzje;
     const model = { ...(fallback.model || {}), pozycje: parsed.pozycje.length ? parsed.pozycje : (fallback.model || {}).pozycje };
     const wplaty = { ...(fallback.wplaty || {}) };
     if (parsed.wplatyRaty && parsed.wplatyRaty.length) wplaty.raty = parsed.wplatyRaty;
@@ -185,31 +200,65 @@ function photoForDay(day, places) {
   }
   return null;
 }
-function dayCard(day, places, changed) {
+const TENTS_SVG = `<svg class="tile-art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <defs><linearGradient id="nightsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070d24"/><stop offset="0.7" stop-color="#1d2b55"/><stop offset="1" stop-color="#2b3561"/></linearGradient>
+  <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#f2c46b" stop-opacity="0.6"/><stop offset="1" stop-color="#f2c46b" stop-opacity="0"/></radialGradient></defs>
+  <rect width="300" height="400" fill="url(#nightsky)"/>
+  <g fill="#fff">${Array.from({ length: 60 }, (_, i) => `<circle cx="${(i * 71) % 300}" cy="${(i * 43) % 230}" r="${(i % 3) * 0.5 + 0.6}" opacity="${0.35 + (i % 5) / 10}"/>`).join("")}</g>
+  <circle cx="235" cy="70" r="18" fill="#f4ecd2"/><circle cx="243" cy="64" r="17" fill="#0c1430"/>
+  <path d="M0 262 Q150 245 300 262 L300 400 L0 400 Z" fill="#0d1a2c"/>
+  <ellipse cx="150" cy="330" rx="190" ry="80" fill="url(#glow)"/>
+  ${[[8,232,70],[92,226,82],[190,236,74],[255,244,60],[-20,282,90],[70,290,100],[175,286,96],[262,300,80]].map(([x, y, w]) =>
+    `<path d="M${x} ${y + w * 0.7} L${x + w / 2} ${y} L${x + w} ${y + w * 0.7} Z" fill="#c6a15b"/><path d="M${x + w / 2} ${y} L${x + w * 0.4} ${y + w * 0.7} L${x + w * 0.6} ${y + w * 0.7} Z" fill="#3a2a10" opacity="0.9"/><circle cx="${x + w / 2}" cy="${y + w * 0.55}" r="3" fill="#ffe7a8" opacity="0.8"/>`).join("")}
+</svg>`;
+
+function tileHtml(day, photo) {
+  const k = day.kafelek;
+  if (k && k.motyw === "namioty") {
+    return { cls: "day-photo is-art", inner: TENTS_SVG, style: "", cap: `<p class="photo-cap">${escapeHtml(k.podpis || "")}</p>`, title: k.tytul };
+  }
+  if (k && k.motyw === "osoba") {
+    if (k.zdjecie_url) {
+      return { cls: "day-photo", inner: "", style: `style="background-image:url('${String(k.zdjecie_url).replace(/'/g, "%27")}')"`,
+        cap: `<p class="photo-cap">${escapeHtml(k.osoba || "")}. ${escapeHtml(k.zdjecie_zrodlo || "")}</p>`, title: k.tytul };
+    }
+    return { cls: "day-photo is-person", inner: `<div class="person-slot"><span class="person-name">${escapeHtml(k.osoba || "")}</span><span class="person-sub">${escapeHtml(k.tytul || "")}</span></div>`,
+      style: "", cap: `<p class="photo-cap is-todo">${escapeHtml(k.podpis || "")}</p>`, title: k.tytul };
+  }
+  const style = photo ? `style="background-image:url('${photo.zdjecie_url.replace(/'/g, "%27")}')"` : "";
+  const cap = photo ? `<p class="photo-cap">${escapeHtml(photo.nazwa)}. ${escapeHtml(photo.zdjecie_zrodlo)}</p>` : "";
+  return { cls: "day-photo", inner: "", style, cap, title: null };
+}
+
+function dayCard(day, places, changed, checks) {
   const photo = photoForDay(day, places);
   const chips = [];
   if (day.transport) chips.push(day.transport);
   if (day.km) chips.push(day.km.includes("km") ? day.km : `${day.km} km`);
   if (day.czas_h) chips.push(/h|ok\./i.test(day.czas_h) ? day.czas_h : `${day.czas_h} h`);
   if (day.nocleg) chips.push(`Nocleg: ${day.nocleg}`);
-  const style = photo ? `style="background-image:url('${photo.zdjecie_url.replace(/'/g, "%27")}')"` : "";
-  const cap = photo ? `<p class="photo-cap">${escapeHtml(photo.nazwa)}. ${escapeHtml(photo.zdjecie_zrodlo)}</p>` : "";
+  const t = tileHtml(day, photo);
   const notes = day.uwagi ? `<p class="day-notes">${escapeHtml(day.uwagi)}</p>` : "";
   const dateShort = (day.data_pl || "").replace(".2027", "");
   const cls = changed ? "day-card is-changed" : "day-card";
   return `<article class="${cls}" data-day="${escapeHtml(day.data || "")}">
-    <div class="day-photo" ${style}>
+    <div class="${t.cls}" ${t.style}>
+      ${t.inner}
       <div class="date-badge"><b>${escapeHtml(dateShort)}</b><span>${escapeHtml(day.dzien || "")}</span></div>
     </div>
     <div class="day-body">
+      ${t.title ? `<p class="tile-kicker">${escapeHtml(t.title)}</p>` : ""}
       <h3>${escapeHtml(day.miejsce)}</h3>
       <div class="day-meta">${chips.map((c) => `<span class="chip">${escapeHtml(c)}</span>`).join("")}</div>
       <p>${escapeHtml(day.program || "")}</p>
-      ${notes}${cap}
+      ${mealsHtml(day)}
+      ${dayChecksHtml(checks && checks.byDay[day.data])}
+      ${notes}${t.cap}
     </div>
   </article>`;
 }
-function fujiModuleCard(places, n) {
+function fujiModuleCard(places, n, per) {
+  const FUJI_PER = per;
   const photo = places.find((p) => p.id === "fuji" && p.zdjecie_url);
   const style = photo ? `style="background-image:url('${photo.zdjecie_url.replace(/'/g, "%27")}')"` : "";
   const cap = photo ? `<p class="photo-cap">${escapeHtml(photo.nazwa)}. ${escapeHtml(photo.zdjecie_zrodlo)}</p>` : "";
@@ -235,26 +284,36 @@ function renderTimeline(days) {
     return `<li class="${g}"><div class="when">${escapeHtml((d.data_pl || "").replace(".2027", ""))} · ${escapeHtml(d.dzien || "")}</div><div class="where">${escapeHtml(d.miejsce)}</div><div class="short">${escapeHtml(short)}${(d.program || "").length > 140 ? "…" : ""}</div></li>`;
   }).join("");
 }
-function renderDays(days, places, changed, fujiN) {
+function renderDays(days, places, changed, fujiN, checks, fujiPer) {
   const jp = days.filter((d) => isJapanDay(d) || /^1\.08|^2\.08|^3\.08|^4\.08|^1[2-9]\.08|^20\.08|^21\.08/.test(d.data_pl || ""));
   const kr = days.filter((d) => isKoreaDay(d) || /^5\.08|^6\.08|^7\.08|^8\.08|^9\.08|^10\.08|^11\.08/.test(d.data_pl || ""));
   const parts = [];
   jp.forEach((d) => {
-    if (fujiN > 0 && d.data === "2027-08-17") parts.push(fujiModuleCard(places, fujiN));
-    parts.push(dayCard(d, places, changed.has(d.data)));
+    if (fujiN > 0 && d.data === "2027-08-17") parts.push(fujiModuleCard(places, fujiN, fujiPer));
+    parts.push(dayCard(d, places, changed.has(d.data), checks));
   });
   $("#days-jp").innerHTML = parts.join("");
-  $("#days-kr").innerHTML = kr.map((d) => dayCard(d, places, changed.has(d.data))).join("");
+  $("#days-kr").innerHTML = kr.map((d) => dayCard(d, places, changed.has(d.data), checks)).join("");
 }
 
-function warnings(choices) {
+function warnings(choices, cost) {
   const w = [];
+  const off = disabledGroups(choices);
+  Object.values(off).forEach((x) => w.push(x));
+  if (choices.sen === "tokio") w.push("„Lepszy sen” wraca do pociągu Hayabusa — to jest sprzeczne z DECYZJĄ „autokary zamiast pociągów”.");
+  if (choices.nagasaki_miasto === "tramwaj") w.push("Tramwaj 14–15.08 dotyka DECYZJI „autokary zamiast pociągów” — tylko jeśli DECYZJA dotyczyła przejazdów między bazami.");
+  if (cost && cost.fleet) {
+    if (cost.fleet.kr && cost.fleet.kr.small && cost.fleet.kr.big >= 2) w.push(`Korea: przy ${cost.n} os. dwa autokary 45-miejscowe nie wystarczają — model dodaje mały bus na 4.08, 10.08 i 11.08.`);
+    if (cost.fleet.jp && cost.fleet.jp.overflow) w.push("Japonia: brak zestawu autokarów mieszczącego ludzi i walizki — zmień decyzję o bagażu.");
+  }
+  if (cost && cost.lost) w.push(`Rezygnacje: ${cost.dropouts} os. względem ${cost.n + cost.dropouts}; przepada ok. ${cost.lost} biletów (${formatZl(cost.lostValue, 0)}). Pokrywa: ${cost.lossPolicy === "grupa" ? "grupa (wliczone w cenę)" : "osoby rezygnujące / ich polisa (poza ceną)"}.`);
+  if (cost && cost.gratis) w.push(`${cost.gratis} miejsc bezpłatnych: ich koszt płacą pozostali (${cost.payers} płacących).`);
   if (choices.petla === "E3") w.push("E3 jest odradzany: 90 osób w pociągach Komachi + Yamabiko i sześć ogniw 4.08. Przy braku miejsc w jednym składzie plan pada.");
   if (choices.petla === "E2") w.push("E2 wymaga 90 łóżek w Akicie w noc parady Kantō (najtrudniejsza noc w roku). Rezerwa: Ōmagari albo Kakunodate. Trybuny do 28.02.2027.");
   if (choices.petla === "E4") w.push("E4 tylko wtedy, gdy siostry w Akicie odmówią (albo Msza będzie niemożliwa). Nocleg 2.08 jest wtedy w Mito, a 3.08 w Sendai — bez markera Akity.");
   if (choices.petla === "E1") w.push("E1 pada, jeśli siostry wyznaczą Mszę po 18:00 — wtedy wracamy do E2 albo E4.");
-  if (choices.fuji === "tak") w.push("Moduł Fuji jest tylko dla pełnoletnich. Koszt 1 000 zł liczy się na wchodzącego, nie na całą dziewięćdziesiątkę.");
-  if (choices.sklad === "trzeci") w.push("Trzeci autokar podnosi koszt wszystkich odcinków autokarowych o 50%.");
+  if (choices.fuji === "tak") w.push(`Moduł Fuji jest tylko dla pełnoletnich. Koszt ${formatZl(cost ? cost.fujiPer : FUJI_PER, 0)} liczy się na wchodzącego [szacunek], nie na całą grupę.`);
+  if (choices.sklad === "trzeci") w.push("Trzeci autokar w Japonii: koszt autokarów w Japonii ×1,5 względem pary. Tańsza jest ciężarówka bagażowa.");
   if (choices.pakiet === "A1") w.push("Dopłata 150 USD na pakiecie A1+ nie jest tym samym co dopłata netto. Przy drogim Seulu A1+ może wyjść taniej, bo odpada własny hotel 4–6.08.");
   return w;
 }
@@ -300,26 +359,28 @@ function renderCostTable(cost, base) {
     const dlt = baseLine ? l.perOs - baseLine.perOs : 0;
     const dltCell = Math.abs(dlt) < 0.005 ? "" : `<div class="${dlt > 0 ? "diff-up" : "diff-down"}">${formatZlDelta(dlt)}</div>`;
     return `<tr>
-      <td>${escapeHtml(l.pozycja)}<div class="src">${escapeHtml(l.zrodlo || "")}${l.status ? " · " + escapeHtml(l.status) : ""}</div></td>
+      <td>${escapeHtml(l.pozycja)}<div class="src">${escapeHtml(l.zrodlo || "")}${l.status ? " · " + escapeHtml(l.status) : ""}${l.factor && l.factor !== 1 ? ` · flota ×${l.factor.toLocaleString("pl-PL")}` : ""}${l.rezerwa ? "" : " · bez rezerwy"}</div></td>
       <td>${escapeHtml(l.grupa)}</td>
       <td class="num">${formatZl(l.perOs)}${dltCell}</td>
       <td class="num">${formatZl(l.group)}</td>
     </tr>`;
   }).join("");
-  $("#cost-table").innerHTML = `<thead><tr><th>Pozycja i źródło / założenie</th><th>Grupa</th><th>Zł / os.</th><th>Zł / 90 os.</th></tr></thead>
+  $("#cost-table").innerHTML = `<thead><tr><th>Pozycja i źródło / założenie</th><th>Grupa</th><th>Zł / płacącego</th><th>Zł / grupa (${cost.n} os.)</th></tr></thead>
     <tbody>${body}</tbody>
     <tfoot>
-      <tr><td>Koszty bezpośrednie</td><td></td><td class="num">${formatZl(cost.direct)}</td><td class="num">${formatZl(cost.direct * N_GROUP)}</td></tr>
-      <tr><td>Rezerwa ${cost.reservePct}%</td><td>Rezerwa</td><td class="num">${formatZl(cost.reserve)}</td><td class="num">${formatZl(cost.reserve * N_GROUP)}</td></tr>
-      <tr><td>Razem program główny</td><td></td><td class="num">${formatZl(cost.total)}</td><td class="num">${formatZl(cost.group)}</td></tr>
-      ${cost.fujiN ? `<tr><td>Moduł Fuji (${cost.fujiN} os. × ${formatZl(FUJI_PER, 0)})</td><td>Program i wstępy</td><td class="num">+ ${formatZl(FUJI_PER, 0)} / wchodzący</td><td class="num">${formatZl(cost.fujiAdd)}</td></tr>
+      <tr><td>Koszty bezpośrednie</td><td></td><td class="num">${formatZl(cost.direct)}</td><td class="num">${formatZl(cost.direct * cost.payers)}</td></tr>
+      <tr><td>Rezerwa ${cost.reservePct}% (tylko od pozycji nieopłaconych i walutowych)</td><td>Rezerwa</td><td class="num">${formatZl(cost.reserve)}</td><td class="num">${formatZl(cost.reserve * cost.payers)}</td></tr>
+      <tr><td>Razem program główny (${cost.payers} płacących)</td><td></td><td class="num">${formatZl(cost.total)}</td><td class="num">${formatZl(cost.group)}</td></tr>
+      ${cost.fujiN ? `<tr><td>Moduł Fuji (${cost.fujiN} os. × ${formatZl(cost.fujiPer, 0)})</td><td>Program i wstępy</td><td class="num">+ ${formatZl(cost.fujiPer, 0)} / wchodzący</td><td class="num">${formatZl(cost.fujiAdd)}</td></tr>
       <tr><td>Razem z modułem Fuji</td><td></td><td class="num"></td><td class="num">${formatZl(cost.grandGroup)}</td></tr>` : ""}
     </tfoot>`;
 }
 
 function renderCostBoard(cost, base) {
-  $("#cost-value").textContent = formatZl(cost.total);
-  $("#cost-group").textContent = "na grupę (90 os.): " + formatZl(cost.group, 2);
+  $("#cost-value").textContent = formatZl(cost.total, 0);
+  $("#cost-group").textContent = `na grupę (${cost.n} os., ${cost.payers} płacących): ` + formatZl(cost.group, 0);
+  const lbl = $("#cost-board .cost-label");
+  if (lbl) lbl.textContent = cost.gratis ? "Na płacącego (program główny)" : "Na osobę (program główny)";
   const delta = cost.total - base.total;
   const el = $("#cost-delta");
   el.classList.remove("is-up", "is-down", "is-same");
@@ -339,14 +400,18 @@ function renderCostBoard(cost, base) {
   const fujiEl = $("#cost-fuji");
   if (cost.fujiN > 0) {
     fujiEl.hidden = false;
-    fujiEl.innerHTML = `Moduł Fuji: <strong>${cost.fujiN} os. × ${formatZl(FUJI_PER, 0)} = ${formatZl(cost.fujiAdd, 0)}</strong>. Grupa z modułem: <strong>${formatZl(cost.grandGroup, 0)}</strong>. Nie wchodzi do ceny na osobę programu głównego.`;
+    fujiEl.innerHTML = `Moduł Fuji: <strong>${cost.fujiN} os. × ${formatZl(cost.fujiPer, 0)} = ${formatZl(cost.fujiAdd, 0)}</strong>. Grupa z modułem: <strong>${formatZl(cost.grandGroup, 0)}</strong>. Nie wchodzi do ceny na osobę programu głównego.`;
   } else {
     fujiEl.hidden = true;
     fujiEl.textContent = "";
   }
-  $("#cost-note").textContent = `Baza ${formatZl(base.total)} zakłada E1, Iwaki, B1+, standardowe hotele w Nagasaki (5 × 360 zł), Seul 290 zł/noc, 90 osób, bez Fuji, Generali Elastyczny 1, rezerwę ${base.reservePct}% i licencjonowane biuro bez dodatkowej marży. Fable v3 podawał ok. 15 200 zł bez wydzielonej rezerwy — to zbliżone do samych kosztów bezpośrednich (${formatZl(base.direct)}).`;
+  $("#cost-note").textContent = `Baza ${formatZl(base.total, 0)} zakłada E1, Iwaki, B1+, standardowe hotele w Nagasaki (5 × 360 zł), Seul 290 zł/noc, ${base.n} osób (wszyscy płacą), bez Fuji, Generali Elastyczny 1, rezerwę ${base.reservePct}% od pozycji nieopłaconych i walutowych oraz licencjonowane biuro bez marży. Kwoty to szacunki — dokładność do złotówki jest pozorna.`;
   const hero = $("#hero-cost");
-  if (hero) hero.textContent = formatZl(cost.total);
+  if (hero) hero.textContent = formatZl(cost.total, 0);
+  const heroN = $("#hero-n");
+  if (heroN) heroN.textContent = `${cost.n} osób`;
+  const heroNs = $("#hero-n-sub");
+  if (heroNs) heroNs.textContent = `pułap 90 · Japonia: ${cost.fleet.jp ? cost.fleet.jp.label : "—"}`;
 }
 
 function renderImpact(groups, choices, logs) {
@@ -360,8 +425,8 @@ function renderImpact(groups, choices, logs) {
     : "";
   $("#impact-box").innerHTML = `<h3>Co się zmienia w trasie i budżecie</h3><ul>${items}</ul>${extra}`;
 }
-function renderWarnings(choices) {
-  const w = warnings(choices);
+function renderWarnings(choices, cost) {
+  const w = warnings(choices, cost);
   const box = $("#warn-box");
   if (!box) return;
   if (!w.length) { box.hidden = true; box.innerHTML = ""; return; }
@@ -382,13 +447,18 @@ function loadSaved() {
 function storeSaved(arr) {
   try { localStorage.setItem(SCENARIO_KEY, JSON.stringify(arr.slice(0, 3))); } catch (_) {}
 }
-function scenarioLabel(choices, fujiOsob) {
+function scenarioLabel(choices, fujiOsob, people) {
   const bits = [choices.petla || "E1"];
+  if (people && people.n !== 90) bits.push(people.n + " os.");
+  if (people && people.gratis) bits.push(people.gratis + " gratis");
+  const lev = ["hotele_zachod", "posilki", "kadra_lok", "esim", "przewoznik", "nagasaki_miasto"].filter((k) => choices[k] && !["standard", "pelny", "jeden", "autokar"].includes(choices[k]));
+  if (lev.length) bits.push(lev.length + " dźwignie kosztu");
   if (choices.nagasaki === "tani") bits.push("tani Nagasaki");
   else if (choices.nagasaki === "drogi") bits.push("drogi Nagasaki");
   if (choices.pakiet === "A1") bits.push("A1+");
   if (choices.fuji === "tak") bits.push("Fuji ×" + fujiOsob);
   if (choices.sklad === "trzeci") bits.push("3. autokar");
+  if (choices.sklad === "bagazowka") bits.push("ciężarówka bagaż");
   if (choices.polisa === "e2r") bits.push("rezygnacja");
   if (choices.biuro === "marza") bits.push("marża 8%");
   if (choices.rezerwa && choices.rezerwa !== "6") bits.push("rezerwa " + choices.rezerwa + "%");
@@ -413,7 +483,9 @@ function renderCompare(ctx) {
   const keys = [
     ["petla", "Pętla wschodnia"], ["noc_2", "Nocleg 2.08"], ["sen", "Sen przed ŚDM"],
     ["nagasaki", "Nagasaki"], ["seul_stawka", "Seul, stawka"], ["pakiet", "Pakiet"],
-    ["fuji", "Fuji"], ["sklad", "Skład"], ["biuro", "Biuro"], ["polisa", "Ubezpieczenie"], ["rezerwa", "Rezerwa"],
+    ["fuji", "Fuji"], ["sklad", "Bagaż"], ["biuro", "Biuro"], ["polisa", "Ubezpieczenie"], ["rezerwa", "Rezerwa"],
+    ["hotele_zachod", "Hotele zachód"], ["posilki", "Posiłki"], ["kadra_lok", "Przewodnik"], ["esim", "eSIM"],
+    ["przewoznik", "Przewoźnik zachód"], ["nagasaki_miasto", "Nagasaki 14–15.08"],
   ];
   const head = `<tr><th>Porównanie</th>${saved.map((s) => `<th class="sc">${escapeHtml(s.nazwa)}</th>`).join("")}</tr>`;
   const choiceRows = keys.map(([id, label]) => {
@@ -426,14 +498,15 @@ function renderCompare(ctx) {
     }).join("");
     return `<tr><th>${escapeHtml(label)}</th>${cells}</tr>`;
   }).join("");
+  const peopleRow = `<tr><th>Osoby / gratis</th>${saved.map((s) => `<td>${escapeHtml(String((s.people || {}).n ?? 90))} / ${escapeHtml(String((s.people || {}).gratis ?? 0))}</td>`).join("")}</tr>`;
   const money = [
-    ["Na osobę", (s) => formatZl(s.total)],
+    ["Na płacącego", (s) => formatZl(s.total)],
     ["Delta vs baza", (s) => formatZlDelta((s.total || 0) - ctx.base.total)],
-    ["Grupa (90 os.)", (s) => formatZl(s.group)],
+    ["Grupa", (s) => formatZl(s.group)],
     ["Fuji (dodatek)", (s) => s.fujiAdd ? formatZl(s.fujiAdd, 0) : "—"],
     ["Grupa z Fuji", (s) => s.fujiAdd ? formatZl(s.grandGroup, 0) : formatZl(s.group)],
   ].map(([label, fn]) => `<tr><th>${label}</th>${saved.map((s) => `<td class="num">${fn(s)}</td>`).join("")}</tr>`).join("");
-  $("#compare-table").innerHTML = `<thead>${head}</thead><tbody>${choiceRows}${money}</tbody>`;
+  $("#compare-table").innerHTML = `<thead>${head}</thead><tbody>${peopleRow}${choiceRows}${money}</tbody>`;
 }
 
 function renderLogistyka(data) {
@@ -505,6 +578,7 @@ function optionDetailHtml(opt) {
 
 function renderDecisionForm(groups, choices, fujiOsob, onChange) {
   const list = $("#decision-list");
+  const off = disabledGroups(choices);
   list.innerHTML = groups.map((g) => {
     const current = g.opcje.find((o) => o.opcja_id === choices[g.id]) || g.opcje[0];
     const opts = g.opcje.map((o) => {
@@ -518,14 +592,16 @@ function renderDecisionForm(groups, choices, fujiOsob, onChange) {
         </div>`
       : "";
     const recTag = g.opcje.some((o) => o.rekomendacja) ? `<span class="rec-tag">jest rekomendacja</span>` : "";
-    return `<article class="decision-card" data-id="${escapeHtml(g.id)}">
-      <h3>${escapeHtml(g.nazwa)}${recTag}</h3>
+    const offNote = off[g.id] ? `<p class="dec-off">${escapeHtml(off[g.id])}</p>` : "";
+    return `<article class="decision-card${off[g.id] ? " is-off" : ""}${g.id && /^(hotele_zachod|posilki|kadra_lok|esim|przewoznik|nagasaki_miasto)$/.test(g.id) ? " is-lever" : ""}" data-id="${escapeHtml(g.id)}">
+      <h3>${escapeHtml(g.nazwa)}${recTag}${/^(hotele_zachod|posilki|kadra_lok|esim|przewoznik|nagasaki_miasto)$/.test(g.id) ? `<span class="lever-tag">dźwignia kosztu</span>` : ""}</h3>
+      ${offNote}
       <div class="termin">Termin decyzji: ${escapeHtml(g.termin || "—")}</div>
       ${g.kontekst ? `<p class="dec-kicker">W jakiej sytuacji jesteśmy</p><p class="dec-body">${escapeHtml(g.kontekst)}</p>` : ""}
       ${g.opis ? `<p class="dec-kicker">Czego dotyczy ta decyzja</p><p class="dec-body">${escapeHtml(g.opis)}</p>` : ""}
       ${g.ograniczenia ? `<p class="dec-kicker">Co na nią wpływa (terminy, ceny, ograniczenia)</p><p class="dec-body">${escapeHtml(g.ograniczenia)}</p>` : ""}
       <label class="dec-kicker" for="sel-${escapeHtml(g.id)}">Wybierz opcję (podgląd)</label>
-      <select id="sel-${escapeHtml(g.id)}" aria-label="${escapeHtml(g.nazwa)}">${opts}</select>
+      <select id="sel-${escapeHtml(g.id)}" aria-label="${escapeHtml(g.nazwa)}" ${off[g.id] ? "disabled" : ""}>${opts}</select>
       ${fujiExtra}
       <div class="option-detail" data-role="option-detail">${optionDetailHtml(current)}</div>
       ${g.wplyw_inne ? `<p class="dec-kicker">Wpływ na trasę, noclegi, transport, koszt i inne decyzje</p><p class="dec-body">${escapeHtml(g.wplyw_inne)}</p>` : ""}
@@ -558,6 +634,113 @@ function renderDecisionForm(groups, choices, fujiOsob, onChange) {
   list._groups = groups;
 }
 
+function renderPeopleBox(people, cost, onPeople) {
+  const el = $("#people-box");
+  if (!el) return;
+  if (!el.dataset.bound) {
+    el.dataset.bound = "1";
+    el.innerHTML = `
+      <div class="people-head">
+        <p class="kicker">Liczba osób · 90 to górny pułap</p>
+        <h3>Ile osób jedzie i kto płaci</h3>
+      </div>
+      <div class="people-grid">
+        <label>Uczestnicy (z kadrą)
+          <input type="range" id="pp-n" min="40" max="${people.max}" step="1" value="${people.n}" />
+          <output id="pp-n-out">${people.n}</output>
+        </label>
+        <label>Miejsca bezpłatne
+          <input type="number" id="pp-gratis" min="0" max="20" step="1" value="${people.gratis}" />
+          <span class="hint">Artur: 84 płacących + 6 gratis</span>
+        </label>
+        <label>W tym niepełnoletni
+          <input type="number" id="pp-minors" min="0" max="${people.max}" step="1" value="${people.minors}" />
+          <span class="hint">opiekun 1 na 5 tej samej płci</span>
+        </label>
+        <label>Bilety po rezygnacjach pokrywa
+          <select id="pp-loss">
+            <option value="rezygnujacy" ${people.lossPolicy !== "grupa" ? "selected" : ""}>osoba rezygnująca / jej polisa</option>
+            <option value="grupa" ${people.lossPolicy === "grupa" ? "selected" : ""}>cała grupa (doliczone do ceny)</option>
+          </select>
+        </label>
+      </div>
+      <div class="people-summary" id="pp-summary"></div>`;
+    el.addEventListener("input", (e) => {
+      const v = (id) => Number($("#" + id).value);
+      if (e.target.id === "pp-n") $("#pp-n-out").textContent = e.target.value;
+      onPeople({ n: v("pp-n"), gratis: v("pp-gratis") || 0, minors: v("pp-minors") || 0, lossPolicy: $("#pp-loss").value });
+    });
+    el.addEventListener("change", (e) => {
+      if (e.target.id === "pp-loss") onPeople({ lossPolicy: e.target.value });
+    });
+  } else {
+    const set = (id, val) => { const x = $("#" + id); if (x && String(x.value) !== String(val)) x.value = val; };
+    set("pp-n", people.n); set("pp-gratis", people.gratis); set("pp-minors", people.minors); set("pp-loss", people.lossPolicy);
+    const o = $("#pp-n-out"); if (o) o.textContent = people.n;
+  }
+  const sum = $("#pp-summary");
+  if (sum) {
+    const lossTxt = cost.lost
+      ? `Przy ${cost.dropouts} rezygnacjach przepada ok. ${cost.lost} biletów Qatar (${formatZl(cost.lostValue, 0)}) — ${cost.lossPolicy === "grupa" ? "wliczone w cenę" : "poza ceną, po stronie rezygnujących"}.`
+      : (cost.dropouts ? `${cost.dropouts} rezygnacji mieści się w klauzuli miejsc grupowych (ok. 10 miejsc).` : "Pełny skład.");
+    sum.innerHTML = `<span><strong>${cost.payers}</strong> płacących</span><span>koszty stałe grupy (autokary, kadra): <strong>${formatZl(cost.fixedGroup, 0)}</strong></span><span>${escapeHtml(lossTxt)}</span>`;
+  }
+}
+
+function busSplit(n, minors, veh) {
+  // Podział ludzi na pojazdy proporcjonalnie do miejsc.
+  const total = veh.reduce((a, v) => a + v.cap, 0);
+  let leftN = n, leftM = minors;
+  return veh.map((v, i) => {
+    const last = i === veh.length - 1;
+    const people = last ? leftN : Math.min(v.cap, Math.round(n * v.cap / total));
+    const m = last ? leftM : Math.min(people, Math.round(minors * v.cap / total));
+    leftN -= people; leftM -= m;
+    return { ...v, people, minors: m, guardians: Math.ceil(m / 5) };
+  });
+}
+
+function renderFleetBox(cost) {
+  const el = $("#fleet-box");
+  if (!el) return;
+  const block = (key, title, days) => {
+    const f = cost.fleet[key];
+    if (!f) return "";
+    const cfg = f.cfg;
+    const small = cfg.sredni || cfg.maly;
+    const veh = [];
+    for (let i = 0; i < f.big; i++) veh.push({ name: `${title[0]}${i + 1} · ${cfg.duzy.nazwa}`, cap: cfg.duzy.miejsca - (cfg.kadra_na_pojazd ?? 1), lug: cfg.duzy.bagaz });
+    for (let i = 0; i < f.small; i++) veh.push({ name: `${title[0]}${f.big + i + 1} · ${small.nazwa}`, cap: small.miejsca - (cfg.kadra_na_pojazd ?? 1), lug: small.bagaz });
+    const split = busSplit(cost.n, cost.minors, veh);
+    const rows = split.map((v) => `<tr><td>${escapeHtml(v.name)}</td><td class="num">${v.people} / ${v.cap}</td><td class="num">${v.minors}</td><td class="num">≥ ${v.guardians}</td><td class="num">${v.lug}</td></tr>`).join("");
+    const lugNeed = Math.round(cost.n * 0.85);
+    return `<article class="fleet-card ${f.overflow ? "is-bad" : ""}">
+      <h4>${escapeHtml(title)} <span class="muted">· ${escapeHtml(days)}</span></h4>
+      <p class="fleet-label">${escapeHtml(f.label)}${f.factor !== 1 ? ` · koszt ×${f.factor.toLocaleString("pl-PL")} względem pary dużych` : ""}</p>
+      <div class="table-scroll"><table class="sheet-table compact"><thead><tr><th>Pojazd</th><th>Osoby / miejsca</th><th>Niepełnol.</th><th>Opiekunów</th><th>Walizki (luki)</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <p class="muted">Wolnych miejsc: ${f.free} (po odliczeniu ${f.staff} miejsc kadry). Luki: ${f.luggage} dużych walizek przy potrzebie ok. ${lugNeed} (walizka z limitem 65 cm ≈ 0,85 dużej). ${escapeHtml(cfg.zrodlo || "")}</p>
+    </article>`;
+  };
+  el.innerHTML = `<h3>Autokary dla ${cost.n} osób</h3>
+    <p class="muted">Liczba i rodzaj pojazdów dobierają się same: najtańszy zestaw, który mieści uczestników, pilota/przewodnika w każdym pojeździe i walizki. Ludzie i niepełnoletni są rozłożeni proporcjonalnie do miejsc — faktyczny podział zależy od płci i rodzin.</p>
+    <div class="fleet-grid">${block("jp", "Japonia", "2–4.08 i 12–20.08")}${block("kr", "Korea", "4.08, 10.08, 11.08")}</div>`;
+}
+
+function renderCurve(model, groups, choices, people) {
+  const el = $("#curve-box");
+  if (!el) return;
+  const pts = priceCurve(model, groups, choices, people, 50, people.max);
+  const marks = pts.filter((p) => p.n % 5 === 0 || p.n === people.max || p.n === people.n);
+  const min = Math.min(...pts.map((p) => p.total)), max = Math.max(...pts.map((p) => p.total));
+  el.innerHTML = `<h3>Cena na płacącego a liczba osób</h3>
+    <p class="muted">Pozostałe decyzje bez zmian. Skoki to progi floty (np. trzeci pojazd w Korei) i przepadające bilety imienne.</p>
+    <div class="curve">${marks.map((p) => {
+      const h = max > min ? 20 + 80 * (p.total - min) / (max - min) : 50;
+      return `<div class="curve-col ${p.n === people.n ? "is-on" : ""}" title="${p.n} os.: ${formatZl(p.total, 0)} · JP: ${escapeHtml(p.jp || "")} · KR: ${escapeHtml(p.kr || "")}">
+        <span class="curve-val">${Math.round(p.total / 100) / 10} tys.</span><i style="height:${h}%"></i><span class="curve-n">${p.n}</span></div>`;
+    }).join("")}</div>`;
+}
+
 async function main() {
   const data = await loadData();
   const groups = groupDecisions(data.decyzje);
@@ -567,8 +750,13 @@ async function main() {
   let tab = "przeglad";
   let choices = { ...baseChoices };
   let fujiOsob = 10;
+  let people = defaultPeople(data.model);
 
   const hash = parseHash();
+  if (hash.n) people.n = Math.max(1, Math.min(people.max, parseInt(hash.n, 10) || people.n));
+  if (hash.gratis) people.gratis = Math.max(0, parseInt(hash.gratis, 10) || 0);
+  if (hash.nl) people.minors = Math.max(0, parseInt(hash.nl, 10) || 0);
+  if (hash.strata === "grupa") people.lossPolicy = "grupa";
   if (hash.tab) tab = hash.tab;
   CHOICE_IDS.forEach((k) => {
     if (hash[k] && groups.some((g) => g.id === k && g.opcje.some((o) => o.opcja_id === hash[k]))) {
@@ -585,6 +773,7 @@ async function main() {
         }
       });
       if (saved.fuji_osob) fujiOsob = Math.max(1, Math.min(90, Number(saved.fuji_osob) || 10));
+      if (saved.people && typeof saved.people === "object") people = { ...people, ...saved.people, max: people.max };
     } catch (_) {}
   }
 
@@ -601,7 +790,7 @@ async function main() {
   const lastMapPlaces = { all: [], jp: [], kr: [] };
   const showTab = initTabs((id, write) => {
     tab = id;
-    if (write !== false) writeHash(tab, { choices, fujiOsob });
+    if (write !== false) writeHash(tab, { choices, fujiOsob, people });
     requestAnimationFrame(() => {
       if (id === "japonia") focusMap("map-jp", lastMapPlaces.jp);
       else if (id === "korea") focusMap("map-kr", lastMapPlaces.kr);
@@ -609,12 +798,15 @@ async function main() {
     });
   });
 
+  let lastOff = "";
   function applyAll() {
     choices = normalizeChoices(choices);
+    const offKey = Object.keys(disabledGroups(choices)).sort().join(",");
+    if (offKey !== lastOff) { lastOff = offKey; renderDecisionForm(groups, choices, fujiOsob, onDecision); }
     const nocSel = document.querySelector('[data-id="noc_2"] select');
     if (nocSel && nocSel.value !== choices.noc_2) nocSel.value = choices.noc_2;
 
-    const cost = computeCost(data.model, groups, choices, fujiOsob);
+    const cost = computeCost(data.model, groups, choices, fujiOsob, people);
     const effects = activeEffects(groups, choices);
     const { days, changed } = applyDays(baseDays, data.warianty || {}, effects);
     const logs = scenarioLogs(data.warianty || {}, effects);
@@ -625,9 +817,14 @@ async function main() {
     renderCostTable(cost, base);
     renderChart(cost);
     renderImpact(groups, choices, logs);
-    renderWarnings(choices);
+    renderWarnings(choices, cost);
     renderScenarioLog(logs);
-    renderDays(days, data.miejsca, changed, cost.fujiN);
+    const checks = validateDays(days);
+    renderFlags(checks);
+    renderPeopleBox(people, cost, onPeople);
+    renderFleetBox(cost);
+    renderCurve(data.model, groups, choices, people);
+    renderDays(days, data.miejsca, changed, cost.fujiN, checks, cost.fujiPer);
     renderTimeline(days);
     renderBudget(data, cost);
 
@@ -643,10 +840,17 @@ async function main() {
     if (tab === "korea") focusMap("map-kr", krVis);
     if (tab === "przeglad") focusMap("map-all", vis);
 
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...choices, fuji_osob: fujiOsob })); } catch (_) {}
-    writeHash(tab, { choices, fujiOsob });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...choices, fuji_osob: fujiOsob, people })); } catch (_) {}
+    writeHash(tab, { choices, fujiOsob, people });
   }
 
+  const onPeople = (patch) => {
+    people = { ...people, ...patch };
+    people.n = Math.max(1, Math.min(people.max, Math.round(people.n)));
+    people.gratis = Math.max(0, Math.min(people.n - 1, Math.round(people.gratis || 0)));
+    people.minors = Math.max(0, Math.min(people.n, Math.round(people.minors || 0)));
+    applyAll();
+  };
   const onDecision = (patch) => {
     if (patch.choices) Object.assign(choices, patch.choices);
     if (patch.fujiOsob) fujiOsob = Math.max(1, Math.min(90, patch.fujiOsob));
@@ -662,7 +866,7 @@ async function main() {
   }
 
   $("#btn-copy-link")?.addEventListener("click", async () => {
-    writeHash(tab, { choices, fujiOsob });
+    writeHash(tab, { choices, fujiOsob, people });
     const url = location.href;
     const status = $("#copy-status");
     try {
@@ -678,6 +882,7 @@ async function main() {
     if (!confirm("Wyczyścić wszystkie zmiany w podglądzie i wrócić do planu bazowego? Arkusz się nie zmieni.")) return;
     choices = { ...baseChoices };
     fujiOsob = 10;
+    people = defaultPeople(data.model);
     renderDecisionForm(groups, choices, fujiOsob, onDecision);
     applyAll();
   });
@@ -692,16 +897,17 @@ async function main() {
     }
     choices = { ...baseChoices, ...(snap.choices || {}) };
     fujiOsob = snap.fujiOsob || 10;
+    if (snap.people) people = { ...people, ...snap.people };
     renderDecisionForm(groups, choices, fujiOsob, onDecision);
     applyAll();
   });
   $("#btn-save-scenario")?.addEventListener("click", () => {
-    const cost = computeCost(data.model, groups, choices, fujiOsob);
-    const suggested = scenarioLabel(choices, fujiOsob);
+    const cost = computeCost(data.model, groups, choices, fujiOsob, people);
+    const suggested = scenarioLabel(choices, fujiOsob, people);
     const nazwa = (prompt("Nazwa wariantu roboczego (zapis tylko w tej przeglądarce):", suggested) || "").trim() || suggested;
     const saved = loadSaved();
     if (saved.length >= 3) saved.shift();
-    const item = { nazwa, choices: { ...choices }, fujiOsob, total: cost.total, group: cost.group, fujiAdd: cost.fujiAdd, grandGroup: cost.grandGroup };
+    const item = { nazwa, choices: { ...choices }, fujiOsob, people: { ...people }, total: cost.total, group: cost.group, fujiAdd: cost.fujiAdd, grandGroup: cost.grandGroup };
     saved.push(item);
     lastNamedSave = item;
     storeSaved(saved);
@@ -725,6 +931,7 @@ async function main() {
       if (!s) return;
       choices = { ...baseChoices, ...(s.choices || {}) };
       fujiOsob = s.fujiOsob || 10;
+      if (s.people) people = { ...people, ...s.people };
       renderDecisionForm(groups, choices, fujiOsob, onDecision);
       applyAll();
     }
@@ -733,8 +940,20 @@ async function main() {
     b.addEventListener("click", () => {
       chartType = b.dataset.chart;
       $$(".chart-toggle .btn").forEach((x) => x.classList.toggle("is-on", x === b));
-      renderChart(computeCost(data.model, groups, choices, fujiOsob));
+      renderChart(computeCost(data.model, groups, choices, fujiOsob, people));
     });
+  });
+
+  $("#btn-preset-save")?.addEventListener("click", () => {
+    const preset = (data.meta && data.meta.preset_oszczedny) || {};
+    Object.entries(preset).forEach(([k, v]) => {
+      if (groups.some((g) => g.id === k && g.opcje.some((o) => o.opcja_id === v))) choices[k] = v;
+    });
+    renderDecisionForm(groups, choices, fujiOsob, onDecision);
+    applyAll();
+    const status = $("#copy-status");
+    status.hidden = false;
+    status.textContent = "Włączono wariant oszczędny: tani nocleg w Nagasaki, Seul 174 zł, tańsze hotele na zachodzie, bento, wolontariusze, tani eSIM, zmiana przewoźnika w Hiroszimie. Program bez zmian. Tramwaj w Nagasaki zostaje wyłączony (dotyka DECYZJI).";
   });
 
   applyAll();

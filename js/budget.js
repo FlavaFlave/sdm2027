@@ -4,7 +4,7 @@
  * Status wpłat na stronie publicznej jest wyłącznie zbiorczy: liczba, suma, brakująca kwota, procent.
  * Nazwiska i wpłaty imienne są w prywatnym panelu (meta.privatePanelUrl).
  */
-import { $, escapeHtml, formatZl, num, N_GROUP, FUJI_PER } from "./util.js";
+import { $, escapeHtml, formatZl, num, todayISO } from "./util.js";
 import { splitInstalments } from "./cost.js";
 
 const CHART_COLORS = ["#1f4e79", "#8b2a32", "#c6a15b", "#1e4d5e", "#7c1e2e", "#2c6e49", "#9a5b12", "#4a3f6b", "#3d5a40", "#6b4f31", "#101929"];
@@ -102,8 +102,8 @@ export function renderBudget(data, cost) {
   renderPrivatePanelCard(data);
   renderBudgetSheetLinks(data);
   const W = data.wplaty || {};
-  const raty = splitInstalments(cost.total, W.raty || []);
-  const platnicy = W.platnicy || N_GROUP;
+  const raty = splitInstalments(cost.total, W.raty || [], cost.payers);
+  const platnicy = cost.payers;
 
   // Status zbiorczy — puste komórki oznaczają „do uzupełnienia”, nie zero.
   let anyStatus = false;
@@ -123,12 +123,12 @@ export function renderBudget(data, cost) {
   if (stats) {
     stats.innerHTML = `
       <article class="stat-card is-navy">
-        <p class="lbl">Cena na osobę</p>
+        <p class="lbl">${cost.gratis ? "Cena na płacącego" : "Cena na osobę"}</p>
         <p class="val">${formatZl(cost.total)}</p>
         <p class="sub">aktualny scenariusz · program główny</p>
       </article>
       <article class="stat-card">
-        <p class="lbl">Na grupę (${platnicy} os.)</p>
+        <p class="lbl">Na grupę (${cost.n} os., ${platnicy} płacących)</p>
         <p class="val">${formatZl(cost.group)}</p>
         <p class="sub">${cost.fujiN ? "bez modułu Fuji (+ " + formatZl(cost.fujiAdd, 0) + ")" : "bez dopłat spoza programu"}</p>
       </article>
@@ -147,7 +147,14 @@ export function renderBudget(data, cost) {
   const note = $("#budget-status-note");
   if (note) {
     note.hidden = false;
-    note.innerHTML = escapeHtml(W.uwaga_status || "Status wpłat do uzupełnienia przez organizatorów w karcie Wpłaty arkusza. Tylko liczby zbiorcze, bez nazwisk.");
+    const today = todayISO();
+    const late = raty.filter((r) => !r.zamrozona && r.termin && r.termin <= today);
+    const soon = raty.filter((r) => !r.zamrozona && r.termin && r.termin > today && (Date.parse(r.termin) - Date.parse(today)) / 864e5 <= 30);
+    const extra = [];
+    if (late.length) extra.push(`Po terminie, a kwota nie jest zamrożona: ${late.map((r) => r.rata).join(", ")}. Wpisz kwotę wysłaną rodzicom w kolumnie „Kwota zamrożona (zł/os.)”.`);
+    if (soon.length) extra.push(`Termin w ciągu 30 dni: ${soon.map((r) => `${r.rata} (${r.termin})`).join(", ")}. Zanim wyślesz kwotę rodzicom, zamroź ją — inaczej zmieni się przy każdej zmianie scenariusza.`);
+    note.innerHTML = escapeHtml(W.uwaga_status || "Status wpłat do uzupełnienia przez organizatorów w karcie Wpłaty arkusza. Tylko liczby zbiorcze, bez nazwisk.")
+      + (extra.length ? `<br><strong>${extra.map(escapeHtml).join("<br>")}</strong>` : "");
   }
 
   const inst = $("#instalment-table");
@@ -163,8 +170,8 @@ export function renderBudget(data, cost) {
       return `<tr>
         <td><strong>${escapeHtml(r.rata)}</strong><div class="src">${escapeHtml(r.przeznaczenie || "")}</div></td>
         <td>${escapeHtml(r.termin_zrodlo || "")}<div class="src">termin roboczy ${escapeHtml(r.termin || "")}</div></td>
-        <td class="num">${r.udzial}%</td>
-        <td class="num">${formatZl(r.kwotaOs)}<div class="src">grupa: ${formatZl(r.kwotaGrupa)}</div></td>
+        <td class="num">${r.zamrozona ? `${r.udzialEfektywny.toLocaleString("pl-PL", { maximumFractionDigits: 1 })}%<div class="src">zamrożona</div>` : `${r.udzial}%`}</td>
+        <td class="num">${formatZl(r.kwotaOs)}${r.zamrozona ? " 🔒" : ""}<div class="src">grupa: ${formatZl(r.kwotaGrupa)}</div></td>
         <td>${escapeHtml(status)}${has ? `<span class="bar" aria-hidden="true"><i style="width:${pctRow}%"></i></span>` : ""}</td>
       </tr>`;
     }).join("");
@@ -175,7 +182,7 @@ export function renderBudget(data, cost) {
 
   const instNote = $("#instalment-note");
   if (instNote) {
-    instNote.innerHTML = `${escapeHtml(W.zrodlo || "")} ${escapeHtml(W.uwaga_platnicy || "")}`;
+    instNote.innerHTML = `${escapeHtml(W.zrodlo || "")} ${escapeHtml(W.uwaga_platnicy || "")} ${escapeHtml(W.uwaga_zamrozenie || "")}`;
   }
 
   const acc = $("#account-card");
@@ -197,13 +204,13 @@ export function renderBudget(data, cost) {
       <td class="num">${formatZl(l.perOs)}</td>
       <td class="num">${formatZl(l.group)}</td>
     </tr>`).join("");
-    table.innerHTML = `<thead><tr><th>Pozycja i źródło / założenie</th><th>Grupa</th><th>Zł / os.</th><th>Zł / ${N_GROUP} os.</th></tr></thead>
+    table.innerHTML = `<thead><tr><th>Pozycja i źródło / założenie</th><th>Grupa</th><th>Zł / płacącego</th><th>Zł / grupa (${cost.n} os.)</th></tr></thead>
       <tbody>${body}</tbody>
       <tfoot>
-        <tr><td>Koszty bezpośrednie</td><td></td><td class="num">${formatZl(cost.direct)}</td><td class="num">${formatZl(cost.direct * N_GROUP)}</td></tr>
-        <tr><td>Rezerwa ${cost.reservePct}%</td><td>Rezerwa</td><td class="num">${formatZl(cost.reserve)}</td><td class="num">${formatZl(cost.reserve * N_GROUP)}</td></tr>
+        <tr><td>Koszty bezpośrednie</td><td></td><td class="num">${formatZl(cost.direct)}</td><td class="num">${formatZl(cost.direct * cost.payers)}</td></tr>
+        <tr><td>Rezerwa ${cost.reservePct}% (od pozycji nieopłaconych i walutowych)</td><td>Rezerwa</td><td class="num">${formatZl(cost.reserve)}</td><td class="num">${formatZl(cost.reserve * cost.payers)}</td></tr>
         <tr><td>Razem program główny</td><td></td><td class="num">${formatZl(cost.total)}</td><td class="num">${formatZl(cost.group)}</td></tr>
-        ${cost.fujiN ? `<tr><td>Moduł Fuji (${cost.fujiN} os.)</td><td></td><td class="num">+ ${formatZl(FUJI_PER, 0)} / wchodzący</td><td class="num">${formatZl(cost.fujiAdd)}</td></tr>` : ""}
+        ${cost.fujiN ? `<tr><td>Moduł Fuji (${cost.fujiN} os.)</td><td></td><td class="num">+ ${formatZl(cost.fujiPer, 0)} / wchodzący</td><td class="num">${formatZl(cost.fujiAdd)}</td></tr>` : ""}
       </tfoot>`;
   }
   renderBudgetChart(cost);

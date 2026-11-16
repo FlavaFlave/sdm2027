@@ -1,8 +1,8 @@
 # ŚDM 2027 — strona organizatorów / organizers’ site
 
-Lokalna, jeszcze **nieopublikowana** strona referencyjna dla organizatorów pielgrzymki Japonia + Korea (plan v3, etap 5). Wersja dla rodziców powstanie później.
+Strona referencyjna dla organizatorów pielgrzymki Japonia + Korea (plan v3, etap 6), opublikowana na GitHub Pages z `noindex`. Wersja dla rodziców powstanie później.
 
-A local, **unpublished** reference site for the organizers of the Japan + Korea pilgrimage (plan v3, stage 5). A parents’ version will come later.
+A reference site (published on GitHub Pages, `noindex`) for the organizers of the Japan + Korea pilgrimage (plan v3, stage 5). A parents’ version will come later.
 
 **Publiczna część nie zawiera danych osobowych uczestników.** Imiona, nazwiska, telefony, e-maile, paszporty i wpłaty imienne są wyłącznie w prywatnym arkuszu Google i w panelu Apps Script — nie w tym folderze, nie w `data.json` i nie na GitHub Pages.
 
@@ -40,6 +40,7 @@ sdm-site/
     maps.js           # Leaflet / Esri World Street Map (etykiety angielskie)
     budget.js         # zakładka Budżet i wpłaty (zbiorcze + przycisk do panelu)
     checklist.js      # zakładka Checklista
+    checks.js         # kontrola harmonogramu: kierowcy, przerwy, km, zapasy, posiłki
     util.js           # formatowanie, CSV, DOM
   data/data.json      # dane i model (klucze niezmienne); privatePanelUrl może być pusty
   apps-script/
@@ -98,7 +99,7 @@ Libraries loaded from a CDN (leave them unless you self-host): Cormorant Garamon
 3. Model kosztów i warianty trasy są w JSON-ie; stawki z karty Koszty i reguły z karty Decyzje nadpisują je po publikacji CSV.
 4. **Wpłaty na stronie publicznej:** wyłącznie zbiorczo `Liczba wpłaconych` i `Suma wpłynęła` na każdą ratę. Puste komórki = „do uzupełnienia”, nie zero. Żadnych nazwisk w tym arkuszu.
 5. **Checklista:** status, osoba odpowiedzialna (rola), termin; kolumna „Zebrane” tylko jako liczba (np. ile paszportów).
-6. Kwoty rat = *aktualna cena scenariusza* × udziały Artura (20 / 20 / 20 / 25 / 15%). Ostatnia rata domyka grosze.
+6. Kwoty rat = *aktualna cena scenariusza* × udziały Artura (20 / 20 / 20 / 25 / 15%). Ostatnia rata domyka grosze. Rata z wpisaną kolumną **„Kwota zamrożona (zł/os.)”** (już wysłana rodzicom) się nie zmienia — różnica rozkłada się na raty niezamrożone.
 7. **Ustawienia:** karta w publicznym arkuszu z polem `privatePanelUrl` (adres web appa). Puste pole = przycisk w zakładce Budżet jest nieaktywny. Ten sam klucz jest w `data/data.json` (`meta.privatePanelUrl`) jako zapas, gdy CSV nie jest jeszcze opublikowany.
 
 ---
@@ -205,3 +206,28 @@ Plik `.nojekyll` każe Pages serwować pliki tak, jak leżą. `js/` to ES module
 - Checklista: terminy z planu v3 (30.11, 15.12, 31.01 itd.), paszporty do II 2028, zgody (ok. 29 niepełnoletnich wg wieku z listy, bez dat urodzenia — do weryfikacji), K-ETA, luki w polisie (terror, rezygnacja), KBO 15.05 / LOC 31.05.2027, faks do Akity 018-868-4728.
 
 Arkusz: <https://docs.google.com/spreadsheets/d/1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE/edit>
+
+---
+
+## Etap 6 (16.11.2026) — co się zmieniło
+
+**Model kosztów (`js/cost.js`, `data.json → model`)**
+- Liczba osób nie jest już stała: suwak uczestników (90 = pułap, `model.osoby`), miejsca bezpłatne (cena liczona na płacącego), liczba niepełnoletnich, kto pokrywa bilety po rezygnacjach (`model.loty_rezygnacje`: 69 grupowych z klauzulą 15% + 21 imiennych).
+- Pozycje „grupa” (autokary, kadra) dzielą się przez liczbę płacących, pozycje „os” mnożą przez liczbę uczestników.
+- Flota osobno dla Japonii i Korei (`model.flota`): najtańszy zestaw pojazdów, który mieści ludzi, kadrę i walizki. Japonia: duży 49 miejsc / średni ok. 27. Korea: 45인승 (ok. 44 pasażerów) / mały bus. Pozycje autokarów skalują się współczynnikiem floty.
+- Rezerwa liczy się tylko od pozycji nieopłaconych i walutowych (`model.bez_rezerwy`: bilety Qatar, polisa, materiały, karimaty, bagaż). Baza spadła z ok. 16 170 do ok. 15 900 zł.
+- Moduł Fuji: `model.fuji_na_osobe` = 1 500 zł [szacunek] zamiast 1 000.
+- Decyzje wykluczające się (`disabledGroups`): „lepszy sen” wyłącza nocleg 2.08, A1+ wyłącza stawkę Seulu.
+- Decyzja „Skład” → „Bagaż”: limit walizki / ciężarówka bagażowa / trzeci autokar tylko w Japonii.
+- Dźwignie kosztu bez wycinania programu (nowe decyzje): hotele zachód, posiłki, przewodnik, eSIM, przewoźnik zachód, Nagasaki tramwaj (oznaczony: dotyka DECYZJI „autokary”), Seul parafie. Przycisk „Pokaż wariant oszczędny” (`meta.preset_oszczedny`).
+
+**Harmonogram (`js/checks.js`, `data.json → dni[]`)**
+- `kierowcy` (start, koniec, km, kierowców, załoga), `bufory` (zapas przed lotem/promem), `posilki` (śniadanie/obiad/kolacja: gdzie, jak, od, min).
+- Walidator: praca kierowcy > 13 h / > 15 h, przerwa < 9 h / < 11 h (ta sama załoga), km na kierowcę, zapas przed odlotem, okna na posiłki. Wynik: zakładka Przegląd, Logistyka i każda karta dnia.
+- 4.08: lot do Seulu jest krótki — Haneda ok. 17:30 (ok. 2 h przed 20:05), wyjazd z Kitakami 7:45.
+
+**Kafelki (`dni[].kafelek`)**
+- 7.08 czuwanie: ilustracja namiotów w nocy (SVG, bez zdjęcia).
+- 8.08 Msza z papieżem Leonem XIV i 9.08 spotkanie z Kiko Argüello: miejsce na zdjęcie. Wklej `kafelek.zdjecie_url` i `kafelek.zdjecie_zrodlo` — zdjęcie, do którego macie prawa.
+
+**Arkusz:** gdy arkusz zostanie opublikowany jako CSV, pola, których w nim nie ma (kierowcy, posiłki, bufory, kafelki, nowe decyzje), są dokładane z `data.json`. W karcie Wpłaty można dodać kolumnę „Kwota zamrożona (zł/os.)”.

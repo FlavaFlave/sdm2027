@@ -23,14 +23,14 @@
   <header class="hero">
     <div class="hero-ornament" aria-hidden="true"></div>
     <div class="hero-inner">
-      <p class="eyebrow">Strona organizatorów · plan v3 · etap 5 · Fable 15.11.2026</p>
+      <p class="eyebrow">Strona organizatorów · plan v3 · etap 6 · 16.11.2026</p>
       <h1>ŚDM 2027</h1>
       <p class="lede">Pielgrzymka Japonia <span class="amp">&amp;</span> Korea</p>
       <p class="hero-sub">Akita po drodze, nie zamiast. Autokary zamiast pociągów. Powitanie Papieża 5 sierpnia jako must see.</p>
       <ul class="facts" id="hero-facts">
         <li><strong>1–21 sierpnia 2027</strong><span>dwadzieścia jeden dni</span></li>
-        <li><strong>90 osób</strong><span>dwa autokary, lista zamknięta</span></li>
-        <li><strong id="hero-cost">ok. 16 170 zł</strong><span>na osobę, wariant bazowy E1 · z rezerwą 6%</span></li>
+        <li><strong id="hero-n">90 osób</strong><span id="hero-n-sub">pułap 90 · autokary dobierane do liczby osób</span></li>
+        <li><strong id="hero-cost">ok. 15 900 zł</strong><span>na płacącego, bieżący scenariusz · szacunek z rezerwą</span></li>
       </ul>
     </div>
   </header>
@@ -59,6 +59,7 @@
           <div id="map-all" class="map"></div>
           <div class="map-legend" id="legend-all"></div>
         </div>
+        <div class="flags-box" id="flags-box"></div>
         <ol class="timeline" id="timeline"></ol>
       </div>
     </section>
@@ -96,8 +97,11 @@
         <div class="section-head">
           <p class="kicker">Symulacja, nie decyzja ostateczna</p>
           <h2 id="h-decyzje">Decyzje i koszt</h2>
-          <p class="lead">Tu oglądamy warianty: każda zmiana od razu przelicza cenę na osobę i na grupę (90 osób), pokazuje różnicę wobec planu bazowego i aktualizuje mapę, dni, logistykę oraz raty. To jest podgląd, nie trwały zapis. Obowiązujący plan zapisuje się w arkuszu Google (kolumna „Wybrana” na karcie Decyzje).</p>
+          <p class="lead">Tu oglądamy warianty: liczba osób (90 to górny pułap) i każda decyzja od razu przeliczają cenę na płacącego i na grupę, dobór autokarów w Japonii i Korei, pokazuje różnicę wobec planu bazowego i aktualizuje mapę, dni, logistykę oraz raty. To jest podgląd, nie trwały zapis. Obowiązujący plan zapisuje się w arkuszu Google (kolumna „Wybrana” na karcie Decyzje).</p>
         </div>
+        <div class="people-box" id="people-box"></div>
+        <div class="fleet-box" id="fleet-box"></div>
+        <div class="curve-box" id="curve-box"></div>
         <div class="decision-layout">
           <aside class="cost-board" id="cost-board">
             <p class="cost-label">Na osobę (program główny)</p>
@@ -108,6 +112,8 @@
             <p class="cost-fuji" id="cost-fuji" hidden></p>
             <p class="cost-note" id="preview-note">Podgląd zmian: cena powyżej i lista „Co się zmienia” liczą się na bieżąco względem planu bazowego. Nic z tego nie zapisuje się samo w arkuszu.</p>
             <div class="cost-actions">
+              <button type="button" class="btn btn-gold" id="btn-preset-save">Pokaż wariant oszczędny</button>
+              <p class="action-hint">Włącza dźwignie kosztu, które nie wycinają punktów programu (noclegi, posiłki, przewodnik, eSIM, przewoźnik). Można potem cofać pojedynczo.</p>
               <button type="button" class="btn btn-gold" id="btn-save-scenario">Zapisz jako wariant roboczy</button>
               <p class="action-hint">Zapis w tej przeglądarce, pod nazwą. Można trzymać do trzech wariantów i je porównać poniżej.</p>
               <button type="button" class="btn" id="btn-copy-link">Udostępnij wariant (link)</button>
@@ -219,6 +225,7 @@
           <h2 id="h-logistyka">Logistyka</h2>
           <p class="lead">Rzeczy, które trzeba mieć w głowie przy 90 osobach: limity kierowców, walizki, odprawa promowa, upał, autostrada Jōban i plany awaryjne. Dokumenty i zgody są w zakładce Checklista. Uwagi zależne od decyzji dokładają się automatycznie.</p>
         </div>
+        <div class="flags-box" id="flags-box-log"></div>
         <div id="scenario-log" class="scenario-log" hidden></div>
         <div id="logistyka-content"></div>
       </div>

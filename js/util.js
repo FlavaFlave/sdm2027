@@ -3,9 +3,12 @@
  * Można zmieniać wygląd formatowanych kwot, ale nie nazw eksportowanych funkcji
  * — korzystają z nich pozostałe skrypty.
  */
+/** Górny pułap grupy (domyślna liczba uczestników). Faktyczną liczbę ustawia się w zakładce Decyzje. */
 export const N_GROUP = 90;
-export const FUJI_PER = 1000;
-export const CHOICE_IDS = ["petla", "noc_2", "sen", "nagasaki", "seul_stawka", "pakiet", "fuji", "sklad", "biuro", "polisa", "rezerwa"];
+/** Zapas, gdy model nie podaje fuji_na_osobe. */
+export const FUJI_PER = 1500;
+export const CHOICE_IDS = ["petla", "noc_2", "sen", "nagasaki", "seul_stawka", "pakiet", "fuji", "sklad", "biuro", "polisa", "rezerwa",
+  "hotele_zachod", "posilki", "kadra_lok", "esim", "przewoznik", "nagasaki_miasto"];
 export const SHEET_ID = "1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE";
 export const TAB_NAMES = ["Dni", "Miejsca", "Transport", "Noclegi", "Decyzje", "Koszty", "Wpłaty", "Checklista"];
 
@@ -84,4 +87,14 @@ export function formatDatePL(iso) {
   if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return iso || "—";
   const [y, m, d] = iso.split("-");
   return `${parseInt(d, 10)}.${parseInt(m, 10)}.${y}`;
+}
+
+/** "HH:MM" → minuty od północy. */
+export function toMin(hhmm) {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(String(hhmm || "").trim());
+  return m ? Number(m[1]) * 60 + Number(m[2]) : null;
+}
+export function fmtH(min) {
+  const h = Math.floor(min / 60), m = Math.round(min % 60);
+  return m ? `${h} h ${m} min` : `${h} h`;
 }
