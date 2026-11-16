@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ŚDM 2027 — panel organizatorów (prywatny)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c1712;
+      --ink-soft: #5a5349;
+      --paper: #f6f1e8;
+      --paper-2: #efe7d8;
+      --paper-3: #e4dac6;
+      --line: #d7ccb8;
+      --navy: #101929;
+      --navy-2: #1a2740;
+      --gold: #c6a15b;
+      --gold-2: #e8d5a3;
+      --wine: #7c1e2e;
+      --ok: #2c6e49;
+      --warn: #9a5b12;
+      --shadow: 0 18px 40px rgba(16, 25, 41, 0.12);
+      --radius: 18px;
+      --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    .hero {
+      position: relative;
+      background:
+        radial-gradient(1200px 500px at 80% -10%, rgba(198, 161, 91, 0.22), transparent 55%),
+        linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: var(--paper);
+      padding: 36px 0 28px;
+    }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.75rem;
+      color: var(--gold-2);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+    }
+    .lede { margin: 0 0 10px; font-size: 1.15rem; color: var(--gold-2); }
+    .hero-sub { margin: 0; color: #d8d0c4; max-width: 46rem; }
+    main { padding: 28px 0 64px; }
+    h2, h3 { font-family: var(--font-serif); font-weight: 600; margin: 0 0 8px; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.45rem; }
+    .muted { color: var(--ink-soft); }
+    .banner {
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin: 0 0 20px;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+    .banner.is-mock { border-color: var(--gold); background: #f3e8c9; }
+    .banner.is-error {
+      background: var(--navy);
+      color: var(--paper);
+      border-color: var(--navy);
+      padding: 28px 24px;
+    }
+    .banner.is-error h2 { color: var(--gold-2); }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 0 0 28px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .stat-card .lbl {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+    }
+    .stat-card .val {
+      margin: 4px 0 0;
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      line-height: 1.15;
+    }
+    .stat-card .sub { margin: 4px 0 0; font-size: 0.85rem; color: var(--ink-soft); }
+    .stat-card.is-navy { background: var(--navy); color: var(--paper); border-color: var(--navy); }
+    .stat-card.is-navy .lbl { color: var(--gold-2); }
+    .stat-card.is-navy .sub { color: #d8d0c4; }
+    .stat-card.is-warn .val { color: var(--wine); }
+    .stat-card.is-ok .val { color: var(--ok); }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 14px;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font: 600 0.92rem var(--font-sans);
+      cursor: pointer;
+    }
+    .btn:hover { border-color: var(--navy); }
+    .btn.is-on, .btn-gold {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .table-scroll { overflow-x: auto; margin: 0 0 28px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--navy); color: var(--gold-2); font-weight: 600; }
+    td.num { text-align: right; white-space: nowrap; }
+    tr.is-example { background: #f8ecc8; }
+    tr.has-gap td.braki { color: var(--wine); font-weight: 600; }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f3e8c9;
+      color: var(--warn);
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .form-card, .list-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 20px 22px;
+      box-shadow: var(--shadow);
+    }
+    label { display: block; font-size: 0.85rem; font-weight: 600; margin: 10px 0 4px; }
+    input, select, textarea {
+      width: 100%;
+      font: 400 1rem var(--font-sans);
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    textarea { min-height: 70px; resize: vertical; }
+    .form-actions { margin-top: 16px; display: flex; gap: 8px; align-items: center; }
+    .form-msg { margin: 10px 0 0; font-size: 0.9rem; }
+    .form-msg.is-ok { color: var(--ok); }
+    .form-msg.is-err { color: var(--wine); }
+    .section-head { margin: 8px 0 16px; }
+    .kicker {
+      margin: 0 0 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+    }
+    footer {
+      background: var(--navy);
+      color: var(--paper);
+      padding: 24px 0;
+      font-size: 0.9rem;
+    }
+    footer strong { color: var(--gold-2); }
+    .hidden { display: none !important; }
+    @media (max-width: 900px) {
+      .stat-grid, .layout { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .stat-grid, .layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Panel wewnętrzny · tylko organizatorzy</p>
+      <h1>ŚDM 2027</h1>
+      <p class="lede">Dane uczestników i wpłaty imienne</p>
+      <p class="hero-sub">To nie jest strona publiczna. Dane osobowe pochodzą z prywatnego arkusza Google i są widoczne wyłącznie osobom, którym ten arkusz udostępniono.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div id="mock-banner" class="banner is-mock hidden">
+        <strong>Podgląd lokalny.</strong> Widzisz dane przykładowe (oznaczone „PRZYKŁAD – usuń”). Po wklejeniu tego pliku do Apps Script panel wczyta prawdziwy arkusz.
+      </div>
+      <div id="access-denied" class="banner is-error hidden">
+        <h2>Brak dostępu do danych osobowych</h2>
+        <p>Jesteś zalogowany na konto Google, ale to konto nie ma dostępu do prywatnego arkusza „ŚDM 2027 – dane osobowe (PRYWATNE)”.</p>
+        <p>Poproś organizatora, żeby udostępnił Ci ten arkusz na Twój adres e-mail (podgląd albo edycja). Nie wystarczy sam link do tego panelu — uprawnienia bierze się z arkusza, nie ze strony.</p>
+        <p id="access-detail" class="muted"></p>
+      </div>
+      <div id="load-error" class="banner hidden"></div>
+
+      <div id="app" class="hidden">
+        <div class="stat-grid" id="stats"></div>
+
+        <div class="section-head">
+          <p class="kicker">Uczestnicy</p>
+          <h2>Lista i saldo</h2>
+          <p class="muted">Saldo to suma wpłat imiennych minus cena na osobę z parametru w karcie Podsumowanie. Wpłaty ogólne (darczyńcy, sponsorzy) nie są przypisywane do osób.</p>
+        </div>
+        <div class="toolbar" role="group" aria-label="Filtr listy">
+          <button type="button" class="btn is-on" data-filter="wszyscy">Wszyscy</button>
+          <button type="button" class="btn" data-filter="braki">Tylko z brakami</button>
+          <button type="button" class="btn" data-filter="przyklady">Przykłady do usunięcia</button>
+        </div>
+        <div class="table-scroll">
+          <table id="tbl-uczestnicy">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Osoba</th>
+                <th>Wspólnota</th>
+                <th>Status</th>
+                <th>Wpłacono imiennie</th>
+                <th>Saldo</th>
+                <th>Braki</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="layout">
+          <div>
+            <div class="section-head">
+              <p class="kicker">Rejestr</p>
+              <h2>Wpłaty</h2>
+            </div>
+            <div class="list-card" style="margin-bottom:18px">
+              <h3>Imienne (za uczestnika)</h3>
+              <div class="table-scroll" style="margin:0">
+                <table id="tbl-imienne">
+                  <thead><tr><th>Data</th><th>Uczestnik</th><th>Kwota</th><th>Rata</th><th>Forma</th><th>Uwagi</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="list-card">
+              <h3>Ogólne (darczyńcy i sponsorzy)</h3>
+              <div class="table-scroll" style="margin:0">
+                <table id="tbl-ogolne">
+                  <thead><tr><th>Data</th><th>Darczyńca</th><th>Kwota</th><th>Rata</th><th>Forma</th><th>Uwagi</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <aside class="form-card">
+            <div class="section-head">
+              <p class="kicker">Nowa pozycja</p>
+              <h3>Dodaj wpłatę</h3>
+              <p class="muted" id="write-hint">Zapis trafia od razu do karty Wpłaty w prywatnym arkuszu.</p>
+            </div>
+            <form id="form-wplata">
+              <label for="f-data">Data</label>
+              <input id="f-data" name="data" type="date" required />
+
+              <label for="f-typ">Typ</label>
+              <select id="f-typ" name="typ" required>
+                <option value="imienna">Imienna (za konkretnego uczestnika)</option>
+                <option value="ogolna">Ogólna (darczyńca / sponsor, bez osoby)</option>
+              </select>
+
+              <div id="box-imienna">
+                <label for="f-uczestnik">Uczestnik</label>
+                <select id="f-uczestnik" name="uczestnik"></select>
+              </div>
+              <div id="box-ogolna" class="hidden">
+                <label for="f-darczynca">Darczyńca lub sponsor</label>
+                <input id="f-darczynca" name="darczynca" type="text" placeholder="np. nazwa fundacji albo osoby" />
+              </div>
+
+              <label for="f-kwota">Kwota (zł)</label>
+              <input id="f-kwota" name="kwota" type="number" min="0.01" step="0.01" required />
+
+              <label for="f-rata">Rata</label>
+              <select id="f-rata" name="rata">
+                <option value="">—</option>
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+                <option value="V">V</option>
+                <option value="poza ratami">poza ratami</option>
+              </select>
+
+              <label for="f-forma">Forma</label>
+              <select id="f-forma" name="forma">
+                <option value="przelew">przelew</option>
+                <option value="gotówka">gotówka</option>
+                <option value="karta">karta</option>
+                <option value="inny">inny</option>
+              </select>
+
+              <label for="f-uwagi">Uwagi</label>
+              <textarea id="f-uwagi" name="uwagi"></textarea>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-gold" id="btn-save">Zapisz wpłatę</button>
+              </div>
+              <p class="form-msg" id="form-msg" hidden></p>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Dane osobowe zostają w prywatnym arkuszu.</strong> Nie kopiuj ich na stronę publiczną, do repozytorium ani do czatu z inną AI.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* Podgląd lokalny (bez Apps Script) używa wyłącznie fikcyjnych danych „PRZYKŁAD – usuń”. */
+    var MOCK = {
+      ok: true,
+      arkusz: "ŚDM 2027 – dane osobowe (PRYWATNE)",
+      email: "",
+      mozeEdytowac: false,
+      cenaNaOsobe: 16170,
+      platnicy: 90,
+      naleznoscGrupy: 1455300,
+      sumaImienne: 3234,
+      sumaOgolne: 5000,
+      razemWplynelo: 8234,
+      saldoGrupy: 8234 - 1455300,
+      uczestnicy: [
+        {
+          id: "P-PRZYKŁAD-1", imie: "Jan", nazwisko: "Przykładowski", wspolnota: "Przykładów",
+          dataUrodzenia: "2000-01-15", niepelnoletni: "NIE", opiekun: "", paszportWaznyDo: "2030-06-01",
+          kEta: "TAK", zgody: "nie dotyczy", uwagi: "PRZYKŁAD – usuń. Brak uwag zdrowotnych.",
+          telefon: "000 000 000", email: "jan.przyklad@example.com", status: "PRZYKŁAD – usuń",
+          braki: "", przyklad: true, wplaconoImiennie: 3234, naleznosc: 16170, saldo: 3234 - 16170
+        },
+        {
+          id: "P-PRZYKŁAD-2", imie: "Anna", nazwisko: "Demonstracyjna", wspolnota: "Przykładów",
+          dataUrodzenia: "2012-05-20", niepelnoletni: "TAK", opiekun: "", paszportWaznyDo: "",
+          kEta: "", zgody: "", uwagi: "PRZYKŁAD – usuń. Celowo nieuzupełnione, żeby pokazać kolumnę braków.",
+          telefon: "", email: "anna.przyklad@example.com", status: "PRZYKŁAD – usuń",
+          braki: "opiekun, paszport ważny do, K-ETA, zgody, telefon", przyklad: true,
+          wplaconoImiennie: 0, naleznosc: 16170, saldo: -16170
+        }
+      ],
+      wplaty: [
+        { data: "2026-11-10", typ: "imienna", typEtykieta: "imienna", kto: "P-PRZYKŁAD-1", kwota: 3234, rata: "I", forma: "przelew", uwagi: "PRZYKŁAD – usuń (I rata Jana Przykładowskiego)", przyklad: true },
+        { data: "2026-11-12", typ: "ogolna", typEtykieta: "ogólna", kto: "Fundacja Przykładowa", kwota: 5000, rata: "", forma: "przelew", uwagi: "PRZYKŁAD – usuń (darowizna na pielgrzymkę, bez przypisania do osoby)", przyklad: true }
+      ]
+    };
+
+    var IS_APPS = typeof google !== "undefined" && google.script && google.script.run;
+    var state = { data: null, filter: "wszyscy" };
+
+    function $(id) { return document.getElementById(id); }
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+    function zl(n) {
+      var v = Number(n);
+      if (!isFinite(v)) return "—";
+      var sign = v < 0 ? "−" : "";
+      return sign + Math.abs(v).toLocaleString("pl-PL", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " zł";
+    }
+
+    function showError(kind, message) {
+      $("app").classList.add("hidden");
+      if (kind === "NO_ACCESS") {
+        $("access-denied").classList.remove("hidden");
+        if (message) $("access-detail").textContent = message;
+      } else {
+        $("load-error").classList.remove("hidden");
+        $("load-error").innerHTML = "<strong>Nie udało się wczytać panelu.</strong> " + esc(message || "");
+      }
+    }
+
+    function applyFilter() {
+      var list = (state.data.uczestnicy || []).filter(function (u) {
+        if (state.filter === "braki") return String(u.braki || "").trim() !== "";
+        if (state.filter === "przyklady") return !!u.przyklad;
+        return true;
+      });
+      var tb = $("tbl-uczestnicy").querySelector("tbody");
+      if (!list.length) {
+        tb.innerHTML = '<tr><td colspan="7" class="muted">Brak wierszy przy tym filtrze.</td></tr>';
+        return;
+      }
+      tb.innerHTML = list.map(function (u) {
+        var name = esc(u.imie) + " " + esc(u.nazwisko);
+        var cls = (u.przyklad ? " is-example" : "") + (String(u.braki || "").trim() ? " has-gap" : "");
+        var badge = u.przyklad ? ' <span class="badge">PRZYKŁAD – usuń</span>' : "";
+        return "<tr class=\"" + cls + "\">" +
+          "<td>" + esc(u.id) + "</td>" +
+          "<td><strong>" + name + "</strong>" + badge +
+            (u.niepelnoletni === "TAK" ? "<div class=\"muted\">niepełnoletni" + (u.opiekun ? " · opiekun: " + esc(u.opiekun) : "") + "</div>" : "") +
+            (u.email || u.telefon ? "<div class=\"muted\">" + esc(u.email) + (u.telefon ? " · " + esc(u.telefon) : "") + "</div>" : "") +
+          "</td>" +
+          "<td>" + esc(u.wspolnota) + "</td>" +
+          "<td>" + esc(u.status) + "</td>" +
+          "<td class=\"num\">" + zl(u.wplaconoImiennie) + "</td>" +
+          "<td class=\"num\">" + zl(u.saldo) + "</td>" +
+          "<td class=\"braki\">" + esc(u.braki || "—") + "</td>" +
+        "</tr>";
+      }).join("");
+    }
+
+    function fillPayments(data) {
+      var im = data.wplaty.filter(function (w) { return w.typ === "imienna"; });
+      var og = data.wplaty.filter(function (w) { return w.typ === "ogolna"; });
+      function rows(list, empty) {
+        if (!list.length) return '<tr><td colspan="6" class="muted">' + empty + "</td></tr>";
+        return list.map(function (w) {
+          var cls = w.przyklad ? " class=\"is-example\"" : "";
+          return "<tr" + cls + "><td>" + esc(w.data) + "</td><td>" + esc(w.kto) +
+            (w.przyklad ? " <span class=\"badge\">PRZYKŁAD</span>" : "") +
+            "</td><td class=\"num\">" + zl(w.kwota) + "</td><td>" + esc(w.rata || "—") +
+            "</td><td>" + esc(w.forma) + "</td><td>" + esc(w.uwagi) + "</td></tr>";
+        }).join("");
+      }
+      $("tbl-imienne").querySelector("tbody").innerHTML = rows(im, "Brak wpłat imiennych.");
+      $("tbl-ogolne").querySelector("tbody").innerHTML = rows(og, "Brak wpłat ogólnych.");
+    }
+
+    function fillSelect(data) {
+      var sel = $("f-uczestnik");
+      var opts = data.uczestnicy.map(function (u) {
+        return "<option value=\"" + esc(u.id) + "\">" + esc(u.id) + " — " + esc(u.imie) + " " + esc(u.nazwisko) + "</option>";
+      });
+      sel.innerHTML = opts.length ? opts.join("") : "<option value=\"\">(brak uczestników)</option>";
+    }
+
+    function render(data) {
+      state.data = data;
+      $("access-denied").classList.add("hidden");
+      $("load-error").classList.add("hidden");
+      $("app").classList.remove("hidden");
+
+      var zaleg = data.saldoGrupy < 0;
+      $("stats").innerHTML =
+        '<article class="stat-card is-navy"><p class="lbl">Cena / os.</p><p class="val">' + zl(data.cenaNaOsobe) + '</p><p class="sub">parametr z karty Podsumowanie</p></article>' +
+        '<article class="stat-card"><p class="lbl">Wpłaty imienne</p><p class="val">' + zl(data.sumaImienne) + '</p><p class="sub">za konkretnych uczestników</p></article>' +
+        '<article class="stat-card"><p class="lbl">Wpłaty ogólne</p><p class="val">' + zl(data.sumaOgolne) + '</p><p class="sub">darczyńcy i sponsorzy</p></article>' +
+        '<article class="stat-card ' + (zaleg ? "is-warn" : "is-ok") + '"><p class="lbl">Saldo grupy</p><p class="val">' + zl(data.saldoGrupy) + '</p><p class="sub">wpłynęło ' + zl(data.razemWplynelo) + ' z ' + zl(data.naleznoscGrupy) + ' (' + data.platnicy + ' os.)</p></article>';
+
+      fillSelect(data);
+      fillPayments(data);
+      applyFilter();
+
+      if (!data.mozeEdytowac) {
+        $("btn-save").disabled = IS_APPS;
+        $("write-hint").textContent = IS_APPS
+          ? "Masz dostęp do podglądu. Żeby dopisywać wpłaty, poproś o uprawnienia edytora arkusza."
+          : "W podglądzie lokalnym zapis jest wyłączony. Po wdrożeniu w Apps Script wpłaty trafiają do arkusza.";
+      } else {
+        $("btn-save").disabled = false;
+        var kto = data.email ? " Zalogowano jako " + data.email + "." : "";
+        $("write-hint").textContent = "Zapis trafia od razu do karty Wpłaty w prywatnym arkuszu." + kto;
+      }
+    }
+
+    function typChanged() {
+      var og = $("f-typ").value === "ogolna";
+      $("box-imienna").classList.toggle("hidden", og);
+      $("box-ogolna").classList.toggle("hidden", !og);
+    }
+
+    function todayISO() {
+      var d = new Date();
+      var z = function (n) { return String(n).padStart(2, "0"); };
+      return d.getFullYear() + "-" + z(d.getMonth() + 1) + "-" + z(d.getDate());
+    }
+
+    function setMsg(ok, text) {
+      var el = $("form-msg");
+      el.hidden = !text;
+      el.className = "form-msg " + (ok ? "is-ok" : "is-err");
+      el.textContent = text || "";
+    }
+
+    function onSubmit(ev) {
+      ev.preventDefault();
+      setMsg(false, "");
+      var typ = $("f-typ").value;
+      var kto = typ === "imienna" ? $("f-uczestnik").value : $("f-darczynca").value.trim();
+      var payload = {
+        data: $("f-data").value,
+        typ: typ,
+        kto: kto,
+        kwota: $("f-kwota").value,
+        rata: $("f-rata").value,
+        forma: $("f-forma").value,
+        uwagi: $("f-uwagi").value
+      };
+      if (!IS_APPS) {
+        setMsg(false, "To jest podgląd lokalny — zapis do arkusza działa dopiero po wdrożeniu skryptu (zob. INSTRUKCJA.md).");
+        return;
+      }
+      $("btn-save").disabled = true;
+      google.script.run
+        .withSuccessHandler(function (res) {
+          $("btn-save").disabled = false;
+          if (!res || !res.ok) {
+            setMsg(false, (res && res.message) || "Nie udało się zapisać wpłaty.");
+            if (res && res.error === "NO_ACCESS") showError("NO_ACCESS", res.message);
+            return;
+          }
+          $("f-kwota").value = "";
+          $("f-uwagi").value = "";
+          setMsg(true, "Wpłata zapisana.");
+          render(res);
+        })
+        .withFailureHandler(function (err) {
+          $("btn-save").disabled = false;
+          setMsg(false, String((err && err.message) || err || "Błąd zapisu."));
+        })
+        .addPayment(payload);
+    }
+
+    function boot() {
+      $("f-data").value = todayISO();
+      $("f-typ").addEventListener("change", typChanged);
+      $("form-wplata").addEventListener("submit", onSubmit);
+      document.querySelectorAll(".toolbar .btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          state.filter = btn.getAttribute("data-filter");
+          document.querySelectorAll(".toolbar .btn").forEach(function (b) { b.classList.toggle("is-on", b === btn); });
+          if (state.data) applyFilter();
+        });
+      });
+
+      if (!IS_APPS) {
+        $("mock-banner").classList.remove("hidden");
+        render(MOCK);
+        return;
+      }
+      google.script.run
+        .withSuccessHandler(function (res) {
+          if (!res || !res.ok) {
+            showError((res && res.error) || "OTHER", res && res.message);
+            return;
+          }
+          render(res);
+        })
+        .withFailureHandler(function (err) {
+          var msg = String((err && err.message) || err || "");
+          showError(/permission|dost[eę]p|denied|NO_ACCESS/i.test(msg) ? "NO_ACCESS" : "OTHER", msg);
+        })
+        .getPanelData();
+    }
+
+    boot();
+  </script>
+</body>
+</html>

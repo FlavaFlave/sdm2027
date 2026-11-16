@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ŚDM 2027 — strona organizatorów · Japonia i Korea</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <!--
+    ŚDM 2027 — strona organizatorów (etap 4).
+    Wygląd: ./css/style.css  (kolory w :root, układ zakładek, karty, mapy).
+    Logika:  ./js/*.js        (app.js startuje aplikację).
+    Dane:    ./data/data.json (albo opublikowany arkusz Google — zob. README).
+    Zasada:  nie zmieniaj atrybutów id, data-tab ani kluczy w data.json.
+    Ścieżki są względne, żeby działało na GitHub Pages.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-ornament" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">Strona organizatorów · plan v3 · etap 4 · Fable 15.11.2026</p>
+      <h1>ŚDM 2027</h1>
+      <p class="lede">Pielgrzymka Japonia <span class="amp">&amp;</span> Korea</p>
+      <p class="hero-sub">Akita po drodze, nie zamiast. Autokary zamiast pociągów. Powitanie Papieża 5 sierpnia jako must see.</p>
+      <ul class="facts" id="hero-facts">
+        <li><strong>1–21 sierpnia 2027</strong><span>dwadzieścia jeden dni</span></li>
+        <li><strong>90 osób</strong><span>dwa autokary, lista zamknięta</span></li>
+        <li><strong id="hero-cost">ok. 16 170 zł</strong><span>na osobę, wariant bazowy E1 · z rezerwą 6%</span></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Zakładki: id paneli = data-tab. Nie zmieniaj tych wartości, hasło URL z nich korzysta. -->
+  <nav class="tabs" id="tabs" aria-label="Zakładki strony">
+    <button type="button" class="tab is-active" data-tab="przeglad">Przegląd</button>
+    <button type="button" class="tab" data-tab="japonia">Japonia</button>
+    <button type="button" class="tab" data-tab="korea">Korea</button>
+    <button type="button" class="tab" data-tab="decyzje">Decyzje</button>
+    <button type="button" class="tab" data-tab="budzet">Budżet i wpłaty</button>
+    <button type="button" class="tab" data-tab="checklista">Checklista</button>
+    <button type="button" class="tab" data-tab="logistyka">Logistyka</button>
+    <span class="tabs-source" id="data-source-label"></span>
+  </nav>
+
+  <main>
+    <section id="przeglad" class="panel is-active" aria-labelledby="h-przeglad">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Trasa w jednym ujęciu</p>
+          <h2 id="h-przeglad">Mapa Japonii i Korei</h2>
+          <p class="lead">Przystanki zależą od decyzji w zakładce Decyzje — zmiana pętli, noclegu 2.08 albo modułu Fuji od razu przestawia markery i trasę.</p>
+        </div>
+        <div class="map-card">
+          <div id="map-all" class="map"></div>
+          <div class="map-legend" id="legend-all"></div>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <section id="japonia" class="panel" hidden aria-labelledby="h-japonia">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">1–4 sierpnia i 12–20 sierpnia</p>
+          <h2 id="h-japonia">Japonia</h2>
+          <p class="lead">Pętla wschodnia: Matsushima, Akita (albo Sendai, gdy siostry odmówią) i Nikkō. Potem droga Ksawerego: Hirado, pięć nocy w Nagasaki, Yamaguchi, Hiroszima, Miyajima, Himeji, Kioto i wylot z Osaki.</p>
+        </div>
+        <div class="map-card">
+          <div id="map-jp" class="map"></div>
+        </div>
+        <div class="day-grid" id="days-jp"></div>
+      </div>
+    </section>
+
+    <section id="korea" class="panel" hidden aria-labelledby="h-korea">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">4 sierpnia wieczorem — 11 sierpnia</p>
+          <h2 id="h-korea">Korea</h2>
+          <p class="lead">Przylot na Gimpo wieczorem 4.08, żeby zdążyć na powitanie Papieża. ŚDM w Seulu, Solmoe w drodze, dzień luzu w Busan i nocny prom do Hakaty.</p>
+        </div>
+        <div class="map-card">
+          <div id="map-kr" class="map"></div>
+        </div>
+        <div class="day-grid" id="days-kr"></div>
+      </div>
+    </section>
+
+    <section id="decyzje" class="panel" hidden aria-labelledby="h-decyzje">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Symulacja, nie decyzja ostateczna</p>
+          <h2 id="h-decyzje">Decyzje i koszt</h2>
+          <p class="lead">Każda zmiana w menu przelicza koszt na osobę i na grupę (90 osób), pokazuje różnicę względem wariantu bazowego i natychmiast aktualizuje karty dni, mapę, uwagi logistyczne oraz raty w zakładce Budżet. Link w pasku adresu zapisuje wybrany scenariusz.</p>
+        </div>
+        <div class="decision-layout">
+          <aside class="cost-board" id="cost-board">
+            <p class="cost-label">Na osobę (program główny)</p>
+            <p class="cost-value" id="cost-value">—</p>
+            <p class="cost-group" id="cost-group">na grupę (90 os.): —</p>
+            <p class="cost-delta" id="cost-delta"></p>
+            <div class="cost-split" id="cost-split"></div>
+            <p class="cost-fuji" id="cost-fuji" hidden></p>
+            <div class="cost-actions">
+              <button type="button" class="btn btn-gold" id="btn-copy-link">Kopiuj link do scenariusza</button>
+              <button type="button" class="btn" id="btn-save-scenario">Zapisz scenariusz</button>
+              <button type="button" class="btn" id="btn-reset">Wróć do bazy</button>
+            </div>
+            <p class="cost-share" id="copy-status" hidden></p>
+            <p class="cost-note" id="cost-note"></p>
+          </aside>
+          <div>
+            <div class="decision-list" id="decision-list"></div>
+            <div class="warn-box" id="warn-box" hidden></div>
+          </div>
+        </div>
+
+        <div class="impact-box" id="impact-box"></div>
+
+        <div class="chart-block">
+          <div class="chart-head">
+            <h3>Struktura kosztu</h3>
+            <div class="chart-toggle" role="group" aria-label="Typ wykresu">
+              <button type="button" class="btn is-on" data-chart="pie">Koło</button>
+              <button type="button" class="btn" data-chart="bar">Słupki</button>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="cost-chart" width="640" height="360" aria-label="Wykres struktury kosztu"></canvas>
+          </div>
+        </div>
+
+        <div class="cost-table-wrap">
+          <h3>Kosztorys — pozycje, które sumują się do kwoty powyżej</h3>
+          <p class="muted">Każda pozycja ma źródło albo założenie. Gdy organizatorzy zmienią stawki w arkuszu (zakładka Koszty) i opublikują go jako CSV, strona przeliczy się od nowa. Teraz liczy z kopii w data/data.json.</p>
+          <div class="table-scroll">
+            <table class="sheet-table" id="cost-table"></table>
+          </div>
+        </div>
+
+        <div class="compare-block" id="compare-block">
+          <h3>Porównaj scenariusze</h3>
+          <p class="muted">Można zapisać maksymalnie trzy scenariusze (w tej przeglądarce) i zestawić je obok siebie. Link z paska adresu też przenosi konkretny zestaw decyzji.</p>
+          <div class="saved-row" id="saved-row"></div>
+          <div class="table-scroll">
+            <table class="sheet-table compare-table" id="compare-table"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Budżet: raty z udziałów Artura, kwoty z aktualnego scenariusza, status tylko zbiorczy. -->
+    <section id="budzet" class="panel" hidden aria-labelledby="h-budzet">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Kosztorys, raty, stan zebrany</p>
+          <h2 id="h-budzet">Budżet i wpłaty</h2>
+          <p class="lead">Pełny budżet pochodzi z aktualnego scenariusza (zakładka Decyzje). Harmonogram rat zachowuje udziały i miesiące z kosztorysu Artura z 22.09.2026 (20 / 20 / 20 / 25 / 15%). Kwoty rat przeliczają się od bieżącej ceny. Na tej stronie status wpłat jest wyłącznie zbiorczy. Nazwiska, wpłaty imienne i braki dokumentów są w prywatnym panelu, dostępnym tylko organizatorom.</p>
+        </div>
+        <div class="stat-grid" id="budget-stats"></div>
+        <div class="empty-banner" id="budget-status-note"></div>
+        <div id="private-panel-card" class="private-panel-card"></div>
+        <h3>Harmonogram rat</h3>
+        <p class="muted" id="instalment-note"></p>
+        <div class="table-scroll">
+          <table class="sheet-table instalment-table" id="instalment-table"></table>
+        </div>
+        <div class="account-card" id="account-card"></div>
+        <div class="chart-block">
+          <div class="chart-head"><h3>Struktura budżetu (ten sam model co w Decyzjach)</h3></div>
+          <div class="chart-wrap">
+            <canvas id="budget-chart" width="640" height="360" aria-label="Wykres budżetu"></canvas>
+          </div>
+        </div>
+        <div class="cost-table-wrap">
+          <h3>Pełny kosztorys aktualnego scenariusza</h3>
+          <p class="muted">Pozycje sumują się do ceny na osobę i na grupę pokazanej powyżej. Źródło lub założenie jest przy każdej linii.</p>
+          <div class="table-scroll">
+            <table class="sheet-table" id="budget-full-table"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checklista: status / osoba / termin z arkusza; liczby tylko zbiorcze. -->
+    <section id="checklista" class="panel" hidden aria-labelledby="h-checklista">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Zgody, dokumenty, terminy</p>
+          <h2 id="h-checklista">Checklista</h2>
+          <p class="lead">Paszporty (ważne do lutego 2028), zgody rodziców, ewentualne zgody notarialne, K-ETA, luki w ubezpieczeniu i kwestionariuszach, rejestracja KBO, faks do sióstr w Akicie oraz terminy 30.11, 15.12 i 31.01. Status, osoba odpowiedzialna i termin pochodzą z karty Checklista w arkuszu. Na stronie widać tylko liczby zbiorcze, nigdy nazwisk ani numerów dokumentów.</p>
+        </div>
+        <div class="stat-grid" id="check-stats"></div>
+        <div class="filter-row" id="check-filters"></div>
+        <div class="agg-row" id="check-aggregates"></div>
+        <div id="check-list-board"></div>
+      </div>
+    </section>
+
+    <section id="logistyka" class="panel" hidden aria-labelledby="h-logistyka">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Kierowcy, bagaż, prom, zasady</p>
+          <h2 id="h-logistyka">Logistyka</h2>
+          <p class="lead">Rzeczy, które trzeba mieć w głowie przy 90 osobach: limity kierowców, walizki, odprawa promowa, upał, autostrada Jōban i plany awaryjne. Dokumenty i zgody są w zakładce Checklista. Uwagi zależne od decyzji dokładają się automatycznie.</p>
+        </div>
+        <div id="scenario-log" class="scenario-log" hidden></div>
+        <div id="logistyka-content"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Tylko dla organizatorów.</strong> Wersja dla rodziców i uczestników powstanie, gdy ustali się pierwsza wersja trasy. Strona nie jest jeszcze opublikowana pod publicznym adresem i nie zawiera danych osobowych uczestników — te są wyłącznie w prywatnym arkuszu i panelu dla organizatorów.</p>
+      <p id="footer-sources"></p>
+      <p class="credits-title">Zdjęcia: Wikimedia Commons</p>
+      <ul class="photo-credits" id="photo-credits"></ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
