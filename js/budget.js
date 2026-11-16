@@ -77,7 +77,7 @@ function renderPrivatePanelCard(data) {
 }
 
 
-const PUBLIC_SHEET = "https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit";
+const PUBLIC_SHEET = "https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit";
 const PRIVATE_SHEET = "https://docs.google.com/spreadsheets/d/1WSchAIbuUpfZtqEY6Xd8Mvj_-Ap8-ckFXx0AgttHpKo/edit";
 
 function renderBudgetSheetLinks(data) {

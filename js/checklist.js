@@ -36,7 +36,7 @@ const STATUS_CLASS = {
 
 export const CHECKLIST_OSOBY = ORGANIZATORZY;
 
-const SHEET_CHECK_URL = "https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit#gid=215408221";
+const SHEET_CHECK_URL = "https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit#gid=215408221";
 
 function urgency(item, today) {
   const done = item.zrobione || item.status === "zrobione" || item.status === "nie dotyczy";

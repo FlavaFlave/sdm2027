@@ -11,7 +11,7 @@ export const CHOICE_IDS = ["petla", "noc_2", "sen", "nagasaki", "seul_stawka", "
   "hotele_zachod", "posilki", "kadra_lok", "esim", "przewoznik", "nagasaki_miasto"];
 /** Organizatorzy (do przypisywania zadań i podpisu zmian). */
 export const ORGANIZATORZY = ["Artur", "Jakub Ś.", "Jakub Ż.", "Staszek", "Robert", "Kinga", "Dorota", "Kasia", "Judyta", "Basia"];
-export const SHEET_ID = "1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8";
+export const SHEET_ID = "1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs";
 export const TAB_NAMES = ["Dni", "Miejsca", "Transport", "Noclegi", "Decyzje", "Koszty", "Wpłaty", "Checklista"];
 
 export const $ = (sel, root = document) => root.querySelector(sel);

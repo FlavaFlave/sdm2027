@@ -93,7 +93,7 @@ Libraries loaded from a CDN (leave them unless you self-host): Cormorant Garamon
 ## Przepływ danych z arkusza / Data flow from the Sheet
 
 1. Przy starcie `js/app.js` próbuje wczytać opublikowany CSV arkusza Google  
-   [ŚDM 2027 – dane strony organizatorów](https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit)  
+   [ŚDM 2027 – dane strony organizatorów](https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit)  
    (karty: Dni, Miejsca, Transport, Noclegi, Decyzje, Koszty, **Wpłaty**, **Checklista**).
 2. Jeśli arkusz nie jest opublikowany do sieci (domyślny stan — **nie publikować strony ani arkusza bez decyzji organizatorów**), używany jest `data/data.json`.
 3. Model kosztów i warianty trasy są w JSON-ie; stawki z karty Koszty i reguły z karty Decyzje nadpisują je po publikacji CSV.
@@ -205,7 +205,7 @@ Plik `.nojekyll` każe Pages serwować pliki tak, jak leżą. `js/` to ES module
 - Model etapu 2: pozycje sumujące się do 16 169,87 zł/os. w wariancie bazowym (z rezerwą).
 - Checklista: terminy z planu v3 (30.11, 15.12, 31.01 itd.), paszporty do II 2028, zgody (ok. 29 niepełnoletnich wg wieku z listy, bez dat urodzenia — do weryfikacji), K-ETA, luki w polisie (terror, rezygnacja), KBO 15.05 / LOC 31.05.2027, faks do Akity 018-868-4728.
 
-Arkusz: <https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit>
+Arkusz: <https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit>
 
 ---
 

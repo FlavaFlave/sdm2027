@@ -916,7 +916,7 @@ async function main() {
   if (official) {
     official.innerHTML = `<strong>Obowiązujący plan zapisuje się w arkuszu, nie na tej stronie.</strong>
       Żeby wszyscy organizatorzy mieli ten sam, trwały wybór, otwórz kartę Decyzje i w kolumnie „Wybrana” wpisz TAK przy oficjalnie przyjętej opcji (jedna na każdą decyzję). Kolumna „Domyślna” to plan bazowy do porównań, „Rekomendacja” — wskazówka z planu v3.
-      <a href="https://docs.google.com/spreadsheets/d/1HC_9SpfQXe-Xj90Vnl0UiOdK8Q9MFcEFDsibguZDLs8/edit#gid=1865812908" target="_blank" rel="noopener">Otwórz kartę Decyzje w arkuszu</a>`;
+      <a href="https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit#gid=1865812908" target="_blank" rel="noopener">Otwórz kartę Decyzje w arkuszu</a>`;
   }
 
   $("#btn-approve")?.addEventListener("click", async () => {
