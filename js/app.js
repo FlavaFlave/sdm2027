@@ -8,7 +8,7 @@ import {
   groupDecisions, defaultChoices, parseHash, writeHash, computeCost, baselineCost,
   activeEffects, applyDays, scenarioLogs, normalizeChoices, parseWplatySheet, parseChecklistSheet,
 } from "./cost.js";
-import { getMaps, updateMap, visiblePlaces, routeLines } from "./maps.js";
+import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace } from "./maps.js";
 import { renderBudget, resizeBudgetChart } from "./budget.js";
 import { renderChecklist } from "./checklist.js";
 
@@ -35,9 +35,17 @@ function fromSheetTables(tables) {
     id: r["ID decyzji"], decyzja: r["Decyzja"], opcja_id: r["ID opcji"], opcja: r["Opcja"],
     domyslna: String(r["Domyślna"]).toLowerCase() === "tak",
     rekomendacja: String(r["Rekomendacja"]).toLowerCase() === "tak",
+    wybrana: String(r["Wybrana"] || "").toLowerCase() === "tak",
     zmiany: r["Zmiany kosztów (id:+N / id:=N / id:*N)"] || r["Zmiany kosztów"] || "",
     efekt: r["Efekt trasy (kod wariantu)"] || r["Efekt trasy"] || "",
     wplyw: r["Wpływ"] || r["Wpływ na trasę i koszt"] || "",
+    plusy: r["Plusy"] || "",
+    minusy: r["Minusy"] || "",
+    kontekst: r["Kontekst"] || "",
+    opis: r["Opis decyzji"] || r["Opis"] || "",
+    ograniczenia: r["Co wpływa na decyzję"] || r["Ograniczenia"] || "",
+    wplyw_inne: r["Wpływ na inne elementy"] || "",
+    rekomendacja_tekst: r["Uzasadnienie rekomendacji"] || "",
     termin: r["Termin"],
   }));
   const pozycje = rowsToObjects(tables.Koszty).filter((r) => r["ID"]).map((r) => ({
@@ -93,7 +101,28 @@ function parseUstawieniaSheet(rows) {
   return out;
 }
 
+async function loadUstawienia(fallbackMeta) {
+  const fb = fallbackMeta || {};
+  const out = {
+    privatePanelUrl: fb.privatePanelUrl || "",
+    checklistAppUrl: fb.checklistAppUrl || "",
+  };
+  try {
+    const r = await fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent("Ustawienia")}`);
+    if (!r.ok) return out;
+    const text = await r.text();
+    if (/<!DOCTYPE|<html|must be signed|Sign in/i.test(text) || text.length < 8) return out;
+    const ust = parseUstawieniaSheet(parseCsv(text));
+    if (String(ust.privatePanelUrl || "").trim()) out.privatePanelUrl = String(ust.privatePanelUrl).trim();
+    if (String(ust.checklistAppUrl || "").trim()) out.checklistAppUrl = String(ust.checklistAppUrl).trim();
+    return out;
+  } catch (_) {
+    return out;
+  }
+}
+
 async function loadPrivatePanelUrl(fallbackUrl) {
+
   try {
     const r = await fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent("Ustawienia")}`);
     if (!r.ok) return fallbackUrl || "";
@@ -128,12 +157,12 @@ async function loadData() {
     const model = { ...(fallback.model || {}), pozycje: parsed.pozycje.length ? parsed.pozycje : (fallback.model || {}).pozycje };
     const wplaty = { ...(fallback.wplaty || {}) };
     if (parsed.wplatyRaty && parsed.wplatyRaty.length) wplaty.raty = parsed.wplatyRaty;
-    const privatePanelUrl = await loadPrivatePanelUrl((fallback.meta || {}).privatePanelUrl || "");
+    const ust = await loadUstawienia(fallback.meta || {});
     return {
       ...fallback, ...parsed, miejsca, model, wplaty,
       checklista: (parsed.checklistaSheet && parsed.checklistaSheet.length) ? parsed.checklistaSheet : fallback.checklista,
       warianty: fallback.warianty, logistyka: fallback.logistyka,
-      meta: { ...fallback.meta, source: "arkusz Google (opublikowany CSV)", privatePanelUrl },
+      meta: { ...fallback.meta, source: "arkusz Google (opublikowany CSV)", ...ust },
     };
   } catch (_) {
     const fallback = await (await fetch("./data/data.json")).json();
@@ -371,7 +400,7 @@ function renderCompare(ctx) {
   const row = $("#saved-row");
   if (!row) return;
   if (!saved.length) {
-    row.innerHTML = `<p class="muted">Nie zapisano jeszcze scenariusza. Ustaw decyzje i kliknij „Zapisz scenariusz”.</p>`;
+    row.innerHTML = `<p class="muted">Nie zapisano jeszcze wariantu roboczego. Ustaw decyzje i kliknij „Zapisz jako wariant roboczy”.</p>`;
     $("#compare-table").innerHTML = "";
     return;
   }
@@ -455,8 +484,8 @@ function initTabs(onShow) {
       Object.values(getMaps()).forEach((m) => m.invalidateSize());
       if (chart) chart.resize();
       resizeBudgetChart();
+      onShow(id, write);
     });
-    if (write) onShow(id);
   };
   $("#tabs").addEventListener("click", (e) => {
     const btn = e.target.closest(".tab");
@@ -465,9 +494,19 @@ function initTabs(onShow) {
   return show;
 }
 
+function optionDetailHtml(opt) {
+  if (!opt) return "";
+  const bits = [];
+  if (opt.plusy) bits.push(`<div class="opt-side is-plus"><h4>Plusy tej opcji</h4><p>${escapeHtml(opt.plusy)}</p></div>`);
+  if (opt.minusy) bits.push(`<div class="opt-side is-minus"><h4>Minusy tej opcji</h4><p>${escapeHtml(opt.minusy)}</p></div>`);
+  if (opt.wplyw) bits.push(`<p class="opt-impact"><strong>Co z tego wynika:</strong> ${escapeHtml(opt.wplyw)}</p>`);
+  return bits.join("");
+}
+
 function renderDecisionForm(groups, choices, fujiOsob, onChange) {
   const list = $("#decision-list");
   list.innerHTML = groups.map((g) => {
+    const current = g.opcje.find((o) => o.opcja_id === choices[g.id]) || g.opcje[0];
     const opts = g.opcje.map((o) => {
       const rec = o.rekomendacja ? " — rekomendacja" : "";
       return `<option value="${escapeHtml(o.opcja_id)}" ${choices[g.id] === o.opcja_id ? "selected" : ""}>${escapeHtml(o.opcja)}${escapeHtml(rec)}</option>`;
@@ -478,11 +517,19 @@ function renderDecisionForm(groups, choices, fujiOsob, onChange) {
           <input type="number" id="fuji-osob" min="1" max="90" step="1" value="${escapeHtml(String(fujiOsob))}" />
         </div>`
       : "";
+    const recTag = g.opcje.some((o) => o.rekomendacja) ? `<span class="rec-tag">jest rekomendacja</span>` : "";
     return `<article class="decision-card" data-id="${escapeHtml(g.id)}">
-      <h3>${escapeHtml(g.nazwa)}${g.opcje.some((o) => o.rekomendacja) ? `<span class="rec-tag">jest rekomendacja</span>` : ""}</h3>
-      <div class="termin">Termin: ${escapeHtml(g.termin || "—")}</div>
-      <select aria-label="${escapeHtml(g.nazwa)}">${opts}</select>
+      <h3>${escapeHtml(g.nazwa)}${recTag}</h3>
+      <div class="termin">Termin decyzji: ${escapeHtml(g.termin || "—")}</div>
+      ${g.kontekst ? `<p class="dec-kicker">W jakiej sytuacji jesteśmy</p><p class="dec-body">${escapeHtml(g.kontekst)}</p>` : ""}
+      ${g.opis ? `<p class="dec-kicker">Czego dotyczy ta decyzja</p><p class="dec-body">${escapeHtml(g.opis)}</p>` : ""}
+      ${g.ograniczenia ? `<p class="dec-kicker">Co na nią wpływa (terminy, ceny, ograniczenia)</p><p class="dec-body">${escapeHtml(g.ograniczenia)}</p>` : ""}
+      <label class="dec-kicker" for="sel-${escapeHtml(g.id)}">Wybierz opcję (podgląd)</label>
+      <select id="sel-${escapeHtml(g.id)}" aria-label="${escapeHtml(g.nazwa)}">${opts}</select>
       ${fujiExtra}
+      <div class="option-detail" data-role="option-detail">${optionDetailHtml(current)}</div>
+      ${g.wplyw_inne ? `<p class="dec-kicker">Wpływ na trasę, noclegi, transport, koszt i inne decyzje</p><p class="dec-body">${escapeHtml(g.wplyw_inne)}</p>` : ""}
+      ${g.rekomendacja_tekst ? `<p class="dec-reco"><strong>Rekomendacja.</strong> ${escapeHtml(g.rekomendacja_tekst)}</p>` : ""}
     </article>`;
   }).join("");
   if (!list.dataset.bound) {
@@ -498,10 +545,17 @@ function renderDecisionForm(groups, choices, fujiOsob, onChange) {
         const box = $("#fuji-input");
         if (box) box.hidden = e.target.value !== "tak";
       }
+      const sel = card.querySelector("select");
+      const detail = card.querySelector("[data-role=option-detail]");
+      const groupsNow = list._groups || [];
+      const g = groupsNow.find((x) => x.id === id);
+      const opt = g && g.opcje.find((o) => o.opcja_id === e.target.value);
+      if (detail) detail.innerHTML = optionDetailHtml(opt);
       handler({ choices: { [id]: e.target.value } });
     });
   }
   list._onDecision = onChange;
+  list._groups = groups;
 }
 
 async function main() {
@@ -537,16 +591,22 @@ async function main() {
   const base = baselineCost(data.model, groups);
   renderCredits(data.miejsca, data.meta);
   renderLogistyka(data);
-  renderChecklist(data.checklista || []);
+  renderChecklist(data.checklista || [], data.meta);
   $("#legend-all").innerHTML = `
     <span><i class="legend-dot jp"></i>Japonia</span>
     <span><i class="legend-dot kr"></i>Korea</span>
     <span><i class="legend-dot air"></i>Lotniska i przesiadki</span>
     <span>Linia ciągła: autokar / droga lądowa · kreska: lot albo prom</span>`;
 
-  const showTab = initTabs((id) => {
+  const lastMapPlaces = { all: [], jp: [], kr: [] };
+  const showTab = initTabs((id, write) => {
     tab = id;
-    writeHash(tab, { choices, fujiOsob });
+    if (write !== false) writeHash(tab, { choices, fujiOsob });
+    requestAnimationFrame(() => {
+      if (id === "japonia") focusMap("map-jp", lastMapPlaces.jp);
+      else if (id === "korea") focusMap("map-kr", lastMapPlaces.kr);
+      else if (id === "przeglad") focusMap("map-all", lastMapPlaces.all);
+    });
   });
 
   function applyAll() {
@@ -571,11 +631,17 @@ async function main() {
     renderTimeline(days);
     renderBudget(data, cost);
 
-    const jpVis = vis.filter((p) => /Japonia|Polska|Katar/.test(p.kraj) || p.id === "prom" || p.id === "fuji");
-    const krVis = vis.filter((p) => /Korea/.test(p.kraj) || p.id === "prom");
+    const jpVis = vis.filter(isJapanPlace);
+    const krVis = vis.filter(isKoreaPlace);
     updateMap("map-all", vis, lines.all);
     updateMap("map-jp", jpVis, lines.jp);
     updateMap("map-kr", krVis, lines.kr);
+    lastMapPlaces.all = vis;
+    lastMapPlaces.jp = jpVis;
+    lastMapPlaces.kr = krVis;
+    if (tab === "japonia") focusMap("map-jp", jpVis);
+    if (tab === "korea") focusMap("map-kr", krVis);
+    if (tab === "przeglad") focusMap("map-all", vis);
 
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...choices, fuji_osob: fujiOsob })); } catch (_) {}
     writeHash(tab, { choices, fujiOsob });
@@ -588,6 +654,13 @@ async function main() {
   };
   renderDecisionForm(groups, choices, fujiOsob, onDecision);
 
+  const official = $("#official-plan-note");
+  if (official) {
+    official.innerHTML = `<strong>Obowiązujący plan zapisuje się w arkuszu, nie na tej stronie.</strong>
+      Żeby wszyscy organizatorzy mieli ten sam, trwały wybór, otwórz kartę Decyzje i w kolumnie „Wybrana” wpisz TAK przy oficjalnie przyjętej opcji (jedna na każdą decyzję). Kolumna „Domyślna” to plan bazowy do porównań, „Rekomendacja” — wskazówka z planu v3.
+      <a href="https://docs.google.com/spreadsheets/d/1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE/edit#gid=1865812908" target="_blank" rel="noopener">Otwórz kartę Decyzje w arkuszu</a>`;
+  }
+
   $("#btn-copy-link")?.addEventListener("click", async () => {
     writeHash(tab, { choices, fujiOsob });
     const url = location.href;
@@ -595,26 +668,47 @@ async function main() {
     try {
       await navigator.clipboard.writeText(url);
       status.hidden = false;
-      status.textContent = "Skopiowano link do tego scenariusza.";
+      status.textContent = "Skopiowano link do tego wariantu. Osoba, która go otworzy, zobaczy te same wybory. To nie zapisuje planu w arkuszu.";
     } catch (_) {
       status.hidden = false;
-      status.textContent = "Skopiuj adres z paska: " + url;
+      status.textContent = "Skopiuj adres z paska przeglądarki: " + url;
     }
   });
   $("#btn-reset")?.addEventListener("click", () => {
+    if (!confirm("Wyczyścić wszystkie zmiany w podglądzie i wrócić do planu bazowego? Arkusz się nie zmieni.")) return;
     choices = { ...baseChoices };
     fujiOsob = 10;
     renderDecisionForm(groups, choices, fujiOsob, onDecision);
     applyAll();
   });
+  let lastNamedSave = loadSaved().slice(-1)[0] || null;
+  $("#btn-undo-save")?.addEventListener("click", () => {
+    const snap = lastNamedSave || loadSaved().slice(-1)[0];
+    if (!snap) {
+      const status = $("#copy-status");
+      status.hidden = false;
+      status.textContent = "Nie ma jeszcze zapisanego wariantu roboczego w tej przeglądarce.";
+      return;
+    }
+    choices = { ...baseChoices, ...(snap.choices || {}) };
+    fujiOsob = snap.fujiOsob || 10;
+    renderDecisionForm(groups, choices, fujiOsob, onDecision);
+    applyAll();
+  });
   $("#btn-save-scenario")?.addEventListener("click", () => {
     const cost = computeCost(data.model, groups, choices, fujiOsob);
+    const suggested = scenarioLabel(choices, fujiOsob);
+    const nazwa = (prompt("Nazwa wariantu roboczego (zapis tylko w tej przeglądarce):", suggested) || "").trim() || suggested;
     const saved = loadSaved();
-    const nazwa = scenarioLabel(choices, fujiOsob);
     if (saved.length >= 3) saved.shift();
-    saved.push({ nazwa, choices: { ...choices }, fujiOsob, total: cost.total, group: cost.group, fujiAdd: cost.fujiAdd, grandGroup: cost.grandGroup });
+    const item = { nazwa, choices: { ...choices }, fujiOsob, total: cost.total, group: cost.group, fujiAdd: cost.fujiAdd, grandGroup: cost.grandGroup };
+    saved.push(item);
+    lastNamedSave = item;
     storeSaved(saved);
     renderCompare({ groups, base });
+    const status = $("#copy-status");
+    status.hidden = false;
+    status.textContent = "Zapisano wariant roboczy „" + nazwa + "” w tej przeglądarce.";
   });
   $("#saved-row")?.addEventListener("click", (e) => {
     const del = e.target.closest("[data-del]");

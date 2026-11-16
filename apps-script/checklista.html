@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ŚDM 2027 — checklista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --navy:#101929; --gold:#c6a15b; --paper:#f6f1e8; --ink:#1c1712; --line:#d7ccb8; --ok:#2c6e49; --wine:#7c1e2e; }
+    body { margin:0; font-family:"Source Sans 3",sans-serif; background:var(--paper); color:var(--ink); }
+    header { background:var(--navy); color:var(--paper); padding:24px 20px; }
+    h1 { font-family:"Cormorant Garamond",serif; margin:0 0 6px; }
+    .wrap { width:min(980px, calc(100% - 32px)); margin:0 auto; padding:20px 0 48px; }
+    .banner { background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 16px; margin:0 0 16px; }
+    article { background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:0 0 12px; }
+    label { display:block; font-size:0.8rem; font-weight:600; margin:8px 0 4px; }
+    input, select, textarea { width:100%; padding:6px 8px; border:1px solid var(--line); border-radius:8px; font:inherit; box-sizing:border-box; }
+    button { background:var(--gold); border:0; border-radius:999px; padding:8px 16px; font-weight:700; cursor:pointer; }
+    .ok { color:var(--ok); } .err { color:var(--wine); }
+    .done { color:var(--ok); font-weight:700; }
+  </style>
+</head>
+<body>
+  <header><div class="wrap" style="padding:0">
+    <h1>Checklista organizatorów</h1>
+    <p>Zapis trafia do karty Checklista publicznego arkusza. Bez danych uczestników.</p>
+  </div></header>
+  <main class="wrap">
+    <div id="msg" class="banner" hidden></div>
+    <div id="list"></div>
+  </main>
+  <script>
+    var IS_APPS = typeof google !== "undefined" && google.script && google.script.run;
+    function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
+    function show(data){
+      document.getElementById("list").innerHTML = (data.items||[]).map(function(it){
+        var opts = ["<option value=\"\"></option>"].concat((data.osoby||[]).map(function(n){
+          return "<option value=\""+esc(n)+"\""+(it.osoba===n?" selected":"")+">"+esc(n)+"</option>";
+        })).join("");
+        return "<article data-row=\""+it.row+"\">"+
+          "<h3>"+esc(it.zadanie)+"</h3>"+
+          "<p>"+esc(it.kat)+" · termin "+esc(it.termin)+"</p>"+
+          "<label>Osoba odpowiedzialna</label><select name=\"osoba\" "+(data.mozeEdytowac?"":"disabled")+">"+opts+"</select>"+
+          "<label><input type=\"checkbox\" name=\"zrobione\" "+(it.zrobione?"checked":"")+" "+(data.mozeEdytowac?"":"disabled")+" /> Zrobione</label>"+
+          "<label>Komentarz</label><textarea name=\"komentarz\" "+(data.mozeEdytowac?"":"disabled")+">"+esc(it.komentarz)+"</textarea>"+
+          (it.zmieniono?"<p>Ostatnia zmiana: "+esc(it.zmieniono)+"</p>":"")+
+          (data.mozeEdytowac?"<p><button type=\"button\" data-save=\""+it.row+"\">Zapisz</button></p>":"")+
+        "</article>";
+      }).join("") || "<p>Brak pozycji.</p>";
+    }
+    function boot(data){
+      if(!data||!data.ok){
+        document.getElementById("msg").hidden=false;
+        document.getElementById("msg").innerHTML="<strong>Brak dostępu albo brak wdrożenia.</strong> Użyj karty Checklista w arkuszu Google.";
+        return;
+      }
+      if(!data.mozeEdytowac){
+        document.getElementById("msg").hidden=false;
+        document.getElementById("msg").textContent="Masz podgląd. Żeby zapisywać, potrzebujesz uprawnień edytora arkusza.";
+      }
+      show(data);
+    }
+    document.getElementById("list").addEventListener("click", function(e){
+      var btn=e.target.closest("[data-save]"); if(!btn||!IS_APPS) return;
+      var art=btn.closest("article");
+      var payload={
+        row:Number(btn.getAttribute("data-save")),
+        osoba:art.querySelector("[name=osoba]").value,
+        zrobione:art.querySelector("[name=zrobione]").checked,
+        komentarz:art.querySelector("[name=komentarz]").value
+      };
+      google.script.run.withSuccessHandler(function(res){
+        var m=document.getElementById("msg"); m.hidden=false;
+        if(!res||!res.ok){ m.className="banner err"; m.textContent=(res&&res.message)||"Nie zapisano."; return; }
+        m.className="banner ok"; m.textContent="Zapisano w arkuszu.";
+        boot(res);
+      }).withFailureHandler(function(err){
+        var m=document.getElementById("msg"); m.hidden=false; m.className="banner err"; m.textContent=String(err);
+      }).saveChecklistItem(payload);
+    });
+    if(!IS_APPS){
+      document.getElementById("msg").hidden=false;
+      document.getElementById("msg").textContent="Podgląd lokalny — zapis działa po wklejeniu skryptu do arkusza i wdrożeniu web appa.";
+    } else {
+      google.script.run.withSuccessHandler(boot).withFailureHandler(function(){ boot({ok:false}); }).getChecklist();
+    }
+  </script>
+</body>
+</html>

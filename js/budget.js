@@ -76,8 +76,31 @@ function renderPrivatePanelCard(data) {
   }
 }
 
+
+const PUBLIC_SHEET = "https://docs.google.com/spreadsheets/d/1pPyeqUDNG9FYh20ugTrgIyqD6E6Mq5GiAqUtoEahHVE/edit";
+const PRIVATE_SHEET = "https://docs.google.com/spreadsheets/d/1WSchAIbuUpfZtqEY6Xd8Mvj_-Ap8-ckFXx0AgttHpKo/edit";
+
+function renderBudgetSheetLinks(data) {
+  const el = $("#budget-sheet-links");
+  if (!el) return;
+  const pub = (data && data.meta && data.meta.spreadsheet_url) || PUBLIC_SHEET;
+  const priv = (data && data.meta && data.meta.private_sheet_url) || PRIVATE_SHEET;
+  el.innerHTML = `
+    <a class="sheet-link-card" href="${escapeHtml(pub)}" target="_blank" rel="noopener">
+      <h3>Arkusz publiczny — koszty, raty, zbiorcze wpłaty</h3>
+      <p>Tu organizatorzy wpisują stawki, harmonogram rat i sumy zbiorcze. Gdy arkusz jest opublikowany jako CSV, strona pobiera stąd te liczby (inaczej korzysta z kopii w data.json). Bez nazwisk uczestników.</p>
+      <span class="btn btn-gold">Otwórz arkusz kosztów</span>
+    </a>
+    <a class="sheet-link-card is-private" href="${escapeHtml(priv)}" target="_blank" rel="noopener">
+      <h3>Arkusz prywatny — wpłaty imienne i uczestnicy</h3>
+      <p>Tu wpisuje się, kto ile wpłacił (wpłata imienna albo ogólna od darczyńcy) oraz dane uczestników. Arkusz otworzy się tylko osobom, którym go udostępniono. Publiczna strona nie pobiera stąd nazwisk ani kwot imiennych — te widać w panelu organizatorów.</p>
+      <span class="btn">Otwórz prywatny arkusz wpłat</span>
+    </a>`;
+}
+
 export function renderBudget(data, cost) {
   renderPrivatePanelCard(data);
+  renderBudgetSheetLinks(data);
   const W = data.wplaty || {};
   const raty = splitInstalments(cost.total, W.raty || []);
   const platnicy = W.platnicy || N_GROUP;

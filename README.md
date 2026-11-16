@@ -1,8 +1,8 @@
 # ŚDM 2027 — strona organizatorów / organizers’ site
 
-Lokalna, jeszcze **nieopublikowana** strona referencyjna dla organizatorów pielgrzymki Japonia + Korea (plan v3, etap 4). Wersja dla rodziców powstanie później.
+Lokalna, jeszcze **nieopublikowana** strona referencyjna dla organizatorów pielgrzymki Japonia + Korea (plan v3, etap 5). Wersja dla rodziców powstanie później.
 
-A local, **unpublished** reference site for the organizers of the Japan + Korea pilgrimage (plan v3, stage 4). A parents’ version will come later.
+A local, **unpublished** reference site for the organizers of the Japan + Korea pilgrimage (plan v3, stage 5). A parents’ version will come later.
 
 **Publiczna część nie zawiera danych osobowych uczestników.** Imiona, nazwiska, telefony, e-maile, paszporty i wpłaty imienne są wyłącznie w prywatnym arkuszu Google i w panelu Apps Script — nie w tym folderze, nie w `data.json` i nie na GitHub Pages.
 
@@ -37,7 +37,7 @@ sdm-site/
   js/
     app.js            # start, zakładki, karty dni, decyzje, logistyka
     cost.js           # silnik kosztu i decyzji, raty, hash scenariusza
-    maps.js           # Leaflet / OpenStreetMap
+    maps.js           # Leaflet / Esri World Street Map (etykiety angielskie)
     budget.js         # zakładka Budżet i wpłaty (zbiorcze + przycisk do panelu)
     checklist.js      # zakładka Checklista
     util.js           # formatowanie, CSV, DOM
@@ -45,7 +45,10 @@ sdm-site/
   apps-script/
     Panel.gs          # do wklejenia w prywatnym arkuszu (Apps Script)
     panel.html        # wygląd prywatnego panelu
-    INSTRUKCJA.md     # wdrożenie web appa, krok po kroku
+    INSTRUKCJA.md     # wdrożenie prywatnego panelu wpłat
+    Checklista.gs      # opcjonalny zapis checklisty (publiczny arkusz)
+    checklista.html
+    INSTRUKCJA-checklista.md
   .nojekyll           # GitHub Pages serwuje pliki bez Jekylla
   .gitignore
   README.md
@@ -184,7 +187,7 @@ Folder jest gotowy do wrzucenia na GitHub Pages bez budowania:
 ```bash
 git init
 git add .
-git commit -m "ŚDM 2027 — strona organizatorów, etap 4"
+git commit -m "ŚDM 2027 — strona organizatorów, etap 5"
 # potem remote i gh-pages albo Settings → Pages → Deploy from branch (root)
 ```
 

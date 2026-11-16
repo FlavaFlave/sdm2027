@@ -8,14 +8,17 @@ import { N_GROUP, FUJI_PER, CHOICE_IDS, num } from "./util.js";
 export function groupDecisions(rows) {
   const order = [];
   const map = {};
+  const hoist = ["kontekst", "opis", "ograniczenia", "wplyw_inne", "rekomendacja_tekst"];
   (rows || []).forEach((r) => {
     if (!map[r.id]) {
-      map[r.id] = { id: r.id, nazwa: r.decyzja, termin: r.termin, opcje: [] };
+      map[r.id] = { id: r.id, nazwa: r.decyzja, termin: r.termin || "", opcje: [] };
+      hoist.forEach((k) => { map[r.id][k] = r[k] || ""; });
       order.push(map[r.id]);
     }
     map[r.id].opcje.push(r);
     if (r.termin) map[r.id].termin = r.termin;
     if (r.decyzja) map[r.id].nazwa = r.decyzja;
+    hoist.forEach((k) => { if (r[k]) map[r.id][k] = r[k]; });
   });
   return order;
 }
@@ -182,18 +185,29 @@ export function parseWplatySheet(rows) {
 }
 
 export function parseChecklistSheet(rows) {
-  return rowsToSafe(rows).filter((r) => r["ID"]).map((r) => ({
-    id: r["ID"],
-    kat: r["Kategoria"],
-    zadanie: r["Zadanie"],
-    kto: r["Osoba odpowiedzialna"],
-    termin: r["Termin (data)"],
-    termin_etykieta: r["Termin (opis)"] || "",
-    status: (r["Status"] || "do zrobienia").toLowerCase(),
-    wymagane: r["Wymagane (liczba)"],
-    zebrane: r["Zebrane (liczba)"],
-    uwagi: r["Uwagi"] || "",
-  }));
+  return rowsToSafe(rows).filter((r) => r["ID"]).map((r) => {
+    const zrobioneRaw = String(r["Zrobione"] || "").trim().toLowerCase();
+    const zrobione = zrobioneRaw === "tak" || zrobioneRaw === "true" || zrobioneRaw === "prawda" || zrobioneRaw === "1" || zrobioneRaw === "yes";
+    let status = (r["Status"] || "do zrobienia").toLowerCase();
+    if (zrobione) status = "zrobione";
+    const osoba = (r["Osoba"] || r["Osoba odpowiedzialna"] || "").trim();
+    return {
+      id: r["ID"],
+      kat: r["Kategoria"],
+      zadanie: r["Zadanie"],
+      kto: r["Osoba odpowiedzialna"] || osoba,
+      osoba,
+      termin: r["Termin (data)"],
+      termin_etykieta: r["Termin (opis)"] || "",
+      status,
+      zrobione,
+      wymagane: r["Wymagane (liczba)"],
+      zebrane: r["Zebrane (liczba)"],
+      uwagi: r["Uwagi"] || "",
+      komentarz: r["Komentarz"] || "",
+      zmieniono: r["Zmieniono"] || "",
+    };
+  });
 }
 
 function rowsToSafe(rows) {

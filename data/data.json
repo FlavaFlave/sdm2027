@@ -23,10 +23,12 @@
     ],
     "uwaga_danych": "Strona najpierw próbuje wczytać opublikowany arkusz Google (CSV/gviz) z danymi trasy, kosztów i zbiorczych wpłat. Jeśli arkusz nie jest jeszcze opublikowany, używa data/data.json. Dane osobowe uczestników NIE są w tym pliku ani w publicznym arkuszu — tylko w prywatnym arkuszu i w panelu Apps Script.",
     "zrodla": "Plan v3 Fable (15.11.2026), plan v2 Claude, pętla Akita, kosztorys Artura z 22.09.2026 (jako źródło stawek, nie jako wiążąca trasa), przegląd załączników. Zdjęcia: Wikimedia Commons, licencje przy każdym miejscu.",
-    "etap": 4,
+    "etap": 5,
     "uwaga_wplat": "Brak potwierdzonego, aktualnego zbiorczego stanu wpłat (stan na 15.11.2026). W Gmailu i na Dysku nie znaleziono sumy zebranej ani liczby wpłaconych rat pasującej do harmonogramu z 22.09. Organizatorzy uzupełniają kolumny „Liczba wpłaconych” i „Suma wpłynęła” w karcie Wpłaty arkusza — bez nazwisk.",
     "privatePanelUrl": "",
-    "private_sheet_note": "Dane osobowe są wyłącznie w osobnym, niepublikowanym arkuszu. To pole privatePanelUrl to tylko adres web appa (pusty, dopóki Jakub go nie wdroży)."
+    "private_sheet_note": "Dane osobowe są wyłącznie w osobnym, niepublikowanym arkuszu. To pole privatePanelUrl to tylko adres web appa (pusty, dopóki Jakub go nie wdroży).",
+    "private_sheet_url": "https://docs.google.com/spreadsheets/d/1WSchAIbuUpfZtqEY6Xd8Mvj_-Ap8-ckFXx0AgttHpKo/edit",
+    "checklistAppUrl": ""
   },
   "dni": [
     {
@@ -56,7 +58,7 @@
       "km": "200",
       "czas_h": "2,5–2,75",
       "miejsca": "doha,narita,iwaki",
-      "uwagi": "Jōban przebiega w sąsiedztwie Fukushimy (ok. 0,37 µSv/przejazd, pomiar 2015). Jeśli rodzice tego nie zaakceptują — Utsunomiya. Jeśli Msza w Akicie ok. 17:00, lepsze Mito (przyjazd ok. 23:00, +1 h snu). Zegar biologiczny: pierwsze doby organizm żyje czasem warszawskim (7 h różnicy) — autokar jedzie, gdy grupa i tak śpi.",
+      "uwagi": "Autostrada Jōban, którą w wariancie Iwaki jedziemy w nocy 2 sierpnia z Narity, przebiega w sąsiedztwie strefy wokół elektrowni Fukushima Daiichi. Sam fakt tej trasy może być dla części rodziców trudny do przyjęcia. Jeśli grupa zdecyduje, że tą drogą nie jedziemy, pierwsza noc jest w Utsunomiya (dalej w głąb lądu, bez Jōban, ale z dłuższym dniem 3 sierpnia). Jeśli Msza w Akicie ma być około 17:00, lepsze jest Mito (przyjazd ok. 23:00, o godzinę więcej snu). Zegar biologiczny: przez pierwsze doby organizm żyje jeszcze czasem warszawskim (ok. 7 godzin różnicy) — autokar jedzie wtedy, gdy grupa i tak spałaby w Polsce.",
       "status": "lot potwierdzony; transfer szacunek"
     },
     {
@@ -71,7 +73,7 @@
       "km": "180 + 260 + 120",
       "czas_h": "ok. 8 z przerwami",
       "miejsca": "iwaki,matsushima,zuiganji,akita,kitakami",
-      "uwagi": "E1 (rekomendacja) bez parady Kantō. Pada, jeśli siostry wyznaczą Mszę po 18:00. Faks do sióstr: 018-868-4728, do 30.11.2026. E2: Msza do 17:30, nocleg w centrum Akity, parada 19:10–21:00. E4 (odmowa sióstr): Sendai zamiast Akity, Matsushima po południu.",
+      "uwagi": "E1 (rekomendacja) bez parady Kantō. Wariant E1 przestaje być możliwy, jeśli siostry wyznaczą Mszę po godzinie 18:00. Faks do sióstr: 018-868-4728, do 30.11.2026. E2: Msza do 17:30, nocleg w centrum Akity, parada 19:10–21:00. E4 (gdy siostry odmówią): Sendai zamiast Akity, Matsushima po południu.",
       "status": "Msza i noclegi do uzgodnienia"
     },
     {
@@ -967,7 +969,7 @@
       "lng": 139.8828,
       "typ": "nocleg",
       "dni": "2/3.08 (wariant)",
-      "opis": "Nocleg 2.08, gdy rodzice nie zaakceptują autostrady Jōban w sąsiedztwie Fukushimy. Dzień 3.08 wydłuża się (dojazd do Matsushimy w głąb lądu).",
+      "opis": "Nocleg 2 sierpnia, gdy grupa nie jedzie autostradą Jōban (sąsiedztwo strefy Fukushimy). Dzień 3 sierpnia jest dłuższy: dojazd do Matsushimy prowadzi w głąb lądu.",
       "zwiedzamy": "Tylko nocleg.",
       "zdjecie_url": "",
       "zdjecie_zrodlo": "",
@@ -1314,10 +1316,17 @@
       "opcja": "E1 — cała pętla autokarem, bez parady (Iwaki / Kitakami)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Msza w Akicie ok. 15:45–18:00, Nikkō ok. 1,5 h, pobudka 4.08 o 5:00. Pada, jeśli siostry wyznaczą Mszę po 18:00.",
+      "wplyw": "To jest plan bazowy: noclegi Iwaki (albo Mito) i Kitakami, dwa autokary, bez pociągu.",
       "termin": "30.11.2026",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Po wylądowaniu na Naricie 2 sierpnia wieczorem mamy dwa dni, zanim wieczorem 4 sierpnia polecimy do Seulu. W tym czasie planujemy „pętlę wschodnią”: pierwszą noc w Japonii, potem Matsushimę, sanktuarium w Akicie (jeśli siostry zgodzą się na Mszę grupową) i Nikkō, skąd jedziemy na lotnisko Haneda. Osobne pytanie: czy 3 sierpnia wieczorem idziemy na paradę Kantō w Akicie. Plan v3 (Fable, 15.11.2026) zostawia tę samą trasę co wcześniej, ale rezygnuje z pociągu.",
+      "opis": "Wybieramy wariant pętli wschodniej: cała trasa autokarem bez parady (E1), autokar z paradą i noclegiem w Akicie (E2), odradzany wariant z pociągiem Komachi (E3, to był plan v2) albo — gdy siostry w Akicie odmówią Mszy w sanktuarium — Sendai zamiast Akity (E4).",
+      "ograniczenia": "Kluczowa jest odpowiedź sióstr na faks (do 30.11.2026; ostateczny wariant A/B do 31.01.2027) i godzina Mszy. E1 przestaje być możliwy, jeśli Msza w Akicie miałaby być po 18:00. E2 wymaga ok. 90 łóżek w centrum Akity w noc parady. E3 wymaga 90 miejsc w jednym składzie Komachi 6 i dźwiga sześć ogniw logistycznych 4 sierpnia. Termin decyzji o paradzie i E1–E3: 30.11.2026; E4 — po odpowiedzi sióstr, najpóźniej 31.01.2027.",
+      "wplyw_inne": "Wybór pętli zmienia noclegi 2/3 i 3/4 sierpnia, liczbę kierowców, godzinę pobudki 4 sierpnia, czas w Nikkō i koszt bloku 2–4.08. E4 wymusza nocleg 2 sierpnia w Mito i wyłącza Akitę z trasy. E2 wiąże się z trybunami / udziałem w paradzie Kantō. E3 wraca do pociągu i osobnego transportu walizek — to wpływa też na decyzję o „lepszym śnie” (też pociąg) i na zadanie rezerwacji miejscówek JR.",
+      "rekomendacja_tekst": "Rekomendacja planu v3 (Fable): E1 — cała pętla autokarem, bez parady. Jeśli parada jest dla grupy ważna, brać E2 (autokar, wyjazd ok. 4:45), a nie pociąg. Nie jedziemy do Akity „dla samej Mszy parafialnej”, gdy siostry odmówią sanktuarium — wtedy E4 (Sendai).",
+      "plusy": "Cała pętla autokarem, walizki z grupą, najprostszy dzień 4 sierpnia. Msza w Akicie ok. 15:45–18:00, Nikkō ok. 1,5 godziny, pobudka 4 sierpnia o 5:00. Najtańszy z wariantów z Akitą (w v3 blok 2–4.08 ok. 850 zł na osobę, hotele i transport).",
+      "minusy": "Bez parady Kantō. Wariant przestaje być możliwy, jeśli siostry wyznaczą Mszę po 18:00."
     },
     {
       "id": "petla",
@@ -1326,10 +1335,17 @@
       "opcja": "E2 — autokar z paradą Kantō, nocleg w Akicie",
       "zmiany": "bus_wschod:+9000; nocleg_wschod:+150",
       "efekt": "E2",
-      "wplyw": "Parada 19:10–21:00, nocleg w centrum Akity, pobudka 4.08 o 4:00, Nikkō ok. 1–1,25 h. Pada bez 90 łóżek w Akicie w noc parady.",
+      "wplyw": "Noc 3/4 sierpnia w Akicie zamiast Kitakami. Msza 4 sierpnia osobno (np. w Nikkō). Zadanie rezerwacji trybun / udziału w paradzie staje się aktualne.",
       "termin": "30.11.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Po wylądowaniu na Naricie 2 sierpnia wieczorem mamy dwa dni, zanim wieczorem 4 sierpnia polecimy do Seulu. W tym czasie planujemy „pętlę wschodnią”: pierwszą noc w Japonii, potem Matsushimę, sanktuarium w Akicie (jeśli siostry zgodzą się na Mszę grupową) i Nikkō, skąd jedziemy na lotnisko Haneda. Osobne pytanie: czy 3 sierpnia wieczorem idziemy na paradę Kantō w Akicie. Plan v3 (Fable, 15.11.2026) zostawia tę samą trasę co wcześniej, ale rezygnuje z pociągu.",
+      "opis": "Wybieramy wariant pętli wschodniej: cała trasa autokarem bez parady (E1), autokar z paradą i noclegiem w Akicie (E2), odradzany wariant z pociągiem Komachi (E3, to był plan v2) albo — gdy siostry w Akicie odmówią Mszy w sanktuarium — Sendai zamiast Akity (E4).",
+      "ograniczenia": "Kluczowa jest odpowiedź sióstr na faks (do 30.11.2026; ostateczny wariant A/B do 31.01.2027) i godzina Mszy. E1 przestaje być możliwy, jeśli Msza w Akicie miałaby być po 18:00. E2 wymaga ok. 90 łóżek w centrum Akity w noc parady. E3 wymaga 90 miejsc w jednym składzie Komachi 6 i dźwiga sześć ogniw logistycznych 4 sierpnia. Termin decyzji o paradzie i E1–E3: 30.11.2026; E4 — po odpowiedzi sióstr, najpóźniej 31.01.2027.",
+      "wplyw_inne": "Wybór pętli zmienia noclegi 2/3 i 3/4 sierpnia, liczbę kierowców, godzinę pobudki 4 sierpnia, czas w Nikkō i koszt bloku 2–4.08. E4 wymusza nocleg 2 sierpnia w Mito i wyłącza Akitę z trasy. E2 wiąże się z trybunami / udziałem w paradzie Kantō. E3 wraca do pociągu i osobnego transportu walizek — to wpływa też na decyzję o „lepszym śnie” (też pociąg) i na zadanie rezerwacji miejscówek JR.",
+      "rekomendacja_tekst": "Rekomendacja planu v3 (Fable): E1 — cała pętla autokarem, bez parady. Jeśli parada jest dla grupy ważna, brać E2 (autokar, wyjazd ok. 4:45), a nie pociąg. Nie jedziemy do Akity „dla samej Mszy parafialnej”, gdy siostry odmówią sanktuarium — wtedy E4 (Sendai).",
+      "plusy": "Parada Kantō 19:10–21:00 jest możliwa, a grupa i tak jedzie autokarem (bez pociągu z planu v2). Nikkō ok. 1–1,25 godziny.",
+      "minusy": "Pobudka 4 sierpnia o 4:00, wyjazd ok. 4:45. Potrzeba ok. 90 łóżek w centrum Akity w noc parady — bez nich wariant upada (ewentualnie Ōmagari / Kakunodate, jeśli Akita jest pełna). Droższy niż E1 (w v3 blok 2–4.08 ok. 1100 zł; w modelu: autokar +9000 zł na grupę w przeliczeniu i nocleg +150 zł/os.)."
     },
     {
       "id": "petla",
@@ -1338,10 +1354,17 @@
       "opcja": "E3 — parada i pociąg Komachi (plan v2, odradzany)",
       "zmiany": "bus_wschod:+13500; nocleg_wschod:+150; komunikacja:+450",
       "efekt": "E3",
-      "wplyw": "Pociąg Komachi 6 + Yamabiko (ok. ¥16 500/os.), walizki osobno autokarami, sześć ogniw 4.08. Ryzyko braku 90 miejsc w jednym składzie.",
+      "wplyw": "Wraca rozdzielenie ludzi i bagażu oraz rezerwacja miejscówek JR (termin 30.11.2026). Przy wstrzymanym pociągu plan awaryjny to autokary z Akity prosto na Hanedę (ok. 8 h) — wtedy Nikkō odpada.",
       "termin": "30.11.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Po wylądowaniu na Naricie 2 sierpnia wieczorem mamy dwa dni, zanim wieczorem 4 sierpnia polecimy do Seulu. W tym czasie planujemy „pętlę wschodnią”: pierwszą noc w Japonii, potem Matsushimę, sanktuarium w Akicie (jeśli siostry zgodzą się na Mszę grupową) i Nikkō, skąd jedziemy na lotnisko Haneda. Osobne pytanie: czy 3 sierpnia wieczorem idziemy na paradę Kantō w Akicie. Plan v3 (Fable, 15.11.2026) zostawia tę samą trasę co wcześniej, ale rezygnuje z pociągu.",
+      "opis": "Wybieramy wariant pętli wschodniej: cała trasa autokarem bez parady (E1), autokar z paradą i noclegiem w Akicie (E2), odradzany wariant z pociągiem Komachi (E3, to był plan v2) albo — gdy siostry w Akicie odmówią Mszy w sanktuarium — Sendai zamiast Akity (E4).",
+      "ograniczenia": "Kluczowa jest odpowiedź sióstr na faks (do 30.11.2026; ostateczny wariant A/B do 31.01.2027) i godzina Mszy. E1 przestaje być możliwy, jeśli Msza w Akicie miałaby być po 18:00. E2 wymaga ok. 90 łóżek w centrum Akity w noc parady. E3 wymaga 90 miejsc w jednym składzie Komachi 6 i dźwiga sześć ogniw logistycznych 4 sierpnia. Termin decyzji o paradzie i E1–E3: 30.11.2026; E4 — po odpowiedzi sióstr, najpóźniej 31.01.2027.",
+      "wplyw_inne": "Wybór pętli zmienia noclegi 2/3 i 3/4 sierpnia, liczbę kierowców, godzinę pobudki 4 sierpnia, czas w Nikkō i koszt bloku 2–4.08. E4 wymusza nocleg 2 sierpnia w Mito i wyłącza Akitę z trasy. E2 wiąże się z trybunami / udziałem w paradzie Kantō. E3 wraca do pociągu i osobnego transportu walizek — to wpływa też na decyzję o „lepszym śnie” (też pociąg) i na zadanie rezerwacji miejscówek JR.",
+      "rekomendacja_tekst": "Rekomendacja planu v3 (Fable): E1 — cała pętla autokarem, bez parady. Jeśli parada jest dla grupy ważna, brać E2 (autokar, wyjazd ok. 4:45), a nie pociąg. Nie jedziemy do Akity „dla samej Mszy parafialnej”, gdy siostry odmówią sanktuarium — wtedy E4 (Sendai).",
+      "plusy": "Parada zostaje, w Nikkō jest trochę więcej czasu (ok. 1,75 godziny), pobudka 4 sierpnia o 5:00.",
+      "minusy": "To plan v2, w v3 wyraźnie odradzany. Pociąg Komachi 6 i Yamabiko (ok. 16 500 jenów na osobę), walizki osobnym autokarem, sześć ogniw 4 sierpnia. Ryzyko, że nie będzie 90 miejsc w jednym składzie. Najdroższy (w v3 ok. 1600 zł za 2–4.08)."
     },
     {
       "id": "petla",
@@ -1350,10 +1373,17 @@
       "opcja": "E4 — Sendai zamiast Akity (gdy siostry odmówią)",
       "zmiany": "bus_wschod:-13500",
       "efekt": "E4",
-      "wplyw": "Brak sanktuarium w Akicie. 3.08 Mito → Sendai (muzeum, męczennicy 1624, katedra) → Matsushima; 4.08 Nikkō 11:15–13:15. Nocleg 2.08 zawsze w Mito.",
+      "wplyw": "Nocleg 2 sierpnia zawsze w Mito. Akita znika z trasy i z mapy. Nie robimy ok. 1300 km „dla Mszy parafialnej” w Akicie bez sanktuarium.",
       "termin": "po odpowiedzi sióstr, najpóźniej 31.01.2027",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Po wylądowaniu na Naricie 2 sierpnia wieczorem mamy dwa dni, zanim wieczorem 4 sierpnia polecimy do Seulu. W tym czasie planujemy „pętlę wschodnią”: pierwszą noc w Japonii, potem Matsushimę, sanktuarium w Akicie (jeśli siostry zgodzą się na Mszę grupową) i Nikkō, skąd jedziemy na lotnisko Haneda. Osobne pytanie: czy 3 sierpnia wieczorem idziemy na paradę Kantō w Akicie. Plan v3 (Fable, 15.11.2026) zostawia tę samą trasę co wcześniej, ale rezygnuje z pociągu.",
+      "opis": "Wybieramy wariant pętli wschodniej: cała trasa autokarem bez parady (E1), autokar z paradą i noclegiem w Akicie (E2), odradzany wariant z pociągiem Komachi (E3, to był plan v2) albo — gdy siostry w Akicie odmówią Mszy w sanktuarium — Sendai zamiast Akity (E4).",
+      "ograniczenia": "Kluczowa jest odpowiedź sióstr na faks (do 30.11.2026; ostateczny wariant A/B do 31.01.2027) i godzina Mszy. E1 przestaje być możliwy, jeśli Msza w Akicie miałaby być po 18:00. E2 wymaga ok. 90 łóżek w centrum Akity w noc parady. E3 wymaga 90 miejsc w jednym składzie Komachi 6 i dźwiga sześć ogniw logistycznych 4 sierpnia. Termin decyzji o paradzie i E1–E3: 30.11.2026; E4 — po odpowiedzi sióstr, najpóźniej 31.01.2027.",
+      "wplyw_inne": "Wybór pętli zmienia noclegi 2/3 i 3/4 sierpnia, liczbę kierowców, godzinę pobudki 4 sierpnia, czas w Nikkō i koszt bloku 2–4.08. E4 wymusza nocleg 2 sierpnia w Mito i wyłącza Akitę z trasy. E2 wiąże się z trybunami / udziałem w paradzie Kantō. E3 wraca do pociągu i osobnego transportu walizek — to wpływa też na decyzję o „lepszym śnie” (też pociąg) i na zadanie rezerwacji miejscówek JR.",
+      "rekomendacja_tekst": "Rekomendacja planu v3 (Fable): E1 — cała pętla autokarem, bez parady. Jeśli parada jest dla grupy ważna, brać E2 (autokar, wyjazd ok. 4:45), a nie pociąg. Nie jedziemy do Akity „dla samej Mszy parafialnej”, gdy siostry odmówią sanktuarium — wtedy E4 (Sendai).",
+      "plusy": "Zachowujemy pętlę wschodnią i Nikkō, gdy siostry odmówią sanktuarium. 3 sierpnia: Mito → Sendai (muzeum miasta i Hasekura, pomnik męczenników 1624, Msza w katedrze) i po południu Matsushima. 4 sierpnia Nikkō 11:15–13:15. Mieści się w limicie jednego kierowcy. W v3 tańszy blok 2–4.08 (ok. 700 zł).",
+      "minusy": "Nie ma sanktuarium w Akicie — to pierwszy, nienegocjowalny punkt katolickiej strony wyjazdu, więc to wariant awaryjny, nie równorzędna atrakcja. Planowo tracimy Yuzawadai."
     },
     {
       "id": "noc_2",
@@ -1362,10 +1392,17 @@
       "opcja": "Iwaki — droga wybrzeżem (rekomendacja)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Przyjazd ok. 0:00, Akita ok. 15:45. Autostrada Jōban obok Fukushimy (ok. 0,37 µSv/przejazd, pomiar 2015).",
+      "wplyw": "To nocleg rekomendowany przy E1 i E2. Jeśli Msza w Akicie miałaby być przed 15:30, z Iwaki trzeba wyjechać wcześniej i skrócić Matsushimę.",
       "termin": "15.12.2026",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Samolot QR806 ląduje na Naricie o 19:10. Odprawa ok. 90 osób trwa do około 21:00–21:10. Tego wieczoru grupa musi dojechać na pierwszy nocleg tak, żeby 3 sierpnia zdążyć do Matsushimy i na Mszę w Akicie o rozsądnej godzinie, bez kładzenia niepełnoletnich o 1–2 w nocy.",
+      "opis": "Wybieramy miasto pierwszej nocy: Iwaki (droga wybrzeżem, rekomendacja), Mito (gdy Msza w Akicie jest około 17:00) albo Utsunomiya (gdy nie jedziemy autostradą Jōban).",
+      "ograniczenia": "Termin decyzji: 15.12.2026. Przy wariancie E4 (Sendai zamiast Akity) nocleg 2 sierpnia jest zawsze w Mito. Przyjęcie albo odrzucenie autostrady Jōban należy uzgodnić z rodzicami, bo trasa biegnie w sąsiedztwie strefy Fukushimy. Godzina Mszy w Akicie (odpowiedź sióstr) przesądza między Iwaki a Mito.",
+      "wplyw_inne": "Od tego noclegu zależy godzina przyjazdu, długość snu i godzina dotarcia do Akity 3 sierpnia. Utsunomiya wydłuża dzień 3 sierpnia o ok. 1 godzinę jazdy w głąb lądu (w modelu: niewielki wzrost kosztu autokaru). Iwaki i Mito wpisują się w rekomendowaną pętlę E1; E4 blokuje wybór na Mito.",
+      "rekomendacja_tekst": "Rekomendacja v3: Iwaki, jak w planie Jakuba z marca (droga wybrzeżem). Mito, jeśli Msza w Akicie ma być około 17:00 (przyjazd ok. 23:00, o godzinę więcej snu). Utsunomiya tylko wtedy, gdy grupa nie akceptuje jazdy autostradą Jōban.",
+      "plusy": "Droga wybrzeżem jak w planie Jakuba z marca. Przyjazd ok. 0:00, następnego dnia Akita około 15:45 — pasuje do Mszy w przedziale 15:45–18:00. Krótszy dojazd niż przez środek wyspy.",
+      "minusy": "Jazda autostradą Jōban, która przebiega w sąsiedztwie strefy Fukushimy. Część rodziców może tej trasy nie zaakceptować."
     },
     {
       "id": "noc_2",
@@ -1374,10 +1411,17 @@
       "opcja": "Mito — gdy Msza w Akicie ok. 17:00",
       "zmiany": "",
       "efekt": "noc_mito",
-      "wplyw": "Przyjazd ok. 23:00, ok. +1 h snu. Koszt porównywalny.",
+      "wplyw": "Wymuszony przy wariancie E4 (Sendai). Przy E1 zostaje opcją zależną od godziny Mszy.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Samolot QR806 ląduje na Naricie o 19:10. Odprawa ok. 90 osób trwa do około 21:00–21:10. Tego wieczoru grupa musi dojechać na pierwszy nocleg tak, żeby 3 sierpnia zdążyć do Matsushimy i na Mszę w Akicie o rozsądnej godzinie, bez kładzenia niepełnoletnich o 1–2 w nocy.",
+      "opis": "Wybieramy miasto pierwszej nocy: Iwaki (droga wybrzeżem, rekomendacja), Mito (gdy Msza w Akicie jest około 17:00) albo Utsunomiya (gdy nie jedziemy autostradą Jōban).",
+      "ograniczenia": "Termin decyzji: 15.12.2026. Przy wariancie E4 (Sendai zamiast Akity) nocleg 2 sierpnia jest zawsze w Mito. Przyjęcie albo odrzucenie autostrady Jōban należy uzgodnić z rodzicami, bo trasa biegnie w sąsiedztwie strefy Fukushimy. Godzina Mszy w Akicie (odpowiedź sióstr) przesądza między Iwaki a Mito.",
+      "wplyw_inne": "Od tego noclegu zależy godzina przyjazdu, długość snu i godzina dotarcia do Akity 3 sierpnia. Utsunomiya wydłuża dzień 3 sierpnia o ok. 1 godzinę jazdy w głąb lądu (w modelu: niewielki wzrost kosztu autokaru). Iwaki i Mito wpisują się w rekomendowaną pętlę E1; E4 blokuje wybór na Mito.",
+      "rekomendacja_tekst": "Rekomendacja v3: Iwaki, jak w planie Jakuba z marca (droga wybrzeżem). Mito, jeśli Msza w Akicie ma być około 17:00 (przyjazd ok. 23:00, o godzinę więcej snu). Utsunomiya tylko wtedy, gdy grupa nie akceptuje jazdy autostradą Jōban.",
+      "plusy": "Przyjazd ok. 23:00, o godzinę więcej snu niż w Iwaki. Lepsze, gdy Msza w Akicie jest około 17:00.",
+      "minusy": "Nie jest to najkrótsza droga na Akitę przy Mszy o 15:45. Koszt porównywalny z Iwaki, ale to inny hotel do zarezerwowania."
     },
     {
       "id": "noc_2",
@@ -1386,10 +1430,17 @@
       "opcja": "Utsunomiya — bez autostrady Jōban",
       "zmiany": "bus_wschod:+1800",
       "efekt": "noc_utsu",
-      "wplyw": "Omija Jōban. Dzień 3.08 dłuższy o ok. 1 h jazdy w głąb lądu (szacunek +20 zł/os. za autokar).",
+      "wplyw": "Matsushima osiągana później; trzeba pilnować godziny Mszy w Akicie albo — przy E4 — programu w Sendai.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Samolot QR806 ląduje na Naricie o 19:10. Odprawa ok. 90 osób trwa do około 21:00–21:10. Tego wieczoru grupa musi dojechać na pierwszy nocleg tak, żeby 3 sierpnia zdążyć do Matsushimy i na Mszę w Akicie o rozsądnej godzinie, bez kładzenia niepełnoletnich o 1–2 w nocy.",
+      "opis": "Wybieramy miasto pierwszej nocy: Iwaki (droga wybrzeżem, rekomendacja), Mito (gdy Msza w Akicie jest około 17:00) albo Utsunomiya (gdy nie jedziemy autostradą Jōban).",
+      "ograniczenia": "Termin decyzji: 15.12.2026. Przy wariancie E4 (Sendai zamiast Akity) nocleg 2 sierpnia jest zawsze w Mito. Przyjęcie albo odrzucenie autostrady Jōban należy uzgodnić z rodzicami, bo trasa biegnie w sąsiedztwie strefy Fukushimy. Godzina Mszy w Akicie (odpowiedź sióstr) przesądza między Iwaki a Mito.",
+      "wplyw_inne": "Od tego noclegu zależy godzina przyjazdu, długość snu i godzina dotarcia do Akity 3 sierpnia. Utsunomiya wydłuża dzień 3 sierpnia o ok. 1 godzinę jazdy w głąb lądu (w modelu: niewielki wzrost kosztu autokaru). Iwaki i Mito wpisują się w rekomendowaną pętlę E1; E4 blokuje wybór na Mito.",
+      "rekomendacja_tekst": "Rekomendacja v3: Iwaki, jak w planie Jakuba z marca (droga wybrzeżem). Mito, jeśli Msza w Akicie ma być około 17:00 (przyjazd ok. 23:00, o godzinę więcej snu). Utsunomiya tylko wtedy, gdy grupa nie akceptuje jazdy autostradą Jōban.",
+      "plusy": "Nie jedziemy autostradą Jōban, więc odpadą obawy związane z sąsiedztwem strefy Fukushimy. Dojazd z Narity znaną trasą w głąb lądu (Tōhoku).",
+      "minusy": "Dzień 3 sierpnia jest dłuższy o ok. 1 godzinę jazdy. W modelu przyjęto niewielki wzrost kosztu autokaru (szacunek +20 zł na osobę, +1800 zł na pozycji autokaru wschodniego w przeliczeniu modelu)."
     },
     {
       "id": "sen",
@@ -1398,10 +1449,17 @@
       "opcja": "Standard — autokar z Narity w nocy 2.08",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Sen w nocy 2/3.08 ok. 5 h.",
+      "wplyw": "Bez zmiany trasy i kosztu.",
       "termin": "15.12.2026",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Po nocnym locie i odprawie na Naricie grupa w planie bazowym od razu wsiada w autokary i śpi pierwszą noc już na szlaku pętli wschodniej. To daje około 5 godzin snu. Jest też wariant „lepszego snu”, rozważany w planie v2: noc w Tokio lub Ueno i pociąg Hayabusa rano 3 sierpnia do Sendai.",
+      "opis": "Czy zostajemy przy standardzie planu (autokar z Narity w nocy 2 sierpnia), czy dokładamy droższy wariant z noclegiem w Tokio i pociągiem rano.",
+      "ograniczenia": "Termin: 15.12.2026. Wariant z Tokio wraca do pociągu przy 90 osobach i osobnych walizkach — ten sam typ ryzyka, które w v3 usunęliśmy z dnia 4 sierpnia. Szacunek z planu v2: ok. +200–300 zł na osobę.",
+      "wplyw_inne": "Zmienia nocleg 2 sierpnia, środek transportu 3 sierpnia rano i długość jazdy autokarem tego dnia (ok. 5 h zamiast ok. 8 h). Nie zastępuje decyzji o Iwaki/Mito/Utsunomiya w planie bazowym — to osobna, opcjonalna nadbudowa.",
+      "rekomendacja_tekst": "Rekomendacja: standard planu, bez noclegu w Tokio. Wariant „lepszego snu” zostawiamy jako opcję, świadomi kosztu i powrotu pociągu.",
+      "plusy": "Zgodne z planem bazowym, bez pociągu, walizki zostają z grupą, brak dopłaty.",
+      "minusy": "Po nocnym locie sen w nocy 2/3 sierpnia to ok. 5 godzin."
     },
     {
       "id": "sen",
@@ -1410,10 +1468,17 @@
       "opcja": "Lepszy sen: noc 2.08 w Tokio/Ueno + Hayabusa 3.08 do Sendai",
       "zmiany": "sen:=250",
       "efekt": "sen_tokio",
-      "wplyw": "Sen ok. 7 h zamiast 5 h, w autokarze 3.08 ok. 5 h zamiast 8 h. Wraca pociąg (90 osób, walizki osobno). Szacunek v2: +200–300 zł/os.",
+      "wplyw": "Inny nocleg 2 sierpnia i inny początek 3 sierpnia. Trzeba zestawić to z decyzją o pętli (zwłaszcza nie łączyć tego pochopnie z E3).",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Po nocnym locie i odprawie na Naricie grupa w planie bazowym od razu wsiada w autokary i śpi pierwszą noc już na szlaku pętli wschodniej. To daje około 5 godzin snu. Jest też wariant „lepszego snu”, rozważany w planie v2: noc w Tokio lub Ueno i pociąg Hayabusa rano 3 sierpnia do Sendai.",
+      "opis": "Czy zostajemy przy standardzie planu (autokar z Narity w nocy 2 sierpnia), czy dokładamy droższy wariant z noclegiem w Tokio i pociągiem rano.",
+      "ograniczenia": "Termin: 15.12.2026. Wariant z Tokio wraca do pociągu przy 90 osobach i osobnych walizkach — ten sam typ ryzyka, które w v3 usunęliśmy z dnia 4 sierpnia. Szacunek z planu v2: ok. +200–300 zł na osobę.",
+      "wplyw_inne": "Zmienia nocleg 2 sierpnia, środek transportu 3 sierpnia rano i długość jazdy autokarem tego dnia (ok. 5 h zamiast ok. 8 h). Nie zastępuje decyzji o Iwaki/Mito/Utsunomiya w planie bazowym — to osobna, opcjonalna nadbudowa.",
+      "rekomendacja_tekst": "Rekomendacja: standard planu, bez noclegu w Tokio. Wariant „lepszego snu” zostawiamy jako opcję, świadomi kosztu i powrotu pociągu.",
+      "plusy": "Sen ok. 7 godzin zamiast 5, a 3 sierpnia w autokarze ok. 5 godzin zamiast ok. 8.",
+      "minusy": "Wraca pociąg (90 osób, walizki osobno). Szacunek z planu v2: +200–300 zł na osobę (w modelu pozycja snu = 250 zł)."
     },
     {
       "id": "nagasaki",
@@ -1422,10 +1487,17 @@
       "opcja": "Hotele w mieście lub Isahaya/Ōmura (¥14 400/noc)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Trzy zapytania naraz, bezpłatna anulacja.",
+      "wplyw": "To założenie bazowe kosztorysu na pięć nocy.",
       "termin": "15.12.2026",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Na zachodzie Japonii grupa ma pięć nocy w Nagasaki (12–17 sierpnia), potem jedną w Hiroszimie i dwie w Osace. 16 sierpnia zostajemy w Nagasaki zamiast jechać shinkansenem (to szczyt powrotów, 90 osób z walizkami). Środek sierpnia to w Japonii Obon — okres świątecznych podróży, kiedy hotele są droższe i trudniej o 90 miejsc.",
+      "opis": "Jaką stawkę i typ noclegu przyjmujemy w budżecie i w zapytaniach: ośrodek / gościna kościelna, standardowe hotele w mieście albo w Isahaya/Ōmura, albo pesymistyczny szczyt Obonu.",
+      "ograniczenia": "Termin zapytań i decyzji: 15.12.2026. Plan v3 każe wysłać trzy zapytania naraz, z bezpłatną anulacją. Tani wariant (ośrodek Hiyoshi albo gościna kościelna, stawka z kosztorysu Artura ok. 4 500 jenów za noc) wymaga potwierdzenia, że jest 90 miejsc w czasie Obonu oraz warunków (sale, materace, łazienki). Od tej stawki mocno zależy cena komunikowana rodzicom (w szacunku Fable tani Nagasaki obniżał cały koszt nawet o kilka tysięcy złotych na osobę).",
+      "wplyw_inne": "Wpływa na pozycję „nocleg w Nagasaki” w kosztorysie, na rezerwacje Artura i na przedział ceny dla rodziców (decyzja do 31.01.2027, przed II ratą). Nie zmienia trasy: pięć nocy w rejonie Nagasaki zostaje.",
+      "rekomendacja_tekst": "Rekomendacja: w budżecie trzymać standardowe hotele (ok. 14 400 jenów za noc, miasto albo Isahaya/Ōmura) i równolegle pytać o tańszą gościnę. Wariantu pesymistycznego (ok. 20 000 jenów, górna granica widełek Fable) używamy, gdy zapytania wrócą późno albo Obon wyczerpie podaż.",
+      "plusy": "Realistyczna stawka hoteli (ok. 14 400 jenów za noc) w mieście lub w Isahaya/Ōmura. Trzy zapytania idą razem, z bezpłatną anulacją — można się wycofać, gdyby wyszła tańsza gościna.",
+      "minusy": "Drożej niż stawka kościelna z kosztorysu Artura. W Obonie i tak trzeba potwierdzić dostępność 90 miejsc."
     },
     {
       "id": "nagasaki",
@@ -1434,10 +1506,17 @@
       "opcja": "Ośrodek Hiyoshi lub gościna kościelna (¥4 500/noc)",
       "zmiany": "nocleg_nagasaki:=562.5",
       "efekt": "nagasaki_tani",
-      "wplyw": "Stawka kościelna z kosztorysu Artura. Trzeba potwierdzić 90 miejsc w Obon i warunki (sale, materace, łazienki).",
+      "wplyw": "W modelu nocleg w Nagasaki spada do 562,50 zł na osobę za cały pobyt. To główna dźwignia tańszego wariantu ceny dla rodziców.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Na zachodzie Japonii grupa ma pięć nocy w Nagasaki (12–17 sierpnia), potem jedną w Hiroszimie i dwie w Osace. 16 sierpnia zostajemy w Nagasaki zamiast jechać shinkansenem (to szczyt powrotów, 90 osób z walizkami). Środek sierpnia to w Japonii Obon — okres świątecznych podróży, kiedy hotele są droższe i trudniej o 90 miejsc.",
+      "opis": "Jaką stawkę i typ noclegu przyjmujemy w budżecie i w zapytaniach: ośrodek / gościna kościelna, standardowe hotele w mieście albo w Isahaya/Ōmura, albo pesymistyczny szczyt Obonu.",
+      "ograniczenia": "Termin zapytań i decyzji: 15.12.2026. Plan v3 każe wysłać trzy zapytania naraz, z bezpłatną anulacją. Tani wariant (ośrodek Hiyoshi albo gościna kościelna, stawka z kosztorysu Artura ok. 4 500 jenów za noc) wymaga potwierdzenia, że jest 90 miejsc w czasie Obonu oraz warunków (sale, materace, łazienki). Od tej stawki mocno zależy cena komunikowana rodzicom (w szacunku Fable tani Nagasaki obniżał cały koszt nawet o kilka tysięcy złotych na osobę).",
+      "wplyw_inne": "Wpływa na pozycję „nocleg w Nagasaki” w kosztorysie, na rezerwacje Artura i na przedział ceny dla rodziców (decyzja do 31.01.2027, przed II ratą). Nie zmienia trasy: pięć nocy w rejonie Nagasaki zostaje.",
+      "rekomendacja_tekst": "Rekomendacja: w budżecie trzymać standardowe hotele (ok. 14 400 jenów za noc, miasto albo Isahaya/Ōmura) i równolegle pytać o tańszą gościnę. Wariantu pesymistycznego (ok. 20 000 jenów, górna granica widełek Fable) używamy, gdy zapytania wrócą późno albo Obon wyczerpie podaż.",
+      "plusy": "Stawka kościelna / ośrodek Hiyoshi z kosztorysu Artura (ok. 4 500 jenów za noc) mocno obniża cenę wyjazdu.",
+      "minusy": "Trzeba potwierdzić 90 miejsc w czasie Obonu i warunki bytowe (sale, materace, łazienki). To nie jest jeszcze pewna rezerwacja."
     },
     {
       "id": "nagasaki",
@@ -1446,10 +1525,17 @@
       "opcja": "Pesymistycznie: hotele w szczycie Obonu (¥20 000/noc)",
       "zmiany": "nocleg_nagasaki:=2500",
       "efekt": "",
-      "wplyw": "Górna granica widełek Fable; gdy zapytania wrócą późno.",
+      "wplyw": "W modelu nocleg w Nagasaki = 2500 zł na osobę za cały pobyt. Przedział ceny dla rodziców trzeba wtedy podnieść.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Na zachodzie Japonii grupa ma pięć nocy w Nagasaki (12–17 sierpnia), potem jedną w Hiroszimie i dwie w Osace. 16 sierpnia zostajemy w Nagasaki zamiast jechać shinkansenem (to szczyt powrotów, 90 osób z walizkami). Środek sierpnia to w Japonii Obon — okres świątecznych podróży, kiedy hotele są droższe i trudniej o 90 miejsc.",
+      "opis": "Jaką stawkę i typ noclegu przyjmujemy w budżecie i w zapytaniach: ośrodek / gościna kościelna, standardowe hotele w mieście albo w Isahaya/Ōmura, albo pesymistyczny szczyt Obonu.",
+      "ograniczenia": "Termin zapytań i decyzji: 15.12.2026. Plan v3 każe wysłać trzy zapytania naraz, z bezpłatną anulacją. Tani wariant (ośrodek Hiyoshi albo gościna kościelna, stawka z kosztorysu Artura ok. 4 500 jenów za noc) wymaga potwierdzenia, że jest 90 miejsc w czasie Obonu oraz warunków (sale, materace, łazienki). Od tej stawki mocno zależy cena komunikowana rodzicom (w szacunku Fable tani Nagasaki obniżał cały koszt nawet o kilka tysięcy złotych na osobę).",
+      "wplyw_inne": "Wpływa na pozycję „nocleg w Nagasaki” w kosztorysie, na rezerwacje Artura i na przedział ceny dla rodziców (decyzja do 31.01.2027, przed II ratą). Nie zmienia trasy: pięć nocy w rejonie Nagasaki zostaje.",
+      "rekomendacja_tekst": "Rekomendacja: w budżecie trzymać standardowe hotele (ok. 14 400 jenów za noc, miasto albo Isahaya/Ōmura) i równolegle pytać o tańszą gościnę. Wariantu pesymistycznego (ok. 20 000 jenów, górna granica widełek Fable) używamy, gdy zapytania wrócą późno albo Obon wyczerpie podaż.",
+      "plusy": "Nie zaniża budżetu, gdy Obon wyczerpie tańsze hotele albo zapytania wrócą późno.",
+      "minusy": "Górna granica widełek Fable (ok. 20 000 jenów za noc) wyraźnie podnosi cenę na osobę."
     },
     {
       "id": "seul_stawka",
@@ -1458,10 +1544,17 @@
       "opcja": "ok. 290 zł/noc — budżet Fable (tydzień ŚDM)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Założenie Fable dla tygodnia ŚDM.",
+      "wplyw": "Dwie noce × ok. 290 zł wchodzą do kosztorysu B1+.",
       "termin": "15.12.2026",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Przy pakiecie B1+ noce 4/5 i 5/6 sierpnia grupa nocuje we własnym zakresie, planowo w dzielnicy Mapo, blisko programu ŚDM. W kosztorysie Artura była stawka 174 zł za noc — z okresu poza szczytem ŚDM. Plan v3 przyjmuje w budżecie wyższą stawkę tygodnia ŚDM. Ta decyzja ma znaczenie tylko przy B1+; przy A1+ noclegi 4–6 sierpnia zapewnia organizator ŚDM i ta pozycja spada do zera.",
+      "opis": "Jaką cenę za osobę za noc przyjąć w budżecie na dwa własne noclegi w Seulu: stawkę Artura (174 zł), założenie planistyczne Fable (ok. 290 zł) albo wariant pesymistyczny (ok. 400 zł), gdy nie uda się złożyć bloku w Mapo.",
+      "ograniczenia": "Termin: 15.12.2026, razem z decyzją o pakiecie i z blokadą ok. 90 łóżek z bezpłatną anulacją. 290 zł to założenie planistyczne z v3, nie podpisana oferta. 174 zł Fable wprost ocenia jako mało prawdopodobne w tygodniu ŚDM.",
+      "wplyw_inne": "Zmienia koszt dwóch nocy w Seulu i porównanie B1+ z A1+ (przy 290 zł za noc A1+ może wyjść taniej niż B1+, więc nie wolno z góry zakładać, że A1+ jest „o 560 zł droższy”). Przy wyborze A1+ ta stawka nie jest naliczana.",
+      "rekomendacja_tekst": "Rekomendacja v3: liczyć ok. 290 zł za noc. 174 zł zostawić jako optymistyczny wariant, 400 zł jako pesymistyczny, gdy bloku w Mapo nie da się złożyć.",
+      "plusy": "Założenie v3 dla tygodnia ŚDM, ostrożniejsze niż stawka Artura spoza szczytu.",
+      "minusy": "To nie jest podpisana oferta — Fable przyjął tę kwotę planistycznie."
     },
     {
       "id": "seul_stawka",
@@ -1470,10 +1563,17 @@
       "opcja": "174 zł/noc — stawka Artura (poza szczytem)",
       "zmiany": "nocleg_seul:=348",
       "efekt": "",
-      "wplyw": "Optymistycznie; mało prawdopodobne w tygodniu ŚDM.",
+      "wplyw": "W modelu nocleg w Seulu = 348 zł za dwa noce. Poprawia też wygląd porównania B1+ z A1+, ale może być zbyt optymistyczny.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Przy pakiecie B1+ noce 4/5 i 5/6 sierpnia grupa nocuje we własnym zakresie, planowo w dzielnicy Mapo, blisko programu ŚDM. W kosztorysie Artura była stawka 174 zł za noc — z okresu poza szczytem ŚDM. Plan v3 przyjmuje w budżecie wyższą stawkę tygodnia ŚDM. Ta decyzja ma znaczenie tylko przy B1+; przy A1+ noclegi 4–6 sierpnia zapewnia organizator ŚDM i ta pozycja spada do zera.",
+      "opis": "Jaką cenę za osobę za noc przyjąć w budżecie na dwa własne noclegi w Seulu: stawkę Artura (174 zł), założenie planistyczne Fable (ok. 290 zł) albo wariant pesymistyczny (ok. 400 zł), gdy nie uda się złożyć bloku w Mapo.",
+      "ograniczenia": "Termin: 15.12.2026, razem z decyzją o pakiecie i z blokadą ok. 90 łóżek z bezpłatną anulacją. 290 zł to założenie planistyczne z v3, nie podpisana oferta. 174 zł Fable wprost ocenia jako mało prawdopodobne w tygodniu ŚDM.",
+      "wplyw_inne": "Zmienia koszt dwóch nocy w Seulu i porównanie B1+ z A1+ (przy 290 zł za noc A1+ może wyjść taniej niż B1+, więc nie wolno z góry zakładać, że A1+ jest „o 560 zł droższy”). Przy wyborze A1+ ta stawka nie jest naliczana.",
+      "rekomendacja_tekst": "Rekomendacja v3: liczyć ok. 290 zł za noc. 174 zł zostawić jako optymistyczny wariant, 400 zł jako pesymistyczny, gdy bloku w Mapo nie da się złożyć.",
+      "plusy": "Taniej; to stawka z kosztorysu Artura.",
+      "minusy": "Fable ocenia ją jako mało prawdopodobną w tygodniu ŚDM (to była cena poza szczytem)."
     },
     {
       "id": "seul_stawka",
@@ -1482,10 +1582,17 @@
       "opcja": "ok. 400 zł/noc — szczyt, mało ofert",
       "zmiany": "nocleg_seul:=800",
       "efekt": "",
-      "wplyw": "Pesymistycznie, gdy bloku nie da się zebrać w Mapo.",
+      "wplyw": "W modelu nocleg w Seulu = 800 zł za dwa noce.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Przy pakiecie B1+ noce 4/5 i 5/6 sierpnia grupa nocuje we własnym zakresie, planowo w dzielnicy Mapo, blisko programu ŚDM. W kosztorysie Artura była stawka 174 zł za noc — z okresu poza szczytem ŚDM. Plan v3 przyjmuje w budżecie wyższą stawkę tygodnia ŚDM. Ta decyzja ma znaczenie tylko przy B1+; przy A1+ noclegi 4–6 sierpnia zapewnia organizator ŚDM i ta pozycja spada do zera.",
+      "opis": "Jaką cenę za osobę za noc przyjąć w budżecie na dwa własne noclegi w Seulu: stawkę Artura (174 zł), założenie planistyczne Fable (ok. 290 zł) albo wariant pesymistyczny (ok. 400 zł), gdy nie uda się złożyć bloku w Mapo.",
+      "ograniczenia": "Termin: 15.12.2026, razem z decyzją o pakiecie i z blokadą ok. 90 łóżek z bezpłatną anulacją. 290 zł to założenie planistyczne z v3, nie podpisana oferta. 174 zł Fable wprost ocenia jako mało prawdopodobne w tygodniu ŚDM.",
+      "wplyw_inne": "Zmienia koszt dwóch nocy w Seulu i porównanie B1+ z A1+ (przy 290 zł za noc A1+ może wyjść taniej niż B1+, więc nie wolno z góry zakładać, że A1+ jest „o 560 zł droższy”). Przy wyborze A1+ ta stawka nie jest naliczana.",
+      "rekomendacja_tekst": "Rekomendacja v3: liczyć ok. 290 zł za noc. 174 zł zostawić jako optymistyczny wariant, 400 zł jako pesymistyczny, gdy bloku w Mapo nie da się złożyć.",
+      "plusy": "Bufor, gdy nie uda się złożyć bloku w Mapo i zostaną droższe, rozproszone hotele.",
+      "minusy": "Podnosi koszt B1+ i może sprawić, że A1+ wyjdzie wyraźnie korzystniej."
     },
     {
       "id": "pakiet",
@@ -1494,10 +1601,17 @@
       "opcja": "B1+ i dwie noce własne w Mapo (rekomendacja)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Kryterium: blok ok. 90 łóżek 4–6.08 z bezpłatną anulacją do 15.12.2026; pytanie do KBO o sektor 5.08.",
+      "wplyw": "Plan bazowy. Wymaga zadania Artura (łóżka) i pytania Jakuba do KBO.",
       "termin": "15.12.2026",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Grupa jedzie na ŚDM w Seulu w dniach 5–8 sierpnia (powitanie Papieża, program dni, czuwanie, Msza Posłania). Są dwa typy pakietu: B1+ (program bez zakwaterowania w tych dniach — noce 6–10 sierpnia w formule pakietu, a noce 4–6 sierpnia własne) oraz A1+ (organizator zapewnia też noclegi 4–6 sierpnia). W planie v3 zostajemy przy B1+ pod warunkiem, że uda się zablokować łóżka w Seulu.",
+      "opis": "Czy zostajemy przy B1+ i dwóch własnych nocach w Mapo, czy przechodzimy na A1+(10), w którym noclegi 4–6 sierpnia, część wyżywienia 4–5 sierpnia i karta metra 5 sierpnia są w pakiecie.",
+      "ograniczenia": "Warunek pozostania przy B1+: blok ok. 90 łóżek na noce 4/5 i 5/6 sierpnia z bezpłatną anulacją do 15.12.2026. Drugi warunek: pytanie do KBO (biuro@sdmpolska.pl), czy przy B1+ 5 sierpnia można odebrać identyfikatory i wejść do sektora na powitanie Papieża. Jeśli łóżek zabraknie albo B1+ nie da wejścia 5 sierpnia — A1+(10). Wpłata za pakiet do KBO: do 15.05.2027; rejestracja LOC dla pakietów z noclegiem: 31.05.2027. Grupa do 150 osób = jeden pakiet.",
+      "wplyw_inne": "A1+ zeruje własne noclegi w Seulu 4–6.08 i zmienia pozycje wyżywienia oraz komunikacji w Korei (w modelu: pakiet 340 USD, czyli 1 275 zł). Wpływa na pytanie do KBO, na zadanie Artura z blokiem łóżek i na godzinę pobudki / program 5 sierpnia. Nie zmienia samej idei bycia na powitaniu Papieża 5 sierpnia (to jest stały punkt planu).",
+      "rekomendacja_tekst": "Rekomendacja v3: B1+ i dwie noce w Mapo, o ile spełnimy kryterium łóżek i wejścia 5 sierpnia. A1+(10) jako plan zapasowy, nie jako automatycznie droższy wariant — koszt trzeba porównać przy realnej stawce noclegu w Seulu.",
+      "plusy": "Zostajemy przy założeniu kosztorysu i planu v3. Daje elastyczność własnego noclegu w Mapo, o ile zablokujemy łóżka.",
+      "minusy": "Warunkowy: bez bloku ok. 90 łóżek z bezpłatną anulacją do 15.12.2026 albo bez potwierdzenia wejścia do sektora 5 sierpnia wariant może nie być wykonalny. Własne wyżywienie i transport 4–5 sierpnia."
     },
     {
       "id": "pakiet",
@@ -1506,10 +1620,17 @@
       "opcja": "A1+(10) — noclegi 4–6.08 zapewnia organizator",
       "zmiany": "pakiet:=1275; nocleg_seul:=0; jedzenie_kr:=203; komunikacja:=40",
       "efekt": "A1",
-      "wplyw": "Pakiet 340 USD (1 275 zł). Noclegi 4–6.08, część wyżywienia 4–5.08 i karta metra 5.08 w pakiecie. Przy stawce Seulu 290 zł/noc A1+ może wyjść taniej niż B1+ — to nie jest automatycznie +560 zł.",
+      "wplyw": "Zeruje własne noclegi w Seulu i obniża własne wyżywienie oraz komunikację w Korei w modelu. Zmienia logistykę 4–6 sierpnia.",
       "termin": "15.12.2026 / 15.05.2027",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Grupa jedzie na ŚDM w Seulu w dniach 5–8 sierpnia (powitanie Papieża, program dni, czuwanie, Msza Posłania). Są dwa typy pakietu: B1+ (program bez zakwaterowania w tych dniach — noce 6–10 sierpnia w formule pakietu, a noce 4–6 sierpnia własne) oraz A1+ (organizator zapewnia też noclegi 4–6 sierpnia). W planie v3 zostajemy przy B1+ pod warunkiem, że uda się zablokować łóżka w Seulu.",
+      "opis": "Czy zostajemy przy B1+ i dwóch własnych nocach w Mapo, czy przechodzimy na A1+(10), w którym noclegi 4–6 sierpnia, część wyżywienia 4–5 sierpnia i karta metra 5 sierpnia są w pakiecie.",
+      "ograniczenia": "Warunek pozostania przy B1+: blok ok. 90 łóżek na noce 4/5 i 5/6 sierpnia z bezpłatną anulacją do 15.12.2026. Drugi warunek: pytanie do KBO (biuro@sdmpolska.pl), czy przy B1+ 5 sierpnia można odebrać identyfikatory i wejść do sektora na powitanie Papieża. Jeśli łóżek zabraknie albo B1+ nie da wejścia 5 sierpnia — A1+(10). Wpłata za pakiet do KBO: do 15.05.2027; rejestracja LOC dla pakietów z noclegiem: 31.05.2027. Grupa do 150 osób = jeden pakiet.",
+      "wplyw_inne": "A1+ zeruje własne noclegi w Seulu 4–6.08 i zmienia pozycje wyżywienia oraz komunikacji w Korei (w modelu: pakiet 340 USD, czyli 1 275 zł). Wpływa na pytanie do KBO, na zadanie Artura z blokiem łóżek i na godzinę pobudki / program 5 sierpnia. Nie zmienia samej idei bycia na powitaniu Papieża 5 sierpnia (to jest stały punkt planu).",
+      "rekomendacja_tekst": "Rekomendacja v3: B1+ i dwie noce w Mapo, o ile spełnimy kryterium łóżek i wejścia 5 sierpnia. A1+(10) jako plan zapasowy, nie jako automatycznie droższy wariant — koszt trzeba porównać przy realnej stawce noclegu w Seulu.",
+      "plusy": "Noclegi 4–6 sierpnia, część wyżywienia 4–5 sierpnia i karta metra 5 sierpnia są w pakiecie. Ratuje sytuację, gdy nie ma bloku łóżek albo B1+ nie daje wejścia 5 sierpnia. Przy stawce Seulu 290 zł za noc może wyjść taniej niż B1+.",
+      "minusy": "Pakiet 340 USD (w modelu 1 275 zł). Mniej swobody w wyborze hotelu. Wpłata do 15.05.2027, rejestracja LOC 31.05.2027. Nie wolno z góry przyjmować starej różnicy „+560 zł” — ta liczba zakładała tani nocleg 174 zł."
     },
     {
       "id": "fuji",
@@ -1518,10 +1639,17 @@
       "opcja": "Bez wejścia (rekomendacja)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Cała grupa zostaje na drodze Ksawerego.",
+      "wplyw": "Plan bazowy, bez zmian trasy i kosztu.",
       "termin": "teraz",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "W dniach 17–18 sierpnia główna grupa jedzie drogą św. Franciszka Ksawerego: z Nagasaki przez Yamaguchi i Hiroszimę do Miyajimy, Himeji i Osaki. Osobno rozważany był dwudniowy „moduł Fuji” dla chętnych: wyjazd 17 sierpnia, noc w schronisku, wschód słońca na szczycie (3776 m) 18 sierpnia i powrót. Plan v3 zmienia wcześniejsze stanowisko: wejście na szczyt nie jest rekomendowane.",
+      "opis": "Czy cała grupa zostaje na drodze Ksawerego, czy oferujemy opcjonalny moduł tylko dla pełnoletnich (liczbę wchodzących ustawia się osobno).",
+      "ograniczenia": "Tylko pełnoletni, z zaświadczeniem lekarskim, po wyjściu kwalifikacyjnym (Babia Góra), z osobnym kierownikiem. Typowe ubezpieczenia kończą się na 3000–3200 m, a Fudżi ma 3776 m — trzeba osobnej polisy powyżej 3000 m. Opłata za szlak: 4000 jenów; zasady na 2027 nie były jeszcze ogłoszone, gdy powstawał plan v3. Plan B przy tajfunie: dołączenie do reszty grupy w Hiroszimie. Koszt w modelu: 1000 zł na wchodzącego (shinkansen, schronisko, opłata, polisa), nie mnożony przez 90 osób.",
+      "wplyw_inne": "Wchodzący tracą tego dnia Yamaguchi, Hiroszimę, Miyajimę i Himeji. Reszta grupy jedzie bez zmian. W budżecie pojawia się dopłata tylko za osoby w module, nie za całą dziewięćdziesiątkę. Decyzja „czy w ogóle oferujemy moduł” jest potrzebna teraz; lista chętnych może dojść później.",
+      "rekomendacja_tekst": "Rekomendacja v3: bez wejścia na szczyt. Moduł zostaje wyłącznie jako opcja dla pełnoletnich, spełniających powyższe warunki — nie jako punkt programu dla całej grupy.",
+      "plusy": "Cała grupa zostaje razem na drodze Ksawerego (Yamaguchi, Hiroszima, Miyajima, Himeji). Brak dopłaty, brak osobnego kierownika i polisy wysokogórskiej.",
+      "minusy": "Nie ma wejścia na Fudżi — dla części pełnoletnich to może być rozczarowanie."
     },
     {
       "id": "fuji",
@@ -1530,10 +1658,17 @@
       "opcja": "Moduł dla pełnoletnich (liczbę wchodzących ustawia się osobno)",
       "zmiany": "",
       "efekt": "fuji",
-      "wplyw": "1 000 zł na wchodzącego (shinkansen, schronisko, opłata ¥4 000, polisa >3000 m), nie mnożone przez 90. Wchodzący tracą Yamaguchi, Hiroszimę, Miyajimę i Himeji. Wymaga osobnego kierownika i zaświadczenia lekarskiego.",
+      "wplyw": "Na mapie i w programie pojawia się osobna odnoga 17–18 sierpnia. Reszta grupy jedzie bez zmian. W budżecie widać dopłatę tylko za liczbę wchodzących.",
       "termin": "teraz",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "W dniach 17–18 sierpnia główna grupa jedzie drogą św. Franciszka Ksawerego: z Nagasaki przez Yamaguchi i Hiroszimę do Miyajimy, Himeji i Osaki. Osobno rozważany był dwudniowy „moduł Fuji” dla chętnych: wyjazd 17 sierpnia, noc w schronisku, wschód słońca na szczycie (3776 m) 18 sierpnia i powrót. Plan v3 zmienia wcześniejsze stanowisko: wejście na szczyt nie jest rekomendowane.",
+      "opis": "Czy cała grupa zostaje na drodze Ksawerego, czy oferujemy opcjonalny moduł tylko dla pełnoletnich (liczbę wchodzących ustawia się osobno).",
+      "ograniczenia": "Tylko pełnoletni, z zaświadczeniem lekarskim, po wyjściu kwalifikacyjnym (Babia Góra), z osobnym kierownikiem. Typowe ubezpieczenia kończą się na 3000–3200 m, a Fudżi ma 3776 m — trzeba osobnej polisy powyżej 3000 m. Opłata za szlak: 4000 jenów; zasady na 2027 nie były jeszcze ogłoszone, gdy powstawał plan v3. Plan B przy tajfunie: dołączenie do reszty grupy w Hiroszimie. Koszt w modelu: 1000 zł na wchodzącego (shinkansen, schronisko, opłata, polisa), nie mnożony przez 90 osób.",
+      "wplyw_inne": "Wchodzący tracą tego dnia Yamaguchi, Hiroszimę, Miyajimę i Himeji. Reszta grupy jedzie bez zmian. W budżecie pojawia się dopłata tylko za osoby w module, nie za całą dziewięćdziesiątkę. Decyzja „czy w ogóle oferujemy moduł” jest potrzebna teraz; lista chętnych może dojść później.",
+      "rekomendacja_tekst": "Rekomendacja v3: bez wejścia na szczyt. Moduł zostaje wyłącznie jako opcja dla pełnoletnich, spełniających powyższe warunki — nie jako punkt programu dla całej grupy.",
+      "plusy": "Opcja dla chętnych pełnoletnich: wschód słońca na szczycie, osobny koszt 1000 zł na wchodzącego, nie na całą grupę.",
+      "minusy": "Wchodzący tracą Yamaguchi, Hiroszimę, Miyajimę i Himeji. Wymagania: zaświadczenie lekarskie, wyjście kwalifikacyjne (Babia Góra), osobny kierownik, polisa powyżej 3000 m (szczyt 3776 m). Zasady opłaty 4000 jenów na 2027 nie były ogłoszone w chwili pisania planu."
     },
     {
       "id": "sklad",
@@ -1542,10 +1677,17 @@
       "opcja": "90 osób, walizka 65 cm / 20 kg (rekomendacja)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Dwa autokary 49-miejscowe, luki na ok. 80 dużych walizek.",
+      "wplyw": "Plan bazowy i regulamin bagażu.",
       "termin": "15.12.2026",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Na liście bywało 92–95 osób, a dwa autokary po 45 miejsc dają równo 90 i nie zostawiają miejsca dla pilota. Luki dwóch autokarów mieszczą ok. 80 dużych walizek. Stąd plan v3 zamyka listę i twardo ogranicza bagaż.",
+      "opis": "Czy jedziemy w składzie 90 osób z jedną walizką do 65 cm i 20 kg (dwa autokary 49-miejscowe), czy przy 91 i więcej osobach albo przy dużych walizkach dokładamy trzeci autokar.",
+      "ograniczenia": "Termin: 15.12.2026. Lista ma być zamknięta na 90 osobach. Trzeci autokar w szacunku Fable to ok. +50% kosztu wszystkich autokarów (pętla wschodnia, Korea i zachód Japonii).",
+      "wplyw_inne": "Decyzja dotyczy regulaminu bagażu, liczby miejsc w autokarach, miejsca dla pilota i całego bloku kosztów transportu. Walizki w planie bazowym jadą zawsze z grupą; rozdzielanie ludzi i bagażu było problemem odrzuconego wariantu E3.",
+      "rekomendacja_tekst": "Rekomendacja: zamknąć listę na 90 osobach, autokary 49-miejscowe, jedna walizka 65 cm / 20 kg. Trzeci autokar tylko, gdy te warunki się nie utrzymają.",
+      "plusy": "Mieści się w dwóch autokarach 49-miejscowych z miejscem dla pilota. Twardy limit walizki rozwiązuje problem luk (ok. 80 dużych sztuk).",
+      "minusy": "Lista musi zostać realnie domknięta; osoby powyżej 90. miejsca nie jadą tym składem."
     },
     {
       "id": "sklad",
@@ -1554,10 +1696,17 @@
       "opcja": "91+ osób albo duże walizki — trzeci autokar",
       "zmiany": "bus_wschod:*1.5; bus_korea:*1.5; bus_zachod:*1.5",
       "efekt": "trzeci",
-      "wplyw": "+50% kosztu wszystkich autokarów (Fable).",
+      "wplyw": "Mnoży w modelu pozycje autokarów wschodnich, koreańskich i zachodnich przez 1,5.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Na liście bywało 92–95 osób, a dwa autokary po 45 miejsc dają równo 90 i nie zostawiają miejsca dla pilota. Luki dwóch autokarów mieszczą ok. 80 dużych walizek. Stąd plan v3 zamyka listę i twardo ogranicza bagaż.",
+      "opis": "Czy jedziemy w składzie 90 osób z jedną walizką do 65 cm i 20 kg (dwa autokary 49-miejscowe), czy przy 91 i więcej osobach albo przy dużych walizkach dokładamy trzeci autokar.",
+      "ograniczenia": "Termin: 15.12.2026. Lista ma być zamknięta na 90 osobach. Trzeci autokar w szacunku Fable to ok. +50% kosztu wszystkich autokarów (pętla wschodnia, Korea i zachód Japonii).",
+      "wplyw_inne": "Decyzja dotyczy regulaminu bagażu, liczby miejsc w autokarach, miejsca dla pilota i całego bloku kosztów transportu. Walizki w planie bazowym jadą zawsze z grupą; rozdzielanie ludzi i bagażu było problemem odrzuconego wariantu E3.",
+      "rekomendacja_tekst": "Rekomendacja: zamknąć listę na 90 osobach, autokary 49-miejscowe, jedna walizka 65 cm / 20 kg. Trzeci autokar tylko, gdy te warunki się nie utrzymają.",
+      "plusy": "Pozwala wziąć 91 i więcej osób albo większe walizki.",
+      "minusy": "W szacunku Fable to ok. +50% kosztu wszystkich autokarów — jedna z droższych decyzji w całym budżecie."
     },
     {
       "id": "biuro",
@@ -1566,10 +1715,17 @@
       "opcja": "Licencjonowane biuro, bez dodatkowej marży (rekomendacja)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Jedna umowa na autokary, hotele i zgłoszenia. Marża wliczona w oferty albo wynegocjowana do zera.",
+      "wplyw": "Plan bazowy organizacji rezerwacji w Japonii.",
       "termin": "15.12.2026",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "W Japonii autokary, częściowo hotele i zgłoszenia w kościołach najłatwiej ogarnąć jedną umową z licencjonowanym lokalnym biurem. Artur ma prowadzić zapytania (termin autokarów: 31.12.2026). Plan v3 przyjmuje, że takie biuro jest potrzebne, ale ostrzega przed wysoką marżą.",
+      "opis": "Czy pracujemy z licencjonowanym biurem bez dodatkowej marży ponad oferty, z biurem z osobną marżą (w modelu ok. 8%, czyli ok. 400 zł na osobę), czy próbujemy rezerwacji własnych bez biura.",
+      "ograniczenia": "Termin decyzji: 15.12.2026. Fable pisze, że wariant z biurem „pada”, gdyby marża przekroczyła ok. 10% — to było jego założenie planistyczne („zgaduję”), nie twarda reguła rynkowa. Rezerwacje własne mogą być tańsze tylko wtedy, gdy w ofertach i tak nie było marży; rośnie wtedy ryzyko przy autokarach, Obonie i Mszach grupowych.",
+      "wplyw_inne": "Wpływa na sposób rezerwacji autokarów i hoteli w Japonii, na zgłoszenia Mszy i na pozycję „biuro” w kosztorysie. Nie zmienia samej trasy.",
+      "rekomendacja_tekst": "Rekomendacja v3: jedno licencjonowane biuro w Japonii (autokary, hotele, zgłoszenia w kościołach), z marżą wliczoną w oferty albo wynegocjowaną do zera. Osobną marżę ok. 8% trzymać jako wariant kosztowy, a jazdę bez biura — jako ostateczność.",
+      "plusy": "Jedna umowa na autokary, hotele i zgłoszenia w kościołach. Marża wliczona w oferty albo zejście do zera — bez osobnej pozycji w cenie.",
+      "minusy": "Zależność od partnera; trzeba porównać oferty, żeby nie zapłacić ukrytej wysokiej marży."
     },
     {
       "id": "biuro",
@@ -1578,10 +1734,17 @@
       "opcja": "Licencjonowane biuro z marżą ok. 8% (ok. 400 zł/os.)",
       "zmiany": "biuro:=400",
       "efekt": "",
-      "wplyw": "Fable: wariant pada, gdy biuro żąda powyżej ok. 10%. Przyjęto 8% usług w Japonii.",
+      "wplyw": "W modelu pojawia się pozycja biura = 400 zł na osobę.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "W Japonii autokary, częściowo hotele i zgłoszenia w kościołach najłatwiej ogarnąć jedną umową z licencjonowanym lokalnym biurem. Artur ma prowadzić zapytania (termin autokarów: 31.12.2026). Plan v3 przyjmuje, że takie biuro jest potrzebne, ale ostrzega przed wysoką marżą.",
+      "opis": "Czy pracujemy z licencjonowanym biurem bez dodatkowej marży ponad oferty, z biurem z osobną marżą (w modelu ok. 8%, czyli ok. 400 zł na osobę), czy próbujemy rezerwacji własnych bez biura.",
+      "ograniczenia": "Termin decyzji: 15.12.2026. Fable pisze, że wariant z biurem „pada”, gdyby marża przekroczyła ok. 10% — to było jego założenie planistyczne („zgaduję”), nie twarda reguła rynkowa. Rezerwacje własne mogą być tańsze tylko wtedy, gdy w ofertach i tak nie było marży; rośnie wtedy ryzyko przy autokarach, Obonie i Mszach grupowych.",
+      "wplyw_inne": "Wpływa na sposób rezerwacji autokarów i hoteli w Japonii, na zgłoszenia Mszy i na pozycję „biuro” w kosztorysie. Nie zmienia samej trasy.",
+      "rekomendacja_tekst": "Rekomendacja v3: jedno licencjonowane biuro w Japonii (autokary, hotele, zgłoszenia w kościołach), z marżą wliczoną w oferty albo wynegocjowaną do zera. Osobną marżę ok. 8% trzymać jako wariant kosztowy, a jazdę bez biura — jako ostateczność.",
+      "plusy": "Nadal jest licencjonowane biuro, a koszt jest jawny w budżecie (założenie ok. 8%, ok. 400 zł na osobę).",
+      "minusy": "Podnosi cenę. Fable zakładał, że powyżej ok. 10% wariant z biurem przestaje się opłacać — to było jego przypuszczenie planistyczne."
     },
     {
       "id": "biuro",
@@ -1590,10 +1753,17 @@
       "opcja": "Bez biura — rezerwacje własne",
       "zmiany": "",
       "efekt": "bez_biura",
-      "wplyw": "Taniej tylko jeśli i tak nie było marży. Rośnie ryzyko przy autokarach, Obonie i Mszach.",
+      "wplyw": "Nie dodaje pozycji w kosztorysie, ale zmienia sposób pracy Artura i reszty ekipy.",
       "termin": "15.12.2026",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "W Japonii autokary, częściowo hotele i zgłoszenia w kościołach najłatwiej ogarnąć jedną umową z licencjonowanym lokalnym biurem. Artur ma prowadzić zapytania (termin autokarów: 31.12.2026). Plan v3 przyjmuje, że takie biuro jest potrzebne, ale ostrzega przed wysoką marżą.",
+      "opis": "Czy pracujemy z licencjonowanym biurem bez dodatkowej marży ponad oferty, z biurem z osobną marżą (w modelu ok. 8%, czyli ok. 400 zł na osobę), czy próbujemy rezerwacji własnych bez biura.",
+      "ograniczenia": "Termin decyzji: 15.12.2026. Fable pisze, że wariant z biurem „pada”, gdyby marża przekroczyła ok. 10% — to było jego założenie planistyczne („zgaduję”), nie twarda reguła rynkowa. Rezerwacje własne mogą być tańsze tylko wtedy, gdy w ofertach i tak nie było marży; rośnie wtedy ryzyko przy autokarach, Obonie i Mszach grupowych.",
+      "wplyw_inne": "Wpływa na sposób rezerwacji autokarów i hoteli w Japonii, na zgłoszenia Mszy i na pozycję „biuro” w kosztorysie. Nie zmienia samej trasy.",
+      "rekomendacja_tekst": "Rekomendacja v3: jedno licencjonowane biuro w Japonii (autokary, hotele, zgłoszenia w kościołach), z marżą wliczoną w oferty albo wynegocjowaną do zera. Osobną marżę ok. 8% trzymać jako wariant kosztowy, a jazdę bez biura — jako ostateczność.",
+      "plusy": "Może być taniej, jeśli w ofertach i tak nie było marży.",
+      "minusy": "Rośnie ryzyko przy autokarach, Obonie i Mszach grupowych. Cały ciężar rezerwacji spada na organizatorów."
     },
     {
       "id": "polisa",
@@ -1602,10 +1772,17 @@
       "opcja": "Generali Elastyczny 1",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Brak klauzuli terroru i polisy rezygnacji.",
+      "wplyw": "Stawka bazowa ubezpieczenia w modelu.",
       "termin": "przed wpłatą",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Grupa ma jechać na polisie z oferty Generali (wariant Elastyczny). W materiałach stwierdzono luki: brak klauzuli terroru (pasywny udział w aktach terroru) oraz brak polisy rezygnacji, która chroniłaby 21 imiennych biletów Qatar (tych nie da się po prostu przepisać na inne nazwisko). Osobno trzeba dograć ochronę 4–5 sierpnia przy pakiecie B1+ (program poza zakwaterowaniem pakietu) i — gdyby ruszył moduł Fuji — rozszerzenie powyżej 3000 m.",
+      "opis": "Wybieramy zakres: Elastyczny 1 (baza), Elastyczny 2 (szerszy, w modelu +45 zł na osobę, stawka 216 zł) albo Elastyczny 2 z kosztami rezygnacji (w modelu rezygnacja ok. 600 zł na osobę, łącznie 816 zł). Rynkowa polisa rezygnacji to zwykle 3–6% wartości wyjazdu; 600 zł to założenie przyjęte w modelu, nie wycena towarzystwa.",
+      "ograniczenia": "Decyzja przed wpłatą (raty). 21 biletów imiennych Qatar nie ma elastycznej zmiany nazwiska — to główny powód rozważania rezygnacji. Klauzula terroru jest osobnym punktem checklisty, niezależnie od wybranego wariantu liczbowego.",
+      "wplyw_inne": "Zmienia pozycję „ubezpieczenie” w cenie na osobę. Nie zmienia trasy. Wiąże się z zadaniami Jakuba na checkliście (terror, rezygnacja, ochrona 4–5.08).",
+      "rekomendacja_tekst": "W budżecie bazowym jest Elastyczny 1, bo tak jest w kosztorysie. Luki (terror, rezygnacja, 4–5.08) i tak trzeba domknąć — wybór E2 albo E2 z rezygnacją jest świadomą dopłatą za szerszy zakres, nie „załatwia wszystkiego automatycznie”.",
+      "plusy": "Zgodne z obecnym kosztorysem, najniższa składka.",
+      "minusy": "Brak klauzuli terroru i polisy rezygnacji — luki są zidentyfikowane i nadal otwarte na checkliście."
     },
     {
       "id": "polisa",
@@ -1614,10 +1791,17 @@
       "opcja": "Generali Elastyczny 2",
       "zmiany": "ubezpieczenie:=216",
       "efekt": "",
-      "wplyw": "Szerszy zakres, +45 zł/os.",
+      "wplyw": "Podnosi pozycję ubezpieczenia do 216 zł na osobę.",
       "termin": "przed wpłatą",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Grupa ma jechać na polisie z oferty Generali (wariant Elastyczny). W materiałach stwierdzono luki: brak klauzuli terroru (pasywny udział w aktach terroru) oraz brak polisy rezygnacji, która chroniłaby 21 imiennych biletów Qatar (tych nie da się po prostu przepisać na inne nazwisko). Osobno trzeba dograć ochronę 4–5 sierpnia przy pakiecie B1+ (program poza zakwaterowaniem pakietu) i — gdyby ruszył moduł Fuji — rozszerzenie powyżej 3000 m.",
+      "opis": "Wybieramy zakres: Elastyczny 1 (baza), Elastyczny 2 (szerszy, w modelu +45 zł na osobę, stawka 216 zł) albo Elastyczny 2 z kosztami rezygnacji (w modelu rezygnacja ok. 600 zł na osobę, łącznie 816 zł). Rynkowa polisa rezygnacji to zwykle 3–6% wartości wyjazdu; 600 zł to założenie przyjęte w modelu, nie wycena towarzystwa.",
+      "ograniczenia": "Decyzja przed wpłatą (raty). 21 biletów imiennych Qatar nie ma elastycznej zmiany nazwiska — to główny powód rozważania rezygnacji. Klauzula terroru jest osobnym punktem checklisty, niezależnie od wybranego wariantu liczbowego.",
+      "wplyw_inne": "Zmienia pozycję „ubezpieczenie” w cenie na osobę. Nie zmienia trasy. Wiąże się z zadaniami Jakuba na checkliście (terror, rezygnacja, ochrona 4–5.08).",
+      "rekomendacja_tekst": "W budżecie bazowym jest Elastyczny 1, bo tak jest w kosztorysie. Luki (terror, rezygnacja, 4–5.08) i tak trzeba domknąć — wybór E2 albo E2 z rezygnacją jest świadomą dopłatą za szerszy zakres, nie „załatwia wszystkiego automatycznie”.",
+      "plusy": "Szerszy zakres niż Elastyczny 1. W modelu dopłata 45 zł na osobę (stawka 216 zł).",
+      "minusy": "Nadal nie jest to automatycznie polisa rezygnacji ani domknięta klauzula terroru — to trzeba sprawdzić w OWU."
     },
     {
       "id": "polisa",
@@ -1626,10 +1810,17 @@
       "opcja": "Elastyczny 2 + koszty rezygnacji",
       "zmiany": "ubezpieczenie:=816",
       "efekt": "",
-      "wplyw": "Rezygnacja rynkowo 3–6% wartości; przyjęto 600 zł/os. Chroni 21 biletów imiennych.",
+      "wplyw": "Najwyższa pozycja ubezpieczenia w kosztorysie. Nie zwalnia z zadania o klauzuli terroru i ochronie 4–5.08.",
       "termin": "przed wpłatą",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Grupa ma jechać na polisie z oferty Generali (wariant Elastyczny). W materiałach stwierdzono luki: brak klauzuli terroru (pasywny udział w aktach terroru) oraz brak polisy rezygnacji, która chroniłaby 21 imiennych biletów Qatar (tych nie da się po prostu przepisać na inne nazwisko). Osobno trzeba dograć ochronę 4–5 sierpnia przy pakiecie B1+ (program poza zakwaterowaniem pakietu) i — gdyby ruszył moduł Fuji — rozszerzenie powyżej 3000 m.",
+      "opis": "Wybieramy zakres: Elastyczny 1 (baza), Elastyczny 2 (szerszy, w modelu +45 zł na osobę, stawka 216 zł) albo Elastyczny 2 z kosztami rezygnacji (w modelu rezygnacja ok. 600 zł na osobę, łącznie 816 zł). Rynkowa polisa rezygnacji to zwykle 3–6% wartości wyjazdu; 600 zł to założenie przyjęte w modelu, nie wycena towarzystwa.",
+      "ograniczenia": "Decyzja przed wpłatą (raty). 21 biletów imiennych Qatar nie ma elastycznej zmiany nazwiska — to główny powód rozważania rezygnacji. Klauzula terroru jest osobnym punktem checklisty, niezależnie od wybranego wariantu liczbowego.",
+      "wplyw_inne": "Zmienia pozycję „ubezpieczenie” w cenie na osobę. Nie zmienia trasy. Wiąże się z zadaniami Jakuba na checkliście (terror, rezygnacja, ochrona 4–5.08).",
+      "rekomendacja_tekst": "W budżecie bazowym jest Elastyczny 1, bo tak jest w kosztorysie. Luki (terror, rezygnacja, 4–5.08) i tak trzeba domknąć — wybór E2 albo E2 z rezygnacją jest świadomą dopłatą za szerszy zakres, nie „załatwia wszystkiego automatycznie”.",
+      "plusy": "Dokłada koszty rezygnacji, co ma znaczenie przy 21 imiennych biletach Qatar. W modelu 600 zł na osobę za rezygnację + Elastyczny 2, łącznie 816 zł. Rynkowo rezygnacja to zwykle 3–6% wartości wyjazdu.",
+      "minusy": "Wyraźnie droższy. 600 zł to założenie modelu, nie oferta towarzystwa — kwotę trzeba potwierdzić."
     },
     {
       "id": "rezerwa",
@@ -1638,10 +1829,17 @@
       "opcja": "6% (jak u Artura)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Bufor na kurs ¥ i drobne.",
+      "wplyw": "Plan bazowy: rezerwa 6% doliczana na końcu.",
       "termin": "31.01.2027",
       "domyslna": true,
-      "rekomendacja": true
+      "rekomendacja": true,
+      "kontekst": "Duża część kosztów w Japonii jest w jenach. Kurs się zmienia, a na miejscu dochodzą drobne (woda, elektrolity, niespodziewane bilety). W kosztorysie Artura rezerwa wynosi 6%. Od jej wysokości zależy cena podawana rodzicom (decyzja o cenie: 31.01.2027, przed II ratą).",
+      "opis": "Ile procent doliczamy do kosztów bezpośrednich: 6% jak u Artura, 3% bardziej agresywnie, albo 10% ostrożniej na wypadek słabszego złotego.",
+      "ograniczenia": "Termin: 31.01.2027, razem z ceną komunikowaną rodzicom. Niższa rezerwa obniża cenę, ale zwiększa ryzyko późniejszej dopłaty.",
+      "wplyw_inne": "Nie zmienia trasy ani konkretnych stawek pozycji — tylko bufor doliczany na końcu kosztorysu i wysokość rat (raty liczą się od ceny scenariusza).",
+      "rekomendacja_tekst": "Rekomendacja: 6%, zgodnie z kosztorysem Artura.",
+      "plusy": "Zgodne z kosztorysem Artura; środkowy, już używany bufor na kurs jena i drobne.",
+      "minusy": "Nie jest to najniższa możliwa cena."
     },
     {
       "id": "rezerwa",
@@ -1650,10 +1848,17 @@
       "opcja": "3% (agresywnie)",
       "zmiany": "rezerwa:=3",
       "efekt": "",
-      "wplyw": "Niższa cena, większe ryzyko dopłaty.",
+      "wplyw": "Rezerwa w modelu = 3%.",
       "termin": "31.01.2027",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Duża część kosztów w Japonii jest w jenach. Kurs się zmienia, a na miejscu dochodzą drobne (woda, elektrolity, niespodziewane bilety). W kosztorysie Artura rezerwa wynosi 6%. Od jej wysokości zależy cena podawana rodzicom (decyzja o cenie: 31.01.2027, przed II ratą).",
+      "opis": "Ile procent doliczamy do kosztów bezpośrednich: 6% jak u Artura, 3% bardziej agresywnie, albo 10% ostrożniej na wypadek słabszego złotego.",
+      "ograniczenia": "Termin: 31.01.2027, razem z ceną komunikowaną rodzicom. Niższa rezerwa obniża cenę, ale zwiększa ryzyko późniejszej dopłaty.",
+      "wplyw_inne": "Nie zmienia trasy ani konkretnych stawek pozycji — tylko bufor doliczany na końcu kosztorysu i wysokość rat (raty liczą się od ceny scenariusza).",
+      "rekomendacja_tekst": "Rekomendacja: 6%, zgodnie z kosztorysem Artura.",
+      "plusy": "Niższa cena na osobę.",
+      "minusy": "Większe ryzyko, że przy słabszym złotym albo nieprzewidzianych kosztach trzeba będzie prosić o dopłatę."
     },
     {
       "id": "rezerwa",
@@ -1662,10 +1867,17 @@
       "opcja": "10% (ostrożnie)",
       "zmiany": "rezerwa:=10",
       "efekt": "",
-      "wplyw": "Na wypadek słabszego złotego.",
+      "wplyw": "Rezerwa w modelu = 10%.",
       "termin": "31.01.2027",
       "domyslna": false,
-      "rekomendacja": false
+      "rekomendacja": false,
+      "kontekst": "Duża część kosztów w Japonii jest w jenach. Kurs się zmienia, a na miejscu dochodzą drobne (woda, elektrolity, niespodziewane bilety). W kosztorysie Artura rezerwa wynosi 6%. Od jej wysokości zależy cena podawana rodzicom (decyzja o cenie: 31.01.2027, przed II ratą).",
+      "opis": "Ile procent doliczamy do kosztów bezpośrednich: 6% jak u Artura, 3% bardziej agresywnie, albo 10% ostrożniej na wypadek słabszego złotego.",
+      "ograniczenia": "Termin: 31.01.2027, razem z ceną komunikowaną rodzicom. Niższa rezerwa obniża cenę, ale zwiększa ryzyko późniejszej dopłaty.",
+      "wplyw_inne": "Nie zmienia trasy ani konkretnych stawek pozycji — tylko bufor doliczany na końcu kosztorysu i wysokość rat (raty liczą się od ceny scenariusza).",
+      "rekomendacja_tekst": "Rekomendacja: 6%, zgodnie z kosztorysem Artura.",
+      "plusy": "Większy bufor na wypadek słabszego złotego i niespodzianek.",
+      "minusy": "Wyższa cena komunikowana rodzicom."
     }
   ],
   "koszty": [
@@ -1859,7 +2071,7 @@
       "Lista zamknięta na 90 osobach. Autokary 49-miejscowe, żeby zostało miejsce dla pilota (2×45 = 90 nie wystarcza).",
       "Jedna walizka do 65 cm i 20 kg. Luki dwóch autokarów mieszczą ok. 80 dużych walizek — stąd twardy limit.",
       "Przy 91 osobach albo dużych walizkach potrzebny jest trzeci autokar (ok. +50% kosztu autokarów).",
-      "Walizki jadą zawsze z grupą w autokarach. W odrzuconym wariancie E3 ludzie mieli jechać pociągiem z plecakami, a walizki osobno — przy 90 osobach to masakra logistyczna.",
+      "Walizki jadą zawsze z grupą w autokarach. W odrzuconym wariancie E3 ludzie mieli jechać pociągiem z plecakami, a walizki osobno — przy 90 osobach jest to bardzo trudne logistycznie.",
       "Visit Japan Web egzekwować już na odprawie w Warszawie."
     ],
     "prom": [
@@ -1877,7 +2089,7 @@
       "Odmowa Mszy grupowej w kościele → Msza w hotelu albo w sali parafialnej z kapłanem grupy; udział w Mszy parafialnej.",
       "Odmowa sióstr w Akicie → nie robimy 1300 km „dla Mszy parafialnej”; wchodzi wariant E4 (Sendai)."
     ],
-    "joban": "Autostrada Jōban, której używamy 2.08 w wariancie Iwaki, przebiega w sąsiedztwie Fukushimy. Fable podaje ok. 0,37 µSv na przejazd (pomiar 2015). Jeśli rodzice tego nie zaakceptują, nocleg 2.08 przenosimy do Utsunomiya. Decyzja: 15.12.2026.",
+    "joban": "Autostrada Jōban, którą w wariancie Iwaki jedziemy w nocy 2 sierpnia z Narity, przebiega w sąsiedztwie strefy wokół elektrowni Fukushima Daiichi. Sam fakt tej trasy może być dla części rodziców trudny do przyjęcia. Jeśli grupa zdecyduje, że tą drogą nie jedziemy, pierwsza noc jest w Utsunomiya (dalej w głąb lądu, bez Jōban, ale z dłuższym dniem 3 sierpnia). Nie podajemy tu konkretnej dawki promieniowania, bo nie mamy do niej pewnego, cytowalnego pomiaru. Decyzja o miejscu noclegu 2 sierpnia: 15.12.2026.",
     "checklista": [
       {
         "co": "Faks do sióstr w Akicie (018-868-4728): Msza grupowa 3.08, ok. 17:00 / 15:45–18:00",
@@ -2277,7 +2489,7 @@
           "km": "ok. 430 autokarem",
           "czas_h": "pociąg ok. 3,3 h",
           "miejsca": "akita_noc,utsunomiya,nikko,haneda,gimpo,mapo",
-          "uwagi": "Sześć ogniw jednego dnia; przy braku 90 miejsc w Komachi plan pada."
+          "uwagi": "Sześć ogniw jednego dnia; przy braku 90 miejsc w Komachi ten wariant przestaje być możliwy."
         }
       },
       "log": [
@@ -2371,7 +2583,7 @@
         }
       },
       "log": [
-        "Nocleg 2.08 w Utsunomiya: omijamy autostradę Jōban obok Fukushimy."
+        "Nocleg 2 sierpnia w Utsunomiya: nie jedziemy autostradą Jōban (sąsiedztwo strefy Fukushimy)."
       ]
     },
     "sen_tokio": {
@@ -2530,7 +2742,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": "Pilne. Od odpowiedzi zależy E1 albo E4 (Sendai)."
+      "uwagi": "Pilne. Od odpowiedzi zależy E1 albo E4 (Sendai).",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "petla",
@@ -2542,7 +2758,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": "E1 pada, jeśli siostry wyznaczą Mszę po 18:00."
+      "uwagi": "Wariant E1 przestaje być możliwy, jeśli siostry wyznaczą Mszę po godzinie 18:00.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "noclegi-wschod",
@@ -2554,7 +2774,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "seul-lozka",
@@ -2566,7 +2790,11 @@
       "status": "do zrobienia",
       "wymagane": "90",
       "zebrane": "",
-      "uwagi": "Jeśli bloku nie będzie, przejście na A1+ przed wpłatą 15.05.2027."
+      "uwagi": "Jeśli bloku nie będzie, przejście na A1+ przed wpłatą 15.05.2027.",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "lista-90",
@@ -2578,7 +2806,11 @@
       "status": "do zrobienia",
       "wymagane": "90",
       "zebrane": "",
-      "uwagi": "Zbiorczo, bez list imiennych na tej stronie."
+      "uwagi": "Zbiorczo, bez list imiennych na tej stronie.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "kbo-sektor",
@@ -2590,7 +2822,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "autokary",
@@ -2602,7 +2838,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "niepokalanow",
@@ -2614,7 +2854,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "cena-rodzice",
@@ -2626,7 +2870,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": "Wcześniejszy przedział 14 400–15 200 zł nie obejmuje wydzielonej rezerwy z modelu etapu 2."
+      "uwagi": "Wcześniejszy przedział 14 400–15 200 zł nie obejmuje wydzielonej rezerwy z modelu etapu 2.",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "hiroszima-osaka",
@@ -2638,7 +2886,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "prom",
@@ -2650,7 +2902,11 @@
       "status": "do zrobienia",
       "wymagane": "90",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "lot-seul",
@@ -2662,7 +2918,11 @@
       "status": "do zrobienia",
       "wymagane": "90",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "msze",
@@ -2674,7 +2934,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "keta",
@@ -2686,7 +2950,11 @@
       "status": "do zrobienia",
       "wymagane": "90",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "vjw",
@@ -2698,7 +2966,11 @@
       "status": "do zrobienia",
       "wymagane": "90",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "paszporty",
@@ -2710,7 +2982,11 @@
       "status": "do uzupełnienia",
       "wymagane": "90",
       "zebrane": "",
-      "uwagi": "Tylko liczba zebranych / brakujących. Żadnych numerów paszportów ani nazwisk na stronie."
+      "uwagi": "Tylko liczba zebranych / brakujących. Żadnych numerów paszportów ani nazwisk na stronie.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "zgody",
@@ -2722,7 +2998,11 @@
       "status": "do uzupełnienia",
       "wymagane": "29",
       "zebrane": "",
-      "uwagi": "Wpisany wiek, bez dat urodzenia — zweryfikować, kto będzie niepełnoletni 1.08.2027. 21 rekordów było bez wieku. Na stronie tylko liczba zbiorcza."
+      "uwagi": "Wpisany wiek, bez dat urodzenia — zweryfikować, kto będzie niepełnoletni 1.08.2027. 21 rekordów było bez wieku. Na stronie tylko liczba zbiorcza.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "zgody-notarialne",
@@ -2734,7 +3014,11 @@
       "status": "do uzupełnienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": "Nie każdy małoletni jej potrzebuje — zależy od sytuacji prawnej opiekunów. Zbiorczo, bez akt."
+      "uwagi": "Nie każdy małoletni jej potrzebuje — zależy od sytuacji prawnej opiekunów. Zbiorczo, bez akt.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "medyczne",
@@ -2746,7 +3030,11 @@
       "status": "do uzupełnienia",
       "wymagane": "90",
       "zebrane": "",
-      "uwagi": "Na stronie tylko liczba zwróconych ankiet, bez danych medycznych."
+      "uwagi": "Na stronie tylko liczba zwróconych ankiet, bez danych medycznych.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "ubezp-terror",
@@ -2758,7 +3046,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": "Luka z oferty 18.09.2026, kalk. 1000373683822."
+      "uwagi": "Luka z oferty 18.09.2026, kalk. 1000373683822.",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "ubezp-rezyg",
@@ -2770,7 +3062,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": "Rynkowo ok. 3–6% wartości (w modelu opcja ok. 600 zł/os.)."
+      "uwagi": "Rynkowo ok. 3–6% wartości (w modelu opcja ok. 600 zł/os.).",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "ubezp-wyd",
@@ -2782,7 +3078,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "kbo-wplata",
@@ -2794,7 +3094,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": "Po wpłacie do KBO zwrotu nie ma. A1+ decyzja przed 15.05.2027."
+      "uwagi": "Po wpłacie do KBO zwrotu nie ma. A1+ decyzja przed 15.05.2027.",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "wyd-godziny",
@@ -2806,7 +3110,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": ""
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     },
     {
       "id": "ochrona",
@@ -2818,7 +3126,11 @@
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
-      "uwagi": "Agenda spotkania z 28.09.2026 wciąż jest dobrą ramą."
+      "uwagi": "Agenda spotkania z 28.09.2026 wciąż jest dobrą ramą.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
     }
   ]
 }

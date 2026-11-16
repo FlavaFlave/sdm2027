@@ -1,5 +1,5 @@
 /**
- * Mapy Leaflet (OpenStreetMap).
+ * Mapy Leaflet. Kafelki: Esri World Street Map (etykiety łacińskie / angielskie).
  * Przy zmianie decyzji przebudowują się warstwy markerów i tras.
  * Kolory pinów: -- Japan #1f4e79, Korea #8b2a32, lotniska #c6a15b.
  */
@@ -42,12 +42,49 @@ export function ensureMap(elId) {
   const el = document.getElementById(elId);
   if (!el) return null;
   const map = L.map(el, { scrollWheelZoom: false, zoomControl: true });
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap contributors",
+  map.setView([35.5, 132], 5);
+  // Esri World Street Map: darmowe kafelki z łacińskimi / angielskimi etykietami (Tokio, Seul itd.).
+  // Kolejność w URL to {z}/{y}/{x}, nie {z}/{x}/{y}.
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+    attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, TomTom',
     maxZoom: 19,
   }).addTo(map);
   maps[elId] = map;
   return map;
+}
+
+
+/** Miejsca na mapie zakładki Japonia — bez Polski, Kataru i Korei, żeby przybliżenie trafiało w Japonię. */
+export function isJapanPlace(p) {
+  return /Japonia/i.test(p.kraj || "") || p.id === "fuji";
+}
+/** Miejsca na mapie zakładki Korea — Półwysep i prom z Busan. */
+export function isKoreaPlace(p) {
+  return /Korea/i.test(p.kraj || "") || p.id === "prom";
+}
+
+/** Po kliknięciu zakładki: dopasuj widok do podanych punktów (po unhide mapa musi dostać invalidateSize). */
+export function focusMap(elId, places) {
+  const map = maps[elId];
+  if (!map) return;
+  const pts = (places || []).filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng));
+  const apply = (animate) => {
+    map.invalidateSize();
+    const size = map.getSize();
+    if (!size.x || !size.y) return false;
+    if (!pts.length) return true;
+    try {
+      map.fitBounds(L.latLngBounds(pts.map((p) => [p.lat, p.lng])).pad(0.18), { animate: !!animate, duration: 0.55 });
+    } catch (_) {
+      map.setView([pts[0].lat, pts[0].lng], 6);
+    }
+    return true;
+  };
+  // Na starcie kontener bywa jeszcze ukryty (display:none) — powtarzamy, aż będzie miał rozmiar.
+  apply(false);
+  setTimeout(() => apply(false), 80);
+  setTimeout(() => apply(true), 200);
+  setTimeout(() => apply(false), 450);
 }
 
 export function updateMap(elId, places, lines) {
@@ -73,12 +110,15 @@ export function updateMap(elId, places, lines) {
   });
   group.addTo(map);
   mapLayers[elId] = group;
-  if (group.getLayers().length) {
-    try { map.fitBounds(group.getBounds().pad(0.12)); } catch (_) { map.setView([35.5, 132], 5); }
-  } else {
-    map.setView([35.5, 132], 5);
+  const sized = map.getContainer().offsetWidth > 0 && map.getContainer().offsetHeight > 0;
+  if (sized) {
+    if (group.getLayers().length) {
+      try { map.fitBounds(group.getBounds().pad(0.12), { animate: false }); } catch (_) { map.setView([35.5, 132], 5); }
+    } else {
+      map.setView([35.5, 132], 5);
+    }
+    setTimeout(() => map.invalidateSize(), 80);
   }
-  setTimeout(() => map.invalidateSize(), 80);
 }
 
 export function eastLine(choices) {

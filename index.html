@@ -6,7 +6,7 @@
   <title>ŚDM 2027 — strona organizatorów · Japonia i Korea</title>
   <meta name="robots" content="noindex, nofollow" />
   <!--
-    ŚDM 2027 — strona organizatorów (etap 4).
+    ŚDM 2027 — strona organizatorów (etap 5).
     Wygląd: ./css/style.css  (kolory w :root, układ zakładek, karty, mapy).
     Logika:  ./js/*.js        (app.js startuje aplikację).
     Dane:    ./data/data.json (albo opublikowany arkusz Google — zob. README).
@@ -23,7 +23,7 @@
   <header class="hero">
     <div class="hero-ornament" aria-hidden="true"></div>
     <div class="hero-inner">
-      <p class="eyebrow">Strona organizatorów · plan v3 · etap 4 · Fable 15.11.2026</p>
+      <p class="eyebrow">Strona organizatorów · plan v3 · etap 5 · Fable 15.11.2026</p>
       <h1>ŚDM 2027</h1>
       <p class="lede">Pielgrzymka Japonia <span class="amp">&amp;</span> Korea</p>
       <p class="hero-sub">Akita po drodze, nie zamiast. Autokary zamiast pociągów. Powitanie Papieża 5 sierpnia jako must see.</p>
@@ -96,7 +96,7 @@
         <div class="section-head">
           <p class="kicker">Symulacja, nie decyzja ostateczna</p>
           <h2 id="h-decyzje">Decyzje i koszt</h2>
-          <p class="lead">Każda zmiana w menu przelicza koszt na osobę i na grupę (90 osób), pokazuje różnicę względem wariantu bazowego i natychmiast aktualizuje karty dni, mapę, uwagi logistyczne oraz raty w zakładce Budżet. Link w pasku adresu zapisuje wybrany scenariusz.</p>
+          <p class="lead">Tu oglądamy warianty: każda zmiana od razu przelicza cenę na osobę i na grupę (90 osób), pokazuje różnicę wobec planu bazowego i aktualizuje mapę, dni, logistykę oraz raty. To jest podgląd, nie trwały zapis. Obowiązujący plan zapisuje się w arkuszu Google (kolumna „Wybrana” na karcie Decyzje).</p>
         </div>
         <div class="decision-layout">
           <aside class="cost-board" id="cost-board">
@@ -106,12 +106,19 @@
             <p class="cost-delta" id="cost-delta"></p>
             <div class="cost-split" id="cost-split"></div>
             <p class="cost-fuji" id="cost-fuji" hidden></p>
+            <p class="cost-note" id="preview-note">Podgląd zmian: cena powyżej i lista „Co się zmienia” liczą się na bieżąco względem planu bazowego. Nic z tego nie zapisuje się samo w arkuszu.</p>
             <div class="cost-actions">
-              <button type="button" class="btn btn-gold" id="btn-copy-link">Kopiuj link do scenariusza</button>
-              <button type="button" class="btn" id="btn-save-scenario">Zapisz scenariusz</button>
-              <button type="button" class="btn" id="btn-reset">Wróć do bazy</button>
+              <button type="button" class="btn btn-gold" id="btn-save-scenario">Zapisz jako wariant roboczy</button>
+              <p class="action-hint">Zapis w tej przeglądarce, pod nazwą. Można trzymać do trzech wariantów i je porównać poniżej.</p>
+              <button type="button" class="btn" id="btn-copy-link">Udostępnij wariant (link)</button>
+              <p class="action-hint">Kopiuje adres strony z obecnymi wyborami. Osoba z linkiem zobaczy ten sam podgląd. To nie jest zapis planu w arkuszu.</p>
+              <button type="button" class="btn" id="btn-undo-save">Cofnij do ostatniego zapisu</button>
+              <p class="action-hint">Przywraca ostatni wariant roboczy zapisany w tej przeglądarce.</p>
+              <button type="button" class="btn" id="btn-reset">Wyczyść wszystkie zmiany (wróć do planu bazowego)</button>
+              <p class="action-hint">Wraca do opcji bazowych. Nie zmienia arkusza.</p>
             </div>
             <p class="cost-share" id="copy-status" hidden></p>
+            <div class="official-plan-note" id="official-plan-note"></div>
             <p class="cost-note" id="cost-note"></p>
           </aside>
           <div>
@@ -144,8 +151,8 @@
         </div>
 
         <div class="compare-block" id="compare-block">
-          <h3>Porównaj scenariusze</h3>
-          <p class="muted">Można zapisać maksymalnie trzy scenariusze (w tej przeglądarce) i zestawić je obok siebie. Link z paska adresu też przenosi konkretny zestaw decyzji.</p>
+          <h3>Porównanie wariantów roboczych</h3>
+          <p class="muted">Tu widać do trzech wariantów zapisanych w tej przeglądarce („Zapisz jako wariant roboczy”). To nie zastępuje obowiązującego planu w arkuszu.</p>
           <div class="saved-row" id="saved-row"></div>
           <div class="table-scroll">
             <table class="sheet-table compare-table" id="compare-table"></table>
@@ -160,11 +167,12 @@
         <div class="section-head">
           <p class="kicker">Kosztorys, raty, stan zebrany</p>
           <h2 id="h-budzet">Budżet i wpłaty</h2>
-          <p class="lead">Pełny budżet pochodzi z aktualnego scenariusza (zakładka Decyzje). Harmonogram rat zachowuje udziały i miesiące z kosztorysu Artura z 22.09.2026 (20 / 20 / 20 / 25 / 15%). Kwoty rat przeliczają się od bieżącej ceny. Na tej stronie status wpłat jest wyłącznie zbiorczy. Nazwiska, wpłaty imienne i braki dokumentów są w prywatnym panelu, dostępnym tylko organizatorom.</p>
+          <p class="lead">Pełny budżet pochodzi z aktualnego podglądu decyzji. Harmonogram rat zachowuje udziały i miesiące z kosztorysu Artura z 22.09.2026 (20 / 20 / 20 / 25 / 15%). Kwoty rat przeliczają się od bieżącej ceny. Na tej stronie status wpłat jest wyłącznie zbiorczy.</p>
         </div>
         <div class="stat-grid" id="budget-stats"></div>
         <div class="empty-banner" id="budget-status-note"></div>
         <div id="private-panel-card" class="private-panel-card"></div>
+        <div id="budget-sheet-links" class="budget-sheet-links"></div>
         <h3>Harmonogram rat</h3>
         <p class="muted" id="instalment-note"></p>
         <div class="table-scroll">
@@ -193,10 +201,12 @@
         <div class="section-head">
           <p class="kicker">Zgody, dokumenty, terminy</p>
           <h2 id="h-checklista">Checklista</h2>
-          <p class="lead">Paszporty (ważne do lutego 2028), zgody rodziców, ewentualne zgody notarialne, K-ETA, luki w ubezpieczeniu i kwestionariuszach, rejestracja KBO, faks do sióstr w Akicie oraz terminy 30.11, 15.12 i 31.01. Status, osoba odpowiedzialna i termin pochodzą z karty Checklista w arkuszu. Na stronie widać tylko liczby zbiorcze, nigdy nazwisk ani numerów dokumentów.</p>
+          <p class="lead">Paszporty, zgody, K-ETA, ubezpieczenie, faks do Akity i pozostałe zadania organizatorów. Osoba odpowiedzialna, status „zrobione”, komentarz i data ostatniej zmiany pochodzą z karty Checklista w publicznym arkuszu. Imiona organizatorów mogą tu być; danych uczestników nie pokazujemy. Żeby coś zapisać na trwałe, edytuje się arkusz (albo panel checklisty, gdy zostanie wdrożony).</p>
         </div>
         <div class="stat-grid" id="check-stats"></div>
+        <div class="check-toolbar" id="check-toolbar"></div>
         <div class="filter-row" id="check-filters"></div>
+        <div class="filter-row" id="check-person-filters"></div>
         <div class="agg-row" id="check-aggregates"></div>
         <div id="check-list-board"></div>
       </div>

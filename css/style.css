@@ -102,12 +102,12 @@ button, select { font-family: inherit; }
 .tabs {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 5000;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
   align-items: center;
-  background: rgba(16, 25, 41, 0.94);
+  background: #101929;
   backdrop-filter: blur(12px);
   padding: 8px 16px;
   border-bottom: 1px solid rgba(198, 161, 91, 0.28);
@@ -162,13 +162,18 @@ h3 {
 .muted { font-size: 0.95rem; }
 
 .map-card {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
   background: white;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
   border: 1px solid var(--line);
 }
-.map { height: 540px; width: 100%; background: #d9e2ea; }
+.map { height: 540px; width: 100%; background: #d9e2ea; position: relative; z-index: 0; }
+/* Leaflet sam ustawia panele na z-index 400–1000; zostają wewnątrz isolation map-card, pod menu. */
+.leaflet-container { z-index: 0; }
 .map-legend {
   display: flex;
   flex-wrap: wrap;
@@ -696,4 +701,91 @@ h3 {
   background: transparent;
   color: var(--gold-2);
   border-color: rgba(232, 213, 163, 0.4);
+}
+
+
+/* Etap 5: opisy decyzji, warianty, linki do arkuszy, checklista */
+.action-hint, .cost-actions .action-hint {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  color: rgba(246, 241, 232, 0.62);
+  line-height: 1.4;
+}
+.official-plan-note {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(198, 161, 91, 0.12);
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  font-size: 0.82rem;
+  color: #efe7d8;
+}
+.official-plan-note a { color: var(--gold-2); }
+.decision-card .dec-kicker {
+  margin: 12px 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.decision-card .dec-body { margin: 0 0 8px; font-size: 0.95rem; }
+.decision-card select { margin-top: 4px; }
+.option-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+.opt-side {
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+.opt-side h4 { margin: 0 0 4px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.opt-side.is-plus { background: #e7f0ea; }
+.opt-side.is-plus h4 { color: var(--ok); }
+.opt-side.is-minus { background: #f6e8e8; }
+.opt-side.is-minus h4 { color: var(--wine); }
+.opt-impact { grid-column: 1 / -1; margin: 0; font-size: 0.92rem; }
+.dec-reco {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-left: 4px solid var(--gold);
+  background: var(--paper-2);
+  font-size: 0.95rem;
+}
+.budget-sheet-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 0 0 28px;
+}
+.sheet-link-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px 20px;
+  box-shadow: var(--shadow);
+}
+.sheet-link-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--navy);
+}
+.sheet-link-card p { margin: 0 0 14px; color: var(--ink-soft); font-size: 0.95rem; }
+.sheet-link-card.is-private { background: var(--navy); color: var(--paper); border-color: var(--navy); }
+.sheet-link-card.is-private h3 { color: var(--gold-2); }
+.sheet-link-card.is-private p { color: #d8d0c4; }
+.check-toolbar { margin: 0 0 16px; }
+.filter-label { margin-right: 8px; font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; }
+.check-item .done-line { margin: 0 0 6px; font-weight: 600; }
+.check-item .changed { margin: 0; font-size: 0.8rem; color: var(--ink-soft); }
+@media (max-width: 900px) {
+  .option-detail, .budget-sheet-links { grid-template-columns: 1fr; }
+  .cost-board { position: static; }
 }
