@@ -20,12 +20,14 @@ Skrypt podpinasz do arkusza **„ŚDM 2027 – dane strony organizatorów”** (
    - **Kto ma dostęp:** *Każdy*
    - **Wdróż**, potem **Autoryzuj dostęp** i zgódź się na dostęp do arkuszy.
 5. Skopiuj **adres aplikacji internetowej** (kończy się na `/exec`).
-6. W pliku `data/data.json` w sekcji `meta` wklej go w pole `"zapisAppUrl": ""` i wgraj plik na GitHuba.
+6. Wklej adres w dwóch miejscach i wgraj pliki na GitHuba:
+   - w pliku danych organizatorów (`data/org-….json`), sekcja `meta`, pole `"zapisAppUrl"`,
+   - w `data/data.json`, sekcja `meta`, pole `"planAppUrl"` — strona jadących pyta skrypt tylko o zatwierdzone opcje (`?action=plan`).
 7. Na stronie, przy pierwszym zapisie, każdy organizator wpisuje swoje imię i kod z kroku 3. Strona je zapamięta w tej przeglądarce.
 
 ## Dlaczego „Wykonuj jako: Ja” i kod
 
-Strona jest na GitHub Pages, czyli poza Google. Gdyby skrypt działał „jako użytkownik”, przeglądarka musiałaby przekazać logowanie Google do innej domeny, a to zwykle jest blokowane. Dlatego skrypt działa z uprawnieniami właściciela, a zapis chroni kod organizatorów. Czytać może każdy, kto zna adres — w tym arkuszu nie ma danych osobowych.
+Strona jest na GitHub Pages, czyli poza Google. Gdyby skrypt działał „jako użytkownik”, przeglądarka musiałaby przekazać logowanie Google do innej domeny, a to zwykle jest blokowane. Dlatego skrypt działa z uprawnieniami właściciela, a zapis chroni kod organizatorów. Bez kodu skrypt zwraca tylko listę zatwierdzonych opcji (dla strony jadących). Cały arkusz (koszty, raty, checklista) — tylko z kodem. Po podłączeniu skryptu możesz wyłączyć udostępnianie arkusza „każdy z linkiem”.
 
 ## Po zmianie skryptu
 

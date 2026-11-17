@@ -28,17 +28,15 @@ var OSOBY = ['Artur', 'Jakub Ś.', 'Jakub Ż.', 'Staszek', 'Robert', 'Kinga', 'D
 
 function doGet(e) {
   var action = (e && e.parameter && e.parameter.action) || 'tabele';
+  if (action === 'plan') {
+    // Publicznie, dla strony jadących: tylko zatwierdzone opcje (bez kosztów i opisów).
+    return json_({ ok: true, wybrane: approved_() });
+  }
   if (action === 'tabele') {
-    // Odczyt publiczny: bez komentarzy z checklisty (mogą zawierać wewnętrzne ustalenia).
+    // Cały arkusz (koszty, raty, checklista) — tylko z kodem organizatorów.
     var kod = PropertiesService.getScriptProperties().getProperty('KOD_ORGANIZATOROW') || '';
-    var full = kod && e && e.parameter && e.parameter.kod === kod;
-    var out = readTabs_();
-    if (!full && out.tabele.Checklista && out.tabele.Checklista.length) {
-      var h = out.tabele.Checklista[0];
-      var ci = h.indexOf('Komentarz');
-      if (ci >= 0) out.tabele.Checklista = out.tabele.Checklista.map(function (r, i) { var c = r.slice(); if (i > 0 && c[ci]) c[ci] = '(komentarz widoczny po podaniu kodu)'; return c; });
-    }
-    return json_(out);
+    if (!kod || !e || !e.parameter || e.parameter.kod !== kod) return json_({ ok: false, error: 'BAD_CODE' });
+    return json_(readTabs_());
   }
   if (action === 'ping') return json_({ ok: true });
   return json_({ ok: false, error: 'UNKNOWN_ACTION' });
@@ -58,6 +56,18 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+function approved_() {
+  var sh = ss_().getSheetByName('Decyzje');
+  var out = {};
+  if (!sh || sh.getLastRow() < 2) return out;
+  var v = sh.getDataRange().getDisplayValues();
+  var h = v[0].map(function (x) { return String(x).trim(); });
+  var cD = h.indexOf('ID decyzji'), cO = h.indexOf('ID opcji'), cW = h.indexOf('Wybrana');
+  if (cD < 0 || cO < 0 || cW < 0) return out;
+  v.slice(1).forEach(function (r) { if (String(r[cW]).trim().toUpperCase() === 'TAK') out[String(r[cD]).trim()] = String(r[cO]).trim(); });
+  return out;
 }
 
 function readTabs_() {
