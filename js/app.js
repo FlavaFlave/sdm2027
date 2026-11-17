@@ -13,7 +13,7 @@ import { validateDays, dayChecksHtml, mealsHtml, renderFlags } from "./checks.js
 import { setAppUrl, fetchTables, post, hasApp, askCred } from "./zapis.js";
 import { setDetailState, bindDayClicks, openDay } from "./details.js";
 import { tileHtml, bestPhoto } from "./tiles.js";
-import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace } from "./maps.js";
+import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace, legendHtml } from "./maps.js";
 import { renderBudget, resizeBudgetChart } from "./budget.js";
 import { renderChecklist } from "./checklist.js";
 
@@ -800,11 +800,7 @@ async function main() {
   renderCredits(data.miejsca, data.meta);
   renderLogistyka(data);
   renderChecklist(data.checklista || [], data.meta);
-  $("#legend-all").innerHTML = `
-    <span><i class="legend-dot jp"></i>Japonia</span>
-    <span><i class="legend-dot kr"></i>Korea</span>
-    <span><i class="legend-dot air"></i>Lotniska i przesiadki</span>
-    <span>Linia ciągła: autokar / droga lądowa · kreska: lot albo prom</span>`;
+  $("#legend-all").innerHTML = legendHtml();
 
   const lastMapPlaces = { all: [], jp: [], kr: [] };
   const showTab = initTabs((id, write) => {
@@ -855,9 +851,10 @@ async function main() {
 
     const jpVis = vis.filter(isJapanPlace);
     const krVis = vis.filter(isKoreaPlace);
-    updateMap("map-all", vis, lines.all);
-    updateMap("map-jp", jpVis, lines.jp);
-    updateMap("map-kr", krVis, lines.kr);
+    const mo = { days, onDay: openDay };
+    updateMap("map-all", vis, lines.all, mo);
+    updateMap("map-jp", jpVis, lines.jp, mo);
+    updateMap("map-kr", krVis, lines.kr, mo);
     lastMapPlaces.all = vis;
     lastMapPlaces.jp = jpVis;
     lastMapPlaces.kr = krVis;

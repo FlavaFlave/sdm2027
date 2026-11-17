@@ -9,6 +9,7 @@ import { groupDecisions, defaultChoices, normalizeChoices, activeEffects, applyD
 import { setDetailState, openDay } from "./details.js";
 import { tileHtml, bestPhoto } from "./tiles.js";
 import { icon } from "./icons.js";
+import { updateMap, visiblePlaces, routeLines, setView, legendHtml } from "./maps.js";
 
 const START = new Date("2027-08-01T00:00:00+02:00");
 
@@ -230,6 +231,22 @@ function renderDays(days, places) {
   $("#pg-days").onclick = (e) => { const b = e.target.closest("[data-day]"); if (b) openDay(b.dataset.day); };
 }
 
+function renderMap(data, groups, choices, days) {
+  if (typeof L === "undefined" || !$("#pg-map")) return;
+  try {
+    const effects = activeEffects(groups, choices);
+    const vis = visiblePlaces(data.miejsca, data.warianty || {}, effects, choices);
+    updateMap("pg-map", vis, routeLines(choices).all, { days, onDay: openDay });
+    $("#pg-legend").innerHTML = legendHtml();
+    document.querySelectorAll(".map-switch [data-view]").forEach((b) => {
+      b.onclick = () => {
+        document.querySelectorAll(".map-switch [data-view]").forEach((x) => x.classList.toggle("is-on", x === b));
+        setView("pg-map", b.dataset.view);
+      };
+    });
+  } catch (e) { console.warn("mapa", e); }
+}
+
 function renderCount(approved) {
   const days = Math.ceil((START - new Date()) / 864e5);
   $("#pg-count").innerHTML = days > 0 ? `<b>${days}</b> ${days === 1 ? "dzień" : "dni"} do wylotu` : (days > -21 ? "Jesteśmy w drodze — z Bogiem!" : "");
@@ -258,6 +275,7 @@ async function main() {
   renderCount(hasApproved);
   $("#top-grid").innerHTML = TOP.map(([ic, h, p]) => `<article class="top-card"><span class="ico">${icon(ic)}</span><h3>${escapeHtml(h)}</h3><p>${escapeHtml(p)}</p></article>`).join("");
   renderDays(days, data.miejsca);
+  renderMap(data, groups, choices, days);
   komp = kompData;
   $("#komp-src").textContent = `${kompData.zrodlo} Stan na ${kompData.stan}.`;
   bindKomp(); renderKomp();

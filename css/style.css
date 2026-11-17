@@ -955,3 +955,26 @@ body.modal-open { overflow: hidden; }
   .log-grid { grid-template-columns: 1fr !important; }
   .log-card.wide { grid-column: auto !important; }
 }
+
+/* Mapa v2 (etap 11): piny z numerem dnia, jasne morze */
+.map { background: #d4e4ee; }
+.pin2 { background: none; border: 0; }
+.pin-day { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; color: #fff; font: 700 12px/1 var(--font-sans); border: 2px solid #fff; box-shadow: 0 1px 5px rgba(0,0,0,.35); }
+.pin-day.star { box-shadow: 0 0 0 2px #c6a15b, 0 1px 6px rgba(0,0,0,.4); }
+.pin-sm { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+.map-label span { font-size: 12.5px; color: #2c3440; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 2px #fff; transform: translate(14px, -50%); }
+.map-label.country span { font-size: 12px; letter-spacing: 0.3em; color: #8a7a5c; font-weight: 700; transform: translate(-50%, -50%); }
+.rich-tip .when, .pop .when { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #a07c35; margin: 0 0 3px; }
+.pop-days { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px !important; }
+.pop-day { font: 700 0.82rem var(--font-sans); background: #1f4e79; color: #fff; border: 0; border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.pop-day:hover { background: #163a5b; }
+.legend-pin { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; color: #fff; font: 700 11px/1 var(--font-sans); border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3); margin-right: 6px; vertical-align: middle; }
+.legend-pin.star { box-shadow: 0 0 0 2px #c6a15b; }
+.legend-pin.sm { width: 18px; height: 18px; }
+.legend-line { display: inline-block; width: 26px; height: 0; border-top: 4px solid #1f4e79; margin-right: 6px; vertical-align: middle; }
+.legend-line.dash { border-top: 3px dashed #b8893a; }
+.map-switch { margin: 0 0 14px; }
+.map-hint { display: none; margin-top: 8px; }
+@media (max-width: 700px) { #pg-map { height: 420px; } .map-hint { display: block; } }
+/* Rozjaśnienie głębin oceanu, żeby trasa i piny były czytelne */
+.map .leaflet-tile-pane { filter: brightness(1.07) saturate(0.8) contrast(0.88); }

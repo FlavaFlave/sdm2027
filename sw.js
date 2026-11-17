@@ -1,8 +1,8 @@
 /* Offline dla strony jadących: sieć najpierw, a bez internetu — ostatnia zapisana wersja. */
-const CACHE = "sdm2027-pielgrzym-v2";
+const CACHE = "sdm2027-pielgrzym-v3";
 const CORE = [
   "./", "index.html", "css/style.css", "css/pielgrzym.css",
-  "js/pielgrzym.js", "js/util.js", "js/cost.js", "js/details.js", "js/checks.js", "js/tiles.js", "js/icons.js",
+  "js/pielgrzym.js", "js/util.js", "js/cost.js", "js/details.js", "js/checks.js", "js/tiles.js", "js/icons.js", "js/maps.js",
   "data/data.json", "data/kompendium.json", "img/ikona.svg", "img/ikona-192.png", "manifest.webmanifest",
 ];
 self.addEventListener("install", (e) => {
@@ -15,7 +15,7 @@ self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
-  const cacheable = url.origin === location.origin || /upload\.wikimedia\.org|fonts\.(googleapis|gstatic)\.com/.test(url.host);
+  const cacheable = url.origin === location.origin || /upload\.wikimedia\.org|fonts\.(googleapis|gstatic)\.com|unpkg\.com|server\.arcgisonline\.com/.test(url.host);
   if (!cacheable) return;
   e.respondWith(
     fetch(req).then((res) => {
