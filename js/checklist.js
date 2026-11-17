@@ -3,7 +3,7 @@
  * Źródło prawdy: karta Checklista publicznego arkusza (osoba, zrobione, komentarz, data zmiany).
  * Imiona organizatorów są dopuszczalne; danych uczestników tu nie ma.
  */
-import { $, $$, escapeHtml, num, todayISO, formatDatePL, ORGANIZATORZY } from "./util.js";
+import { $, $$, escapeHtml, num, todayISO, formatDatePL, ORGANIZATORZY, sheetUrl } from "./util.js";
 import { post, hasApp, askCred, getCred } from "./zapis.js";
 import { parseChecklistSheet } from "./cost.js";
 
@@ -36,7 +36,7 @@ const STATUS_CLASS = {
 
 export const CHECKLIST_OSOBY = ORGANIZATORZY;
 
-const SHEET_CHECK_URL = "https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit#gid=215408221";
+
 
 function urgency(item, today) {
   const done = item.zrobione || item.status === "zrobione" || item.status === "nie dotyczy";
@@ -99,7 +99,7 @@ export function renderChecklist(items, meta) {
       <div class="toolbar-row">
         <span class="muted">Zapisujesz jako: <strong>${escapeHtml(cred.autor || "— nie wybrano —")}</strong></span>
         <button type="button" class="btn" id="btn-cred">Zmień, kto zapisuje</button>
-        <a class="btn" href="${SHEET_CHECK_URL}" target="_blank" rel="noopener">Otwórz kartę Checklista w arkuszu</a>
+        <a class="btn" href="${sheetUrl(215408221)}" target="_blank" rel="noopener">Otwórz kartę Checklista w arkuszu</a>
       </div>`;
     $("#btn-cred", toolbar).onclick = async () => { await askCred(true); renderChecklist(); };
   }

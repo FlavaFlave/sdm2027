@@ -103,8 +103,8 @@ function renderPrivatePanelCard(data) {
 }
 
 
-const PUBLIC_SHEET = "https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit";
-const PRIVATE_SHEET = "https://docs.google.com/spreadsheets/d/1yTlwsYqsuSs5nvESWlcCOPF_yIC-4dyoUllngWTmjuo/edit";
+const PUBLIC_SHEET = "#";
+const PRIVATE_SHEET = "#";
 
 function renderBudgetSheetLinks(data) {
   const el = $("#budget-sheet-links");

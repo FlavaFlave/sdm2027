@@ -244,3 +244,24 @@ Arkusz: <https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42L
 - **Dni klikalne** (oś czasu w Przeglądzie i karty dni): okno z sensem dnia, programem, posiłkami, kontrolą harmonogramu i opisem każdego miejsca (`miejsca[].szczegoly`: co, historia, dlaczego, robimy, praktyczne; `dni[].sens`). Link do dnia: `#tab=przeglad&dzien=2027-08-14`.
 - Teksty bez skrótów roboczych (E1–E4 → warianty 1–4, „Fable”, „v3”, KBO/LOC rozwinięte), wyjaśniony odcinek autostrady obok Fukushimy.
 - Liczby z arkusza czytane poprawnie także w formacie „4,900.00”.
+
+---
+
+## Etap 9 (17.11.2026) — strona dla jadących
+
+- **`pielgrzym.html`** — strona dla uczestników (bez kosztów, decyzji, kierowców i danych osobowych): najważniejsze zasady, plan dzień po dniu z opisami miejsc, kompendium „jak się zachować” (rozwijane działy, wyszukiwarka, filtr Japonia/Korea), lista „przed wyjazdem” (zapis w telefonie), karta awaryjna do druku, słowniczek JP/KR. Działa offline (`sw.js`, `manifest.webmanifest`).
+- **Ten sam plan co strona organizatorów:** czyta `data/data.json` i opcje zatwierdzone w arkuszu (kolumna „Wybrana” w karcie Decyzje). Gdy nic nie jest zatwierdzone, pokazuje plan bazowy z dopiskiem „plan wstępny”.
+- **Kompendium:** `data/kompendium.json` (171 pozycji, z linkami do źródeł). Dopisek `?org=1` w adresie pokazuje punkty oznaczone do sprawdzenia.
+- **Strona organizatorów** startuje teraz od obowiązującego (zatwierdzonego) planu; przycisk „Pokaż obowiązujący plan”. Poprawione: noc w Mito/Utsunomiyi zmienia też początek dnia 3.08; wariant 4 wyklucza „lepszy sen”; raty nie bywają ujemne.
+- Wspólne moduły: `js/tiles.js` (kafelki dni i dobór zdjęcia), `js/details.js` (okno dnia; tryb publiczny bez uwag organizacyjnych), `js/icons.js` (ikony).
+
+---
+
+## Etap 10 (17.11.2026) — rozdzielenie stron
+
+- **Adres główny (`index.html`) to strona dla jadących.** `pielgrzym.html` przekierowuje na nią.
+- **Strona organizatorów** ma osobny, niepodawany publicznie adres (nazwę pliku znają organizatorzy). Nie linkuje do niej żadna strona.
+- **Dane rozdzielone:** `data/data.json` — tylko plan, miejsca i warianty trasy (bez kosztów, decyzji, uwag organizacyjnych i adresów arkuszy). Koszty, decyzje, raty, checklista, logistyka, uwagi do dni i ID arkuszy są w osobnym pliku danych organizatorów w `data/`.
+- **Strona jadących nie zna arkusza.** Zatwierdzony plan pobiera ze skryptu `Zapis.gs` (`?action=plan`, tylko ID wybranych opcji); adres w `data.json → meta.planAppUrl`.
+- `Zapis.gs`: odczyt całego arkusza (`?action=tabele`) tylko z kodem organizatorów.
+- To jest ukrycie, nie zabezpieczenie: repozytorium jest publiczne. Prawdziwe logowanie — Cloudflare Access (zob. rozmowa z 17.11.2026).

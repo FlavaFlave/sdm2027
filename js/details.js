@@ -59,10 +59,10 @@ export function openDay(date) {
       ${day.sens ? `<p class="dm-sens">${escapeHtml(day.sens)}</p>` : ""}
       <h3>Program dnia</h3>
       <p>${escapeHtml(day.program || "")}</p>
-      <div class="dm-meta">${[day.transport, day.km ? `${day.km} km` : "", day.czas_h ? `${day.czas_h} h jazdy` : "", day.nocleg ? `Nocleg: ${day.nocleg}` : ""].filter(Boolean).map((c) => `<span class="chip">${escapeHtml(c)}</span>`).join("")}</div>
+      <div class="dm-meta">${(state.publicView ? [day.nocleg ? `Nocleg: ${day.nocleg.replace(/\s*\(.*?\)/g, "")}` : ""] : [day.transport, day.km ? `${day.km} km` : "", day.czas_h ? `${day.czas_h} h jazdy` : "", day.nocleg ? `Nocleg: ${day.nocleg}` : ""]).filter(Boolean).map((c) => `<span class="chip">${escapeHtml(c)}</span>`).join("")}</div>
       ${mealsHtml(day)}
-      ${dayChecksHtml(state.checks && state.checks.byDay[day.data])}
-      ${day.uwagi ? `<p class="day-notes">${escapeHtml(day.uwagi)}</p>` : ""}
+      ${state.publicView ? "" : dayChecksHtml(state.checks && state.checks.byDay[day.data])}
+      ${day.uwagi && !state.publicView ? `<p class="day-notes">${escapeHtml(day.uwagi)}</p>` : ""}
       ${main.length ? `<h3>Miejsca tego dnia</h3>${main.map(placeSection).join("")}` : ""}
       ${transit.length ? `<p class="muted">Przejazdy i lotniska: ${transit.map((p) => escapeHtml(p.nazwa)).join(", ")}.</p>` : ""}
       ${tile && tile.cap ? tile.cap : ""}

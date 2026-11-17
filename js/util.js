@@ -11,7 +11,10 @@ export const CHOICE_IDS = ["petla", "noc_2", "sen", "nagasaki", "seul_stawka", "
   "hotele_zachod", "posilki", "kadra_lok", "esim", "przewoznik", "nagasaki_miasto"];
 /** Organizatorzy (do przypisywania zadań i podpisu zmian). */
 export const ORGANIZATORZY = ["Artur", "Jakub Ś.", "Jakub Ż.", "Staszek", "Robert", "Kinga", "Dorota", "Kasia", "Judyta", "Basia"];
-export const SHEET_ID = "1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs";
+export let SHEET_ID = "";
+/** ID arkusza ustawia strona organizatorów z pliku danych organizatorów (nie ma go w publicznym kodzie). */
+export function setSheetId(id) { SHEET_ID = String(id || ""); }
+export function sheetUrl(gid) { return SHEET_ID ? `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit${gid ? "#gid=" + gid : ""}` : "#"; }
 export const TAB_NAMES = ["Dni", "Miejsca", "Transport", "Noclegi", "Decyzje", "Koszty", "Wpłaty", "Checklista"];
 
 export const $ = (sel, root = document) => root.querySelector(sel);

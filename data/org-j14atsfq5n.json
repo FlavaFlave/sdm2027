@@ -1,0 +1,3037 @@
+{
+  "meta": {
+    "tytul": "ŚDM 2027 — Japonia i Korea",
+    "podtytul": "Strona organizatorów pielgrzymki",
+    "wersja_planu": "plan z 15.11.2026, uzupełniony 16.11.2026 — wariant rekomendowany: Akita bez parady",
+    "daty": "1–21 sierpnia 2027",
+    "osob": 90,
+    "cena_bazowa": 16170,
+    "cena_bazowa_uwaga": "Liczone z pozycji modelu. Od wersji z 16.11.2026 rezerwa nie obejmuje kupionych biletów ani polisy.",
+    "waluta": "PLN",
+    "spreadsheet_id": "1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit",
+    "sheet_tabs": [
+      "Dni",
+      "Miejsca",
+      "Transport",
+      "Noclegi",
+      "Decyzje",
+      "Koszty",
+      "Wpłaty",
+      "Checklista",
+      "Ustawienia"
+    ],
+    "uwaga_danych": "Strona najpierw próbuje wczytać opublikowany arkusz Google (CSV/gviz) z danymi trasy, kosztów i zbiorczych wpłat. Jeśli arkusz nie jest jeszcze opublikowany, używa data/data.json. Dane osobowe uczestników NIE są w tym pliku ani w publicznym arkuszu — tylko w prywatnym arkuszu i w panelu Apps Script.",
+    "zrodla": "Plan z 15.11.2026 i wcześniejsze wersje, kosztorys Artura z 22.09.2026 (jako źródło stawek, nie wiążąca trasa). Zdjęcia: Wikimedia Commons, licencje przy każdym miejscu.",
+    "etap": 5,
+    "uwaga_wplat": "Brak potwierdzonego, aktualnego zbiorczego stanu wpłat (stan na 15.11.2026). W Gmailu i na Dysku nie znaleziono sumy zebranej ani liczby wpłaconych rat pasującej do harmonogramu z 22.09. Organizatorzy uzupełniają kolumny „Liczba wpłaconych” i „Suma wpłynęła” w karcie Wpłaty arkusza — bez nazwisk.",
+    "privatePanelUrl": "",
+    "private_sheet_note": "Dane osobowe są wyłącznie w osobnym, niepublikowanym arkuszu. To pole privatePanelUrl to tylko adres web appa (pusty, dopóki Jakub go nie wdroży).",
+    "private_sheet_url": "https://docs.google.com/spreadsheets/d/1yTlwsYqsuSs5nvESWlcCOPF_yIC-4dyoUllngWTmjuo/edit",
+    "checklistAppUrl": "",
+    "preset_oszczedny": {
+      "nagasaki": "tani",
+      "seul_stawka": "174",
+      "hotele_zachod": "tanie",
+      "posilki": "bento",
+      "kadra_lok": "wolontariusze",
+      "esim": "tani",
+      "przewoznik": "zmiana"
+    },
+    "zapisAppUrl": "",
+    "zapisAppUrl_uwaga": "Adres aplikacji internetowej Apps Script z apps-script/Zapis.gs (kończy się na /exec). Pusty = strona czyta data.json, a zapis checklisty jest tylko w tej przeglądarce.",
+    "spreadsheet_folder": "https://drive.google.com/drive/folders/1jTALr6IGrv8o9KByTqQB5LvYFYYicMkz",
+    "lista_snapshot": {
+      "data": "16.11.2026",
+      "zrodlo": "lista Seul 27 (liczby zbiorcze, bez danych osobowych)",
+      "zapisanych": 95,
+      "z_numerem": 80,
+      "rezygnacje": 3,
+      "glowna": 77,
+      "bez_numeru": 15,
+      "niepelnoletni_glowna": 27,
+      "bez_wieku_glowna": 9
+    },
+    "lista_url": "https://docs.google.com/spreadsheets/d/1SEGl2NcbZMEkPQN7qO5v2knHl6xCdRRdZCIlYKK3stg/edit",
+    "sheet_id": "1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs"
+  },
+  "transport": [
+    {
+      "odcinek": "QR260 Warszawa–Doha, 1.08 17:40",
+      "srodek": "samolot",
+      "przewoznik": "Qatar Airways (FunFly)",
+      "kontakt": "do ustalenia",
+      "cena_os": 4900,
+      "cena_uwaga": "w cenie biletu grupowego WAW–NRT / KIX–WAW (4900 zł całość)",
+      "status": "potwierdzone",
+      "uwagi": "69 miejsc grupowych z klauzulą ok. 15% rezygnacji + 21 biletów imiennych bez zmiany nazwiska."
+    },
+    {
+      "odcinek": "QR806 Doha–Narita, 2.08, lądowanie 19:10",
+      "srodek": "samolot",
+      "przewoznik": "Qatar Airways (FunFly)",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w cenie 4900 zł",
+      "status": "potwierdzone",
+      "uwagi": ""
+    },
+    {
+      "odcinek": "Narita → Iwaki, 2.08 wieczór",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku pierwszych dni (wariant 1), ok. 850 zł/os. za 2–4.08 (hotele+transport)",
+      "status": "planowane",
+      "uwagi": "2 autokary, ok. 200 km, 2,5–2,75 h, autostrada Jōban. Termin zapytania: 31.12.2026, Artur. Japońskie licencjonowane biuro — decyzja do 15.12.2026."
+    },
+    {
+      "odcinek": "Iwaki → Matsushima → Akita → Kitakami, 3.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku pierwszych dni (wariant 1) ok. 850 zł",
+      "status": "planowane",
+      "uwagi": "2 autokary po 2 kierowców. Ok. 180 + 260 + 120 km. Luki na ok. 90 walizek (limit: 65 cm / 20 kg)."
+    },
+    {
+      "odcinek": "Kitakami → Nikkō → Haneda, 4.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku pierwszych dni (wariant 1) ok. 850 zł",
+      "status": "planowane",
+      "uwagi": "2 kierowców. Ok. 385 km (5,25 h) + 170 km. Twardy wyjazd z Nikkō o 13:30."
+    },
+    {
+      "odcinek": "Haneda → Gimpo, 4.08 20:05",
+      "srodek": "samolot",
+      "przewoznik": "ANA NH867 i/lub Asiana OZ1035",
+      "kontakt": "do ustalenia",
+      "cena_os": 504,
+      "cena_uwaga": "szacunek 504 zł (wg Artura ¥18 000 na Haneda–ICN 5.08; trasa i data inne)",
+      "status": "planowane",
+      "uwagi": "Blok 2–3 rejsów wieczornych. Zapytanie teraz; rezerwacja po publikacji rozkładu lato 2027. Zapas: JL91 8:20 i NH861 8:40 dnia 5.08."
+    },
+    {
+      "odcinek": "Seul, 5.08 (przed pakietem)",
+      "srodek": "metro",
+      "przewoznik": "karty miejskie (T-money lub odpowiednik)",
+      "kontakt": "",
+      "cena_os": "",
+      "cena_uwaga": "własne karty, poza pakietem",
+      "status": "planowane",
+      "uwagi": "Pakiet ŚDM zaczyna się 6.08."
+    },
+    {
+      "odcinek": "Seul / Seongnam, 6–10.08",
+      "srodek": "karta ŚDM / pieszo",
+      "przewoznik": "organizator ŚDM",
+      "kontakt": "polskie biuro ŚDM (KBO), biuro@sdmpolska.pl",
+      "cena_os": "",
+      "cena_uwaga": "w pakiecie B1+",
+      "status": "planowane",
+      "uwagi": "Pytanie o odbiór identyfikatorów 5.08."
+    },
+    {
+      "odcinek": "Seul → Solmoe → Busan, 10.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": 152,
+      "cena_uwaga": "szacunek Artura 152 zł za Seul–Busan; Solmoe może zmienić stawkę",
+      "status": "planowane",
+      "uwagi": "Ok. 1,75 h + ok. 4,5 h. Termin zapytania: 31.12.2026."
+    },
+    {
+      "odcinek": "Busan → Hakata, 11–12.08, New Camellia 22:30",
+      "srodek": "prom",
+      "przewoznik": "Camellia Line",
+      "kontakt": "do ustalenia",
+      "cena_os": 322,
+      "cena_uwaga": "szacunek Artura, taryfa grupowa + opłaty portowe, ¥11 500",
+      "status": "planowane",
+      "uwagi": "Zapytanie grupowe na 90 osób — teraz; kalendarz VIII 2027 ok. lutego. Odprawa 16:30–18:30, bagaż do 17:30, wejście ok. 19:40, zejście 7:30. Plan B: lot Busan–Fukuoka."
+    },
+    {
+      "odcinek": "Hakata → Tabira → Hirado → Nagasaki, 12.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku zachodu 12–20.08 (transport 43–55 tys. ¥, czyli ok. 1075–1375 zł)",
+      "status": "planowane",
+      "uwagi": "Ok. 2–2,5 h + 2–2,5 h. Cały zachód tylko autokarem, bez shinkansenu."
+    },
+    {
+      "odcinek": "Nagasaki ⇄ Sotome, 13.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku zachodu",
+      "status": "planowane",
+      "uwagi": "Ok. 1 h w każdą stronę."
+    },
+    {
+      "odcinek": "Nagasaki ⇄ Unzen / Shimabara, 16.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku zachodu",
+      "status": "planowane",
+      "uwagi": "Ok. 1,5–2 h w każdą stronę. Szczyt Obonu — korki do potwierdzenia z przewoźnikiem."
+    },
+    {
+      "odcinek": "Nagasaki → Yamaguchi → Hiroszima, 17.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku zachodu",
+      "status": "planowane",
+      "uwagi": "Ok. 435 km, ok. 6 h, jeden kierowca, wyjazd ok. 7:00."
+    },
+    {
+      "odcinek": "Hiroszima → Miyajima → Himeji → Osaka, 18.08",
+      "srodek": "autokar + prom lokalny",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku zachodu; krótki prom na Miyajimę 10 min — cena do ustalenia",
+      "status": "planowane",
+      "uwagi": "Ok. 350 km, ok. 5,25 h, wyjazd ok. 8:15."
+    },
+    {
+      "odcinek": "Osaka ⇄ Kioto, 19.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku zachodu",
+      "status": "planowane",
+      "uwagi": "Ok. 1 h w każdą stronę."
+    },
+    {
+      "odcinek": "Osaka → Kansai (KIX), 20.08",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku zachodu",
+      "status": "planowane",
+      "uwagi": "Ok. 1 h, na lotnisku ok. 15:30."
+    },
+    {
+      "odcinek": "QR803 Kansai–Doha, 20.08 18:55",
+      "srodek": "samolot",
+      "przewoznik": "Qatar Airways (FunFly)",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w cenie 4900 zł",
+      "status": "potwierdzone",
+      "uwagi": ""
+    },
+    {
+      "odcinek": "QR263 Doha–Warszawa, 21.08 02:00, lądowanie 07:00",
+      "srodek": "samolot",
+      "przewoznik": "Qatar Airways (FunFly)",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w cenie 4900 zł",
+      "status": "potwierdzone",
+      "uwagi": ""
+    }
+  ],
+  "noclegi": [
+    {
+      "miasto": "Samolot (Doha)",
+      "noce": 1,
+      "daty": "1/2.08",
+      "obiekt": "Qatar Airways",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "",
+      "status": "potwierdzone",
+      "uwagi": "W cenie biletu."
+    },
+    {
+      "miasto": "Iwaki",
+      "noce": 1,
+      "daty": "2/3.08",
+      "obiekt": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "",
+      "status": "planowane",
+      "uwagi": "Rekomendacja: wariant 1. Alternatywy: Mito (gdy Msza w Akicie ok. 17:00) albo Utsunomiya (gdy odrzucenie autostrady Jōban). Termin decyzji o miejscu: 15.12.2026."
+    },
+    {
+      "miasto": "Kitakami",
+      "noce": 1,
+      "daty": "3/4.08",
+      "obiekt": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "",
+      "status": "planowane",
+      "uwagi": "wariant 1 bez parady. W wariancie 2: nocleg w centrum Akity (albo Ōmagari / Kakunodate, jeśli Akita pełna w noc Kantō). Blok 2–4.08 łącznie ok. 850 zł/os. (wariant 1, hotele+transport)."
+    },
+    {
+      "miasto": "Seul, Mapo",
+      "noce": 2,
+      "daty": "4/5 i 5/6.08",
+      "obiekt": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "ok. 174–290",
+      "status": "planowane",
+      "uwagi": "Kryterium pakietu B1+: blok ok. 90 łóżek z bezpłatną anulacją do 15.12.2026. 174 zł to stawka Artura poza szczytem ŚDM; plan z 15.11 w budżecie przyjmuje ok. 290 zł/noc (przypuszczenie)."
+    },
+    {
+      "miasto": "Pakiet B1+ / pole czuwania",
+      "noce": 4,
+      "daty": "6–10.08 (w tym noc 7/8 na polu)",
+      "obiekt": "organizator ŚDM",
+      "kontakt": "polskie biuro ŚDM (KBO), biuro@sdmpolska.pl",
+      "cena_os_noc": "",
+      "status": "planowane",
+      "uwagi": "W cenie pakietu B1+ (190 USD, ok. 712,50 zł). Nieletni osobno, 1 opiekun na 5 osób tej samej płci. Prośba o wspólne zakwaterowanie 90 osób przy rejestracji. Wpłata pakietu 15.05.2027, rejestracja w komitecie w Seulu (LOC) 31.05.2027."
+    },
+    {
+      "miasto": "Busan",
+      "noce": 1,
+      "daty": "10/11.08",
+      "obiekt": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "ok. 87",
+      "status": "planowane",
+      "uwagi": "Stawka z kosztorysu Artura, do weryfikacji w szczycie."
+    },
+    {
+      "miasto": "Prom New Camellia",
+      "noce": 1,
+      "daty": "11/12.08",
+      "obiekt": "Camellia Line",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "",
+      "status": "planowane",
+      "uwagi": "Nocleg w cenie biletu promowego (szacunek 322 zł/os.)."
+    },
+    {
+      "miasto": "Nagasaki (baza)",
+      "noce": 5,
+      "daty": "12–17.08",
+      "obiekt": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "ok. 14–20 tys. ¥ albo kościelne ¥4 500",
+      "status": "planowane",
+      "uwagi": "Trzy zapytania naraz do 15.12.2026: ośrodek młodzieżowy Hiyoshi lub gościna kościelna; hotele w Isahaya/Ōmura; hotele w mieście z bezpłatną anulacją. Tani nocleg może obniżyć całość do ok. 13 600 zł/os. Obiekty kościelne u Artura dawały oszczędność rzędu 630 zł/os."
+    },
+    {
+      "miasto": "Hiroszima",
+      "noce": 1,
+      "daty": "17/18.08",
+      "obiekt": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "ok. 16–22 tys. ¥",
+      "status": "planowane",
+      "uwagi": "Stawki z tabeli asystenta (bot). Termin zapytań: 28.02.2027."
+    },
+    {
+      "miasto": "Osaka (baza)",
+      "noce": 2,
+      "daty": "18–20.08",
+      "obiekt": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "",
+      "status": "planowane",
+      "uwagi": "Baza na wypad do Kioto i wylot z KIX. Termin: 28.02.2027."
+    },
+    {
+      "miasto": "Samolot (Doha)",
+      "noce": 1,
+      "daty": "20/21.08",
+      "obiekt": "Qatar Airways",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "",
+      "status": "potwierdzone",
+      "uwagi": "W cenie biletu."
+    }
+  ],
+  "decyzje": [
+    {
+      "id": "petla",
+      "decyzja": "Pierwsze dni w Japonii: trasa do Akity i z powrotem (2–4 sierpnia)",
+      "opcja_id": "E1",
+      "opcja": "Wariant 1: Akita bez parady, cała trasa autokarem (noclegi Iwaki i Kitakami)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "To jest plan bazowy: noclegi Iwaki (albo Mito) i Kitakami, dwa autokary, bez pociągu.",
+      "termin": "30.11.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Którędy i jak jedziemy przez pierwsze trzy dni — od lądowania w Tokio do wylotu do Seulu — i czy bierzemy udział w festiwalu Kantō w Akicie.",
+      "ograniczenia": "Odpowiedź sióstr z Akity: czy zgodzą się na Mszę i o której. Msza po 18:00 wyklucza wariant 1 (nie zdążymy na nocleg). Odmowa = wariant 4. Termin: wybór wariantu 1–3 do 30.11.2026; wariant 4 po odpowiedzi sióstr, najpóźniej 31.01.2027.",
+      "wplyw_inne": "Decyduje o noclegach 2/3 i 3/4.08, liczbie kierowców, godzinie pobudki 4.08 (od tego zależy, jak wypoczęta grupa przyleci na ŚDM) i o koszcie tych trzech dni (od ok. 700 do 1 600 zł na osobę). Wpływa też na decyzję o noclegu 2.08.",
+      "rekomendacja_tekst": "Wariant 1: cała pętla autokarem, bez parady. Jest najprostszy i najtańszy z Akitą, walizki są cały czas z grupą, a 4.08 nie wymaga pobudki o 4:00. Jeśli parada jest dla grupy ważna — wariant 2 (autokar), nie wariant 3 (pociąg). Gdy siostry odmówią — wariant 4, bo nie ma sensu jechać 1 300 km na zwykłą Mszę parafialną.",
+      "plusy": "Najprostszy i najtańszy wariant z Akitą: ok. 850 zł na osobę za te trzy dni [szacunek]. Walizki zawsze z grupą. Msza w Akicie ok. 15:45–18:00, Nikkō ok. 1,5 h, wyjazd 4.08 o 7:45.",
+      "minusy": "Nie zobaczymy parady Kantō. Przestaje działać, gdy siostry wyznaczą Mszę po 18:00.",
+      "tlo": [
+        "Lądujemy w Tokio (lotnisko Narita) 2.08 o 19:10. Musimy wylecieć do Seulu wieczorem 4.08, bo 5.08 po południu jest powitanie Papieża (punkt obowiązkowy). Mamy więc dwa i pół dnia.",
+        "Celem tych dni jest sanktuarium Matki Bożej w Akicie (Yuzawadai), ok. 450 km na północ od Tokio. Tam w 1973 r. s. Agnieszka Sasagawa otrzymała orędzia Matki Bożej, a drewniana figura Maryi płakała 101 razy (1975–1981). Objawienia uznał miejscowy biskup w 1984 r.",
+        "Sanktuarium ogłosiło (6.10.2026), że w sierpniu jest zamknięte dla pielgrzymów, a w środy zawsze. Dlatego prosimy siostry faksem o wyjątek: Mszę dla naszej grupy we wtorek 3.08. Faks 018-868-4728, wysłać do 30.11.2026. Odpowiedź sióstr — i godzina, którą wyznaczą — rozstrzyga tę decyzję.",
+        "Po drodze: Matsushima (zatoka z ok. 260 sosnowymi wysepkami, jeden z trzech najsłynniejszych krajobrazów Japonii; z pobliskiego portu w 1613 r. wypłynęło poselstwo samurajów do papieża w Rzymie) oraz Nikkō (mauzoleum sioguna Tokugawy Ieyasu, który w 1614 r. zakazał chrześcijaństwa w całej Japonii).",
+        "W Akicie 3–6.08 odbywa się Kantō Matsuri — jeden z trzech wielkich festiwali północnej Japonii: wieczorem (ok. 19:10–21:00) setki mężczyzn balansuje na dłoni, czole albo biodrze bambusowe tyczki obwieszone kilkudziesięcioma zapalonymi lampionami. Piękne, ale w te noce hotele w Akicie są pełne i bardzo drogie.",
+        "Cała pętla to ok. 1 300 km autokarem w dwa i pół dnia. Japońskie przepisy ściśle limitują czas pracy kierowców, więc godziny są napięte."
+      ]
+    },
+    {
+      "id": "petla",
+      "decyzja": "Pierwsze dni w Japonii: trasa do Akity i z powrotem (2–4 sierpnia)",
+      "opcja_id": "E2",
+      "opcja": "Wariant 2: Akita z paradą Kantō, autokarem (nocleg w centrum Akity)",
+      "zmiany": "bus_wschod:+9000; nocleg_wschod:+150",
+      "efekt": "E2",
+      "wplyw": "Noc 3/4 sierpnia w Akicie zamiast Kitakami. Msza 4 sierpnia osobno (np. w Nikkō). Zadanie rezerwacji trybun / udziału w paradzie staje się aktualne.",
+      "termin": "30.11.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Którędy i jak jedziemy przez pierwsze trzy dni — od lądowania w Tokio do wylotu do Seulu — i czy bierzemy udział w festiwalu Kantō w Akicie.",
+      "ograniczenia": "Odpowiedź sióstr z Akity: czy zgodzą się na Mszę i o której. Msza po 18:00 wyklucza wariant 1 (nie zdążymy na nocleg). Odmowa = wariant 4. Termin: wybór wariantu 1–3 do 30.11.2026; wariant 4 po odpowiedzi sióstr, najpóźniej 31.01.2027.",
+      "wplyw_inne": "Decyduje o noclegach 2/3 i 3/4.08, liczbie kierowców, godzinie pobudki 4.08 (od tego zależy, jak wypoczęta grupa przyleci na ŚDM) i o koszcie tych trzech dni (od ok. 700 do 1 600 zł na osobę). Wpływa też na decyzję o noclegu 2.08.",
+      "rekomendacja_tekst": "Wariant 1: cała pętla autokarem, bez parady. Jest najprostszy i najtańszy z Akitą, walizki są cały czas z grupą, a 4.08 nie wymaga pobudki o 4:00. Jeśli parada jest dla grupy ważna — wariant 2 (autokar), nie wariant 3 (pociąg). Gdy siostry odmówią — wariant 4, bo nie ma sensu jechać 1 300 km na zwykłą Mszę parafialną.",
+      "plusy": "Zobaczymy paradę lampionów 3.08 wieczorem. Nadal bez pociągów.",
+      "minusy": "Ok. 1 100 zł na osobę [szacunek]. Pobudka 4.08 o 4:00, wyjazd 4:45 — grupa przylatuje do Seulu niewyspana. Trzeba 90 łóżek w Akicie w noc festiwalu (rezerwa: Ōmagari, Kakunodate).",
+      "tlo": [
+        "Lądujemy w Tokio (lotnisko Narita) 2.08 o 19:10. Musimy wylecieć do Seulu wieczorem 4.08, bo 5.08 po południu jest powitanie Papieża (punkt obowiązkowy). Mamy więc dwa i pół dnia.",
+        "Celem tych dni jest sanktuarium Matki Bożej w Akicie (Yuzawadai), ok. 450 km na północ od Tokio. Tam w 1973 r. s. Agnieszka Sasagawa otrzymała orędzia Matki Bożej, a drewniana figura Maryi płakała 101 razy (1975–1981). Objawienia uznał miejscowy biskup w 1984 r.",
+        "Sanktuarium ogłosiło (6.10.2026), że w sierpniu jest zamknięte dla pielgrzymów, a w środy zawsze. Dlatego prosimy siostry faksem o wyjątek: Mszę dla naszej grupy we wtorek 3.08. Faks 018-868-4728, wysłać do 30.11.2026. Odpowiedź sióstr — i godzina, którą wyznaczą — rozstrzyga tę decyzję.",
+        "Po drodze: Matsushima (zatoka z ok. 260 sosnowymi wysepkami, jeden z trzech najsłynniejszych krajobrazów Japonii; z pobliskiego portu w 1613 r. wypłynęło poselstwo samurajów do papieża w Rzymie) oraz Nikkō (mauzoleum sioguna Tokugawy Ieyasu, który w 1614 r. zakazał chrześcijaństwa w całej Japonii).",
+        "W Akicie 3–6.08 odbywa się Kantō Matsuri — jeden z trzech wielkich festiwali północnej Japonii: wieczorem (ok. 19:10–21:00) setki mężczyzn balansuje na dłoni, czole albo biodrze bambusowe tyczki obwieszone kilkudziesięcioma zapalonymi lampionami. Piękne, ale w te noce hotele w Akicie są pełne i bardzo drogie.",
+        "Cała pętla to ok. 1 300 km autokarem w dwa i pół dnia. Japońskie przepisy ściśle limitują czas pracy kierowców, więc godziny są napięte."
+      ]
+    },
+    {
+      "id": "petla",
+      "decyzja": "Pierwsze dni w Japonii: trasa do Akity i z powrotem (2–4 sierpnia)",
+      "opcja_id": "E3",
+      "opcja": "Wariant 3: Akita z paradą, powrót pociągiem (odradzany)",
+      "zmiany": "bus_wschod:+13500; nocleg_wschod:+150; komunikacja:+450",
+      "efekt": "E3",
+      "wplyw": "Wraca rozdzielenie ludzi i bagażu oraz rezerwacja miejscówek JR (termin 30.11.2026). Przy wstrzymanym pociągu plan awaryjny to autokary z Akity prosto na Hanedę (ok. 8 h) — wtedy Nikkō odpada.",
+      "termin": "30.11.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Którędy i jak jedziemy przez pierwsze trzy dni — od lądowania w Tokio do wylotu do Seulu — i czy bierzemy udział w festiwalu Kantō w Akicie.",
+      "ograniczenia": "Odpowiedź sióstr z Akity: czy zgodzą się na Mszę i o której. Msza po 18:00 wyklucza wariant 1 (nie zdążymy na nocleg). Odmowa = wariant 4. Termin: wybór wariantu 1–3 do 30.11.2026; wariant 4 po odpowiedzi sióstr, najpóźniej 31.01.2027.",
+      "wplyw_inne": "Decyduje o noclegach 2/3 i 3/4.08, liczbie kierowców, godzinie pobudki 4.08 (od tego zależy, jak wypoczęta grupa przyleci na ŚDM) i o koszcie tych trzech dni (od ok. 700 do 1 600 zł na osobę). Wpływa też na decyzję o noclegu 2.08.",
+      "rekomendacja_tekst": "Wariant 1: cała pętla autokarem, bez parady. Jest najprostszy i najtańszy z Akitą, walizki są cały czas z grupą, a 4.08 nie wymaga pobudki o 4:00. Jeśli parada jest dla grupy ważna — wariant 2 (autokar), nie wariant 3 (pociąg). Gdy siostry odmówią — wariant 4, bo nie ma sensu jechać 1 300 km na zwykłą Mszę parafialną.",
+      "plusy": "Parada i trochę więcej czasu w Nikkō.",
+      "minusy": "Najdroższy (ok. 1 600 zł na osobę [szacunek]). 90 osób w dwóch pociągach z przesiadką, walizki osobno, sześć połączeń jednego dnia — jedno opóźnienie i spóźniamy się na samolot. Sprzeczny z DECYZJĄ „autokary zamiast pociągów”.",
+      "tlo": [
+        "Lądujemy w Tokio (lotnisko Narita) 2.08 o 19:10. Musimy wylecieć do Seulu wieczorem 4.08, bo 5.08 po południu jest powitanie Papieża (punkt obowiązkowy). Mamy więc dwa i pół dnia.",
+        "Celem tych dni jest sanktuarium Matki Bożej w Akicie (Yuzawadai), ok. 450 km na północ od Tokio. Tam w 1973 r. s. Agnieszka Sasagawa otrzymała orędzia Matki Bożej, a drewniana figura Maryi płakała 101 razy (1975–1981). Objawienia uznał miejscowy biskup w 1984 r.",
+        "Sanktuarium ogłosiło (6.10.2026), że w sierpniu jest zamknięte dla pielgrzymów, a w środy zawsze. Dlatego prosimy siostry faksem o wyjątek: Mszę dla naszej grupy we wtorek 3.08. Faks 018-868-4728, wysłać do 30.11.2026. Odpowiedź sióstr — i godzina, którą wyznaczą — rozstrzyga tę decyzję.",
+        "Po drodze: Matsushima (zatoka z ok. 260 sosnowymi wysepkami, jeden z trzech najsłynniejszych krajobrazów Japonii; z pobliskiego portu w 1613 r. wypłynęło poselstwo samurajów do papieża w Rzymie) oraz Nikkō (mauzoleum sioguna Tokugawy Ieyasu, który w 1614 r. zakazał chrześcijaństwa w całej Japonii).",
+        "W Akicie 3–6.08 odbywa się Kantō Matsuri — jeden z trzech wielkich festiwali północnej Japonii: wieczorem (ok. 19:10–21:00) setki mężczyzn balansuje na dłoni, czole albo biodrze bambusowe tyczki obwieszone kilkudziesięcioma zapalonymi lampionami. Piękne, ale w te noce hotele w Akicie są pełne i bardzo drogie.",
+        "Cała pętla to ok. 1 300 km autokarem w dwa i pół dnia. Japońskie przepisy ściśle limitują czas pracy kierowców, więc godziny są napięte."
+      ]
+    },
+    {
+      "id": "petla",
+      "decyzja": "Pierwsze dni w Japonii: trasa do Akity i z powrotem (2–4 sierpnia)",
+      "opcja_id": "E4",
+      "opcja": "Wariant 4: Sendai zamiast Akity (tylko gdy siostry odmówią)",
+      "zmiany": "bus_wschod:-13500",
+      "efekt": "E4",
+      "wplyw": "Nocleg 2 sierpnia zawsze w Mito. Akita znika z trasy i z mapy. Nie robimy ok. 1300 km „dla Mszy parafialnej” w Akicie bez sanktuarium.",
+      "termin": "po odpowiedzi sióstr, najpóźniej 31.01.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Którędy i jak jedziemy przez pierwsze trzy dni — od lądowania w Tokio do wylotu do Seulu — i czy bierzemy udział w festiwalu Kantō w Akicie.",
+      "ograniczenia": "Odpowiedź sióstr z Akity: czy zgodzą się na Mszę i o której. Msza po 18:00 wyklucza wariant 1 (nie zdążymy na nocleg). Odmowa = wariant 4. Termin: wybór wariantu 1–3 do 30.11.2026; wariant 4 po odpowiedzi sióstr, najpóźniej 31.01.2027.",
+      "wplyw_inne": "Decyduje o noclegach 2/3 i 3/4.08, liczbie kierowców, godzinie pobudki 4.08 (od tego zależy, jak wypoczęta grupa przyleci na ŚDM) i o koszcie tych trzech dni (od ok. 700 do 1 600 zł na osobę). Wpływa też na decyzję o noclegu 2.08.",
+      "rekomendacja_tekst": "Wariant 1: cała pętla autokarem, bez parady. Jest najprostszy i najtańszy z Akitą, walizki są cały czas z grupą, a 4.08 nie wymaga pobudki o 4:00. Jeśli parada jest dla grupy ważna — wariant 2 (autokar), nie wariant 3 (pociąg). Gdy siostry odmówią — wariant 4, bo nie ma sensu jechać 1 300 km na zwykłą Mszę parafialną.",
+      "plusy": "Najtańszy (ok. 700 zł [szacunek]) i najlżejszy: Sendai to miasto, z którego wysłano poselstwo do papieża w 1613 r., z pomnikiem męczenników z 1624 r. i katedrą. Matsushima i Nikkō zostają.",
+      "minusy": "Nie ma sanktuarium w Akicie — tracimy główny maryjny punkt tej części. Maryjny akcent przejmuje wtedy Hongochi w Nagasaki 14.08 (grota z Lourdes św. Maksymiliana).",
+      "tlo": [
+        "Lądujemy w Tokio (lotnisko Narita) 2.08 o 19:10. Musimy wylecieć do Seulu wieczorem 4.08, bo 5.08 po południu jest powitanie Papieża (punkt obowiązkowy). Mamy więc dwa i pół dnia.",
+        "Celem tych dni jest sanktuarium Matki Bożej w Akicie (Yuzawadai), ok. 450 km na północ od Tokio. Tam w 1973 r. s. Agnieszka Sasagawa otrzymała orędzia Matki Bożej, a drewniana figura Maryi płakała 101 razy (1975–1981). Objawienia uznał miejscowy biskup w 1984 r.",
+        "Sanktuarium ogłosiło (6.10.2026), że w sierpniu jest zamknięte dla pielgrzymów, a w środy zawsze. Dlatego prosimy siostry faksem o wyjątek: Mszę dla naszej grupy we wtorek 3.08. Faks 018-868-4728, wysłać do 30.11.2026. Odpowiedź sióstr — i godzina, którą wyznaczą — rozstrzyga tę decyzję.",
+        "Po drodze: Matsushima (zatoka z ok. 260 sosnowymi wysepkami, jeden z trzech najsłynniejszych krajobrazów Japonii; z pobliskiego portu w 1613 r. wypłynęło poselstwo samurajów do papieża w Rzymie) oraz Nikkō (mauzoleum sioguna Tokugawy Ieyasu, który w 1614 r. zakazał chrześcijaństwa w całej Japonii).",
+        "W Akicie 3–6.08 odbywa się Kantō Matsuri — jeden z trzech wielkich festiwali północnej Japonii: wieczorem (ok. 19:10–21:00) setki mężczyzn balansuje na dłoni, czole albo biodrze bambusowe tyczki obwieszone kilkudziesięcioma zapalonymi lampionami. Piękne, ale w te noce hotele w Akicie są pełne i bardzo drogie.",
+        "Cała pętla to ok. 1 300 km autokarem w dwa i pół dnia. Japońskie przepisy ściśle limitują czas pracy kierowców, więc godziny są napięte."
+      ]
+    },
+    {
+      "id": "noc_2",
+      "decyzja": "Pierwsza noc w Japonii (2/3 sierpnia): gdzie śpimy",
+      "opcja_id": "iwaki",
+      "opcja": "Iwaki — droga wybrzeżem (rekomendacja)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "To nocleg rekomendowany przy wariantach 1 i 2. Jeśli Msza w Akicie miałaby być przed 15:30, z Iwaki trzeba wyjechać wcześniej i skrócić Matsushimę.",
+      "termin": "15.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Gdzie grupa śpi pierwszą noc po wylądowaniu, czyli jak daleko jedziemy wieczorem 2.08 z lotniska.",
+      "ograniczenia": "Godzina Mszy w Akicie (odpowiedź sióstr) i zgoda rodziców na trasę wybrzeżem. W wariancie 4 (Sendai) pierwsza noc jest zawsze w Mito. Termin: 15.12.2026.",
+      "wplyw_inne": "Długość snu pierwszej nocy, godzina dotarcia do Akity 3.08 i czas pracy kierowców. Koszt różni się nieznacznie.",
+      "rekomendacja_tekst": "Iwaki — najlepiej pasuje do Mszy w Akicie ok. 15:45. Mito, jeśli Msza będzie ok. 17:00. Utsunomiya tylko wtedy, gdy grupa (rodzice) nie zaakceptuje trasy obok Fukushimy — warto im pokazać porównanie z lotem.",
+      "plusy": "Krótszy dzień 3.08, Akita ok. 15:45 bez pośpiechu.",
+      "minusy": "Przyjazd ok. 0:00 (krótka noc); rano przejazd obok strefy Fukushimy (dawka mniejsza niż z 10 minut lotu).",
+      "tlo": [
+        "Po odprawie 90 osób wyjeżdżamy z Narity ok. 21:00. Im dalej dojedziemy w nocy, tym krótszy jest dzień 3.08 (Matsushima i Msza w Akicie). Im bliżej śpimy, tym dłuższy jest 3.08, ale wcześniej idziemy spać.",
+        "Iwaki leży na wybrzeżu Pacyfiku ok. 200 km od lotniska (przyjazd ok. 0:00). Następnego ranka droga do Matsushimy prowadzi autostradą Jōban wzdłuż wybrzeża.",
+        "Ten odcinek autostrady (ok. 40 km) mija w odległości kilku kilometrów elektrownię Fukushima Daiichi, uszkodzoną przez tsunami w 2011 r. Autostrada jest otwarta dla wszystkich od 2015 r. Zmierzona dawka promieniowania za jeden przejazd to ok. 0,37 mikrosiwerta [fakt: pomiar z 2015 r.] — mniej niż z ok. 10 minut lotu samolotem [szacunek: w samolocie ok. 3–5 mikrosiwertów na godzinę]. Sam lot Warszawa–Tokio daje kilkadziesiąt razy więcej.",
+        "Mimo to część rodziców może nie chcieć tej trasy. Wtedy śpimy w Utsunomiyi (w głębi lądu) i jedziemy autostradą Tōhoku, z dala od wybrzeża — dzień 3.08 wydłuża się o ok. 1 godzinę.",
+        "Mito jest bliżej lotniska (ok. 110 km, przyjazd ok. 23:00 — godzina snu więcej). Pasuje, gdy siostry wyznaczą Mszę w Akicie później, ok. 17:00."
+      ]
+    },
+    {
+      "id": "noc_2",
+      "decyzja": "Pierwsza noc w Japonii (2/3 sierpnia): gdzie śpimy",
+      "opcja_id": "mito",
+      "opcja": "Mito — bliżej lotniska",
+      "zmiany": "",
+      "efekt": "noc_mito",
+      "wplyw": "Wymuszony przy wariancie 4 (Sendai). Przy wariancie 1 zostaje opcją zależną od godziny Mszy.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Gdzie grupa śpi pierwszą noc po wylądowaniu, czyli jak daleko jedziemy wieczorem 2.08 z lotniska.",
+      "ograniczenia": "Godzina Mszy w Akicie (odpowiedź sióstr) i zgoda rodziców na trasę wybrzeżem. W wariancie 4 (Sendai) pierwsza noc jest zawsze w Mito. Termin: 15.12.2026.",
+      "wplyw_inne": "Długość snu pierwszej nocy, godzina dotarcia do Akity 3.08 i czas pracy kierowców. Koszt różni się nieznacznie.",
+      "rekomendacja_tekst": "Iwaki — najlepiej pasuje do Mszy w Akicie ok. 15:45. Mito, jeśli Msza będzie ok. 17:00. Utsunomiya tylko wtedy, gdy grupa (rodzice) nie zaakceptuje trasy obok Fukushimy — warto im pokazać porównanie z lotem.",
+      "plusy": "Przyjazd ok. 23:00, godzina snu więcej.",
+      "minusy": "Dłuższy dzień 3.08 — pasuje tylko do późniejszej Mszy w Akicie (ok. 17:00).",
+      "tlo": [
+        "Po odprawie 90 osób wyjeżdżamy z Narity ok. 21:00. Im dalej dojedziemy w nocy, tym krótszy jest dzień 3.08 (Matsushima i Msza w Akicie). Im bliżej śpimy, tym dłuższy jest 3.08, ale wcześniej idziemy spać.",
+        "Iwaki leży na wybrzeżu Pacyfiku ok. 200 km od lotniska (przyjazd ok. 0:00). Następnego ranka droga do Matsushimy prowadzi autostradą Jōban wzdłuż wybrzeża.",
+        "Ten odcinek autostrady (ok. 40 km) mija w odległości kilku kilometrów elektrownię Fukushima Daiichi, uszkodzoną przez tsunami w 2011 r. Autostrada jest otwarta dla wszystkich od 2015 r. Zmierzona dawka promieniowania za jeden przejazd to ok. 0,37 mikrosiwerta [fakt: pomiar z 2015 r.] — mniej niż z ok. 10 minut lotu samolotem [szacunek: w samolocie ok. 3–5 mikrosiwertów na godzinę]. Sam lot Warszawa–Tokio daje kilkadziesiąt razy więcej.",
+        "Mimo to część rodziców może nie chcieć tej trasy. Wtedy śpimy w Utsunomiyi (w głębi lądu) i jedziemy autostradą Tōhoku, z dala od wybrzeża — dzień 3.08 wydłuża się o ok. 1 godzinę.",
+        "Mito jest bliżej lotniska (ok. 110 km, przyjazd ok. 23:00 — godzina snu więcej). Pasuje, gdy siostry wyznaczą Mszę w Akicie później, ok. 17:00."
+      ]
+    },
+    {
+      "id": "noc_2",
+      "decyzja": "Pierwsza noc w Japonii (2/3 sierpnia): gdzie śpimy",
+      "opcja_id": "utsunomiya",
+      "opcja": "Utsunomiya — w głębi lądu, z dala od Fukushimy",
+      "zmiany": "bus_wschod:+1800",
+      "efekt": "noc_utsu",
+      "wplyw": "Matsushima osiągana później; trzeba pilnować godziny Mszy w Akicie albo — przy wariancie 4 — programu w Sendai.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Gdzie grupa śpi pierwszą noc po wylądowaniu, czyli jak daleko jedziemy wieczorem 2.08 z lotniska.",
+      "ograniczenia": "Godzina Mszy w Akicie (odpowiedź sióstr) i zgoda rodziców na trasę wybrzeżem. W wariancie 4 (Sendai) pierwsza noc jest zawsze w Mito. Termin: 15.12.2026.",
+      "wplyw_inne": "Długość snu pierwszej nocy, godzina dotarcia do Akity 3.08 i czas pracy kierowców. Koszt różni się nieznacznie.",
+      "rekomendacja_tekst": "Iwaki — najlepiej pasuje do Mszy w Akicie ok. 15:45. Mito, jeśli Msza będzie ok. 17:00. Utsunomiya tylko wtedy, gdy grupa (rodzice) nie zaakceptuje trasy obok Fukushimy — warto im pokazać porównanie z lotem.",
+      "plusy": "Trasa daleko od wybrzeża i elektrowni — bez obaw rodziców.",
+      "minusy": "Dzień 3.08 dłuższy o ok. 1 h jazdy; trochę droższy autokar (ok. +20 zł na osobę [szacunek]).",
+      "tlo": [
+        "Po odprawie 90 osób wyjeżdżamy z Narity ok. 21:00. Im dalej dojedziemy w nocy, tym krótszy jest dzień 3.08 (Matsushima i Msza w Akicie). Im bliżej śpimy, tym dłuższy jest 3.08, ale wcześniej idziemy spać.",
+        "Iwaki leży na wybrzeżu Pacyfiku ok. 200 km od lotniska (przyjazd ok. 0:00). Następnego ranka droga do Matsushimy prowadzi autostradą Jōban wzdłuż wybrzeża.",
+        "Ten odcinek autostrady (ok. 40 km) mija w odległości kilku kilometrów elektrownię Fukushima Daiichi, uszkodzoną przez tsunami w 2011 r. Autostrada jest otwarta dla wszystkich od 2015 r. Zmierzona dawka promieniowania za jeden przejazd to ok. 0,37 mikrosiwerta [fakt: pomiar z 2015 r.] — mniej niż z ok. 10 minut lotu samolotem [szacunek: w samolocie ok. 3–5 mikrosiwertów na godzinę]. Sam lot Warszawa–Tokio daje kilkadziesiąt razy więcej.",
+        "Mimo to część rodziców może nie chcieć tej trasy. Wtedy śpimy w Utsunomiyi (w głębi lądu) i jedziemy autostradą Tōhoku, z dala od wybrzeża — dzień 3.08 wydłuża się o ok. 1 godzinę.",
+        "Mito jest bliżej lotniska (ok. 110 km, przyjazd ok. 23:00 — godzina snu więcej). Pasuje, gdy siostry wyznaczą Mszę w Akicie później, ok. 17:00."
+      ]
+    },
+    {
+      "id": "sen",
+      "decyzja": "Czy dokładamy „lepszy sen” pierwszej nocy",
+      "opcja_id": "standard",
+      "opcja": "Bez zmian: autokar z lotniska jeszcze tego wieczoru (rekomendacja)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez zmiany trasy i kosztu.",
+      "termin": "15.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Czy zamiast jechać w nocy autokarem, śpimy pierwszą noc w Tokio, a rano 3.08 jedziemy szybkim pociągiem (shinkansen) na północ.",
+      "ograniczenia": "Termin: 15.12.2026. Wymaga rezerwacji grupowej w kolejach JR.",
+      "wplyw_inne": "Przy tej opcji decyzja „Pierwsza noc” przestaje mieć znaczenie (śpimy w Tokio). Koszt ok. +250 zł na osobę [szacunek].",
+      "rekomendacja_tekst": "Bez tej opcji — zostajemy przy autokarze. Opcja zostaje tylko do porównania.",
+      "plusy": "Prosto, walizki z grupą, taniej.",
+      "minusy": "Pierwsza noc krótka (ok. 5–6 h snu).",
+      "tlo": [
+        "Po locie z Warszawy przez Dohę (ok. 17 h podróży) grupa w planie bazowym jedzie jeszcze ok. 3 h autokarem i śpi ok. 5–6 h.",
+        "Alternatywa: hotel przy lotnisku albo w Tokio, ok. 7 h snu, a rano pociąg Hayabusa do Sendai (ok. 1,5 h), walizki jadą autokarem osobno.",
+        "To wraca do pociągu z 90 osobami i rozdziela ludzi od bagażu — czyli dokładnie to, czego chcieliśmy uniknąć (DECYZJA: autokary zamiast pociągów)."
+      ]
+    },
+    {
+      "id": "sen",
+      "decyzja": "Czy dokładamy „lepszy sen” pierwszej nocy",
+      "opcja_id": "tokio",
+      "opcja": "Noc w Tokio i shinkansen rano 3.08 (wbrew DECYZJI „autokary”)",
+      "zmiany": "sen:=250",
+      "efekt": "sen_tokio",
+      "wplyw": "Noc 2.08 w Tokio zastępuje Iwaki/Mito/Utsunomiya — decyzja o noclegu 2.08 przestaje mieć znaczenie i nie dolicza się. Wraca pociąg, co jest sprzeczne z DECYZJĄ „autokary zamiast pociągów”.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy zamiast jechać w nocy autokarem, śpimy pierwszą noc w Tokio, a rano 3.08 jedziemy szybkim pociągiem (shinkansen) na północ.",
+      "ograniczenia": "Termin: 15.12.2026. Wymaga rezerwacji grupowej w kolejach JR.",
+      "wplyw_inne": "Przy tej opcji decyzja „Pierwsza noc” przestaje mieć znaczenie (śpimy w Tokio). Koszt ok. +250 zł na osobę [szacunek].",
+      "rekomendacja_tekst": "Bez tej opcji — zostajemy przy autokarze. Opcja zostaje tylko do porównania.",
+      "plusy": "Ok. 7 h snu, krótszy dzień 3.08 w autokarze.",
+      "minusy": "Pociąg z 90 osobami, walizki osobno, ok. +250 zł na osobę.",
+      "tlo": [
+        "Po locie z Warszawy przez Dohę (ok. 17 h podróży) grupa w planie bazowym jedzie jeszcze ok. 3 h autokarem i śpi ok. 5–6 h.",
+        "Alternatywa: hotel przy lotnisku albo w Tokio, ok. 7 h snu, a rano pociąg Hayabusa do Sendai (ok. 1,5 h), walizki jadą autokarem osobno.",
+        "To wraca do pociągu z 90 osobami i rozdziela ludzi od bagażu — czyli dokładnie to, czego chcieliśmy uniknąć (DECYZJA: autokary zamiast pociągów)."
+      ]
+    },
+    {
+      "id": "nagasaki",
+      "decyzja": "Noclegi w Nagasaki (5 nocy, 12–17 sierpnia)",
+      "opcja_id": "standard",
+      "opcja": "Hotele w mieście albo w pobliskim Isahaya/Ōmura (ok. 14 400 ¥ za noc)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "To założenie bazowe kosztorysu na pięć nocy.",
+      "termin": "15.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "W jakim typie noclegu mieszkamy przez pięć nocy w Nagasaki — i jaką cenę przyjmujemy w budżecie.",
+      "ograniczenia": "Czy w Obonie jest 90 miejsc i czy da się zapewnić osobne sale dla niepełnoletnich. Termin zapytań: 15.12.2026 (trzy zapytania naraz, z bezpłatną anulacją).",
+      "wplyw_inne": "Największa pojedyncza oszczędność w budżecie: tani nocleg obniża cenę o ok. 1 240 zł na osobę. Trasa się nie zmienia.",
+      "rekomendacja_tekst": "W budżecie trzymać hotele standard (ostrożnie), a równolegle zapytać o Hiyoshi i parafie. Jeśli tania opcja się potwierdzi, cena dla rodziców spada o ok. 1 200 zł.",
+      "plusy": "Wygodnie, realistyczna cena, pokoje dla rodzin i opiekunów.",
+      "minusy": "Ok. 1 800 zł na osobę za 5 nocy.",
+      "tlo": [
+        "Nagasaki to serce japońskiego chrześcijaństwa: męczennicy z 1597 r., ukryci chrześcijanie, którzy przez 250 lat bez księży zachowali wiarę, św. Maksymilian Kolbe, bomba atomowa 9.08.1945. Dlatego to nasza największa baza — pięć nocy w jednym miejscu, bez codziennego pakowania.",
+        "13–16.08 trwa w Japonii Obon — buddyjskie święto pamięci zmarłych, coś jak nasze Zaduszki połączone z wakacjami. Japończycy masowo jeżdżą wtedy do rodzin, więc hotele są pełne i droższe.",
+        "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
+        "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
+      ]
+    },
+    {
+      "id": "nagasaki",
+      "decyzja": "Noclegi w Nagasaki (5 nocy, 12–17 sierpnia)",
+      "opcja_id": "tani",
+      "opcja": "Ośrodek Hiyoshi albo gościna parafialna (ok. 4 500 ¥ za noc)",
+      "zmiany": "nocleg_nagasaki:=562.5",
+      "efekt": "nagasaki_tani",
+      "wplyw": "W modelu nocleg w Nagasaki spada do 562,50 zł na osobę za cały pobyt. To główna dźwignia tańszego wariantu ceny dla rodziców.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "W jakim typie noclegu mieszkamy przez pięć nocy w Nagasaki — i jaką cenę przyjmujemy w budżecie.",
+      "ograniczenia": "Czy w Obonie jest 90 miejsc i czy da się zapewnić osobne sale dla niepełnoletnich. Termin zapytań: 15.12.2026 (trzy zapytania naraz, z bezpłatną anulacją).",
+      "wplyw_inne": "Największa pojedyncza oszczędność w budżecie: tani nocleg obniża cenę o ok. 1 240 zł na osobę. Trasa się nie zmienia.",
+      "rekomendacja_tekst": "W budżecie trzymać hotele standard (ostrożnie), a równolegle zapytać o Hiyoshi i parafie. Jeśli tania opcja się potwierdzi, cena dla rodziców spada o ok. 1 200 zł.",
+      "plusy": "Ok. −1 240 zł na osobę; typowe dla pielgrzymek.",
+      "minusy": "Prostsze warunki; trzeba potwierdzić 90 miejsc w czasie Obonu.",
+      "tlo": [
+        "Nagasaki to serce japońskiego chrześcijaństwa: męczennicy z 1597 r., ukryci chrześcijanie, którzy przez 250 lat bez księży zachowali wiarę, św. Maksymilian Kolbe, bomba atomowa 9.08.1945. Dlatego to nasza największa baza — pięć nocy w jednym miejscu, bez codziennego pakowania.",
+        "13–16.08 trwa w Japonii Obon — buddyjskie święto pamięci zmarłych, coś jak nasze Zaduszki połączone z wakacjami. Japończycy masowo jeżdżą wtedy do rodzin, więc hotele są pełne i droższe.",
+        "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
+        "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
+      ]
+    },
+    {
+      "id": "nagasaki",
+      "decyzja": "Noclegi w Nagasaki (5 nocy, 12–17 sierpnia)",
+      "opcja_id": "drogi",
+      "opcja": "Ostrożnie: hotele w szczycie Obonu (ok. 20 000 ¥ za noc)",
+      "zmiany": "nocleg_nagasaki:=2500",
+      "efekt": "",
+      "wplyw": "W modelu nocleg w Nagasaki = 2500 zł na osobę za cały pobyt. Przedział ceny dla rodziców trzeba wtedy podnieść.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "W jakim typie noclegu mieszkamy przez pięć nocy w Nagasaki — i jaką cenę przyjmujemy w budżecie.",
+      "ograniczenia": "Czy w Obonie jest 90 miejsc i czy da się zapewnić osobne sale dla niepełnoletnich. Termin zapytań: 15.12.2026 (trzy zapytania naraz, z bezpłatną anulacją).",
+      "wplyw_inne": "Największa pojedyncza oszczędność w budżecie: tani nocleg obniża cenę o ok. 1 240 zł na osobę. Trasa się nie zmienia.",
+      "rekomendacja_tekst": "W budżecie trzymać hotele standard (ostrożnie), a równolegle zapytać o Hiyoshi i parafie. Jeśli tania opcja się potwierdzi, cena dla rodziców spada o ok. 1 200 zł.",
+      "plusy": "Bezpiecznie dla budżetu, gdy tanie miejsca się wyczerpią.",
+      "minusy": "Ok. +700 zł na osobę względem standardu.",
+      "tlo": [
+        "Nagasaki to serce japońskiego chrześcijaństwa: męczennicy z 1597 r., ukryci chrześcijanie, którzy przez 250 lat bez księży zachowali wiarę, św. Maksymilian Kolbe, bomba atomowa 9.08.1945. Dlatego to nasza największa baza — pięć nocy w jednym miejscu, bez codziennego pakowania.",
+        "13–16.08 trwa w Japonii Obon — buddyjskie święto pamięci zmarłych, coś jak nasze Zaduszki połączone z wakacjami. Japończycy masowo jeżdżą wtedy do rodzin, więc hotele są pełne i droższe.",
+        "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
+        "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
+      ]
+    },
+    {
+      "id": "seul_stawka",
+      "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
+      "opcja_id": "290",
+      "opcja": "Ok. 290 zł za noc — hotele w tygodniu ŚDM (rekomendacja)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Dwie noce × ok. 290 zł wchodzą do kosztorysu B1+.",
+      "termin": "15.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Ile przyjmujemy w budżecie za dwie noce w Seulu, zanim zacznie się zakwaterowanie z pakietu ŚDM.",
+      "ograniczenia": "Termin: 15.12.2026 (blok ok. 90 łóżek z bezpłatną anulacją). Nie dotyczy, jeśli wybierzemy pakiet A1+ (wtedy te noce zapewnia organizator).",
+      "wplyw_inne": "Koszt dwóch nocy (od ok. 200 do 800 zł na osobę) i porównanie pakietów B1+ i A1+.",
+      "rekomendacja_tekst": "W budżecie ok. 290 zł za noc; równolegle zapytać o sale parafialne.",
+      "plusy": "Ostrożne, realistyczne założenie.",
+      "minusy": "To założenie, nie oferta.",
+      "tlo": [
+        "Przylatujemy do Seulu 4.08 ok. 22:20, a zakwaterowanie z pakietu ŚDM (B1+) zaczyna się dopiero 6.08. Dwie noce musimy załatwić sami — najlepiej w dzielnicy Mapo, blisko stadionu, gdzie 5.08 jest powitanie Papieża.",
+        "W tygodniu ŚDM do Seulu przyjeżdżają setki tysięcy pielgrzymów, więc ceny hoteli rosną. 174 zł za noc to stawka z kosztorysu Artura sprzed ŚDM, raczej nierealna; 290 zł to ostrożne założenie.",
+        "Najtańsza możliwość to nocleg w salach parafialnych przez organizatorów ŚDM w Seulu."
+      ]
+    },
+    {
+      "id": "seul_stawka",
+      "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
+      "opcja_id": "174",
+      "opcja": "174 zł za noc — stawka z kosztorysu Artura",
+      "zmiany": "nocleg_seul:=348",
+      "efekt": "",
+      "wplyw": "W modelu nocleg w Seulu = 348 zł za dwa noce. Poprawia też wygląd porównania B1+ z A1+, ale może być zbyt optymistyczny.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Ile przyjmujemy w budżecie za dwie noce w Seulu, zanim zacznie się zakwaterowanie z pakietu ŚDM.",
+      "ograniczenia": "Termin: 15.12.2026 (blok ok. 90 łóżek z bezpłatną anulacją). Nie dotyczy, jeśli wybierzemy pakiet A1+ (wtedy te noce zapewnia organizator).",
+      "wplyw_inne": "Koszt dwóch nocy (od ok. 200 do 800 zł na osobę) i porównanie pakietów B1+ i A1+.",
+      "rekomendacja_tekst": "W budżecie ok. 290 zł za noc; równolegle zapytać o sale parafialne.",
+      "plusy": "Taniej.",
+      "minusy": "Stawka sprzed ŚDM — w tym tygodniu mało prawdopodobna.",
+      "tlo": [
+        "Przylatujemy do Seulu 4.08 ok. 22:20, a zakwaterowanie z pakietu ŚDM (B1+) zaczyna się dopiero 6.08. Dwie noce musimy załatwić sami — najlepiej w dzielnicy Mapo, blisko stadionu, gdzie 5.08 jest powitanie Papieża.",
+        "W tygodniu ŚDM do Seulu przyjeżdżają setki tysięcy pielgrzymów, więc ceny hoteli rosną. 174 zł za noc to stawka z kosztorysu Artura sprzed ŚDM, raczej nierealna; 290 zł to ostrożne założenie.",
+        "Najtańsza możliwość to nocleg w salach parafialnych przez organizatorów ŚDM w Seulu."
+      ]
+    },
+    {
+      "id": "seul_stawka",
+      "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
+      "opcja_id": "400",
+      "opcja": "Ok. 400 zł za noc — gdy zabraknie tanich ofert",
+      "zmiany": "nocleg_seul:=800",
+      "efekt": "",
+      "wplyw": "W modelu nocleg w Seulu = 800 zł za dwa noce.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Ile przyjmujemy w budżecie za dwie noce w Seulu, zanim zacznie się zakwaterowanie z pakietu ŚDM.",
+      "ograniczenia": "Termin: 15.12.2026 (blok ok. 90 łóżek z bezpłatną anulacją). Nie dotyczy, jeśli wybierzemy pakiet A1+ (wtedy te noce zapewnia organizator).",
+      "wplyw_inne": "Koszt dwóch nocy (od ok. 200 do 800 zł na osobę) i porównanie pakietów B1+ i A1+.",
+      "rekomendacja_tekst": "W budżecie ok. 290 zł za noc; równolegle zapytać o sale parafialne.",
+      "plusy": "Bufor bezpieczeństwa.",
+      "minusy": "Wyraźnie drożej; wtedy pakiet A1+ może wyjść korzystniej.",
+      "tlo": [
+        "Przylatujemy do Seulu 4.08 ok. 22:20, a zakwaterowanie z pakietu ŚDM (B1+) zaczyna się dopiero 6.08. Dwie noce musimy załatwić sami — najlepiej w dzielnicy Mapo, blisko stadionu, gdzie 5.08 jest powitanie Papieża.",
+        "W tygodniu ŚDM do Seulu przyjeżdżają setki tysięcy pielgrzymów, więc ceny hoteli rosną. 174 zł za noc to stawka z kosztorysu Artura sprzed ŚDM, raczej nierealna; 290 zł to ostrożne założenie.",
+        "Najtańsza możliwość to nocleg w salach parafialnych przez organizatorów ŚDM w Seulu."
+      ]
+    },
+    {
+      "id": "seul_stawka",
+      "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
+      "opcja_id": "parafia",
+      "opcja": "Ok. 100 zł za noc — sale parafialne przez organizatorów ŚDM",
+      "zmiany": "nocleg_seul:=200",
+      "efekt": "",
+      "wplyw": "Seul 2 noce za ok. 200 zł zamiast 580 zł [zgaduję].",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Ile przyjmujemy w budżecie za dwie noce w Seulu, zanim zacznie się zakwaterowanie z pakietu ŚDM.",
+      "ograniczenia": "Termin: 15.12.2026 (blok ok. 90 łóżek z bezpłatną anulacją). Nie dotyczy, jeśli wybierzemy pakiet A1+ (wtedy te noce zapewnia organizator).",
+      "wplyw_inne": "Koszt dwóch nocy (od ok. 200 do 800 zł na osobę) i porównanie pakietów B1+ i A1+.",
+      "rekomendacja_tekst": "W budżecie ok. 290 zł za noc; równolegle zapytać o sale parafialne.",
+      "plusy": "Najtaniej; typowe dla grup ŚDM.",
+      "minusy": "Materace i wspólne łazienki; dostępność do potwierdzenia.",
+      "tlo": [
+        "Przylatujemy do Seulu 4.08 ok. 22:20, a zakwaterowanie z pakietu ŚDM (B1+) zaczyna się dopiero 6.08. Dwie noce musimy załatwić sami — najlepiej w dzielnicy Mapo, blisko stadionu, gdzie 5.08 jest powitanie Papieża.",
+        "W tygodniu ŚDM do Seulu przyjeżdżają setki tysięcy pielgrzymów, więc ceny hoteli rosną. 174 zł za noc to stawka z kosztorysu Artura sprzed ŚDM, raczej nierealna; 290 zł to ostrożne założenie.",
+        "Najtańsza możliwość to nocleg w salach parafialnych przez organizatorów ŚDM w Seulu."
+      ]
+    },
+    {
+      "id": "pakiet",
+      "decyzja": "Pakiet uczestnika ŚDM",
+      "opcja_id": "B1",
+      "opcja": "B1+ i dwie noce własne w Seulu (rekomendacja)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Plan bazowy. Wymaga zadania Artura (łóżka) i pytania Jakuba do KBO.",
+      "termin": "15.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Który pakiet ŚDM kupujemy: B1+ (bez noclegów 4–6.08) czy A1+ (z noclegami od 4.08).",
+      "ograniczenia": "Czy uda się zarezerwować 90 łóżek w Seulu na 4–6.08 i czy B1+ daje wejście 5.08. Termin wstępny: 15.12.2026, ostateczny: 15.05.2027.",
+      "wplyw_inne": "Noclegi i wyżywienie 4–6.08, koszt (A1+ nie musi być droższy, gdy hotele w Seulu są drogie), godzina rozpoczęcia programu 5.08.",
+      "rekomendacja_tekst": "B1+ i dwie noce we własnym zakresie, o ile mamy łóżka i wejście 5.08. W przeciwnym razie A1+.",
+      "plusy": "Tańszy pakiet, swoboda wyboru hotelu blisko stadionu.",
+      "minusy": "Trzeba samemu znaleźć 90 łóżek; niepewne wejście 5.08.",
+      "tlo": [
+        "Pakiet uczestnika ŚDM to rejestracja grupy: identyfikator, plecak pielgrzyma, wyżywienie, bilet komunikacji miejskiej, ubezpieczenie organizatora i — w niektórych pakietach — zakwaterowanie w szkołach i parafiach (niepełnoletni śpią osobno, 1 opiekun na 5 osób tej samej płci).",
+        "B1+ (190 USD) obejmuje dni 6–10.08 z noclegami. Noce 4/5 i 5/6.08 organizujemy sami. A1+ (ok. 340 USD) obejmuje też noclegi od 4.08.",
+        "Pakiety sprzedaje polskie Krajowe Biuro Organizacyjne ŚDM (KBO, biuro@sdmpolska.pl); rejestrację noclegów prowadzi komitet w Seulu (LOC). Wpłata do KBO do 15.05.2027, rejestracja w LOC do 31.05.2027. Po wpłacie zwrotu nie ma.",
+        "Otwarte pytanie do KBO: czy z pakietem B1+ wejdziemy 5.08 do sektora na powitanie Papieża (pakiet zaczyna się 6.08)."
+      ]
+    },
+    {
+      "id": "pakiet",
+      "decyzja": "Pakiet uczestnika ŚDM",
+      "opcja_id": "A1",
+      "opcja": "A1+ — noclegi od 4.08 zapewnia organizator ŚDM",
+      "zmiany": "pakiet:=1275; nocleg_seul:=0; jedzenie_kr:=203; komunikacja:=40",
+      "efekt": "A1",
+      "wplyw": "Zeruje własne noclegi w Seulu i obniża własne wyżywienie oraz komunikację w Korei w modelu. Zmienia logistykę 4–6 sierpnia.",
+      "termin": "15.12.2026 / 15.05.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Który pakiet ŚDM kupujemy: B1+ (bez noclegów 4–6.08) czy A1+ (z noclegami od 4.08).",
+      "ograniczenia": "Czy uda się zarezerwować 90 łóżek w Seulu na 4–6.08 i czy B1+ daje wejście 5.08. Termin wstępny: 15.12.2026, ostateczny: 15.05.2027.",
+      "wplyw_inne": "Noclegi i wyżywienie 4–6.08, koszt (A1+ nie musi być droższy, gdy hotele w Seulu są drogie), godzina rozpoczęcia programu 5.08.",
+      "rekomendacja_tekst": "B1+ i dwie noce we własnym zakresie, o ile mamy łóżka i wejście 5.08. W przeciwnym razie A1+.",
+      "plusy": "Nie szukamy hoteli; pewniejsze wejście 5.08.",
+      "minusy": "Droższy pakiet, nocleg tam, gdzie wskaże organizator.",
+      "tlo": [
+        "Pakiet uczestnika ŚDM to rejestracja grupy: identyfikator, plecak pielgrzyma, wyżywienie, bilet komunikacji miejskiej, ubezpieczenie organizatora i — w niektórych pakietach — zakwaterowanie w szkołach i parafiach (niepełnoletni śpią osobno, 1 opiekun na 5 osób tej samej płci).",
+        "B1+ (190 USD) obejmuje dni 6–10.08 z noclegami. Noce 4/5 i 5/6.08 organizujemy sami. A1+ (ok. 340 USD) obejmuje też noclegi od 4.08.",
+        "Pakiety sprzedaje polskie Krajowe Biuro Organizacyjne ŚDM (KBO, biuro@sdmpolska.pl); rejestrację noclegów prowadzi komitet w Seulu (LOC). Wpłata do KBO do 15.05.2027, rejestracja w LOC do 31.05.2027. Po wpłacie zwrotu nie ma.",
+        "Otwarte pytanie do KBO: czy z pakietem B1+ wejdziemy 5.08 do sektora na powitanie Papieża (pakiet zaczyna się 6.08)."
+      ]
+    },
+    {
+      "id": "fuji",
+      "decyzja": "Wejście na Fudżi dla chętnych (17–18 sierpnia)",
+      "opcja_id": "nie",
+      "opcja": "Bez wejścia — cała grupa razem (rekomendacja)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Plan bazowy, bez zmian trasy i kosztu.",
+      "termin": "teraz",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Czy proponujemy chętnym pełnoletnim osobne, dwudniowe wejście na Fudżi, podczas gdy reszta grupy jedzie dalej drogą św. Franciszka Ksawerego.",
+      "ograniczenia": "Tylko pełnoletni, z zaświadczeniem lekarskim i wyjściem próbnym (np. Babia Góra), z osobnym opiekunem. Zwykłe polisy kończą się na 3 000 m — potrzebne rozszerzenie. Koszt ok. 1 500 zł na wchodzącego [szacunek].",
+      "wplyw_inne": "Dopłata tylko dla wchodzących, osobny opiekun, podział grupy na dwa dni.",
+      "rekomendacja_tekst": "Nie proponować — trasa Ksawerego jest sercem tej części pielgrzymki, a ryzyko i logistyka duże. Jeśli jednak tak, to tylko dla pełnoletnich, z wymaganiami jak wyżej.",
+      "plusy": "Grupa razem, bez dopłat i ryzyka.",
+      "minusy": "Brak Fudżi dla chętnych.",
+      "tlo": [
+        "Fudżi (3 776 m) to najwyższa góra i symbol Japonii. Wchodzi się nocą, żeby o świcie być na szczycie. Szlak jest długi, stromy i zimny; na górze bywa poniżej zera, a choroba wysokościowa jest realna.",
+        "Moduł: 17.08 shinkansen z Nagasaki (ok. 6 h), autobus na 5. stację (2 400 m), noc w schronisku, 18.08 wschód słońca na szczycie, zejście i shinkansen do Osaki.",
+        "Wchodzący tracą Yamaguchi, Hiroszimę, Miyajimę i Himeji. Podział grupy jest dopuszczalny tylko dla Fudżi (DECYZJA)."
+      ]
+    },
+    {
+      "id": "fuji",
+      "decyzja": "Wejście na Fudżi dla chętnych (17–18 sierpnia)",
+      "opcja_id": "tak",
+      "opcja": "Wejście dla chętnych pełnoletnich (liczbę ustawia się niżej)",
+      "zmiany": "",
+      "efekt": "fuji",
+      "wplyw": "Na mapie i w programie pojawia się osobna odnoga 17–18 sierpnia. Reszta grupy jedzie bez zmian. W budżecie widać dopłatę tylko za liczbę wchodzących.",
+      "termin": "teraz",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy proponujemy chętnym pełnoletnim osobne, dwudniowe wejście na Fudżi, podczas gdy reszta grupy jedzie dalej drogą św. Franciszka Ksawerego.",
+      "ograniczenia": "Tylko pełnoletni, z zaświadczeniem lekarskim i wyjściem próbnym (np. Babia Góra), z osobnym opiekunem. Zwykłe polisy kończą się na 3 000 m — potrzebne rozszerzenie. Koszt ok. 1 500 zł na wchodzącego [szacunek].",
+      "wplyw_inne": "Dopłata tylko dla wchodzących, osobny opiekun, podział grupy na dwa dni.",
+      "rekomendacja_tekst": "Nie proponować — trasa Ksawerego jest sercem tej części pielgrzymki, a ryzyko i logistyka duże. Jeśli jednak tak, to tylko dla pełnoletnich, z wymaganiami jak wyżej.",
+      "plusy": "Niezapomniany wschód słońca na szczycie.",
+      "minusy": "Ok. 1 500 zł na osobę; tracą 4 punkty programu; osobny opiekun i polisa.",
+      "tlo": [
+        "Fudżi (3 776 m) to najwyższa góra i symbol Japonii. Wchodzi się nocą, żeby o świcie być na szczycie. Szlak jest długi, stromy i zimny; na górze bywa poniżej zera, a choroba wysokościowa jest realna.",
+        "Moduł: 17.08 shinkansen z Nagasaki (ok. 6 h), autobus na 5. stację (2 400 m), noc w schronisku, 18.08 wschód słońca na szczycie, zejście i shinkansen do Osaki.",
+        "Wchodzący tracą Yamaguchi, Hiroszimę, Miyajimę i Himeji. Podział grupy jest dopuszczalny tylko dla Fudżi (DECYZJA)."
+      ]
+    },
+    {
+      "id": "sklad",
+      "decyzja": "Bagaż",
+      "opcja_id": "90",
+      "opcja": "Jedna walizka do 65 cm i 20 kg (rekomendacja)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez dopłat. Walizki mieszczą się w lukach przy ok. 80 osobach z dużą walizką; przy 90 tylko z limitem rozmiaru.",
+      "termin": "15.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Jaki bagaż może zabrać każdy uczestnik — i co robimy, jeśli walizki nie zmieszczą się w autokarach.",
+      "ograniczenia": "Regulamin bagażu dla rodziców przed pierwszą ratą. Przewoźnik podaje na piśmie pojemność luków. Termin: 15.12.2026.",
+      "wplyw_inne": "Regulamin dla uczestników i koszt autokarów w Japonii.",
+      "rekomendacja_tekst": "Limit jednej walizki 65 cm / 20 kg. Jeśli się nie utrzyma, tańsza jest ciężarówka na bagaż niż trzeci autokar.",
+      "plusy": "Bez dopłat, walizki zawsze z grupą.",
+      "minusy": "Limit trzeba sprawdzić już na lotnisku w Warszawie.",
+      "tlo": [
+        "Liczba autokarów liczy się sama z liczby osób (pole „Ile osób jedzie” wyżej): w Japonii duży autokar ma 49 miejsc, w Korei ok. 44.",
+        "Luki bagażowe dwóch japońskich autokarów mieszczą ok. 80 dużych walizek. Przy 90 osobach to za mało, jeśli każdy weźmie dużą walizkę.",
+        "Dlatego limit: jedna walizka do 65 cm i 20 kg na osobę + plecak podręczny. Taka walizka zajmuje mniej miejsca niż duża."
+      ]
+    },
+    {
+      "id": "sklad",
+      "decyzja": "Bagaż",
+      "opcja_id": "trzeci",
+      "opcja": "Duże walizki — trzeci autokar w Japonii",
+      "zmiany": "",
+      "efekt": "trzeci",
+      "wplyw": "W Japonii co najmniej 3 duże autokary (koszt autokarów w Japonii ×1,5 względem pary). Korea liczy się osobno z liczby osób.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Jaki bagaż może zabrać każdy uczestnik — i co robimy, jeśli walizki nie zmieszczą się w autokarach.",
+      "ograniczenia": "Regulamin bagażu dla rodziców przed pierwszą ratą. Przewoźnik podaje na piśmie pojemność luków. Termin: 15.12.2026.",
+      "wplyw_inne": "Regulamin dla uczestników i koszt autokarów w Japonii.",
+      "rekomendacja_tekst": "Limit jednej walizki 65 cm / 20 kg. Jeśli się nie utrzyma, tańsza jest ciężarówka na bagaż niż trzeci autokar.",
+      "plusy": "Luźniej w autokarach.",
+      "minusy": "Najdrożej: koszt autokarów w Japonii ×1,5.",
+      "tlo": [
+        "Liczba autokarów liczy się sama z liczby osób (pole „Ile osób jedzie” wyżej): w Japonii duży autokar ma 49 miejsc, w Korei ok. 44.",
+        "Luki bagażowe dwóch japońskich autokarów mieszczą ok. 80 dużych walizek. Przy 90 osobach to za mało, jeśli każdy weźmie dużą walizkę.",
+        "Dlatego limit: jedna walizka do 65 cm i 20 kg na osobę + plecak podręczny. Taka walizka zajmuje mniej miejsca niż duża."
+      ]
+    },
+    {
+      "id": "sklad",
+      "decyzja": "Bagaż",
+      "opcja_id": "bagazowka",
+      "opcja": "Duże walizki — w Japonii jedzie za nami ciężarówka z bagażem",
+      "zmiany": "bagaz:=30000",
+      "efekt": "bagazowka",
+      "wplyw": "Dodaje ok. 30 000 zł na grupę [zgaduję] zamiast ok. 75 000 zł za trzeci autokar w Japonii.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Jaki bagaż może zabrać każdy uczestnik — i co robimy, jeśli walizki nie zmieszczą się w autokarach.",
+      "ograniczenia": "Regulamin bagażu dla rodziców przed pierwszą ratą. Przewoźnik podaje na piśmie pojemność luków. Termin: 15.12.2026.",
+      "wplyw_inne": "Regulamin dla uczestników i koszt autokarów w Japonii.",
+      "rekomendacja_tekst": "Limit jednej walizki 65 cm / 20 kg. Jeśli się nie utrzyma, tańsza jest ciężarówka na bagaż niż trzeci autokar.",
+      "plusy": "Ok. 2,5 raza taniej niż trzeci autokar [zgaduję].",
+      "minusy": "Walizki jadą osobno; w każdym hotelu rozładunek i pilnowanie.",
+      "tlo": [
+        "Liczba autokarów liczy się sama z liczby osób (pole „Ile osób jedzie” wyżej): w Japonii duży autokar ma 49 miejsc, w Korei ok. 44.",
+        "Luki bagażowe dwóch japońskich autokarów mieszczą ok. 80 dużych walizek. Przy 90 osobach to za mało, jeśli każdy weźmie dużą walizkę.",
+        "Dlatego limit: jedna walizka do 65 cm i 20 kg na osobę + plecak podręczny. Taka walizka zajmuje mniej miejsca niż duża."
+      ]
+    },
+    {
+      "id": "biuro",
+      "decyzja": "Biuro podróży w Japonii",
+      "opcja_id": "tak",
+      "opcja": "Licencjonowane biuro, marża w cenie ofert (rekomendacja)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Plan bazowy organizacji rezerwacji w Japonii.",
+      "termin": "15.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Czy autokary, hotele i zgłoszenia w kościołach w Japonii załatwiamy przez jedno japońskie biuro podróży, czy sami.",
+      "ograniczenia": "Oferty biur do porównania; termin decyzji 15.12.2026, autokary do 31.12.2026.",
+      "wplyw_inne": "Sposób rezerwacji wszystkiego w Japonii i ewentualna marża w cenie. Trasa się nie zmienia.",
+      "rekomendacja_tekst": "Jedno licencjonowane biuro, z marżą wliczoną w oferty albo wynegocjowaną do zera.",
+      "plusy": "Jedna umowa i jedna odpowiedzialna firma.",
+      "minusy": "Trzeba porównać oferty, żeby nie przepłacić.",
+      "tlo": [
+        "W Japonii autokary wynajmuje się zwykle przez biura; przewoźnicy rzadko obsługują zagraniczne grupy po angielsku. Biuro z japońską licencją bierze odpowiedzialność za trasę, kierowców i hotele.",
+        "Biuro zarabia na marży. Często jest już w cenach ofert, czasem doliczają ją osobno (ok. 8% = ok. 400 zł na osobę).",
+        "Bez biura wszystko po japońsku: zamówienia autokarów, hoteli w Obonie, zgłoszenia Mszy w parafiach — potrzebny tłumacz i dużo pracy."
+      ]
+    },
+    {
+      "id": "biuro",
+      "decyzja": "Biuro podróży w Japonii",
+      "opcja_id": "marza",
+      "opcja": "Licencjonowane biuro z osobną marżą ok. 8%",
+      "zmiany": "biuro:=400",
+      "efekt": "",
+      "wplyw": "W modelu pojawia się pozycja biura = 400 zł na osobę.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy autokary, hotele i zgłoszenia w kościołach w Japonii załatwiamy przez jedno japońskie biuro podróży, czy sami.",
+      "ograniczenia": "Oferty biur do porównania; termin decyzji 15.12.2026, autokary do 31.12.2026.",
+      "wplyw_inne": "Sposób rezerwacji wszystkiego w Japonii i ewentualna marża w cenie. Trasa się nie zmienia.",
+      "rekomendacja_tekst": "Jedno licencjonowane biuro, z marżą wliczoną w oferty albo wynegocjowaną do zera.",
+      "plusy": "Koszt marży jest jawny.",
+      "minusy": "Ok. +400 zł na osobę.",
+      "tlo": [
+        "W Japonii autokary wynajmuje się zwykle przez biura; przewoźnicy rzadko obsługują zagraniczne grupy po angielsku. Biuro z japońską licencją bierze odpowiedzialność za trasę, kierowców i hotele.",
+        "Biuro zarabia na marży. Często jest już w cenach ofert, czasem doliczają ją osobno (ok. 8% = ok. 400 zł na osobę).",
+        "Bez biura wszystko po japońsku: zamówienia autokarów, hoteli w Obonie, zgłoszenia Mszy w parafiach — potrzebny tłumacz i dużo pracy."
+      ]
+    },
+    {
+      "id": "biuro",
+      "decyzja": "Biuro podróży w Japonii",
+      "opcja_id": "nie",
+      "opcja": "Bez biura — rezerwujemy sami",
+      "zmiany": "",
+      "efekt": "bez_biura",
+      "wplyw": "Nie dodaje pozycji w kosztorysie, ale zmienia sposób pracy Artura i reszty ekipy.",
+      "termin": "15.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy autokary, hotele i zgłoszenia w kościołach w Japonii załatwiamy przez jedno japońskie biuro podróży, czy sami.",
+      "ograniczenia": "Oferty biur do porównania; termin decyzji 15.12.2026, autokary do 31.12.2026.",
+      "wplyw_inne": "Sposób rezerwacji wszystkiego w Japonii i ewentualna marża w cenie. Trasa się nie zmienia.",
+      "rekomendacja_tekst": "Jedno licencjonowane biuro, z marżą wliczoną w oferty albo wynegocjowaną do zera.",
+      "plusy": "Może być taniej.",
+      "minusy": "Dużo pracy po japońsku, większe ryzyko w Obonie.",
+      "tlo": [
+        "W Japonii autokary wynajmuje się zwykle przez biura; przewoźnicy rzadko obsługują zagraniczne grupy po angielsku. Biuro z japońską licencją bierze odpowiedzialność za trasę, kierowców i hotele.",
+        "Biuro zarabia na marży. Często jest już w cenach ofert, czasem doliczają ją osobno (ok. 8% = ok. 400 zł na osobę).",
+        "Bez biura wszystko po japońsku: zamówienia autokarów, hoteli w Obonie, zgłoszenia Mszy w parafiach — potrzebny tłumacz i dużo pracy."
+      ]
+    },
+    {
+      "id": "polisa",
+      "decyzja": "Ubezpieczenie",
+      "opcja_id": "e1",
+      "opcja": "Generali Elastyczny 1 (obecna oferta)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Stawka bazowa ubezpieczenia w modelu.",
+      "termin": "przed wpłatą",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Jaki zakres ubezpieczenia kupujemy dla całej grupy.",
+      "ograniczenia": "Przed pierwszą wpłatą. Klauzulę terroru trzeba sprawdzić niezależnie od wariantu.",
+      "wplyw_inne": "Cena na osobę (od ok. 171 do 816 zł) i to, kto ponosi koszt biletów po rezygnacji.",
+      "rekomendacja_tekst": "Elastyczny 1 w budżecie, ale domknąć klauzulę terroru. Ubezpieczenie od rezygnacji rozważyć przynajmniej dla osób z biletami imiennymi.",
+      "plusy": "Najtaniej.",
+      "minusy": "Bez terroryzmu i bez rezygnacji.",
+      "tlo": [
+        "Oferta Generali „Elastyczny 1” kosztuje ok. 171 zł na osobę (15 353 zł za grupę, oferta z 18.09.2026).",
+        "Ma dwie luki: nie obejmuje zdarzeń związanych z terroryzmem (ważne przy wielkich zgromadzeniach jak ŚDM) i nie ma ubezpieczenia od rezygnacji.",
+        "Rezygnacja ma znaczenie, bo 21 biletów lotniczych jest imiennych i nie można ich przepisać na kogoś innego — przy rezygnacji przepadają (4 900 zł każdy)."
+      ]
+    },
+    {
+      "id": "polisa",
+      "decyzja": "Ubezpieczenie",
+      "opcja_id": "e2",
+      "opcja": "Generali Elastyczny 2 — szerszy zakres",
+      "zmiany": "ubezpieczenie:=216",
+      "efekt": "",
+      "wplyw": "Podnosi pozycję ubezpieczenia do 216 zł na osobę.",
+      "termin": "przed wpłatą",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Jaki zakres ubezpieczenia kupujemy dla całej grupy.",
+      "ograniczenia": "Przed pierwszą wpłatą. Klauzulę terroru trzeba sprawdzić niezależnie od wariantu.",
+      "wplyw_inne": "Cena na osobę (od ok. 171 do 816 zł) i to, kto ponosi koszt biletów po rezygnacji.",
+      "rekomendacja_tekst": "Elastyczny 1 w budżecie, ale domknąć klauzulę terroru. Ubezpieczenie od rezygnacji rozważyć przynajmniej dla osób z biletami imiennymi.",
+      "plusy": "Więcej ochrony za ok. +45 zł.",
+      "minusy": "Nadal trzeba sprawdzić terroryzm i rezygnację.",
+      "tlo": [
+        "Oferta Generali „Elastyczny 1” kosztuje ok. 171 zł na osobę (15 353 zł za grupę, oferta z 18.09.2026).",
+        "Ma dwie luki: nie obejmuje zdarzeń związanych z terroryzmem (ważne przy wielkich zgromadzeniach jak ŚDM) i nie ma ubezpieczenia od rezygnacji.",
+        "Rezygnacja ma znaczenie, bo 21 biletów lotniczych jest imiennych i nie można ich przepisać na kogoś innego — przy rezygnacji przepadają (4 900 zł każdy)."
+      ]
+    },
+    {
+      "id": "polisa",
+      "decyzja": "Ubezpieczenie",
+      "opcja_id": "e2r",
+      "opcja": "Elastyczny 2 + koszty rezygnacji",
+      "zmiany": "ubezpieczenie:=816",
+      "efekt": "",
+      "wplyw": "Najwyższa pozycja ubezpieczenia w kosztorysie. Nie zwalnia z zadania o klauzuli terroru i ochronie 4–5.08.",
+      "termin": "przed wpłatą",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Jaki zakres ubezpieczenia kupujemy dla całej grupy.",
+      "ograniczenia": "Przed pierwszą wpłatą. Klauzulę terroru trzeba sprawdzić niezależnie od wariantu.",
+      "wplyw_inne": "Cena na osobę (od ok. 171 do 816 zł) i to, kto ponosi koszt biletów po rezygnacji.",
+      "rekomendacja_tekst": "Elastyczny 1 w budżecie, ale domknąć klauzulę terroru. Ubezpieczenie od rezygnacji rozważyć przynajmniej dla osób z biletami imiennymi.",
+      "plusy": "Chroni przed stratą biletów przy rezygnacji.",
+      "minusy": "Ok. +645 zł na osobę [szacunek do potwierdzenia u ubezpieczyciela].",
+      "tlo": [
+        "Oferta Generali „Elastyczny 1” kosztuje ok. 171 zł na osobę (15 353 zł za grupę, oferta z 18.09.2026).",
+        "Ma dwie luki: nie obejmuje zdarzeń związanych z terroryzmem (ważne przy wielkich zgromadzeniach jak ŚDM) i nie ma ubezpieczenia od rezygnacji.",
+        "Rezygnacja ma znaczenie, bo 21 biletów lotniczych jest imiennych i nie można ich przepisać na kogoś innego — przy rezygnacji przepadają (4 900 zł każdy)."
+      ]
+    },
+    {
+      "id": "rezerwa",
+      "decyzja": "Rezerwa na kurs walut i niespodzianki",
+      "opcja_id": "6",
+      "opcja": "6% (jak w kosztorysie Artura, rekomendacja)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Plan bazowy: rezerwa 6% doliczana na końcu.",
+      "termin": "31.01.2027",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Ile procent doliczamy do ceny jako zapas na zmianę kursu jena i nieprzewidziane wydatki.",
+      "ograniczenia": "Razem z ceną dla rodziców do 31.01.2027.",
+      "wplyw_inne": "Cena dla rodziców i ryzyko późniejszej dopłaty.",
+      "rekomendacja_tekst": "6%, jak w kosztorysie Artura.",
+      "plusy": "Rozsądny zapas.",
+      "minusy": "—",
+      "tlo": [
+        "Większość kosztów w Japonii płacimy w jenach, w Korei w wonach, pakiet ŚDM w dolarach. Jeśli złoty osłabnie o 5%, te koszty rosną o kilkaset złotych na osobę.",
+        "Rezerwa liczy się tylko od kosztów jeszcze nieopłaconych i walutowych — nie od kupionych biletów lotniczych.",
+        "Niewykorzystaną rezerwę można zwrócić albo przeznaczyć na wspólny cel."
+      ]
+    },
+    {
+      "id": "rezerwa",
+      "decyzja": "Rezerwa na kurs walut i niespodzianki",
+      "opcja_id": "3",
+      "opcja": "3% (odważnie)",
+      "zmiany": "rezerwa:=3",
+      "efekt": "",
+      "wplyw": "Rezerwa w modelu = 3%.",
+      "termin": "31.01.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Ile procent doliczamy do ceny jako zapas na zmianę kursu jena i nieprzewidziane wydatki.",
+      "ograniczenia": "Razem z ceną dla rodziców do 31.01.2027.",
+      "wplyw_inne": "Cena dla rodziców i ryzyko późniejszej dopłaty.",
+      "rekomendacja_tekst": "6%, jak w kosztorysie Artura.",
+      "plusy": "Niższa cena.",
+      "minusy": "Ryzyko dopłaty, jeśli złoty osłabnie.",
+      "tlo": [
+        "Większość kosztów w Japonii płacimy w jenach, w Korei w wonach, pakiet ŚDM w dolarach. Jeśli złoty osłabnie o 5%, te koszty rosną o kilkaset złotych na osobę.",
+        "Rezerwa liczy się tylko od kosztów jeszcze nieopłaconych i walutowych — nie od kupionych biletów lotniczych.",
+        "Niewykorzystaną rezerwę można zwrócić albo przeznaczyć na wspólny cel."
+      ]
+    },
+    {
+      "id": "rezerwa",
+      "decyzja": "Rezerwa na kurs walut i niespodzianki",
+      "opcja_id": "10",
+      "opcja": "10% (ostrożnie)",
+      "zmiany": "rezerwa:=10",
+      "efekt": "",
+      "wplyw": "Rezerwa w modelu = 10%.",
+      "termin": "31.01.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Ile procent doliczamy do ceny jako zapas na zmianę kursu jena i nieprzewidziane wydatki.",
+      "ograniczenia": "Razem z ceną dla rodziców do 31.01.2027.",
+      "wplyw_inne": "Cena dla rodziców i ryzyko późniejszej dopłaty.",
+      "rekomendacja_tekst": "6%, jak w kosztorysie Artura.",
+      "plusy": "Duży zapas.",
+      "minusy": "Wyższa cena dla rodziców.",
+      "tlo": [
+        "Większość kosztów w Japonii płacimy w jenach, w Korei w wonach, pakiet ŚDM w dolarach. Jeśli złoty osłabnie o 5%, te koszty rosną o kilkaset złotych na osobę.",
+        "Rezerwa liczy się tylko od kosztów jeszcze nieopłaconych i walutowych — nie od kupionych biletów lotniczych.",
+        "Niewykorzystaną rezerwę można zwrócić albo przeznaczyć na wspólny cel."
+      ]
+    },
+    {
+      "id": "hotele_zachod",
+      "decyzja": "Hotele w Hiroszimie i Osace",
+      "opcja_id": "standard",
+      "opcja": "Hotele w centrum",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez zmian względem bazy.",
+      "termin": "31.01.2027",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Czy w Hiroszimie (1 noc) i Osace (2 noce) mieszkamy w centrum, czy taniej na obrzeżach.",
+      "ograniczenia": "Blok ok. 45 pokoi; termin zapytań 31.01.2027.",
+      "wplyw_inne": "Ok. −480 zł na osobę [zgaduję]; dojazd 20–30 min dłuższy.",
+      "rekomendacja_tekst": "Zapytać równolegle o obie opcje.",
+      "plusy": "Blisko programu.",
+      "minusy": "Drożej.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "Po Obonie hotele w centrach są drogie. Na obrzeżach Osaki (Sakai, Higashi-Osaka) i w hotelach biznesowych jest taniej, a autokar i tak dowozi grupę."
+      ]
+    },
+    {
+      "id": "hotele_zachod",
+      "decyzja": "Hotele w Hiroszimie i Osace",
+      "opcja_id": "tanie",
+      "opcja": "Hotele biznesowe i schroniska na obrzeżach",
+      "zmiany": "nocleg_osaka:=450; nocleg_hiroszima:=280",
+      "efekt": "",
+      "wplyw": "Ok. −480 zł/os. [zgaduję].",
+      "termin": "31.01.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy w Hiroszimie (1 noc) i Osace (2 noce) mieszkamy w centrum, czy taniej na obrzeżach.",
+      "ograniczenia": "Blok ok. 45 pokoi; termin zapytań 31.01.2027.",
+      "wplyw_inne": "Ok. −480 zł na osobę [zgaduję]; dojazd 20–30 min dłuższy.",
+      "rekomendacja_tekst": "Zapytać równolegle o obie opcje.",
+      "plusy": "Ok. −480 zł na osobę.",
+      "minusy": "Dojazd 20–30 min.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "Po Obonie hotele w centrach są drogie. Na obrzeżach Osaki (Sakai, Higashi-Osaka) i w hotelach biznesowych jest taniej, a autokar i tak dowozi grupę."
+      ]
+    },
+    {
+      "id": "posilki",
+      "decyzja": "Posiłki w Japonii",
+      "opcja_id": "standard",
+      "opcja": "Stawka Artura: ok. 4 500 ¥ dziennie",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez zmian.",
+      "termin": "31.01.2027",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Ile przyjmujemy na jedzenie dziennie w Japonii i jak je organizujemy.",
+      "ograniczenia": "Czy ceny hoteli obejmują śniadania (sprawdzić w ofertach).",
+      "wplyw_inne": "Ok. −350 zł na osobę [szacunek].",
+      "rekomendacja_tekst": "Hotele ze śniadaniem + bento na obiad, gdy to możliwe.",
+      "plusy": "Zapas na restauracje.",
+      "minusy": "Drożej.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "W Japonii popularne i tanie są bento — gotowe zestawy obiadowe w pudełkach, które można zamówić dzień wcześniej i zjeść w autokarze. To oszczędza też czas w dni z długą jazdą (3.08, 4.08, 18.08).",
+        "Śniadania najprościej mieć w cenie hotelu."
+      ]
+    },
+    {
+      "id": "posilki",
+      "decyzja": "Posiłki w Japonii",
+      "opcja_id": "bento",
+      "opcja": "Śniadanie w hotelu, bento na obiad, kolacja grupowa (ok. 3 300 ¥)",
+      "zmiany": "jedzenie_jp:=1000",
+      "efekt": "",
+      "wplyw": "Ok. −350 zł/os. [szacunek].",
+      "termin": "31.01.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Ile przyjmujemy na jedzenie dziennie w Japonii i jak je organizujemy.",
+      "ograniczenia": "Czy ceny hoteli obejmują śniadania (sprawdzić w ofertach).",
+      "wplyw_inne": "Ok. −350 zł na osobę [szacunek].",
+      "rekomendacja_tekst": "Hotele ze śniadaniem + bento na obiad, gdy to możliwe.",
+      "plusy": "Ok. −350 zł; szybciej w drodze.",
+      "minusy": "Mniej restauracji.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "W Japonii popularne i tanie są bento — gotowe zestawy obiadowe w pudełkach, które można zamówić dzień wcześniej i zjeść w autokarze. To oszczędza też czas w dni z długą jazdą (3.08, 4.08, 18.08).",
+        "Śniadania najprościej mieć w cenie hotelu."
+      ]
+    },
+    {
+      "id": "kadra_lok",
+      "decyzja": "Przewodnik na miejscu",
+      "opcja_id": "pelny",
+      "opcja": "Zawodowy pilot-przewodnik na całość",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez zmian.",
+      "termin": "31.01.2027",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Czy przez całą Japonię i Koreę mamy zawodowego pilota-przewodnika, czy w części dni pomagają wolontariusze z Kościoła.",
+      "ograniczenia": "Znalezienie wiarygodnych wolontariuszy mówiących po angielsku.",
+      "wplyw_inne": "Ok. −100 zł na osobę [zgaduję].",
+      "rekomendacja_tekst": "Jeden pilot na całość + lokalni wolontariusze w Nagasaki.",
+      "plusy": "Jedna odpowiedzialna osoba.",
+      "minusy": "Drożej.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "W Nagasaki działa wiele parafii i wspólnot, które znają miejsca męczenników lepiej niż przewodnik turystyczny."
+      ]
+    },
+    {
+      "id": "kadra_lok",
+      "decyzja": "Przewodnik na miejscu",
+      "opcja_id": "wolontariusze",
+      "opcja": "Pilot + wolontariusze z Kościoła w Nagasaki",
+      "zmiany": "kadra:=6300",
+      "efekt": "",
+      "wplyw": "Ok. −100 zł/os. [zgaduję].",
+      "termin": "31.01.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy przez całą Japonię i Koreę mamy zawodowego pilota-przewodnika, czy w części dni pomagają wolontariusze z Kościoła.",
+      "ograniczenia": "Znalezienie wiarygodnych wolontariuszy mówiących po angielsku.",
+      "wplyw_inne": "Ok. −100 zł na osobę [zgaduję].",
+      "rekomendacja_tekst": "Jeden pilot na całość + lokalni wolontariusze w Nagasaki.",
+      "plusy": "Ok. −100 zł; bliżej lokalnego Kościoła.",
+      "minusy": "Zależy od ludzi.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "W Nagasaki działa wiele parafii i wspólnot, które znają miejsca męczenników lepiej niż przewodnik turystyczny."
+      ]
+    },
+    {
+      "id": "esim",
+      "decyzja": "Internet w telefonie (eSIM)",
+      "opcja_id": "standard",
+      "opcja": "eSIM ok. 120 zł na osobę (kosztorys Artura)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez zmian.",
+      "termin": "31.03.2027",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Jaki pakiet internetu w telefonie kupujemy uczestnikom.",
+      "ograniczenia": "Zasięg i limit danych.",
+      "wplyw_inne": "Ok. −70 zł na osobę [zgaduję].",
+      "rekomendacja_tekst": "Jeden pakiet regionalny.",
+      "plusy": "Sprawdzony.",
+      "minusy": "Drożej.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "eSIM to karta SIM w formie aplikacji. Są pakiety obejmujące jednocześnie Japonię i Koreę."
+      ]
+    },
+    {
+      "id": "esim",
+      "decyzja": "Internet w telefonie (eSIM)",
+      "opcja_id": "tani",
+      "opcja": "Jeden pakiet Japonia + Korea, ok. 50 zł",
+      "zmiany": "eta_esim:=79",
+      "efekt": "",
+      "wplyw": "Ok. −70 zł/os. [zgaduję].",
+      "termin": "31.03.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Jaki pakiet internetu w telefonie kupujemy uczestnikom.",
+      "ograniczenia": "Zasięg i limit danych.",
+      "wplyw_inne": "Ok. −70 zł na osobę [zgaduję].",
+      "rekomendacja_tekst": "Jeden pakiet regionalny.",
+      "plusy": "Taniej.",
+      "minusy": "Sprawdzić limit danych.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "eSIM to karta SIM w formie aplikacji. Są pakiety obejmujące jednocześnie Japonię i Koreę."
+      ]
+    },
+    {
+      "id": "przewoznik",
+      "decyzja": "Firma autokarowa na zachodzie Japonii",
+      "opcja_id": "jeden",
+      "opcja": "Jedna firma na całość",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez zmian.",
+      "termin": "31.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Czy przez całe 12–20.08 jeździmy z jedną firmą autokarową, czy zmieniamy firmę w Hiroszimie.",
+      "ograniczenia": "Biuro wycenia osobno puste przejazdy.",
+      "wplyw_inne": "Ok. −120 zł na osobę [zgaduję]; przeładunek walizek w Hiroszimie.",
+      "rekomendacja_tekst": "Poprosić biuro o obie wyceny.",
+      "plusy": "Prosto.",
+      "minusy": "Płacimy za pusty powrót.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "Firma z Kiusiu (Nagasaki) po dowiezieniu nas do Osaki musi wrócić pustymi autokarami ok. 600 km — i za to płacimy. Firma z okolic Osaki przejęłaby nas w Hiroszimie."
+      ]
+    },
+    {
+      "id": "przewoznik",
+      "decyzja": "Firma autokarowa na zachodzie Japonii",
+      "opcja_id": "zmiana",
+      "opcja": "Zmiana firmy w Hiroszimie",
+      "zmiany": "bus_zachod:*0.9",
+      "efekt": "",
+      "wplyw": "Ok. −120 zł/os. [zgaduję].",
+      "termin": "31.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy przez całe 12–20.08 jeździmy z jedną firmą autokarową, czy zmieniamy firmę w Hiroszimie.",
+      "ograniczenia": "Biuro wycenia osobno puste przejazdy.",
+      "wplyw_inne": "Ok. −120 zł na osobę [zgaduję]; przeładunek walizek w Hiroszimie.",
+      "rekomendacja_tekst": "Poprosić biuro o obie wyceny.",
+      "plusy": "Taniej.",
+      "minusy": "Przeładunek walizek.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "Firma z Kiusiu (Nagasaki) po dowiezieniu nas do Osaki musi wrócić pustymi autokarami ok. 600 km — i za to płacimy. Firma z okolic Osaki przejęłaby nas w Hiroszimie."
+      ]
+    },
+    {
+      "id": "nagasaki_miasto",
+      "decyzja": "Nagasaki 14–15 sierpnia: autokar czy tramwaj",
+      "opcja_id": "autokar",
+      "opcja": "Autokary także w dni miejskie",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez zmian, zgodne z DECYZJĄ „autokary zamiast pociągów”.",
+      "termin": "31.12.2026",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Czy w dwa dni programu w samym Nagasaki jeździmy tramwajem miejskim zamiast autokarem.",
+      "ograniczenia": "Interpretacja DECYZJI o autokarach.",
+      "wplyw_inne": "Ok. −240 zł na osobę [szacunek].",
+      "rekomendacja_tekst": "Do decyzji Jakuba.",
+      "plusy": "Zgodne z DECYZJĄ.",
+      "minusy": "Drożej.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "Hongochi, Nishizaka i Urakami leżą w zasięgu sieci tramwajowej Nagasaki.",
+        "Dotyka DECYZJI „autokary zamiast pociągów” — ma sens tylko, jeśli ta DECYZJA dotyczyła przejazdów między miastami."
+      ]
+    },
+    {
+      "id": "nagasaki_miasto",
+      "decyzja": "Nagasaki 14–15 sierpnia: autokar czy tramwaj",
+      "opcja_id": "tramwaj",
+      "opcja": "Tramwaj 14–15.08",
+      "zmiany": "bus_zachod:-24500; komunikacja:+30",
+      "efekt": "",
+      "wplyw": "Ok. −240 zł/os. [szacunek: 110 250 zł / 9 dni].",
+      "termin": "31.12.2026",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy w dwa dni programu w samym Nagasaki jeździmy tramwajem miejskim zamiast autokarem.",
+      "ograniczenia": "Interpretacja DECYZJI o autokarach.",
+      "wplyw_inne": "Ok. −240 zł na osobę [szacunek].",
+      "rekomendacja_tekst": "Do decyzji Jakuba.",
+      "plusy": "Ok. −240 zł.",
+      "minusy": "Dotyka DECYZJI.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "Hongochi, Nishizaka i Urakami leżą w zasięgu sieci tramwajowej Nagasaki.",
+        "Dotyka DECYZJI „autokary zamiast pociągów” — ma sens tylko, jeśli ta DECYZJA dotyczyła przejazdów między miastami."
+      ]
+    }
+  ],
+  "koszty": [
+    {
+      "kategoria": "Przelot Qatar WAW–Narita / Kansai–WAW",
+      "kwota": 4900,
+      "zrodlo": "Bilety kupione (FunFly / Qatar). Kosztorys Artura 22.09.2026.",
+      "typ": "potwierdzone",
+      "uwagi": "69 miejsc grupowych + 21 imiennych bez zmiany nazwiska."
+    },
+    {
+      "kategoria": "Lot Haneda–Gimpo 4.08 wieczór",
+      "kwota": 504,
+      "zrodlo": "Szacunek z kosztorysu Artura (tam: Haneda–ICN 5.08, ¥18 000).",
+      "typ": "szacunek",
+      "uwagi": "Data, lotnisko i linia mogą zmienić cenę. Taryfa grupowa może być wyższa (u Artura luka +250 zł)."
+    },
+    {
+      "kategoria": "Prom New Camellia + opłaty portowe",
+      "kwota": 322,
+      "zrodlo": "Kosztorys Artura, ¥11 500, taryfa grupowa.",
+      "typ": "szacunek",
+      "uwagi": "Brak zniżki grupowej: +ok. 70 zł (luka Artura)."
+    },
+    {
+      "kategoria": "Pętla wschodnia 2–4.08, hotele + autokary (wariant 1)",
+      "kwota": 850,
+      "zrodlo": "plan z 15.11.2026.",
+      "typ": "szacunek",
+      "uwagi": "wariant 2: 1100; wariant 3: 1600; wariant 4: 700. Bez wyżywienia. 10 000 ¥ ≈ 250 zł."
+    },
+    {
+      "kategoria": "Zachód 12–20.08, hotele + autokary (Nagasaki 5 + Hiroszima 1 + Osaka 2)",
+      "kwota": 4275,
+      "zrodlo": "Środek przedziału plan z 15.11.2026: 3600–4950 zł.",
+      "typ": "szacunek",
+      "uwagi": "Hotele 102–144 tys. ¥, transport 43–55 tys. ¥. Dla porównania wariant asystenta (bot) 4+2+2 z shinkansenem: 3800–5200 zł."
+    },
+    {
+      "kategoria": "Pakiet B1+ (190 USD)",
+      "kwota": 712.5,
+      "zrodlo": "Kosztorys Artura, kurs 1 USD = 3,75 PLN.",
+      "typ": "szacunek",
+      "uwagi": "Do potwierdzenia przy rejestracji. A1+(10): +560 zł."
+    },
+    {
+      "kategoria": "Noclegi Seul Mapo, 2 noce",
+      "kwota": 580,
+      "zrodlo": "plan z 15.11: 174 zł to stawka poza ŚDM; w budżecie ok. 290 zł/noc (przypuszczenie).",
+      "typ": "szacunek",
+      "uwagi": "Kryterium B1+. U Artura była tylko 1 noc × 174 zł."
+    },
+    {
+      "kategoria": "Nocleg Busan, 1 noc",
+      "kwota": 87,
+      "zrodlo": "Kosztorys Artura.",
+      "typ": "szacunek",
+      "uwagi": "Do weryfikacji w sierpniu."
+    },
+    {
+      "kategoria": "Wyżywienie w Japonii",
+      "kwota": 1638,
+      "zrodlo": "Artur: 13 dni × ¥4 500.",
+      "typ": "szacunek",
+      "uwagi": "Do przeliczenia przy 10 nocach hotelowych w Japonii + prom + dwa noce w samolocie."
+    },
+    {
+      "kategoria": "Wyżywienie w Korei poza pakietem",
+      "kwota": 304.5,
+      "zrodlo": "Artur, 3 dni.",
+      "typ": "szacunek",
+      "uwagi": "W planie z 15.11 posiłki własne raczej 4–5.08 oraz 10–11.08."
+    },
+    {
+      "kategoria": "Autokar Seul–Solmoe–Busan",
+      "kwota": 152,
+      "zrodlo": "Artur, Seul–Busan bez Solmoe.",
+      "typ": "szacunek",
+      "uwagi": "Solmoe może zmienić przebieg i cenę."
+    },
+    {
+      "kategoria": "Ubezpieczenie Generali Elastyczny 1",
+      "kwota": 170.59,
+      "zrodlo": "Oferta 18.09.2026, kalkulacja 1000373683822 (15 353 zł / 90 os.).",
+      "typ": "szacunek",
+      "uwagi": "KL 500 000, assistance 500 000, transport 10 000 000, NNW 20 000, OC 100 000, bagaż 500 zł. Elastyczny 2: +45 zł/os. Brak klauzuli terroru i polisy rezygnacji."
+    },
+    {
+      "kategoria": "Karimata i śpiwór (czuwanie 7/8.08)",
+      "kwota": 101.5,
+      "zrodlo": "Kosztorys Artura.",
+      "typ": "szacunek",
+      "uwagi": "Zakup w Seulu, zostawić po 8.08."
+    },
+    {
+      "kategoria": "K-ETA",
+      "kwota": 29,
+      "zrodlo": "Rezerwa Artura, 10 000 KRW. Zakładamy obowiązek w 2027.",
+      "typ": "szacunek",
+      "uwagi": "Termin: 31.03.2027, Asystent."
+    },
+    {
+      "kategoria": "eSIM",
+      "kwota": 120,
+      "zrodlo": "Kosztorys Artura.",
+      "typ": "szacunek",
+      "uwagi": ""
+    },
+    {
+      "kategoria": "Wstępy i ofiary",
+      "kwota": 230,
+      "zrodlo": "Kosztorys Artura.",
+      "typ": "szacunek",
+      "uwagi": "W planie z 15.11 może wzrosnąć (Tōshōgū, Ōura, muzea Hiroszimy i Nagasaki, Himeji, Itsukushima, Kiyomizu)."
+    },
+    {
+      "kategoria": "Materiały grupowe",
+      "kwota": 140,
+      "zrodlo": "Kosztorys Artura.",
+      "typ": "szacunek",
+      "uwagi": ""
+    },
+    {
+      "kategoria": "Ubezpieczenie: klauzula pasywnego udziału w aktach terroru",
+      "kwota": 0,
+      "zrodlo": "Luka wskazana przez Artura.",
+      "typ": "do wyceny",
+      "uwagi": "0 zł w obecnym budżecie, trzeba wycenić."
+    },
+    {
+      "kategoria": "Ubezpieczenie kosztów rezygnacji (21 biletów imiennych)",
+      "kwota": 0,
+      "zrodlo": "Luka wskazana przez Artura.",
+      "typ": "do wyceny",
+      "uwagi": "Rynkowo 3–6% wartości, ok. 400–800 zł/os."
+    },
+    {
+      "kategoria": "Rezerwa kursowa / ogólna",
+      "kwota": "",
+      "zrodlo": "U Artura 6% od kosztów bezpośrednich = 781 zł, przy budżecie 13 800 zł.",
+      "typ": "do przeliczenia",
+      "uwagi": "Do przeliczenia po ustaleniu ceny dla rodziców."
+    },
+    {
+      "kategoria": "SUMA ORIENTACYJNA planie z 15.11 (rekomendacje, hotele standard)",
+      "kwota": 15200,
+      "zrodlo": "plan z 15.11.2026.",
+      "typ": "szacunek wiodący",
+      "uwagi": "Pozycje powyżej pochodzą z mieszanych źródeł (plan z 15.11 + Artur) i nie sumują się jeszcze księgowo do 15 200 zł. To jest roboczy cel cenowy, aż wejdą oferty autokarów i hoteli. Plan wcześniejszym planie wychodził na ok. 16 000 zł przy budżecie Artura 13 800 zł."
+    },
+    {
+      "kategoria": "Wariant: tani nocleg w Nagasaki",
+      "kwota": 13600,
+      "zrodlo": "plan z 15.11.2026.",
+      "typ": "szacunek",
+      "uwagi": "Tylko przy ośrodku / gościnie kościelnej."
+    },
+    {
+      "kategoria": "Przedział ceny komunikowanej rodzicom",
+      "kwota": "",
+      "zrodlo": "plan z 15.11.2026, decyzja nr 7.",
+      "typ": "do decyzji",
+      "uwagi": "14 400–15 200 zł; 13 800 zł tylko przy tanim noclegu w Nagasaki. Termin decyzji: 31.01.2027, przed II ratą."
+    },
+    {
+      "kategoria": "Harmonogram wpłat (procenty z Artura, kwoty do przeliczenia)",
+      "kwota": "",
+      "zrodlo": "Arkusz Artura od 13 800 zł: I XI 2026 20%, II II 2027 20%, III IV 2027 20%, IV VI 2027 25%, V VII 2027 15%.",
+      "typ": "do przeliczenia",
+      "uwagi": "Przy 13 800 zł raty wynosiły 2760 / 2760 / 2760 / 3450 / 2070 zł. Po ustaleniu ceny planie z 15.11 trzeba przeliczyć. Przeznaczenie rat: I lot Tokio–Seul i prom; II noclegi Seul i rejestracja ŚDM; III noclegi Japonia; IV autokary, ubezpieczenie, materiały; V rozliczenie i gotówka na trasie."
+    },
+    {
+      "kategoria": "Wpłaty zebrane do dziś (zbiorczo)",
+      "kwota": "",
+      "zrodlo": "Brak potwierdzonego źródła zbiorczego na etapie 1 tej strony.",
+      "typ": "do uzupełnienia",
+      "uwagi": "Nie wpisujemy kwot ani list uczestników, dopóki nie będzie arkusza wpłat albo innego twardego źródła. Strona nie zawiera danych osobowych."
+    }
+  ],
+  "logistyka": {
+    "rytm": "Codziennie: jutrznia rano, Msza (celebruje kapłan grupy), krótka modlitwa wieczorna. Upał: zwiedzanie na zewnątrz do 11:00 i po 16:00, przerwa w klimatyzacji, woda i elektrolity w autokarze, nakrycia głowy; śledzić japońskie alerty upału. Podział grupy jest dopuszczalny wyłącznie przy module Fuji (którego nie rekomendujemy).",
+    "kierowcy": [
+      "Japońskie limity czasu pracy kierowców są twarde — nie planujemy dłuższych dni bez drugiego kierowcy.",
+      "3.08 (Iwaki–Matsushima–Akita–Kitakami): 2 autokary po 2 kierowców.",
+      "4.08 (Kitakami–Nikkō–Haneda): 2 kierowców, wyjazd 7:45, z Nikkō najpóźniej 14:30, Haneda ok. 17:30 (lot krótki — ok. 2 h zapasu wystarcza).",
+      "17.08 (Nagasaki–Yamaguchi–Hiroszima): ok. 435 km, ok. 6 h, jeden kierowca, wyjazd ok. 7:00.",
+      "18.08 (Hiroszima–Miyajima–Himeji–Osaka): ok. 350 km, ok. 5,25 h, wyjazd ok. 8:15.",
+      "Na zachodzie jedna baza w Nagasaki (5 nocy) zamiast zmiany hoteli i shinkansenu 16.08. Na Tōhoku jedna baza nie działa: Matsushima, Akita i Nikkō leżą co 250–430 km.",
+      "Normy 2024 (Japonia): praca kierowcy do 13 h (max 15 h), przerwa między zmianami min. 9 h (zalecane 11 h), ok. 670 km dziennie na kierowcę; walidator w kartach dni sprawdza to automatycznie."
+    ],
+    "bagaz": [
+      "90 osób to górny pułap. Liczba i rodzaj pojazdów liczą się z liczby uczestników — osobno dla Japonii (duży autokar 49 miejsc) i Korei (45-miejscowy, ok. 44 pasażerów).",
+      "Jedna walizka do 65 cm i 20 kg. Luki dwóch japońskich autokarów mieszczą ok. 80 dużych walizek — stąd limit.",
+      "Duże walizki: tańsza jest ciężarówka bagażowa niż trzeci autokar (decyzja „Bagaż”).",
+      "Walizki jadą z grupą. Wyjątek tylko przy ciężarówce bagażowej.",
+      "Visit Japan Web egzekwować już na odprawie w Warszawie."
+    ],
+    "prom": [
+      "New Camellia, Camellia Line, Busan 22:30 → Hakata 7:30 (godziny 2026, kalendarz 2027 do potwierdzenia ok. lutego).",
+      "Odprawa 16:30–18:30, bagaż rejestrowany do 17:30, wejście na pokład ok. 19:40.",
+      "11.08.2027 to środa. W 2026 nie było rejsów z Busan w soboty. Informacje o „przerwie w jedną niedzielę” i o postoju 15–16.08 były słabsze albo niepotwierdzone (16.08.2026 prom płynął).",
+      "Plan awaryjny: tajfun albo odwołany rejs → lot Busan–Fukuoka (ok. 55 min) 12.08 rano; Hirado skrócone albo przeniesione na 13.08 przed Sotome."
+    ],
+    "awarie": [
+      "Odwołany wieczorny lot 4.08 → poranne rejsy Haneda–Gimpo 5.08; powitanie Papieża po południu nadal możliwe.",
+      "Upał powyżej 35°C → zwiedzanie do 11:00 i po 16:00.",
+      "Shōrō-nagashi 15.08 → grupy 8–10 z opiekunem, stałe punkty zbiórki, zatyczki do uszu, młodsi wracają wcześniej.",
+      "Zgubiony uczestnik w Seulu → podgrupy 1:5 tej samej płci, punkt zbiórki na każdy dzień, jeden kanał łączności; zgubiony stoi w miejscu i dzwoni.",
+      "Odmowa Mszy grupowej w kościele → Msza w hotelu albo w sali parafialnej z kapłanem grupy; udział w Mszy parafialnej.",
+      "Odmowa sióstr w Akicie → nie robimy 1300 km „dla Mszy parafialnej”; wchodzi wariant wariant 4 (Sendai)."
+    ],
+    "joban": "Rano 3 sierpnia, w drodze z Iwaki do Matsushimy, autostrada wzdłuż wybrzeża (Jōban) na odcinku ok. 40 km mija w odległości kilku kilometrów elektrownię Fukushima Daiichi, uszkodzoną przez tsunami w 2011 r. Autostrada jest otwarta dla wszystkich od 2015 r. Dawka promieniowania za jeden przejazd to ok. 0,37 mikrosiwerta (pomiar z 2015 r.) — mniej niż z ok. 10 minut lotu samolotem; sam lot Warszawa–Tokio daje kilkadziesiąt razy więcej. Jeśli rodzice nie zaakceptują tej trasy, pierwszą noc spędzamy w Utsunomiyi i jedziemy autostradą w głębi lądu (dzień 3 sierpnia dłuższy o ok. 1 godzinę). Decyzja: 15.12.2026.",
+    "checklista": [
+      {
+        "co": "Faks do sióstr w Akicie (018-868-4728): Msza grupowa 3.08, ok. 17:00 / 15:45–18:00",
+        "kto": "Jakub, kapłan grupy",
+        "termin": "30.11.2026; wariant A/B do 31.01.2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Blok lotów Haneda–Gimpo 4.08 wieczorem (2–3 rejsy)",
+        "kto": "Artur",
+        "termin": "zapytanie teraz; rezerwacja po rozkładzie lato 2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Camellia Line: zapytanie grupowe 11.08, 90 osób",
+        "kto": "Artur",
+        "termin": "teraz; kalendarz ok. lutego 2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Noclegi z bezpłatną anulacją: Iwaki/Mito/Utsunomiya 2/3.08, Kitakami albo Akita 3/4.08, Nagasaki 12–17.08 (3 zapytania)",
+        "kto": "Artur",
+        "termin": "30.11–15.12.2026",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Noclegi Seul 4–6.08, ok. 90 łóżek (kryterium B1+)",
+        "kto": "Artur",
+        "termin": "15.12.2026",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "polskie biuro ŚDM (KBO): identyfikatory i plecaki 5.08, sektor na powitanie",
+        "kto": "Jakub",
+        "termin": "15.12.2026",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Autokary: Narita 2.08; Tōhoku 3–4.08 z 2 kierowcami i lukami; Kiusiu–Kansai 12–20.08; Korea 10.08",
+        "kto": "Artur / japońskie biuro",
+        "termin": "31.12.2026",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Niepokalanów → franciszkanie w Nagasaki (Msza 14.08 w Hongochi)",
+        "kto": "Jakub",
+        "termin": "31.12.2026",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Hiroszima 17.08, Osaka 18–20.08, ewentualnie trybuny Kantō (w wariancie 2 i ruszy sprzedaż)",
+        "kto": "Artur",
+        "termin": "28.02.2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Msze grupowe: Akita (albo wariant awaryjny), Jeoldusan, Solmoe, Oryundae, Hirado, Shitsu, Urakami (biuro przy Ōurze), Unzen, Yamaguchi, Kioto, Osaka",
+        "kto": "kapłan grupy",
+        "termin": "31.03.2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Ubezpieczenie: ochrona 4–5.08 przy B1+; klauzula terroru; polisa rezygnacji na 21 biletów imiennych",
+        "kto": "Jakub",
+        "termin": "przed wpłatą",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "K-ETA na 2027 (zakładamy obowiązek, 10 000 KRW) i Visit Japan Web",
+        "kto": "Asystent",
+        "termin": "31.03.2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Wpłata za pakiet do KBO / rejestracja w komitecie w Seulu (LOC)",
+        "kto": "Jakub",
+        "termin": "15.05.2027 / 31.05.2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Godziny wydarzeń ŚDM, miejsce spotkania z Kiko",
+        "kto": "Asystent",
+        "termin": "VI–VII 2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Zamknięcie listy na 90 osobach i regulamin bagażu (65 cm / 20 kg)",
+        "kto": "Jakub / Artur",
+        "termin": "15.12.2026",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Decyzja o cenie dla rodziców (przedział 14 400–15 200 zł)",
+        "kto": "Jakub",
+        "termin": "31.01.2027, przed II ratą",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Zgody rodziców, kwestionariusze, ubezpieczeniowe oświadczenia, paszporty i wizy/ETE — zbiorczo, bez list imiennych na tej stronie",
+        "kto": "organizatorzy",
+        "termin": "przed wpłatami i wylotem",
+        "status": "do uzupełnienia"
+      }
+    ]
+  },
+  "model": {
+    "osob": 90,
+    "kurs_jpy": 0.025,
+    "pozycje": [
+      {
+        "id": "loty_qatar",
+        "grupa": "Loty",
+        "pozycja": "Qatar WAW–Narita / Kansai–WAW",
+        "jednostka": "os",
+        "kwota": 4900,
+        "zrodlo": "Bilety kupione (FunFly/Qatar), kosztorys Artura 22.09.2026.",
+        "status": "opłacone — bez rezerwy"
+      },
+      {
+        "id": "lot_seul",
+        "grupa": "Loty",
+        "pozycja": "Haneda–Gimpo 4.08 wieczór (NH867/OZ1035)",
+        "jednostka": "os",
+        "kwota": 504,
+        "zrodlo": "Szacunek Artura (¥18 000) dla lotu Tokio–Seul; taryfa grupowa może dodać ok. 250 zł. Lot krótki (ok. 2 h 15 min), na Hanedzie wystarczą ok. 2 h przed odlotem.",
+        "status": "szacunek"
+      },
+      {
+        "id": "pakiet",
+        "grupa": "Pakiet ŚDM",
+        "pozycja": "Pakiet B1+ (190 USD × 3,75)",
+        "jednostka": "os",
+        "kwota": 712.5,
+        "zrodlo": "Kosztorys Artura, kurs 1 USD = 3,75 zł.",
+        "status": "szacunek"
+      },
+      {
+        "id": "prom",
+        "grupa": "Prom",
+        "pozycja": "New Camellia Busan–Hakata + opłaty portowe",
+        "jednostka": "os",
+        "kwota": 322,
+        "zrodlo": "Kosztorys Artura, ¥11 500, taryfa grupowa.",
+        "status": "szacunek"
+      },
+      {
+        "id": "bus_wschod",
+        "grupa": "Transport lądowy",
+        "pozycja": "Autokary Tōhoku 2–4.08 (2 autokary, 2 kierowców)",
+        "jednostka": "grupa",
+        "kwota": 40500,
+        "zrodlo": "plan z 15.11.2026: transport pętli wariant 1 ok. 450 zł/os (2 × ok. ¥810 000). Do oferty przewoźnika.",
+        "status": "szacunek"
+      },
+      {
+        "id": "bus_korea",
+        "grupa": "Transport lądowy",
+        "pozycja": "Autokary Korea: Gimpo–Mapo 4.08 i Seul–Solmoe–Busan 10.08",
+        "jednostka": "grupa",
+        "kwota": 16380,
+        "zrodlo": "Artur: Seul–Busan 152 zł/os + transfer z Gimpo ok. 30 zł/os.",
+        "status": "szacunek"
+      },
+      {
+        "id": "bus_zachod",
+        "grupa": "Transport lądowy",
+        "pozycja": "Autokary Kiusiu–Kansai 12–20.08 (9 dni)",
+        "jednostka": "grupa",
+        "kwota": 110250,
+        "zrodlo": "plan z 15.11.2026: transport zachodu ¥43–55 tys./os; środek ¥49 000 = 1225 zł/os.",
+        "status": "szacunek"
+      },
+      {
+        "id": "bagaz",
+        "grupa": "Transport lądowy",
+        "pozycja": "Ciężarówka bagażowa w Japonii (opcja)",
+        "jednostka": "grupa",
+        "kwota": 0,
+        "zrodlo": "Brak w wariancie bazowym. Opcja: ok. 100 tys. ¥/dzień × 12 dni [zgaduję] zamiast trzeciego autokaru.",
+        "status": "opcja"
+      },
+      {
+        "id": "komunikacja",
+        "grupa": "Transport lądowy",
+        "pozycja": "Metro / karty miejskie 5.08, prom na Miyajimę, drobne",
+        "jednostka": "os",
+        "kwota": 60,
+        "zrodlo": "Założenie: karty T-money 5.08 i prom 18.08.",
+        "status": "szacunek"
+      },
+      {
+        "id": "nocleg_wschod",
+        "grupa": "Noclegi",
+        "pozycja": "Noclegi 2/3 i 3/4.08 (Iwaki, Kitakami)",
+        "jednostka": "os",
+        "kwota": 400,
+        "zrodlo": "plan z 15.11.2026: hotele pętli wariant 1 ok. 2 × 200 zł/os.",
+        "status": "szacunek"
+      },
+      {
+        "id": "nocleg_seul",
+        "grupa": "Noclegi",
+        "pozycja": "Seul Mapo, 2 noce (4–6.08)",
+        "jednostka": "os",
+        "kwota": 580,
+        "zrodlo": "plan z 15.11: ok. 290 zł/noc w tygodniu ŚDM (przypuszczenie); Artur 174 zł poza szczytem.",
+        "status": "szacunek"
+      },
+      {
+        "id": "nocleg_busan",
+        "grupa": "Noclegi",
+        "pozycja": "Busan, 1 noc (10/11.08)",
+        "jednostka": "os",
+        "kwota": 120,
+        "zrodlo": "Artur 87 zł; podniesione do 120 zł na sierpień (założenie).",
+        "status": "szacunek"
+      },
+      {
+        "id": "nocleg_nagasaki",
+        "grupa": "Noclegi",
+        "pozycja": "Nagasaki, 5 nocy (12–17.08)",
+        "jednostka": "os",
+        "kwota": 1800,
+        "zrodlo": "plan z 15.11: ¥14–20 tys./noc; przyjęto ¥14 400 = 360 zł/noc.",
+        "status": "szacunek"
+      },
+      {
+        "id": "nocleg_hiroszima",
+        "grupa": "Noclegi",
+        "pozycja": "Hiroszima, 1 noc (17/18.08)",
+        "jednostka": "os",
+        "kwota": 450,
+        "zrodlo": "plan z 15.11 i asystent: ¥16–22 tys.; przyjęto ¥18 000.",
+        "status": "szacunek"
+      },
+      {
+        "id": "nocleg_osaka",
+        "grupa": "Noclegi",
+        "pozycja": "Osaka, 2 noce (18–20.08)",
+        "jednostka": "os",
+        "kwota": 760,
+        "zrodlo": "Przyjęto ¥15 200 = 380 zł/noc (do ofert).",
+        "status": "szacunek"
+      },
+      {
+        "id": "jedzenie_jp",
+        "grupa": "Wyżywienie",
+        "pozycja": "Wyżywienie w Japonii, 12 dni × ¥4 500",
+        "jednostka": "os",
+        "kwota": 1350,
+        "zrodlo": "Stawka dzienna Artura (¥4 500) × dni w Japonii planie z 15.11, kurs plan z 15.11.",
+        "status": "szacunek"
+      },
+      {
+        "id": "jedzenie_kr",
+        "grupa": "Wyżywienie",
+        "pozycja": "Wyżywienie w Korei poza pakietem, 4 dni",
+        "jednostka": "os",
+        "kwota": 406,
+        "zrodlo": "Artur: ok. 101,50 zł/dzień; planie z 15.11: 4–5.08 i 10–11.08.",
+        "status": "szacunek"
+      },
+      {
+        "id": "wstepy",
+        "grupa": "Program i wstępy",
+        "pozycja": "Wstępy, ofiary, muzea",
+        "jednostka": "os",
+        "kwota": 300,
+        "zrodlo": "Artur 230 zł; planie z 15.11 ma więcej punktów (Tōshōgū, Himeji, muzea bomby, Itsukushima).",
+        "status": "szacunek"
+      },
+      {
+        "id": "karimata",
+        "grupa": "Program i wstępy",
+        "pozycja": "Karimata i śpiwór na czuwanie",
+        "jednostka": "os",
+        "kwota": 101.5,
+        "zrodlo": "Kosztorys Artura.",
+        "status": "szacunek"
+      },
+      {
+        "id": "materialy",
+        "grupa": "Program i wstępy",
+        "pozycja": "Materiały grupowe, książeczka",
+        "jednostka": "os",
+        "kwota": 140,
+        "zrodlo": "Kosztorys Artura.",
+        "status": "szacunek"
+      },
+      {
+        "id": "ubezpieczenie",
+        "grupa": "Ubezpieczenie",
+        "pozycja": "Generali Elastyczny 1",
+        "jednostka": "os",
+        "kwota": 170.59,
+        "zrodlo": "Oferta 18.09.2026, kalk. 1000373683822 (15 353 zł / 90 os.).",
+        "status": "szacunek"
+      },
+      {
+        "id": "eta_esim",
+        "grupa": "Inne",
+        "pozycja": "K-ETA (29 zł) i eSIM (120 zł)",
+        "jednostka": "os",
+        "kwota": 149,
+        "zrodlo": "Kosztorys Artura.",
+        "status": "szacunek"
+      },
+      {
+        "id": "kadra",
+        "grupa": "Kadra i obsługa",
+        "pozycja": "Pilot/przewodnik lokalny Japonia 12 dni + Korea 4 dni",
+        "jednostka": "grupa",
+        "kwota": 15480,
+        "zrodlo": "Założenie: ¥40 000/dzień w Japonii (12 000 zł) + ok. 870 zł/dzień w Korei (3 480 zł).",
+        "status": "szacunek"
+      },
+      {
+        "id": "biuro",
+        "grupa": "Kadra i obsługa",
+        "pozycja": "Japońskie biuro licencjonowane (dodatkowa marża)",
+        "jednostka": "os",
+        "kwota": 0,
+        "zrodlo": "Wariant bazowy: licencjonowane biuro, bez dodatkowej marży (oferty netto / do negocjacji). Opcja +8% dodaje ok. 400 zł/os.",
+        "status": "szacunek"
+      },
+      {
+        "id": "fuji",
+        "grupa": "Program i wstępy",
+        "pozycja": "Moduł Fuji (średnio na uczestnika)",
+        "jednostka": "os",
+        "kwota": 0,
+        "zrodlo": "Brak modułu w wariancie bazowym.",
+        "status": "szacunek"
+      },
+      {
+        "id": "sen",
+        "grupa": "Noclegi",
+        "pozycja": "Opcja lepszego snu 2.08 (Tokio + Hayabusa)",
+        "jednostka": "os",
+        "kwota": 0,
+        "zrodlo": "Brak w wariancie bazowym.",
+        "status": "szacunek"
+      },
+      {
+        "id": "rezerwa",
+        "grupa": "Rezerwa",
+        "pozycja": "Rezerwa kursowa i na nieprzewidziane",
+        "jednostka": "proc",
+        "kwota": 6,
+        "zrodlo": "Artur: 6% kosztów bezpośrednich.",
+        "status": "szacunek"
+      }
+    ],
+    "baza_bezposrednie": 15254.59,
+    "baza_total": 16169.87,
+    "osoby": {
+      "uczestnicy": 90,
+      "gratis": 0,
+      "niepelnoletni": 29,
+      "max": 90,
+      "zrodlo": "90 to górny pułap (lista). Artur: 84 płacących + 6 miejsc bezpłatnych — ustawia się polem „Miejsca bezpłatne”. Niepełnoletni: ok. 29 wg listy (do weryfikacji)."
+    },
+    "bez_rezerwy": [
+      "loty_qatar",
+      "ubezpieczenie",
+      "materialy",
+      "karimata",
+      "bagaz"
+    ],
+    "bez_rezerwy_uwaga": "Rezerwa kursowa liczy się tylko od pozycji jeszcze nieopłaconych i zależnych od kursu (JPY, KRW, USD). Bilety Qatar są kupione, polisa i materiały są w złotych.",
+    "fuji_na_osobe": 1500,
+    "fuji_zrodlo": "[szacunek] shinkansen Nagasaki–Shin-Fuji, autobus na 5. stację, schronisko, opłata 4 000 ¥, shinkansen do Osaki: ok. 55–65 tys. ¥. Wcześniej 1 000 zł (zaniżone).",
+    "loty_rezygnacje": {
+      "grupowe": 69,
+      "imienne": 21,
+      "klauzula_pct": 15,
+      "cena": 4900,
+      "zrodlo": "Transport: 69 miejsc grupowych z klauzulą ok. 15% rezygnacji + 21 biletów imiennych bez zmiany nazwiska."
+    },
+    "flota": {
+      "jp": {
+        "nazwa": "Japonia",
+        "linie": [
+          "bus_wschod",
+          "bus_zachod"
+        ],
+        "duzy": {
+          "nazwa": "duży 49 miejsc",
+          "miejsca": 49,
+          "bagaz": 40
+        },
+        "sredni": {
+          "nazwa": "średni ok. 27 miejsc",
+          "miejsca": 27,
+          "bagaz": 15,
+          "koszt": 0.75
+        },
+        "kadra_na_pojazd": 1,
+        "zrodlo": "[fakt: trafficnews.jp] duży autokar: 49 miejsc zwykłych (4×11 + 5) + 11 dostawek; dostawek nie liczymy (autostrady). Luki: ok. 40 dużych walizek na autokar [szacunek z planu 15.11]. Średni autokar ok. 75% ceny dużego [zgaduję]."
+      },
+      "kr": {
+        "nazwa": "Korea",
+        "linie": [
+          "bus_korea"
+        ],
+        "duzy": {
+          "nazwa": "45인승 (ok. 44 pasażerów)",
+          "miejsca": 44,
+          "bagaz": 40
+        },
+        "maly": {
+          "nazwa": "mały bus ok. 25 miejsc",
+          "miejsca": 25,
+          "bagaz": 15,
+          "koszt": 0.5
+        },
+        "kadra_na_pojazd": 1,
+        "zrodlo": "[fakt: sidae.com] standard to autokar 45-miejscowy; [zgaduję] liczba obejmuje kierowcę, czyli ok. 44 pasażerów. Mały bus ok. połowy ceny dużego [zgaduję]. Autokary w Korei tylko 4.08, 10.08 i 11.08 — w tygodniu ŚDM metro."
+      }
+    }
+  },
+  "warianty": {
+    "E2": {
+      "ukryj": [
+        "kitakami"
+      ],
+      "pokaz": [
+        "akita_noc"
+      ],
+      "dni": {
+        "2027-08-03": {
+          "miejsce": "Iwaki → Matsushima → Akita (parada Kantō)",
+          "program": "Jutrznia 6:15, wyjazd 7:00. Matsushima 9:45–11:30. Yuzawadai ok. 15:45–17:30: Msza (za zgodą sióstr). Hotel w centrum Akity, wieczorem pieszo na paradę Kantō 19:10–21:00.",
+          "nocleg": "Akita, centrum",
+          "miejsca": "iwaki,matsushima,akita,akita_noc",
+          "uwagi": "wariant 2: kierowcy kończą służbę po dojeździe do Akity. Rezerwa noclegu: Ōmagari / Kakunodate.",
+          "kierowcy": {
+            "start": "06:30",
+            "koniec": "18:30",
+            "km": 440,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp"
+          }
+        },
+        "2027-08-04": {
+          "miejsce": "Akita → Nikkō → Haneda → Gimpo → Seul",
+          "program": "Pobudka 4:00, wyjazd 4:45. Nikkō ok. 12:00–13:15. Haneda, loty 20:05 do Gimpo. Msza 4.08 osobno (np. Nikkō).",
+          "km": "ok. 430 + 170",
+          "czas_h": "ok. 7 + dojazd",
+          "miejsca": "akita_noc,nikko,haneda,gimpo,mapo",
+          "uwagi": "wariant 2: bardzo krótka noc przed ŚDM.",
+          "kierowcy": {
+            "start": "04:15",
+            "koniec": "17:30",
+            "km": 600,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp"
+          }
+        }
+      },
+      "log": [
+        "wariant 2: noc 3/4.08 w Akicie w czasie Kantō — rezerwacja pilna, trybuny na paradę do 28.02.2027.",
+        "wariant 2: wyjazd 4.08 o 4:45, 2 kierowców na odcinek Akita–Nikkō–Haneda."
+      ]
+    },
+    "E3": {
+      "ukryj": [
+        "kitakami"
+      ],
+      "pokaz": [
+        "akita_noc"
+      ],
+      "dni": {
+        "2027-08-03": {
+          "miejsce": "Iwaki → Matsushima → Akita (parada Kantō)",
+          "program": "Jak w wariancie 2: Matsushima, Msza w Akicie, parada Kantō, nocleg w centrum Akity.",
+          "nocleg": "Akita, centrum",
+          "miejsca": "iwaki,matsushima,akita,akita_noc",
+          "uwagi": "wariant 3 (wcześniejszy plan)."
+        },
+        "2027-08-04": {
+          "miejsce": "Akita → (pociąg) Utsunomiya → Nikkō → Haneda",
+          "program": "5:15 pobudka. Komachi 6: Akita 6:09 → Sendai 8:16, Yamabiko → Utsunomiya 9:28. Lokalny autokar do Nikkō, Tōshōgū ok. 11:30–13:15. Autokary z walizkami jadą z Akity ok. 5:30 prosto do Nikkō i wiozą grupę na Hanedę.",
+          "transport": "Pociąg (ludzie) + autokary (bagaż)",
+          "km": "ok. 430 autokarem",
+          "czas_h": "pociąg ok. 3,3 h",
+          "miejsca": "akita_noc,utsunomiya,nikko,haneda,gimpo,mapo",
+          "uwagi": "Sześć ogniw jednego dnia; przy braku 90 miejsc w Komachi ten wariant przestaje być możliwy."
+        }
+      },
+      "log": [
+        "wariant 3: grupowe miejscówki JR Komachi 6 + Yamabiko dla 90 osób do 30.11.2026.",
+        "wariant 3: walizki i ludzie osobno — pakowanie plecaków na 4.08."
+      ]
+    },
+    "E4": {
+      "ukryj": [
+        "akita",
+        "kitakami",
+        "iwaki"
+      ],
+      "pokaz": [
+        "mito",
+        "sendai"
+      ],
+      "dni": {
+        "2027-08-02": {
+          "miejsce": "Doha → Narita → Mito",
+          "nocleg": "Mito",
+          "miejsca": "doha,narita,mito",
+          "program": "QR806 ląduje na Naricie o 19:10. Odprawa do ok. 21:00. Autokary do Mito, przyjazd ok. 23:00.",
+          "km": "ok. 110",
+          "czas_h": "ok. 1,5",
+          "kierowcy": {
+            "start": "18:30",
+            "koniec": "23:15",
+            "km": 110,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp"
+          }
+        },
+        "2027-08-03": {
+          "miejsce": "Mito → Sendai → Matsushima → Sendai",
+          "program": "Wyjazd 8:00, Sendai 11:30: Muzeum Miasta Sendai (Hasekura), pomnik męczenników 1624, Msza w katedrze Mototerakōji. Po południu Matsushima (Zuiganji, Godaidō).",
+          "nocleg": "Sendai",
+          "miejsca": "mito,sendai,matsushima,zuiganji",
+          "km": "ok. 250 + 30",
+          "czas_h": "ok. 3,5",
+          "uwagi": "wariant 4: Akita odpada. Maryjny wątek przejmuje Hongochi 14.08 (grota z Lourdes Kolbego).",
+          "kierowcy": {
+            "start": "07:30",
+            "koniec": "19:00",
+            "km": 280,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp"
+          }
+        },
+        "2027-08-04": {
+          "miejsce": "Sendai → Nikkō → Haneda → Gimpo → Seul",
+          "program": "Wyjazd 7:30, Nikkō 11:15–13:15 (Tōshōgū), Haneda, loty 20:05 do Gimpo.",
+          "km": "ok. 270 + 170",
+          "czas_h": "ok. 3,75 + dojazd",
+          "miejsca": "sendai,nikko,haneda,gimpo,mapo",
+          "uwagi": "wariant 4 mieści się w limicie jednego kierowcy."
+        }
+      },
+      "log": [
+        "wariant 4: bez sanktuarium w Akicie — nie robimy 1300 km dla Mszy parafialnej.",
+        "wariant 4: jeden kierowca na dzień wystarcza; nocleg 2.08 w Mito, 3.08 w Sendai."
+      ]
+    },
+    "noc_mito": {
+      "ukryj": [
+        "iwaki"
+      ],
+      "pokaz": [
+        "mito"
+      ],
+      "dni": {
+        "2027-08-02": {
+          "miejsce": "Doha → Narita → Mito",
+          "nocleg": "Mito",
+          "miejsca": "doha,narita,mito",
+          "km": "ok. 110",
+          "czas_h": "ok. 1,5",
+          "program": "QR806 ląduje o 19:10. Odprawa do ok. 21:00. Autokary do Mito, przyjazd ok. 23:00 (+1 h snu).",
+          "kierowcy": {
+            "start": "18:30",
+            "koniec": "23:15",
+            "km": 110,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp"
+          }
+        },
+        "2027-08-03": {
+          "miejsce": "Mito → Matsushima → Akita → Kitakami",
+          "miejsca": "mito,matsushima,zuiganji,akita,kitakami",
+          "km": "ok. 300 + 260 + 120",
+          "czas_h": "ok. 9,5 z przerwami",
+          "program": "Jutrznia 5:30, wyjazd 6:15. Matsushima ok. 10:00–11:15: Zuiganji, Godaidō, cisza za ofiary tsunami 2011, katecheza o poselstwie Hasekury. Akita (Yuzawadai) ok. 16:30–18:30: Msza w sanktuarium za zgodą sióstr, zawierzenie Niepokalanej. Przyjazd do Kitakami ok. 20:30.",
+          "uwagi": "Wariant z noclegiem w Mito: dłuższy dojazd do Matsushimy, Msza w Akicie raczej ok. 16:30–17:00. Godziny do potwierdzenia z przewoźnikiem.",
+          "kierowcy": {
+            "start": "05:45",
+            "koniec": "21:00",
+            "km": 680,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp",
+            "uwaga": "Godziny szacunkowe — do potwierdzenia z przewoźnikiem."
+          }
+        }
+      },
+      "log": [
+        "Nocleg 2.08 w Mito — pasuje, gdy Msza w Akicie będzie ok. 17:00."
+      ]
+    },
+    "noc_utsu": {
+      "ukryj": [
+        "iwaki"
+      ],
+      "pokaz": [
+        "utsunomiya"
+      ],
+      "dni": {
+        "2027-08-02": {
+          "miejsce": "Doha → Narita → Utsunomiya",
+          "nocleg": "Utsunomiya",
+          "miejsca": "doha,narita,utsunomiya",
+          "km": "ok. 130",
+          "czas_h": "ok. 2",
+          "program": "QR806 ląduje o 19:10. Odprawa do ok. 21:00. Autokary do Utsunomiya przez Tōhoku (bez Jōban)."
+        },
+        "2027-08-03": {
+          "km": "ok. 200 + 260 + 120",
+          "czas_h": "ok. 9 z przerwami",
+          "uwagi": "Wariant Utsunomiya: dłuższy dojazd do Matsushimy; Msza w Akicie raczej ok. 16:30–17:00.",
+          "miejsce": "Utsunomiya → Matsushima → Akita → Kitakami",
+          "miejsca": "utsunomiya,matsushima,zuiganji,akita,kitakami"
+        }
+      },
+      "log": [
+        "Nocleg 2 sierpnia w Utsunomiya: nie jedziemy autostradą Jōban (sąsiedztwo strefy Fukushimy)."
+      ]
+    },
+    "sen_tokio": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {
+        "2027-08-02": {
+          "miejsce": "Doha → Narita → Tokio (Ueno)",
+          "nocleg": "Tokio / Ueno",
+          "program": "QR806 o 19:10, odprawa, transfer do Tokio, sen ok. 7 h.",
+          "kierowcy": {
+            "start": "18:30",
+            "koniec": "22:30",
+            "km": 70,
+            "kierowcow": 1,
+            "zaloga": "narita",
+            "kraj": "jp"
+          }
+        },
+        "2027-08-03": {
+          "transport": "Hayabusa ok. 7:30 do Sendai, dalej autokar (walizki autokarem)",
+          "uwagi": "Opcja lepszego snu: ok. 5 h w autokarze zamiast 8 h."
+        }
+      },
+      "log": [
+        "Opcja lepszego snu: 90 osób w Hayabusa 3.08 — rezerwacja grupowa JR; walizki jadą autokarem."
+      ]
+    },
+    "nagasaki_tani": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {},
+      "log": [
+        "Nagasaki: tani nocleg w ośrodku lub gościnie kościelnej — sprawdzić 90 miejsc, materace, łazienki, ciszę nocną w Obon."
+      ]
+    },
+    "A1": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {
+        "2027-08-04": {
+          "nocleg": "Zakwaterowanie pakietu A1+ (organizator ŚDM)"
+        },
+        "2027-08-05": {
+          "nocleg": "Zakwaterowanie pakietu A1+"
+        }
+      },
+      "log": [
+        "A1+: noclegi 4–6.08 zapewnia organizator ŚDM; nieletni osobno, 1 opiekun na 5 osób."
+      ]
+    },
+    "fuji": {
+      "ukryj": [],
+      "pokaz": [
+        "fuji"
+      ],
+      "dni": {
+        "2027-08-17": {
+          "uwagi": "MODUŁ FUJI: wchodzący jadą shinkansenem do Shin-Fuji (ok. 6–6,5 h), autobus 15:00 na 5. stację Fujinomiya (16:47), nocleg w schronisku na 8. stacji. Reszta grupy bez zmian."
+        },
+        "2027-08-18": {
+          "uwagi": "MODUŁ FUJI: wschód słońca na szczycie, zejście, autobus do Shin-Fuji, shinkansen do Osaki (ok. 2 h). Wieczorem dołączają w Osace. Plan B przy tajfunie: dołączenie w Hiroszimie."
+        }
+      },
+      "log": [
+        "Fuji: tylko pełnoletni z zaświadczeniem lekarskim; wyjście kwalifikacyjne (np. Babia Góra) wiosną.",
+        "Fuji: osobny kierownik i opiekun; rozszerzenie polisy powyżej 3000–3200 m."
+      ]
+    },
+    "trzeci": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {},
+      "log": [
+        "Trzeci autokar w Japonii: trzecia ekipa kierowców, osobne luki — rozdział bagażu na 3 autokary."
+      ]
+    },
+    "bez_biura": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {},
+      "log": [
+        "Bez biura: sami zgłaszamy grupę w parafiach i rezerwujemy autokary po japońsku — potrzebny tłumacz."
+      ]
+    },
+    "bagazowka": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {},
+      "log": [
+        "Ciężarówka bagażowa: walizki jadą osobno między bazami w Japonii — lista rozładunku w każdej bazie, plombowane worki na rzeczy dzienne w autokarze."
+      ]
+    }
+  },
+  "wplaty": {
+    "zrodlo": "Harmonogram z kosztorysu Artura 22.09.2026 (karta Wpłaty): udziały 20/20/20/25/15% i miesiące. Kwoty w arkuszu liczone były od 13 800 zł i 84 płacących; tutaj udziały są te same, a kwoty liczą się od aktualnego scenariusza × 90 osób. Wcześniejszy harmonogram z folderu 12.08.2026 (I rata 2 000 zł do 15.08.2026) jest nieaktualny.",
+    "konto": {
+      "nazwa": "Parafia św. Zygmunta",
+      "iban": "PL40 1240 1037 1111 0011 6698 9406",
+      "tytul": "Seul 2027, Imię i Nazwisko uczestnika – [rata]",
+      "uwaga": "Dane z komunikatu w folderze z 12.08.2026. Elastyczność rat — przez kontakt z Arturem. Nie wpisujemy tu nazwisk uczestników."
+    },
+    "uwaga_status": "Status na stronie publicznej jest wyłącznie zbiorczy (suma i liczba). Wpłaty imienne, ogólne od darczyńców oraz nazwiska są w prywatnym panelu organizatorów. Brak potwierdzonego zbiorczego stanu wpłat (stan na 15.11.2026).",
+    "platnicy": 90,
+    "uwaga_platnicy": "Model strony liczy 90 płacących. W podsumowaniu Artura było 84 płacących i 6 miejsc bezpłatnych, choć w założeniach kadra płaci pełną odpłatność. Do rozstrzygnięcia przed wysyłką harmonogramu do rodziców.",
+    "raty": [
+      {
+        "id": "I",
+        "rata": "I rata",
+        "termin": "2026-11-30",
+        "termin_zrodlo": "listopad 2026",
+        "udzial": 20,
+        "przeznaczenie": "Zaliczka; lot Tokio–Seul i prom",
+        "liczba_wplaconych": "",
+        "suma_wplynela": "",
+        "uwagi": "Termin w źródle podany jako miesiąc; przyjęto ostatni dzień miesiąca jako termin roboczy.",
+        "kwota_os_zamrozona": ""
+      },
+      {
+        "id": "II",
+        "rata": "II rata",
+        "termin": "2027-02-28",
+        "termin_zrodlo": "luty 2027",
+        "udzial": 20,
+        "przeznaczenie": "Noclegi Seul i Kioto, rejestracja ŚDM",
+        "liczba_wplaconych": "",
+        "suma_wplynela": "",
+        "uwagi": "Cena dla rodziców ma być ustalona do 31.01.2027, przed tą ratą. Termin roboczy: ostatni dzień lutego.",
+        "kwota_os_zamrozona": ""
+      },
+      {
+        "id": "III",
+        "rata": "III rata",
+        "termin": "2027-04-30",
+        "termin_zrodlo": "kwiecień 2027",
+        "udzial": 20,
+        "przeznaczenie": "Noclegi Akita, Busan, Nagasaki",
+        "liczba_wplaconych": "",
+        "suma_wplynela": "",
+        "uwagi": "",
+        "kwota_os_zamrozona": ""
+      },
+      {
+        "id": "IV",
+        "rata": "IV rata",
+        "termin": "2027-06-30",
+        "termin_zrodlo": "czerwiec 2027",
+        "udzial": 25,
+        "przeznaczenie": "Autokary, ubezpieczenie, materiały",
+        "liczba_wplaconych": "",
+        "suma_wplynela": "",
+        "uwagi": "",
+        "kwota_os_zamrozona": ""
+      },
+      {
+        "id": "V",
+        "rata": "V rata",
+        "termin": "2027-07-31",
+        "termin_zrodlo": "lipiec 2027",
+        "udzial": 15,
+        "przeznaczenie": "Rozliczenie, gotówka na trasie",
+        "liczba_wplaconych": "",
+        "suma_wplynela": "",
+        "uwagi": "Ostatnia rata domyka sumę, żeby udziały złożyły się dokładnie do ceny scenariusza.",
+        "kwota_os_zamrozona": ""
+      }
+    ],
+    "uwaga_zamrozenie": "Kwota raty po wysłaniu do rodziców się nie zmienia: wpisz ją w kolumnie „Kwota zamrożona (zł/os.)”. Zmiana scenariusza rozkłada wtedy różnicę tylko na raty jeszcze niezamrożone."
+  },
+  "checklista": [
+    {
+      "id": "fax-akita",
+      "kat": "Terminy kluczowe",
+      "zadanie": "Faks do sióstr w Akicie (018-868-4728): Msza grupowa 3.08, ok. 17:00 / 15:45–18:00",
+      "kto": "Jakub, kapłan grupy",
+      "termin": "2026-11-30",
+      "termin_etykieta": "30.11.2026; wariant A/B do 31.01.2027",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "Pilne. Od odpowiedzi zależy wariant 1 albo 4 (Sendai).",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "petla",
+      "kat": "Terminy kluczowe",
+      "zadanie": "Decyzja o pętli wschodniej (warianty 1–4) i noclegu 2.08 (Iwaki / Mito / Utsunomiya)",
+      "kto": "organizatorzy",
+      "termin": "2026-11-30",
+      "termin_etykieta": "30.11.2026",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "Wariant wariant 1 przestaje być możliwy, jeśli siostry wyznaczą Mszę po godzinie 18:00.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "noclegi-wschod",
+      "kat": "Rezerwacje",
+      "zadanie": "Noclegi z bezpłatną anulacją: 2/3.08 (Iwaki/Mito/Utsunomiya), 3/4.08 (Kitakami albo Akita), Nagasaki 12–17.08 — trzy zapytania naraz",
+      "kto": "Artur",
+      "termin": "2026-12-15",
+      "termin_etykieta": "30.11–15.12.2026",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "seul-lozka",
+      "kat": "Rezerwacje",
+      "zadanie": "Noclegi Seul 4–6.08, blok ok. 90 łóżek z bezpłatną anulacją (kryterium zostania przy B1+)",
+      "kto": "Artur",
+      "termin": "2026-12-15",
+      "termin_etykieta": "15.12.2026",
+      "status": "do zrobienia",
+      "wymagane": "90",
+      "zebrane": "",
+      "uwagi": "Jeśli bloku nie będzie, przejście na A1+ przed wpłatą 15.05.2027.",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "lista-90",
+      "kat": "Terminy kluczowe",
+      "zadanie": "Zamknięcie listy na 90 osobach i regulamin bagażu (jedna walizka 65 cm / 20 kg)",
+      "kto": "Jakub / Artur",
+      "termin": "2026-12-15",
+      "termin_etykieta": "15.12.2026",
+      "status": "do zrobienia",
+      "wymagane": "90",
+      "zebrane": "",
+      "uwagi": "Zbiorczo, bez list imiennych na tej stronie.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "kbo-sektor",
+      "kat": "ŚDM / formalności",
+      "zadanie": "polskie biuro ŚDM (KBO): identyfikatory i plecaki 5.08, pytanie o sektor na powitanie Papieża (biuro@sdmpolska.pl)",
+      "kto": "Jakub",
+      "termin": "2026-12-15",
+      "termin_etykieta": "15.12.2026",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "autokary",
+      "kat": "Rezerwacje",
+      "zadanie": "Autokary: Narita 2.08; Tōhoku 3–4.08 z 2 kierowcami i lukami; Kiusiu–Kansai 12–20.08; Korea 10.08",
+      "kto": "Artur / japońskie biuro",
+      "termin": "2026-12-31",
+      "termin_etykieta": "31.12.2026",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "niepokalanow",
+      "kat": "Program",
+      "zadanie": "Niepokalanów → franciszkanie w Nagasaki (Msza 14.08 w Hongochi / Mugenzai no Sono)",
+      "kto": "Jakub",
+      "termin": "2026-12-31",
+      "termin_etykieta": "31.12.2026",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "cena-rodzice",
+      "kat": "Terminy kluczowe",
+      "zadanie": "Decyzja o cenie komunikowanej rodzicom (przed II ratą)",
+      "kto": "Jakub",
+      "termin": "2027-01-31",
+      "termin_etykieta": "31.01.2027, przed II ratą",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "Wcześniejszy przedział 14 400–15 200 zł nie obejmuje wydzielonej rezerwy z modelu etapu 2.",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "hiroszima-osaka",
+      "kat": "Rezerwacje",
+      "zadanie": "Noclegi Hiroszima 17.08, Osaka 18–20.08; ewentualnie trybuny Kantō (w wariancie 2 i ruszy sprzedaż)",
+      "kto": "Artur",
+      "termin": "2027-02-28",
+      "termin_etykieta": "28.02.2027",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "prom",
+      "kat": "Rezerwacje",
+      "zadanie": "Camellia Line: zapytanie grupowe 11.08, 90 osób",
+      "kto": "Artur",
+      "termin": "2027-02-28",
+      "termin_etykieta": "teraz; kalendarz ok. lutego 2027",
+      "status": "do zrobienia",
+      "wymagane": "90",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "lot-seul",
+      "kat": "Rezerwacje",
+      "zadanie": "Blok lotów Haneda–Gimpo 4.08 wieczorem (2–3 rejsy)",
+      "kto": "Artur",
+      "termin": "2027-03-31",
+      "termin_etykieta": "zapytanie teraz; rezerwacja po rozkładzie lato 2027",
+      "status": "do zrobienia",
+      "wymagane": "90",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "Artur",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "msze",
+      "kat": "Program",
+      "zadanie": "Msze grupowe: Akita (albo wariant awaryjny), Jeoldusan, Solmoe, Oryundae, Hirado, Shitsu, Urakami, Unzen, Yamaguchi, Kioto, Osaka",
+      "kto": "kapłan grupy",
+      "termin": "2027-03-31",
+      "termin_etykieta": "31.03.2027",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "keta",
+      "kat": "Dokumenty i zgody",
+      "zadanie": "K-ETA na 2027 (zakładamy obowiązek, ok. 10 000 KRW) — status zbiorczy wniosków, bez nazwisk",
+      "kto": "Asystent / organizatorzy",
+      "termin": "2027-03-31",
+      "termin_etykieta": "31.03.2027",
+      "status": "do zrobienia",
+      "wymagane": "90",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "vjw",
+      "kat": "Dokumenty i zgody",
+      "zadanie": "Visit Japan Web — egzekwować na odprawie, status zbiorczy",
+      "kto": "organizatorzy",
+      "termin": "2027-07-31",
+      "termin_etykieta": "przed wylotem",
+      "status": "do zrobienia",
+      "wymagane": "90",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "paszporty",
+      "kat": "Dokumenty i zgody",
+      "zadanie": "Paszporty ważne co najmniej do lutego 2028 (6 miesięcy po powrocie 21.08.2027)",
+      "kto": "organizatorzy",
+      "termin": "2027-03-31",
+      "termin_etykieta": "zbieranie dokumentów, przed wylotem",
+      "status": "do uzupełnienia",
+      "wymagane": "90",
+      "zebrane": "",
+      "uwagi": "Tylko liczba zebranych / brakujących. Żadnych numerów paszportów ani nazwisk na stronie.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "zgody",
+      "kat": "Dokumenty i zgody",
+      "zadanie": "Zgody rodziców dla niepełnoletnich (ok. 29 osób wg wieku z listy na Dysku)",
+      "kto": "organizatorzy",
+      "termin": "2027-03-31",
+      "termin_etykieta": "przed wylotem",
+      "status": "do uzupełnienia",
+      "wymagane": "29",
+      "zebrane": "",
+      "uwagi": "Wpisany wiek, bez dat urodzenia — zweryfikować, kto będzie niepełnoletni 1.08.2027. 21 rekordów było bez wieku. Na stronie tylko liczba zbiorcza.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "zgody-notarialne",
+      "kat": "Dokumenty i zgody",
+      "zadanie": "Zgoda notarialna albo sądowa na wyjazd zagraniczny, jeśli jest wymagana",
+      "kto": "organizatorzy",
+      "termin": "2027-05-31",
+      "termin_etykieta": "przed wylotem, gdy dotyczy",
+      "status": "do uzupełnienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "Nie każdy małoletni jej potrzebuje — zależy od sytuacji prawnej opiekunów. Zbiorczo, bez akt.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "medyczne",
+      "kat": "Dokumenty i zgody",
+      "zadanie": "Kwestionariusze medyczne — zebrać i domknąć luki",
+      "kto": "organizatorzy",
+      "termin": "2027-05-31",
+      "termin_etykieta": "przed wylotem",
+      "status": "do uzupełnienia",
+      "wymagane": "90",
+      "zebrane": "",
+      "uwagi": "Na stronie tylko liczba zwróconych ankiet, bez danych medycznych.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "ubezp-terror",
+      "kat": "Ubezpieczenie",
+      "zadanie": "Domknięcie polisy: klauzula pasywnego udziału w aktach terroru (brak w ofercie Generali Elastyczny 1)",
+      "kto": "Jakub",
+      "termin": "2027-01-31",
+      "termin_etykieta": "przed ogłoszeniem rat / przed wpłatą",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "Luka z oferty 18.09.2026, kalk. 1000373683822.",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "ubezp-rezyg",
+      "kat": "Ubezpieczenie",
+      "zadanie": "Ubezpieczenie kosztów rezygnacji dla 21 biletów imiennych Qatar",
+      "kto": "Jakub",
+      "termin": "2027-01-31",
+      "termin_etykieta": "przed ogłoszeniem rat / przed wpłatą",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "Rynkowo ok. 3–6% wartości (w modelu opcja ok. 600 zł/os.).",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "ubezp-wyd",
+      "kat": "Ubezpieczenie",
+      "zadanie": "Ochrona ubezpieczeniowa 4–5.08 przy pakiecie B1+ (program poza zakwaterowaniem pakietu)",
+      "kto": "Jakub",
+      "termin": "2027-01-31",
+      "termin_etykieta": "przed wpłatą",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "kbo-wplata",
+      "kat": "ŚDM / formalności",
+      "zadanie": "Wpłata za pakiet do KBO (do 15.05.2027) oraz rejestracja w komitecie w Seulu (LOC) dla pakietów z noclegiem (do 31.05.2027)",
+      "kto": "Jakub",
+      "termin": "2027-05-15",
+      "termin_etykieta": "15.05.2027 / 31.05.2027",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "Po wpłacie do KBO zwrotu nie ma. A1+ decyzja przed 15.05.2027.",
+      "osoba": "Jakub Ś.",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "wyd-godziny",
+      "kat": "ŚDM / formalności",
+      "zadanie": "Godziny wydarzeń ŚDM i miejsce spotkania z Kiko",
+      "kto": "Asystent",
+      "termin": "2027-07-15",
+      "termin_etykieta": "VI–VII 2027",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "ochrona",
+      "kat": "Dokumenty i zgody",
+      "zadanie": "Standardy ochrony małoletnich na wyjeździe (zasady parafii i diecezji, zakwaterowanie, ścieżka zgłaszania) — bez danych osobowych na stronie",
+      "kto": "organizatorzy",
+      "termin": "2027-05-31",
+      "termin_etykieta": "przed wylotem",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "Agenda spotkania z 28.09.2026 wciąż jest dobrą ramą.",
+      "osoba": "",
+      "zrobione": false,
+      "komentarz": "",
+      "zmieniono": ""
+    }
+  ],
+  "dni_org": {
+    "2027-08-01": {
+      "uwagi": "Bilety potwierdzone."
+    },
+    "2027-08-02": {
+      "uwagi": "Pierwsza noc krótka: przyjazd ok. 0:00. Rano 3.08 trasa wzdłuż wybrzeża mija strefę wokół elektrowni Fukushima — dawka za przejazd mniejsza niż z 10 minut lotu (szczegóły: Logistyka). Alternatywa bez tej trasy: nocleg w Utsunomiyi.",
+      "kierowcy": {
+        "start": "18:30",
+        "koniec": "00:15",
+        "km": 200,
+        "kierowcow": 2,
+        "zaloga": "tohoku",
+        "kraj": "jp",
+        "uwaga": "Ta sama załoga co 3.08 — sprawdzić u przewoźnika (wyjątek dla podwójnej załogi albo inna załoga na dojazd z Narity)."
+      }
+    },
+    "2027-08-03": {
+      "uwagi": "Wariant 1 (rekomendacja): bez parady Kantō. Msza w Akicie zależy od zgody sióstr — sanktuarium jest w sierpniu zamknięte, prosimy o wyjątek (faks 018-868-4728 do 30.11.2026). Jeśli Msza będzie po 18:00, przechodzimy na wariant 2 (nocleg w Akicie, parada wieczorem). Jeśli siostry odmówią — wariant 4: Sendai zamiast Akity.",
+      "kierowcy": {
+        "start": "06:30",
+        "koniec": "20:30",
+        "km": 560,
+        "kierowcow": 2,
+        "zaloga": "tohoku",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-04": {
+      "uwagi": "Powitanie Papieża 5.08 jest must see — stąd lot 4.08 wieczorem. Lot do Seulu jest krótki: na Hanedzie wystarczą ok. 2 h przed odlotem (twardy limit: zamknięcie odprawy grupowej w umowie). Zyskana godzina idzie na sen i odpoczynek kierowców (ok. 11 h przerwy po 3.08). Zapas: poranne rejsy 5.08 (JL91 8:20, NH861 8:40). W wariancie 2 pobudka 4:00, wyjazd 4:45.",
+      "kierowcy": {
+        "start": "07:15",
+        "koniec": "18:00",
+        "km": 555,
+        "kierowcow": 2,
+        "zaloga": "tohoku",
+        "kraj": "jp"
+      },
+      "bufory": [
+        {
+          "co": "lot NH867 / OZ1035 Haneda–Gimpo",
+          "przyjazd": "17:30",
+          "odjazd": "20:05",
+          "min_h": 2
+        }
+      ]
+    },
+    "2027-08-05": {
+      "uwagi": "Pytanie do polskiego biura ŚDM (KBO) (biuro@sdmpolska.pl) do 15.12.2026: czy przy B1+ można 5.08 odebrać identyfikatory i wejść do sektora. Nie planujemy Mszy zaraz po przylocie o północy."
+    },
+    "2027-08-06": {
+      "uwagi": "Droga Krzyżowa jest w planie świadomie (u Artura jej nie było). Jeśli czas pozwoli, rano można dołożyć Myeongdong / Seosomun, ale priorytet ma Droga Krzyżowa."
+    },
+    "2027-08-07": {
+      "uwagi": "Podgrupy z opiekunem 1:5 tej samej płci (zasada ŚDM). Punkt zbiórki i jeden kanał łączności."
+    },
+    "2027-08-08": {
+      "uwagi": ""
+    },
+    "2027-08-09": {
+      "uwagi": "Miejsce i godzina spotkania z Kiko do weryfikacji (VI–VII 2027)."
+    },
+    "2027-08-10": {
+      "uwagi": "Solmoe jest elementem linii Jakuba, którego nie było u Artura. Autokar i Msza do weryfikacji.",
+      "kierowcy": {
+        "start": "07:30",
+        "koniec": "19:00",
+        "km": 420,
+        "kierowcow": 2,
+        "zaloga": "korea",
+        "kraj": "kr"
+      }
+    },
+    "2027-08-11": {
+      "uwagi": "Godziny według rozkładu 2026; kalendarz VIII 2027 do weryfikacji (ok. lutego 2027). 11.08.2027 to środa — w 2026 nie było rejsów z Busan w soboty. Plan awaryjny na tajfun: lot Busan–Fukuoka 12.08 rano. Jeśli grupa będzie wyczerpana, popołudnie można złagodzić, zostawiając poranną Mszę w Oryundae.",
+      "bufory": [
+        {
+          "co": "bagaż rejestrowany na prom",
+          "przyjazd": "16:30",
+          "odjazd": "17:30",
+          "min_h": 0.75
+        }
+      ]
+    },
+    "2027-08-12": {
+      "uwagi": "Start drogi Ksawerego: Hirado (1550) → Yamaguchi (1551) → Kioto. Msza na Hirado do weryfikacji.",
+      "kierowcy": {
+        "start": "07:15",
+        "koniec": "19:00",
+        "km": 260,
+        "kierowcow": 1,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-13": {
+      "uwagi": "Msza do uzgodnienia. Baza zostaje w Nagasaki — bez zmiany hotelu.",
+      "kierowcy": {
+        "start": "08:00",
+        "koniec": "18:00",
+        "km": 90,
+        "kierowcow": 1,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-14": {
+      "uwagi": "Prośba o pośrednictwo Niepokalanowa u franciszkanów w Nagasaki — Jakub, do 31.12.2026. Godziny muzeum potwierdzone (stan znany). Maryjny wątek przy Kolbem zostaje nawet wtedy, gdyby Akita odpadła.",
+      "kierowcy": {
+        "start": "08:30",
+        "koniec": "17:30",
+        "km": 40,
+        "kierowcow": 1,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-15": {
+      "uwagi": "Msza do uzgodnienia przez biuro przy Ōurze. Pomysł do weryfikacji: spotkanie ze świadkiem pamięci (hibakusha). Zatyczki do uszu; młodsi wracają przed kulminacją festiwalu.",
+      "kierowcy": {
+        "start": "08:00",
+        "koniec": "18:00",
+        "km": 40,
+        "kierowcow": 1,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-16": {
+      "uwagi": "16.08 to szczyt powrotów po Obonie także w pociągach. Świadomie zostajemy w Nagasaki i nie jedziemy shinkansenem do Hiroszimy (90 osób z walizkami i przesiadką w Takeo-Onsen). Korki na drogach lokalnych do sprawdzenia z przewoźnikiem.",
+      "kierowcy": {
+        "start": "08:00",
+        "koniec": "18:30",
+        "km": 170,
+        "kierowcow": 1,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-17": {
+      "uwagi": "Czasy z wcześniejszego planu (3,5+1,5 h) były zaniżone — przyjmujemy ok. 6 h. Moduł Fuji tego dnia nie jest w trasie (rekomendacja: nie wchodzić).",
+      "kierowcy": {
+        "start": "06:30",
+        "koniec": "19:30",
+        "km": 435,
+        "kierowcow": 1,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-18": {
+      "uwagi": "Czasy z wcześniejszego planu (4,5 h) były zaniżone. Wyjazd ok. 8:15. Godziny Himeji do weryfikacji.",
+      "kierowcy": {
+        "start": "07:45",
+        "koniec": "19:30",
+        "km": 350,
+        "kierowcow": 2,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-19": {
+      "uwagi": "Msza do uzgodnienia. Rama „od Ignacego do Ksawerego” zamyka się w tej katedrze.",
+      "kierowcy": {
+        "start": "05:45",
+        "koniec": "20:00",
+        "km": 120,
+        "kierowcow": 1,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      }
+    },
+    "2027-08-20": {
+      "uwagi": "Bilety potwierdzone.",
+      "kierowcy": {
+        "start": "08:30",
+        "koniec": "15:30",
+        "km": 80,
+        "kierowcow": 1,
+        "zaloga": "kiusiu",
+        "kraj": "jp"
+      },
+      "bufory": [
+        {
+          "co": "QR803 KIX–Doha",
+          "przyjazd": "15:30",
+          "odjazd": "18:55",
+          "min_h": 3
+        }
+      ]
+    },
+    "2027-08-21": {
+      "uwagi": "Bilety potwierdzone."
+    }
+  }
+}

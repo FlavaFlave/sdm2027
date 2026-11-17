@@ -1,0 +1,1293 @@
+{
+ "stan": "17.11.2026",
+ "zrodlo": "Opracowanie organizatorów na podstawie stron urzędów i organizacji turystycznych Japonii i Korei (źródło przy każdym punkcie).",
+ "sekcje": [
+  {
+   "id": "trzesienia",
+   "tytul": "Trzęsienia ziemi i tsunami",
+   "ikona": "quake",
+   "pozycje": [
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Zainstaluj przed wyjazdem aplikację „Safety tips” (JNTO) – push o wczesnym ostrzeżeniu przed trzęsieniem ziemi, tsunami, pogodzie i udarze cieplnym, po angielsku i koreańsku, z „flowchartem” co robić.",
+     "zrodlo": "https://www.jnto.go.jp/safety-tips/eng/app.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Zainstaluj „Emergency Ready App” (MOIS) – alerty o katastrofach po angielsku, poradniki, schrony, połączenie z 119.",
+     "zrodlo": "https://www.mois.go.kr/eng/bbs/type002/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000022&nttId=119751"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "W budynku: chroń głowę, schowaj się pod stabilny stół i trzymaj jego nogę, z dala od okien, szkła i regałów; nie wybiegaj w trakcie wstrząsów.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?actsHeaderTitle=%EC%A7%80%EC%A7%84&category=earthQuake&menuSn=1004"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Na ulicy: osłoń głowę torbą/rękami, odsuń się od budynków (szyby, szyldy, mury, automaty) i przejdź na otwartą przestrzeń (park, plac).",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?actsHeaderTitle=%EC%A7%80%EC%A7%84&category=earthQuake&menuSn=1004"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Nad morzem (Matsushima, Hirado, Nagasaki, Miyajima, Busan): po silnym lub długim trzęsieniu albo komunikacie o tsunami NATYCHMIAST uciekaj pieszo na wzniesienie lub do oznaczonego budynku ewakuacyjnego tsunami – nie czekaj na potwierdzenie.",
+     "zrodlo": "https://www.jma.go.jp/jma/kishou/know/jishin/tsunami_bosai/img/leaflet_tsunami_bosai_en.pdf"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Grupa: ustalcie stały punkt zbiórki na każdy nocleg (np. wejście hotelu) i zapasowy punkt (najbliższy oficjalny punkt ewakuacyjny); po katastrofie lider liczy osoby wg list kontaktowych.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Nie używaj windy w czasie trzęsienia ani tuż po nim. Jeśli jesteś w windzie – naciśnij wszystkie piętra i wysiądź na pierwszym, na którym się zatrzyma; jeśli utkniesz, użyj interkomu.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?actsHeaderTitle=%EC%A7%80%EC%A7%84&category=earthQuake&menuSn=1004"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Nie wracaj na wybrzeże, dopóki ostrzeżenie nie zostanie odwołane – fale przychodzą wielokrotnie, a późniejsze mogą być większe.",
+     "zrodlo": "https://www.data.jma.go.jp/eqev/data/en/tsunami/tsunami_warning.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Alarm wczesnego ostrzeżenia (緊急地震速報) to głośny, charakterystyczny dźwięk w telefonie/TV – oznacza, że za kilka sekund zatrzęsie. Nie czytaj komunikatu, od razu chroń głowę.",
+     "zrodlo": "https://www.jma.go.jp/jma/kishou/know/jishin/eew/koudou/koudou.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "W muzeum, sklepie, galerii: chroń głowę, stań w otwartej przestrzeni lub przy stabilnym filarze, z dala od spadających przedmiotów; po wstrząsach słuchaj personelu.",
+     "zrodlo": "https://www.jnto.go.jp/safety-tips/eng/emergency/earthquake/e05.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "W hotelu: po zameldowaniu sprawdź mapę ewakuacji i wyjścia awaryjne; w razie wstrząsów chroń głowę, potem otwórz drzwi (zabezpiecz wyjście) i słuchaj recepcji.",
+     "zrodlo": "https://www.japan.travel/en/plan/emergencies/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "W pociągu/metrze: trzymaj się poręczy lub siedzenia; gdy pociąg stanie – NIE wychodź na tory, czekaj na polecenia obsługi.",
+     "zrodlo": "https://www.tokyometro.jp/lang_en/corporate/safety/safety_pocketguide/earthquake/index.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Na peronie metra: chroń głowę przed spadającymi elementami, nie rzucaj się do wyjść ani na tory; poczekaj, aż wstrząsy ustaną.",
+     "zrodlo": "https://www.tokyometro.jp/lang_en/corporate/safety/safety_pocketguide/earthquake/index.html"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Po wstrząsach: uważaj na wstrząsy wtórne i pożary; słuchaj komunikatów władz/radia; korzystaj ze schodów, nie z wind.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?actsHeaderTitle=%EC%A7%80%EC%A7%84&category=earthQuake&menuSn=1004"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Gdy sieć komórkowa nie działa: wiadomości tekstowe/komunikatory zamiast połączeń; w Japonii operator uruchamia tablice ogłoszeń (171/web171) – ustal wcześniej z grupą, gdzie sprawdzacie wiadomości.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Najgroźniejszym skutkiem wtórnym jest pożar – miej naładowany telefon i powerbank.",
+     "zrodlo": "https://www.japan.travel/en/plan/emergencies/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Stopnie: Major Tsunami Warning / Tsunami Warning / Tsunami Advisory (przy Advisory wyjdź z wody i odejdź od brzegu).",
+     "zrodlo": "https://www.data.jma.go.jp/eqev/data/en/tsunami/tsunami_warning.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Jeśli JMA ogłosi „Nankai Trough Earthquake Extra Information (Megaquake Advisory)” (jak w sierpniu 2024), podróż jest możliwa, ale sprawdź drogi ewakuacji w każdym nadmorskim miejscu i bądź gotów do szybkiego odejścia od brzegu.",
+     "zrodlo": "https://www3.nhk.or.jp/nhkworld/en/news/backstories/3517/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Prom/statek: w razie tsunami lub trzęsienia słuchaj wyłącznie załogi; jednostki na morzu zwykle odpływają dalej od brzegu.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 1,
+     "tekst": "Numer awaryjny JNTO dla turystów (24/7, ang.): Japan Visitor Hotline 050-3816-2787.",
+     "zrodlo": "https://www.japan.travel/en/plan/emergencies/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Znaki ewakuacji tsunami: zielono-białe tabliczki „Tsunami evacuation area/building” – zwracaj na nie uwagę w miejscowościach nadmorskich.",
+     "zrodlo": "https://www.japan.travel/en/japan-safe-travel-information/tsunami/"
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Korea ma znacznie mniej trzęsień ziemi niż Japonia, ale aplikacja Emergency Ready App i wskazówki safekorea.go.kr obowiązują tak samo.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?actsHeaderTitle=%EC%A7%80%EC%A7%84&category=earthQuake&menuSn=1004"
+    }
+   ]
+  },
+  {
+   "id": "pogoda",
+   "tytul": "Upał, tajfuny, ulewy i alerty",
+   "ikona": "sun",
+   "pozycje": [
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Przy ostrzeżeniu o ulewie/osuwisku: nie czekaj na poziom 5 – ewakuuj się najpóźniej na poziomie 4; jeśli wyjście jest niebezpieczne, przejdź na wyższe piętro z dala od zbocza.",
+     "zrodlo": "https://www.jnto.go.jp/safety-tips/eng/emergency/weather/w05.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Upał: sprawdzaj codziennie Heat Stroke Alert (WBGT ≥33) Ministerstwa Środowiska; przy WBGT ≥31 unikaj wysiłku na zewnątrz.",
+     "zrodlo": "https://www.wbgt.env.go.jp/en/alert.php"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Upał w Korei: unikaj aktywności na zewnątrz zwłaszcza 14–17, pij wodę/elektrolity, kapelusz z rondem, odpoczynek w cieniu lub w „heat shelter” (wskazuje Emergency Ready App).",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?category=heatWave&menuSn=1004"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Objawy udaru (splątanie, gorąca sucha skóra, >40°C, utrata przytomności) – dzwoń 119, przenieś w chłodne miejsce, chłodź szyję/pachy/pachwiny. Zawroty, nudności, skurcze – odpoczynek w chłodzie i nawadnianie.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?category=heatWave&menuSn=1004"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Nie podchodź do rzek, kanałów, stromych zboczy i nabrzeży w czasie tajfunu/ulewy; nie chodź po zalanych ulicach i omijaj zerwane przewody.",
+     "zrodlo": "https://www.data.jma.go.jp/nagasaki-c/kikikuru/image/Leaflet_EN.pdf"
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Sierpień to szczyt sezonu tajfunów i ulew – plan dnia może się zmienić z dnia na dzień (odwołane promy, Shinkansen, loty). Śledź aplikacje Safety tips / Emergency Ready.",
+     "zrodlo": "https://www.jnto.go.jp/safety-tips/eng/emergency/weather/w05.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "W Korei w czasie tajfunu i ulewy postępuj wg „National Action Tips” na safekorea.go.kr (zostań w budynku, z dala od okien, rzek i podziemnych przejść).",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/nationalActionTips.do?menuSn=1004"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "W tłumie na ŚDM i podczas czuwania pod gołym niebem: własny zapas wody, czapka, krem z filtrem, chłodzący ręcznik; organizator zapewnia punkty wody i medyczne – zlokalizuj je od razu.",
+     "zrodlo": "https://wydseoul.org/en/news/faq"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Alert rakietowy J-ALERT: natychmiast wejdź do solidnego budynku lub pod ziemię (np. stacja metra); jeśli nie ma gdzie – kryj się lub połóż płasko, chroniąc głowę; w budynku odejdź od okien.",
+     "zrodlo": "https://www.kokuminhogo.go.jp/en/pdf/action%28English%29.pdf"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Syrena alarmu przeciwlotniczego (1 min): idź do najbliższego schronu/stacji metra/podziemnego parkingu, schodami, nie windą; słuchaj komunikatów i SMS-ów alarmowych.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?actsHeaderTitle=%EB%AF%BC%EB%B0%A9%EA%B3%B5%EA%B2%BD%EB%B3%B4&category=civilDefenseAlert&menuSn=1004"
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Nie pij alkoholu ani dużych ilości kofeiny w upale – przyspieszają odwodnienie.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?category=heatWave&menuSn=1004"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Skala WBGT: 25–28 częste przerwy, 28–31 unikaj ciężkiego wysiłku, ≥31 unikaj wysiłku fizycznego.",
+     "zrodlo": "https://www.wbgt.env.go.jp/en/wbgt.php"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Unzen (Fugendake) to czynny wulkan – obecnie poziom alertu 1 (normalny dostęp). Przed wizytą sprawdź aktualny poziom na stronie JMA i stosuj się do zakazów wejścia.",
+     "zrodlo": "https://www.data.jma.go.jp/vois/data/report/activity_info/"
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "W sierpniu Korea przeprowadza ogólnokrajowe ćwiczenia obrony cywilnej (w 2026: 20.08, 14:00–14:20, syreny, krótkie wstrzymanie ruchu). W 2027 data nieznana – prawdopodobnie po wyjeździe grupy z Korei, ale nie panikuj, jeśli usłyszysz syreny ćwiczebne.",
+     "zrodlo": "https://en.yna.co.kr/view/AEN20260819007100315"
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Alerty alarmowe w telefonie przychodzą po japońsku/koreańsku – ustaw aplikacje na angielski; w Korei Emergency Ready App wysyła tłumaczone komunikaty.",
+     "zrodlo": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=248145"
+    }
+   ]
+  },
+  {
+   "id": "kultura",
+   "tytul": "Kultura i zachowanie",
+   "ikona": "bow",
+   "pozycje": [
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Zdejmuj buty tam, gdzie jest próg (genkan), półka na buty lub tatami – w ryokanach, domach, części świątyń i restauracji. Miej czyste skarpetki bez dziur.",
+     "zrodlo": "https://www.japan.travel/en/plan/custom-manners/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Śmieci: koszy publicznych prawie nie ma – noś mały worek i zabieraj śmieci do hotelu lub kosza przy konbini; segreguj wg oznaczeń.",
+     "zrodlo": "https://www.japan.travel/en/responsible-travel-guide/traveling-mindfully/"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Zdjęcia ludzi: pytaj o zgodę, zwłaszcza dzieci, uczniów, mnichów, osób w kimonach; nie publikuj twarzy obcych dzieci.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Napiwki: nie zostawiaj – w Japonii i Korei nie są zwyczajem, mogą wprawić w zakłopotanie.",
+     "zrodlo": "https://www.japan.travel/en/plan/custom-manners/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Gion (Kioto): nie zaczepiaj, nie dotykaj, nie śledź i nie fotografuj gejsz (geiko/maiko) bez zgody – to mieszkanki i pracownice, nie atrakcja.",
+     "zrodlo": "https://kyoto.travel/en/responsible-travel/gion-manner-message-from-southern-gionmachi/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Gion: nie wchodź w prywatne uliczki (np. odchodzące od Hanamikoji) – zakaz wejścia i fotografowania, tabliczki grożą opłatą 10 000 jenów.",
+     "zrodlo": "https://www.asahi.com/ajw/articles/15286642"
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Nigdy nie fotografuj ukradkiem ludzi w sposób intymny/seksualny (pod spódnicą, w przebieralniach) – w Korei do 7 lat więzienia, w Japonii od 2023 r. do 3 lat.",
+     "zrodlo": "https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=86&onhunqueSeq=6634&pagingType=default&sortType=DEFAULT&targetRow=1"
+    },
+    {
+     "kraj": "kr",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Nie noś i nie pokazuj w Korei symbolu „flagi wschodzącego słońca” (np. na ubraniach, w gadżetach) – dla Koreańczyków symbol imperializmu i zbrodni wojennych.",
+     "zrodlo": "https://www.bbc.com/news/world-asia-50285383"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Lekki ukłon przy powitaniu, podziękowaniu i przeprosinach – wystarczy skinienie; nie trzeba ściskać dłoni ani się przytulać.",
+     "zrodlo": "https://www.japan.travel/en/plan/custom-manners/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "W pociągach i autobusach: telefon wyciszony (manner mode), nie rozmawiaj przez telefon, rozmawiaj cicho; przy miejscach dla uprzywilejowanych wyłącz/wycisz telefon.",
+     "zrodlo": "https://www.japan.travel/en/plan/custom-manners/"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "W metrze w Korei: nie siadaj na różowych miejscach (dla kobiet w ciąży) ani miejscach dla starszych/niepełnosprawnych, nawet gdy są wolne.",
+     "zrodlo": "https://english.visitseoul.net/tours/Korean-Etiquette/ENN010938"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Kolejki: ustawiaj się w wyznaczonych liniach na peronie, wsiadaj dopiero po wyjściu pasażerów; nie wpychaj się.",
+     "zrodlo": "https://www.japan.travel/en/plan/custom-manners/"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Przy stole w Korei poczekaj, aż najstarszy zacznie jeść; podawaj i przyjmuj rzeczy (wizytówki, prezenty, kieliszki) oburącz.",
+     "zrodlo": "https://english.visitseoul.net/tours/Korean-Etiquette/ENN010938"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Wobec starszych w Korei: ukłon, uprzejmy ton, ustępowanie miejsca; nie zwracaj się po imieniu do starszych.",
+     "zrodlo": "https://english.visitseoul.net/tours/Korean-Etiquette/ENN010938"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Okazywanie uczuć publicznie: powściągliwie (bez całowania się w tłumie, w świątyniach, kościołach); kontakt fizyczny z nieznajomymi ogranicz do minimum.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Głośność: rozmawiaj ciszej niż w Polsce, szczególnie w grupie 90 osób – w hotelach, transporcie i na ulicy wieczorem.",
+     "zrodlo": "https://www.japan.travel/en/plan/custom-manners/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Nie jedz w trakcie chodzenia po ulicy (uchodzi za niegrzeczne; w niektórych miejscach wprost zakazane) – zjedz przy stoisku i zabierz śmieci.",
+     "zrodlo": "https://www.japan.travel/en/responsible-travel-guide/traveling-mindfully/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Pałeczki: nie wbijaj pionowo w ryż i nie podawaj jedzenia z pałeczek na pałeczki (skojarzenia pogrzebowe); nie wskazuj nimi, nie nabijaj jedzenia.",
+     "zrodlo": "https://www.japan.travel/en/guide/japanese-food-etiquette/"
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Flirt i relacje: nie zaczepiaj nachalnie, nie podawaj adresu noclegu nieznajomym, nie idź sam/sama z poznaną osobą w nieznane miejsce; obowiązuje zasada „zawsze w parach”.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Tematy historyczne (okupacja Korei, „comfort women”, spory terytorialne, wojna): nie żartuj, nie porównuj, nie przenoś sporów między Koreańczykami a Japończykami.",
+     "zrodlo": "https://www.bbc.com/news/world-asia-50285383"
+    },
+    {
+     "kraj": "kr",
+     "typ": "nie",
+     "waga": 1,
+     "tekst": "Nie pisz imion żyjących osób czerwonym atramentem (w Korei kojarzy się ze zmarłymi).",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 1,
+     "tekst": "Nie wydmuchuj głośno nosa przy stole/w pociągu – wyjdź na bok.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "W Korei napiwki również nie są zwyczajem (restauracje, taksówki, hotele).",
+     "zrodlo": "https://clubkorea.co.kr/en/living/basics/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Schody ruchome: w Tokio zwykle stoi się po lewej, w Osace po prawej; w części prefektur (np. Saitama) zaleca się stanie na obu stronach i niechodzenie.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Siorbanie makaronu (ramen, soba) jest akceptowane; przed jedzeniem „itadakimasu”, po – „gochisōsama”.",
+     "zrodlo": "https://www.japan.travel/en/guide/japanese-food-etiquette/"
+    }
+   ]
+  },
+  {
+   "id": "prawo",
+   "tytul": "Prawo — czego nie wolno",
+   "ikona": "law",
+   "pozycje": [
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Noś zawsze przy sobie PASZPORT (oryginał) – obowiązek prawny dla turystów w Japonii; za brak grzywna do 100 000 jenów.",
+     "zrodlo": "https://www.moj.go.jp/isa/applications/procedures/ryoken_00001.html"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Nieletni wychodzą wieczorem tylko z opiekunem i wracają przed ciszą nocną; każdy ma przy sobie kartkę z kontaktem do opiekuna.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Alkohol i papierosy (także podgrzewany tytoń) – w Japonii wyłącznie od 20 lat, także dla cudzoziemców.",
+     "zrodlo": "https://kisaragi-office.com/immigration_journal/en/archives/6757"
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Uczestnicy niepełnoletni: zakaz alkoholu i tytoniu w czasie całej pielgrzymki niezależnie od przepisów lokalnych (regulamin grupy).",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Narkotyki: zero tolerancji. Od 12.12.2024 w Japonii karane jest także UŻYCIE marihuany/THC (do 7 lat) – pozytywny test wystarczy. Żelki/oleje „CBD” mogą zawierać THC – nie przywoź.",
+     "zrodlo": "https://www.gov-online.go.jp/article/202412/entry-6856.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Korea: konopie, olej CBD i produkty z konopi traktowane jak narkotyki; posiadanie/użycie do 5 lat więzienia, przemyt min. 5 lat; po skazaniu deportacja i zakaz wjazdu.",
+     "zrodlo": "https://kr.usembassy.gov/services-controlled-substance/"
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Nigdy nie przewoź paczek ani bagażu „dla kogoś” i nie zostawiaj bagażu bez opieki.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Noże: noszenie noża z ostrzem >6 cm bez uzasadnionego powodu jest przestępstwem (do 2 lat lub 300 000 jenów); „samoobrona” nie jest powodem. Scyzoryki (także krótsze) najlepiej zostaw w domu.",
+     "zrodlo": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/drug/hamono/hamono.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Korea: alkohol i papierosy od 19 lat liczonych rocznikowo (od 1 stycznia roku, w którym kończysz 19). W 2027 – roczniki 2008 i starsze.",
+     "zrodlo": "https://en.yna.co.kr/view/AEN20230627003300315"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Godzina policyjna dla nieletnich: w Tokio osoby poniżej 18 lat nie powinny przebywać na ulicy 23:00–4:00 bez uzasadnienia/opiekuna; policja może zatrzymać i prowadzić „hodō” (pouczenie, kontakt z opiekunem). Podobne przepisy mają inne prefektury.",
+     "zrodlo": "https://www.keishicho.metro.tokyo.lg.jp/about_mpd/keiyaku_horei_kohyo/horei_jorei/ken_iku.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "W Korei też miej przy sobie paszport lub jego zdjęcie/kopię – potrzebny m.in. do zakupów tax-free, kart SIM i kontroli.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Molestowanie w pociągu (chikan): głośno powiedz „Stop!”/„Chikan!”, odsuń się, poproś innych o pomoc, wciśnij przycisk alarmowy lub zgłoś obsłudze/policji (110). Zapamiętaj czas, stację, wagon.",
+     "zrodlo": "https://www.chikanbokumetsu.metro.tokyo.lg.jp/knowledge/deal-with.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Palenie (też e-papierosów) w miejscach publicznych z zakazem w Korei – mandat do 100 000 wonów (przystanki, place).",
+     "zrodlo": "https://english.visitseoul.net/miscellaneous"
+    },
+    {
+     "kraj": "kr",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Przechodzenie poza pasami lub na czerwonym w Korei – mandat 20 000/30 000 wonów, egzekwowany także wobec turystów.",
+     "zrodlo": "https://www.koreaherald.com/article/3422011"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Nie przechodź na czerwonym i poza przejściem – to naruszenie prawa o ruchu drogowym; ruch jest LEWOSTRONNY – patrz najpierw w prawo.",
+     "zrodlo": "https://www.tomin-anzen.metro.tokyo.lg.jp/documents/d/tomin-anzen/006-gaikoku_en_ol_3"
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Nie dotykaj, nie zabieraj i nie niszcz niczego w świątyniach i obiektach UNESCO (graffiti, wycinanie imion, kamyki, kawałki drewna) – surowe kary.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "W godzinach szczytu na wielu liniach są wagony tylko dla kobiet (oznaczone na peronie); chłopcy/mężczyźni nie wsiadają do nich w godzinach obowiązywania.",
+     "zrodlo": "https://www.chikanbokumetsu.metro.tokyo.lg.jp/knowledge/deal-with.html"
+    }
+   ]
+  },
+  {
+   "id": "zdrowie",
+   "tytul": "Zdrowie i leki",
+   "ikona": "med",
+   "pozycje": [
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "EKUZ NIE działa w Japonii ani Korei – każdy musi mieć prywatne ubezpieczenie podróżne z kosztami leczenia, hospitalizacją i transportem do kraju (sprawdź też choroby przewlekłe i sporty).",
+     "zrodlo": "https://www.nfz.gov.pl/dla-pacjenta/nasze-zdrowie-w-ue/leczenie-w-krajach-unii-europejskiej-i-efta/wyjezdzam-do/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Leki na receptę: do Japonii można wwieźć bez formalności zapas na max 1 miesiąc (doustne/zewnętrzne, dla siebie); większa ilość wymaga wcześniej „Yunyu Kakunin-sho”/„Yakkan Shoumei”.",
+     "zrodlo": "https://kouseikyoku.mhlw.go.jp/chugokushikoku/gyomu/bu_ka/iji/documents/qa.pdf"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Do Korei: zwykłe leki – do 6 opakowań lub 3 miesięcy zapasu, w oryginalnych opakowaniach z receptą/zaświadczeniem. Leki kontrolowane (benzodiazepiny, zolpidem, ADHD, kodeina, dekstrometorfan) wymagają wcześniejszej zgody MFDS (min. 2 tygodnie przed przyjazdem).",
+     "zrodlo": "https://www.mofa.go.kr/us-atlanta-en/brd/m_4842/view.do?seq=761460"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Każdy leczący się przewlekle: zaświadczenie lekarskie po angielsku z nazwą substancji i dawką + recepta; leki w bagażu podręcznym w oryginalnych opakowaniach.",
+     "zrodlo": "https://kouseikyoku.mhlw.go.jp/chugokushikoku/gyomu/bu_ka/iji/documents/qa.pdf"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Numery alarmowe – Japonia: 110 policja, 119 straż/karetka, 118 straż przybrzeżna (wypadki na morzu). Korea: 112 policja, 119 straż/karetka, 1330 infolinia turystyczna 24/7 z tłumaczem.",
+     "zrodlo": "https://english.visitkorea.or.kr/svc/contents/infoHtmlView.do?vcontsId=140060"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Alergie pokarmowe: miej kartę alergii po japońsku i koreańsku (owoce morza, skorupiaki, orzechy, soja, pszenica, sezam, jajka) i leki ratunkowe (np. adrenalina) – sos sojowy, dashi i pasty rybne są wszędzie.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "NIE zabieraj do Japonii leków z pseudoefedryną >10% (np. część leków na katar/zatoki) – zakazane jako prekursor stymulantów; kodeina >1% to w Japonii narkotyk (wymaga zezwolenia).",
+     "zrodlo": "https://kouseikyoku.mhlw.go.jp/hokkaido/shinsei/matori/keitai_e.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Leczenie w Japonii jest drogie: drobny uraz to setki tysięcy jenów, hospitalizacja >1 mln jenów, poważne leczenie z transportem 7,5–10 mln jenów. Ministerstwo Zdrowia Japonii mocno zaleca ubezpieczenie.",
+     "zrodlo": "https://www.jnto.go.jp/emergency/eng/mi_guide.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Leki bez recepty: do 2 miesięcy zapasu, witaminy do 4 miesięcy, maści/zewnętrzne do 24 sztuk.",
+     "zrodlo": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/kojinyunyu/topics/tp010401-1_00001.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Wybierz polisę z wysoką sumą kosztów leczenia, bezgotówkowym rozliczeniem i całodobową asystą; w przychodni noś gotówkę, wiele przyjmuje tylko gotówkę.",
+     "zrodlo": "https://www.japan.travel/en/plan/travel-insurance-in-japan/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Leki przeciw ADHD (metylofenidat, amfetaminy) i silne psychotropy: sprawdź status na stronie MHLW i złóż wniosek z wyprzedzeniem; część jest całkowicie zakazana (np. amfetaminy).",
+     "zrodlo": "https://kouseikyoku.mhlw.go.jp/hokkaido/shinsei/matori/keitai_e.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Dzwoniąc na 112/119 w Korei powiedz „English please”/„Interpreter please” – połączą tłumacza; podaj lokalizację z GPS lub nazwy budynków.",
+     "zrodlo": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=248145"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Japonia: anglojęzyczna linia policji w Tokio 03-3501-0110; całodobowa Japan Visitor Hotline 050-3816-2787 (choroba, katastrofy).",
+     "zrodlo": "https://www.japan.travel/en/plan/emergencies/"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Szczepienia: wizyta u lekarza medycyny podróży 6–8 tygodni przed wyjazdem; aktualne szczepienia podstawowe (tężec, WZW A/B wg zaleceń).",
+     "zrodlo": "https://www.gov.pl/web/gis/zalecane-szczepienia-dla-podrozujacych"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Komary: repelent i długie rękawy wieczorem, szczególnie przy parkach, świątyniach w lesie i na wsi.",
+     "zrodlo": "https://www.cdc.gov/japanese-encephalitis/data-maps/index.html"
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Dieta wege/halal/bezglutenowa jest trudna: bulion rybny (dashi) w zupach, sos sojowy z pszenicą, kimchi zwykle z sosem rybnym – zgłoś dietę organizatorom wcześniej.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Japońskie zapalenie mózgu: szczepienie nie jest rutynowo zalecane przy krótkim pobycie w miastach; rozważyć przy pobytach na wsi/aktywności na zewnątrz w sezonie (czerwiec–październik) – decyzja z lekarzem.",
+     "zrodlo": "https://szczepienia.pzh.gov.pl/szczepionki/szczepionka-przeciw-japonskiemu-zapaleniu-mozgu/"
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Woda z kranu w Japonii i Korei jest uznawana za pitną; mimo to w upale najprościej kupować wodę/napoje izotoniczne w automatach i konbini.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Apteki: w Japonii leki OTC w drogeriach (np. Matsumoto Kiyoshi), w Korei 약국 (yakguk); część leków podstawowych dostępna w konbini. Weź własną apteczkę.",
+     "rada": true,
+     "sprawdzic": true
+    }
+   ]
+  },
+  {
+   "id": "pieniadze",
+   "tytul": "Pieniądze, telefon, internet",
+   "ikona": "yen",
+   "pozycje": [
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Korea: Google Maps nie prowadzi pieszo/autem (stan XI 2026) – zainstaluj Naver Map lub KakaoMap (Naver po angielsku) i Papago do tłumaczeń; taksówki: Kakao T / K.Ride.",
+     "zrodlo": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?dataSetId=299&menuSn=745&vcontsId=1594983"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Bankomaty 7-Eleven (Seven Bank) przyjmują Visa/Mastercard 24/7 (limit 100 000 jenów/transakcja); Japan Post Bank też (limit 50 000, opłata ok. 220 jenów).",
+     "zrodlo": "https://www.sevenbank.co.jp/intlcard/card2.html"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Karta IC (Suica/PASMO/ICOCA) – zwykłe, nieimienne Suica znów dostępne w automatach JR East (od 1.03.2025, za gotówkę); na iPhonie „Welcome Suica Mobile”. Działa w transporcie i sklepach w całej Japonii.",
+     "zrodlo": "https://www.jreast.co.jp/e/press/pdf/0225_suica_en.pdf"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Karta T-money (kupisz w konbini/na stacji) – metro, autobusy, taksówki, sklepy; odbijaj przy wejściu I wyjściu z autobusu (przesiadki).",
+     "zrodlo": "https://clubkorea.co.kr/en/living/basics/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Prąd w Japonii: 100 V, wtyczka typu A (płaskie bolce) – potrzebna przejściówka; ładowarki telefonów zwykle działają 100–240 V, prostownice/suszarki z Polski mogą nie.",
+     "zrodlo": "https://www.japan.travel/en/plan/plug-and-electricity/"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Internet: eSIM lub karta SIM/router obejmujące Japonię i Koreę (osobno lub regionalnie); sprawdź, czy telefon obsługuje eSIM i nie ma blokady operatora. Uważaj na roaming z Polski (poza UE – drogo).",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Nie noś wszystkich pieniędzy i kart w jednym miejscu; zapisz numery do zastrzegania kart.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Japonia wciąż bywa „gotówkowa” – miej przy sobie jeny na drobne wydatki, świątynie, automaty, małe restauracje.",
+     "zrodlo": "https://www.sevenbank.co.jp/intlcard/card2.html"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 1,
+     "tekst": "Pobierz offline: mapy, tłumacz (Google Translate/Papago – język japoński i koreański), kopie dokumentów.",
+     "rada": true
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "W Korei karta płatnicza działa prawie wszędzie; gotówka przyda się na targach i w małych lokalach.",
+     "zrodlo": "https://clubkorea.co.kr/en/living/basics/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "W Japonii Google Maps działa świetnie (rozkłady, perony, wyjścia ze stacji).",
+     "rada": true
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Prąd w Korei: 220 V, wtyczki typu C/F – jak w Polsce, przejściówka niepotrzebna.",
+     "zrodlo": "https://clubkorea.co.kr/en/living/basics/"
+    }
+   ]
+  },
+  {
+   "id": "bezpieczenstwo",
+   "tytul": "Bezpieczeństwo i tłum na ŚDM",
+   "ikona": "crowd",
+   "pozycje": [
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Tłum: przed wyjściem sprawdź wyjścia i objazdy; unikaj wąskich uliczek, zboczy i schodów w ścisku; nie zatrzymuj się nagle i nie zawracaj; słuchaj służb porządkowych.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?actsHeaderTitle=%EB%8B%A4%EC%A4%91%EC%9A%B4%EC%A7%91%EC%82%AC%EA%B3%A0&category=c%EF%BB%BFrowdSurge&menuSn=1004"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Gdy tłum gęstnieje (ludzie cię dotykają, czujesz nacisk) – od razu wychodź na otwartą przestrzeń. W ścisku: nie walcz z falą, skrzyżuj ręce na klatce piersiowej (przestrzeń do oddychania); jeśli upadniesz – zwiń się w kłębek, chroń głowę.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?actsHeaderTitle=%EB%8B%A4%EC%A4%91%EC%9A%B4%EC%A7%91%EC%82%AC%EA%B3%A0&category=c%EF%BB%BFrowdSurge&menuSn=1004"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Każdy ma przy sobie kartkę (i zdjęcie w telefonie) z: nazwą i adresem noclegu po angielsku i w języku lokalnym, telefonem lidera i opiekuna, numerami alarmowymi, grupą krwi/alergiami.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Zasada „nigdy sam”: poruszaj się w parach/trójkach; ustalcie stały punkt spotkań na każdy dzień i godzinę kontrolną; przy zgubieniu – zostań w miejscu, w którym widziałeś grupę ostatnio, lub idź do ustalonego punktu, dzwoń do opiekuna.",
+     "rada": true
+    },
+    {
+     "kraj": "kr",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Uważaj na nieznajomych zaczepiających na ulicy (ankiety, testy osobowości, zaproszenia do „klubów”, studiów biblijnych) – to częsta metoda werbunku sekt, m.in. Shincheonji. Nie podawaj danych, nie umawiaj się na kolejne spotkania.",
+     "zrodlo": "https://www.koreatimes.co.kr/southkorea/globalcommunity/20160906/cult-watcher-advises-how-to-avoid-cults"
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "Kąpiel w morzu: tylko na oficjalnie otwartych plażach z ratownikami i za zgodą opiekuna; nigdy po alkoholu ani przy wysokich falach przed/po tajfunie.",
+     "zrodlo": "https://www6.kaiho.mlit.go.jp/watersafety/swimming_eng/01_beach/index.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Czuwanie: wszyscy pielgrzymi przechodzą na teren mszy końcowej i nocują pod gołym niebem w śpiworach – przygotuj śpiwór/karimatę, latarkę, wodę.",
+     "zrodlo": "https://wydseoul.org/en/news/faq"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Udostępniaj lokalizację opiekunowi (np. Google/Apple Find My, WhatsApp) na czas wyjść; naładowany telefon i powerbank zawsze.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Zgubiłeś się lub coś się stało w Japonii – idź do kōban (małe posterunki policji przy stacjach).",
+     "zrodlo": "https://www.japan.travel/en/plan/emergencies/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Pilnuj swojego napoju; przy podejrzeniu odurzenia lub absurdalnego rachunku dzwoń 110 i zgłoś bankowi nieautoryzowane transakcje.",
+     "zrodlo": "https://japan.embassy.gov.au/tkyo/drinkspiking.html"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Zarejestruj podróż w systemie MSZ „Odyseusz” – w razie kryzysu konsul wie, gdzie jesteś.",
+     "zrodlo": "https://odyseusz.msz.gov.pl"
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Pamiętaj o tragedii w Itaewon (29.10.2022, 159 ofiar w wąskiej uliczce) – to dlatego Korea mocno edukuje o bezpieczeństwie w tłumie.",
+     "zrodlo": "https://www.korea.kr/news/policyNewsView.do?newsId=148953331"
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Kieszonkowcy są rzadsi niż w Europie, ale w tłumach ŚDM, Obon i na dworcach pilnuj plecaka (nos z przodu) i telefonu.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Po Obon (połowa sierpnia) na wielu plażach kończy się sezon – znikają ratownicy, a przybywa meduz. Przy prądzie wstecznym płyń równolegle do brzegu lub unoś się i wzywaj pomocy (118).",
+     "zrodlo": "https://www6.kaiho.mlit.go.jp/watersafety/swimming_eng/02_attention/"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 1,
+     "tekst": "Zrób kopie (zdjęcia) paszportu, polisy, biletów; jedną kopię zostaw rodzicom. Przy kradzieży paszportu – zaświadczenie z policji i kontakt z konsulem.",
+     "zrodlo": "https://www.japan.travel/en/plan/emergencies/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "W Japonii też zdarzają się uliczni „werbownicy” religijni i sprzedawcy – grzecznie odmawiaj i odchodź.",
+     "rada": true,
+     "sprawdzic": true
+    }
+   ]
+  },
+  {
+   "id": "transport",
+   "tytul": "Transport i prom",
+   "ikona": "bus",
+   "pozycje": [
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Prom Busan → Hakata (11/12.08): odprawa po południu, wypłynięcie 22:30, zejście ok. 7:30. Na noc mały plecak: leki, dokumenty, szczoteczka, ładowarka, coś ciepłego (klimatyzacja).",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Przy każdym wsiadaniu do autokaru zajmuj to samo miejsce — opiekun szybciej policzy grupę. Zapnij pas.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Choroba morska: tabletki/opaski przed wejściem na prom, lekki posiłek, miejsce na środku statku; przy tajfunie rejs może być odwołany – plan B.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Autokar: zawsze zapięte pasy , nie zostawiaj rzeczy przy wysiadce, licz osoby przed odjazdem.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Nie jedz w metrze/pociągu podmiejskim (w Shinkansenie i pociągach dalekobieżnych jedzenie – np. ekiben – jest w porządku).",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 1,
+     "tekst": "Na promie: dokumenty i leki w małym plecaku, nie w bagażu nadanym; na nocny rejs – wygodne ubranie, ładowarka.",
+     "rada": true
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Metro w Seulu: płatność T-money; w czasie ŚDM ogromny ruch – ruszaj wcześniej i miej ustalony punkt spotkania przy wyjściu ze stacji (numery wyjść!).",
+     "rada": true
+    }
+   ]
+  },
+  {
+   "id": "religia",
+   "tytul": "Kościoły, świątynie i miejsca pamięci",
+   "ikona": "church",
+   "pozycje": [
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Hiroszima i Nagasaki (Park Pokoju, Muzeum Bomby): to miejsca pamięci – cisza, bez śmiechów i pozowanych „zabawnych” zdjęć, nie wspinaj się na pomniki. W muzeum: bez lampy błyskowej, statywów i selfie-sticków, bez rozmów telefonicznych.",
+     "zrodlo": "http://hpmmuseum.jp/modules/info/index.php?action=PageView&lang=eng&page_id=47"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "W tych kościołach zakaz fotografowania i filmowania wnętrz; cisza, zdejmij czapkę, nie jedz/nie pij, nie wchodź w trakcie nabożeństw, nie dotykaj przedmiotów, nie wchodź do prezbiterium.",
+     "zrodlo": "https://kyoukaigun.jp/en/manners"
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Nasza grupa dołącza do ŚDM 4.08 wieczorem (Mszę otwarcia 3.08 spędzamy w sanktuarium w Akicie). Od 5.08: powitanie Papieża, Droga Krzyżowa, czuwanie i Msza Posłania.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Sanktuarium w Akicie jest w sierpniu zamknięte dla pielgrzymów — jesteśmy tam dzięki zgodzie sióstr. Zachowujemy szczególną ciszę i dyskrecję.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Kościoły ukrytych chrześcijan (UNESCO, Nagasaki/Hirado/Gotō): wiele wymaga zgłoszenia wizyty z wyprzedzeniem przez Nagasaki Churches Information Center (do 2 dni wcześniej).",
+     "zrodlo": "https://kyoukaigun.jp/en/faq"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Kościoły w Japonii i Korei to czynne parafie – skromny strój (zakryte ramiona i kolana), cisza, telefon wyłączony, na mszy postawa jak w Polsce; zapytaj, czy można zrobić zdjęcie.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Chram shintō: ukłon przed bramą torii, nie idź środkiem ścieżki, obmyj ręce i usta przy fontannie (temizuya) wg instrukcji; możesz zwiedzać bez udziału w modlitwie.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "W świątyniach buddyjskich i chramach: nie dotykaj posągów, nie wchodź za liny, przestrzegaj zakazów zdjęć wnętrz; nie siadaj na ofiarach/kamieniach.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Nie zostawiaj plecaka bez opieki na mszach i katechezach; nie siadaj na schodach/przejściach ewakuacyjnych.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Zasady wizyt i dojazdu dla obiektów „Hidden Christian Sites in the Nagasaki Region”.",
+     "zrodlo": "https://kirishitan.jp/en/information/rules-access"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Kontekst: Nagasaki to miejsce męczeństwa 26 świętych (1597), prześladowań i ukrytych chrześcijan (kakure kirishitan); Hirado – miejsce misji św. Franciszka Ksawerego. Przygotuj młodzież merytorycznie przed wizytą.",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Nagasaki 13–16.08 to okres Obon (święto zmarłych) – procesje, cmentarze, łodzie z lampionami (shōrō-nagashi 15.08, petardy!). Szanuj obrzędy, nie wchodź w drogę procesjom.",
+     "rada": true
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Korea: ok. 6 mln katolików, Kościół zrodzony z męczenników (św. Andrzej Kim i 102 towarzyszy; sanktuaria Jeoldusan, Seosomun). ŚDM Seul to pierwsze ŚDM w kraju, w którym chrześcijanie są mniejszością.",
+     "zrodlo": "https://www.ajupress.com/view/20261112122421888"
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Noclegi w czasie ŚDM: rodziny goszczące lub obiekty zbiorowe (sale gimnastyczne, szkoły, domy rekolekcyjne) – karimata, śpiwór, klapki, ręcznik szybkoschnący, zatyczki do uszu.",
+     "zrodlo": "https://wydseoul.org/en/news/faq"
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Katolik może z szacunkiem zwiedzać świątynie innych religii; udział w rytuałach (np. kupowanie amuletów, modlitwa przed kami) to wybór osobisty – omówcie to z duszpasterzami.",
+     "rada": true
+    }
+   ]
+  },
+  {
+   "id": "pakowanie",
+   "tytul": "Pakowanie i ubiór",
+   "ikona": "bag",
+   "pozycje": [
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 3,
+     "tekst": "Lekka, przewiewna, szybkoschnąca odzież; czapka/kapelusz; okulary przeciwsłoneczne; krem z wysokim filtrem; butelka wielokrotnego użytku; chłodzący ręcznik.",
+     "zrodlo": "https://eng.safekorea.go.kr/safekorea-eng/acts/nacts/action-guide.do?category=heatWave&menuSn=1004"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "NIE przywoź do Japonii wędlin, kiełbas, kabanosów, mięsa suszonego ani produktów z mięsem – zakaz (kontrola sanitarna, kary).",
+     "zrodlo": "https://www.maff.go.jp/aqs/english/product/import.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "nie",
+     "waga": 3,
+     "tekst": "NIE przywoź do Korei wieprzowiny i wyrobów z mięsem z krajów z ASF (Polska!) – niezadeklarowane: kara 5 mln wonów za pierwsze naruszenie, do 10 mln. Jeśli coś masz – zadeklaruj w kwarantannie.",
+     "zrodlo": "https://koreatourismtimes.com/article/2026-10-29/n4/en"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Skromny strój do kościołów i miejsc pamięci (zakryte ramiona i kolana) – miej w plecaku lekką narzutkę/chustę.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Wygodne, rozchodzone buty + sandały/klapki; buty łatwe do zdejmowania (w Japonii częste zdejmowanie obuwia), czyste skarpetki.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Peleryna/parasol składany; worek wodoodporny na elektronikę.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Na ŚDM: śpiwór, karimata, latarka, zatyczki, mała poduszka, kubek, sztućce, powerbank (w bagażu podręcznym w samolocie!).",
+     "zrodlo": "https://wydseoul.org/en/news/faq"
+    },
+    {
+     "kraj": "jp",
+     "typ": "nie",
+     "waga": 2,
+     "tekst": "Świeże owoce, warzywa, nasiona, rośliny – zakazane lub wymagają kontroli fitosanitarnej przy wjeździe do Japonii.",
+     "zrodlo": "https://www.maff.go.jp/pps/j/pqaqinfo_en.html"
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Sierpień: ok. 30–35°C, bardzo wysoka wilgotność, nagłe ulewy; noce ciepłe.",
+     "zrodlo": "https://www.wbgt.env.go.jp/en/alert.php"
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 1,
+     "tekst": "Apteczka: leki stałe, przeciwbólowe (bez kodeiny!), przeciwbiegunkowe, elektrolity, plastry na otarcia, repelent, leki na chorobę lokomocyjną.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 1,
+     "tekst": "Mały ręcznik/chusteczka do rąk – w wielu toaletach nie ma suszarek ani ręczników papierowych.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "rob",
+     "waga": 1,
+     "tekst": "Woreczek na własne śmieci, chusteczki higieniczne i żel antybakteryjny.",
+     "rada": true
+    }
+   ]
+  },
+  {
+   "id": "formalnosci",
+   "tytul": "Formalności i codzienność",
+   "ikona": "doc",
+   "pozycje": [
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Japonia: Polacy bez wizy do 90 dni (cele turystyczne); paszport ważny przez cały pobyt.",
+     "zrodlo": "https://www.pl.emb-japan.go.jp/itpr_ja/11_000001_00439.html"
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Korea: zwolnienie z K-ETA dla Polaków obowiązuje do 31.12.2026; dla 2027 brak decyzji (stan 17.11.2026). Jeśli nie zostanie przedłużone, osoby 18–64 lat będą potrzebować K-ETA (10 000 wonów, tylko oficjalna strona k-eta.go.kr, min. 72 h przed wylotem). Osoby ≤17 lat są zwolnione.",
+     "zrodlo": "https://www.mofa.go.kr/pl-pl/brd/m_9430/view.do?seq=761266"
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 3,
+     "tekst": "Nieletni: zgoda rodziców/opiekunów prawnych na wyjazd z opiekunem grupy (dokument wymagany przez organizatora i przydatny przy kontrolach).",
+     "rada": true
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Przed przylotem wypełnij Visit Japan Web (imigracja + odprawa celna, jeden kod QR).",
+     "zrodlo": "https://services.digital.go.jp/en/visit-japan-web/"
+    },
+    {
+     "kraj": "kr",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Bez K-ETA trzeba wypełnić bezpłatną e-Arrival Card (do 3 dni przed przylotem) na e-arrivalcard.go.kr; z K-ETA – nie trzeba.",
+     "zrodlo": "https://www.e-arrivalcard.go.kr/portal/guide/navigator.do?locale=E"
+    },
+    {
+     "kraj": "jp",
+     "typ": "rob",
+     "waga": 2,
+     "tekst": "Hotel/ryokan: cisza nocna, nie biegaj po korytarzach, nie przenoś mebli; w ryokanie yukatę zakłada się lewą połą NA prawą (odwrotnie – sposób dla zmarłych).",
+     "zrodlo": "https://www.japan.travel/en/guide/japanese-ryokan/"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Konbini (7-Eleven, Lawson, FamilyMart): jedzenie, woda, bankomat, toalety, ładowarki – bezpieczny punkt orientacyjny i zbiórki.",
+     "rada": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 2,
+     "tekst": "Sprawdzaj komunikaty MSZ (Odyseusz / aplikacja iPolak) przed i w trakcie podróży.",
+     "zrodlo": "https://odyseusz.msz.gov.pl"
+    },
+    {
+     "kraj": "jp",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Toalety: wiele z bidetem/elektroniką (przycisk 止 = stop); papier wrzucasz do muszli; w toaletach publicznych bywa brak ręczników.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "kr",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "W Korei w starszych toaletach papier wrzuca się do kosza obok (stosuj się do oznaczeń); w nowych – do muszli.",
+     "rada": true,
+     "sprawdzic": true
+    },
+    {
+     "kraj": "oba",
+     "typ": "wiedz",
+     "waga": 1,
+     "tekst": "Różnica czasu: Japonia i Korea UTC+9 (w sierpniu +7 h względem Polski).",
+     "rada": true
+    }
+   ]
+  }
+ ]
+}

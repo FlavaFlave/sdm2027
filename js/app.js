@@ -3,7 +3,7 @@
  * Ścieżki są względne (./data/data.json), żeby strona działała na GitHub Pages.
  * Nie zmieniaj atrybutów id w HTML ani kluczy w data.json — tu są one odczytywane.
  */
-import { $, $$, escapeHtml, formatZl, formatZlDelta, parseCsv, rowsToObjects, num, SHEET_ID, TAB_NAMES, CHOICE_IDS, N_GROUP, FUJI_PER } from "./util.js";
+import { $, $$, escapeHtml, formatZl, formatZlDelta, parseCsv, rowsToObjects, num, SHEET_ID, setSheetId, sheetUrl, TAB_NAMES, CHOICE_IDS, N_GROUP, FUJI_PER } from "./util.js";
 import {
   groupDecisions, defaultChoices, parseHash, writeHash, computeCost, baselineCost,
   activeEffects, applyDays, scenarioLogs, normalizeChoices, parseWplatySheet, parseChecklistSheet,
@@ -12,6 +12,7 @@ import {
 import { validateDays, dayChecksHtml, mealsHtml, renderFlags } from "./checks.js";
 import { setAppUrl, fetchTables, post, hasApp, askCred } from "./zapis.js";
 import { setDetailState, bindDayClicks, openDay } from "./details.js";
+import { tileHtml, bestPhoto } from "./tiles.js";
 import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace } from "./maps.js";
 import { renderBudget, resizeBudgetChart } from "./budget.js";
 import { renderChecklist } from "./checklist.js";
@@ -141,7 +142,20 @@ async function loadPrivatePanelUrl(fallbackUrl) {
 }
 
 async function loadData() {
-  const fallback = await (await fetch("./data/data.json")).json();
+  // Dane publiczne (plan, miejsca) + plik organizatorów (koszty, decyzje, ustawienia, uwagi do dni).
+  const pub = await (await fetch("./data/data.json")).json();
+  const org = await (await fetch("./data/org-j14atsfq5n.json")).json();
+  const orgDays = org.dni_org || {};
+  const fallback = {
+    ...pub, ...org,
+    meta: { ...(pub.meta || {}), ...(org.meta || {}) },
+    dni: (pub.dni || []).map((x) => ({ ...x, ...(orgDays[x.data] || {}) })),
+    miejsca: pub.miejsca,
+    decyzje: org.decyzje || pub.decyzje,
+    warianty: org.warianty || pub.warianty,
+  };
+  delete fallback.dni_org;
+  setSheetId(fallback.meta.sheet_id);
   const meta0 = fallback.meta || {};
   let tables = null, source = "";
   // 1) Apps Script (arkusz nie musi być publiczny) — gdy w data.json jest meta.zapisAppUrl.
@@ -205,43 +219,8 @@ function isKoreaDay(d) {
   return /Korea/i.test(d.kraj);
 }
 function photoForDay(day, places) {
-  const ids = (day.miejsca || "").split(",").map((s) => s.trim()).filter(Boolean);
-  for (const id of ids) {
-    const p = places.find((x) => x.id === id && x.zdjecie_url);
-    if (p) return p;
-  }
-  return null;
+  return bestPhoto(day, places);
 }
-const TENTS_SVG = `<svg class="tile-art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-  <defs><linearGradient id="nightsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070d24"/><stop offset="0.7" stop-color="#1d2b55"/><stop offset="1" stop-color="#2b3561"/></linearGradient>
-  <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#f2c46b" stop-opacity="0.6"/><stop offset="1" stop-color="#f2c46b" stop-opacity="0"/></radialGradient></defs>
-  <rect width="300" height="400" fill="url(#nightsky)"/>
-  <g fill="#fff">${Array.from({ length: 60 }, (_, i) => `<circle cx="${(i * 71) % 300}" cy="${(i * 43) % 230}" r="${(i % 3) * 0.5 + 0.6}" opacity="${0.35 + (i % 5) / 10}"/>`).join("")}</g>
-  <circle cx="235" cy="70" r="18" fill="#f4ecd2"/><circle cx="243" cy="64" r="17" fill="#0c1430"/>
-  <path d="M0 262 Q150 245 300 262 L300 400 L0 400 Z" fill="#0d1a2c"/>
-  <ellipse cx="150" cy="330" rx="190" ry="80" fill="url(#glow)"/>
-  ${[[8,232,70],[92,226,82],[190,236,74],[255,244,60],[-20,282,90],[70,290,100],[175,286,96],[262,300,80]].map(([x, y, w]) =>
-    `<path d="M${x} ${y + w * 0.7} L${x + w / 2} ${y} L${x + w} ${y + w * 0.7} Z" fill="#c6a15b"/><path d="M${x + w / 2} ${y} L${x + w * 0.4} ${y + w * 0.7} L${x + w * 0.6} ${y + w * 0.7} Z" fill="#3a2a10" opacity="0.9"/><circle cx="${x + w / 2}" cy="${y + w * 0.55}" r="3" fill="#ffe7a8" opacity="0.8"/>`).join("")}
-</svg>`;
-
-function tileHtml(day, photo) {
-  const k = day.kafelek;
-  if (k && k.motyw === "namioty") {
-    return { cls: "day-photo is-art", inner: TENTS_SVG, style: "", cap: `<p class="photo-cap">${escapeHtml(k.podpis || "")}</p>`, title: k.tytul };
-  }
-  if (k && k.motyw === "osoba") {
-    if (k.zdjecie_url) {
-      return { cls: "day-photo", inner: "", style: `style="background-image:url('${String(k.zdjecie_url).replace(/'/g, "%27")}')"`,
-        cap: `<p class="photo-cap">${escapeHtml(k.osoba || "")}. ${escapeHtml(k.zdjecie_zrodlo || "")}</p>`, title: k.tytul };
-    }
-    return { cls: "day-photo is-person", inner: `<div class="person-slot"><span class="person-name">${escapeHtml(k.osoba || "")}</span><span class="person-sub">${escapeHtml(k.tytul || "")}</span></div>`,
-      style: "", cap: `<p class="photo-cap is-todo">${escapeHtml(k.podpis || "")}</p>`, title: k.tytul };
-  }
-  const style = photo ? `style="background-image:url('${photo.zdjecie_url.replace(/'/g, "%27")}')"` : "";
-  const cap = photo ? `<p class="photo-cap">${escapeHtml(photo.nazwa)}. ${escapeHtml(photo.zdjecie_zrodlo)}</p>` : "";
-  return { cls: "day-photo", inner: "", style, cap, title: null };
-}
-
 function dayCard(day, places, changed, checks) {
   const photo = photoForDay(day, places);
   const chips = [];
@@ -782,7 +761,11 @@ async function main() {
   const baseChoices = defaultChoices(groups);
 
   let tab = "przeglad";
-  let choices = { ...baseChoices };
+  // Obowiązujący plan = opcje oznaczone „Wybrana” w arkuszu (zatwierdzone), reszta jak plan bazowy.
+  const approvedChoices = { ...baseChoices };
+  let hasApproved = false;
+  groups.forEach((g) => { const o = g.opcje.find((x) => x.wybrana); if (o) { approvedChoices[g.id] = o.opcja_id; hasApproved = true; } });
+  let choices = { ...(hasApproved ? approvedChoices : baseChoices) };
   let fujiOsob = 10;
   let people = defaultPeople(data.model);
 
@@ -799,7 +782,8 @@ async function main() {
     }
   });
   if (hash.fuji_osob) fujiOsob = Math.max(1, Math.min(90, parseInt(hash.fuji_osob, 10) || 10));
-  if (!hash.tab) {
+  const hashHasChoices = CHOICE_IDS.some((k) => hash[k]);
+  if (!hashHasChoices && !hasApproved) {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
       CHOICE_IDS.forEach((k) => {
@@ -864,8 +848,7 @@ async function main() {
     renderCurve(data.model, groups, choices, people);
     renderDays(days, data.miejsca, changed, cost.fujiN, checks, cost.fujiPer);
     setDetailState({ days, places: data.miejsca, checks, tile: (d) => {
-      const ph = (d.miejsca || "").split(",").map((x) => x.trim()).map((id) => data.miejsca.find((p) => p.id === id && p.zdjecie_url)).find(Boolean);
-      return tileHtml(d, ph || null);
+      return tileHtml(d, bestPhoto(d, data.miejsca));
     } });
     renderTimeline(days);
     renderBudget(data, cost);
@@ -883,14 +866,15 @@ async function main() {
     if (tab === "przeglad") focusMap("map-all", vis);
 
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...choices, fuji_osob: fujiOsob, people })); } catch (_) {}
-    const diff = groups.filter((g) => choices[g.id] !== baseChoices[g.id]).map((g) => g.nazwa);
+    const ref = hasApproved ? approvedChoices : baseChoices;
+    const diff = groups.filter((g) => choices[g.id] !== ref[g.id]).map((g) => g.nazwa);
     const pd = defaultPeople(data.model);
     if (people.n !== pd.n) diff.push(`${people.n} osób`);
     if (people.gratis) diff.push(`${people.gratis} gratis`);
     const sl = $("#state-line");
     if (sl) sl.innerHTML = diff.length
-      ? `<strong>Podgląd zmian:</strong> ${diff.length} ${diff.length === 1 ? "zmiana" : diff.length < 5 ? "zmiany" : "zmian"} względem planu bazowego (${escapeHtml(diff.join(", "))}). Nic nie jest zapisane.`
-      : `<strong>Oglądasz plan bazowy.</strong> Zmień decyzję albo liczbę osób, żeby zobaczyć skutki.`;
+      ? `<strong>Wariant roboczy:</strong> ${diff.length} ${diff.length === 1 ? "zmiana" : diff.length < 5 ? "zmiany" : "zmian"} względem ${hasApproved ? "obowiązującego planu" : "planu bazowego"} (${escapeHtml(diff.join(", "))}). Nic nie jest zapisane.`
+      : (hasApproved ? `<strong>Oglądasz obowiązujący plan</strong> (zatwierdzony w arkuszu). Tę wersję widzą jadący.` : `<strong>Oglądasz plan bazowy.</strong> Nic nie jest jeszcze zatwierdzone — jadący widzą plan bazowy.`);
     writeHash(tab, { choices, fujiOsob, people });
   }
 
@@ -916,8 +900,14 @@ async function main() {
   if (official) {
     official.innerHTML = `<strong>Obowiązujący plan zapisuje się w arkuszu, nie na tej stronie.</strong>
       Żeby wszyscy organizatorzy mieli ten sam, trwały wybór, otwórz kartę Decyzje i w kolumnie „Wybrana” wpisz TAK przy oficjalnie przyjętej opcji (jedna na każdą decyzję). Kolumna „Domyślna” to plan bazowy do porównań, „Rekomendacja” — wskazówka z planu v3.
-      <a href="https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs/edit#gid=1865812908" target="_blank" rel="noopener">Otwórz kartę Decyzje w arkuszu</a>`;
+      <a href="${sheetUrl(1865812908)}" target="_blank" rel="noopener">Otwórz kartę Decyzje w arkuszu</a>`;
   }
+
+  $("#btn-official")?.addEventListener("click", () => {
+    choices = { ...(hasApproved ? approvedChoices : baseChoices) };
+    renderDecisionForm(groups, choices, fujiOsob, onDecision, deltaFor);
+    applyAll();
+  });
 
   $("#btn-approve")?.addEventListener("click", async () => {
     const cost = computeCost(data.model, groups, choices, fujiOsob, people);

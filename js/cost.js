@@ -67,6 +67,7 @@ function applyChangeToken(amounts, token) {
 export function disabledGroups(choices) {
   const off = {};
   if (choices.sen === "tokio") off.noc_2 = "Nie dotyczy: przy opcji „lepszy sen” noc 2.08 jest w Tokio, nie na trasie pętli.";
+  if (choices.petla === "E4") off.sen = "Nie dotyczy: w wariancie 4 (Sendai) pierwsza noc jest w Mito, a dzień 3.08 zaczyna się od Mito.";
   if (choices.pakiet === "A1") off.seul_stawka = "Nie dotyczy: w pakiecie A1+ noclegi 4–6.08 zapewnia organizator ŚDM.";
   return off;
 }
@@ -233,7 +234,9 @@ export function baselineCost(model, groups) {
 
 export function activeEffects(groups, choices) {
   const codes = [];
+  const off = disabledGroups(choices);
   groups.forEach((g) => {
+    if (off[g.id]) return;
     const opt = g.opcje.find((o) => o.opcja_id === choices[g.id]);
     if (opt && opt.efekt) codes.push(opt.efekt);
   });
@@ -267,7 +270,7 @@ export function scenarioLogs(warianty, effects) {
 
 export function normalizeChoices(c) {
   const next = { ...c };
-  if (next.petla === "E4") next.noc_2 = "mito";
+  if (next.petla === "E4") { next.noc_2 = "mito"; if (next.sen === "tokio") next.sen = "standard"; }
   return next;
 }
 
@@ -285,7 +288,8 @@ export function splitInstalments(total, raty, payers = N_GROUP) {
     if (r.zamrozona) { r.kwotaOs = z; frozenSum += z; }
     else openShare += Number(r.udzial) || 0;
   });
-  const rest = total - frozenSum;
+  // Gdy zamrożone raty przekraczają cenę, kolejne raty są zerowe (nadwyżka do rozliczenia, nie ujemna rata).
+  const rest = Math.max(0, total - frozenSum);
   const open = rows.filter((r) => !r.zamrozona);
   let acc = 0;
   open.forEach((r, i) => {
