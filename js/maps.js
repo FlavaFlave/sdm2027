@@ -259,12 +259,8 @@ export function focusMap(elId) {
 }
 
 export function eastLine(choices) {
-  const petla = choices.petla || "E1";
-  let noc = choices.noc_2 || "iwaki";
-  if (petla === "E4") return ["narita", "mito", "sendai", "matsushima", "nikko", "haneda"];
-  const first = noc === "mito" ? "mito" : noc === "utsunomiya" ? "utsunomiya" : "iwaki";
-  if (petla === "E2" || petla === "E3") return ["narita", first, "matsushima", "akita", "nikko", "haneda"];
-  return ["narita", first, "matsushima", "akita", "kitakami", "nikko", "haneda"];
+  if (choices.petla === "B") return ["narita", "iwaki", "matsushima", "okago", "sendai", "yamanaka", "haneda"];
+  return ["narita", "iwaki", "matsushima", "akita", "akita_noc", "nikko", "yamanaka", "haneda"];
 }
 
 export function hiddenShown(warianty, effects, choices) {
@@ -276,9 +272,6 @@ export function hiddenShown(warianty, effects, choices) {
     (w.ukryj || []).forEach((id) => ukryj.add(id));
     (w.pokaz || []).forEach((id) => pokaz.add(id));
   });
-  const noc = (choices.petla === "E4") ? "mito" : (choices.noc_2 || "iwaki");
-  if (noc === "mito") { ukryj.add("iwaki"); pokaz.add("mito"); }
-  if (noc === "utsunomiya") { ukryj.add("iwaki"); pokaz.add("utsunomiya"); }
   return { ukryj, pokaz };
 }
 
@@ -296,7 +289,7 @@ export function routeLines(choices) {
   const east = eastLine(choices);
   const west = ["hakata", "tabira", "hirado", "nagasaki", "yamaguchi", "hiroshima", "miyajima", "himeji", "osaka", "fushimi", "kix"];
   const westJp = ["hakata", "tabira", "hirado", "nagasaki", "unzen", "yamaguchi", "hiroshima", "miyajima", "himeji", "osaka", "fushimi", "kiyomizu", "kix"];
-  const kr = ["gimpo", "mapo", "jeoldusan", "sangam", "seosomun", "myeongdong", "seongnam", "solmoe", "gamcheon", "jagalchi", "oryundae", "haeundae", "prom"];
+  const kr = ["gimpo", "mapo", "seosomun", "myeongdong", "sangam", "seongnam", "jeoldusan", "saenamteo", "solmoe", "jwadong", "haeundae", "gamcheon", "jagalchi", "prom"];
   const all = [
     { ids: ["waw", "doha", "narita"], color: "#c6a15b", dash: "6 7" },
     { ids: east, color: "#1f4e79" },
@@ -310,9 +303,9 @@ export function routeLines(choices) {
     { ids: east, color: "#1f4e79" },
     { ids: westJp, color: "#1f4e79" },
   ];
-  if (choices.fuji === "tak") {
-    all.push({ ids: ["fuji"], color: "#c6a15b", dash: "4 6" });
-    jp.push({ ids: ["fuji"], color: "#c6a15b", dash: "4 6" });
+  if (choices.fuji === "tak" && choices.petla === "B") {
+    all.push({ ids: ["yamanaka", "fuji"], color: "#c6a15b", dash: "4 6" });
+    jp.push({ ids: ["yamanaka", "fuji"], color: "#c6a15b", dash: "4 6" });
   }
   return { all, jp, kr: [{ ids: kr, color: "#a3303a" }] };
 }

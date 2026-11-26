@@ -66,8 +66,13 @@ function applyChangeToken(amounts, token) {
 /** Decyzje, które w danym scenariuszu nie mają znaczenia (i nie doliczają się do kosztu). */
 export function disabledGroups(choices) {
   const off = {};
-  if (choices.sen === "tokio") off.noc_2 = "Nie dotyczy: przy opcji „lepszy sen” noc 2.08 jest w Tokio, nie na trasie pętli.";
-  if (choices.petla === "E4") off.sen = "Nie dotyczy: w wariancie 4 (Sendai) pierwsza noc jest w Mito, a dzień 3.08 zaczyna się od Mito.";
+  if (choices.petla !== "B") {
+    off.fuji = "Nie dotyczy: w ścieżce A (Akita) nie ma dnia na Fuji — wejście jest tylko w ścieżce B.";
+    off.nie_fuji = "Nie dotyczy: tylko w ścieżce B, gdy część grupy wchodzi na Fuji.";
+  } else {
+    off.sen = "Nie dotyczy w ścieżce B: „lepszy sen” był liczony pod trasę do Akity.";
+    if (choices.fuji !== "tak") off.nie_fuji = "Nie dotyczy: nikt nie wchodzi na Fuji.";
+  }
   if (choices.pakiet === "A1") off.seul_stawka = "Nie dotyczy: w pakiecie A1+ noclegi 4–6.08 zapewnia organizator ŚDM.";
   return off;
 }
@@ -206,7 +211,7 @@ export function computeCost(model, groups, choices, fujiOsob, people) {
   const reserve = reserveGroup / payers;
   const total = direct + reserve;
   const fujiPer = Number(model && model.fuji_na_osobe) || FUJI_PER;
-  const fujiN = choices.fuji === "tak" ? Math.max(0, Number(fujiOsob) || 0) : 0;
+  const fujiN = (choices.fuji === "tak" && !disabledGroups(choices).fuji) ? Math.max(0, Number(fujiOsob) || 0) : 0;
   const fujiAdd = fujiN * fujiPer;
   const fixedGroup = lines.filter((l) => l.jednostka === "grupa").reduce((a, l) => a + l.group, 0);
   return {
@@ -270,7 +275,11 @@ export function scenarioLogs(warianty, effects) {
 
 export function normalizeChoices(c) {
   const next = { ...c };
-  if (next.petla === "E4") { next.noc_2 = "mito"; if (next.sen === "tokio") next.sen = "standard"; }
+  // Stare warianty pętli (E1–E4, do 26.11.2026) → ścieżki A/B.
+  if (["E1", "E2", "E3"].includes(next.petla)) next.petla = "A";
+  if (next.petla === "E4") next.petla = "B";
+  if (next.petla === "B" && next.sen === "tokio") next.sen = "standard";
+  delete next.noc_2;
   return next;
 }
 

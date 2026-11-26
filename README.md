@@ -265,3 +265,14 @@ Arkusz: <https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42L
 - **Strona jadących nie zna arkusza.** Zatwierdzony plan pobiera ze skryptu `Zapis.gs` (`?action=plan`, tylko ID wybranych opcji); adres w `data.json → meta.planAppUrl`.
 - `Zapis.gs`: odczyt całego arkusza (`?action=tabele`) tylko z kodem organizatorów.
 - To jest ukrycie, nie zabezpieczenie: repozytorium jest publiczne. Prawdziwe logowanie — Cloudflare Access (zob. rozmowa z 17.11.2026).
+
+---
+
+## Etap 12 (26.11.2026) — ścieżki A/B i przylot do Seulu 5.08
+
+- Decyzja „Pierwsze dni w Japonii” (id `petla`) ma teraz dwie opcje: **A** (Akita, Nikkō, Yamanakako) i **B** (Ōkago, Sendai, Fuji dla chętnych). Stare E1–E4 i decyzja o noclegu 2.08 zniknęły (stare linki z E1–E4 przełączają się na A/B).
+- Nowe decyzje: **Przylot do Seulu** (`przylot`: 5.08 wieczorem / 6.08 rano) i **Kto nie wchodzi na Fuji** (`nie_fuji`: B1/B2/B3, tylko w ścieżce B przy Fuji).
+- Fuji przeniesione z 17–18.08 na 4–5.08 i działa tylko w ścieżce B.
+- Korea: 6.08 rano Seosomun i Myeongdong (jeśli rejestracja pozwoli), 9.08 Jeoldusan i Saenamteo, 11.08 Msza w Jwadong (Busan).
+- Nowe miejsca: Yamanakako (siostry salezjanki), Ōkago, Saenamteo, Jwadong.
+- Kwoty w arkuszu (karta Koszty) mają pierwszeństwo przed `data/…json` — po wgraniu trzeba je przepisać w arkuszu (lista w rozmowie z 26.11.2026).

@@ -1,7 +1,7 @@
 {
   "meta": {
     "opis": "Dane publiczne: plan dzień po dniu, miejsca i warianty trasy. Koszty, decyzje i ustawienia organizatorów są w osobnym pliku.",
-    "wersja_planu": "plan z 15.11.2026, uzupełniony 16.11.2026 — wariant rekomendowany: Akita bez parady",
+    "wersja_planu": "26.11.2026 — ścieżki A/B, przylot do Seulu 5.08",
     "planAppUrl": "",
     "planAppUrl_uwaga": "Adres skryptu Zapis.gs (/exec). Strona jadących pyta go tylko o zatwierdzone opcje (?action=plan). Pusty = plan wstępny."
   },
@@ -42,7 +42,7 @@
       "kraj": "Japonia",
       "miejsce": "Doha → Narita → Iwaki",
       "program": "Lądowanie na Naricie o 19:10 (lot QR806). Odprawa paszportowa i celna 90 osób do ok. 21:00. Walizki jadą z grupą. Dwa autokary do Iwaki na wybrzeżu Pacyfiku (ok. 200 km), przyjazd ok. 0:00.",
-      "nocleg": "Iwaki (rekomendacja: wariant 1)",
+      "nocleg": "Iwaki",
       "transport": "Samolot QR806; 2 autokary Narita–Iwaki",
       "km": "200",
       "czas_h": "2,5–2,75",
@@ -62,39 +62,39 @@
           "jak": "samolot"
         }
       },
-      "sens": "Lądujemy w Japonii i od razu jedziemy na północ, żeby zdążyć do Akity."
+      "sens": "Lądujemy w Japonii i od razu jedziemy na północ wybrzeżem Pacyfiku."
     },
     {
       "data": "2027-08-03",
       "data_pl": "3.08.2027",
       "dzien": "wtorek",
       "kraj": "Japonia",
-      "miejsce": "Iwaki → Matsushima → Akita → Kitakami",
-      "program": "Jutrznia 6:15, wyjazd 7:00. Matsushima 9:45–11:30: Zuiganji, Godaidō, cisza za ofiary tsunami 2011, katecheza o poselstwie Hasekury Tsunenagi do Rzymu. Yuzawadai ok. 15:45–18:00: Msza w sanktuarium Matki Bożej z Akity (za zgodą sióstr; inaczej kościół św. Augustyna), zawierzenie Niepokalanej. Przyjazd do Kitakami ok. 20:00.",
-      "nocleg": "Kitakami (wariant 1)",
+      "miejsce": "Iwaki → Matsushima → Akita",
+      "program": "Jutrznia 6:45, wyjazd 7:30. Matsushima ok. 10:00–11:30: Zuiganji, Godaidō, cisza za ofiary tsunami 2011, katecheza o poselstwie Hasekury Tsunenagi do Rzymu. Obiad bento w drodze. Yuzawadai ok. 15:30: Msza ok. 16:30 w sanktuarium Matki Bożej z Akity (za zgodą sióstr), zawierzenie grupy Maryi przed ŚDM. Przyjazd do hotelu w Akicie ok. 19:00.",
+      "nocleg": "Akita",
       "transport": "2 autokary po 2 kierowców",
-      "km": "180 + 260 + 120",
-      "czas_h": "ok. 8 z przerwami",
-      "miejsca": "iwaki,matsushima,zuiganji,akita,kitakami",
-      "status": "Msza i noclegi do uzgodnienia",
+      "km": "180 + 260",
+      "czas_h": "ok. 6 jazdy, dzień ok. 11,5 h",
+      "miejsca": "iwaki,matsushima,zuiganji,akita,akita_noc",
+      "status": "Msza za zgodą sióstr (faks do 30.11.2026); hotel do rezerwacji",
       "posilki": {
         "sniadanie": {
           "gdzie": "hotel Iwaki",
           "jak": "hotel",
-          "min": 40,
-          "od": "06:00"
+          "od": "06:50",
+          "min": 35
         },
         "obiad": {
-          "gdzie": "bento na postoju w drodze do Akity (przerwa kierowców)",
+          "gdzie": "bento na postoju w drodze do Akity",
           "jak": "bento",
-          "min": 30,
-          "od": "12:30"
+          "od": "12:30",
+          "min": 30
         },
         "kolacja": {
-          "gdzie": "hotel Kitakami",
+          "gdzie": "hotel w Akicie",
           "jak": "restauracja",
-          "min": 45,
-          "od": "20:15"
+          "od": "19:15",
+          "min": 45
         }
       },
       "sens": "Dzień maryjny: od zatoki Matsushima, skąd zaczęła się przygoda Japonii z Rzymem, do sanktuarium Matki Bożej z Akity."
@@ -103,84 +103,84 @@
       "data": "2027-08-04",
       "data_pl": "4.08.2027",
       "dzien": "środa",
-      "kraj": "Japonia / Korea",
-      "miejsce": "Kitakami → Nikkō → Haneda → Gimpo → Seul",
-      "program": "Msza 6:30 w hotelu, śniadanie, wyjazd 7:45. Kitakami–Nikkō ok. 385 km (ok. 5,25 h z przerwami), obiad bento w autokarze. Tōshōgū 13:00–14:30, katecheza o Ieyasu i początku prześladowań. Wyjazd najpóźniej 14:30. Nikkō–Haneda ok. 170 km, przyjazd ok. 17:30. NH867 i OZ1035, oba 20:05 (lot ok. 2 h 15 min), przylot Gimpo ok. 22:20. Nocleg Mapo ok. 0:00.",
-      "nocleg": "Seul, Mapo (własny obiekt)",
-      "transport": "2 autokary (2 kierowców); samoloty NH867 / OZ1035",
-      "km": "385 + 170",
-      "czas_h": "5,25 + dojazd na Hanedę",
-      "miejsca": "kitakami,nikko,haneda,gimpo,mapo",
-      "status": "loty do zablokowania; autokary planowane",
+      "kraj": "Japonia",
+      "miejsce": "Akita → Nikkō",
+      "program": "Msza 6:15 w hotelu, śniadanie, wyjazd 7:15. Akita–Nikkō ok. 500 km autostradami Akita i Tōhoku (ok. 7–7,5 h z przerwami), obiad bento w drodze. Tōshōgū ok. 15:00–16:30 (ostatnie wejście 16:30, zamknięcie 17:00), katecheza o Ieyasu i początku prześladowań. Nocleg w Nikkō (Kinugawa), kolacja i odpoczynek.",
+      "nocleg": "Nikkō (Kinugawa Onsen)",
+      "transport": "2 autokary po 2 kierowców",
+      "km": "ok. 500",
+      "czas_h": "ok. 7–7,5 z przerwami",
+      "miejsca": "akita_noc,nikko",
+      "status": "km: szacunek; hotel i wejście do Tōshōgū do rezerwacji",
       "posilki": {
         "sniadanie": {
-          "gdzie": "hotel Kitakami",
+          "gdzie": "hotel w Akicie",
           "jak": "hotel",
-          "min": 30,
-          "od": "07:10"
+          "od": "06:45",
+          "min": 30
         },
         "obiad": {
-          "gdzie": "bento w autokarze przed Nikkō",
+          "gdzie": "bento w autokarze",
           "jak": "bento",
-          "min": 20,
-          "od": "12:15"
+          "od": "12:00",
+          "min": 20
         },
         "kolacja": {
-          "gdzie": "Haneda, strefa odlotów",
+          "gdzie": "hotel w Nikkō",
           "jak": "restauracja",
-          "min": 40,
-          "od": "18:30"
+          "od": "18:30",
+          "min": 60
         }
       },
-      "sens": "Przy grobie sioguna, który zakazał chrześcijaństwa — i lot do Seulu na ŚDM."
+      "sens": "Przy grobie sioguna, który zakazał chrześcijaństwa."
     },
     {
       "data": "2027-08-05",
       "data_pl": "5.08.2027",
       "dzien": "czwartek",
-      "kraj": "Korea Południowa",
-      "miejsce": "Seul (Jeoldusan, Sangam)",
-      "program": "Pobudka 9:00. Msza 10:30 w sanktuarium męczenników Jeoldusan (Mapo). Od 13:00 Seoul World Cup Stadium — powitanie Papieża (must see).",
-      "nocleg": "Seul, Mapo (własny obiekt)",
-      "transport": "Metro, własne karty (pakiet ŚDM zaczyna się 6.08)",
-      "km": "",
-      "czas_h": "",
-      "miejsca": "mapo,jeoldusan,sangam",
-      "status": "powitanie potwierdzone; godzina, sektor i Msza do weryfikacji",
+      "kraj": "Japonia / Korea",
+      "miejsce": "Nikkō → Yamanakako → Haneda → Gimpo → Seul",
+      "program": "Pobudka 4:45, wyjazd 5:30 (śniadanie w autokarze). Nikkō–Yamanakako ok. 250 km (ok. 3,5–4 h). Ok. 9:30 Msza u sióstr salezjanek w Yamanaka na odpust Matki Bożej Śnieżnej, przy dobrej pogodzie z widokiem na Fuji. Obiad nad jeziorem. Wyjazd ok. 13:00, Haneda ok. 15:30 (ok. 110 km, możliwe korki na autostradzie Chūō). Wieczorny lot do Gimpo (w 2026: NH867 / OZ1035 o 20:05, ok. 2 h 15 min), przylot ok. 22:20, hotel w Mapo ok. 23:30.",
+      "nocleg": "Seul, Mapo (ustalony hotel)",
+      "transport": "2 autokary; samoloty Haneda–Gimpo (możliwy podział na kilka lotów, także do Incheon)",
+      "km": "250 + 110",
+      "czas_h": "ok. 6 jazdy",
+      "miejsca": "nikko,yamanaka,haneda,gimpo,mapo",
+      "status": "lot do zablokowania (warunek przylotu 5.08); Msza u sióstr do uzgodnienia",
       "posilki": {
         "sniadanie": {
-          "gdzie": "hotel Mapo",
-          "jak": "hotel",
-          "min": 45,
-          "od": "09:15"
+          "gdzie": "w autokarze (z hotelu)",
+          "jak": "bento",
+          "od": "05:30",
+          "min": 20
         },
         "obiad": {
-          "gdzie": "przed wejściem na stadion",
+          "gdzie": "nad jeziorem Yamanaka",
           "jak": "restauracja",
-          "min": 45,
-          "od": "12:00"
+          "od": "11:30",
+          "min": 60
         },
         "kolacja": {
-          "gdzie": "po powitaniu, na mieście",
+          "gdzie": "Haneda, strefa odlotów",
           "jak": "restauracja",
-          "min": 45,
-          "od": "21:00"
+          "od": "18:00",
+          "min": 45
         }
       },
-      "sens": "Męczennicy Korei rano, papież Leon XIV po południu."
+      "sens": "Odpust Matki Bożej Śnieżnej u stóp Fuji i lot do Seulu na ŚDM."
     },
     {
       "data": "2027-08-06",
       "data_pl": "6.08.2027",
       "dzien": "piątek",
       "kraj": "Korea Południowa",
-      "miejsce": "Seul / Sangam",
-      "program": "8:15 modlitwa w rocznicę Hiroszimy. Rano start pakietu B1+: rejestracja, plecaki, przejście do zakwaterowania. Msza. Po południu Droga Krzyżowa z Papieżem, Sangam.",
+      "miejsce": "Seul (Seosomun, Myeongdong) / Sangam",
+      "program": "8:15 modlitwa w rocznicę Hiroszimy. Rano, jeśli godziny rejestracji pakietu pozwolą: Seosomun (sanktuarium, park i muzeum męczenników) i katedra Myeongdong — blisko siebie w centrum. Start pakietu B1+: rejestracja, plecaki, przejście do zakwaterowania. Msza. Po południu Droga Krzyżowa z Papieżem, Sangam.",
       "nocleg": "Pakiet B1+ (nieletni osobno)",
-      "transport": "Karta transportowa ŚDM",
+      "transport": "Metro (własne karty do rejestracji), potem karta ŚDM",
       "km": "",
       "czas_h": "",
-      "miejsca": "sangam",
+      "miejsca": "mapo,seosomun,myeongdong,sangam",
       "status": "program potwierdzony; godziny do weryfikacji",
       "posilki": {
         "sniadanie": {
@@ -274,13 +274,13 @@
       "data_pl": "9.08.2027",
       "dzien": "poniedziałek",
       "kraj": "Korea Południowa",
-      "miejsce": "Seul (Kiko, Seosomun, Myeongdong)",
-      "program": "11:02 modlitwa w rocznicę Nagasaki. Spotkanie powołaniowe z Kiko Argüello (wołanie). Msza. Jeśli starczy czasu: Seosomun i katedra Myeongdong.",
+      "miejsce": "Seul (Kiko, Jeoldusan, Saenamteo)",
+      "program": "11:02 modlitwa w rocznicę Nagasaki. Spotkanie powołaniowe z Kiko Argüello (wołanie). Msza. Po spotkaniu sanktuaria męczenników nad rzeką Han: Jeoldusan i Saenamteo (blisko siebie). Seosomun i Myeongdong — jeśli nie zmieściły się 6.08.",
       "nocleg": "Pakiet B1+",
       "transport": "Karta ŚDM",
       "km": "",
       "czas_h": "",
-      "miejsca": "seosomun,myeongdong",
+      "miejsca": "jeoldusan,saenamteo",
       "status": "spotkanie z Kiko do weryfikacji",
       "posilki": {
         "sniadanie": {
@@ -345,25 +345,25 @@
       "dzien": "środa",
       "kraj": "Korea Południowa",
       "miejsce": "Busan (dzień luzu) → prom",
-      "program": "Dzień luzu. Msza 11:00 w sanktuarium męczenników Oryundae. Plaża Haeundae, Gamcheon, targ Jagalchi. Odprawa promowa 16:30–18:30 (bagaż rejestrowany do 17:30), wejście na pokład ok. 19:40. New Camellia wypływa 22:30.",
+      "program": "Dzień luzu. Msza ok. 10:30 w kościele św. Andrzeja Kima w Jwadong (Haeundae) — parafia zgłasza udział w ŚDM. Plaża Haeundae i czas wolny. Do wyboru jeden punkt po drugiej stronie miasta (ok. 1–1,5 h autokarem): Gamcheon albo targ Jagalchi. Odprawa promowa 16:30–18:30 (bagaż rejestrowany do 17:30), wejście na pokład ok. 19:40. New Camellia wypływa 22:30.",
       "nocleg": "Prom New Camellia",
       "transport": "New Camellia (Camellia Line)",
       "km": "",
       "czas_h": "rejs nocny",
-      "miejsca": "oryundae,haeundae,gamcheon,jagalchi,prom",
+      "miejsca": "jwadong,haeundae,gamcheon,jagalchi,prom",
       "status": "godziny 2026 potwierdzone; kalendarz 2027 do weryfikacji",
       "posilki": {
         "sniadanie": {
           "gdzie": "hotel Busan",
           "jak": "hotel",
-          "min": 40,
-          "od": "08:00"
+          "od": "08:00",
+          "min": 40
         },
         "obiad": {
-          "gdzie": "targ Jagalchi",
+          "gdzie": "Haeundae albo targ Jagalchi",
           "jak": "restauracja",
-          "min": 60,
-          "od": "13:00"
+          "od": "13:00",
+          "min": 60
         },
         "kolacja": {
           "gdzie": "bufet na promie",
@@ -757,7 +757,7 @@
       "lng": 140.8877,
       "typ": "nocleg",
       "dni": "2/3.08",
-      "opis": "Rekomendowany nocleg pierwszej nocy (wariant 1). Miasto na wybrzeżu Pacyfiku, ok. 200 km od lotniska; przyjazd ok. 0:00. Dzięki temu 3.08 docieramy do Akity ok. 15:45.",
+      "opis": "Rekomendowany nocleg pierwszej nocy. Miasto na wybrzeżu Pacyfiku, ok. 200 km od lotniska; przyjazd ok. 0:00. Dzięki temu 3.08 docieramy do Akity ok. 15:45.",
       "zwiedzamy": "Tylko nocleg i wczesny wyjazd 3.08 (jutrznia 6:15, wyjazd 7:00). Zdjęcie: latarnia Shioyazaki na wybrzeżu Iwaki — nie hotel.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Shioyasaki_Light_House_%2813332232033%29.jpg/1280px-Shioyasaki_Light_House_%2813332232033%29.jpg",
       "zdjecie_zrodlo": "hiroaki from Tokyo, Japan — CC BY 2.0, Wikimedia Commons. Zdjęcie przedstawia latarnię Shioyazaki na wybrzeżu Iwaki, nie obiekt noclegowy.",
@@ -814,7 +814,7 @@
       "lat": 39.7978,
       "lng": 140.1503,
       "typ": "sanktuarium",
-      "dni": "3.08",
+      "dni": "3.08 (ścieżka A)",
       "opis": "Sanktuarium Matki Bożej z Akity (Seitai Hoshikai) na wzgórzu Yuzawadai — miejsce objawień z 1973 r. i figury Maryi, która płakała. Główny maryjny punkt pielgrzymki: tu zawierzamy grupę Maryi przed ŚDM.",
       "zwiedzamy": "Msza grupowa (za zgodą sióstr), zawierzenie Niepokalanej. Wariant awaryjny: kościół św. Augustyna w Akicie i modlitwa w Ogrodzie Maryi, jeśli będzie otwarty. W wariancie 4 (gdy siostry odmówią) ten punkt odpada na rzecz Sendai.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Sakura_Matsuri_in_Senshu_Park_20190421a.jpg/1280px-Sakura_Matsuri_in_Senshu_Park_20190421a.jpg",
@@ -834,7 +834,7 @@
       "lat": 39.2867,
       "lng": 141.1132,
       "typ": "nocleg",
-      "dni": "3/4.08",
+      "dni": "(poprzedni plan)",
       "opis": "Nocleg 3.08 w wariancie wariant 1 (bez parady Kantō). Ok. 120 km od Akity, przyjazd ok. 20:00. Rano 4.08 skraca drogę do Nikkō (ok. 385 km, 5,25 h).",
       "zwiedzamy": "Nocleg, Msza 5:45 w hotelu, wyjazd 6:45 do Nikkō. Zdjęcie: park Tenshōchi nad rzeką Kitakami — nie hotel.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Tenshochi_Park.jpg/1280px-Tenshochi_Park.jpg",
@@ -843,7 +843,8 @@
         "co": "Miasto w prefekturze Iwate, ok. 120 km od Akity.",
         "dlaczego": "Tylko nocleg: dzięki niemu 4.08 droga do Nikkō jest krótsza.",
         "robimy": "Nocleg, rano Msza w hotelu."
-      }
+      },
+      "wariant": true
     },
     {
       "id": "nikko",
@@ -852,8 +853,8 @@
       "lat": 36.7581,
       "lng": 139.5987,
       "typ": "zwiedzanie",
-      "dni": "4.08",
-      "opis": "Mauzoleum Tokugawy Ieyasu, pierwszego szoguna, który rozpoczął systematyczne prześladowania katolików. Przystanek w drodze powrotnej z Akity na Hanedę — „nie zamiast” Akity. W wariancie 1 ok. 1,5 h: 12:00–13:30, wyjazd najpóźniej 13:30, potem ok. 170 km na Hanedę.",
+      "dni": "4.08 (ścieżka A)",
+      "opis": "Mauzoleum Tokugawy Ieyasu, pierwszego szoguna, który rozpoczął systematyczne prześladowania katolików. W ścieżce A przystanek w drodze z Akity nad jezioro Yamanaka: ok. 15:00–16:30, przed zamknięciem o 17:00. Nocleg w Nikkō. W ścieżce B Nikkō odpada.",
       "zwiedzamy": "Tōshōgū (Yōmeimon i teren chramu), katecheza o Ieyasu i zakazie chrześcijaństwa.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Nikko_Toshogu_Yomeimon_Gate_2024.jpg/1280px-Nikko_Toshogu_Yomeimon_Gate_2024.jpg",
       "zdjecie_zrodlo": "Jpatokal — CC BY-SA 4.0, Wikimedia Commons",
@@ -872,9 +873,9 @@
       "lat": 35.5494,
       "lng": 139.7798,
       "typ": "lotnisko",
-      "dni": "4.08",
-      "opis": "Wylot do Seulu wieczorem 4.08, żeby zdążyć na powitanie Papieża 5.08 po południu. Planowane rejsy NH867 i OZ1035, oba o 20:05, przylot na Gimpo ok. 22:20. Blok miejsc do założenia, gdy ukaże się rozkład lato 2027.",
-      "zwiedzamy": "Odprawa wieczornych lotów do Seulu. Zapas: poranne rejsy 5.08 (JL91 8:20, NH861 8:40).",
+      "dni": "5.08",
+      "opis": "Wylot do Seulu wieczorem 5.08 (w 2026: NH867 i OZ1035 o 20:05, lot ok. 2 h 15 min). Na Hanedzie wystarczą ok. 2 h przed odlotem. Zapas: poranne rejsy 6.08.",
+      "zwiedzamy": "Odprawa wieczornych lotów do Seulu. Zapas: poranne rejsy 6.08 (w 2026: JL91 8:20, NH861 8:40).",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Tokyo-International-Airport_Satellite.jpg/1280px-Tokyo-International-Airport_Satellite.jpg",
       "zdjecie_zrodlo": "MaedaAkihiko — CC BY-SA 4.0, Wikimedia Commons"
     },
@@ -885,8 +886,8 @@
       "lat": 37.5583,
       "lng": 126.7906,
       "typ": "lotnisko",
-      "dni": "4.08",
-      "opis": "Przylot z Hanedy ok. 22:20. Gimpo leży bliżej Seulu niż Incheon, co skraca nocny dojazd do Mapo. Nocleg w Mapo ok. 0:00.",
+      "dni": "5.08",
+      "opis": "Przylot z Hanedy ok. 22:20. Gimpo leży blisko Mapo, gdzie mamy ustalony hotel.",
       "zwiedzamy": "Odprawa, transfer autokarem lub autobusem do noclegu w Mapo.",
       "zdjecie_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Gimpo_International_Airport_%281%29.jpg",
       "zdjecie_zrodlo": "Brit in Seoul — CC BY-SA 4.0, Wikimedia Commons"
@@ -898,8 +899,8 @@
       "lat": 37.556,
       "lng": 126.924,
       "typ": "nocleg",
-      "dni": "4–6.08",
-      "opis": "Dzielnica na zachód od centrum, blisko Jeoldusan i stadionu Sangam. Tu szukamy bloku ok. 90 łóżek na noce 4/5 i 5/6.08 — to kryterium pozostania przy pakiecie B1+. Termin zapytań: 15.12.2026.",
+      "dni": "5/6.08",
+      "opis": "Dzielnica na zachód od centrum, blisko Jeoldusan i stadionu Sangam. Tu jest ustalony hotel na noc 5/6.08; od 6.08 noclegi z pakietu B1+.",
       "zwiedzamy": "Noclegi własne poza pakietem (2 noce). Blisko sanktuarium Jeoldusan.",
       "zdjecie_url": "",
       "zdjecie_zrodlo": ""
@@ -911,8 +912,8 @@
       "lat": 37.5444,
       "lng": 126.9122,
       "typ": "sanktuarium",
-      "dni": "5.08",
-      "opis": "„Góra ścięcia” nad Hanem w Mapo: miejsce egzekucji koreańskich męczenników. Rano 5.08, przed powitaniem Papieża, grupa ma tu Mszę o 10:30 — katolicki początek pobytu w Seulu, bez dodatkowego dojazdu na drugi koniec miasta.",
+      "dni": "9.08",
+      "opis": "„Góra ścięcia” nad Hanem w Mapo: miejsce egzekucji koreańskich męczenników w 1866 r. Odwiedzamy 9.08 po spotkaniu z Kiko, razem z pobliskim Saenamteo.",
       "zwiedzamy": "Msza 10:30, muzeum i teren sanktuarium. Pobudka 9:00 (po północy przylotu nie planujemy Mszy o świcie).",
       "zdjecie_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeoldusan_Shrine.jpg?width=1200",
       "zdjecie_zrodlo": "Wikimedia Commons, plik „Jeoldusan Shrine.jpg” — autor i licencja na stronie pliku",
@@ -931,16 +932,16 @@
       "lat": 37.5683,
       "lng": 126.8973,
       "typ": "sdm",
-      "dni": "5.08, 6.08",
-      "opis": "Stadion na Sangam: powitanie Papieża 5.08 od ok. 13:00 (punkt obowiązkowy) oraz Droga Krzyżowa 6.08 po południu. Przy B1+ trzeba potwierdzić w KBO, czy 5.08 grupa wejdzie do sektora dla zarejestrowanych.",
-      "zwiedzamy": "5.08 powitanie Papieża; 6.08 Droga Krzyżowa z Papieżem. Karta transportowa ŚDM od 6.08.",
+      "dni": "6.08",
+      "opis": "Stadion na Sangam: Droga Krzyżowa z Papieżem 6.08 po południu (powitanie Papieża 5.08 nie jest już w planie obowiązkowym).",
+      "zwiedzamy": "6.08 Droga Krzyżowa z Papieżem. Karta transportowa ŚDM od 6.08.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Seoul_World_Cup_Stadium_01.jpg/1280px-Seoul_World_Cup_Stadium_01.jpg",
       "zdjecie_zrodlo": "Exj — CC BY-SA 4.0, Wikimedia Commons",
       "szczegoly": {
         "co": "Stadion Pucharu Świata w Seulu (ok. 66 000 miejsc), zbudowany na mistrzostwa świata w piłce nożnej w 2002 r.",
         "historia": "Na ŚDM w Seulu tu odbywa się powitanie Papieża (5.08) i Droga Krzyżowa (6.08).",
         "dlaczego": "Pierwsze spotkanie z papieżem Leonem XIV i z młodzieżą z całego świata.",
-        "robimy": "5.08 od ok. 13:00 powitanie Papieża; 6.08 po południu Droga Krzyżowa.",
+        "robimy": "6.08 po południu Droga Krzyżowa z Papieżem.",
         "praktyczne": "Wejście z identyfikatorem ŚDM. Woda, nakrycie głowy, krem z filtrem; kontrola bezpieczeństwa trwa długo."
       }
     },
@@ -971,7 +972,7 @@
       "lat": 37.5603,
       "lng": 126.9689,
       "typ": "sanktuarium",
-      "dni": "9.08",
+      "dni": "6.08 rano albo 9.08",
       "opis": "Historyczne miejsce kaźni męczenników koreańskich, dziś park i sanktuarium. W planie z 15.11 na 9.08, jeśli starczy czasu po spotkaniu z Kiko (obok katedry Myeongdong).",
       "zwiedzamy": "Teren historyczny Seosomun, modlitwa. 9.08 także modlitwa o 11:02 w rocznicę Nagasaki.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/View_of_the_Seosomun_Historical_Park_in_Seoul.jpg/1280px-View_of_the_Seosomun_Historical_Park_in_Seoul.jpg",
@@ -990,7 +991,7 @@
       "lat": 37.5633,
       "lng": 126.9872,
       "typ": "kosciol",
-      "dni": "9.08",
+      "dni": "6.08 rano albo 9.08",
       "opis": "Katedra NMP Niepokalanego Poczęcia, główny kościół archidiecezji seulskiej, w centrum miasta. Planowana jako opcjonalny punkt 9.08 po spotkaniu z Kiko.",
       "zwiedzamy": "Katedra i krótkie zwiedzanie, jeśli pozwoli czas.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Myeongdong_Cathedral_6.jpg/1280px-Myeongdong_Cathedral_6.jpg",
@@ -1029,7 +1030,7 @@
       "lat": 35.1256,
       "lng": 129.1019,
       "typ": "sanktuarium",
-      "dni": "11.08",
+      "dni": "11.08 (zapas na Mszę)",
       "opis": "Sanktuarium męczenników w Nam-gu w Busan. Msza o 11:00 w dniu luzu, zanim grupa pójdzie nad morze i na prom. Świadomie zamiast buddyjskiej świątyni Haedong Yonggungsa z planu Artura.",
       "zwiedzamy": "Msza 11:00, teren sanktuarium.",
       "zdjecie_url": "",
@@ -1039,7 +1040,8 @@
         "historia": "Upamiętnia katolików z okolic Busan straconych w czasie prześladowań w XIX w.",
         "dlaczego": "Spokojna Msza w dniu odpoczynku.",
         "robimy": "Msza o 11:00."
-      }
+      },
+      "wariant": true
     },
     {
       "id": "haeundae",
@@ -1535,8 +1537,8 @@
       "lat": 38.264,
       "lng": 140.876,
       "typ": "kosciol",
-      "dni": "3.08 (tylko wariant 4)",
-      "opis": "Wariant wariant 4, gdy siostry w Akicie odmówią. Sendai to miasto Date Masamune, który wysłał poselstwo Hasekury do Rzymu. Muzeum Miasta Sendai (pamiątki Hasekury), pomnik męczenników z 1624 r. i Msza w katedrze.",
+      "dni": "3/4.08 (ścieżka B)",
+      "opis": "W ścieżce B nocleg 3.08 w Sendai. Miasto Date Masamune, który wysłał poselstwo Hasekury do Rzymu. Katedra Mototerakōji — Msza, jeśli nie odprawimy jej w Ōkago.",
       "zwiedzamy": "Muzeum Miasta Sendai, pomnik męczenników 1624, Msza w katedrze Mototerakōji, po południu Matsushima.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Catholic_Mototerakoji_Church.JPG/1280px-Catholic_Mototerakoji_Church.JPG",
       "zdjecie_zrodlo": "Abasaa — Public domain, Wikimedia Commons",
@@ -1578,17 +1580,16 @@
     },
     {
       "id": "akita_noc",
-      "nazwa": "Akita, centrum — nocleg w noc Kantō",
+      "nazwa": "Akita — nocleg",
       "kraj": "Japonia",
       "lat": 39.7186,
       "lng": 140.1024,
       "typ": "nocleg",
-      "dni": "3/4.08 (warianty 2 i 3)",
-      "opis": "W wariantach 2 i 3 grupa śpi w centrum Akity i idzie pieszo na paradę Kantō (19:10–21:00). Noclegi w noc parady są najtrudniejsze do zdobycia; rezerwa: Ōmagari albo Kakunodate.",
-      "zwiedzamy": "Parada Kantō Matsuri wieczorem 3.08.",
+      "dni": "3/4.08 (ścieżka A)",
+      "opis": "Nocleg po Mszy w sanktuarium (ścieżka A). 3–6.08 trwa Kantō Matsuri — noclegi w Akicie są wtedy najtrudniejsze do zdobycia; rezerwa Ōmagari albo Kakunodate. Wieczorem chętni mogą zobaczyć paradę Kantō, jeśli siły pozwolą.",
+      "zwiedzamy": "Nocleg; opcjonalnie parada Kantō wieczorem 3.08.",
       "zdjecie_url": "",
       "zdjecie_zrodlo": "",
-      "wariant": true,
       "szczegoly": {
         "co": "Centrum Akity w noc festiwalu Kantō Matsuri (3–6 sierpnia).",
         "historia": "Festiwal ma ok. 270 lat. Jego sens to modlitwa o dobre zbiory ryżu i odpędzenie złych mocy przed żniwami. Tyczki (kantō) mają do 12 m i niosą kilkadziesiąt lampionów — przypominają kłosy ryżu.",
@@ -1599,14 +1600,14 @@
     },
     {
       "id": "fuji",
-      "nazwa": "Fuji — szlak Fujinomiya (moduł dla chętnych)",
+      "nazwa": "Fuji — szlak Yoshida (dla chętnych, ścieżka B)",
       "kraj": "Japonia",
-      "lat": 35.3355,
-      "lng": 138.7334,
+      "lat": 35.3955,
+      "lng": 138.733,
       "typ": "zwiedzanie",
-      "dni": "17–18.08 (opcja)",
-      "opis": "Moduł tylko dla pełnoletnich z zaświadczeniem lekarskim. 17.08 shinkansen do Shin-Fuji, autobus na 5. stację (2400 m), schronisko na 8. stacji; 18.08 wschód słońca na szczycie (3776 m), zejście i shinkansen do Osaki. Rekomendacja: nie wchodzić.",
-      "zwiedzamy": "Wejście szlakiem Fujinomiya. Wchodzący tracą Yamaguchi, Hiroszimę, Miyajimę i Himeji.",
+      "dni": "4–5.08 (ścieżka B, chętni)",
+      "opis": "Tylko w ścieżce B. 4.08 autokar na 5. stację szlaku Yoshida (2305 m), wejście do schroniska na 7.–8. stacji; 5.08 wschód słońca na szczycie (3776 m), zejście do ok. 11:00 i dołączenie do grupy nad jeziorem. Niepełnoletni za zgodą rodziców i z opiekunem. Bramka 14:00–3:00 tylko z rezerwacją schroniska; opłata 4000 ¥.",
+      "zwiedzamy": "Wejście ze schroniskiem, wschód słońca na szczycie, zejście przed południem.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fujinomiya_Trail_5th_Station%2C_Mount_Fuji_-_Oct_22%2C_2026.jpg/1280px-Fujinomiya_Trail_5th_Station%2C_Mount_Fuji_-_Oct_22%2C_2026.jpg",
       "zdjecie_zrodlo": "Ryo FUKAsawa — CC BY 4.0, Wikimedia Commons",
       "wariant": true,
@@ -1615,109 +1616,71 @@
         "dlaczego": "Tylko dla chętnych pełnoletnich, jeśli moduł zostanie przyjęty.",
         "praktyczne": "Szlak Fujinomiya od 2 400 m. Na szczycie bywa poniżej zera."
       }
+    },
+    {
+      "id": "yamanaka",
+      "nazwa": "Yamanakako — siostry salezjanki (Matka Boża Śnieżna)",
+      "kraj": "Japonia",
+      "lat": 35.4096,
+      "lng": 138.8745,
+      "typ": "kosciol",
+      "dni": "5.08 (w ścieżce B także nocleg 4/5.08)",
+      "opis": "Dom sióstr salezjanek pod wezwaniem Matki Bożej Śnieżnej w Yamanaka nad jeziorem Yamanaka, u stóp Fuji, z centrum duchowości (spotkania dla młodzieży odbywały się tu także w sierpniu). 5 sierpnia to wspomnienie Matki Bożej Śnieżnej — odpust domu. Położenie na mapie przybliżone.",
+      "zwiedzamy": "Msza na odpust 5.08, modlitwa z widokiem na Fuji (przy dobrej pogodzie), obiad nad jeziorem.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": "",
+      "szczegoly": {
+        "co": "Dom sióstr salezjanek i centrum duchowości nad jeziorem Yamanaka.",
+        "dlaczego": "Ostatnia Msza w Japonii przed ŚDM, w dniu odpustu domu — zawierzenie grupy Maryi przed Seulem.",
+        "robimy": "Msza odpustowa, krótka modlitwa nad jeziorem, obiad, wyjazd na Hanedę.",
+        "praktyczne": "Godzinę Mszy i miejsce dla 90 osób trzeba uzgodnić z siostrami."
+      }
+    },
+    {
+      "id": "okago",
+      "nazwa": "Ōkago — park i muzeum męczenników",
+      "kraj": "Japonia",
+      "lat": 38.84,
+      "lng": 141.39,
+      "typ": "sanktuarium",
+      "dni": "3.08 (ścieżka B)",
+      "wariant": true,
+      "opis": "Wioska w górach na granicy Iwate i Miyagi (Fujisawa, Ichinoseki). Na początku epoki Edo zginęło tu ponad 300 chrześcijan — miejsce nazywa się „Shimabarą Tōhoku”. Wiarę przynieśli tu chrześcijańscy mistrzowie wytopu żelaza. Park męczenników, muzeum z dioramami i kaplica Cruz Hall na wzgórzu. Położenie na mapie przybliżone.",
+      "zwiedzamy": "Muzeum (9:00–16:00, w poniedziałki zamknięte), park, kaplica Cruz Hall (ponad 300 stromych stopni), modlitwa za męczenników.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": ""
+    },
+    {
+      "id": "saenamteo",
+      "nazwa": "Saenamteo — sanktuarium męczenników",
+      "kraj": "Korea Południowa",
+      "lat": 37.5247,
+      "lng": 126.9627,
+      "typ": "sanktuarium",
+      "dni": "9.08",
+      "opis": "Miejsce egzekucji nad rzeką Han, gdzie zginęli m.in. św. Andrzej Kim Taegon i francuscy misjonarze. Kanonizacja 103 męczenników odbyła się 6.05.1984 na pobliskim placu Yeouido — nie w samym Saenamteo. Położenie na mapie przybliżone.",
+      "zwiedzamy": "Sanktuarium i modlitwa po spotkaniu z Kiko, razem z Jeoldusan.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": ""
+    },
+    {
+      "id": "jwadong",
+      "nazwa": "Busan — kościół św. Andrzeja Kima (Jwadong)",
+      "kraj": "Korea Południowa",
+      "lat": 35.1694,
+      "lng": 129.1768,
+      "typ": "kosciol",
+      "dni": "11.08",
+      "opis": "Parafia w dzielnicy Haeundae, która zgłasza udział w ŚDM — naturalny gospodarz Mszy grupy w dniu promu. Blisko plaży Haeundae. Położenie na mapie przybliżone.",
+      "zwiedzamy": "Msza ok. 10:30, potem plaża Haeundae.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": ""
     }
   ],
   "warianty": {
-    "E2": {
-      "dni": {
-        "2027-08-03": {
-          "miejsce": "Iwaki → Matsushima → Akita (parada Kantō)",
-          "program": "Jutrznia 6:15, wyjazd 7:00. Matsushima 9:45–11:30. Yuzawadai ok. 15:45–17:30: Msza (za zgodą sióstr). Hotel w centrum Akity, wieczorem pieszo na paradę Kantō 19:10–21:00.",
-          "nocleg": "Akita, centrum",
-          "miejsca": "iwaki,matsushima,akita,akita_noc"
-        },
-        "2027-08-04": {
-          "miejsce": "Akita → Nikkō → Haneda → Gimpo → Seul",
-          "program": "Pobudka 4:00, wyjazd 4:45. Nikkō ok. 12:00–13:15. Haneda, loty 20:05 do Gimpo. Msza 4.08 osobno (np. Nikkō).",
-          "km": "ok. 430 + 170",
-          "czas_h": "ok. 7 + dojazd",
-          "miejsca": "akita_noc,nikko,haneda,gimpo,mapo"
-        }
-      }
-    },
-    "E3": {
-      "dni": {
-        "2027-08-03": {
-          "miejsce": "Iwaki → Matsushima → Akita (parada Kantō)",
-          "program": "Jak w wariancie 2: Matsushima, Msza w Akicie, parada Kantō, nocleg w centrum Akity.",
-          "nocleg": "Akita, centrum",
-          "miejsca": "iwaki,matsushima,akita,akita_noc"
-        },
-        "2027-08-04": {
-          "miejsce": "Akita → (pociąg) Utsunomiya → Nikkō → Haneda",
-          "program": "5:15 pobudka. Komachi 6: Akita 6:09 → Sendai 8:16, Yamabiko → Utsunomiya 9:28. Lokalny autokar do Nikkō, Tōshōgū ok. 11:30–13:15. Autokary z walizkami jadą z Akity ok. 5:30 prosto do Nikkō i wiozą grupę na Hanedę.",
-          "transport": "Pociąg (ludzie) + autokary (bagaż)",
-          "km": "ok. 430 autokarem",
-          "czas_h": "pociąg ok. 3,3 h",
-          "miejsca": "akita_noc,utsunomiya,nikko,haneda,gimpo,mapo"
-        }
-      }
-    },
-    "E4": {
-      "dni": {
-        "2027-08-02": {
-          "miejsce": "Doha → Narita → Mito",
-          "nocleg": "Mito",
-          "miejsca": "doha,narita,mito",
-          "program": "QR806 ląduje na Naricie o 19:10. Odprawa do ok. 21:00. Autokary do Mito, przyjazd ok. 23:00.",
-          "km": "ok. 110",
-          "czas_h": "ok. 1,5"
-        },
-        "2027-08-03": {
-          "miejsce": "Mito → Sendai → Matsushima → Sendai",
-          "program": "Wyjazd 8:00, Sendai 11:30: Muzeum Miasta Sendai (Hasekura), pomnik męczenników 1624, Msza w katedrze Mototerakōji. Po południu Matsushima (Zuiganji, Godaidō).",
-          "nocleg": "Sendai",
-          "miejsca": "mito,sendai,matsushima,zuiganji",
-          "km": "ok. 250 + 30",
-          "czas_h": "ok. 3,5"
-        },
-        "2027-08-04": {
-          "miejsce": "Sendai → Nikkō → Haneda → Gimpo → Seul",
-          "program": "Wyjazd 7:30, Nikkō 11:15–13:15 (Tōshōgū), Haneda, loty 20:05 do Gimpo.",
-          "km": "ok. 270 + 170",
-          "czas_h": "ok. 3,75 + dojazd",
-          "miejsca": "sendai,nikko,haneda,gimpo,mapo"
-        }
-      }
-    },
-    "noc_mito": {
-      "dni": {
-        "2027-08-02": {
-          "miejsce": "Doha → Narita → Mito",
-          "nocleg": "Mito",
-          "miejsca": "doha,narita,mito",
-          "km": "ok. 110",
-          "czas_h": "ok. 1,5",
-          "program": "QR806 ląduje o 19:10. Odprawa do ok. 21:00. Autokary do Mito, przyjazd ok. 23:00 (+1 h snu)."
-        },
-        "2027-08-03": {
-          "miejsce": "Mito → Matsushima → Akita → Kitakami",
-          "miejsca": "mito,matsushima,zuiganji,akita,kitakami",
-          "km": "ok. 300 + 260 + 120",
-          "czas_h": "ok. 9,5 z przerwami",
-          "program": "Jutrznia 5:30, wyjazd 6:15. Matsushima ok. 10:00–11:15: Zuiganji, Godaidō, cisza za ofiary tsunami 2011, katecheza o poselstwie Hasekury. Akita (Yuzawadai) ok. 16:30–18:30: Msza w sanktuarium za zgodą sióstr, zawierzenie Niepokalanej. Przyjazd do Kitakami ok. 20:30."
-        }
-      }
-    },
-    "noc_utsu": {
-      "dni": {
-        "2027-08-02": {
-          "miejsce": "Doha → Narita → Utsunomiya",
-          "nocleg": "Utsunomiya",
-          "miejsca": "doha,narita,utsunomiya",
-          "km": "ok. 130",
-          "czas_h": "ok. 2",
-          "program": "QR806 ląduje o 19:10. Odprawa do ok. 21:00. Autokary do Utsunomiya przez Tōhoku (bez Jōban)."
-        },
-        "2027-08-03": {
-          "km": "ok. 200 + 260 + 120",
-          "czas_h": "ok. 9 z przerwami",
-          "miejsce": "Utsunomiya → Matsushima → Akita → Kitakami",
-          "miejsca": "utsunomiya,matsushima,zuiganji,akita,kitakami"
-        }
-      }
-    },
     "sen_tokio": {
+      "ukryj": [],
+      "pokaz": [],
       "dni": {
         "2027-08-02": {
           "miejsce": "Doha → Narita → Tokio (Ueno)",
@@ -1730,38 +1693,178 @@
       }
     },
     "nagasaki_tani": {
+      "ukryj": [],
+      "pokaz": [],
       "dni": {}
     },
     "A1": {
+      "ukryj": [],
+      "pokaz": [],
       "dni": {
-        "2027-08-04": {
-          "nocleg": "Zakwaterowanie pakietu A1+ (organizator ŚDM)"
-        },
         "2027-08-05": {
-          "nocleg": "Zakwaterowanie pakietu A1+"
+          "nocleg": "Zakwaterowanie pakietu A1+ (organizator ŚDM)"
         }
       }
     },
     "fuji": {
+      "ukryj": [],
+      "pokaz": [
+        "fuji"
+      ],
       "dni": {
-        "2027-08-17": {},
-        "2027-08-18": {}
+        "2027-08-04": {},
+        "2027-08-05": {}
       }
     },
     "trzeci": {
+      "ukryj": [],
+      "pokaz": [],
       "dni": {}
     },
     "bez_biura": {
+      "ukryj": [],
+      "pokaz": [],
       "dni": {}
     },
     "bagazowka": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {}
+    },
+    "sciezka_B": {
+      "ukryj": [
+        "akita",
+        "akita_noc",
+        "nikko"
+      ],
+      "pokaz": [
+        "okago",
+        "sendai"
+      ],
+      "dni": {
+        "2027-08-03": {
+          "miejsce": "Iwaki → Matsushima → Ōkago → Sendai",
+          "program": "Jutrznia 6:45, wyjazd 7:30. Matsushima ok. 10:00–11:30 (jak w ścieżce A). Ōkago (Fujisawa, Ichinoseki) ok. 13:00–15:30: park i muzeum męczenników — ponad 300 chrześcijan zabitych na początku epoki Edo, „Shimabara Tōhoku”. Kaplica Cruz Hall jest na górze (ponad 300 stromych stopni) — kto nie da rady, zostaje przy muzeum. Msza w Ōkago albo w Sendai. Hotel w Sendai ok. 17:30.",
+          "nocleg": "Sendai",
+          "km": "180 + 90 + 100",
+          "czas_h": "ok. 5 jazdy",
+          "miejsca": "iwaki,matsushima,zuiganji,okago,sendai",
+          "status": "Msza i hotel do uzgodnienia; muzeum 9:00–16:00, w poniedziałki zamknięte (3.08 to wtorek)",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel Iwaki",
+              "jak": "hotel",
+              "od": "06:50",
+              "min": 35
+            },
+            "obiad": {
+              "gdzie": "w drodze do Ōkago",
+              "jak": "bento",
+              "od": "12:15",
+              "min": 30
+            },
+            "kolacja": {
+              "gdzie": "hotel w Sendai",
+              "jak": "restauracja",
+              "od": "18:30",
+              "min": 60
+            }
+          },
+          "sens": "Od zatoki Matsushima do wioski męczenników Ōkago — wierność pod prześladowaniem."
+        },
+        "2027-08-04": {
+          "kraj": "Japonia",
+          "miejsce": "Sendai → Yamanakako (Fuji dla chętnych)",
+          "program": "Śniadanie 5:15, wyjazd 6:00. Sendai–Yamanakako ok. 470 km (ok. 6–6,5 h z przerwami). Ok. 12:30 nad jeziorem. Chętni na Fuji (decyzja „Fuji”): autokar na 5. stację szlaku Yoshida, wyjście ok. 13:30, nocleg w schronisku na 7.–8. stacji. Reszta: popołudnie nad jeziorem albo Tokio (decyzja „Kto nie wchodzi na Fuji”). Nikkō w tej ścieżce odpada.",
+          "nocleg": "Yamanakako; chętni — schronisko na Fuji",
+          "km": "ok. 470",
+          "czas_h": "ok. 6–6,5 z przerwami",
+          "miejsca": "sendai,yamanaka",
+          "status": "km: szacunek; hotel nad jeziorem i schronisko do rezerwacji",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel w Sendai",
+              "jak": "hotel",
+              "od": "05:15",
+              "min": 30
+            },
+            "obiad": {
+              "gdzie": "nad jeziorem Yamanaka",
+              "jak": "restauracja",
+              "od": "12:30",
+              "min": 45
+            },
+            "kolacja": {
+              "gdzie": "hotel nad jeziorem / schronisko",
+              "jak": "restauracja",
+              "od": "18:30",
+              "min": 60
+            }
+          },
+          "sens": "Przejazd pod Fuji; chętni wychodzą na górę."
+        },
+        "2027-08-05": {
+          "miejsce": "Yamanakako → Haneda → Gimpo → Seul",
+          "program": "Chętni: wschód słońca na szczycie ok. 4:45, zejście na 5. stację do ok. 11:00, autokar nad jezioro. Pozostali: Msza u sióstr salezjanek na odpust Matki Bożej Śnieżnej (albo w Tokio — decyzja „Kto nie wchodzi na Fuji”). Wyjazd wszystkich ok. 12:30, Haneda ok. 15:00, wieczorny lot do Gimpo (jak w ścieżce A), hotel w Mapo ok. 23:30.",
+          "km": "ok. 130",
+          "czas_h": "ok. 2–2,5",
+          "miejsca": "yamanaka,haneda,gimpo,mapo",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel nad jeziorem / schronisko",
+              "jak": "hotel",
+              "od": "06:30",
+              "min": 40
+            },
+            "obiad": {
+              "gdzie": "nad jeziorem Yamanaka",
+              "jak": "restauracja",
+              "od": "11:30",
+              "min": 45
+            },
+            "kolacja": {
+              "gdzie": "Haneda, strefa odlotów",
+              "jak": "restauracja",
+              "od": "18:00",
+              "min": 45
+            }
+          },
+          "sens": "Wschód słońca na Fuji albo odpust u sióstr — i lot do Seulu."
+        }
+      }
+    },
+    "przylot_6": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {
+        "2027-08-05": {
+          "miejsce": "Yamanakako → Haneda (nocleg przed lotem 6.08)",
+          "nocleg": "Tokio, hotel przy Hanedzie",
+          "transport": "2 autokary; lot do Seulu dopiero 6.08 rano",
+          "status": "WARIANT AWARYJNY: brak miejsc na lot 5.08 wieczorem"
+        },
+        "2027-08-06": {
+          "miejsce": "Haneda → Gimpo → Sangam",
+          "program": "Pobudka ok. 5:00, lot ok. 8:20–8:40 (w 2026: JL91, NH861), przylot do Gimpo ok. 10:40. Prosto na rejestrację pakietu B1+. Seosomun i Myeongdong przechodzą na 9.08. Po południu Droga Krzyżowa z Papieżem.",
+          "miejsca": "haneda,gimpo,sangam"
+        }
+      }
+    },
+    "tokio_B2": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {}
+    },
+    "tokio_B3": {
+      "ukryj": [],
+      "pokaz": [],
       "dni": {}
     }
   },
   "decyzje": [
     {
       "id": "petla",
-      "opcja_id": "E1",
+      "opcja_id": "A",
       "efekt": "",
       "domyslna": true,
       "decyzja": "",
@@ -1769,48 +1872,24 @@
     },
     {
       "id": "petla",
-      "opcja_id": "E2",
-      "efekt": "E2",
+      "opcja_id": "B",
+      "efekt": "sciezka_B",
       "domyslna": false,
       "decyzja": "",
       "opcja": ""
     },
     {
-      "id": "petla",
-      "opcja_id": "E3",
-      "efekt": "E3",
-      "domyslna": false,
-      "decyzja": "",
-      "opcja": ""
-    },
-    {
-      "id": "petla",
-      "opcja_id": "E4",
-      "efekt": "E4",
-      "domyslna": false,
-      "decyzja": "",
-      "opcja": ""
-    },
-    {
-      "id": "noc_2",
-      "opcja_id": "iwaki",
+      "id": "przylot",
+      "opcja_id": "5_wieczor",
       "efekt": "",
       "domyslna": true,
       "decyzja": "",
       "opcja": ""
     },
     {
-      "id": "noc_2",
-      "opcja_id": "mito",
-      "efekt": "noc_mito",
-      "domyslna": false,
-      "decyzja": "",
-      "opcja": ""
-    },
-    {
-      "id": "noc_2",
-      "opcja_id": "utsunomiya",
-      "efekt": "noc_utsu",
+      "id": "przylot",
+      "opcja_id": "6_rano",
+      "efekt": "przylot_6",
       "domyslna": false,
       "decyzja": "",
       "opcja": ""
@@ -1907,7 +1986,7 @@
       "id": "fuji",
       "opcja_id": "nie",
       "efekt": "",
-      "domyslna": true,
+      "domyslna": false,
       "decyzja": "",
       "opcja": ""
     },
@@ -1915,6 +1994,30 @@
       "id": "fuji",
       "opcja_id": "tak",
       "efekt": "fuji",
+      "domyslna": true,
+      "decyzja": "",
+      "opcja": ""
+    },
+    {
+      "id": "nie_fuji",
+      "opcja_id": "B1",
+      "efekt": "",
+      "domyslna": true,
+      "decyzja": "",
+      "opcja": ""
+    },
+    {
+      "id": "nie_fuji",
+      "opcja_id": "B2",
+      "efekt": "tokio_B2",
+      "domyslna": false,
+      "decyzja": "",
+      "opcja": ""
+    },
+    {
+      "id": "nie_fuji",
+      "opcja_id": "B3",
+      "efekt": "tokio_B3",
       "domyslna": false,
       "decyzja": "",
       "opcja": ""

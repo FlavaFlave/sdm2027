@@ -256,13 +256,13 @@ function fujiModuleCard(places, n, per) {
   const cap = photo ? `<p class="photo-cap">${escapeHtml(photo.nazwa)}. ${escapeHtml(photo.zdjecie_zrodlo)}</p>` : "";
   return `<article class="day-card module is-changed">
     <div class="day-photo" ${style}>
-      <div class="date-badge"><b>17–18.08</b><span>moduł Fuji</span></div>
+      <div class="date-badge"><b>4–5.08</b><span>Fuji dla chętnych</span></div>
     </div>
     <div class="day-body">
-      <h3>Wejście na Fudżi — ${n} pełnoletnich</h3>
+      <h3>Wejście na Fudżi — ${n} chętnych</h3>
       <div class="day-meta"><span class="chip">+ ${formatZl(FUJI_PER, 0)} na wchodzącego</span><span class="chip">razem ${formatZl(n * FUJI_PER, 0)}</span></div>
-      <p>17.08 shinkansen do Shin-Fuji, autobus na 5. stację szlaku Fujinomiya (2400 m), nocleg w schronisku na 8. stacji. 18.08 wschód słońca na szczycie (3776 m), zejście i shinkansen do Osaki. Reszta grupy jedzie bez zmian drogą Ksawerego.</p>
-      <p class="day-notes">Tylko pełnoletni z zaświadczeniem lekarskim i osobnym kierownikiem. Plan B przy tajfunie: dołączenie w Hiroszimie.</p>
+      <p>4.08 autokar na 5. stację szlaku Yoshida (2305 m), wejście do schroniska na 7.–8. stacji. 5.08 wschód słońca na szczycie (3776 m), zejście do ok. 11:00 i dołączenie do grupy nad jeziorem Yamanaka przed lotem do Seulu.</p>
+      <p class="day-notes">Niepełnoletni za zgodą rodziców i z opiekunem; osobny kierownik grupy górskiej. Przy złej pogodzie wejście odwołane rano 4.08.</p>
       ${cap}
     </div>
   </article>`;
@@ -281,7 +281,7 @@ function renderDays(days, places, changed, fujiN, checks, fujiPer) {
   const kr = days.filter((d) => isKoreaDay(d) || /^5\.08|^6\.08|^7\.08|^8\.08|^9\.08|^10\.08|^11\.08/.test(d.data_pl || ""));
   const parts = [];
   jp.forEach((d) => {
-    if (fujiN > 0 && d.data === "2027-08-17") parts.push(fujiModuleCard(places, fujiN, fujiPer));
+    if (fujiN > 0 && d.data === "2027-08-04") parts.push(fujiModuleCard(places, fujiN, fujiPer));
     parts.push(dayCard(d, places, changed.has(d.data), checks));
   });
   $("#days-jp").innerHTML = parts.join("");
@@ -291,22 +291,21 @@ function renderDays(days, places, changed, fujiN, checks, fujiPer) {
 function warnings(choices, cost) {
   const w = [];
   const off = disabledGroups(choices);
-  Object.values(off).forEach((x) => w.push(x));
+  Object.entries(off).filter(([k]) => !["fuji", "nie_fuji"].includes(k)).forEach(([, x]) => w.push(x));
   if (choices.sen === "tokio") w.push("„Lepszy sen” wraca do pociągu Hayabusa — to jest sprzeczne z DECYZJĄ „autokary zamiast pociągów”.");
   if (choices.nagasaki_miasto === "tramwaj") w.push("Tramwaj 14–15.08 dotyka DECYZJI „autokary zamiast pociągów” — tylko jeśli DECYZJA dotyczyła przejazdów między bazami.");
   if (cost && cost.fleet) {
-    if (cost.fleet.kr && cost.fleet.kr.small && cost.fleet.kr.big >= 2) w.push(`Korea: przy ${cost.n} os. dwa autokary 45-miejscowe nie wystarczają — model dodaje mały bus na 4.08, 10.08 i 11.08.`);
+    if (cost.fleet.kr && cost.fleet.kr.small && cost.fleet.kr.big >= 2) w.push(`Korea: przy ${cost.n} os. dwa autokary 45-miejscowe nie wystarczają — model dodaje mały bus na 5.08, 10.08 i 11.08.`);
     if (cost.fleet.jp && cost.fleet.jp.overflow) w.push("Japonia: brak zestawu autokarów mieszczącego ludzi i walizki — zmień decyzję o bagażu.");
   }
   if (cost && cost.lost) w.push(`Rezygnacje: ${cost.dropouts} os. względem ${cost.n + cost.dropouts}; przepada ok. ${cost.lost} biletów (${formatZl(cost.lostValue, 0)}). Pokrywa: ${cost.lossPolicy === "grupa" ? "grupa (wliczone w cenę)" : "osoby rezygnujące / ich polisa (poza ceną)"}.`);
   if (cost && cost.gratis) w.push(`${cost.gratis} miejsc bezpłatnych: ich koszt płacą pozostali (${cost.payers} płacących).`);
-  if (choices.petla === "E3") w.push("E3 jest odradzany: 90 osób w pociągach Komachi + Yamabiko i sześć ogniw 4.08. Przy braku miejsc w jednym składzie plan pada.");
-  if (choices.petla === "E2") w.push("E2 wymaga 90 łóżek w Akicie w noc parady Kantō (najtrudniejsza noc w roku). Rezerwa: Ōmagari albo Kakunodate. Trybuny do 28.02.2027.");
-  if (choices.petla === "E4") w.push("E4 tylko wtedy, gdy siostry w Akicie odmówią (albo Msza będzie niemożliwa). Nocleg 2.08 jest wtedy w Mito, a 3.08 w Sendai — bez markera Akity.");
-  if (choices.petla === "E1") w.push("E1 pada, jeśli siostry wyznaczą Mszę po 18:00 — wtedy wracamy do E2 albo E4.");
-  if (choices.fuji === "tak") w.push(`Moduł Fuji jest tylko dla pełnoletnich. Koszt ${formatZl(cost ? cost.fujiPer : FUJI_PER, 0)} liczy się na wchodzącego [szacunek], nie na całą grupę.`);
+  if (choices.petla !== "B") w.push("Ścieżka A: trzy długie dni w autokarze z rzędu (3–5.08), 4.08 ok. 500 km. Akita w noc Kantō — 90 łóżek to najtrudniejsza rezerwacja (rezerwa Ōmagari, Kakunodate). Odmowa sióstr = ścieżka B.");
+  if (choices.petla === "B") w.push("Ścieżka B: Nikkō odpada. Chętni na Fuji muszą mieć rezerwację schroniska (bramka Yoshida 14:00–3:00 tylko z rezerwacją).");
+  if (choices.przylot === "6_rano") w.push("Przylot 6.08 rano: przepada poranek 6.08 w Seulu i zostaje ok. 1 doba zapasu przed czuwaniem. Jeśli i 6.08 nie ma miejsc — powrót do lotu 4.08.");
+  if (choices.fuji === "tak" && choices.petla === "B") w.push(`Fuji dla chętnych (niepełnoletni za zgodą rodziców i z opiekunem). Koszt ${formatZl(cost ? cost.fujiPer : FUJI_PER, 0)} liczy się na wchodzącego [szacunek], nie na całą grupę.`);
   if (choices.sklad === "trzeci") w.push("Trzeci autokar w Japonii: koszt autokarów w Japonii ×1,5 względem pary. Tańsza jest ciężarówka bagażowa.");
-  if (choices.pakiet === "A1") w.push("Dopłata 150 USD na pakiecie A1+ nie jest tym samym co dopłata netto. Przy drogim Seulu A1+ może wyjść taniej, bo odpada własny hotel 4–6.08.");
+  if (choices.pakiet === "A1") w.push("Dopłata 150 USD na pakiecie A1+ nie jest tym samym co dopłata netto. Przy drogim Seulu A1+ może wyjść taniej, bo odpada własny hotel 5/6.08.");
   return w;
 }
 
@@ -440,7 +439,7 @@ function storeSaved(arr) {
   try { localStorage.setItem(SCENARIO_KEY, JSON.stringify(arr.slice(0, 3))); } catch (_) {}
 }
 function scenarioLabel(choices, fujiOsob, people) {
-  const bits = [choices.petla || "E1"];
+  const bits = ["ścieżka " + (choices.petla || "A")];
   if (people && people.n !== 90) bits.push(people.n + " os.");
   if (people && people.gratis) bits.push(people.gratis + " gratis");
   const lev = ["hotele_zachod", "posilki", "kadra_lok", "esim", "przewoznik", "nagasaki_miasto"].filter((k) => choices[k] && !["standard", "pelny", "jeden", "autokar"].includes(choices[k]));
@@ -448,7 +447,8 @@ function scenarioLabel(choices, fujiOsob, people) {
   if (choices.nagasaki === "tani") bits.push("tani Nagasaki");
   else if (choices.nagasaki === "drogi") bits.push("drogi Nagasaki");
   if (choices.pakiet === "A1") bits.push("A1+");
-  if (choices.fuji === "tak") bits.push("Fuji ×" + fujiOsob);
+  if (choices.fuji === "tak" && choices.petla === "B") bits.push("Fuji ×" + fujiOsob);
+  if (choices.przylot === "6_rano") bits.push("przylot 6.08");
   if (choices.sklad === "trzeci") bits.push("3. autokar");
   if (choices.sklad === "bagazowka") bits.push("ciężarówka bagaż");
   if (choices.polisa === "e2r") bits.push("rezygnacja");
@@ -473,9 +473,9 @@ function renderCompare(ctx) {
     </span>`
   ).join("");
   const keys = [
-    ["petla", "Pętla wschodnia"], ["noc_2", "Nocleg 2.08"], ["sen", "Sen przed ŚDM"],
+    ["petla", "Ścieżka 2–5.08"], ["przylot", "Przylot do Seulu"], ["sen", "Sen przed ŚDM"],
     ["nagasaki", "Nagasaki"], ["seul_stawka", "Seul, stawka"], ["pakiet", "Pakiet"],
-    ["fuji", "Fuji"], ["sklad", "Bagaż"], ["biuro", "Biuro"], ["polisa", "Ubezpieczenie"], ["rezerwa", "Rezerwa"],
+    ["fuji", "Fuji"], ["nie_fuji", "Bez Fuji: reszta"], ["sklad", "Bagaż"], ["biuro", "Biuro"], ["polisa", "Ubezpieczenie"], ["rezerwa", "Rezerwa"],
     ["hotele_zachod", "Hotele zachód"], ["posilki", "Posiłki"], ["kadra_lok", "Przewodnik"], ["esim", "eSIM"],
     ["przewoznik", "Przewoźnik zachód"], ["nagasaki_miasto", "Nagasaki 14–15.08"],
   ];
@@ -735,7 +735,7 @@ function renderFleetBox(cost) {
   };
   el.innerHTML = `<h3>Autokary dla ${cost.n} osób</h3>
     <p class="muted">Liczba i rodzaj pojazdów dobierają się same: najtańszy zestaw, który mieści uczestników, pilota/przewodnika w każdym pojeździe i walizki. Ludzie i niepełnoletni są rozłożeni proporcjonalnie do miejsc — faktyczny podział zależy od płci i rodzin.</p>
-    <div class="fleet-grid">${block("jp", "Japonia", "2–4.08 i 12–20.08")}${block("kr", "Korea", "4.08, 10.08, 11.08")}</div>`;
+    <div class="fleet-grid">${block("jp", "Japonia", "2–5.08 i 12–20.08")}${block("kr", "Korea", "5.08, 10.08, 11.08")}</div>`;
 }
 
 function renderCurve(model, groups, choices, people) {

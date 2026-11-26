@@ -2,7 +2,7 @@
   "meta": {
     "tytul": "ŚDM 2027 — Japonia i Korea",
     "podtytul": "Strona organizatorów pielgrzymki",
-    "wersja_planu": "plan z 15.11.2026, uzupełniony 16.11.2026 — wariant rekomendowany: Akita bez parady",
+    "wersja_planu": "26.11.2026 — ścieżki A/B, przylot do Seulu 5.08",
     "daty": "1–21 sierpnia 2027",
     "osob": 90,
     "cena_bazowa": 16170,
@@ -82,42 +82,52 @@
       "przewoznik": "do ustalenia",
       "kontakt": "do ustalenia",
       "cena_os": "",
-      "cena_uwaga": "w bloku pierwszych dni (wariant 1), ok. 850 zł/os. za 2–4.08 (hotele+transport)",
+      "cena_uwaga": "w bloku Japonia 2–5.08",
       "status": "planowane",
-      "uwagi": "2 autokary, ok. 200 km, 2,5–2,75 h, autostrada Jōban. Termin zapytania: 31.12.2026, Artur. Japońskie licencjonowane biuro — decyzja do 15.12.2026."
+      "uwagi": "2 autokary, ok. 200 km, 2,5–2,75 h, autostrada Jōban. Termin zapytania: 31.12.2026, Artur. Japońskie licencjonowane biuro — decyzja do 15.12.2026. Osobna załoga na transfer (9 h przerwy przed 3.08)."
     },
     {
-      "odcinek": "Iwaki → Matsushima → Akita → Kitakami, 3.08",
+      "odcinek": "3.08 — A: Iwaki → Matsushima → Akita; B: Iwaki → Matsushima → Ōkago → Sendai",
       "srodek": "autokar",
       "przewoznik": "do ustalenia",
       "kontakt": "do ustalenia",
       "cena_os": "",
-      "cena_uwaga": "w bloku pierwszych dni (wariant 1) ok. 850 zł",
+      "cena_uwaga": "w bloku Japonia 2–5.08",
       "status": "planowane",
-      "uwagi": "2 autokary po 2 kierowców. Ok. 180 + 260 + 120 km. Luki na ok. 90 walizek (limit: 65 cm / 20 kg)."
+      "uwagi": "2 autokary po 2 kierowców. A ok. 440 km, B ok. 370 km [szacunek]."
     },
     {
-      "odcinek": "Kitakami → Nikkō → Haneda, 4.08",
+      "odcinek": "4.08 — A: Akita → Nikkō; B: Sendai → Yamanakako (+ 5. stacja Fuji)",
       "srodek": "autokar",
       "przewoznik": "do ustalenia",
       "kontakt": "do ustalenia",
       "cena_os": "",
-      "cena_uwaga": "w bloku pierwszych dni (wariant 1) ok. 850 zł",
+      "cena_uwaga": "w bloku Japonia 2–5.08",
       "status": "planowane",
-      "uwagi": "2 kierowców. Ok. 385 km (5,25 h) + 170 km. Twardy wyjazd z Nikkō o 13:30."
+      "uwagi": "A ok. 500 km, Tōshōgū 15:00–16:30; B ok. 470 km [szacunek]."
     },
     {
-      "odcinek": "Haneda → Gimpo, 4.08 20:05",
+      "odcinek": "5.08 — A: Nikkō → Yamanakako → Haneda; B: Yamanakako → Haneda",
+      "srodek": "autokar",
+      "przewoznik": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os": "",
+      "cena_uwaga": "w bloku Japonia 2–5.08",
+      "status": "planowane",
+      "uwagi": "A ok. 360 km (wyjazd 5:30), B ok. 130 km. Haneda ok. 15:00–15:30."
+    },
+    {
+      "odcinek": "Haneda → Gimpo, 5.08 wieczór (w 2026: 20:05)",
       "srodek": "samolot",
       "przewoznik": "ANA NH867 i/lub Asiana OZ1035",
       "kontakt": "do ustalenia",
       "cena_os": 504,
       "cena_uwaga": "szacunek 504 zł (wg Artura ¥18 000 na Haneda–ICN 5.08; trasa i data inne)",
       "status": "planowane",
-      "uwagi": "Blok 2–3 rejsów wieczornych. Zapytanie teraz; rezerwacja po publikacji rozkładu lato 2027. Zapas: JL91 8:20 i NH861 8:40 dnia 5.08."
+      "uwagi": "Blok dla ok. 90 osób, dopuszczalnie kilka lotów / Incheon. Zapas: 6.08 rano (JL91 8:20, NH861 8:40 wg rozkładu 2026)."
     },
     {
-      "odcinek": "Seul, 5.08 (przed pakietem)",
+      "odcinek": "Seul, 6.08 rano (przed pakietem)",
       "srodek": "metro",
       "przewoznik": "karty miejskie (T-money lub odpowiednik)",
       "kontakt": "",
@@ -266,27 +276,37 @@
       "kontakt": "do ustalenia",
       "cena_os_noc": "",
       "status": "planowane",
-      "uwagi": "Rekomendacja: wariant 1. Alternatywy: Mito (gdy Msza w Akicie ok. 17:00) albo Utsunomiya (gdy odrzucenie autostrady Jōban). Termin decyzji o miejscu: 15.12.2026."
+      "uwagi": "Pierwsza noc w obu ścieżkach (przyjazd ok. 0:00)."
     },
     {
-      "miasto": "Kitakami",
+      "miasto": "A: Akita / B: Sendai",
       "noce": 1,
       "daty": "3/4.08",
       "obiekt": "do ustalenia",
       "kontakt": "do ustalenia",
       "cena_os_noc": "",
       "status": "planowane",
-      "uwagi": "wariant 1 bez parady. W wariancie 2: nocleg w centrum Akity (albo Ōmagari / Kakunodate, jeśli Akita pełna w noc Kantō). Blok 2–4.08 łącznie ok. 850 zł/os. (wariant 1, hotele+transport)."
+      "uwagi": "A: Akita w noc Kantō Matsuri — najtrudniejsza noc w roku (rezerwa Ōmagari, Kakunodate). B: Sendai."
+    },
+    {
+      "miasto": "A: Nikkō (Kinugawa) / B: Yamanakako",
+      "noce": 1,
+      "daty": "4/5.08",
+      "obiekt": "do ustalenia",
+      "kontakt": "do ustalenia",
+      "cena_os_noc": "",
+      "status": "planowane",
+      "uwagi": "B: chętni na Fuji śpią w schronisku na 7.–8. stacji."
     },
     {
       "miasto": "Seul, Mapo",
-      "noce": 2,
-      "daty": "4/5 i 5/6.08",
+      "noce": 1,
+      "daty": "5/6.08",
       "obiekt": "do ustalenia",
       "kontakt": "do ustalenia",
       "cena_os_noc": "ok. 174–290",
       "status": "planowane",
-      "uwagi": "Kryterium pakietu B1+: blok ok. 90 łóżek z bezpłatną anulacją do 15.12.2026. 174 zł to stawka Artura poza szczytem ŚDM; plan z 15.11 w budżecie przyjmuje ok. 290 zł/noc (przypuszczenie)."
+      "uwagi": "Ustalony hotel; po przylocie 5.08 jedziemy prosto tam. Jeśli była zarezerwowana noc 4/5.08 — sprawdzić zwolnienie."
     },
     {
       "miasto": "Pakiet B1+ / pole czuwania",
@@ -362,189 +382,83 @@
   "decyzje": [
     {
       "id": "petla",
-      "decyzja": "Pierwsze dni w Japonii: trasa do Akity i z powrotem (2–4 sierpnia)",
-      "opcja_id": "E1",
-      "opcja": "Wariant 1: Akita bez parady, cała trasa autokarem (noclegi Iwaki i Kitakami)",
+      "decyzja": "Pierwsze dni w Japonii (2–5.08): ścieżka A z Akitą albo B bez sanktuarium",
+      "opcja_id": "A",
+      "opcja": "Ścieżka A — siostry się zgadzają: Matsushima, Msza w Akicie, Nikkō, Yamanakako (noclegi Iwaki, Akita, Nikkō)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "To jest plan bazowy: noclegi Iwaki (albo Mito) i Kitakami, dwa autokary, bez pociągu.",
-      "termin": "30.11.2026",
+      "wplyw": "Trzy długie dni w autokarze z rzędu po długim locie; 4.08 ok. 500 km. Tōshōgū ok. 1,5 h przed zamknięciem. Fuji odpada.",
+      "termin": "po odpowiedzi sióstr (faks do 30.11.2026)",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "Ustalone 26.11.2026: przylot do Seulu 5.08 wieczorem (warunkowo), Nikkō w ścieżce A zostaje nawet na ok. 1,5 h, Fuji tylko dla chętnych.",
+      "opis": "Pierwsze dni od lądowania na Naricie do lotu do Seulu. Wybór zależy od odpowiedzi sióstr z Akity. W obu ścieżkach 5.08 jest Msza u sióstr salezjanek nad jeziorem Yamanaka na odpust Matki Bożej Śnieżnej i wieczorny lot do Seulu.",
+      "ograniczenia": "Faks do sióstr w Akicie (018-868-4728) do 30.11.2026, prośba w dwóch stopniach: Msza, a jeśli nie — modlitwa grupy na terenie. Zgoda = A, odmowa obu = B. W ścieżce A Fuji odpada, w ścieżce B odpada Nikkō.",
+      "wplyw_inne": "",
+      "rekomendacja_tekst": "",
+      "plusy": "",
+      "minusy": "",
+      "tlo": ""
+    },
+    {
+      "id": "petla",
+      "decyzja": "Pierwsze dni w Japonii (2–5.08): ścieżka A z Akitą albo B bez sanktuarium",
+      "opcja_id": "B",
+      "opcja": "Ścieżka B — siostry odmawiają: Matsushima, Ōkago, Sendai, Fuji dla chętnych (noclegi Iwaki, Sendai, Yamanakako)",
+      "zmiany": "bus_wschod:-6000",
+      "efekt": "sciezka_B",
+      "wplyw": "Krótszy 3.08 (park męczenników Ōkago zamiast Akity), Nikkō odpada, 4.08 ok. 470 km pod Fuji. Mniej km łącznie [szacunek].",
+      "termin": "po odpowiedzi sióstr (faks do 30.11.2026)",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "Ustalone 26.11.2026: przylot do Seulu 5.08 wieczorem (warunkowo), Nikkō w ścieżce A zostaje nawet na ok. 1,5 h, Fuji tylko dla chętnych.",
+      "opis": "Pierwsze dni od lądowania na Naricie do lotu do Seulu. Wybór zależy od odpowiedzi sióstr z Akity. W obu ścieżkach 5.08 jest Msza u sióstr salezjanek nad jeziorem Yamanaka na odpust Matki Bożej Śnieżnej i wieczorny lot do Seulu.",
+      "ograniczenia": "Faks do sióstr w Akicie (018-868-4728) do 30.11.2026, prośba w dwóch stopniach: Msza, a jeśli nie — modlitwa grupy na terenie. Zgoda = A, odmowa obu = B. W ścieżce A Fuji odpada, w ścieżce B odpada Nikkō.",
+      "wplyw_inne": "",
+      "rekomendacja_tekst": "",
+      "plusy": "",
+      "minusy": "",
+      "tlo": ""
+    },
+    {
+      "id": "przylot",
+      "decyzja": "Przylot do Seulu",
+      "opcja_id": "5_wieczor",
+      "opcja": "5.08 wieczorem z Hanedy do Gimpo (DECYZJA warunkowa)",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Cały 5.08 w Japonii (odpust u sióstr). Do czuwania 7.08 zostaje półtorej doby zapasu.",
+      "termin": "teraz: zapytanie grupowe do linii",
       "domyslna": true,
       "rekomendacja": true,
       "kontekst": "",
-      "opis": "Którędy i jak jedziemy przez pierwsze trzy dni — od lądowania w Tokio do wylotu do Seulu — i czy bierzemy udział w festiwalu Kantō w Akicie.",
-      "ograniczenia": "Odpowiedź sióstr z Akity: czy zgodzą się na Mszę i o której. Msza po 18:00 wyklucza wariant 1 (nie zdążymy na nocleg). Odmowa = wariant 4. Termin: wybór wariantu 1–3 do 30.11.2026; wariant 4 po odpowiedzi sióstr, najpóźniej 31.01.2027.",
-      "wplyw_inne": "Decyduje o noclegach 2/3 i 3/4.08, liczbie kierowców, godzinie pobudki 4.08 (od tego zależy, jak wypoczęta grupa przyleci na ŚDM) i o koszcie tych trzech dni (od ok. 700 do 1 600 zł na osobę). Wpływa też na decyzję o noclegu 2.08.",
-      "rekomendacja_tekst": "Wariant 1: cała pętla autokarem, bez parady. Jest najprostszy i najtańszy z Akitą, walizki są cały czas z grupą, a 4.08 nie wymaga pobudki o 4:00. Jeśli parada jest dla grupy ważna — wariant 2 (autokar), nie wariant 3 (pociąg). Gdy siostry odmówią — wariant 4, bo nie ma sensu jechać 1 300 km na zwykłą Mszę parafialną.",
-      "plusy": "Najprostszy i najtańszy wariant z Akitą: ok. 850 zł na osobę za te trzy dni [szacunek]. Walizki zawsze z grupą. Msza w Akicie ok. 15:45–18:00, Nikkō ok. 1,5 h, wyjazd 4.08 o 7:45.",
-      "minusy": "Nie zobaczymy parady Kantō. Przestaje działać, gdy siostry wyznaczą Mszę po 18:00.",
-      "tlo": [
-        "Lądujemy w Tokio (lotnisko Narita) 2.08 o 19:10. Musimy wylecieć do Seulu wieczorem 4.08, bo 5.08 po południu jest powitanie Papieża (punkt obowiązkowy). Mamy więc dwa i pół dnia.",
-        "Celem tych dni jest sanktuarium Matki Bożej w Akicie (Yuzawadai), ok. 450 km na północ od Tokio. Tam w 1973 r. s. Agnieszka Sasagawa otrzymała orędzia Matki Bożej, a drewniana figura Maryi płakała 101 razy (1975–1981). Objawienia uznał miejscowy biskup w 1984 r.",
-        "Sanktuarium ogłosiło (6.10.2026), że w sierpniu jest zamknięte dla pielgrzymów, a w środy zawsze. Dlatego prosimy siostry faksem o wyjątek: Mszę dla naszej grupy we wtorek 3.08. Faks 018-868-4728, wysłać do 30.11.2026. Odpowiedź sióstr — i godzina, którą wyznaczą — rozstrzyga tę decyzję.",
-        "Po drodze: Matsushima (zatoka z ok. 260 sosnowymi wysepkami, jeden z trzech najsłynniejszych krajobrazów Japonii; z pobliskiego portu w 1613 r. wypłynęło poselstwo samurajów do papieża w Rzymie) oraz Nikkō (mauzoleum sioguna Tokugawy Ieyasu, który w 1614 r. zakazał chrześcijaństwa w całej Japonii).",
-        "W Akicie 3–6.08 odbywa się Kantō Matsuri — jeden z trzech wielkich festiwali północnej Japonii: wieczorem (ok. 19:10–21:00) setki mężczyzn balansuje na dłoni, czole albo biodrze bambusowe tyczki obwieszone kilkudziesięcioma zapalonymi lampionami. Piękne, ale w te noce hotele w Akicie są pełne i bardzo drogie.",
-        "Cała pętla to ok. 1 300 km autokarem w dwa i pół dnia. Japońskie przepisy ściśle limitują czas pracy kierowców, więc godziny są napięte."
-      ]
+      "opis": "Kiedy lecimy z Tokio do Seulu. Najważniejsze punkty ŚDM to czuwanie 7/8.08, Msza 8.08 i spotkanie z Kiko 9.08 — powitanie Papieża 5.08 nie jest obowiązkowe.",
+      "ograniczenia": "Lot musi pomieścić ok. 90 osób; zgoda na podział na kilka lotów, także do Incheon. Jeśli nie ma miejsc ani 5.08 wieczorem, ani 6.08 rano — powrót do lotu 4.08 wieczorem (poprzedni plan, bez Yamanakako).",
+      "wplyw_inne": "",
+      "rekomendacja_tekst": "",
+      "plusy": "",
+      "minusy": "",
+      "tlo": ""
     },
     {
-      "id": "petla",
-      "decyzja": "Pierwsze dni w Japonii: trasa do Akity i z powrotem (2–4 sierpnia)",
-      "opcja_id": "E2",
-      "opcja": "Wariant 2: Akita z paradą Kantō, autokarem (nocleg w centrum Akity)",
-      "zmiany": "bus_wschod:+9000; nocleg_wschod:+150",
-      "efekt": "E2",
-      "wplyw": "Noc 3/4 sierpnia w Akicie zamiast Kitakami. Msza 4 sierpnia osobno (np. w Nikkō). Zadanie rezerwacji trybun / udziału w paradzie staje się aktualne.",
-      "termin": "30.11.2026",
+      "id": "przylot",
+      "decyzja": "Przylot do Seulu",
+      "opcja_id": "6_rano",
+      "opcja": "6.08 rano — tylko gdy 5.08 wieczorem zabraknie miejsc",
+      "zmiany": "nocleg_seul:=0; nocleg_wschod:+320",
+      "efekt": "przylot_6",
+      "wplyw": "Dodatkowa noc przy Hanedzie, pobudka ok. 5:00, przepada poranek 6.08 w Seulu; prosto na rejestrację pakietu.",
+      "termin": "teraz: zapytanie grupowe do linii",
       "domyslna": false,
       "rekomendacja": false,
       "kontekst": "",
-      "opis": "Którędy i jak jedziemy przez pierwsze trzy dni — od lądowania w Tokio do wylotu do Seulu — i czy bierzemy udział w festiwalu Kantō w Akicie.",
-      "ograniczenia": "Odpowiedź sióstr z Akity: czy zgodzą się na Mszę i o której. Msza po 18:00 wyklucza wariant 1 (nie zdążymy na nocleg). Odmowa = wariant 4. Termin: wybór wariantu 1–3 do 30.11.2026; wariant 4 po odpowiedzi sióstr, najpóźniej 31.01.2027.",
-      "wplyw_inne": "Decyduje o noclegach 2/3 i 3/4.08, liczbie kierowców, godzinie pobudki 4.08 (od tego zależy, jak wypoczęta grupa przyleci na ŚDM) i o koszcie tych trzech dni (od ok. 700 do 1 600 zł na osobę). Wpływa też na decyzję o noclegu 2.08.",
-      "rekomendacja_tekst": "Wariant 1: cała pętla autokarem, bez parady. Jest najprostszy i najtańszy z Akitą, walizki są cały czas z grupą, a 4.08 nie wymaga pobudki o 4:00. Jeśli parada jest dla grupy ważna — wariant 2 (autokar), nie wariant 3 (pociąg). Gdy siostry odmówią — wariant 4, bo nie ma sensu jechać 1 300 km na zwykłą Mszę parafialną.",
-      "plusy": "Zobaczymy paradę lampionów 3.08 wieczorem. Nadal bez pociągów.",
-      "minusy": "Ok. 1 100 zł na osobę [szacunek]. Pobudka 4.08 o 4:00, wyjazd 4:45 — grupa przylatuje do Seulu niewyspana. Trzeba 90 łóżek w Akicie w noc festiwalu (rezerwa: Ōmagari, Kakunodate).",
-      "tlo": [
-        "Lądujemy w Tokio (lotnisko Narita) 2.08 o 19:10. Musimy wylecieć do Seulu wieczorem 4.08, bo 5.08 po południu jest powitanie Papieża (punkt obowiązkowy). Mamy więc dwa i pół dnia.",
-        "Celem tych dni jest sanktuarium Matki Bożej w Akicie (Yuzawadai), ok. 450 km na północ od Tokio. Tam w 1973 r. s. Agnieszka Sasagawa otrzymała orędzia Matki Bożej, a drewniana figura Maryi płakała 101 razy (1975–1981). Objawienia uznał miejscowy biskup w 1984 r.",
-        "Sanktuarium ogłosiło (6.10.2026), że w sierpniu jest zamknięte dla pielgrzymów, a w środy zawsze. Dlatego prosimy siostry faksem o wyjątek: Mszę dla naszej grupy we wtorek 3.08. Faks 018-868-4728, wysłać do 30.11.2026. Odpowiedź sióstr — i godzina, którą wyznaczą — rozstrzyga tę decyzję.",
-        "Po drodze: Matsushima (zatoka z ok. 260 sosnowymi wysepkami, jeden z trzech najsłynniejszych krajobrazów Japonii; z pobliskiego portu w 1613 r. wypłynęło poselstwo samurajów do papieża w Rzymie) oraz Nikkō (mauzoleum sioguna Tokugawy Ieyasu, który w 1614 r. zakazał chrześcijaństwa w całej Japonii).",
-        "W Akicie 3–6.08 odbywa się Kantō Matsuri — jeden z trzech wielkich festiwali północnej Japonii: wieczorem (ok. 19:10–21:00) setki mężczyzn balansuje na dłoni, czole albo biodrze bambusowe tyczki obwieszone kilkudziesięcioma zapalonymi lampionami. Piękne, ale w te noce hotele w Akicie są pełne i bardzo drogie.",
-        "Cała pętla to ok. 1 300 km autokarem w dwa i pół dnia. Japońskie przepisy ściśle limitują czas pracy kierowców, więc godziny są napięte."
-      ]
-    },
-    {
-      "id": "petla",
-      "decyzja": "Pierwsze dni w Japonii: trasa do Akity i z powrotem (2–4 sierpnia)",
-      "opcja_id": "E3",
-      "opcja": "Wariant 3: Akita z paradą, powrót pociągiem (odradzany)",
-      "zmiany": "bus_wschod:+13500; nocleg_wschod:+150; komunikacja:+450",
-      "efekt": "E3",
-      "wplyw": "Wraca rozdzielenie ludzi i bagażu oraz rezerwacja miejscówek JR (termin 30.11.2026). Przy wstrzymanym pociągu plan awaryjny to autokary z Akity prosto na Hanedę (ok. 8 h) — wtedy Nikkō odpada.",
-      "termin": "30.11.2026",
-      "domyslna": false,
-      "rekomendacja": false,
-      "kontekst": "",
-      "opis": "Którędy i jak jedziemy przez pierwsze trzy dni — od lądowania w Tokio do wylotu do Seulu — i czy bierzemy udział w festiwalu Kantō w Akicie.",
-      "ograniczenia": "Odpowiedź sióstr z Akity: czy zgodzą się na Mszę i o której. Msza po 18:00 wyklucza wariant 1 (nie zdążymy na nocleg). Odmowa = wariant 4. Termin: wybór wariantu 1–3 do 30.11.2026; wariant 4 po odpowiedzi sióstr, najpóźniej 31.01.2027.",
-      "wplyw_inne": "Decyduje o noclegach 2/3 i 3/4.08, liczbie kierowców, godzinie pobudki 4.08 (od tego zależy, jak wypoczęta grupa przyleci na ŚDM) i o koszcie tych trzech dni (od ok. 700 do 1 600 zł na osobę). Wpływa też na decyzję o noclegu 2.08.",
-      "rekomendacja_tekst": "Wariant 1: cała pętla autokarem, bez parady. Jest najprostszy i najtańszy z Akitą, walizki są cały czas z grupą, a 4.08 nie wymaga pobudki o 4:00. Jeśli parada jest dla grupy ważna — wariant 2 (autokar), nie wariant 3 (pociąg). Gdy siostry odmówią — wariant 4, bo nie ma sensu jechać 1 300 km na zwykłą Mszę parafialną.",
-      "plusy": "Parada i trochę więcej czasu w Nikkō.",
-      "minusy": "Najdroższy (ok. 1 600 zł na osobę [szacunek]). 90 osób w dwóch pociągach z przesiadką, walizki osobno, sześć połączeń jednego dnia — jedno opóźnienie i spóźniamy się na samolot. Sprzeczny z DECYZJĄ „autokary zamiast pociągów”.",
-      "tlo": [
-        "Lądujemy w Tokio (lotnisko Narita) 2.08 o 19:10. Musimy wylecieć do Seulu wieczorem 4.08, bo 5.08 po południu jest powitanie Papieża (punkt obowiązkowy). Mamy więc dwa i pół dnia.",
-        "Celem tych dni jest sanktuarium Matki Bożej w Akicie (Yuzawadai), ok. 450 km na północ od Tokio. Tam w 1973 r. s. Agnieszka Sasagawa otrzymała orędzia Matki Bożej, a drewniana figura Maryi płakała 101 razy (1975–1981). Objawienia uznał miejscowy biskup w 1984 r.",
-        "Sanktuarium ogłosiło (6.10.2026), że w sierpniu jest zamknięte dla pielgrzymów, a w środy zawsze. Dlatego prosimy siostry faksem o wyjątek: Mszę dla naszej grupy we wtorek 3.08. Faks 018-868-4728, wysłać do 30.11.2026. Odpowiedź sióstr — i godzina, którą wyznaczą — rozstrzyga tę decyzję.",
-        "Po drodze: Matsushima (zatoka z ok. 260 sosnowymi wysepkami, jeden z trzech najsłynniejszych krajobrazów Japonii; z pobliskiego portu w 1613 r. wypłynęło poselstwo samurajów do papieża w Rzymie) oraz Nikkō (mauzoleum sioguna Tokugawy Ieyasu, który w 1614 r. zakazał chrześcijaństwa w całej Japonii).",
-        "W Akicie 3–6.08 odbywa się Kantō Matsuri — jeden z trzech wielkich festiwali północnej Japonii: wieczorem (ok. 19:10–21:00) setki mężczyzn balansuje na dłoni, czole albo biodrze bambusowe tyczki obwieszone kilkudziesięcioma zapalonymi lampionami. Piękne, ale w te noce hotele w Akicie są pełne i bardzo drogie.",
-        "Cała pętla to ok. 1 300 km autokarem w dwa i pół dnia. Japońskie przepisy ściśle limitują czas pracy kierowców, więc godziny są napięte."
-      ]
-    },
-    {
-      "id": "petla",
-      "decyzja": "Pierwsze dni w Japonii: trasa do Akity i z powrotem (2–4 sierpnia)",
-      "opcja_id": "E4",
-      "opcja": "Wariant 4: Sendai zamiast Akity (tylko gdy siostry odmówią)",
-      "zmiany": "bus_wschod:-13500",
-      "efekt": "E4",
-      "wplyw": "Nocleg 2 sierpnia zawsze w Mito. Akita znika z trasy i z mapy. Nie robimy ok. 1300 km „dla Mszy parafialnej” w Akicie bez sanktuarium.",
-      "termin": "po odpowiedzi sióstr, najpóźniej 31.01.2027",
-      "domyslna": false,
-      "rekomendacja": false,
-      "kontekst": "",
-      "opis": "Którędy i jak jedziemy przez pierwsze trzy dni — od lądowania w Tokio do wylotu do Seulu — i czy bierzemy udział w festiwalu Kantō w Akicie.",
-      "ograniczenia": "Odpowiedź sióstr z Akity: czy zgodzą się na Mszę i o której. Msza po 18:00 wyklucza wariant 1 (nie zdążymy na nocleg). Odmowa = wariant 4. Termin: wybór wariantu 1–3 do 30.11.2026; wariant 4 po odpowiedzi sióstr, najpóźniej 31.01.2027.",
-      "wplyw_inne": "Decyduje o noclegach 2/3 i 3/4.08, liczbie kierowców, godzinie pobudki 4.08 (od tego zależy, jak wypoczęta grupa przyleci na ŚDM) i o koszcie tych trzech dni (od ok. 700 do 1 600 zł na osobę). Wpływa też na decyzję o noclegu 2.08.",
-      "rekomendacja_tekst": "Wariant 1: cała pętla autokarem, bez parady. Jest najprostszy i najtańszy z Akitą, walizki są cały czas z grupą, a 4.08 nie wymaga pobudki o 4:00. Jeśli parada jest dla grupy ważna — wariant 2 (autokar), nie wariant 3 (pociąg). Gdy siostry odmówią — wariant 4, bo nie ma sensu jechać 1 300 km na zwykłą Mszę parafialną.",
-      "plusy": "Najtańszy (ok. 700 zł [szacunek]) i najlżejszy: Sendai to miasto, z którego wysłano poselstwo do papieża w 1613 r., z pomnikiem męczenników z 1624 r. i katedrą. Matsushima i Nikkō zostają.",
-      "minusy": "Nie ma sanktuarium w Akicie — tracimy główny maryjny punkt tej części. Maryjny akcent przejmuje wtedy Hongochi w Nagasaki 14.08 (grota z Lourdes św. Maksymiliana).",
-      "tlo": [
-        "Lądujemy w Tokio (lotnisko Narita) 2.08 o 19:10. Musimy wylecieć do Seulu wieczorem 4.08, bo 5.08 po południu jest powitanie Papieża (punkt obowiązkowy). Mamy więc dwa i pół dnia.",
-        "Celem tych dni jest sanktuarium Matki Bożej w Akicie (Yuzawadai), ok. 450 km na północ od Tokio. Tam w 1973 r. s. Agnieszka Sasagawa otrzymała orędzia Matki Bożej, a drewniana figura Maryi płakała 101 razy (1975–1981). Objawienia uznał miejscowy biskup w 1984 r.",
-        "Sanktuarium ogłosiło (6.10.2026), że w sierpniu jest zamknięte dla pielgrzymów, a w środy zawsze. Dlatego prosimy siostry faksem o wyjątek: Mszę dla naszej grupy we wtorek 3.08. Faks 018-868-4728, wysłać do 30.11.2026. Odpowiedź sióstr — i godzina, którą wyznaczą — rozstrzyga tę decyzję.",
-        "Po drodze: Matsushima (zatoka z ok. 260 sosnowymi wysepkami, jeden z trzech najsłynniejszych krajobrazów Japonii; z pobliskiego portu w 1613 r. wypłynęło poselstwo samurajów do papieża w Rzymie) oraz Nikkō (mauzoleum sioguna Tokugawy Ieyasu, który w 1614 r. zakazał chrześcijaństwa w całej Japonii).",
-        "W Akicie 3–6.08 odbywa się Kantō Matsuri — jeden z trzech wielkich festiwali północnej Japonii: wieczorem (ok. 19:10–21:00) setki mężczyzn balansuje na dłoni, czole albo biodrze bambusowe tyczki obwieszone kilkudziesięcioma zapalonymi lampionami. Piękne, ale w te noce hotele w Akicie są pełne i bardzo drogie.",
-        "Cała pętla to ok. 1 300 km autokarem w dwa i pół dnia. Japońskie przepisy ściśle limitują czas pracy kierowców, więc godziny są napięte."
-      ]
-    },
-    {
-      "id": "noc_2",
-      "decyzja": "Pierwsza noc w Japonii (2/3 sierpnia): gdzie śpimy",
-      "opcja_id": "iwaki",
-      "opcja": "Iwaki — droga wybrzeżem (rekomendacja)",
-      "zmiany": "",
-      "efekt": "",
-      "wplyw": "To nocleg rekomendowany przy wariantach 1 i 2. Jeśli Msza w Akicie miałaby być przed 15:30, z Iwaki trzeba wyjechać wcześniej i skrócić Matsushimę.",
-      "termin": "15.12.2026",
-      "domyslna": true,
-      "rekomendacja": true,
-      "kontekst": "",
-      "opis": "Gdzie grupa śpi pierwszą noc po wylądowaniu, czyli jak daleko jedziemy wieczorem 2.08 z lotniska.",
-      "ograniczenia": "Godzina Mszy w Akicie (odpowiedź sióstr) i zgoda rodziców na trasę wybrzeżem. W wariancie 4 (Sendai) pierwsza noc jest zawsze w Mito. Termin: 15.12.2026.",
-      "wplyw_inne": "Długość snu pierwszej nocy, godzina dotarcia do Akity 3.08 i czas pracy kierowców. Koszt różni się nieznacznie.",
-      "rekomendacja_tekst": "Iwaki — najlepiej pasuje do Mszy w Akicie ok. 15:45. Mito, jeśli Msza będzie ok. 17:00. Utsunomiya tylko wtedy, gdy grupa (rodzice) nie zaakceptuje trasy obok Fukushimy — warto im pokazać porównanie z lotem.",
-      "plusy": "Krótszy dzień 3.08, Akita ok. 15:45 bez pośpiechu.",
-      "minusy": "Przyjazd ok. 0:00 (krótka noc); rano przejazd obok strefy Fukushimy (dawka mniejsza niż z 10 minut lotu).",
-      "tlo": [
-        "Po odprawie 90 osób wyjeżdżamy z Narity ok. 21:00. Im dalej dojedziemy w nocy, tym krótszy jest dzień 3.08 (Matsushima i Msza w Akicie). Im bliżej śpimy, tym dłuższy jest 3.08, ale wcześniej idziemy spać.",
-        "Iwaki leży na wybrzeżu Pacyfiku ok. 200 km od lotniska (przyjazd ok. 0:00). Następnego ranka droga do Matsushimy prowadzi autostradą Jōban wzdłuż wybrzeża.",
-        "Ten odcinek autostrady (ok. 40 km) mija w odległości kilku kilometrów elektrownię Fukushima Daiichi, uszkodzoną przez tsunami w 2011 r. Autostrada jest otwarta dla wszystkich od 2015 r. Zmierzona dawka promieniowania za jeden przejazd to ok. 0,37 mikrosiwerta [fakt: pomiar z 2015 r.] — mniej niż z ok. 10 minut lotu samolotem [szacunek: w samolocie ok. 3–5 mikrosiwertów na godzinę]. Sam lot Warszawa–Tokio daje kilkadziesiąt razy więcej.",
-        "Mimo to część rodziców może nie chcieć tej trasy. Wtedy śpimy w Utsunomiyi (w głębi lądu) i jedziemy autostradą Tōhoku, z dala od wybrzeża — dzień 3.08 wydłuża się o ok. 1 godzinę.",
-        "Mito jest bliżej lotniska (ok. 110 km, przyjazd ok. 23:00 — godzina snu więcej). Pasuje, gdy siostry wyznaczą Mszę w Akicie później, ok. 17:00."
-      ]
-    },
-    {
-      "id": "noc_2",
-      "decyzja": "Pierwsza noc w Japonii (2/3 sierpnia): gdzie śpimy",
-      "opcja_id": "mito",
-      "opcja": "Mito — bliżej lotniska",
-      "zmiany": "",
-      "efekt": "noc_mito",
-      "wplyw": "Wymuszony przy wariancie 4 (Sendai). Przy wariancie 1 zostaje opcją zależną od godziny Mszy.",
-      "termin": "15.12.2026",
-      "domyslna": false,
-      "rekomendacja": false,
-      "kontekst": "",
-      "opis": "Gdzie grupa śpi pierwszą noc po wylądowaniu, czyli jak daleko jedziemy wieczorem 2.08 z lotniska.",
-      "ograniczenia": "Godzina Mszy w Akicie (odpowiedź sióstr) i zgoda rodziców na trasę wybrzeżem. W wariancie 4 (Sendai) pierwsza noc jest zawsze w Mito. Termin: 15.12.2026.",
-      "wplyw_inne": "Długość snu pierwszej nocy, godzina dotarcia do Akity 3.08 i czas pracy kierowców. Koszt różni się nieznacznie.",
-      "rekomendacja_tekst": "Iwaki — najlepiej pasuje do Mszy w Akicie ok. 15:45. Mito, jeśli Msza będzie ok. 17:00. Utsunomiya tylko wtedy, gdy grupa (rodzice) nie zaakceptuje trasy obok Fukushimy — warto im pokazać porównanie z lotem.",
-      "plusy": "Przyjazd ok. 23:00, godzina snu więcej.",
-      "minusy": "Dłuższy dzień 3.08 — pasuje tylko do późniejszej Mszy w Akicie (ok. 17:00).",
-      "tlo": [
-        "Po odprawie 90 osób wyjeżdżamy z Narity ok. 21:00. Im dalej dojedziemy w nocy, tym krótszy jest dzień 3.08 (Matsushima i Msza w Akicie). Im bliżej śpimy, tym dłuższy jest 3.08, ale wcześniej idziemy spać.",
-        "Iwaki leży na wybrzeżu Pacyfiku ok. 200 km od lotniska (przyjazd ok. 0:00). Następnego ranka droga do Matsushimy prowadzi autostradą Jōban wzdłuż wybrzeża.",
-        "Ten odcinek autostrady (ok. 40 km) mija w odległości kilku kilometrów elektrownię Fukushima Daiichi, uszkodzoną przez tsunami w 2011 r. Autostrada jest otwarta dla wszystkich od 2015 r. Zmierzona dawka promieniowania za jeden przejazd to ok. 0,37 mikrosiwerta [fakt: pomiar z 2015 r.] — mniej niż z ok. 10 minut lotu samolotem [szacunek: w samolocie ok. 3–5 mikrosiwertów na godzinę]. Sam lot Warszawa–Tokio daje kilkadziesiąt razy więcej.",
-        "Mimo to część rodziców może nie chcieć tej trasy. Wtedy śpimy w Utsunomiyi (w głębi lądu) i jedziemy autostradą Tōhoku, z dala od wybrzeża — dzień 3.08 wydłuża się o ok. 1 godzinę.",
-        "Mito jest bliżej lotniska (ok. 110 km, przyjazd ok. 23:00 — godzina snu więcej). Pasuje, gdy siostry wyznaczą Mszę w Akicie później, ok. 17:00."
-      ]
-    },
-    {
-      "id": "noc_2",
-      "decyzja": "Pierwsza noc w Japonii (2/3 sierpnia): gdzie śpimy",
-      "opcja_id": "utsunomiya",
-      "opcja": "Utsunomiya — w głębi lądu, z dala od Fukushimy",
-      "zmiany": "bus_wschod:+1800",
-      "efekt": "noc_utsu",
-      "wplyw": "Matsushima osiągana później; trzeba pilnować godziny Mszy w Akicie albo — przy wariancie 4 — programu w Sendai.",
-      "termin": "15.12.2026",
-      "domyslna": false,
-      "rekomendacja": false,
-      "kontekst": "",
-      "opis": "Gdzie grupa śpi pierwszą noc po wylądowaniu, czyli jak daleko jedziemy wieczorem 2.08 z lotniska.",
-      "ograniczenia": "Godzina Mszy w Akicie (odpowiedź sióstr) i zgoda rodziców na trasę wybrzeżem. W wariancie 4 (Sendai) pierwsza noc jest zawsze w Mito. Termin: 15.12.2026.",
-      "wplyw_inne": "Długość snu pierwszej nocy, godzina dotarcia do Akity 3.08 i czas pracy kierowców. Koszt różni się nieznacznie.",
-      "rekomendacja_tekst": "Iwaki — najlepiej pasuje do Mszy w Akicie ok. 15:45. Mito, jeśli Msza będzie ok. 17:00. Utsunomiya tylko wtedy, gdy grupa (rodzice) nie zaakceptuje trasy obok Fukushimy — warto im pokazać porównanie z lotem.",
-      "plusy": "Trasa daleko od wybrzeża i elektrowni — bez obaw rodziców.",
-      "minusy": "Dzień 3.08 dłuższy o ok. 1 h jazdy; trochę droższy autokar (ok. +20 zł na osobę [szacunek]).",
-      "tlo": [
-        "Po odprawie 90 osób wyjeżdżamy z Narity ok. 21:00. Im dalej dojedziemy w nocy, tym krótszy jest dzień 3.08 (Matsushima i Msza w Akicie). Im bliżej śpimy, tym dłuższy jest 3.08, ale wcześniej idziemy spać.",
-        "Iwaki leży na wybrzeżu Pacyfiku ok. 200 km od lotniska (przyjazd ok. 0:00). Następnego ranka droga do Matsushimy prowadzi autostradą Jōban wzdłuż wybrzeża.",
-        "Ten odcinek autostrady (ok. 40 km) mija w odległości kilku kilometrów elektrownię Fukushima Daiichi, uszkodzoną przez tsunami w 2011 r. Autostrada jest otwarta dla wszystkich od 2015 r. Zmierzona dawka promieniowania za jeden przejazd to ok. 0,37 mikrosiwerta [fakt: pomiar z 2015 r.] — mniej niż z ok. 10 minut lotu samolotem [szacunek: w samolocie ok. 3–5 mikrosiwertów na godzinę]. Sam lot Warszawa–Tokio daje kilkadziesiąt razy więcej.",
-        "Mimo to część rodziców może nie chcieć tej trasy. Wtedy śpimy w Utsunomiyi (w głębi lądu) i jedziemy autostradą Tōhoku, z dala od wybrzeża — dzień 3.08 wydłuża się o ok. 1 godzinę.",
-        "Mito jest bliżej lotniska (ok. 110 km, przyjazd ok. 23:00 — godzina snu więcej). Pasuje, gdy siostry wyznaczą Mszę w Akicie później, ok. 17:00."
-      ]
+      "opis": "Kiedy lecimy z Tokio do Seulu. Najważniejsze punkty ŚDM to czuwanie 7/8.08, Msza 8.08 i spotkanie z Kiko 9.08 — powitanie Papieża 5.08 nie jest obowiązkowe.",
+      "ograniczenia": "Lot musi pomieścić ok. 90 osób; zgoda na podział na kilka lotów, także do Incheon. Jeśli nie ma miejsc ani 5.08 wieczorem, ani 6.08 rano — powrót do lotu 4.08 wieczorem (poprzedni plan, bez Yamanakako).",
+      "wplyw_inne": "",
+      "rekomendacja_tekst": "",
+      "plusy": "",
+      "minusy": "",
+      "tlo": ""
     },
     {
       "id": "sen",
@@ -698,7 +612,7 @@
       "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
       "opcja_id": "174",
       "opcja": "174 zł za noc — stawka z kosztorysu Artura",
-      "zmiany": "nocleg_seul:=348",
+      "zmiany": "nocleg_seul:=174",
       "efekt": "",
       "wplyw": "W modelu nocleg w Seulu = 348 zł za dwa noce. Poprawia też wygląd porównania B1+ z A1+, ale może być zbyt optymistyczny.",
       "termin": "15.12.2026",
@@ -722,7 +636,7 @@
       "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
       "opcja_id": "400",
       "opcja": "Ok. 400 zł za noc — gdy zabraknie tanich ofert",
-      "zmiany": "nocleg_seul:=800",
+      "zmiany": "nocleg_seul:=400",
       "efekt": "",
       "wplyw": "W modelu nocleg w Seulu = 800 zł za dwa noce.",
       "termin": "15.12.2026",
@@ -746,7 +660,7 @@
       "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
       "opcja_id": "parafia",
       "opcja": "Ok. 100 zł za noc — sale parafialne przez organizatorów ŚDM",
-      "zmiany": "nocleg_seul:=200",
+      "zmiany": "nocleg_seul:=100",
       "efekt": "",
       "wplyw": "Seul 2 noce za ok. 200 zł zamiast 580 zł [zgaduję].",
       "termin": "15.12.2026",
@@ -794,7 +708,7 @@
       "id": "pakiet",
       "decyzja": "Pakiet uczestnika ŚDM",
       "opcja_id": "A1",
-      "opcja": "A1+ — noclegi od 4.08 zapewnia organizator ŚDM",
+      "opcja": "A1+ — noclegi od 5.08 zapewnia organizator ŚDM",
       "zmiany": "pakiet:=1275; nocleg_seul:=0; jedzenie_kr:=203; komunikacja:=40",
       "efekt": "A1",
       "wplyw": "Zeruje własne noclegi w Seulu i obniża własne wyżywienie oraz komunikację w Korei w modelu. Zmienia logistykę 4–6 sierpnia.",
@@ -817,18 +731,18 @@
     },
     {
       "id": "fuji",
-      "decyzja": "Wejście na Fudżi dla chętnych (17–18 sierpnia)",
+      "decyzja": "Fuji dla chętnych (ścieżka B, 4–5.08)",
       "opcja_id": "nie",
-      "opcja": "Bez wejścia — cała grupa razem (rekomendacja)",
+      "opcja": "Bez wejścia — cała grupa razem",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Plan bazowy, bez zmian trasy i kosztu.",
-      "termin": "teraz",
-      "domyslna": true,
-      "rekomendacja": true,
+      "wplyw": "Nikt nie wchodzi; cała grupa razem nad jeziorem.",
+      "termin": "po odpowiedzi sióstr; schronisko wiosną 2027",
+      "domyslna": false,
+      "rekomendacja": false,
       "kontekst": "",
-      "opis": "Czy proponujemy chętnym pełnoletnim osobne, dwudniowe wejście na Fudżi, podczas gdy reszta grupy jedzie dalej drogą św. Franciszka Ksawerego.",
-      "ograniczenia": "Tylko pełnoletni, z zaświadczeniem lekarskim i wyjściem próbnym (np. Babia Góra), z osobnym opiekunem. Zwykłe polisy kończą się na 3 000 m — potrzebne rozszerzenie. Koszt ok. 1 500 zł na wchodzącego [szacunek].",
+      "opis": "Wejście na Fuji szlakiem Yoshida z noclegiem w schronisku. Tylko w ścieżce B (bez Akity); w ścieżce A nie ma na nie dnia.",
+      "ograniczenia": "Bramka szlaku Yoshida zamknięta 14:00–3:00 dla osób bez rezerwacji w schronisku; opłata 4000 ¥; limit 4000 osób dziennie. Schronisko rezerwować od razu po otwarciu rezerwacji 2027.",
       "wplyw_inne": "Dopłata tylko dla wchodzących, osobny opiekun, podział grupy na dwa dni.",
       "rekomendacja_tekst": "Nie proponować — trasa Ksawerego jest sercem tej części pielgrzymki, a ryzyko i logistyka duże. Jeśli jednak tak, to tylko dla pełnoletnich, z wymaganiami jak wyżej.",
       "plusy": "Grupa razem, bez dopłat i ryzyka.",
@@ -841,18 +755,18 @@
     },
     {
       "id": "fuji",
-      "decyzja": "Wejście na Fudżi dla chętnych (17–18 sierpnia)",
+      "decyzja": "Fuji dla chętnych (ścieżka B, 4–5.08)",
       "opcja_id": "tak",
-      "opcja": "Wejście dla chętnych pełnoletnich (liczbę ustawia się niżej)",
+      "opcja": "Wejście dla chętnych (niepełnoletni za zgodą rodziców i z opiekunem) — tylko w ścieżce B",
       "zmiany": "",
       "efekt": "fuji",
-      "wplyw": "Na mapie i w programie pojawia się osobna odnoga 17–18 sierpnia. Reszta grupy jedzie bez zmian. W budżecie widać dopłatę tylko za liczbę wchodzących.",
-      "termin": "teraz",
-      "domyslna": false,
-      "rekomendacja": false,
+      "wplyw": "4.08 wyjście ze schroniskiem na 7.–8. stacji, 5.08 wschód słońca na szczycie i zejście do ok. 11:00. Koszt liczy się na wchodzącego.",
+      "termin": "po odpowiedzi sióstr; schronisko wiosną 2027",
+      "domyslna": true,
+      "rekomendacja": true,
       "kontekst": "",
-      "opis": "Czy proponujemy chętnym pełnoletnim osobne, dwudniowe wejście na Fudżi, podczas gdy reszta grupy jedzie dalej drogą św. Franciszka Ksawerego.",
-      "ograniczenia": "Tylko pełnoletni, z zaświadczeniem lekarskim i wyjściem próbnym (np. Babia Góra), z osobnym opiekunem. Zwykłe polisy kończą się na 3 000 m — potrzebne rozszerzenie. Koszt ok. 1 500 zł na wchodzącego [szacunek].",
+      "opis": "Wejście na Fuji szlakiem Yoshida z noclegiem w schronisku. Tylko w ścieżce B (bez Akity); w ścieżce A nie ma na nie dnia.",
+      "ograniczenia": "Bramka szlaku Yoshida zamknięta 14:00–3:00 dla osób bez rezerwacji w schronisku; opłata 4000 ¥; limit 4000 osób dziennie. Schronisko rezerwować od razu po otwarciu rezerwacji 2027.",
       "wplyw_inne": "Dopłata tylko dla wchodzących, osobny opiekun, podział grupy na dwa dni.",
       "rekomendacja_tekst": "Nie proponować — trasa Ksawerego jest sercem tej części pielgrzymki, a ryzyko i logistyka duże. Jeśli jednak tak, to tylko dla pełnoletnich, z wymaganiami jak wyżej.",
       "plusy": "Niezapomniany wschód słońca na szczycie.",
@@ -862,6 +776,66 @@
         "Moduł: 17.08 shinkansen z Nagasaki (ok. 6 h), autobus na 5. stację (2 400 m), noc w schronisku, 18.08 wschód słońca na szczycie, zejście i shinkansen do Osaki.",
         "Wchodzący tracą Yamaguchi, Hiroszimę, Miyajimę i Himeji. Podział grupy jest dopuszczalny tylko dla Fudżi (DECYZJA)."
       ]
+    },
+    {
+      "id": "nie_fuji",
+      "decyzja": "Kto nie wchodzi na Fuji (ścieżka B, 4–5.08)",
+      "opcja_id": "B1",
+      "opcja": "Zostają nad jeziorem; rano 5.08 Msza u sióstr na odpust",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Odpoczynek po trzech dniach jazdy, odpust u sióstr. Najtańsze i najprostsze.",
+      "termin": "po biletach i rezerwacji schroniska (wiosna 2027)",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Co robi reszta grupy, gdy chętni wchodzą na Fuji (tylko ścieżka B).",
+      "ograniczenia": "Kierowca może prowadzić ok. 9 h dziennie: 4.08 przejazd Sendai–Yamanakako to ok. 6 h, więc wycieczka do Tokio tym samym autokarem i kierowcą nie mieści się w limicie.",
+      "wplyw_inne": "",
+      "rekomendacja_tekst": "",
+      "plusy": "",
+      "minusy": "",
+      "tlo": ""
+    },
+    {
+      "id": "nie_fuji",
+      "decyzja": "Kto nie wchodzi na Fuji (ścieżka B, 4–5.08)",
+      "opcja_id": "B2",
+      "opcja": "Nocleg w Tokio, 5.08 Msza w katedrze Sekiguchi",
+      "zmiany": "bus_wschod:+4500",
+      "efekt": "tokio_B2",
+      "wplyw": "Dzień w Tokio, ale odpada Msza u sióstr; potrzebny osobny autokar [zgaduję: ok. +4 500 zł].",
+      "termin": "po biletach i rezerwacji schroniska (wiosna 2027)",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Co robi reszta grupy, gdy chętni wchodzą na Fuji (tylko ścieżka B).",
+      "ograniczenia": "Kierowca może prowadzić ok. 9 h dziennie: 4.08 przejazd Sendai–Yamanakako to ok. 6 h, więc wycieczka do Tokio tym samym autokarem i kierowcą nie mieści się w limicie.",
+      "wplyw_inne": "",
+      "rekomendacja_tekst": "",
+      "plusy": "",
+      "minusy": "",
+      "tlo": ""
+    },
+    {
+      "id": "nie_fuji",
+      "decyzja": "Kto nie wchodzi na Fuji (ścieżka B, 4–5.08)",
+      "opcja_id": "B3",
+      "opcja": "Wycieczka do Tokio z drugim składem kierowców, nocleg nad jeziorem",
+      "zmiany": "bus_wschod:+9000",
+      "efekt": "tokio_B3",
+      "wplyw": "Tokio i Msza u sióstr; koszt drugiego składu i ponad 9 h jazdy łącznie [zgaduję: ok. +9 000 zł].",
+      "termin": "po biletach i rezerwacji schroniska (wiosna 2027)",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Co robi reszta grupy, gdy chętni wchodzą na Fuji (tylko ścieżka B).",
+      "ograniczenia": "Kierowca może prowadzić ok. 9 h dziennie: 4.08 przejazd Sendai–Yamanakako to ok. 6 h, więc wycieczka do Tokio tym samym autokarem i kierowcą nie mieści się w limicie.",
+      "wplyw_inne": "",
+      "rekomendacja_tekst": "",
+      "plusy": "",
+      "minusy": "",
+      "tlo": ""
     },
     {
       "id": "sklad",
@@ -1610,14 +1584,15 @@
     }
   ],
   "logistyka": {
-    "rytm": "Codziennie: jutrznia rano, Msza (celebruje kapłan grupy), krótka modlitwa wieczorna. Upał: zwiedzanie na zewnątrz do 11:00 i po 16:00, przerwa w klimatyzacji, woda i elektrolity w autokarze, nakrycia głowy; śledzić japońskie alerty upału. Podział grupy jest dopuszczalny wyłącznie przy module Fuji (którego nie rekomendujemy).",
+    "rytm": "Codziennie: jutrznia rano, Msza (celebruje kapłan grupy), krótka modlitwa wieczorna. Upał: zwiedzanie na zewnątrz do 11:00 i po 16:00, przerwa w klimatyzacji, woda i elektrolity w autokarze, nakrycia głowy; śledzić japońskie alerty upału. Podział grupy jest dopuszczalny tylko przy Fuji dla chętnych (ścieżka B) i przy kilku lotach do Seulu 5.08.",
     "kierowcy": [
       "Japońskie limity czasu pracy kierowców są twarde — nie planujemy dłuższych dni bez drugiego kierowcy.",
-      "3.08 (Iwaki–Matsushima–Akita–Kitakami): 2 autokary po 2 kierowców.",
-      "4.08 (Kitakami–Nikkō–Haneda): 2 kierowców, wyjazd 7:45, z Nikkō najpóźniej 14:30, Haneda ok. 17:30 (lot krótki — ok. 2 h zapasu wystarcza).",
-      "17.08 (Nagasaki–Yamaguchi–Hiroszima): ok. 435 km, ok. 6 h, jeden kierowca, wyjazd ok. 7:00.",
+      "2.08 transfer z Narity do Iwaki (przyjazd ok. 0:00): osobna załoga, inaczej 3.08 start dopiero ok. 9:15.",
+      "Ścieżka A: 3.08 Iwaki–Matsushima–Akita ok. 440 km; 4.08 Akita–Nikkō ok. 500 km; 5.08 Nikkō–Yamanakako–Haneda ok. 360 km. Trzy długie dni z rzędu — 2 kierowców na autokar.",
+      "Ścieżka B: 3.08 Iwaki–Matsushima–Ōkago–Sendai ok. 370 km; 4.08 Sendai–Yamanakako ok. 470 km (+ dojazd na 5. stację Fuji); 5.08 Yamanakako–Haneda ok. 130 km.",
+      "17.08 (Nagasaki–Yamaguchi–Hiroszima): ok. 435 km, ok. 6 h, wyjazd ok. 7:00.",
       "18.08 (Hiroszima–Miyajima–Himeji–Osaka): ok. 350 km, ok. 5,25 h, wyjazd ok. 8:15.",
-      "Na zachodzie jedna baza w Nagasaki (5 nocy) zamiast zmiany hoteli i shinkansenu 16.08. Na Tōhoku jedna baza nie działa: Matsushima, Akita i Nikkō leżą co 250–430 km.",
+      "Na zachodzie jedna baza w Nagasaki (5 nocy). Na wschodzie jedna baza nie działa: Matsushima, Akita, Nikkō i Fuji leżą co 250–500 km.",
       "Normy 2024 (Japonia): praca kierowcy do 13 h (max 15 h), przerwa między zmianami min. 9 h (zalecane 11 h), ok. 670 km dziennie na kierowcę; walidator w kartach dni sprawdza to automatycznie."
     ],
     "bagaz": [
@@ -1634,25 +1609,26 @@
       "Plan awaryjny: tajfun albo odwołany rejs → lot Busan–Fukuoka (ok. 55 min) 12.08 rano; Hirado skrócone albo przeniesione na 13.08 przed Sotome."
     ],
     "awarie": [
-      "Odwołany wieczorny lot 4.08 → poranne rejsy Haneda–Gimpo 5.08; powitanie Papieża po południu nadal możliwe.",
       "Upał powyżej 35°C → zwiedzanie do 11:00 i po 16:00.",
       "Shōrō-nagashi 15.08 → grupy 8–10 z opiekunem, stałe punkty zbiórki, zatyczki do uszu, młodsi wracają wcześniej.",
       "Zgubiony uczestnik w Seulu → podgrupy 1:5 tej samej płci, punkt zbiórki na każdy dzień, jeden kanał łączności; zgubiony stoi w miejscu i dzwoni.",
       "Odmowa Mszy grupowej w kościele → Msza w hotelu albo w sali parafialnej z kapłanem grupy; udział w Mszy parafialnej.",
-      "Odmowa sióstr w Akicie → nie robimy 1300 km „dla Mszy parafialnej”; wchodzi wariant wariant 4 (Sendai)."
+      "Brak miejsc na lot 5.08 wieczorem → lot 6.08 rano (decyzja „Przylot do Seulu”); gdy i to nie — lot 4.08 wieczorem jak w poprzednim planie.",
+      "Odmowa sióstr w Akicie → ścieżka B (Ōkago, Sendai, Fuji dla chętnych); nie robimy setek km „dla Mszy parafialnej”.",
+      "Zła pogoda na Fuji → wejście odwołane rano 4.08, chętni zostają z grupą nad jeziorem."
     ],
     "joban": "Rano 3 sierpnia, w drodze z Iwaki do Matsushimy, autostrada wzdłuż wybrzeża (Jōban) na odcinku ok. 40 km mija w odległości kilku kilometrów elektrownię Fukushima Daiichi, uszkodzoną przez tsunami w 2011 r. Autostrada jest otwarta dla wszystkich od 2015 r. Dawka promieniowania za jeden przejazd to ok. 0,37 mikrosiwerta (pomiar z 2015 r.) — mniej niż z ok. 10 minut lotu samolotem; sam lot Warszawa–Tokio daje kilkadziesiąt razy więcej. Jeśli rodzice nie zaakceptują tej trasy, pierwszą noc spędzamy w Utsunomiyi i jedziemy autostradą w głębi lądu (dzień 3 sierpnia dłuższy o ok. 1 godzinę). Decyzja: 15.12.2026.",
     "checklista": [
       {
-        "co": "Faks do sióstr w Akicie (018-868-4728): Msza grupowa 3.08, ok. 17:00 / 15:45–18:00",
+        "co": "Faks do sióstr w Akicie (018-868-4728): Msza 3.08 ok. 16:30, a jeśli nie — modlitwa grupy na terenie",
         "kto": "Jakub, kapłan grupy",
-        "termin": "30.11.2026; wariant A/B do 31.01.2027",
+        "termin": "30.11.2026; ścieżka A/B po odpowiedzi",
         "status": "do zrobienia"
       },
       {
-        "co": "Blok lotów Haneda–Gimpo 4.08 wieczorem (2–3 rejsy)",
+        "co": "Loty Haneda–Gimpo 5.08 wieczorem dla ok. 90 osób (także kilka lotów / Incheon); zapas 6.08 rano",
         "kto": "Artur",
-        "termin": "zapytanie teraz; rezerwacja po rozkładzie lato 2027",
+        "termin": "zapytanie teraz — warunek przylotu 5.08",
         "status": "do zrobienia"
       },
       {
@@ -1662,25 +1638,25 @@
         "status": "do zrobienia"
       },
       {
-        "co": "Noclegi z bezpłatną anulacją: Iwaki/Mito/Utsunomiya 2/3.08, Kitakami albo Akita 3/4.08, Nagasaki 12–17.08 (3 zapytania)",
+        "co": "Noclegi z bezpłatną anulacją: Iwaki 2/3.08; A: Akita 3/4 i Nikkō 4/5.08; B: Sendai 3/4 i Yamanakako 4/5.08; Nagasaki 12–17.08",
         "kto": "Artur",
         "termin": "30.11–15.12.2026",
         "status": "do zrobienia"
       },
       {
-        "co": "Noclegi Seul 4–6.08, ok. 90 łóżek (kryterium B1+)",
+        "co": "Seul, Mapo: ustalony hotel na noc 5/6.08 (zwolnić noc 4/5, jeśli była zarezerwowana)",
         "kto": "Artur",
         "termin": "15.12.2026",
         "status": "do zrobienia"
       },
       {
-        "co": "polskie biuro ŚDM (KBO): identyfikatory i plecaki 5.08, sektor na powitanie",
+        "co": "Polskie biuro ŚDM (KBO): godziny rejestracji pakietu 6.08 i program 6.08",
         "kto": "Jakub",
         "termin": "15.12.2026",
         "status": "do zrobienia"
       },
       {
-        "co": "Autokary: Narita 2.08; Tōhoku 3–4.08 z 2 kierowcami i lukami; Kiusiu–Kansai 12–20.08; Korea 10.08",
+        "co": "Autokary: Narita 2.08 (osobna załoga); Tōhoku 3–5.08 z 2 kierowcami i lukami; Kiusiu–Kansai 12–20.08; Korea 5.08 i 10.08",
         "kto": "Artur / japońskie biuro",
         "termin": "31.12.2026",
         "status": "do zrobienia"
@@ -1744,6 +1720,24 @@
         "kto": "organizatorzy",
         "termin": "przed wpłatami i wylotem",
         "status": "do uzupełnienia"
+      },
+      {
+        "co": "Siostry salezjanki, Yamanaka (+81-555-62-0031): Msza 5.08 na odpust Matki Bożej Śnieżnej, godzina i miejsce dla 90 osób",
+        "kto": "Jakub, kapłan grupy",
+        "termin": "XII 2026",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Parafia św. Andrzeja Kima w Jwadong (Busan): Msza 11.08 i przechowanie bagażu",
+        "kto": "Jakub",
+        "termin": "I 2027",
+        "status": "do zrobienia"
+      },
+      {
+        "co": "Ścieżka B: schroniska na Fuji (szlak Yoshida) — termin otwarcia rezerwacji 2027",
+        "kto": "Artur",
+        "termin": "po odpowiedzi sióstr",
+        "status": "do zrobienia"
       }
     ]
   },
@@ -1763,10 +1757,10 @@
       {
         "id": "lot_seul",
         "grupa": "Loty",
-        "pozycja": "Haneda–Gimpo 4.08 wieczór (NH867/OZ1035)",
+        "pozycja": "Haneda–Gimpo 5.08 wieczór (w 2026: NH867/OZ1035)",
         "jednostka": "os",
         "kwota": 504,
-        "zrodlo": "Szacunek Artura (¥18 000) dla lotu Tokio–Seul; taryfa grupowa może dodać ok. 250 zł. Lot krótki (ok. 2 h 15 min), na Hanedzie wystarczą ok. 2 h przed odlotem.",
+        "zrodlo": "Szacunek Artura (¥18 000) dla lotu Tokio–Seul; taryfa grupowa może dodać ok. 250 zł. Lot krótki (ok. 2 h 15 min), na Hanedzie wystarczą ok. 2 h przed odlotem. Przylot 5.08 — DECYZJA warunkowa z 26.11.2026.",
         "status": "szacunek"
       },
       {
@@ -1790,16 +1784,16 @@
       {
         "id": "bus_wschod",
         "grupa": "Transport lądowy",
-        "pozycja": "Autokary Tōhoku 2–4.08 (2 autokary, 2 kierowców)",
+        "pozycja": "Autokary Japonia 2–5.08 (2 autokary, 2 kierowców, 4 dni)",
         "jednostka": "grupa",
-        "kwota": 40500,
-        "zrodlo": "plan z 15.11.2026: transport pętli wariant 1 ok. 450 zł/os (2 × ok. ¥810 000). Do oferty przewoźnika.",
+        "kwota": 54000,
+        "zrodlo": "Wcześniej 40 500 zł za 3 dni (2 × ok. ¥810 000); +1 dzień 5.08 (ok. 360 km) ≈ +13 500 zł [szacunek]. Ścieżka B ok. 6 000 zł mniej (mniej km) [szacunek]. Do oferty przewoźnika.",
         "status": "szacunek"
       },
       {
         "id": "bus_korea",
         "grupa": "Transport lądowy",
-        "pozycja": "Autokary Korea: Gimpo–Mapo 4.08 i Seul–Solmoe–Busan 10.08",
+        "pozycja": "Autokary Korea: Gimpo–Mapo 5.08 i Seul–Solmoe–Busan 10.08",
         "jednostka": "grupa",
         "kwota": 16380,
         "zrodlo": "Artur: Seul–Busan 152 zł/os + transfer z Gimpo ok. 30 zł/os.",
@@ -1826,7 +1820,7 @@
       {
         "id": "komunikacja",
         "grupa": "Transport lądowy",
-        "pozycja": "Metro / karty miejskie 5.08, prom na Miyajimę, drobne",
+        "pozycja": "Metro / karty miejskie 6.08 rano, prom na Miyajimę, drobne",
         "jednostka": "os",
         "kwota": 60,
         "zrodlo": "Założenie: karty T-money 5.08 i prom 18.08.",
@@ -1835,19 +1829,19 @@
       {
         "id": "nocleg_wschod",
         "grupa": "Noclegi",
-        "pozycja": "Noclegi 2/3 i 3/4.08 (Iwaki, Kitakami)",
+        "pozycja": "Noclegi 2/3, 3/4 i 4/5.08 (A: Iwaki, Akita, Nikkō; B: Iwaki, Sendai, Yamanakako)",
         "jednostka": "os",
-        "kwota": 400,
-        "zrodlo": "plan z 15.11.2026: hotele pętli wariant 1 ok. 2 × 200 zł/os.",
+        "kwota": 600,
+        "zrodlo": "3 × ok. 200 zł/os [szacunek]; Akita w noc Kantō może być droższa.",
         "status": "szacunek"
       },
       {
         "id": "nocleg_seul",
         "grupa": "Noclegi",
-        "pozycja": "Seul Mapo, 2 noce (4–6.08)",
+        "pozycja": "Seul Mapo, 1 noc (5/6.08)",
         "jednostka": "os",
-        "kwota": 580,
-        "zrodlo": "plan z 15.11: ok. 290 zł/noc w tygodniu ŚDM (przypuszczenie); Artur 174 zł poza szczytem.",
+        "kwota": 290,
+        "zrodlo": "Ustalony hotel w Mapo; od 6.08 noclegi z pakietu B1+. Jeśli rezerwacja była od 4.08 — sprawdzić zwolnienie nocy 4/5.08. ok. 290 zł/noc w tygodniu ŚDM [szacunek].",
         "status": "szacunek"
       },
       {
@@ -1889,16 +1883,16 @@
       {
         "id": "jedzenie_jp",
         "grupa": "Wyżywienie",
-        "pozycja": "Wyżywienie w Japonii, 12 dni × ¥4 500",
+        "pozycja": "Wyżywienie w Japonii, 13 dni × ¥4 500",
         "jednostka": "os",
-        "kwota": 1350,
-        "zrodlo": "Stawka dzienna Artura (¥4 500) × dni w Japonii planie z 15.11, kurs plan z 15.11.",
+        "kwota": 1462.5,
+        "zrodlo": "Stawka dzienna Artura (¥4 500) × 13 dni w Japonii (dzień 5.08 doszedł).",
         "status": "szacunek"
       },
       {
         "id": "jedzenie_kr",
         "grupa": "Wyżywienie",
-        "pozycja": "Wyżywienie w Korei poza pakietem, 4 dni",
+        "pozycja": "Wyżywienie w Korei poza pakietem, 4 dni (5–6.08 i 10–11.08)",
         "jednostka": "os",
         "kwota": 406,
         "zrodlo": "Artur: ok. 101,50 zł/dzień; planie z 15.11: 4–5.08 i 10–11.08.",
@@ -1952,10 +1946,10 @@
       {
         "id": "kadra",
         "grupa": "Kadra i obsługa",
-        "pozycja": "Pilot/przewodnik lokalny Japonia 12 dni + Korea 4 dni",
+        "pozycja": "Pilot/przewodnik lokalny Japonia 13 dni + Korea 4 dni",
         "jednostka": "grupa",
-        "kwota": 15480,
-        "zrodlo": "Założenie: ¥40 000/dzień w Japonii (12 000 zł) + ok. 870 zł/dzień w Korei (3 480 zł).",
+        "kwota": 16480,
+        "zrodlo": "Założenie: ¥40 000/dzień w Japonii (13 000 zł) + ok. 870 zł/dzień w Korei (3 480 zł).",
         "status": "szacunek"
       },
       {
@@ -1970,7 +1964,7 @@
       {
         "id": "fuji",
         "grupa": "Program i wstępy",
-        "pozycja": "Moduł Fuji (średnio na uczestnika)",
+        "pozycja": "Moduł Fuji (ścieżka B; liczony na wchodzącego)",
         "jednostka": "os",
         "kwota": 0,
         "zrodlo": "Brak modułu w wariancie bazowym.",
@@ -2012,8 +2006,8 @@
       "bagaz"
     ],
     "bez_rezerwy_uwaga": "Rezerwa kursowa liczy się tylko od pozycji jeszcze nieopłaconych i zależnych od kursu (JPY, KRW, USD). Bilety Qatar są kupione, polisa i materiały są w złotych.",
-    "fuji_na_osobe": 1500,
-    "fuji_zrodlo": "[szacunek] shinkansen Nagasaki–Shin-Fuji, autobus na 5. stację, schronisko, opłata 4 000 ¥, shinkansen do Osaki: ok. 55–65 tys. ¥. Wcześniej 1 000 zł (zaniżone).",
+    "fuji_na_osobe": 700,
+    "fuji_zrodlo": "[szacunek] schronisko z kolacją i śniadaniem ok. ¥14–20 tys., opłata 4 000 ¥, transfer na 5. stację, przewodnik/sprzęt → ok. ¥26–30 tys. ≈ 700 zł (kurs 0,025). Wcześniej 1 500 zł z shinkansenem 17–18.08 (już nieaktualne).",
     "loty_rezygnacje": {
       "grupowe": 69,
       "imienne": 21,
@@ -2064,213 +2058,6 @@
     }
   },
   "warianty": {
-    "E2": {
-      "ukryj": [
-        "kitakami"
-      ],
-      "pokaz": [
-        "akita_noc"
-      ],
-      "dni": {
-        "2027-08-03": {
-          "miejsce": "Iwaki → Matsushima → Akita (parada Kantō)",
-          "program": "Jutrznia 6:15, wyjazd 7:00. Matsushima 9:45–11:30. Yuzawadai ok. 15:45–17:30: Msza (za zgodą sióstr). Hotel w centrum Akity, wieczorem pieszo na paradę Kantō 19:10–21:00.",
-          "nocleg": "Akita, centrum",
-          "miejsca": "iwaki,matsushima,akita,akita_noc",
-          "uwagi": "wariant 2: kierowcy kończą służbę po dojeździe do Akity. Rezerwa noclegu: Ōmagari / Kakunodate.",
-          "kierowcy": {
-            "start": "06:30",
-            "koniec": "18:30",
-            "km": 440,
-            "kierowcow": 2,
-            "zaloga": "tohoku",
-            "kraj": "jp"
-          }
-        },
-        "2027-08-04": {
-          "miejsce": "Akita → Nikkō → Haneda → Gimpo → Seul",
-          "program": "Pobudka 4:00, wyjazd 4:45. Nikkō ok. 12:00–13:15. Haneda, loty 20:05 do Gimpo. Msza 4.08 osobno (np. Nikkō).",
-          "km": "ok. 430 + 170",
-          "czas_h": "ok. 7 + dojazd",
-          "miejsca": "akita_noc,nikko,haneda,gimpo,mapo",
-          "uwagi": "wariant 2: bardzo krótka noc przed ŚDM.",
-          "kierowcy": {
-            "start": "04:15",
-            "koniec": "17:30",
-            "km": 600,
-            "kierowcow": 2,
-            "zaloga": "tohoku",
-            "kraj": "jp"
-          }
-        }
-      },
-      "log": [
-        "wariant 2: noc 3/4.08 w Akicie w czasie Kantō — rezerwacja pilna, trybuny na paradę do 28.02.2027.",
-        "wariant 2: wyjazd 4.08 o 4:45, 2 kierowców na odcinek Akita–Nikkō–Haneda."
-      ]
-    },
-    "E3": {
-      "ukryj": [
-        "kitakami"
-      ],
-      "pokaz": [
-        "akita_noc"
-      ],
-      "dni": {
-        "2027-08-03": {
-          "miejsce": "Iwaki → Matsushima → Akita (parada Kantō)",
-          "program": "Jak w wariancie 2: Matsushima, Msza w Akicie, parada Kantō, nocleg w centrum Akity.",
-          "nocleg": "Akita, centrum",
-          "miejsca": "iwaki,matsushima,akita,akita_noc",
-          "uwagi": "wariant 3 (wcześniejszy plan)."
-        },
-        "2027-08-04": {
-          "miejsce": "Akita → (pociąg) Utsunomiya → Nikkō → Haneda",
-          "program": "5:15 pobudka. Komachi 6: Akita 6:09 → Sendai 8:16, Yamabiko → Utsunomiya 9:28. Lokalny autokar do Nikkō, Tōshōgū ok. 11:30–13:15. Autokary z walizkami jadą z Akity ok. 5:30 prosto do Nikkō i wiozą grupę na Hanedę.",
-          "transport": "Pociąg (ludzie) + autokary (bagaż)",
-          "km": "ok. 430 autokarem",
-          "czas_h": "pociąg ok. 3,3 h",
-          "miejsca": "akita_noc,utsunomiya,nikko,haneda,gimpo,mapo",
-          "uwagi": "Sześć ogniw jednego dnia; przy braku 90 miejsc w Komachi ten wariant przestaje być możliwy."
-        }
-      },
-      "log": [
-        "wariant 3: grupowe miejscówki JR Komachi 6 + Yamabiko dla 90 osób do 30.11.2026.",
-        "wariant 3: walizki i ludzie osobno — pakowanie plecaków na 4.08."
-      ]
-    },
-    "E4": {
-      "ukryj": [
-        "akita",
-        "kitakami",
-        "iwaki"
-      ],
-      "pokaz": [
-        "mito",
-        "sendai"
-      ],
-      "dni": {
-        "2027-08-02": {
-          "miejsce": "Doha → Narita → Mito",
-          "nocleg": "Mito",
-          "miejsca": "doha,narita,mito",
-          "program": "QR806 ląduje na Naricie o 19:10. Odprawa do ok. 21:00. Autokary do Mito, przyjazd ok. 23:00.",
-          "km": "ok. 110",
-          "czas_h": "ok. 1,5",
-          "kierowcy": {
-            "start": "18:30",
-            "koniec": "23:15",
-            "km": 110,
-            "kierowcow": 2,
-            "zaloga": "tohoku",
-            "kraj": "jp"
-          }
-        },
-        "2027-08-03": {
-          "miejsce": "Mito → Sendai → Matsushima → Sendai",
-          "program": "Wyjazd 8:00, Sendai 11:30: Muzeum Miasta Sendai (Hasekura), pomnik męczenników 1624, Msza w katedrze Mototerakōji. Po południu Matsushima (Zuiganji, Godaidō).",
-          "nocleg": "Sendai",
-          "miejsca": "mito,sendai,matsushima,zuiganji",
-          "km": "ok. 250 + 30",
-          "czas_h": "ok. 3,5",
-          "uwagi": "wariant 4: Akita odpada. Maryjny wątek przejmuje Hongochi 14.08 (grota z Lourdes Kolbego).",
-          "kierowcy": {
-            "start": "07:30",
-            "koniec": "19:00",
-            "km": 280,
-            "kierowcow": 2,
-            "zaloga": "tohoku",
-            "kraj": "jp"
-          }
-        },
-        "2027-08-04": {
-          "miejsce": "Sendai → Nikkō → Haneda → Gimpo → Seul",
-          "program": "Wyjazd 7:30, Nikkō 11:15–13:15 (Tōshōgū), Haneda, loty 20:05 do Gimpo.",
-          "km": "ok. 270 + 170",
-          "czas_h": "ok. 3,75 + dojazd",
-          "miejsca": "sendai,nikko,haneda,gimpo,mapo",
-          "uwagi": "wariant 4 mieści się w limicie jednego kierowcy."
-        }
-      },
-      "log": [
-        "wariant 4: bez sanktuarium w Akicie — nie robimy 1300 km dla Mszy parafialnej.",
-        "wariant 4: jeden kierowca na dzień wystarcza; nocleg 2.08 w Mito, 3.08 w Sendai."
-      ]
-    },
-    "noc_mito": {
-      "ukryj": [
-        "iwaki"
-      ],
-      "pokaz": [
-        "mito"
-      ],
-      "dni": {
-        "2027-08-02": {
-          "miejsce": "Doha → Narita → Mito",
-          "nocleg": "Mito",
-          "miejsca": "doha,narita,mito",
-          "km": "ok. 110",
-          "czas_h": "ok. 1,5",
-          "program": "QR806 ląduje o 19:10. Odprawa do ok. 21:00. Autokary do Mito, przyjazd ok. 23:00 (+1 h snu).",
-          "kierowcy": {
-            "start": "18:30",
-            "koniec": "23:15",
-            "km": 110,
-            "kierowcow": 2,
-            "zaloga": "tohoku",
-            "kraj": "jp"
-          }
-        },
-        "2027-08-03": {
-          "miejsce": "Mito → Matsushima → Akita → Kitakami",
-          "miejsca": "mito,matsushima,zuiganji,akita,kitakami",
-          "km": "ok. 300 + 260 + 120",
-          "czas_h": "ok. 9,5 z przerwami",
-          "program": "Jutrznia 5:30, wyjazd 6:15. Matsushima ok. 10:00–11:15: Zuiganji, Godaidō, cisza za ofiary tsunami 2011, katecheza o poselstwie Hasekury. Akita (Yuzawadai) ok. 16:30–18:30: Msza w sanktuarium za zgodą sióstr, zawierzenie Niepokalanej. Przyjazd do Kitakami ok. 20:30.",
-          "uwagi": "Wariant z noclegiem w Mito: dłuższy dojazd do Matsushimy, Msza w Akicie raczej ok. 16:30–17:00. Godziny do potwierdzenia z przewoźnikiem.",
-          "kierowcy": {
-            "start": "05:45",
-            "koniec": "21:00",
-            "km": 680,
-            "kierowcow": 2,
-            "zaloga": "tohoku",
-            "kraj": "jp",
-            "uwaga": "Godziny szacunkowe — do potwierdzenia z przewoźnikiem."
-          }
-        }
-      },
-      "log": [
-        "Nocleg 2.08 w Mito — pasuje, gdy Msza w Akicie będzie ok. 17:00."
-      ]
-    },
-    "noc_utsu": {
-      "ukryj": [
-        "iwaki"
-      ],
-      "pokaz": [
-        "utsunomiya"
-      ],
-      "dni": {
-        "2027-08-02": {
-          "miejsce": "Doha → Narita → Utsunomiya",
-          "nocleg": "Utsunomiya",
-          "miejsca": "doha,narita,utsunomiya",
-          "km": "ok. 130",
-          "czas_h": "ok. 2",
-          "program": "QR806 ląduje o 19:10. Odprawa do ok. 21:00. Autokary do Utsunomiya przez Tōhoku (bez Jōban)."
-        },
-        "2027-08-03": {
-          "km": "ok. 200 + 260 + 120",
-          "czas_h": "ok. 9 z przerwami",
-          "uwagi": "Wariant Utsunomiya: dłuższy dojazd do Matsushimy; Msza w Akicie raczej ok. 16:30–17:00.",
-          "miejsce": "Utsunomiya → Matsushima → Akita → Kitakami",
-          "miejsca": "utsunomiya,matsushima,zuiganji,akita,kitakami"
-        }
-      },
-      "log": [
-        "Nocleg 2 sierpnia w Utsunomiya: nie jedziemy autostradą Jōban (sąsiedztwo strefy Fukushimy)."
-      ]
-    },
     "sen_tokio": {
       "ukryj": [],
       "pokaz": [],
@@ -2309,15 +2096,12 @@
       "ukryj": [],
       "pokaz": [],
       "dni": {
-        "2027-08-04": {
-          "nocleg": "Zakwaterowanie pakietu A1+ (organizator ŚDM)"
-        },
         "2027-08-05": {
-          "nocleg": "Zakwaterowanie pakietu A1+"
+          "nocleg": "Zakwaterowanie pakietu A1+ (organizator ŚDM)"
         }
       },
       "log": [
-        "A1+: noclegi 4–6.08 zapewnia organizator ŚDM; nieletni osobno, 1 opiekun na 5 osób."
+        "A1+: noclegi od 5.08 zapewnia organizator ŚDM; nieletni osobno, 1 opiekun na 5 osób."
       ]
     },
     "fuji": {
@@ -2326,16 +2110,16 @@
         "fuji"
       ],
       "dni": {
-        "2027-08-17": {
-          "uwagi": "MODUŁ FUJI: wchodzący jadą shinkansenem do Shin-Fuji (ok. 6–6,5 h), autobus 15:00 na 5. stację Fujinomiya (16:47), nocleg w schronisku na 8. stacji. Reszta grupy bez zmian."
+        "2027-08-04": {
+          "uwagi": "Ścieżka B. Bramka szlaku Yoshida jest zamknięta 14:00–3:00 dla osób bez rezerwacji w schronisku; opłata 4000 ¥ od osoby; limit 4000 osób dziennie. Schronisko dla całej grupy chętnych rezerwować od razu po otwarciu rezerwacji na 2027. FUJI: osobny kierownik grupy górskiej i opiekunowie dla niepełnoletnich (zgoda rodziców); rozszerzenie polisy powyżej 3000 m; sprzęt: czołówki, kurtki, rękawice."
         },
-        "2027-08-18": {
-          "uwagi": "MODUŁ FUJI: wschód słońca na szczycie, zejście, autobus do Shin-Fuji, shinkansen do Osaki (ok. 2 h). Wieczorem dołączają w Osace. Plan B przy tajfunie: dołączenie w Hiroszimie."
+        "2027-08-05": {
+          "uwagi": "FUJI: wchodzący przylecą do Seulu po nocy bez snu — 6.08 lżejszy poranek dla nich. Przy złej pogodzie (wiatr, burza) wejście odwołuje się rano 4.08 i chętni zostają z grupą."
         }
       },
       "log": [
-        "Fuji: tylko pełnoletni z zaświadczeniem lekarskim; wyjście kwalifikacyjne (np. Babia Góra) wiosną.",
-        "Fuji: osobny kierownik i opiekun; rozszerzenie polisy powyżej 3000–3200 m."
+        "Fuji: tylko dla chętnych; niepełnoletni za zgodą rodziców i z opiekunem.",
+        "Fuji: wyjście kwalifikacyjne wiosną (np. Babia Góra), osobny kierownik, rozszerzenie polisy na wysokość."
       ]
     },
     "trzeci": {
@@ -2360,6 +2144,175 @@
       "dni": {},
       "log": [
         "Ciężarówka bagażowa: walizki jadą osobno między bazami w Japonii — lista rozładunku w każdej bazie, plombowane worki na rzeczy dzienne w autokarze."
+      ]
+    },
+    "sciezka_B": {
+      "ukryj": [
+        "akita",
+        "akita_noc",
+        "nikko"
+      ],
+      "pokaz": [
+        "okago",
+        "sendai"
+      ],
+      "dni": {
+        "2027-08-03": {
+          "miejsce": "Iwaki → Matsushima → Ōkago → Sendai",
+          "program": "Jutrznia 6:45, wyjazd 7:30. Matsushima ok. 10:00–11:30 (jak w ścieżce A). Ōkago (Fujisawa, Ichinoseki) ok. 13:00–15:30: park i muzeum męczenników — ponad 300 chrześcijan zabitych na początku epoki Edo, „Shimabara Tōhoku”. Kaplica Cruz Hall jest na górze (ponad 300 stromych stopni) — kto nie da rady, zostaje przy muzeum. Msza w Ōkago albo w Sendai. Hotel w Sendai ok. 17:30.",
+          "nocleg": "Sendai",
+          "km": "180 + 90 + 100",
+          "czas_h": "ok. 5 jazdy",
+          "miejsca": "iwaki,matsushima,zuiganji,okago,sendai",
+          "status": "Msza i hotel do uzgodnienia; muzeum 9:00–16:00, w poniedziałki zamknięte (3.08 to wtorek)",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel Iwaki",
+              "jak": "hotel",
+              "od": "06:50",
+              "min": 35
+            },
+            "obiad": {
+              "gdzie": "w drodze do Ōkago",
+              "jak": "bento",
+              "od": "12:15",
+              "min": 30
+            },
+            "kolacja": {
+              "gdzie": "hotel w Sendai",
+              "jak": "restauracja",
+              "od": "18:30",
+              "min": 60
+            }
+          },
+          "sens": "Od zatoki Matsushima do wioski męczenników Ōkago — wierność pod prześladowaniem.",
+          "uwagi": "Ścieżka B (siostry w Akicie odmówiły). Bez objazdu do Akity. Msza: zapytać kościół w Ōkago albo katedrę Mototerakōji w Sendai.",
+          "kierowcy": {
+            "start": "07:00",
+            "koniec": "17:45",
+            "km": 370,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp"
+          }
+        },
+        "2027-08-04": {
+          "kraj": "Japonia",
+          "miejsce": "Sendai → Yamanakako (Fuji dla chętnych)",
+          "program": "Śniadanie 5:15, wyjazd 6:00. Sendai–Yamanakako ok. 470 km (ok. 6–6,5 h z przerwami). Ok. 12:30 nad jeziorem. Chętni na Fuji (decyzja „Fuji”): autokar na 5. stację szlaku Yoshida, wyjście ok. 13:30, nocleg w schronisku na 7.–8. stacji. Reszta: popołudnie nad jeziorem albo Tokio (decyzja „Kto nie wchodzi na Fuji”). Nikkō w tej ścieżce odpada.",
+          "nocleg": "Yamanakako; chętni — schronisko na Fuji",
+          "km": "ok. 470",
+          "czas_h": "ok. 6–6,5 z przerwami",
+          "miejsca": "sendai,yamanaka",
+          "status": "km: szacunek; hotel nad jeziorem i schronisko do rezerwacji",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel w Sendai",
+              "jak": "hotel",
+              "od": "05:15",
+              "min": 30
+            },
+            "obiad": {
+              "gdzie": "nad jeziorem Yamanaka",
+              "jak": "restauracja",
+              "od": "12:30",
+              "min": 45
+            },
+            "kolacja": {
+              "gdzie": "hotel nad jeziorem / schronisko",
+              "jak": "restauracja",
+              "od": "18:30",
+              "min": 60
+            }
+          },
+          "sens": "Przejazd pod Fuji; chętni wychodzą na górę.",
+          "uwagi": "Ścieżka B. Bramka szlaku Yoshida jest zamknięta 14:00–3:00 dla osób bez rezerwacji w schronisku; opłata 4000 ¥ od osoby; limit 4000 osób dziennie. Schronisko dla całej grupy chętnych rezerwować od razu po otwarciu rezerwacji na 2027.",
+          "kierowcy": {
+            "start": "05:45",
+            "koniec": "15:00",
+            "km": 500,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp"
+          },
+          "bufory": []
+        },
+        "2027-08-05": {
+          "miejsce": "Yamanakako → Haneda → Gimpo → Seul",
+          "program": "Chętni: wschód słońca na szczycie ok. 4:45, zejście na 5. stację do ok. 11:00, autokar nad jezioro. Pozostali: Msza u sióstr salezjanek na odpust Matki Bożej Śnieżnej (albo w Tokio — decyzja „Kto nie wchodzi na Fuji”). Wyjazd wszystkich ok. 12:30, Haneda ok. 15:00, wieczorny lot do Gimpo (jak w ścieżce A), hotel w Mapo ok. 23:30.",
+          "km": "ok. 130",
+          "czas_h": "ok. 2–2,5",
+          "miejsca": "yamanaka,haneda,gimpo,mapo",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel nad jeziorem / schronisko",
+              "jak": "hotel",
+              "od": "06:30",
+              "min": 40
+            },
+            "obiad": {
+              "gdzie": "nad jeziorem Yamanaka",
+              "jak": "restauracja",
+              "od": "11:30",
+              "min": 45
+            },
+            "kolacja": {
+              "gdzie": "Haneda, strefa odlotów",
+              "jak": "restauracja",
+              "od": "18:00",
+              "min": 45
+            }
+          },
+          "sens": "Wschód słońca na Fuji albo odpust u sióstr — i lot do Seulu.",
+          "kierowcy": {
+            "start": "10:30",
+            "koniec": "16:00",
+            "km": 130,
+            "kierowcow": 2,
+            "zaloga": "tohoku",
+            "kraj": "jp"
+          }
+        }
+      },
+      "log": [
+        "Ścieżka B: bez sanktuarium w Akicie — Ōkago zamiast Akity, nocleg 3.08 w Sendai.",
+        "Ścieżka B: Nikkō odpada; 4.08 przejazd pod Fuji, chętni wchodzą na Fuji ze schroniskiem."
+      ]
+    },
+    "przylot_6": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {
+        "2027-08-05": {
+          "miejsce": "Yamanakako → Haneda (nocleg przed lotem 6.08)",
+          "nocleg": "Tokio, hotel przy Hanedzie",
+          "transport": "2 autokary; lot do Seulu dopiero 6.08 rano",
+          "status": "WARIANT AWARYJNY: brak miejsc na lot 5.08 wieczorem"
+        },
+        "2027-08-06": {
+          "miejsce": "Haneda → Gimpo → Sangam",
+          "program": "Pobudka ok. 5:00, lot ok. 8:20–8:40 (w 2026: JL91, NH861), przylot do Gimpo ok. 10:40. Prosto na rejestrację pakietu B1+. Seosomun i Myeongdong przechodzą na 9.08. Po południu Droga Krzyżowa z Papieżem.",
+          "miejsca": "haneda,gimpo,sangam"
+        }
+      },
+      "log": [
+        "Przylot 6.08 rano: dodatkowa noc przy Hanedzie, przepada poranek 6.08 w Seulu, do czuwania zostaje ok. 1 doba zapasu."
+      ]
+    },
+    "tokio_B2": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {},
+      "log": [
+        "Niewchodzący na Fuji nocują w Tokio, 5.08 Msza w katedrze Sekiguchi — odpada Msza u sióstr, potrzebny osobny autokar."
+      ]
+    },
+    "tokio_B3": {
+      "ukryj": [],
+      "pokaz": [],
+      "dni": {},
+      "log": [
+        "Niewchodzący na Fuji: wycieczka do Tokio z drugim składem kierowców i powrót nad jezioro — łącznie ponad 9 h jazdy."
       ]
     }
   },
@@ -2442,10 +2395,10 @@
     {
       "id": "fax-akita",
       "kat": "Terminy kluczowe",
-      "zadanie": "Faks do sióstr w Akicie (018-868-4728): Msza grupowa 3.08, ok. 17:00 / 15:45–18:00",
+      "zadanie": "Faks do sióstr w Akicie (018-868-4728): Msza 3.08 ok. 16:30, a jeśli nie — modlitwa grupy na terenie",
       "kto": "Jakub, kapłan grupy",
       "termin": "2026-11-30",
-      "termin_etykieta": "30.11.2026; wariant A/B do 31.01.2027",
+      "termin_etykieta": "30.11.2026; ścieżka A/B po odpowiedzi",
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
@@ -2458,10 +2411,10 @@
     {
       "id": "petla",
       "kat": "Terminy kluczowe",
-      "zadanie": "Decyzja o pętli wschodniej (warianty 1–4) i noclegu 2.08 (Iwaki / Mito / Utsunomiya)",
+      "zadanie": "Wybór ścieżki A (Akita) albo B (Ōkago + Fuji dla chętnych) po odpowiedzi sióstr",
       "kto": "organizatorzy",
-      "termin": "2026-11-30",
-      "termin_etykieta": "30.11.2026",
+      "termin": "2027-01-31",
+      "termin_etykieta": "po odpowiedzi sióstr, najpóźniej 31.01.2027",
       "status": "do zrobienia",
       "wymagane": "",
       "zebrane": "",
@@ -2474,7 +2427,7 @@
     {
       "id": "noclegi-wschod",
       "kat": "Rezerwacje",
-      "zadanie": "Noclegi z bezpłatną anulacją: 2/3.08 (Iwaki/Mito/Utsunomiya), 3/4.08 (Kitakami albo Akita), Nagasaki 12–17.08 — trzy zapytania naraz",
+      "zadanie": "Noclegi z bezpłatną anulacją: Iwaki 2/3.08; A: Akita 3/4 i Nikkō 4/5.08; B: Sendai 3/4 i Yamanakako 4/5.08; Nagasaki 12–17.08",
       "kto": "Artur",
       "termin": "2026-12-15",
       "termin_etykieta": "30.11–15.12.2026",
@@ -2490,7 +2443,7 @@
     {
       "id": "seul-lozka",
       "kat": "Rezerwacje",
-      "zadanie": "Noclegi Seul 4–6.08, blok ok. 90 łóżek z bezpłatną anulacją (kryterium zostania przy B1+)",
+      "zadanie": "Seul, Mapo: ustalony hotel na noc 5/6.08 (zwolnić noc 4/5, jeśli była zarezerwowana)",
       "kto": "Artur",
       "termin": "2026-12-15",
       "termin_etykieta": "15.12.2026",
@@ -2522,7 +2475,7 @@
     {
       "id": "kbo-sektor",
       "kat": "ŚDM / formalności",
-      "zadanie": "polskie biuro ŚDM (KBO): identyfikatory i plecaki 5.08, pytanie o sektor na powitanie Papieża (biuro@sdmpolska.pl)",
+      "zadanie": "Polskie biuro ŚDM (KBO): godziny rejestracji pakietu 6.08 i program 6.08 (biuro@sdmpolska.pl)",
       "kto": "Jakub",
       "termin": "2026-12-15",
       "termin_etykieta": "15.12.2026",
@@ -2538,7 +2491,7 @@
     {
       "id": "autokary",
       "kat": "Rezerwacje",
-      "zadanie": "Autokary: Narita 2.08; Tōhoku 3–4.08 z 2 kierowcami i lukami; Kiusiu–Kansai 12–20.08; Korea 10.08",
+      "zadanie": "Autokary: Narita 2.08 (osobna załoga); Tōhoku 3–5.08 z 2 kierowcami i lukami; Kiusiu–Kansai 12–20.08; Korea 5.08 i 10.08",
       "kto": "Artur / japońskie biuro",
       "termin": "2026-12-31",
       "termin_etykieta": "31.12.2026",
@@ -2586,7 +2539,7 @@
     {
       "id": "hiroszima-osaka",
       "kat": "Rezerwacje",
-      "zadanie": "Noclegi Hiroszima 17.08, Osaka 18–20.08; ewentualnie trybuny Kantō (w wariancie 2 i ruszy sprzedaż)",
+      "zadanie": "Noclegi Hiroszima 17.08, Osaka 18–20.08",
       "kto": "Artur",
       "termin": "2027-02-28",
       "termin_etykieta": "28.02.2027",
@@ -2618,10 +2571,10 @@
     {
       "id": "lot-seul",
       "kat": "Rezerwacje",
-      "zadanie": "Blok lotów Haneda–Gimpo 4.08 wieczorem (2–3 rejsy)",
+      "zadanie": "Loty Haneda–Gimpo 5.08 wieczorem dla ok. 90 osób (dopuszczalnie kilka lotów / Incheon); zapas 6.08 rano",
       "kto": "Artur",
-      "termin": "2027-03-31",
-      "termin_etykieta": "zapytanie teraz; rezerwacja po rozkładzie lato 2027",
+      "termin": "2026-12-15",
+      "termin_etykieta": "zapytanie teraz — warunek przylotu 5.08",
       "status": "do zrobienia",
       "wymagane": "90",
       "zebrane": "",
@@ -2634,7 +2587,7 @@
     {
       "id": "msze",
       "kat": "Program",
-      "zadanie": "Msze grupowe: Akita (albo wariant awaryjny), Jeoldusan, Solmoe, Oryundae, Hirado, Shitsu, Urakami, Unzen, Yamaguchi, Kioto, Osaka",
+      "zadanie": "Msze grupowe: Akita albo Ōkago/Sendai, Yamanakako (5.08), Solmoe, Jwadong (11.08), Hirado, Shitsu, Urakami, Unzen, Yamaguchi, Kioto, Osaka",
       "kto": "kapłan grupy",
       "termin": "2027-03-31",
       "termin_etykieta": "31.03.2027",
@@ -2778,7 +2731,7 @@
     {
       "id": "ubezp-wyd",
       "kat": "Ubezpieczenie",
-      "zadanie": "Ochrona ubezpieczeniowa 4–5.08 przy pakiecie B1+ (program poza zakwaterowaniem pakietu)",
+      "zadanie": "Ochrona ubezpieczeniowa 5–6.08 przy pakiecie B1+ (program poza zakwaterowaniem pakietu); w ścieżce B rozszerzenie na Fuji",
       "kto": "Jakub",
       "termin": "2027-01-31",
       "termin_etykieta": "przed wpłatą",
@@ -2838,6 +2791,70 @@
       "zrobione": false,
       "komentarz": "",
       "zmieniono": ""
+    },
+    {
+      "id": "yamanaka",
+      "kat": "Program",
+      "zadanie": "Siostry salezjanki, Yamanaka (+81-555-62-0031): Msza 5.08 na odpust Matki Bożej Śnieżnej — godzina, miejsce dla 90 osób",
+      "kto": "Jakub, kapłan grupy",
+      "termin": "2026-12-31",
+      "termin_etykieta": "XII 2026",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": "",
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "jwadong",
+      "kat": "Program",
+      "zadanie": "Parafia św. Andrzeja Kima w Jwadong (Busan): Msza 11.08 i przechowanie bagażu przed promem",
+      "kto": "Jakub",
+      "termin": "2027-01-31",
+      "termin_etykieta": "I 2027",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": "",
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "fuji-schroniska",
+      "kat": "Rezerwacje",
+      "zadanie": "Ścieżka B: schroniska na Fuji (szlak Yoshida) dla chętnych — termin otwarcia rezerwacji 2027",
+      "kto": "Artur",
+      "termin": "2027-03-31",
+      "termin_etykieta": "po odpowiedzi sióstr",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": "",
+      "komentarz": "",
+      "zmieniono": ""
+    },
+    {
+      "id": "program-6-08",
+      "kat": "ŚDM / formalności",
+      "zadanie": "Program ŚDM 6.08 (rejestracja, katechezy) — czy rano zmieszczą się Seosomun i Myeongdong",
+      "kto": "Asystent",
+      "termin": "2027-06-30",
+      "termin_etykieta": "gdy organizator ogłosi",
+      "status": "do zrobienia",
+      "wymagane": "",
+      "zebrane": "",
+      "uwagi": "",
+      "osoba": "",
+      "zrobione": "",
+      "komentarz": "",
+      "zmieniono": ""
     }
   ],
   "dni_org": {
@@ -2845,52 +2862,68 @@
       "uwagi": "Bilety potwierdzone."
     },
     "2027-08-02": {
-      "uwagi": "Pierwsza noc krótka: przyjazd ok. 0:00. Rano 3.08 trasa wzdłuż wybrzeża mija strefę wokół elektrowni Fukushima — dawka za przejazd mniejsza niż z 10 minut lotu (szczegóły: Logistyka). Alternatywa bez tej trasy: nocleg w Utsunomiyi.",
+      "uwagi": "Przyjazd do hotelu ok. 0:00. Żeby 3.08 ruszyć o 7:30, transfer z Narity musi robić inna załoga niż trasa 3.08 (9 h przerwy kierowcy) — do potwierdzenia u przewoźnika. Z tą samą załogą wyjazd 3.08 najwcześniej ok. 9:15, a Msza w Akicie przesuwa się na ok. 18:00. Rano 3.08 trasa wzdłuż wybrzeża mija strefę wokół elektrowni Fukushima — dawka za przejazd mniejsza niż z 10 minut lotu (szczegóły: Logistyka).",
       "kierowcy": {
         "start": "18:30",
         "koniec": "00:15",
         "km": 200,
         "kierowcow": 2,
-        "zaloga": "tohoku",
+        "zaloga": "narita",
         "kraj": "jp",
-        "uwaga": "Ta sama załoga co 3.08 — sprawdzić u przewoźnika (wyjątek dla podwójnej załogi albo inna załoga na dojazd z Narity)."
+        "uwaga": "Transfer z Narity: osobna załoga (inaczej 3.08 start dopiero ok. 9:15)."
       }
     },
     "2027-08-03": {
-      "uwagi": "Wariant 1 (rekomendacja): bez parady Kantō. Msza w Akicie zależy od zgody sióstr — sanktuarium jest w sierpniu zamknięte, prosimy o wyjątek (faks 018-868-4728 do 30.11.2026). Jeśli Msza będzie po 18:00, przechodzimy na wariant 2 (nocleg w Akicie, parada wieczorem). Jeśli siostry odmówią — wariant 4: Sendai zamiast Akity.",
+      "uwagi": "Ścieżka A. Msza w Akicie zależy od zgody sióstr — sanktuarium jest w sierpniu zamknięte. Prośba faksem (018-868-4728) do 30.11.2026, w dwóch stopniach: Msza, a jeśli nie — sama modlitwa grupy na terenie. Odmowa obu = ścieżka B. 3–6.08 trwa Kantō Matsuri: noclegi w Akicie są wtedy najtrudniejsze w roku (rezerwa: Ōmagari albo Kakunodate).",
       "kierowcy": {
-        "start": "06:30",
-        "koniec": "20:30",
-        "km": 560,
+        "start": "07:00",
+        "koniec": "19:00",
+        "km": 440,
         "kierowcow": 2,
         "zaloga": "tohoku",
         "kraj": "jp"
       }
     },
     "2027-08-04": {
-      "uwagi": "Powitanie Papieża 5.08 jest must see — stąd lot 4.08 wieczorem. Lot do Seulu jest krótki: na Hanedzie wystarczą ok. 2 h przed odlotem (twardy limit: zamknięcie odprawy grupowej w umowie). Zyskana godzina idzie na sen i odpoczynek kierowców (ok. 11 h przerwy po 3.08). Zapas: poranne rejsy 5.08 (JL91 8:20, NH861 8:40). W wariancie 2 pobudka 4:00, wyjazd 4:45.",
+      "uwagi": "Ścieżka A. Najdłuższy przejazd pielgrzymki i trzeci dzień w autokarze z rzędu po długim locie. Jeśli korki albo przerwy się przeciągną, Tōshōgū skraca się do ok. 1 h — Nikkō zostaje (decyzja Jakuba z 26.11.2026). Km do przeliczenia z przewoźnikiem [szacunek: 120 km Akita–Kitakami + 385 km Kitakami–Nikkō z poprzedniego planu].",
       "kierowcy": {
-        "start": "07:15",
-        "koniec": "18:00",
-        "km": 555,
+        "start": "06:45",
+        "koniec": "17:15",
+        "km": 505,
         "kierowcow": 2,
         "zaloga": "tohoku",
         "kraj": "jp"
       },
       "bufory": [
         {
-          "co": "lot NH867 / OZ1035 Haneda–Gimpo",
-          "przyjazd": "17:30",
+          "co": "Tōshōgū — ostatnie wejście",
+          "przyjazd": "15:00",
+          "odjazd": "16:30",
+          "min_h": 1
+        }
+      ]
+    },
+    "2027-08-05": {
+      "uwagi": "Przylot do Seulu 5.08 wieczorem — DECYZJA warunkowa (26.11.2026): tylko jeśli da się kupić miejsca dla ok. 90 osób. Awaryjnie 6.08 rano (decyzja „Przylot do Seulu”), a jeśli i to nie — powrót do lotu 4.08 wieczorem. Zgoda na podział grupy na kilka lotów, także do Incheon. Powitanie Papieża 5.08 nie jest już punktem obowiązkowym. U sióstr (tel. +81-555-62-0031): godzina Mszy odpustowej (mają własne uroczystości) i czy kaplica mieści 90 osób — jeśli nie, Msza na zewnątrz albo w parafii obok. Po przylocie jedziemy do ustalonego hotelu w Mapo (bez dodatkowego hotelu przy Gimpo).",
+      "kierowcy": {
+        "start": "05:15",
+        "koniec": "16:00",
+        "km": 360,
+        "kierowcow": 2,
+        "zaloga": "tohoku",
+        "kraj": "jp"
+      },
+      "bufory": [
+        {
+          "co": "lot Haneda–Gimpo",
+          "przyjazd": "15:30",
           "odjazd": "20:05",
           "min_h": 2
         }
       ]
     },
-    "2027-08-05": {
-      "uwagi": "Pytanie do polskiego biura ŚDM (KBO) (biuro@sdmpolska.pl) do 15.12.2026: czy przy B1+ można 5.08 odebrać identyfikatory i wejść do sektora. Nie planujemy Mszy zaraz po przylocie o północy."
-    },
     "2027-08-06": {
-      "uwagi": "Droga Krzyżowa jest w planie świadomie (u Artura jej nie było). Jeśli czas pozwoli, rano można dołożyć Myeongdong / Seosomun, ale priorytet ma Droga Krzyżowa."
+      "uwagi": "Pierwszy dzień ŚDM. Priorytet: rejestracja pakietu i Droga Krzyżowa z Papieżem. Seosomun i Myeongdong tylko wtedy, gdy godziny rejestracji pozwolą — inaczej przechodzą na 9.08. Gahoedong (pierwsza Msza w Korei, 1795) i Bukchon z listy Zosi tylko przy luźnym programie. Test: oficjalny program ŚDM na 6.08."
     },
     "2027-08-07": {
       "uwagi": "Podgrupy z opiekunem 1:5 tej samej płci (zasada ŚDM). Punkt zbiórki i jeden kanał łączności."
@@ -2899,7 +2932,7 @@
       "uwagi": ""
     },
     "2027-08-09": {
-      "uwagi": "Miejsce i godzina spotkania z Kiko do weryfikacji (VI–VII 2027)."
+      "uwagi": "Miejsce i godzina spotkania z Kiko do weryfikacji (VI–VII 2027) — od tego zależy, czy zdążymy do sanktuariów. Kanonizacja 103 męczenników była 6.05.1984 na placu Yeouido; Saenamteo i Jeoldusan to miejsca ich męczeństwa."
     },
     "2027-08-10": {
       "uwagi": "Solmoe jest elementem linii Jakuba, którego nie było u Artura. Autokar i Msza do weryfikacji.",
@@ -2913,7 +2946,7 @@
       }
     },
     "2027-08-11": {
-      "uwagi": "Godziny według rozkładu 2026; kalendarz VIII 2027 do weryfikacji (ok. lutego 2027). 11.08.2027 to środa — w 2026 nie było rejsów z Busan w soboty. Plan awaryjny na tajfun: lot Busan–Fukuoka 12.08 rano. Jeśli grupa będzie wyczerpana, popołudnie można złagodzić, zostawiając poranną Mszę w Oryundae.",
+      "uwagi": "Godziny według rozkładu 2026; kalendarz VIII 2027 do weryfikacji (ok. lutego 2027). 11.08.2027 to środa — w 2026 nie było rejsów z Busan w soboty. Plan awaryjny na tajfun: lot Busan–Fukuoka 12.08 rano. Jeśli grupa będzie wyczerpana, popołudnie można złagodzić, zostawiając poranną Mszę w Oryundae. Parafię w Jwadong warto zapytać teraz o Mszę dla grupy i przechowanie bagażu przed promem. Sanktuarium Oryundae zostaje jako zapas na Mszę.",
       "bufory": [
         {
           "co": "bagaż rejestrowany na prom",
