@@ -128,3 +128,13 @@
   body.print-card #em-card { position: absolute; left: 0; top: 0; width: 100%; }
   body.print-card .pg-nav { display: none; }
 }
+
+/* Gdzie śpiewamy */
+.pg-spiew { display: grid; gap: 12px; }
+.pg-spiew-card { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 14px; background: #fff; border: 1px solid var(--line, #e4dccb); border-radius: 14px; padding: 14px 16px; }
+.pg-spiew-date b { display: block; font-family: var(--font-serif, serif); font-size: 1.6rem; line-height: 1; }
+.pg-spiew-date span { font-size: 0.78rem; color: #6b6458; }
+.pg-spiew-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.pg-spiew-card h3 span { font-weight: 400; }
+.pg-spiew-card p { margin: 4px 0; }
+.pg-btn { display: inline-block; margin-top: 6px; padding: 6px 12px; border-radius: 999px; background: #1f4e79; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; }

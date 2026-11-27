@@ -216,6 +216,36 @@ async function approvedFromApp(url) {
   } catch (_) { return null; }
 }
 
+/** Kalendarz śpiewu ze skryptu (bez nazwisk i kwot). Sekcja zostaje ukryta, gdy nic nie ma. */
+async function renderSinging(url) {
+  if (!url) return;
+  let list = [];
+  try {
+    const r = await fetch(url + (url.includes("?") ? "&" : "?") + "action=kalendarz");
+    const j = await r.json();
+    list = (j && j.ok && j.wydarzenia) || [];
+  } catch (_) { return; }
+  const iso = (v) => { const s = String(v || ""); const m = s.match(/^(\d{4})-(\d{2})-(\d{2})/) || s.match(/^(\d{1,2})[./](\d{1,2})[./](\d{4})/); if (!m) return ""; return m[1].length === 4 ? `${m[1]}-${m[2]}-${m[3]}` : `${m[3]}-${m[2].padStart(2, "0")}-${m[1].padStart(2, "0")}`; };
+  const today = new Date().toISOString().slice(0, 10);
+  const up = list.map((w) => ({ ...w, d: iso(w.data) })).filter((w) => w.d && w.d >= today).sort((a, b) => (a.d + (a.godzina || "")).localeCompare(b.d + (b.godzina || "")));
+  if (!up.length) return;
+  const gcal = (w) => {
+    const d = w.d.replace(/-/g, ""), t = (w.godzina || "10:00").replace(":", "").padEnd(4, "0");
+    const e = String(Math.min(23, parseInt(t.slice(0, 2), 10) + 2)).padStart(2, "0") + t.slice(2);
+    return "https://calendar.google.com/calendar/render?" + new URLSearchParams({ action: "TEMPLATE", text: `ŚDM 2027 — ${w.typ || "śpiew"}: ${w.parafia || ""}`, dates: `${d}T${t}00/${d}T${e}00`, ctz: "Europe/Warsaw", location: [w.parafia, w.miejscowosc].filter(Boolean).join(", "), details: w.notatka || "" });
+  };
+  const DOW = ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"];
+  $("#pg-spiew").innerHTML = up.map((w) => `<article class="pg-spiew-card">
+    <div class="pg-spiew-date"><b>${w.d.slice(8)}.${w.d.slice(5, 7)}</b><span>${DOW[new Date(w.d + "T12:00:00").getDay()]}${w.godzina ? " · " + escapeHtml(w.godzina) : ""}</span></div>
+    <div><h3>${escapeHtml(w.parafia || "")}${w.miejscowosc ? `, <span>${escapeHtml(w.miejscowosc)}</span>` : ""}</h3>
+      <p class="muted">${escapeHtml(w.typ || "")}${w.status === "potwierdzone" ? " · potwierdzone" : " · wstępnie"}</p>
+      ${w.notatka ? `<p>${escapeHtml(w.notatka)}</p>` : ""}
+      <a class="pg-btn" href="${gcal(w)}" target="_blank" rel="noopener">Dodaj do kalendarza</a></div>
+  </article>`).join("");
+  $("#spiewamy").hidden = false;
+  const nav = $("#nav-spiewamy"); if (nav) nav.hidden = false;
+}
+
 function renderDays(days, places) {
   const pick = (d) => bestPhoto(d, places);
   $("#pg-days").innerHTML = days.map((d) => {
@@ -261,6 +291,7 @@ async function main() {
     fetch("data/kompendium.json").then((r) => r.json()),
   ]);
   const approved = await approvedFromApp((data.meta || {}).planAppUrl);
+  renderSinging((data.meta || {}).planAppUrl);
   const groups = groupDecisions(data.decyzje || []);
   let choices = defaultChoices(groups);
   let hasApproved = false;

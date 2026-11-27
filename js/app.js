@@ -11,6 +11,7 @@ import {
 } from "./cost.js";
 import { validateDays, dayChecksHtml, mealsHtml, renderFlags } from "./checks.js";
 import { setAppUrl, fetchTables, post, hasApp, askCred } from "./zapis.js";
+import { initZbiorka, setCostInfo } from "./zbiorka.js";
 import { setDetailState, bindDayClicks, openDay } from "./details.js";
 import { tileHtml, bestPhoto } from "./tiles.js";
 import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace, legendHtml } from "./maps.js";
@@ -800,6 +801,7 @@ async function main() {
   renderCredits(data.miejsca, data.meta);
   renderLogistyka(data);
   renderChecklist(data.checklista || [], data.meta);
+  initZbiorka(data.meta.zapisAppUrl || "");
   $("#legend-all").innerHTML = legendHtml();
 
   const lastMapPlaces = { all: [], jp: [], kr: [] };
@@ -825,6 +827,7 @@ async function main() {
     if (nocSel && nocSel.value !== choices.noc_2) nocSel.value = choices.noc_2;
 
     const cost = computeCost(data.model, groups, choices, fujiOsob, people);
+    setCostInfo(cost);
     const effects = activeEffects(groups, choices);
     const { days, changed } = applyDays(baseDays, data.warianty || {}, effects);
     const logs = scenarioLogs(data.warianty || {}, effects);

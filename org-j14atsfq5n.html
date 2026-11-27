@@ -45,6 +45,8 @@
     <button type="button" class="tab" data-tab="uczestnicy">Uczestnicy</button>
     <button type="button" class="tab" data-tab="budzet">Budżet i wpłaty</button>
     <button type="button" class="tab" data-tab="checklista">Checklista</button>
+    <button type="button" class="tab" data-tab="spiew">Śpiew i parafie</button>
+    <button type="button" class="tab" data-tab="zbiorka">Zbiórka</button>
     <button type="button" class="tab" data-tab="logistyka">Logistyka</button>
     <span class="tabs-source" id="data-source-label"></span>
   </nav>
@@ -250,6 +252,35 @@
         <div class="filter-row" id="check-person-filters"></div>
         <div class="agg-row" id="check-aggregates"></div>
         <div id="check-list-board"></div>
+      </div>
+    </section>
+
+    <section id="spiew" class="panel" hidden aria-labelledby="h-spiew">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Grupa śpiewająca · niedziele w parafiach · wystawa AR o Kolbem</p>
+          <h2 id="h-spiew">Śpiew i parafie</h2>
+          <p class="lead">Kalendarz Mszy ze śpiewem, koncertów i świadectw. Kliknij dzień, żeby dodać wydarzenie. Po każdej niedzieli: „Rozlicz” — zaznaczasz, kto faktycznie śpiewał, i wpisujesz kwotę z tacy. Domyślnie dzieli się ona po równo między obecnych, którzy jadą do Seulu. Daty, parafie i notatki widać też na stronie jadących — bez nazwisk i kwot.</p>
+        </div>
+        <div id="spiew-app" class="zb-app"><p class="muted">Ładowanie…</p></div>
+        <div id="spiew-par" class="zb-app" hidden>
+          <h3>Parafie: mapa i lista do dzwonienia</h3>
+          <p class="muted small" id="zb-par-meta"></p>
+          <div class="filter-row zb-par-filters" id="zb-par-filters"></div>
+          <div class="map-card"><div id="zb-map" class="map zb-map"></div><div class="map-legend" id="zb-map-legend"></div></div>
+          <div id="zb-par-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="zbiorka" class="panel" hidden aria-labelledby="h-zbiorka">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Taca, darczyńcy, budżet wspólny</p>
+          <h2 id="h-zbiorka">Zbiórka i darczyńcy</h2>
+          <p class="lead">Licznik tego, co zebrała grupa, i lista osób, do których podchodzimy z prośbą o wsparcie. Każdy datek trafia do konkretnej osoby, do grupy osób po równo albo do budżetu wspólnego, który obniża cenę wszystkim płacącym.</p>
+        </div>
+        <div id="zbiorka-app" class="zb-app"><p class="muted">Ładowanie…</p></div>
       </div>
     </section>
 

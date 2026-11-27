@@ -109,7 +109,7 @@ export const VIEWS = {
   kr: [[33.9, 125.6], [38.3, 129.7]],
 };
 
-function addBase(map) {
+export function addBase(map) {
   // Esri Ocean bez napisów: niebieskie morze, jasny ląd z rzeźbą terenu (do przybliżenia 10).
   // Bliżej (miasto) — Esri Light Gray, też bez napisów. Etykiety dodajemy sami po angielsku.
   const esri = "Tiles &copy; Esri &mdash; GEBCO, NOAA, Garmin, HERE, &copy; OpenStreetMap contributors";

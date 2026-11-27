@@ -978,3 +978,92 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 700px) { #pg-map { height: 420px; } .map-hint { display: block; } }
 /* Rozjaśnienie głębin oceanu, żeby trasa i piny były czytelne */
 .map .leaflet-tile-pane { filter: brightness(1.07) saturate(0.8) contrast(0.88); }
+
+/* ===== Etap 13: Śpiew i parafie · Zbiórka ===== */
+.zb-banner { background: #fff8e6; border: 1px solid #ecd9a6; border-radius: 12px; padding: 12px 16px; margin: 0 0 18px; font-size: 0.92rem; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.zb-banner.warn { background: #fdeeee; border-color: #e8c3c3; }
+.zb-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.btn-link { background: none; border: 0; padding: 0; color: var(--navy); text-decoration: underline; cursor: pointer; font: inherit; }
+.warn-txt { color: var(--warn); font-weight: 700; }
+.ok-txt { color: var(--ok); font-weight: 700; }
+.small { font-size: 0.85rem; }
+.nowrap { white-space: nowrap; }
+.zb-two { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 22px; align-items: start; margin-bottom: 18px; }
+.zb-cal { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+.zb-cal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; text-transform: capitalize; }
+.zb-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.zb-dow { text-align: center; font-size: 0.72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); padding: 2px 0 4px; }
+.zb-cell { min-height: 78px; border: 1px solid var(--line); border-radius: 8px; padding: 4px; background: #fdfbf7; cursor: pointer; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.zb-cell:hover { border-color: var(--gold); }
+.zb-cell.empty { background: transparent; border: 0; cursor: default; }
+.zb-cell.sun { background: #fbf2df; }
+.zb-cell.today { outline: 2px solid var(--gold); }
+.zb-dn { font-size: 0.75rem; font-weight: 700; color: var(--ink-soft); }
+.zb-ev { font: 600 0.72rem/1.2 var(--font-sans); text-align: left; border: 0; border-radius: 6px; padding: 3px 5px; background: var(--navy); color: #fff; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.zb-ev.st-planowane { background: #6c7a92; }
+.zb-ev.st-potwierdzone { background: var(--navy); }
+.zb-ev.st-odbyło-się { background: #4f7d4f; }
+.zb-ev.st-odwołane { background: #b9b2a6; text-decoration: line-through; }
+.zb-list h3 { margin-top: 0; }
+.zb-card { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; background: white; border: 1px solid var(--line); border-left: 4px solid #6c7a92; border-radius: 12px; padding: 12px; margin-bottom: 10px; }
+.zb-card.st-potwierdzone { border-left-color: var(--navy); }
+.zb-card.st-odbyło-się { border-left-color: #4f7d4f; }
+.zb-card.st-odwołane { opacity: .6; }
+.zb-card-date b { display: block; font-family: var(--font-serif); font-size: 1.4rem; }
+.zb-card-date span { font-size: 0.75rem; color: var(--ink-soft); }
+.zb-card h4 { margin: 0 0 4px; font-size: 1rem; }
+.zb-card h4 span { font-weight: 400; color: var(--ink-soft); }
+.zb-card p { margin: 4px 0; }
+.zb-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.zb-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px !important; }
+.zb-actions .btn { padding: 5px 10px; font-size: 0.82rem; }
+.zb-past { margin: 0 0 24px; }
+.zb-past summary { cursor: pointer; font-weight: 700; margin-bottom: 10px; }
+.zb-table td .btn-link { font-size: 0.85rem; }
+.zb-table tr.sum td { font-weight: 700; border-top: 2px solid var(--navy); }
+.zb-par-filters input[type=search] { min-width: 260px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; font: inherit; }
+.zb-par-filters select { padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; font: inherit; }
+.zb-board { display: grid; grid-template-columns: repeat(6, minmax(150px, 1fr)); gap: 10px; overflow-x: auto; margin-bottom: 24px; }
+.zb-col { background: #f3eee4; border-radius: 12px; padding: 8px; min-height: 90px; }
+.zb-col-head { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; display: flex; justify-content: space-between; }
+.zb-dcard { display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; background: white; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; margin-bottom: 6px; cursor: pointer; font: inherit; }
+.zb-dcard:hover { border-color: var(--gold); }
+.zb-progress-label { margin: -10px 0 18px; }
+.zb-modal { padding: 22px 24px; max-width: 560px; }
+.zb-modal.wide { max-width: 760px; }
+.zb-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+.zb-form > label, .zb-form > div, .zb-form > p { min-width: 0; }
+.zb-form label { display: flex; flex-direction: column; gap: 4px; font-weight: 600; font-size: 0.88rem; }
+.zb-form .wide { grid-column: 1 / -1; }
+.zb-form input, .zb-form select, .zb-form textarea { font: inherit; font-weight: 400; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: white; width: 100%; box-sizing: border-box; }
+.zb-form small { font-weight: 400; color: var(--ink-soft); }
+.zb-lab { display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 4px; }
+.zb-multi { display: flex; flex-wrap: wrap; gap: 6px 14px; max-height: 260px; overflow-y: auto; padding: 8px; border: 1px solid var(--line); border-radius: 10px; background: white; }
+.zb-chk { display: inline-flex !important; flex-direction: row !important; align-items: center; gap: 6px; font-weight: 400 !important; }
+.zb-chk input { width: auto !important; }
+.zb-nosing { opacity: .65; }
+.zb-mini { margin: 4px 0 0; font-size: 0.82rem; }
+.zb-preview { background: #f3eee4; border-radius: 10px; padding: 8px 12px; margin: 0; font-weight: 600; }
+.zb-del { color: var(--warn); }
+.modal-actions .grow { flex: 1; }
+@media (max-width: 900px) { .zb-two { grid-template-columns: 1fr; } .zb-board { grid-template-columns: repeat(3, minmax(150px, 1fr)); } }
+@media (max-width: 600px) { .zb-form { grid-template-columns: 1fr; } .zb-cell { min-height: 54px; } .zb-ev { font-size: 0.62rem; } .zb-board { grid-template-columns: repeat(2, minmax(140px, 1fr)); } }
+.zb-banner { display: block; }
+.zb-banner .btn { margin-left: 8px; }
+.zb-app .btn:not(.btn-gold), .zb-modal .btn:not(.btn-gold) { background: white; color: var(--navy); border: 1px solid var(--line); }
+.zb-app .btn:not(.btn-gold):hover, .zb-modal .btn:not(.btn-gold):hover { border-color: var(--gold); }
+.zb-app .btn, .zb-modal .btn { text-decoration: none; }
+/* Mapa parafii */
+.zb-map { height: 560px; }
+.zb-pin { display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font: 700 10px/1 var(--font-sans); border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.35); box-sizing: border-box; }
+.zb-pin.ndn { border-color: #c6a15b; }
+.zb-pin.has-ev { box-shadow: 0 0 0 3px #c6a15b, 0 1px 5px rgba(0,0,0,.4); }
+.zb-pin.legend { display: inline-flex; width: 18px; height: 18px; margin-right: 6px; vertical-align: middle; }
+.zb-home { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: #c6a15b; color: #fff; font-size: 14px; border: 2px solid #fff; box-shadow: 0 1px 5px rgba(0,0,0,.4); margin-right: 6px; }
+.zb-pop p { margin: 6px 0; }
+.zb-pop .btn { padding: 4px 10px; font-size: 0.8rem; }
+.zb-msze { max-width: 260px; }
+.zb-parinfo { background: #f7f3ea; border-radius: 12px; padding: 10px 14px; }
+.zb-parinfo p { margin: 4px 0; font-weight: 400; }
+#spiew-par { margin-top: 28px; }
+@media (max-width: 700px) { .zb-map { height: 420px; } }

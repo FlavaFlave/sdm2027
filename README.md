@@ -276,3 +276,22 @@ Arkusz: <https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42L
 - Korea: 6.08 rano Seosomun i Myeongdong (jeśli rejestracja pozwoli), 9.08 Jeoldusan i Saenamteo, 11.08 Msza w Jwadong (Busan).
 - Nowe miejsca: Yamanakako (siostry salezjanki), Ōkago, Saenamteo, Jwadong.
 - Kwoty w arkuszu (karta Koszty) mają pierwszeństwo przed `data/…json` — po wgraniu trzeba je przepisać w arkuszu (lista w rozmowie z 26.11.2026).
+
+---
+
+## Etap 13 (26.11.2026) — Śpiew i parafie · Zbiórka
+
+- Dwie nowe zakładki na stronie organizatorów: **Śpiew i parafie** (kalendarz miesięczny, wydarzenia, rozliczenie tacy z listą obecnych, lista śpiewających, parafie z rankingiem i importem Excela od Groka, eksport do Google Calendar i .ics) oraz **Zbiórka** (liczniki, lejek darczyńców, datki dla osoby / grupy / budżetu wspólnego, saldo na osobę, obniżka ceny z budżetu wspólnego).
+- Dane osobowe nie trafiają do repozytorium: z podłączonym `Zapis.gs` leżą w osobnym prywatnym arkuszu „ŚDM 2027 — Zbiórka”, bez skryptu — tylko w przeglądarce (tryb próbny).
+- Strona jadących: sekcja **Gdzie śpiewamy** (tylko daty, parafie, notatki; pojawia się, gdy są przyszłe wydarzenia i podłączony skrypt).
+- Zlecenie dla Groka: `apps-script/GROK-parafie.md`.
+
+---
+
+## Etap 14 (27.11.2026) — lista 402 parafii i mapa
+
+- `data/parafie.json` — 215 parafii archidiecezji warszawskiej i 187 warszawsko-praskiej z Excela od Groka (dane publiczne z baz diecezji i RCN GUGiK 2025). Nasze statusy rozmów, kontakty, uwagi i wspólnoty neokatechumenalne trzymamy w prywatnym arkuszu (karta Parafie, ID parafii = `A-…` / `P-…`).
+- **Ranking wspólny** (porównywalny między diecezjami): bez punktów za liczbę wiernych, +3 za wspólnoty neokatechumenalne. Ranking Groka zostaje jako „w diecezji”.
+- **Potencjał zbiórki** [szacunek, 0–100]: 60% z liczby niedzielnych Mszy, 40% z ceny m² w okolicy. Rozliczenie wydarzenia ma pole „Osób na Mszy”, żeby sprawdzić wskaźnik na prawdziwych wynikach.
+- Mapa parafii w zakładce Śpiew i parafie: kolor = status, liczba = ranking, wielkość = potencjał, złota obwódka = mamy termin; filtry i przyciski Zaplanuj / Szczegóły / Nawiguj.
+- Nowa wersja Excela od Groka: `python3 narzedzia/parafie_json.py plik.xlsx data/parafie.json` (ID parafii się nie zmieniają, więc nasze statusy zostają).
