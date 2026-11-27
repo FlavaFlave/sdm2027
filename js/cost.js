@@ -42,6 +42,7 @@ export function parseHash() {
 export function writeHash(tab, state) {
   const p = new URLSearchParams();
   p.set("tab", tab || "przeglad");
+  if (globalThis.__planV) p.set("pv", globalThis.__planV);
   CHOICE_IDS.forEach((k) => { if (state.choices[k]) p.set(k, state.choices[k]); });
   if (state.choices.fuji === "tak") p.set("fuji_osob", String(state.fujiOsob || 10));
   if (state.people) {

@@ -18,6 +18,7 @@ import { tileHtml, bestPhoto } from "./tiles.js";
 import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace, legendHtml } from "./maps.js";
 import { renderBudget, resizeBudgetChart } from "./budget.js";
 import { renderChecklist } from "./checklist.js";
+import { renderQuick } from "./quick.js";
 
 /* stałe localStorage — dopisane tutaj, gdyby util ich nie eksportował */
 const STORAGE_KEY = "sdm2027-org-decisions";
@@ -197,7 +198,9 @@ async function loadData() {
   const sheetPoz = Object.fromEntries(parsed.pozycje.map((x) => [x.id, x]));
   const pozycje = ((fallback.model || {}).pozycje || []).map((x) => {
     const sp = sheetPoz[x.id];
-    return sp && Number.isFinite(Number(sp.kwota)) ? { ...x, kwota: Number(sp.kwota), status: sp.status || x.status, zrodlo: sp.zrodlo || x.zrodlo } : x;
+    // Kwoty modelu bierzemy z pliku (źródło prawdy od etapu 17); arkusz nadpisuje je tylko, gdy ma tę samą wersję planu.
+    const sameVer = String((tables.Ustawienia && JSON.stringify(tables.Ustawienia)) || "").includes(String(fallback.meta.wersja_planu || "@@"));
+    return sameVer && sp && Number.isFinite(Number(sp.kwota)) ? { ...x, kwota: Number(sp.kwota), status: sp.status || x.status, zrodlo: sp.zrodlo || x.zrodlo } : x;
   });
   const model = { ...(fallback.model || {}), pozycje };
   const wplaty = { ...(fallback.wplaty || {}) };
@@ -281,10 +284,30 @@ function renderTimeline(days) {
 function koreaGapCard(krOnly) {
   if (!krOnly.length) return "";
   const a = (krOnly[0].data_pl || "").replace(".2027", ""), b = (krOnly[krOnly.length - 1].data_pl || "").replace(".2027", "");
-  return `<article class="day-card korea-gap"><div class="date-badge"><b>${escapeHtml(a.split(".")[0])}–${escapeHtml(b)}</b><span>Korea</span></div>
-    <div class="day-body"><h3>Pobyt w Korei: ŚDM w Seulu, Solmoe, Busan</h3>
-    <p>${krOnly.length} dni w Korei — od ${escapeHtml(a)} do ${escapeHtml(b)}. Wracamy do Japonii promem do Hakaty rano 12.08.</p>
-    <p><button type="button" class="btn" data-goto-tab="korea">Zobacz dni w Korei →</button></p></div></article>`;
+  return `<aside class="korea-gap" role="note">
+    <div class="kg-date"><b>${escapeHtml(a.split(".")[0])}–${escapeHtml(b.replace(/\.0?8$/, ""))}</b><span>sierpnia · Korea</span></div>
+    <div class="kg-body"><h3>Pobyt w Korei: ŚDM w Seulu, Solmoe, Busan</h3>
+    <p>${krOnly.length} dni w Korei, od ${escapeHtml(a)} do ${escapeHtml(b)}${a.startsWith("6.") ? " (przylot 5.08 wieczorem)" : ""}. Do Japonii wracamy nocnym promem do Hakaty, rano 12.08.</p></div>
+    <button type="button" class="btn" data-goto-tab="korea">Dni w Korei →</button></aside>`;
+}
+/* Nagłówki zakładek Japonia / Korea zależne od ścieżki A/B/C. */
+function renderHeads(choices) {
+  const P = choices.petla;
+  const jpKicker = P === "C" ? "1–3 sierpnia i 12–20 sierpnia" : "1–5 sierpnia i 12–20 sierpnia";
+  const jpLead = {
+    A: "Pętla wschodnia: Iwaki, sanktuarium w Akicie, Matsushima, Nikkō, 5.08 odpust u sióstr nad jeziorem Yamanaka i lot do Seulu. Potem droga Ksawerego: Hirado, Nagasaki (baza w Isahaya), Hiroszima, Miyajima, Himeji, Kioto i wylot z Osaki.",
+    B: "Bez Akity: Iwaki, Matsushima i Ōkago, YMCA Tozanso pod Fuji (wejście dla chętnych), 5.08 odpust u sióstr nad jeziorem Yamanaka i lot do Seulu. Potem droga Ksawerego: Hirado, Nagasaki (baza w Isahaya), Hiroszima, Miyajima, Himeji, Kioto i wylot z Osaki.",
+    C: "Krótko na wschodzie: 2.08 nocleg przy lotnisku Narita, 3.08 lot do Seulu. Japonię zwiedzamy po powrocie promem: Hirado, Nagasaki (baza w Isahaya), Hiroszima, Miyajima, Himeji, Kioto i wylot z Osaki.",
+  }[P] || "";
+  const krKicker = P === "C" ? "3 sierpnia wieczorem — 11 sierpnia" : (choices.przylot === "6_rano" ? "6 sierpnia rano — 11 sierpnia" : "5 sierpnia wieczorem — 11 sierpnia");
+  const krLead = P === "C"
+    ? "Przylot do Incheon 3.08, wieczorem Eucharystia w Mapo. 4.08 Seul: Gyeongbokgung, Bukchon, Gwangjang, Myeongdong. 5.08 Jeoldusan i Saenamteo, powitanie Papieża. Potem ŚDM, Solmoe, Busan i nocny prom do Hakaty."
+    : "Przylot na Gimpo (warunkowo 5.08 wieczorem — zależy od biletów). ŚDM w Seulu: czuwanie 7/8.08, Msza 8.08, spotkanie z Kiko 9.08. Szlak męczenników, Solmoe w drodze, Busan i nocny prom do Hakaty.";
+  const set = (sel, txt) => { const el = document.querySelector(sel); if (el) el.textContent = txt; };
+  set("#japonia .section-head .kicker", jpKicker);
+  set("#japonia .section-head .lead", jpLead);
+  set("#korea .section-head .kicker", krKicker);
+  set("#korea .section-head .lead", krLead);
 }
 function renderDays(days, places, changed, fujiN, checks, fujiPer) {
   const jp = days.filter((d) => /Japonia|Polska|Katar/i.test(d.kraj || "") || !d.kraj);
@@ -820,6 +843,9 @@ async function main() {
   if (hash.nl) people.minors = Math.max(0, parseInt(hash.nl, 10) || 0);
   if (hash.strata === "grupa") people.lossPolicy = "grupa";
   if (hash.tab) tab = hash.tab;
+  const planV = String(data.meta.wersja_planu || "").replace(/\D/g, "").slice(0, 10);
+  globalThis.__planV = planV;
+  if (hash.pv !== planV) CHOICE_IDS.forEach((k) => { delete hash[k]; });
   CHOICE_IDS.forEach((k) => {
     if (hash[k] && groups.some((g) => g.id === k && g.opcje.some((o) => o.opcja_id === hash[k]))) {
       choices[k] = hash[k];
@@ -882,6 +908,16 @@ async function main() {
 
     tipsCtx = { groups, choices, deltaFor, off: disabledGroups(choices), target: Number(data.meta.cel_cena) || 14000 };
     renderCostBoard(cost, base);
+    const off = disabledGroups(choices);
+    renderQuick({
+      groups, choices, baseChoices, cost, off, people, peopleDefault: defaultPeople(data.model),
+      target: Number(data.meta.cel_cena) || 14000,
+      total: (ch) => computeCost(data.model, groups, normalizeChoices({ ...ch }), fujiOsob, people).total,
+      lines: (ch) => Object.fromEntries(computeCost(data.model, groups, normalizeChoices({ ...ch }), fujiOsob, people).lines.map((l) => [l.id, l.perOs])),
+      onPick: (g, o) => onDecision({ choices: { [g]: o } }),
+      onReset: () => { const p = choices.petla; choices = { ...baseChoices, petla: p }; applyAll(); },
+      onPeopleReset: () => { const d = defaultPeople(data.model); people = { ...people, n: d.n, gratis: d.gratis }; applyAll(); },
+    });
     renderCostTable(cost, base);
     renderChart(cost);
     renderImpact(groups, choices, logs);
@@ -893,6 +929,7 @@ async function main() {
     renderFleetBox(cost);
     renderCurve(data.model, groups, choices, people);
     renderDays(days, data.miejsca, changed, cost.fujiN, checks, cost.fujiPer);
+    renderHeads(choices);
     setDetailState({ days, places: data.miejsca, checks, tile: (d) => {
       return tileHtml(d, bestPhoto(d, data.miejsca));
     } });

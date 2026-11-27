@@ -1085,5 +1085,64 @@ body.modal-open { overflow: hidden; }
 .cost-target .target-line.is-ok { color: var(--ok); }
 .target-tips { margin: 6px 0 0 18px; padding: 0; }
 .target-tips li { margin: 0 0 8px; font-size: 0.9rem; }
-.korea-gap { background: #fbeff0; border-color: #e6c1c5; }
-.korea-gap .date-badge { background: #a3303a; color: #fff; }
+.korea-gap { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; background: #fbeff0; border: 1px solid #e6c1c5; border-left: 6px solid #a3303a; border-radius: var(--radius); padding: 18px 22px; margin: 0; box-shadow: var(--shadow); }
+.korea-gap .kg-date { flex: 0 0 auto; background: #a3303a; color: #fff; border-radius: 12px; padding: 10px 14px; text-align: center; min-width: 96px; }
+.korea-gap .kg-date b { display: block; font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.1; }
+.korea-gap .kg-date span { display: block; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 2px; }
+.korea-gap .kg-body { flex: 1 1 260px; min-width: 0; }
+.korea-gap .kg-body h3 { margin: 0 0 4px; font-size: 1.3rem; }
+.korea-gap .kg-body p { margin: 0; }
+.korea-gap .btn { flex: 0 0 auto; }
+
+/* ——— etap 17: szybki wybór ——— */
+.quick { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 22px; margin: 0 0 24px; }
+.q-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.q-head h3 { margin: 0; font-size: 1.5rem; }
+.q-head .kicker { margin: 0 0 2px; }
+.q-now { text-align: right; border-radius: 12px; padding: 8px 14px; }
+.q-now b { display: block; font-family: var(--font-serif); font-size: 1.9rem; line-height: 1.1; }
+.q-now span { display: block; font-size: 0.8rem; }
+.q-now.is-ok { background: #e9f5ec; color: #1e5b33; }
+.q-now.is-up { background: #fbeff0; color: #8a2630; }
+.q-paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; }
+.q-path { display: flex; flex-direction: column; gap: 4px; text-align: left; background: var(--paper-2, #f7f4ee); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; cursor: pointer; font: inherit; color: inherit; }
+.q-path:hover { border-color: var(--gold); }
+.q-path.is-on { border-color: #10192b; background: #10192b; color: #fff; }
+.q-path-name { font-weight: 700; font-size: 1.05rem; }
+.q-path-price { font-family: var(--font-serif); font-size: 1.7rem; line-height: 1.1; }
+.q-path-gap { font-size: 0.82rem; font-weight: 600; }
+.q-path-gap.is-ok { color: #2b7a46; } .q-path-gap.is-up { color: #b3333f; }
+.q-path.is-on .q-path-gap.is-ok { color: #9be0b0; } .q-path.is-on .q-path-gap.is-up { color: #ffb3ba; }
+.q-path-sub { font-size: 0.85rem; opacity: 0.85; }
+.q-path-kill { font-size: 0.78rem; opacity: 0.8; border-top: 1px dashed currentColor; padding-top: 6px; margin-top: 4px; }
+.q-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 22px; }
+.q-col h4 { margin: 0 0 10px; font-size: 1.05rem; }
+.q-col h4 + * { margin-top: 0; }
+.q-col h4:not(:first-child) { margin-top: 18px; }
+.q-sub { margin-bottom: 12px; }
+.q-sub-label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 4px; }
+.q-opts { display: flex; flex-wrap: wrap; gap: 6px; }
+.q-opt { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; font: inherit; font-size: 0.9rem; color: #10192b; cursor: pointer; text-align: left; line-height: 1.2; }
+.q-opt small { display: block; font-size: 0.75rem; color: var(--ink-soft); }
+.q-opt.is-on { background: #10192b; border-color: #10192b; color: #fff; }
+.q-opt.is-on small { color: #d9c58f; }
+.q-def { color: var(--gold); font-size: 0.7rem; }
+.q-devs { list-style: none; padding: 0; margin: 0 0 10px; }
+.q-devs li { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+.q-tips { margin: 0; padding-left: 20px; font-size: 0.92rem; }
+.q-tips li { margin-bottom: 6px; }
+.q-drivers { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 10px; }
+.q-drivers summary { cursor: pointer; font-weight: 600; }
+.q-bars { list-style: none; padding: 0; margin: 10px 0; }
+.q-bars li { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr) 90px; gap: 10px; align-items: center; padding: 4px 0; font-size: 0.88rem; }
+.q-bar { background: #eef0f4; border-radius: 6px; height: 10px; overflow: hidden; }
+.q-bar i { display: block; height: 100%; background: #10192b; border-radius: 6px; }
+.q-bar-val { text-align: right; font-variant-numeric: tabular-nums; }
+.q-tag { font-style: normal; font-size: 0.7rem; border-radius: 999px; padding: 1px 6px; margin-left: 4px; white-space: nowrap; }
+.q-tag-fakt { background: #e9f5ec; color: #1e5b33; }
+.q-tag-szacunek { background: #fff4dc; color: #7a5a12; }
+.q-tag-var { background: #eef0f4; color: #47526a; }
+@media (max-width: 860px) { .q-paths, .q-grid { grid-template-columns: 1fr; } .q-bars li { grid-template-columns: 1fr 70px; } .q-bar { display: none; } }
+.q-devs .diff-up, .quick .diff-up { color: var(--wine); } .quick .diff-down { color: var(--ok); }
+.korea-gap .btn { background: #a3303a; color: #fff; border: 0; }
+.korea-gap .btn:hover { background: #7f222b; }

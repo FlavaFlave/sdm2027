@@ -2,7 +2,7 @@
   "meta": {
     "tytul": "ŚDM 2027 — Japonia i Korea",
     "podtytul": "Strona organizatorów pielgrzymki",
-    "wersja_planu": "27.11.2026 (2) — ścieżki A/B/C, 2 przewodników",
+    "wersja_planu": "27.11.2026 (3) — Korea 150 zł (Artur), szybki wybór",
     "daty": "1–21 sierpnia 2027",
     "osob": 90,
     "cena_bazowa": 16170,
@@ -399,7 +399,8 @@
       "rekomendacja_tekst": "",
       "plusy": "",
       "minusy": "",
-      "tlo": ""
+      "tlo": "",
+      "krotko": "A — Akita"
     },
     {
       "id": "petla",
@@ -419,14 +420,15 @@
       "rekomendacja_tekst": "",
       "plusy": "",
       "minusy": "",
-      "tlo": ""
+      "tlo": "",
+      "krotko": "B — bez Akity, Japonia"
     },
     {
       "id": "petla",
       "decyzja": "Pierwsze dni (2–5.08): A z Akitą, B Japonia bez Akity, C od razu do Korei",
       "opcja_id": "C",
       "opcja": "Ścieżka C — bez Akity, do Korei już 3.08: w Seulu pałac Gyeongbokgung, Bukchon i Gahoedong, Jeoldusan, Saenamteo i powitanie Papieża",
-      "zmiany": "bus_wschod:=13500; nocleg_wschod:=200; jedzenie_jp:=1237.5; korea_extra:=950",
+      "zmiany": "bus_wschod:=13500; nocleg_wschod:=200; jedzenie_jp:=1237.5; korea_extra:=490",
       "efekt": "sciezka_C",
       "wplyw": "Odpadają Akita, Matsushima, Nikkō, Yamanaka i Fuji oraz ok. 1 300 km autokarem. 2.08 nocleg przy lotnisku Narita, 3.08 lot do Incheon (poza szczytem przylotów ŚDM). Wraca powitanie Papieża 5.08.",
       "termin": "po odpowiedzi sióstr (faks do 30.11.2026)",
@@ -440,7 +442,8 @@
       "plusy": "",
       "minusy": "",
       "tlo": "",
-      "wybrana": false
+      "wybrana": false,
+      "krotko": "C — do Korei 3.08"
     },
     {
       "id": "przylot",
@@ -460,7 +463,8 @@
       "rekomendacja_tekst": "",
       "plusy": "",
       "minusy": "",
-      "tlo": ""
+      "tlo": "",
+      "krotko": "5.08 wieczorem"
     },
     {
       "id": "przylot",
@@ -480,7 +484,8 @@
       "rekomendacja_tekst": "",
       "plusy": "",
       "minusy": "",
-      "tlo": ""
+      "tlo": "",
+      "krotko": "6.08 rano"
     },
     {
       "id": "noclegi_wschod",
@@ -506,7 +511,8 @@
         "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
         "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
       ],
-      "wybrana": false
+      "wybrana": false,
+      "krotko": "ośrodki (tanio)"
     },
     {
       "id": "noclegi_wschod",
@@ -532,7 +538,8 @@
         "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
         "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
       ],
-      "wybrana": false
+      "wybrana": false,
+      "krotko": "hotele"
     },
     {
       "id": "sen",
@@ -605,7 +612,8 @@
         "13–16.08 trwa w Japonii Obon — buddyjskie święto pamięci zmarłych, coś jak nasze Zaduszki połączone z wakacjami. Japończycy masowo jeżdżą wtedy do rodzin, więc hotele są pełne i droższe.",
         "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
         "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
-      ]
+      ],
+      "krotko": "hotele"
     },
     {
       "id": "nagasaki",
@@ -630,7 +638,8 @@
         "13–16.08 trwa w Japonii Obon — buddyjskie święto pamięci zmarłych, coś jak nasze Zaduszki połączone z wakacjami. Japończycy masowo jeżdżą wtedy do rodzin, więc hotele są pełne i droższe.",
         "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
         "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
-      ]
+      ],
+      "krotko": "Isahaya NIYE (tanio)"
     },
     {
       "id": "nagasaki",
@@ -655,40 +664,41 @@
         "13–16.08 trwa w Japonii Obon — buddyjskie święto pamięci zmarłych, coś jak nasze Zaduszki połączone z wakacjami. Japończycy masowo jeżdżą wtedy do rodzin, więc hotele są pełne i droższe.",
         "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
         "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
-      ]
+      ],
+      "krotko": "hotele w szczycie"
     },
     {
       "id": "seul_stawka",
-      "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
-      "opcja_id": "290",
-      "opcja": "Ok. 290 zł za noc — hotele w tygodniu ŚDM (rekomendacja)",
+      "decyzja": "Nocleg i wyżywienie w Korei poza pakietem (5/6.08 i 10/11.08)",
+      "opcja_id": "150",
+      "opcja": "150 zł/noc ze śniadaniem i obiadem — stawka Artura",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Dwie noce × ok. 290 zł wchodzą do kosztorysu B1+.",
+      "wplyw": "Seul 5/6.08 i Busan 10/11.08 po 150 zł, w tym śniadanie i obiad. W ścieżce C także dwie dodatkowe noce w Seulu po 150 zł.",
       "termin": "15.12.2026",
       "domyslna": true,
       "rekomendacja": true,
       "kontekst": "",
-      "opis": "Ile przyjmujemy w budżecie za dwie noce w Seulu, zanim zacznie się zakwaterowanie z pakietu ŚDM.",
-      "ograniczenia": "Termin: 15.12.2026 (blok ok. 90 łóżek z bezpłatną anulacją). Nie dotyczy, jeśli wybierzemy pakiet A1+ (wtedy te noce zapewnia organizator).",
+      "opis": "Ile liczymy za noclegi w Korei, które nie są w pakiecie ŚDM: noc 5/6.08 w Seulu i noc 10/11.08 w Busan (w ścieżce C dochodzą noce 3/4 i 4/5.08 w Seulu).",
+      "ograniczenia": "Kryterium: Artur potwierdza 150 zł/os na noc 5/6.08 (szczyt ŚDM) dla całej grupy. Jeśli nie — opcja 290 zł.",
       "wplyw_inne": "Koszt dwóch nocy (od ok. 200 do 800 zł na osobę) i porównanie pakietów B1+ i A1+.",
-      "rekomendacja_tekst": "W budżecie ok. 290 zł za noc; równolegle zapytać o sale parafialne.",
-      "plusy": "Ostrożne, realistyczne założenie.",
-      "minusy": "To założenie, nie oferta.",
+      "rekomendacja_tekst": "150 zł wg Artura; 290 zł jako bufor, gdyby stawka nie objęła tygodnia ŚDM.",
+      "plusy": "Konkretna stawka od Artura; zawiera dwa posiłki.",
+      "minusy": "Trzeba potwierdzić, że obowiązuje w tygodniu ŚDM (5/6.08) i dla ok. 90 osób w jednym miejscu.",
       "tlo": [
-        "Przylatujemy do Seulu 4.08 ok. 22:20, a zakwaterowanie z pakietu ŚDM (B1+) zaczyna się dopiero 6.08. Dwie noce musimy załatwić sami — najlepiej w dzielnicy Mapo, blisko stadionu, gdzie 5.08 jest powitanie Papieża.",
-        "W tygodniu ŚDM do Seulu przyjeżdżają setki tysięcy pielgrzymów, więc ceny hoteli rosną. 174 zł za noc to stawka z kosztorysu Artura sprzed ŚDM, raczej nierealna; 290 zł to ostrożne założenie.",
-        "Najtańsza możliwość to nocleg w salach parafialnych przez organizatorów ŚDM w Seulu."
-      ]
+        "Artur (27.11.2026): 150 zł na osobę za nocleg ze śniadaniem i obiadem w Korei.",
+        "Od 6.08 do 10.08 noclegi zapewnia pakiet B1+."
+      ],
+      "krotko": "150 zł (Artur)"
     },
     {
       "id": "seul_stawka",
-      "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
-      "opcja_id": "174",
-      "opcja": "174 zł za noc — stawka z kosztorysu Artura",
-      "zmiany": "nocleg_seul:=174",
+      "decyzja": "Nocleg i wyżywienie w Korei poza pakietem (5/6.08 i 10/11.08)",
+      "opcja_id": "290",
+      "opcja": "Ok. 290 zł/noc, hotel bez wyżywienia (bufor)",
+      "zmiany": "nocleg_seul:*1.9333; nocleg_busan:*0.8; jedzenie_kr:*2.5375; korea_extra:*1.94",
       "efekt": "",
-      "wplyw": "W modelu nocleg w Seulu = 348 zł za dwa noce. Poprawia też wygląd porównania B1+ z A1+, ale może być zbyt optymistyczny.",
+      "wplyw": "Seul 290 zł, Busan 120 zł, wyżywienie osobno (ok. 406 zł). W C dodatkowe noce po 290 zł.",
       "termin": "15.12.2026",
       "domyslna": false,
       "rekomendacja": false,
@@ -697,22 +707,19 @@
       "ograniczenia": "Termin: 15.12.2026 (blok ok. 90 łóżek z bezpłatną anulacją). Nie dotyczy, jeśli wybierzemy pakiet A1+ (wtedy te noce zapewnia organizator).",
       "wplyw_inne": "Koszt dwóch nocy (od ok. 200 do 800 zł na osobę) i porównanie pakietów B1+ i A1+.",
       "rekomendacja_tekst": "W budżecie ok. 290 zł za noc; równolegle zapytać o sale parafialne.",
-      "plusy": "Taniej.",
-      "minusy": "Stawka sprzed ŚDM — w tym tygodniu mało prawdopodobna.",
-      "tlo": [
-        "Przylatujemy do Seulu 4.08 ok. 22:20, a zakwaterowanie z pakietu ŚDM (B1+) zaczyna się dopiero 6.08. Dwie noce musimy załatwić sami — najlepiej w dzielnicy Mapo, blisko stadionu, gdzie 5.08 jest powitanie Papieża.",
-        "W tygodniu ŚDM do Seulu przyjeżdżają setki tysięcy pielgrzymów, więc ceny hoteli rosną. 174 zł za noc to stawka z kosztorysu Artura sprzed ŚDM, raczej nierealna; 290 zł to ostrożne założenie.",
-        "Najtańsza możliwość to nocleg w salach parafialnych przez organizatorów ŚDM w Seulu."
-      ]
+      "plusy": "Ostrożne założenie na wypadek, gdyby stawka Artura nie objęła ŚDM.",
+      "minusy": "Droższe o ok. 400 zł na osobę (A/B).",
+      "tlo": [],
+      "krotko": "290 zł hotel"
     },
     {
       "id": "seul_stawka",
-      "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
+      "decyzja": "Nocleg i wyżywienie w Korei poza pakietem (5/6.08 i 10/11.08)",
       "opcja_id": "400",
-      "opcja": "Ok. 400 zł za noc — gdy zabraknie tanich ofert",
-      "zmiany": "nocleg_seul:=400",
+      "opcja": "Ok. 400 zł/noc — szczyt, mało ofert",
+      "zmiany": "nocleg_seul:*2.6667; nocleg_busan:*0.8; jedzenie_kr:*2.5375; korea_extra:*2.39",
       "efekt": "",
-      "wplyw": "W modelu nocleg w Seulu = 800 zł za dwa noce.",
+      "wplyw": "Wariant pesymistyczny.",
       "termin": "15.12.2026",
       "domyslna": false,
       "rekomendacja": false,
@@ -721,37 +728,10 @@
       "ograniczenia": "Termin: 15.12.2026 (blok ok. 90 łóżek z bezpłatną anulacją). Nie dotyczy, jeśli wybierzemy pakiet A1+ (wtedy te noce zapewnia organizator).",
       "wplyw_inne": "Koszt dwóch nocy (od ok. 200 do 800 zł na osobę) i porównanie pakietów B1+ i A1+.",
       "rekomendacja_tekst": "W budżecie ok. 290 zł za noc; równolegle zapytać o sale parafialne.",
-      "plusy": "Bufor bezpieczeństwa.",
-      "minusy": "Wyraźnie drożej; wtedy pakiet A1+ może wyjść korzystniej.",
-      "tlo": [
-        "Przylatujemy do Seulu 4.08 ok. 22:20, a zakwaterowanie z pakietu ŚDM (B1+) zaczyna się dopiero 6.08. Dwie noce musimy załatwić sami — najlepiej w dzielnicy Mapo, blisko stadionu, gdzie 5.08 jest powitanie Papieża.",
-        "W tygodniu ŚDM do Seulu przyjeżdżają setki tysięcy pielgrzymów, więc ceny hoteli rosną. 174 zł za noc to stawka z kosztorysu Artura sprzed ŚDM, raczej nierealna; 290 zł to ostrożne założenie.",
-        "Najtańsza możliwość to nocleg w salach parafialnych przez organizatorów ŚDM w Seulu."
-      ]
-    },
-    {
-      "id": "seul_stawka",
-      "decyzja": "Dwie noce w Seulu przed pakietem ŚDM (4–6 sierpnia)",
-      "opcja_id": "parafia",
-      "opcja": "Ok. 100 zł za noc — sale parafialne przez organizatorów ŚDM",
-      "zmiany": "nocleg_seul:=100",
-      "efekt": "",
-      "wplyw": "Seul 2 noce za ok. 200 zł zamiast 580 zł [zgaduję].",
-      "termin": "15.12.2026",
-      "domyslna": false,
-      "rekomendacja": false,
-      "kontekst": "",
-      "opis": "Ile przyjmujemy w budżecie za dwie noce w Seulu, zanim zacznie się zakwaterowanie z pakietu ŚDM.",
-      "ograniczenia": "Termin: 15.12.2026 (blok ok. 90 łóżek z bezpłatną anulacją). Nie dotyczy, jeśli wybierzemy pakiet A1+ (wtedy te noce zapewnia organizator).",
-      "wplyw_inne": "Koszt dwóch nocy (od ok. 200 do 800 zł na osobę) i porównanie pakietów B1+ i A1+.",
-      "rekomendacja_tekst": "W budżecie ok. 290 zł za noc; równolegle zapytać o sale parafialne.",
-      "plusy": "Najtaniej; typowe dla grup ŚDM.",
-      "minusy": "Materace i wspólne łazienki; dostępność do potwierdzenia.",
-      "tlo": [
-        "Przylatujemy do Seulu 4.08 ok. 22:20, a zakwaterowanie z pakietu ŚDM (B1+) zaczyna się dopiero 6.08. Dwie noce musimy załatwić sami — najlepiej w dzielnicy Mapo, blisko stadionu, gdzie 5.08 jest powitanie Papieża.",
-        "W tygodniu ŚDM do Seulu przyjeżdżają setki tysięcy pielgrzymów, więc ceny hoteli rosną. 174 zł za noc to stawka z kosztorysu Artura sprzed ŚDM, raczej nierealna; 290 zł to ostrożne założenie.",
-        "Najtańsza możliwość to nocleg w salach parafialnych przez organizatorów ŚDM w Seulu."
-      ]
+      "plusy": "Bufor na najgorszy przypadek.",
+      "minusy": "Najdroższe.",
+      "tlo": [],
+      "krotko": "400 zł szczyt"
     },
     {
       "id": "pakiet",
@@ -825,7 +805,8 @@
         "Fudżi (3 776 m) to najwyższa góra i symbol Japonii. Wchodzi się nocą, żeby o świcie być na szczycie. Szlak jest długi, stromy i zimny; na górze bywa poniżej zera, a choroba wysokościowa jest realna.",
         "Moduł: 17.08 shinkansen z Nagasaki (ok. 6 h), autobus na 5. stację (2 400 m), noc w schronisku, 18.08 wschód słońca na szczycie, zejście i shinkansen do Osaki.",
         "Wchodzący tracą Yamaguchi, Hiroszimę, Miyajimę i Himeji. Podział grupy jest dopuszczalny tylko dla Fudżi (DECYZJA)."
-      ]
+      ],
+      "krotko": "nie"
     },
     {
       "id": "fuji",
@@ -849,7 +830,8 @@
         "Fudżi (3 776 m) to najwyższa góra i symbol Japonii. Wchodzi się nocą, żeby o świcie być na szczycie. Szlak jest długi, stromy i zimny; na górze bywa poniżej zera, a choroba wysokościowa jest realna.",
         "Moduł: 17.08 shinkansen z Nagasaki (ok. 6 h), autobus na 5. stację (2 400 m), noc w schronisku, 18.08 wschód słońca na szczycie, zejście i shinkansen do Osaki.",
         "Wchodzący tracą Yamaguchi, Hiroszimę, Miyajimę i Himeji. Podział grupy jest dopuszczalny tylko dla Fudżi (DECYZJA)."
-      ]
+      ],
+      "krotko": "tak, dla chętnych"
     },
     {
       "id": "nie_fuji",
@@ -1220,7 +1202,8 @@
       "tlo": [
         "To tańsza opcja, która nie usuwa żadnego punktu programu.",
         "Po Obonie hotele w centrach są drogie. Na obrzeżach Osaki (Sakai, Higashi-Osaka) i w hotelach biznesowych jest taniej, a autokar i tak dowozi grupę."
-      ]
+      ],
+      "krotko": "hostel YH (tanio)"
     },
     {
       "id": "hotele_zachod",
@@ -1243,7 +1226,8 @@
       "tlo": [
         "To tańsza opcja, która nie usuwa żadnego punktu programu.",
         "Po Obonie hotele w centrach są drogie. Na obrzeżach Osaki (Sakai, Higashi-Osaka) i w hotelach biznesowych jest taniej, a autokar i tak dowozi grupę."
-      ]
+      ],
+      "krotko": "hotel standard"
     },
     {
       "id": "hotele_zachod",
@@ -1266,7 +1250,8 @@
       "tlo": [
         "To tańsza opcja, która nie usuwa żadnego punktu programu.",
         "Po Obonie hotele w centrach są drogie. Na obrzeżach Osaki (Sakai, Higashi-Osaka) i w hotelach biznesowych jest taniej, a autokar i tak dowozi grupę."
-      ]
+      ],
+      "krotko": "tani hotel"
     },
     {
       "id": "posilki",
@@ -1338,7 +1323,8 @@
         "To tańsza opcja, która nie usuwa żadnego punktu programu.",
         "W Nagasaki działa wiele parafii i wspólnot, które znają miejsca męczenników lepiej niż przewodnik turystyczny."
       ],
-      "wybrana": false
+      "wybrana": false,
+      "krotko": "2 przewodników"
     },
     {
       "id": "kadra_lok",
@@ -1361,7 +1347,8 @@
       "tlo": [
         "To tańsza opcja, która nie usuwa żadnego punktu programu.",
         "W Nagasaki działa wiele parafii i wspólnot, które znają miejsca męczenników lepiej niż przewodnik turystyczny."
-      ]
+      ],
+      "krotko": "1 + pilot"
     },
     {
       "id": "kadra_lok",
@@ -1384,7 +1371,8 @@
       "tlo": [
         "To tańsza opcja, która nie usuwa żadnego punktu programu.",
         "W Nagasaki działa wiele parafii i wspólnot, które znają miejsca męczenników lepiej niż przewodnik turystyczny."
-      ]
+      ],
+      "krotko": "wolontariusze"
     },
     {
       "id": "esim",
@@ -1959,11 +1947,11 @@
       {
         "id": "nocleg_seul",
         "grupa": "Noclegi",
-        "pozycja": "Seul Mapo, 1 noc (5/6.08)",
+        "pozycja": "Seul, 1 noc 5/6.08 ze śniadaniem i obiadem",
         "jednostka": "os",
-        "kwota": 290,
-        "zrodlo": "Ustalony hotel w Mapo; od 6.08 noclegi z pakietu B1+. Jeśli rezerwacja była od 4.08 — sprawdzić zwolnienie nocy 4/5.08. ok. 290 zł/noc w tygodniu ŚDM [szacunek].",
-        "status": "szacunek"
+        "kwota": 150,
+        "zrodlo": "[fakt: Artur, 27.11.2026] 150 zł/os za nocleg + śniadanie + obiad w Korei. Od 6.08 noclegi z pakietu B1+.",
+        "status": "oferta Artura"
       },
       {
         "id": "nocleg_extra",
@@ -1977,11 +1965,11 @@
       {
         "id": "nocleg_busan",
         "grupa": "Noclegi",
-        "pozycja": "Busan, 1 noc (10/11.08)",
+        "pozycja": "Busan, 1 noc 10/11.08 ze śniadaniem i obiadem",
         "jednostka": "os",
-        "kwota": 120,
-        "zrodlo": "Artur 87 zł; podniesione do 120 zł na sierpień (założenie).",
-        "status": "szacunek"
+        "kwota": 150,
+        "zrodlo": "[fakt: Artur, 27.11.2026] 150 zł/os za nocleg + śniadanie + obiad.",
+        "status": "oferta Artura"
       },
       {
         "id": "nocleg_nagasaki",
@@ -2022,10 +2010,10 @@
       {
         "id": "jedzenie_kr",
         "grupa": "Wyżywienie",
-        "pozycja": "Wyżywienie w Korei poza pakietem, 4 dni (5–6.08 i 10–11.08)",
+        "pozycja": "Wyżywienie w Korei poza pakietem i stawką Artura: 4 posiłki (kolacje 5.08 i 11.08, obiad i kolacja 10.08)",
         "jednostka": "os",
-        "kwota": 406,
-        "zrodlo": "Artur: ok. 101,50 zł/dzień; planie z 15.11: 4–5.08 i 10–11.08.",
+        "kwota": 160,
+        "zrodlo": "[szacunek] 4 × ok. 40 zł. Śniadania i obiady 6.08 i 11.08 są w stawce Artura (150 zł).",
         "status": "szacunek"
       },
       {
@@ -2034,7 +2022,7 @@
         "pozycja": "Ścieżka C: 2 dodatkowe dni w Seulu (2 noce, wyżywienie, metro, wejścia)",
         "jednostka": "os",
         "kwota": 0,
-        "zrodlo": "[szacunek] 2 × 290 zł nocleg + 2 × 130 zł wyżywienie + ok. 110 zł metro, wejścia i pilot = ok. 950 zł na osobę; tylko w ścieżce C.",
+        "zrodlo": "[szacunek] Ścieżka C: 2 noce × 150 zł (Artur, ze śniadaniem i obiadem) + 2 kolacje × 40 zł + ok. 110 zł metro, wejścia i pilot = ok. 490 zł na osobę.",
         "status": "szacunek"
       },
       {
