@@ -129,7 +129,7 @@ function todayIso() { const d = new Date(); return new Date(d.getTime() - d.getT
 const hasNdn = (v) => { const s = String(v || "").trim().toLowerCase(); return !!s && !/^(nie|brak|0|-|—)$/.test(s); };
 function fromBase(b) {
   return { ID: b.id, Nazwa: b.nazwa, "Miejscowość": b.miejscowosc, Dekanat: b.dekanat, Diecezja: b.diecezja, Adres: b.adres,
-    Telefon: b.tel, "E-mail": b.email, WWW: b.www, Baza: b.baza, "Msze niedzielne": b.msze, msze_n: b.msze_n, lat: b.lat, lng: b.lng,
+    Proboszcz: b.proboszcz || "", Telefon: b.tel, "E-mail": b.email, WWW: b.www, Baza: b.baza, "Msze niedzielne": b.msze, msze_n: b.msze_n, lat: b.lat, lng: b.lng,
     odl: b.odl_km, wierni: b.wierni, zakon: b.zakon, rank_wsp: b.rank_wsp, rank_diec: b.rank_diec, podstawa: b.podstawa,
     cena: b.cena_m2, cena_txt: b.cena_m2 ? `${b.cena_m2.toLocaleString("pl-PL")} zł/m² — ${b.cena_poziom} ${b.cena_obszar}` : "", potencjal: b.potencjal,
     Status: "kandydat", base: true };
@@ -337,6 +337,7 @@ function editParafia(p = {}) {
     const info = `<div class="wide zb-parinfo">
       <p><strong>${escapeHtml(p.Nazwa)}</strong>, ${escapeHtml(p["Miejscowość"] || "")} · dekanat ${escapeHtml(p.Dekanat || "")} · ${escapeHtml(p.Diecezja)}</p>
       <p>${escapeHtml(p.Adres || "")}${p.odl != null ? ` · ${escapeHtml(String(p.odl).replace(".", ","))} km od św. Zygmunta (w linii prostej)` : ""}</p>
+      <p><strong>Proboszcz:</strong> ${escapeHtml(p.Proboszcz || "brak w bazie")}</p>
       <p>☎ ${escapeHtml(p.Telefon || "brak")}${p["E-mail"] ? ` · <a href="mailto:${escapeHtml(p["E-mail"])}">${escapeHtml(p["E-mail"])}</a>` : ""}${p.WWW ? ` · <a href="${escapeHtml(p.WWW)}" target="_blank" rel="noopener">strona</a>` : ""}${p.Baza ? ` · <a href="${escapeHtml(p.Baza)}" target="_blank" rel="noopener">baza diecezji</a>` : ""}</p>
       <p><strong>Msze niedzielne:</strong> ${escapeHtml(p["Msze niedzielne"] || "brak w bazie")}</p>
       <p><strong>Ranking wspólny:</strong> ${p.rank}${p.ndn ? " (z +3 za wspólnoty)" : ""} · w diecezji wg Groka: ${escapeHtml(String(p.rank_diec || ""))} · ${escapeHtml(p.podstawa || "")}</p>
@@ -644,7 +645,7 @@ let pmap = null, pLayer = null, pFitted = false;
 function filteredParafie() {
   const f = st.pf, q = f.q.trim().toLowerCase();
   return allParafie().filter((p) => (!f.status || p.Status === f.status) && (!f.diec || p.Diecezja === f.diec) && (!f.ndn || p.ndn) && (p.rank || 0) >= f.min
-    && (!q || [p.Nazwa, p["Miejscowość"], p.Dekanat, p.Adres].join(" ").toLowerCase().includes(q)))
+    && (!q || [p.Nazwa, p["Miejscowość"], p.Dekanat, p.Adres, p.Proboszcz].join(" ").toLowerCase().includes(q)))
     .sort((a, b) => f.sort === "potencjal" ? (b.potencjal || 0) - (a.potencjal || 0) || b.rank - a.rank
       : f.sort === "odl" ? (a.odl ?? 999) - (b.odl ?? 999)
       : b.rank - a.rank || (b.potencjal || 0) - (a.potencjal || 0));
@@ -658,6 +659,7 @@ function parPopup(p, evs) {
   const nav = p.lat ? `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}` : "";
   return `<div class="zb-pop"><strong>${escapeHtml(p.Nazwa)}</strong><br><span class="muted">${escapeHtml(p["Miejscowość"] || "")} · ${escapeHtml(p.Dekanat || "")}</span>
     <p>Ranking <b>${p.rank}</b>${p.ndn ? " (wspólnoty NDN)" : ""} · potencjał <b>${p.potencjal ?? "—"}</b>/100 · <span class="chip" style="background:${STATUS_COLOR[p.Status] || "#8a94a6"};color:#fff">${escapeHtml(p.Status || "")}</span></p>
+    ${p.Proboszcz ? `<p class="small">Proboszcz: ${escapeHtml(p.Proboszcz)}</p>` : ""}
     ${p["Msze niedzielne"] ? `<p class="small">Msze: ${escapeHtml(p["Msze niedzielne"])}</p>` : ""}
     ${p.Telefon ? `<p class="small">☎ <a href="tel:${escapeHtml(p.Telefon.replace(/[^\d+]/g, ""))}">${escapeHtml(p.Telefon)}</a></p>` : ""}
     ${evs && evs.length ? `<p class="small"><b>U nas:</b> ${evs.map((w) => escapeHtml(plDate(w.Data) + " " + (w.Typ || ""))).join(", ")}</p>` : ""}
@@ -708,7 +710,7 @@ function renderParList() {
       <thead><tr><th class="num" title="Ranking wspólny 1–10 (+3 za wspólnoty neokatechumenalne)">Ranking</th><th>Parafia</th><th class="num" title="[szacunek] 60% liczba Mszy + 40% ceny m² w okolicy">Potencjał</th><th>Msze niedzielne</th><th>Status</th><th>Kontakt / uwagi</th><th>U nas</th><th></th></tr></thead>
       <tbody>${list.slice(0, st.parLimit).map((p) => `<tr>
         <td class="num"><strong>${p.rank}</strong>${p.ndn ? `<br><span class="chip">NDN</span>` : ""}</td>
-        <td><strong>${escapeHtml(p.Nazwa)}</strong><br><span class="muted small">${escapeHtml(p["Miejscowość"] || "")} · ${escapeHtml(p.Dekanat || "")}${p.Diecezja !== "warszawska" ? " · " + escapeHtml(p.Diecezja) : ""}${p.odl != null ? ` · ${escapeHtml(String(p.odl).replace(".", ","))} km` : ""}</span>${p.Telefon ? `<br><span class="small">☎ ${escapeHtml(p.Telefon)}</span>` : ""}</td>
+        <td><strong>${escapeHtml(p.Nazwa)}</strong><br><span class="muted small">${escapeHtml(p["Miejscowość"] || "")} · ${escapeHtml(p.Dekanat || "")}${p.Diecezja !== "warszawska" ? " · " + escapeHtml(p.Diecezja) : ""}${p.odl != null ? ` · ${escapeHtml(String(p.odl).replace(".", ","))} km` : ""}</span>${p.Proboszcz ? `<br><span class="small">${escapeHtml(p.Proboszcz)}</span>` : ""}${p.Telefon ? `<br><span class="small">☎ ${escapeHtml(p.Telefon)}</span>` : ""}</td>
         <td class="num">${p.potencjal ?? "—"}${p.cena ? `<br><span class="muted small">${Math.round(p.cena / 100) / 10} tys./m²</span>` : ""}</td>
         <td class="small zb-msze">${escapeHtml(p["Msze niedzielne"] || "")}</td>
         <td><span class="chip" style="background:${STATUS_COLOR[p.Status] || "#8a94a6"};color:#fff">${escapeHtml(p.Status || "")}</span></td>
@@ -727,7 +729,7 @@ function renderParafie() {
   const f = $("#zb-par-filters");
   if (f && !f.dataset.ready) {
     f.dataset.ready = "1";
-    f.innerHTML = `<input type="search" id="zb-pf-q" placeholder="Szukaj: nazwa, miejscowość, dekanat, ulica" />
+    f.innerHTML = `<input type="search" id="zb-pf-q" placeholder="Szukaj: nazwa, miejscowość, dekanat, ulica, proboszcz" />
       <select id="zb-pf-status"><option value="">wszystkie statusy</option>${STATUS_P.map((x) => `<option>${x}</option>`).join("")}</select>
       <select id="zb-pf-diec"><option value="">obie diecezje</option><option value="warszawska">warszawska</option><option value="warszawsko-praska">warszawsko-praska</option><option value="inna">inne</option></select>
       <select id="zb-pf-min"><option value="0">każdy ranking</option><option value="5">ranking 5+</option><option value="6">ranking 6+</option><option value="7">ranking 7+</option></select>

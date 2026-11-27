@@ -2,6 +2,32 @@
 import openpyxl, re, json, sys
 SRC = sys.argv[1]; OUT = sys.argv[2]
 wb = openpyxl.load_workbook(SRC)
+TITLES = {"ksiądz", "ks.", "ojciec", "o.", "kanonik", "prałat", "dr", "hab.", "prof.", "akw", "bp", "abp", "mgr", "kan.", "płk", "ppłk.", "ppłk", "płk."}
+def first_names(ws, col):
+    """Imiona z arkusza archidiecezji (tam kolejność to Imię Nazwisko) — do rozpoznania odwróconej kolejności w drugim arkuszu."""
+    out = set()
+    for r in ws.iter_rows(min_row=2, values_only=True):
+        toks = [t for t in str(r[col] or "").split() if t.lower().strip(",") not in TITLES]
+        if toks: out.add(toks[0])
+    return out
+def norm_proboszcz(v, names):
+    v = str(v or "").strip()
+    if not v or v.lower().startswith("brak"): return ""
+    adm = " (adm.)" if "(adm.)" in v else ""
+    v = v.replace("(adm.)", "").strip()
+    toks = v.split()
+    pre = []
+    while toks and toks[0].lower().strip(",") in TITLES: pre.append(toks.pop(0))
+    order = [t for t in toks if not (t.isupper() and len(t) <= 5)]  # bez skrótów zakonów (SAC, CSMA, OP)
+    zak = [t for t in toks if t.isupper() and len(t) <= 5]
+    if len(order) >= 2 and order[0] not in names and order[1] in names:   # „Kowalski Jan Maria” → „Jan Maria Kowalski”
+        order = order[1:] + order[:1]
+    pre = [{"ksiądz": "ks.", "ks.": "ks.", "ojciec": "o.", "o.": "o."}.get(t.lower(), t) for t in pre]
+    return " ".join(pre + order + zak) + adm
+NAMES = set()
+_ws = wb["Archidiecezja Warszawska"]; _H = [c.value for c in _ws[1]]
+if "Proboszcz" in _H: NAMES = first_names(_ws, _H.index("Proboszcz"))
+NAMES |= {"Jan", "Józef", "Stanisław", "Andrzej", "Krzysztof", "Piotr", "Tomasz", "Marek", "Paweł", "Adam", "Jerzy", "Wojciech", "Zbigniew", "Ryszard", "Tadeusz", "Henryk", "Kazimierz", "Marcin", "Michał", "Jacek", "Grzegorz", "Dariusz", "Mirosław", "Witold", "Bogusław", "Zdzisław", "Leszek", "Sławomir", "Jarosław", "Robert", "Rafał", "Łukasz", "Mariusz", "Waldemar", "Wiesław", "Zenon", "Edward", "Emil", "Przemysław", "Maciej", "Fabian", "Arkadiusz", "Dominik", "Kamil", "Sylwester", "Roman", "Janusz", "Lech", "Bartosz", "Damian", "Daniel", "Jakub", "Karol", "Mateusz", "Radosław", "Szymon", "Artur", "Bogdan", "Eugeniusz", "Franciszek", "Ireneusz", "Krystian", "Lucjan", "Ludwik", "Norbert", "Sebastian", "Wacław", "Władysław", "Zygmunt", "Antoni", "Czesław", "Dawid", "Wiktor", "Konrad", "Hubert", "Ignacy", "Patryk", "Seweryn", "Stefan", "Mieczysław", "Wit", "Bronisław", "Bernard", "Cezary", "Marian", "Leon", "Feliks", "Zbysław", "Gerard"}
 out = []
 for t, code, dname in [("Archidiecezja Warszawska", "A", "warszawska"), ("Diecezja Warszawsko-Praska", "P", "warszawsko-praska")]:
     ws = wb[t]; H = [c.value for c in ws[1]]; I = {h: i for i, h in enumerate(H)}
@@ -34,6 +60,7 @@ for t, code, dname in [("Archidiecezja Warszawska", "A", "warszawska"), ("Diecez
             "odl_km": g("Odległość od par. św. Zygmunta (km)"), "msze": brak(msze), "msze_n": msze_n,
             "wierni": wier if isinstance(wier, (int, float)) else None, "zakon": str(g("Klasztor / zamknięta / pustostan") or "") == "tak",
             "rank_diec": g("Ranking punktowy (1-10)"), "rank_wsp": max(1, min(10, raw_wsp)), "bonus_wierni": bonus_w, "podstawa": pod,
+            "proboszcz": norm_proboszcz(g("Proboszcz"), NAMES),
             "tel": brak(g("Telefon kontaktowy")), "email": brak(g("E-mail")), "www": brak(g("WWW parafii")), "baza": link,
             "cena_m2": cena, "cena_poziom": mz.group(2) if mz else "", "cena_obszar": mz.group(3) if mz else "", "cena_zrodlo": mz.group(4) if mz else "",
         })
