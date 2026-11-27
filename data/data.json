@@ -1,7 +1,7 @@
 {
   "meta": {
     "opis": "Dane publiczne: plan dzień po dniu, miejsca i warianty trasy. Koszty, decyzje i ustawienia organizatorów są w osobnym pliku.",
-    "wersja_planu": "26.11.2026 — ścieżki A/B, przylot do Seulu 5.08",
+    "wersja_planu": "27.11.2026 — Akita 13:30, noclegi grupowe",
     "planAppUrl": "",
     "planAppUrl_uwaga": "Adres skryptu Zapis.gs (/exec). Strona jadących pyta go tylko o zatwierdzone opcje (?action=plan). Pusty = plan wstępny."
   },
@@ -69,14 +69,14 @@
       "data_pl": "3.08.2027",
       "dzien": "wtorek",
       "kraj": "Japonia",
-      "miejsce": "Iwaki → Matsushima → Akita",
-      "program": "Jutrznia 6:45, wyjazd 7:30. Matsushima ok. 10:00–11:30: Zuiganji, Godaidō, cisza za ofiary tsunami 2011, katecheza o poselstwie Hasekury Tsunenagi do Rzymu. Obiad bento w drodze. Yuzawadai ok. 15:30: Msza ok. 16:30 w sanktuarium Matki Bożej z Akity (za zgodą sióstr), zawierzenie grupy Maryi przed ŚDM. Przyjazd do hotelu w Akicie ok. 19:00.",
-      "nocleg": "Akita",
+      "miejsce": "Iwaki → Akita",
+      "program": "Jutrznia 6:45, wyjazd 7:30. Iwaki–Akita ok. 400 km autostradami Ban-etsu i Tōhoku (ok. 5–5,5 h z przerwami), obiad bento w drodze. Yuzawadai ok. 13:00: Eucharystia 13:30 w sanktuarium Matki Bożej z Akity — sanktuarium przyjmuje Msze pielgrzymek tylko o 9:30, 10:00, 13:00 albo 13:30 (rezerwacja u sióstr). Zawierzenie grupy Maryi przed ŚDM, potem czas w ciszy przy sanktuarium. Nocleg w ośrodku Training Center w parku centralnym (ok. 14 km). Wieczorem dla chętnych parada Kantō w centrum Akity.",
+      "nocleg": "Akita, Training Center w parku centralnym (ośrodek, 200 miejsc)",
       "transport": "2 autokary po 2 kierowców",
-      "km": "180 + 260",
-      "czas_h": "ok. 6 jazdy, dzień ok. 11,5 h",
-      "miejsca": "iwaki,matsushima,zuiganji,akita,akita_noc",
-      "status": "Msza za zgodą sióstr (faks do 30.11.2026); hotel do rezerwacji",
+      "km": "ok. 400 + 20",
+      "czas_h": "ok. 5–5,5 jazdy",
+      "miejsca": "iwaki,akita,akita_noc",
+      "status": "Msza 13:30 do rezerwacji u sióstr (faks do 30.11.2026); ośrodek do rezerwacji",
       "posilki": {
         "sniadanie": {
           "gdzie": "hotel Iwaki",
@@ -85,38 +85,38 @@
           "min": 35
         },
         "obiad": {
-          "gdzie": "bento na postoju w drodze do Akity",
+          "gdzie": "bento w autokarze",
           "jak": "bento",
-          "od": "12:30",
-          "min": 30
+          "od": "11:00",
+          "min": 20
         },
         "kolacja": {
-          "gdzie": "hotel w Akicie",
-          "jak": "restauracja",
-          "od": "19:15",
+          "gdzie": "ośrodek Training Center",
+          "jak": "stołówka",
+          "od": "18:00",
           "min": 45
         }
       },
-      "sens": "Dzień maryjny: od zatoki Matsushima, skąd zaczęła się przygoda Japonii z Rzymem, do sanktuarium Matki Bożej z Akity."
+      "sens": "Dzień maryjny: Msza w sanktuarium Matki Bożej z Akity i zawierzenie grupy przed ŚDM."
     },
     {
       "data": "2027-08-04",
       "data_pl": "4.08.2027",
       "dzien": "środa",
       "kraj": "Japonia",
-      "miejsce": "Akita → Nikkō",
-      "program": "Msza 6:15 w hotelu, śniadanie, wyjazd 7:15. Akita–Nikkō ok. 500 km autostradami Akita i Tōhoku (ok. 7–7,5 h z przerwami), obiad bento w drodze. Tōshōgū ok. 15:00–16:30 (ostatnie wejście 16:30, zamknięcie 17:00), katecheza o Ieyasu i początku prześladowań. Nocleg w Nikkō (Kinugawa), kolacja i odpoczynek.",
-      "nocleg": "Nikkō (Kinugawa Onsen)",
+      "miejsce": "Akita → Matsushima → Nikkō",
+      "program": "Jutrznia 6:15, śniadanie, wyjazd 7:00. Akita–Matsushima ok. 230 km (ok. 3 h). Matsushima ok. 10:15–11:30: Zuiganji, Godaidō, cisza za ofiary tsunami 2011, katecheza o poselstwie Hasekury Tsunenagi do Rzymu. Obiad bento w drodze. Matsushima–Nikkō ok. 270 km (ok. 3,5 h). Tōshōgū ok. 15:15–16:30 (ostatnie wejście 16:30, zamknięcie 17:00), katecheza o Ieyasu i początku prześladowań. Nocleg w Nikkō (Hotel Iroha, naprzeciw Tōshōgū). Eucharystia ok. 18:30 — w kościele w Imaichi (8 km) albo w sali hotelu, do uzgodnienia.",
+      "nocleg": "Nikkō, Hotel Iroha (100 miejsc, z kolacją i śniadaniem)",
       "transport": "2 autokary po 2 kierowców",
-      "km": "ok. 500",
-      "czas_h": "ok. 7–7,5 z przerwami",
-      "miejsca": "akita_noc,nikko",
+      "km": "230 + 270",
+      "czas_h": "ok. 6,5 jazdy",
+      "miejsca": "akita_noc,matsushima,zuiganji,nikko",
       "status": "km: szacunek; hotel i wejście do Tōshōgū do rezerwacji",
       "posilki": {
         "sniadanie": {
-          "gdzie": "hotel w Akicie",
-          "jak": "hotel",
-          "od": "06:45",
+          "gdzie": "ośrodek Training Center",
+          "jak": "stołówka",
+          "od": "06:30",
           "min": 30
         },
         "obiad": {
@@ -126,13 +126,13 @@
           "min": 20
         },
         "kolacja": {
-          "gdzie": "hotel w Nikkō",
+          "gdzie": "Hotel Iroha",
           "jak": "restauracja",
-          "od": "18:30",
+          "od": "19:30",
           "min": 60
         }
       },
-      "sens": "Przy grobie sioguna, który zakazał chrześcijaństwa."
+      "sens": "Zatoka Matsushima, skąd wypłynęło poselstwo do Rzymu, i grób sioguna, który zakazał chrześcijaństwa."
     },
     {
       "data": "2027-08-05",
@@ -140,7 +140,7 @@
       "dzien": "czwartek",
       "kraj": "Japonia / Korea",
       "miejsce": "Nikkō → Yamanakako → Haneda → Gimpo → Seul",
-      "program": "Pobudka 4:45, wyjazd 5:30 (śniadanie w autokarze). Nikkō–Yamanakako ok. 250 km (ok. 3,5–4 h). Ok. 9:30 Msza u sióstr salezjanek w Yamanaka na odpust Matki Bożej Śnieżnej, przy dobrej pogodzie z widokiem na Fuji. Obiad nad jeziorem. Wyjazd ok. 13:00, Haneda ok. 15:30 (ok. 110 km, możliwe korki na autostradzie Chūō). Wieczorny lot do Gimpo (w 2026: NH867 / OZ1035 o 20:05, ok. 2 h 15 min), przylot ok. 22:20, hotel w Mapo ok. 23:30.",
+      "program": "Pobudka 4:45, wyjazd 5:30 (śniadanie w autokarze, jutrznia w drodze). Nikkō–Yamanakako ok. 250 km (ok. 3,5–4 h). Ok. 10:00 Eucharystia u sióstr salezjanek w Yamanaka na odpust Matki Bożej Śnieżnej (wyjątek od rytmu: wieczorem jesteśmy w samolocie), przy dobrej pogodzie z widokiem na Fuji. Obiad nad jeziorem. Wyjazd ok. 13:00, Haneda ok. 15:30 (ok. 110 km, możliwe korki na autostradzie Chūō). Wieczorny lot do Gimpo (w 2026: NH867 / OZ1035 o 20:05, ok. 2 h 15 min), przylot ok. 22:20, hotel w Mapo ok. 23:30.",
       "nocleg": "Seul, Mapo (ustalony hotel)",
       "transport": "2 autokary; samoloty Haneda–Gimpo (możliwy podział na kilka lotów, także do Incheon)",
       "km": "250 + 110",
@@ -157,7 +157,7 @@
         "obiad": {
           "gdzie": "nad jeziorem Yamanaka",
           "jak": "restauracja",
-          "od": "11:30",
+          "od": "11:45",
           "min": 60
         },
         "kolacja": {
@@ -345,7 +345,7 @@
       "dzien": "środa",
       "kraj": "Korea Południowa",
       "miejsce": "Busan (dzień luzu) → prom",
-      "program": "Dzień luzu. Msza ok. 10:30 w kościele św. Andrzeja Kima w Jwadong (Haeundae) — parafia zgłasza udział w ŚDM. Plaża Haeundae i czas wolny. Do wyboru jeden punkt po drugiej stronie miasta (ok. 1–1,5 h autokarem): Gamcheon albo targ Jagalchi. Odprawa promowa 16:30–18:30 (bagaż rejestrowany do 17:30), wejście na pokład ok. 19:40. New Camellia wypływa 22:30.",
+      "program": "Dzień luzu. Jutrznia w hotelu. Do wyboru rano jeden punkt po drugiej stronie miasta (ok. 1–1,5 h autokarem): Gamcheon albo targ Jagalchi. Plaża Haeundae i czas wolny. Eucharystia ok. 14:30 w kościele św. Andrzeja Kima w Jwadong (Haeundae) — parafia zgłasza udział w ŚDM; wieczorem nie da się, bo od 16:30 jesteśmy na promie. Odprawa promowa 16:30–18:30 (bagaż rejestrowany do 17:30), wejście na pokład ok. 19:40. New Camellia wypływa 22:30.",
       "nocleg": "Prom New Camellia",
       "transport": "New Camellia (Camellia Line)",
       "km": "",
@@ -378,12 +378,12 @@
       "dzien": "czwartek",
       "kraj": "Japonia",
       "miejsce": "Hakata → Tabira → Hirado → Nagasaki",
-      "program": "Zejście z promu 7:30, odprawa. Kościół pamięci św. Franciszka Ksawerego w Tabirze, wioska Kasuga (UNESCO), Msza w kościele Ksawerego na Hirado. Wieczorem Nagasaki, początek bazy (noc 1/5).",
-      "nocleg": "Nagasaki 1/5",
+      "program": "Zejście z promu 7:30, odprawa. Kościół pamięci św. Franciszka Ksawerego w Tabirze, wioska Kasuga (UNESCO), Msza w kościele Ksawerego na Hirado. Wieczorem ośrodek NIYE w Isahaya, 26 km od Nagasaki — baza na 5 nocy (noc 1/5).",
+      "nocleg": "Isahaya, ośrodek NIYE 1/5 (26 km od Nagasaki)",
       "transport": "Autokar",
       "km": "",
       "czas_h": "ok. 2–2,5 + ok. 2–2,5",
-      "miejsca": "hakata,tabira,hirado,nagasaki",
+      "miejsca": "hakata,tabira,hirado,isahaya",
       "status": "Msza do weryfikacji",
       "posilki": {
         "sniadanie": {
@@ -412,7 +412,7 @@
       "kraj": "Japonia",
       "miejsce": "Nagasaki, wypad do Sotome i Ōura",
       "program": "Początek Obonu. Kościół Shitsu (ks. de Rotz), muzeum Endō Shūsaku, Msza w Shitsu. Po południu kościół Ōura — miejsce odkrycia ukrytych chrześcijan w 1865 r.",
-      "nocleg": "Nagasaki 2/5",
+      "nocleg": "Isahaya, ośrodek NIYE 2/5 (26 km od Nagasaki)",
       "transport": "Autokar (wypad)",
       "km": "",
       "czas_h": "ok. 1 h w każdą stronę",
@@ -446,7 +446,7 @@
       "kraj": "Japonia",
       "miejsce": "Nagasaki: Hongochi i Nishizaka",
       "program": "Święto św. Maksymiliana Kolbego. Rano Msza w Hongochi / Mugenzai no Sono (kaplica Kolbego, grota z Lourdes), muzeum Kolbego (9:00–17:00). Po południu ostatni odcinek drogi 26 męczenników pieszo do Nishizaki, w ciszy albo z różańcem.",
-      "nocleg": "Nagasaki 3/5",
+      "nocleg": "Isahaya, ośrodek NIYE 3/5 (26 km od Nagasaki)",
       "transport": "Autokar i pieszo",
       "km": "",
       "czas_h": "",
@@ -480,7 +480,7 @@
       "kraj": "Japonia",
       "miejsce": "Nagasaki: Urakami, hipocentrum, Shōrō-nagashi",
       "program": "Wniebowzięcie NMP: Msza w katedrze Urakami. Hipocentrum, Muzeum Bomby Atomowej, Nyokodō doktora Nagaia. Po południu odpoczynek. Wieczorem Shōrō-nagashi (łodzie przodków): ruch w mieście zamknięty ok. 17:00–23:00, tylko pieszo, grupy po 8–10 z opiekunem.",
-      "nocleg": "Nagasaki 4/5",
+      "nocleg": "Isahaya, ośrodek NIYE 4/5 (26 km od Nagasaki)",
       "transport": "Pieszo i autokar",
       "km": "",
       "czas_h": "",
@@ -513,12 +513,12 @@
       "dzien": "poniedziałek",
       "kraj": "Japonia",
       "miejsce": "Nagasaki, wypad do Unzen i Shimabary",
-      "program": "Unzen Jigoku (męczennicy 1627–1631), Msza w Unzen, zamek Shimabara, powrót do Nagasaki. Po południu wolne — jedyny zaplanowany oddech w japońskiej części po ŚDM.",
-      "nocleg": "Nagasaki 5/5",
+      "program": "Unzen Jigoku (męczennicy 1627–1631), Msza w Unzen, zamek Shimabara, powrót do Isahaya (po drodze). Po południu wolne — jedyny zaplanowany oddech w japońskiej części po ŚDM.",
+      "nocleg": "Isahaya, ośrodek NIYE 5/5 (26 km od Nagasaki)",
       "transport": "Autokar (wypad)",
       "km": "",
       "czas_h": "ok. 1,5–2 h w każdą stronę",
-      "miejsca": "unzen,shimabara,nagasaki",
+      "miejsca": "unzen,shimabara,isahaya",
       "status": "Msza do weryfikacji",
       "posilki": {
         "sniadanie": {
@@ -547,12 +547,12 @@
       "dzien": "wtorek",
       "kraj": "Japonia",
       "miejsce": "Nagasaki → Yamaguchi → Hiroszima",
-      "program": "Wyjazd ok. 7:00. Kościół św. Franciszka Ksawerego w Yamaguchi: Msza po uzgodnieniu, ostatni odcinek pod kościół pieszo. Hiroszima od popołudnia: Park Pokoju, Muzeum, Kopuła Bomby Atomowej. Opcja do weryfikacji: Nagatsuka (nowicjat jezuitów, o. Pedro Arrupe).",
-      "nocleg": "Hiroszima",
+      "program": "Wyjazd ok. 7:00. Kościół św. Franciszka Ksawerego w Yamaguchi: Msza po uzgodnieniu, ostatni odcinek pod kościół pieszo. Hiroszima od popołudnia: Park Pokoju, Muzeum, Kopuła Bomby Atomowej.",
+      "nocleg": "Hiroszima, hotel biznesowy",
       "transport": "Autokar, 1 kierowca",
       "km": "435",
       "czas_h": "ok. 6",
-      "miejsca": "nagasaki,yamaguchi,hiroshima",
+      "miejsca": "isahaya,yamaguchi,hiroshima",
       "status": "czasy: szacunek; godziny muzeum i Msza do weryfikacji",
       "posilki": {
         "sniadanie": {
@@ -583,7 +583,7 @@
       "kraj": "Japonia",
       "miejsce": "Hiroszima → Miyajima → Himeji → Osaka",
       "program": "Msza ok. 7:00 w Katedrze Pokoju Świata w Hiroszimie. Miyajima ok. 9:00–11:00 (prom 10 min, chram Itsukushima). Zamek Himeji po południu. Wieczorem Osaka, początek bazy (noc 1/2).",
-      "nocleg": "Osaka 1/2",
+      "nocleg": "Osaka, Shin-Osaka Youth Hostel 1/2",
       "transport": "Autokar + krótki prom na Miyajimę",
       "km": "350",
       "czas_h": "ok. 5,25",
@@ -618,7 +618,7 @@
       "kraj": "Japonia",
       "miejsce": "Osaka, wypad do Kioto",
       "program": "Fushimi Inari o świcie, Kiyomizu-dera. Miejsce wielkiego męczeństwa 1619 nad Kamo. Msza 13:30 w katedrze Kawaramachi (św. Franciszka Ksawerego) — liturgiczne zakończenie drogi Ksawerego. Wieczorem Gion, ewentualnie Takatsuki, powrót do Osaki.",
-      "nocleg": "Osaka 2/2",
+      "nocleg": "Osaka, Shin-Osaka Youth Hostel 2/2",
       "transport": "Autokar",
       "km": "",
       "czas_h": "ok. 1 h w każdą stronę",
@@ -775,7 +775,7 @@
       "lat": 38.3683,
       "lng": 141.0614,
       "typ": "zwiedzanie",
-      "dni": "3.08",
+      "dni": "4.08 (A) / 3.08 (B)",
       "opis": "Jedna z trzech klasycznych „najpiękniejszych scenerii” Japonii i pierwszy katolicki przystanek pętli. Tu zaczyna się rama „od Ignacego do Ksawerego”: katecheza o poselstwie Hasekury Tsunenagi do Rzymu. Cisza za ofiary tsunami z 11 marca 2011 r. (region Tōhoku).",
       "zwiedzamy": "Zuiganji, pawilon Godaidō, widok na zatokę, katecheza o Hasekurze. W wariancie 1: 9:45–11:30.",
       "zdjecie_url": "https://commons.wikimedia.org/wiki/Special:FilePath/A_tiny_island_of_Matsushima.jpg?width=1200",
@@ -814,7 +814,7 @@
       "lat": 39.7978,
       "lng": 140.1503,
       "typ": "sanktuarium",
-      "dni": "3.08 (ścieżka A)",
+      "dni": "3.08 (ścieżka A), Msza 13:30",
       "opis": "Sanktuarium Matki Bożej z Akity (Seitai Hoshikai) na wzgórzu Yuzawadai — miejsce objawień z 1973 r. i figury Maryi, która płakała. Główny maryjny punkt pielgrzymki: tu zawierzamy grupę Maryi przed ŚDM.",
       "zwiedzamy": "Msza grupowa (za zgodą sióstr), zawierzenie Niepokalanej. Wariant awaryjny: kościół św. Augustyna w Akicie i modlitwa w Ogrodzie Maryi, jeśli będzie otwarty. W wariancie 4 (gdy siostry odmówią) ten punkt odpada na rzecz Sendai.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Sakura_Matsuri_in_Senshu_Park_20190421a.jpg/1280px-Sakura_Matsuri_in_Senshu_Park_20190421a.jpg",
@@ -854,7 +854,7 @@
       "lng": 139.5987,
       "typ": "zwiedzanie",
       "dni": "4.08 (ścieżka A)",
-      "opis": "Mauzoleum Tokugawy Ieyasu, pierwszego szoguna, który rozpoczął systematyczne prześladowania katolików. W ścieżce A przystanek w drodze z Akity nad jezioro Yamanaka: ok. 15:00–16:30, przed zamknięciem o 17:00. Nocleg w Nikkō. W ścieżce B Nikkō odpada.",
+      "opis": "Mauzoleum Tokugawy Ieyasu, pierwszego szoguna, który rozpoczął systematyczne prześladowania katolików. W ścieżce A 4.08 po Matsushimie: ok. 15:15–16:30, przed zamknięciem o 17:00. Nocleg w Hotelu Iroha naprzeciw Tōshōgū. W ścieżce B Nikkō odpada.",
       "zwiedzamy": "Tōshōgū (Yōmeimon i teren chramu), katecheza o Ieyasu i zakazie chrześcijaństwa.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Nikko_Toshogu_Yomeimon_Gate_2024.jpg/1280px-Nikko_Toshogu_Yomeimon_Gate_2024.jpg",
       "zdjecie_zrodlo": "Jpatokal — CC BY-SA 4.0, Wikimedia Commons",
@@ -1178,7 +1178,7 @@
       "lng": 129.8777,
       "typ": "nocleg",
       "dni": "12–17.08",
-      "opis": "Główna baza zachodniej Japonii: pięć nocy (12–17.08), zamiast zmieniać hotele i jechać shinkansenem 16.08 w szczycie powrotów po Obonie. Stąd wypadają Sotome, Unzen i Shimabara. Trzy równoległe zapytania: ośrodek Hiyoshi lub gościna kościelna; hotele w Isahaya/Ōmura; hotele w mieście z bezpłatną anulacją.",
+      "opis": "Główna baza zachodniej Japonii: pięć nocy (12–17.08), zamiast zmieniać hotele i jechać shinkansenem 16.08 w szczycie powrotów po Obonie. Stąd wypadają Sotome, Unzen i Shimabara. Baza noclegowa to ośrodek NIYE w Isahaya (26 km), a w razie odmowy — hotele w mieście.",
       "zwiedzamy": "Punkt wypadowy 13–16.08. 16.08 po południu jest wolne — jedyny zaplanowany oddech w japońskiej części po ŚDM.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Nagasaki_Peace_Park_260915_08.jpg/1280px-Nagasaki_Peace_Park_260915_08.jpg",
       "zdjecie_zrodlo": "Aspere — CC BY-SA 4.0, Wikimedia Commons",
@@ -1371,7 +1371,7 @@
       "lng": 132.4536,
       "typ": "zwiedzanie",
       "dni": "17–18.08",
-      "opis": "Miasto bomby z 6 sierpnia 1945 r. Park Pokoju, Muzeum i Kopuła Genbaku. Nocleg 17/18.08 (jedna noc). 18.08 rano Msza ok. 7:00 w Katedrze Pokoju Świata. Opcja do weryfikacji: Nagatsuka, nowicjat jezuitów, w którym o. Pedro Arrupe ratował rannych.",
+      "opis": "Miasto bomby z 6 sierpnia 1945 r. Park Pokoju, Muzeum i Kopuła Genbaku. Nocleg 17/18.08 (jedna noc). 18.08 rano Msza ok. 7:00 w Katedrze Pokoju Świata., w którym",
       "zwiedzamy": "17.08 od popołudnia: Park Pokoju, muzeum, Kopuła. 18.08 Msza w katedrze, potem wyjazd na Miyajimę.",
       "zdjecie_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/A-Bomb_Dome.jpg",
       "zdjecie_zrodlo": "Dan Smith — CC BY-SA 2.5, Wikimedia Commons",
@@ -1537,7 +1537,7 @@
       "lat": 38.264,
       "lng": 140.876,
       "typ": "kosciol",
-      "dni": "3/4.08 (ścieżka B)",
+      "dni": "(poprzedni wariant)",
       "opis": "W ścieżce B nocleg 3.08 w Sendai. Miasto Date Masamune, który wysłał poselstwo Hasekury do Rzymu. Katedra Mototerakōji — Msza, jeśli nie odprawimy jej w Ōkago.",
       "zwiedzamy": "Muzeum Miasta Sendai, pomnik męczenników 1624, Msza w katedrze Mototerakōji, po południu Matsushima.",
       "zdjecie_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Catholic_Mototerakoji_Church.JPG/1280px-Catholic_Mototerakoji_Church.JPG",
@@ -1580,14 +1580,14 @@
     },
     {
       "id": "akita_noc",
-      "nazwa": "Akita — nocleg",
+      "nazwa": "Akita — Training Center w parku centralnym (nocleg)",
       "kraj": "Japonia",
-      "lat": 39.7186,
-      "lng": 140.1024,
+      "lat": 39.623795,
+      "lng": 140.206177,
       "typ": "nocleg",
       "dni": "3/4.08 (ścieżka A)",
-      "opis": "Nocleg po Mszy w sanktuarium (ścieżka A). 3–6.08 trwa Kantō Matsuri — noclegi w Akicie są wtedy najtrudniejsze do zdobycia; rezerwa Ōmagari albo Kakunodate. Wieczorem chętni mogą zobaczyć paradę Kantō, jeśli siły pozwolą.",
-      "zwiedzamy": "Nocleg; opcjonalnie parada Kantō wieczorem 3.08.",
+      "opis": "Ośrodek prefektury przy parku centralnym, ok. 14 km od centrum Akity: 200 miejsc, stołówka, parking dla autokarów. Dorośli ok. 2 080 ¥, młodzież 1 550 ¥ za noc. W noc Kantō Matsuri hotele w mieście są najtrudniejsze w roku, więc ośrodek rozwiązuje problem.",
+      "zwiedzamy": "Nocleg 3/4.08 (ścieżka A); wieczorem dla chętnych parada Kantō.",
       "zdjecie_url": "",
       "zdjecie_zrodlo": "",
       "szczegoly": {
@@ -1675,6 +1675,33 @@
       "zwiedzamy": "Msza ok. 10:30, potem plaża Haeundae.",
       "zdjecie_url": "",
       "zdjecie_zrodlo": ""
+    },
+    {
+      "id": "isahaya",
+      "nazwa": "Isahaya — ośrodek NIYE (baza 5 nocy)",
+      "kraj": "Japonia",
+      "lat": 32.923374,
+      "lng": 130.073242,
+      "typ": "nocleg",
+      "dni": "12–17.08",
+      "opis": "Państwowy ośrodek młodzieżowy (National Isahaya Youth Outdoor Learning Center), 280 miejsc w budynku głównym, ok. 26 km od Nagasaki. Dorośli 2 500 ¥ za noc, niepełnoletni 1 800 ¥ za cały pobyt. Sale wieloosobowe, stołówka. Wymaga zgłoszenia programu zajęć.",
+      "zwiedzamy": "Nocleg 12–17.08; codziennie ok. 40 min autokarem do Nagasaki.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": ""
+    },
+    {
+      "id": "tozanso",
+      "nazwa": "YMCA Tozanso — ośrodek chrześcijański (Gotemba)",
+      "kraj": "Japonia",
+      "lat": 35.297695,
+      "lng": 138.957306,
+      "typ": "nocleg",
+      "dni": "4/5.08 (ścieżka B)",
+      "wariant": true,
+      "opis": "Międzynarodowe centrum młodzieżowe YMCA, 419 miejsc, kaplica i aula, ok. 14 km od jeziora Yamanaka. Sale 6-os. ok. 5 280 ¥, domki 5 610–6 600 ¥ za osobę i noc, bez posiłków. Kontakt po angielsku możliwy.",
+      "zwiedzamy": "Nocleg 4/5.08 w ścieżce B; Eucharystia wieczorem w kaplicy.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": ""
     }
   ],
   "warianty": {
@@ -1739,16 +1766,16 @@
       ],
       "pokaz": [
         "okago",
-        "sendai"
+        "tozanso"
       ],
       "dni": {
         "2027-08-03": {
           "miejsce": "Iwaki → Matsushima → Ōkago → Sendai",
-          "program": "Jutrznia 6:45, wyjazd 7:30. Matsushima ok. 10:00–11:30 (jak w ścieżce A). Ōkago (Fujisawa, Ichinoseki) ok. 13:00–15:30: park i muzeum męczenników — ponad 300 chrześcijan zabitych na początku epoki Edo, „Shimabara Tōhoku”. Kaplica Cruz Hall jest na górze (ponad 300 stromych stopni) — kto nie da rady, zostaje przy muzeum. Msza w Ōkago albo w Sendai. Hotel w Sendai ok. 17:30.",
-          "nocleg": "Sendai",
-          "km": "180 + 90 + 100",
+          "program": "Jutrznia 6:45, wyjazd 7:30. Matsushima ok. 10:00–11:30 (Zuiganji, Godaidō, katecheza o Hasekurze). Ōkago (Fujisawa, Ichinoseki) ok. 13:00–15:30: park i muzeum męczenników — ponad 300 chrześcijan zabitych na początku epoki Edo, „Shimabara Tōhoku”. Kaplica Cruz Hall jest na górze (ponad 300 stromych stopni) — kto nie da rady, zostaje przy muzeum. Modlitwa za męczenników. Wieczorem Eucharystia ok. 18:30 w kościele w Shiogamie, nocleg w ośrodku Matsushima Nature Retreat (Higashi-Matsushima).",
+          "nocleg": "Matsushima Nature Retreat (ośrodek publiczny, 160 miejsc)",
+          "km": "180 + 90 + 105",
           "czas_h": "ok. 5 jazdy",
-          "miejsca": "iwaki,matsushima,zuiganji,okago,sendai",
+          "miejsca": "iwaki,matsushima,zuiganji,okago",
           "status": "Msza i hotel do uzgodnienia; muzeum 9:00–16:00, w poniedziałki zamknięte (3.08 to wtorek)",
           "posilki": {
             "sniadanie": {
@@ -1764,10 +1791,10 @@
               "min": 30
             },
             "kolacja": {
-              "gdzie": "hotel w Sendai",
-              "jak": "restauracja",
-              "od": "18:30",
-              "min": 60
+              "gdzie": "ośrodek (stołówka)",
+              "jak": "stołówka",
+              "od": "19:30",
+              "min": 45
             }
           },
           "sens": "Od zatoki Matsushima do wioski męczenników Ōkago — wierność pod prześladowaniem."
@@ -1775,11 +1802,11 @@
         "2027-08-04": {
           "kraj": "Japonia",
           "miejsce": "Sendai → Yamanakako (Fuji dla chętnych)",
-          "program": "Śniadanie 5:15, wyjazd 6:00. Sendai–Yamanakako ok. 470 km (ok. 6–6,5 h z przerwami). Ok. 12:30 nad jeziorem. Chętni na Fuji (decyzja „Fuji”): autokar na 5. stację szlaku Yoshida, wyjście ok. 13:30, nocleg w schronisku na 7.–8. stacji. Reszta: popołudnie nad jeziorem albo Tokio (decyzja „Kto nie wchodzi na Fuji”). Nikkō w tej ścieżce odpada.",
-          "nocleg": "Yamanakako; chętni — schronisko na Fuji",
-          "km": "ok. 470",
+          "program": "Jutrznia i śniadanie 5:15, wyjazd 6:00. Higashi-Matsushima–Yamanakako ok. 480 km (ok. 6–6,5 h z przerwami). Ok. 12:30 nad jeziorem. Chętni na Fuji (decyzja „Fuji”): autokar na 5. stację szlaku Yoshida, wyjście ok. 13:30, nocleg w schronisku Taishikan na 8. stacji. Reszta: popołudnie nad jeziorem albo Tokio (decyzja „Kto nie wchodzi na Fuji”). Wieczorem Eucharystia w kaplicy YMCA Tozanso, tam nocleg. Nikkō w tej ścieżce odpada.",
+          "nocleg": "YMCA Tozanso, Gotemba (ośrodek chrześcijański z kaplicą, 14 km od jeziora); chętni — schronisko Taishikan",
+          "km": "ok. 480",
           "czas_h": "ok. 6–6,5 z przerwami",
-          "miejsca": "sendai,yamanaka",
+          "miejsca": "yamanaka,tozanso",
           "status": "km: szacunek; hotel nad jeziorem i schronisko do rezerwacji",
           "posilki": {
             "sniadanie": {
@@ -1805,10 +1832,10 @@
         },
         "2027-08-05": {
           "miejsce": "Yamanakako → Haneda → Gimpo → Seul",
-          "program": "Chętni: wschód słońca na szczycie ok. 4:45, zejście na 5. stację do ok. 11:00, autokar nad jezioro. Pozostali: Msza u sióstr salezjanek na odpust Matki Bożej Śnieżnej (albo w Tokio — decyzja „Kto nie wchodzi na Fuji”). Wyjazd wszystkich ok. 12:30, Haneda ok. 15:00, wieczorny lot do Gimpo (jak w ścieżce A), hotel w Mapo ok. 23:30.",
+          "program": "Chętni: wschód słońca na szczycie ok. 4:45, zejście na 5. stację do ok. 11:00, autokar nad jezioro. Pozostali: jutrznia w Tozanso, przedpołudnie nad jeziorem. Ok. 12:00 Eucharystia u sióstr salezjanek na odpust Matki Bożej Śnieżnej — już razem z wchodzącymi (wyjątek od rytmu: wieczorem jesteśmy w samolocie). Wyjazd ok. 13:15 (obiad bento w autokarze), Haneda ok. 15:30, wieczorny lot do Gimpo (jak w ścieżce A), hotel w Mapo ok. 23:30.",
           "km": "ok. 130",
           "czas_h": "ok. 2–2,5",
-          "miejsca": "yamanaka,haneda,gimpo,mapo",
+          "miejsca": "tozanso,yamanaka,haneda,gimpo,mapo",
           "posilki": {
             "sniadanie": {
               "gdzie": "hotel nad jeziorem / schronisko",
@@ -1817,10 +1844,10 @@
               "min": 40
             },
             "obiad": {
-              "gdzie": "nad jeziorem Yamanaka",
-              "jak": "restauracja",
-              "od": "11:30",
-              "min": 45
+              "gdzie": "w autokarze na Hanedę",
+              "jak": "bento",
+              "od": "13:15",
+              "min": 20
             },
             "kolacja": {
               "gdzie": "Haneda, strefa odlotów",
@@ -1895,6 +1922,22 @@
       "opcja": ""
     },
     {
+      "id": "noclegi_wschod",
+      "opcja_id": "osrodki",
+      "efekt": "",
+      "domyslna": true,
+      "decyzja": "",
+      "opcja": ""
+    },
+    {
+      "id": "noclegi_wschod",
+      "opcja_id": "hotele",
+      "efekt": "",
+      "domyslna": false,
+      "decyzja": "",
+      "opcja": ""
+    },
+    {
       "id": "sen",
       "opcja_id": "standard",
       "efekt": "",
@@ -1914,15 +1957,15 @@
       "id": "nagasaki",
       "opcja_id": "standard",
       "efekt": "",
-      "domyslna": true,
+      "domyslna": false,
       "decyzja": "",
       "opcja": ""
     },
     {
       "id": "nagasaki",
-      "opcja_id": "tani",
-      "efekt": "nagasaki_tani",
-      "domyslna": false,
+      "opcja_id": "isahaya",
+      "efekt": "",
+      "domyslna": true,
       "decyzja": "",
       "opcja": ""
     },
@@ -2120,9 +2163,17 @@
     },
     {
       "id": "hotele_zachod",
-      "opcja_id": "standard",
+      "opcja_id": "hostel",
       "efekt": "",
       "domyslna": true,
+      "decyzja": "",
+      "opcja": ""
+    },
+    {
+      "id": "hotele_zachod",
+      "opcja_id": "standard",
+      "efekt": "",
+      "domyslna": false,
       "decyzja": "",
       "opcja": ""
     },

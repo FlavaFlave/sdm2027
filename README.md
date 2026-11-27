@@ -295,3 +295,12 @@ Arkusz: <https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42L
 - **Potencjał zbiórki** [szacunek, 0–100]: 60% z liczby niedzielnych Mszy, 40% z ceny m² w okolicy. Rozliczenie wydarzenia ma pole „Osób na Mszy”, żeby sprawdzić wskaźnik na prawdziwych wynikach.
 - Mapa parafii w zakładce Śpiew i parafie: kolor = status, liczba = ranking, wielkość = potencjał, złota obwódka = mamy termin; filtry i przyciski Zaplanuj / Szczegóły / Nawiguj.
 - Nowa wersja Excela od Groka: `python3 narzedzia/parafie_json.py plik.xlsx data/parafie.json` (ID parafii się nie zmieniają, więc nasze statusy zostają).
+
+---
+
+## Etap 15 (27.11.2026) — Akita 13:30, noclegi grupowe, kościoły i biskupi
+
+- Ścieżka A: 3.08 Iwaki → Akita prosto (sanktuarium przyjmuje Msze pielgrzymek tylko o 9:30, 10:00, 13:00, 13:30 — wybrana 13:30), 4.08 Akita → Matsushima → Nikkō.
+- Kosztorys zakłada, że tanie noclegi się udadzą: Isahaya NIYE (Nagasaki), Shin-Osaka Youth Hostel, hotel biznesowy w Hiroszimie, ośrodki/hotele grupowe na wschodzie (nowa decyzja „Noclegi na wschodzie”). Hotele zostają jako opcje zapasowe w Decyzjach. Usunięte: Hiyoshi, Nagatsuka, Centrum Katolickie w Nagasaki.
+- `data/kontakty.json` (z Excelów Groka): 69 kościołów, 32 noclegi grupowe, 12 biskupów. Nowa zakładka „Kościoły i noclegi” ze statusami rozmów (karta „Kontakty” w prywatnym arkuszu) i warstwy ✝/🛏 na mapach organizatorów.
+- Nowa wersja Excela: `python3 narzedzia/kontakty_json.py koscioly.xlsx noclegi.xlsx data/kontakty.json`.

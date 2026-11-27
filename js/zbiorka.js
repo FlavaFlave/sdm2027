@@ -23,6 +23,7 @@ const TABS = {
     "Wspólnoty neokatechumenalne", "Status", "Kontakt", "Uwagi", "Źródło", "Zmieniono", "Ranking", "Uzasadnienie"],
   "Darczyńcy": ["ID", "Nazwa", "Typ", "Kontakt", "Prowadzi", "Etap", "Potencjał", "Następny krok", "Termin", "Uwagi", "Zmieniono"],
   Datki: ["ID", "Data", "Darczyńca ID", "Darczyńca", "Kwota", "Status", "Przeznaczenie", "Odbiorcy", "Uwagi", "Zmieniono"],
+  Kontakty: ["ID", "Rodzaj", "Nazwa", "Status", "Kto", "Notatka", "Zmieniono"],
 };
 const TYPY = ["Msza ze śpiewem", "Koncert", "Świadectwo", "Wystawa AR (Kolbe)", "Wyjazd (inna diecezja)"];
 const STATUS_W = ["planowane", "potwierdzone", "odbyło się", "odwołane"];
@@ -104,6 +105,13 @@ async function deleteRow(tab, id) {
   if (st.mode === "local") saveLocal();
   return true;
 }
+
+/* ---------- dla innych zakładek (Kontakty) ---------- */
+export function zbRow(tab, id) { return (st.tabs[tab] || []).find((r) => r.ID === id); }
+export function zbReady() { return st.loaded; }
+export function zbSave(tab, row) { return saveRow(tab, row); }
+const zbListeners = [];
+export function onZbRender(fn) { zbListeners.push(fn); }
 
 /* ---------- pomocnicze ---------- */
 const yes = (v) => /^(tak|true|1|x|✓)$/i.test(String(v || "").trim());
@@ -190,7 +198,7 @@ export function ledger() {
 }
 
 /* ---------- formularz w okienku ---------- */
-function field(f, v) {
+export function field(f, v) {
   const val = v == null ? "" : String(v);
   const id = "zbf-" + f.k.replace(/\W+/g, "_");
   let input;
@@ -219,7 +227,7 @@ function readForm(root) {
   });
   return out;
 }
-function modal(title, bodyHtml, { onSave, onDelete, saveLabel = "Zapisz", wide = false, onMount } = {}) {
+export function modal(title, bodyHtml, { onSave, onDelete, saveLabel = "Zapisz", wide = false, onMount } = {}) {
   const wrap = document.createElement("div");
   wrap.className = "modal-back";
   wrap.innerHTML = `<div class="modal zb-modal ${wide ? "wide" : ""}" role="dialog" aria-modal="true" aria-label="${escapeHtml(title)}">
@@ -814,7 +822,7 @@ function renderZbiorka() {
     </table></div>`;
 }
 
-export function renderAll() { renderSpiew(); renderZbiorka(); }
+export function renderAll() { renderSpiew(); renderZbiorka(); zbListeners.forEach((f) => { try { f(); } catch (e) { console.warn(e); } }); }
 
 /* ---------- zdarzenia ---------- */
 function bind(root) {

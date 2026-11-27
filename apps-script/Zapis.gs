@@ -185,6 +185,7 @@ var ZB_COLS = {
               'Wspólnoty neokatechumenalne', 'Status', 'Kontakt', 'Uwagi', 'Źródło', 'Zmieniono', 'Ranking', 'Uzasadnienie'],
   'Darczyńcy': ['ID', 'Nazwa', 'Typ', 'Kontakt', 'Prowadzi', 'Etap', 'Potencjał', 'Następny krok', 'Termin', 'Uwagi', 'Zmieniono'],
   'Datki': ['ID', 'Data', 'Darczyńca ID', 'Darczyńca', 'Kwota', 'Status', 'Przeznaczenie', 'Odbiorcy', 'Uwagi', 'Zmieniono'],
+  'Kontakty': ['ID', 'Rodzaj', 'Nazwa', 'Status', 'Kto', 'Notatka', 'Zmieniono'],
 };
 /** Co może kod skarbnika (młodzi rozliczający niedzielę): bez darczyńców. */
 var ZB_SKARBNIK = { 'Osoby': true, 'Wydarzenia': true, 'Parafie': false };

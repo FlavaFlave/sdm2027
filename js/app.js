@@ -12,6 +12,7 @@ import {
 import { validateDays, dayChecksHtml, mealsHtml, renderFlags } from "./checks.js";
 import { setAppUrl, fetchTables, post, hasApp, askCred } from "./zapis.js";
 import { initZbiorka, setCostInfo } from "./zbiorka.js";
+import { initKontakty, drawContactLayers, renderKontakty } from "./kontakty.js";
 import { setDetailState, bindDayClicks, openDay } from "./details.js";
 import { tileHtml, bestPhoto } from "./tiles.js";
 import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace, legendHtml } from "./maps.js";
@@ -802,6 +803,7 @@ async function main() {
   renderLogistyka(data);
   renderChecklist(data.checklista || [], data.meta);
   initZbiorka(data.meta.zapisAppUrl || "");
+  initKontakty(choices).then(() => drawContactLayers(getMaps(), choices));
   $("#legend-all").innerHTML = legendHtml();
 
   const lastMapPlaces = { all: [], jp: [], kr: [] };
@@ -858,6 +860,8 @@ async function main() {
     updateMap("map-all", vis, lines.all, mo);
     updateMap("map-jp", jpVis, lines.jp, mo);
     updateMap("map-kr", krVis, lines.kr, mo);
+    drawContactLayers(getMaps(), choices);
+    renderKontakty(choices);
     lastMapPlaces.all = vis;
     lastMapPlaces.jp = jpVis;
     lastMapPlaces.kr = krVis;

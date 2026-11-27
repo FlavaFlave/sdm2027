@@ -7,7 +7,7 @@
 export const N_GROUP = 90;
 /** Zapas, gdy model nie podaje fuji_na_osobe. */
 export const FUJI_PER = 1500;
-export const CHOICE_IDS = ["petla", "przylot", "sen", "nagasaki", "seul_stawka", "pakiet", "fuji", "sklad", "biuro", "polisa", "rezerwa",
+export const CHOICE_IDS = ["petla", "przylot", "noclegi_wschod", "sen", "nagasaki", "seul_stawka", "pakiet", "fuji", "sklad", "biuro", "polisa", "rezerwa",
   "hotele_zachod", "posilki", "kadra_lok", "esim", "przewoznik", "nagasaki_miasto", "nie_fuji"];
 /** Organizatorzy (do przypisywania zadań i podpisu zmian). */
 export const ORGANIZATORZY = ["Artur", "Jakub Ś.", "Jakub Ż.", "Staszek", "Robert", "Kinga", "Dorota", "Kasia", "Judyta", "Basia"];

@@ -259,8 +259,8 @@ export function focusMap(elId) {
 }
 
 export function eastLine(choices) {
-  if (choices.petla === "B") return ["narita", "iwaki", "matsushima", "okago", "sendai", "yamanaka", "haneda"];
-  return ["narita", "iwaki", "matsushima", "akita", "akita_noc", "nikko", "yamanaka", "haneda"];
+  if (choices.petla === "B") return ["narita", "iwaki", "matsushima", "okago", "tozanso", "yamanaka", "haneda"];
+  return ["narita", "iwaki", "akita", "akita_noc", "matsushima", "nikko", "yamanaka", "haneda"];
 }
 
 export function hiddenShown(warianty, effects, choices) {
@@ -287,8 +287,8 @@ export function visiblePlaces(places, warianty, effects, choices) {
 
 export function routeLines(choices) {
   const east = eastLine(choices);
-  const west = ["hakata", "tabira", "hirado", "nagasaki", "yamaguchi", "hiroshima", "miyajima", "himeji", "osaka", "fushimi", "kix"];
-  const westJp = ["hakata", "tabira", "hirado", "nagasaki", "unzen", "yamaguchi", "hiroshima", "miyajima", "himeji", "osaka", "fushimi", "kiyomizu", "kix"];
+  const west = ["hakata", "tabira", "hirado", "nagasaki", "isahaya", "yamaguchi", "hiroshima", "miyajima", "himeji", "osaka", "fushimi", "kix"];
+  const westJp = ["hakata", "tabira", "hirado", "nagasaki", "isahaya", "unzen", "yamaguchi", "hiroshima", "miyajima", "himeji", "osaka", "fushimi", "kiyomizu", "kix"];
   const kr = ["gimpo", "mapo", "seosomun", "myeongdong", "sangam", "seongnam", "jeoldusan", "saenamteo", "solmoe", "jwadong", "haeundae", "gamcheon", "jagalchi", "prom"];
   const all = [
     { ids: ["waw", "doha", "narita"], color: "#c6a15b", dash: "6 7" },

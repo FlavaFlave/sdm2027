@@ -1,5 +1,5 @@
 /* Offline dla strony jadących: sieć najpierw, a bez internetu — ostatnia zapisana wersja. */
-const CACHE = "sdm2027-pielgrzym-v6";
+const CACHE = "sdm2027-pielgrzym-v7";
 const CORE = [
   "./", "index.html", "css/style.css", "css/pielgrzym.css",
   "js/pielgrzym.js", "js/util.js", "js/cost.js", "js/details.js", "js/checks.js", "js/tiles.js", "js/icons.js", "js/maps.js",

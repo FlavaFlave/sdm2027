@@ -2,7 +2,7 @@
   "meta": {
     "tytul": "ŚDM 2027 — Japonia i Korea",
     "podtytul": "Strona organizatorów pielgrzymki",
-    "wersja_planu": "26.11.2026 — ścieżki A/B, przylot do Seulu 5.08",
+    "wersja_planu": "27.11.2026 — Akita 13:30, noclegi grupowe",
     "daty": "1–21 sierpnia 2027",
     "osob": 90,
     "cena_bazowa": 16170,
@@ -286,7 +286,7 @@
       "kontakt": "do ustalenia",
       "cena_os_noc": "",
       "status": "planowane",
-      "uwagi": "A: Akita w noc Kantō Matsuri — najtrudniejsza noc w roku (rezerwa Ōmagari, Kakunodate). B: Sendai."
+      "uwagi": "A: Training Center w parku centralnym (200 os., parking dla autokarów, ok. 2 080 ¥). B: Matsushima Nature Retreat (160 os., ok. 600 ¥)."
     },
     {
       "miasto": "A: Nikkō (Kinugawa) / B: Yamanakako",
@@ -296,7 +296,7 @@
       "kontakt": "do ustalenia",
       "cena_os_noc": "",
       "status": "planowane",
-      "uwagi": "B: chętni na Fuji śpią w schronisku na 7.–8. stacji."
+      "uwagi": "A: Hotel Iroha (100 os., ok. 8 000 ¥ z 2 posiłkami). B: YMCA Tozanso (419 os., kaplica, ok. 5 300–6 600 ¥); chętni na Fuji — schronisko Taishikan."
     },
     {
       "miasto": "Seul, Mapo",
@@ -346,7 +346,7 @@
       "kontakt": "do ustalenia",
       "cena_os_noc": "ok. 14–20 tys. ¥ albo kościelne ¥4 500",
       "status": "planowane",
-      "uwagi": "Trzy zapytania naraz do 15.12.2026: ośrodek młodzieżowy Hiyoshi lub gościna kościelna; hotele w Isahaya/Ōmura; hotele w mieście z bezpłatną anulacją. Tani nocleg może obniżyć całość do ok. 13 600 zł/os. Obiekty kościelne u Artura dawały oszczędność rzędu 630 zł/os."
+      "uwagi": "Isahaya NIYE (280 os., 26 km): 3 pytania przed rezerwacją — modlitwa, program, poniedziałek 16.08. Zapas: hotele w mieście (Obon!). Hiyoshi i Centrum Katolickie odpadają."
     },
     {
       "miasto": "Hiroszima",
@@ -356,7 +356,7 @@
       "kontakt": "do ustalenia",
       "cena_os_noc": "ok. 16–22 tys. ¥",
       "status": "planowane",
-      "uwagi": "Stawki z tabeli asystenta (bot). Termin zapytań: 28.02.2027."
+      "uwagi": "Hotel biznesowy. Nagatsuka zamknięta od 2025."
     },
     {
       "miasto": "Osaka (baza)",
@@ -366,7 +366,7 @@
       "kontakt": "do ustalenia",
       "cena_os_noc": "",
       "status": "planowane",
-      "uwagi": "Baza na wypad do Kioto i wylot z KIX. Termin: 28.02.2027."
+      "uwagi": "Shin-Osaka Youth Hostel (126 os., 3 300–3 900 ¥) — rezerwacje otwarte."
     },
     {
       "miasto": "Samolot (Doha)",
@@ -384,10 +384,10 @@
       "id": "petla",
       "decyzja": "Pierwsze dni w Japonii (2–5.08): ścieżka A z Akitą albo B bez sanktuarium",
       "opcja_id": "A",
-      "opcja": "Ścieżka A — siostry się zgadzają: Matsushima, Msza w Akicie, Nikkō, Yamanakako (noclegi Iwaki, Akita, Nikkō)",
+      "opcja": "Ścieżka A — siostry się zgadzają: Iwaki → Akita (Msza 13:30) → Matsushima → Nikkō → Yamanakako",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "Trzy długie dni w autokarze z rzędu po długim locie; 4.08 ok. 500 km. Tōshōgū ok. 1,5 h przed zamknięciem. Fuji odpada.",
+      "wplyw": "3.08 ok. 400 km prosto do Akity (sanktuarium przyjmuje Msze pielgrzymek o 9:30, 10:00, 13:00, 13:30); 4.08 ok. 500 km przez Matsushimę do Nikkō. Fuji odpada.",
       "termin": "po odpowiedzi sióstr (faks do 30.11.2026)",
       "domyslna": true,
       "rekomendacja": true,
@@ -404,7 +404,7 @@
       "id": "petla",
       "decyzja": "Pierwsze dni w Japonii (2–5.08): ścieżka A z Akitą albo B bez sanktuarium",
       "opcja_id": "B",
-      "opcja": "Ścieżka B — siostry odmawiają: Matsushima, Ōkago, Sendai, Fuji dla chętnych (noclegi Iwaki, Sendai, Yamanakako)",
+      "opcja": "Ścieżka B — siostry odmawiają: Matsushima, Ōkago, Fuji dla chętnych (noclegi: hotel Iwaki, ośrodek Matsushima, YMCA Tozanso)",
       "zmiany": "bus_wschod:-6000",
       "efekt": "sciezka_B",
       "wplyw": "Krótszy 3.08 (park męczenników Ōkago zamiast Akity), Nikkō odpada, 4.08 ok. 470 km pod Fuji. Mniej km łącznie [szacunek].",
@@ -461,6 +461,58 @@
       "tlo": ""
     },
     {
+      "id": "noclegi_wschod",
+      "decyzja": "Noclegi na wschodzie (2–5.08)",
+      "opcja_id": "osrodki",
+      "opcja": "Ośrodki i hotele grupowe (A: ośrodek w Akicie, Hotel Iroha w Nikkō; B: ośrodek Matsushima, YMCA Tozanso)",
+      "zmiany": "nocleg_wschod:=450",
+      "efekt": "",
+      "wplyw": "Ok. 450 zł na osobę za 3 noce [szacunek].",
+      "termin": "rezerwacje od lutego 2027 (ośrodki); Iroha i Tozanso już teraz",
+      "domyslna": true,
+      "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Noclegi 2/3–4/5.08. Ośrodki publiczne są bardzo tanie, ale mają reguły (godziny, sprzątanie, czasem zakaz działalności religijnej).",
+      "ograniczenia": "Iwaki 2.08 zawsze hotel (poniedziałek, przyjazd o północy). Ośrodki w Akicie i Matsushimie: zapytać o modlitwę grupową. Hotel Iroha i YMCA Tozanso nie mają tego problemu.",
+      "wplyw_inne": "Największa pojedyncza oszczędność w budżecie: tani nocleg obniża cenę o ok. 1 240 zł na osobę. Trasa się nie zmienia.",
+      "rekomendacja_tekst": "W budżecie trzymać hotele standard (ostrożnie), a równolegle zapytać o Hiyoshi i parafie. Jeśli tania opcja się potwierdzi, cena dla rodziców spada o ok. 1 200 zł.",
+      "plusy": "Wygodnie, realistyczna cena, pokoje dla rodzin i opiekunów.",
+      "minusy": "Ok. 1 800 zł na osobę za 5 nocy.",
+      "tlo": [
+        "Nagasaki to serce japońskiego chrześcijaństwa: męczennicy z 1597 r., ukryci chrześcijanie, którzy przez 250 lat bez księży zachowali wiarę, św. Maksymilian Kolbe, bomba atomowa 9.08.1945. Dlatego to nasza największa baza — pięć nocy w jednym miejscu, bez codziennego pakowania.",
+        "13–16.08 trwa w Japonii Obon — buddyjskie święto pamięci zmarłych, coś jak nasze Zaduszki połączone z wakacjami. Japończycy masowo jeżdżą wtedy do rodzin, więc hotele są pełne i droższe.",
+        "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
+        "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
+      ],
+      "wybrana": false
+    },
+    {
+      "id": "noclegi_wschod",
+      "decyzja": "Noclegi na wschodzie (2–5.08)",
+      "opcja_id": "hotele",
+      "opcja": "Hotele w miastach",
+      "zmiany": "nocleg_wschod:=600",
+      "efekt": "",
+      "wplyw": "Ok. 600 zł na osobę za 3 noce; w Akicie w czasie Kantō Matsuri trudno o 90 łóżek.",
+      "termin": "rezerwacje od lutego 2027 (ośrodki); Iroha i Tozanso już teraz",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Noclegi 2/3–4/5.08. Ośrodki publiczne są bardzo tanie, ale mają reguły (godziny, sprzątanie, czasem zakaz działalności religijnej).",
+      "ograniczenia": "Iwaki 2.08 zawsze hotel (poniedziałek, przyjazd o północy). Ośrodki w Akicie i Matsushimie: zapytać o modlitwę grupową. Hotel Iroha i YMCA Tozanso nie mają tego problemu.",
+      "wplyw_inne": "Największa pojedyncza oszczędność w budżecie: tani nocleg obniża cenę o ok. 1 240 zł na osobę. Trasa się nie zmienia.",
+      "rekomendacja_tekst": "W budżecie trzymać hotele standard (ostrożnie), a równolegle zapytać o Hiyoshi i parafie. Jeśli tania opcja się potwierdzi, cena dla rodziców spada o ok. 1 200 zł.",
+      "plusy": "Wygodnie, realistyczna cena, pokoje dla rodzin i opiekunów.",
+      "minusy": "Ok. 1 800 zł na osobę za 5 nocy.",
+      "tlo": [
+        "Nagasaki to serce japońskiego chrześcijaństwa: męczennicy z 1597 r., ukryci chrześcijanie, którzy przez 250 lat bez księży zachowali wiarę, św. Maksymilian Kolbe, bomba atomowa 9.08.1945. Dlatego to nasza największa baza — pięć nocy w jednym miejscu, bez codziennego pakowania.",
+        "13–16.08 trwa w Japonii Obon — buddyjskie święto pamięci zmarłych, coś jak nasze Zaduszki połączone z wakacjami. Japończycy masowo jeżdżą wtedy do rodzin, więc hotele są pełne i droższe.",
+        "W Nagasaki 15.08 wieczorem odbywa się Shōrō-nagashi: rodziny prowadzą ulicami łodzie z lampionami dla zmarłych, przy ogromnym huku petard. To niezwykłe przeżycie, ale wymaga pilnowania młodzieży.",
+        "Najtańsza opcja to miejski ośrodek Hiyoshi (dom przyrody dla grup szkolnych, 174 miejsca; 1 500 ¥ za noc dla dorosłych, 750 ¥ dla uczniów [fakt: cennik ośrodka]) albo gościna w parafiach. Warunki prostsze: sale, materace, wspólne łazienki."
+      ],
+      "wybrana": false
+    },
+    {
       "id": "sen",
       "decyzja": "Czy dokładamy „lepszy sen” pierwszej nocy",
       "opcja_id": "standard",
@@ -515,13 +567,13 @@
       "opcja": "Hotele w mieście albo w pobliskim Isahaya/Ōmura (ok. 14 400 ¥ za noc)",
       "zmiany": "",
       "efekt": "",
-      "wplyw": "To założenie bazowe kosztorysu na pięć nocy.",
-      "termin": "15.12.2026",
-      "domyslna": true,
-      "rekomendacja": true,
+      "wplyw": "Zapas, jeśli Isahaya odmówi (modlitwa, program albo zamknięcie 16.08). Ok. 1 800 zł na osobę za 5 nocy.",
+      "termin": "zapytanie do Isahaya teraz (rezerwacje otwarte)",
+      "domyslna": false,
+      "rekomendacja": false,
       "kontekst": "",
-      "opis": "W jakim typie noclegu mieszkamy przez pięć nocy w Nagasaki — i jaką cenę przyjmujemy w budżecie.",
-      "ograniczenia": "Czy w Obonie jest 90 miejsc i czy da się zapewnić osobne sale dla niepełnoletnich. Termin zapytań: 15.12.2026 (trzy zapytania naraz, z bezpłatną anulacją).",
+      "opis": "Gdzie śpimy przez 5 nocy w Nagasaki (12–17.08). Obon 13–16.08: hotele w mieście pełne i droższe.",
+      "ograniczenia": "Ośrodek Hiyoshi odpada (regulamin zakazuje działalności religijnej, grupy spoza miasta dopiero od 1.06.2027). Centrum Katolickie w Nagasaki nie prowadzi noclegów od 2020 r. Isahaya: przed rezerwacją zapytać o modlitwę grupową, program zajęć i poniedziałek 16.08.",
       "wplyw_inne": "Największa pojedyncza oszczędność w budżecie: tani nocleg obniża cenę o ok. 1 240 zł na osobę. Trasa się nie zmienia.",
       "rekomendacja_tekst": "W budżecie trzymać hotele standard (ostrożnie), a równolegle zapytać o Hiyoshi i parafie. Jeśli tania opcja się potwierdzi, cena dla rodziców spada o ok. 1 200 zł.",
       "plusy": "Wygodnie, realistyczna cena, pokoje dla rodzin i opiekunów.",
@@ -536,14 +588,14 @@
     {
       "id": "nagasaki",
       "decyzja": "Noclegi w Nagasaki (5 nocy, 12–17 sierpnia)",
-      "opcja_id": "tani",
-      "opcja": "Ośrodek Hiyoshi albo gościna parafialna (ok. 4 500 ¥ za noc)",
-      "zmiany": "nocleg_nagasaki:=562.5",
-      "efekt": "nagasaki_tani",
-      "wplyw": "W modelu nocleg w Nagasaki spada do 562,50 zł na osobę za cały pobyt. To główna dźwignia tańszego wariantu ceny dla rodziców.",
+      "opcja_id": "isahaya",
+      "opcja": "Ośrodek NIYE w Isahaya, 26 km od miasta (2 500 ¥ za noc, niepełnoletni 1 800 ¥ za cały pobyt)",
+      "zmiany": "nocleg_nagasaki:=250",
+      "efekt": "",
+      "wplyw": "Nocleg w Nagasaki spada z ok. 1 800 do ok. 250 zł na osobę za 5 nocy [szacunek, ze średnią dla 29 niepełnoletnich i pościelą]. Codziennie ok. 40 min autokarem w każdą stronę.",
       "termin": "15.12.2026",
-      "domyslna": false,
-      "rekomendacja": false,
+      "domyslna": true,
+      "rekomendacja": true,
       "kontekst": "",
       "opis": "W jakim typie noclegu mieszkamy przez pięć nocy w Nagasaki — i jaką cenę przyjmujemy w budżecie.",
       "ograniczenia": "Czy w Obonie jest 90 miejsc i czy da się zapewnić osobne sale dla niepełnoletnich. Termin zapytań: 15.12.2026 (trzy zapytania naraz, z bezpłatną anulacją).",
@@ -566,12 +618,12 @@
       "zmiany": "nocleg_nagasaki:=2500",
       "efekt": "",
       "wplyw": "W modelu nocleg w Nagasaki = 2500 zł na osobę za cały pobyt. Przedział ceny dla rodziców trzeba wtedy podnieść.",
-      "termin": "15.12.2026",
+      "termin": "zapytanie do Isahaya teraz (rezerwacje otwarte)",
       "domyslna": false,
       "rekomendacja": false,
       "kontekst": "",
-      "opis": "W jakim typie noclegu mieszkamy przez pięć nocy w Nagasaki — i jaką cenę przyjmujemy w budżecie.",
-      "ograniczenia": "Czy w Obonie jest 90 miejsc i czy da się zapewnić osobne sale dla niepełnoletnich. Termin zapytań: 15.12.2026 (trzy zapytania naraz, z bezpłatną anulacją).",
+      "opis": "Gdzie śpimy przez 5 nocy w Nagasaki (12–17.08). Obon 13–16.08: hotele w mieście pełne i droższe.",
+      "ograniczenia": "Ośrodek Hiyoshi odpada (regulamin zakazuje działalności religijnej, grupy spoza miasta dopiero od 1.06.2027). Centrum Katolickie w Nagasaki nie prowadzi noclegów od 2020 r. Isahaya: przed rezerwacją zapytać o modlitwę grupową, program zajęć i poniedziałek 16.08.",
       "wplyw_inne": "Największa pojedyncza oszczędność w budżecie: tani nocleg obniża cenę o ok. 1 240 zł na osobę. Trasa się nie zmienia.",
       "rekomendacja_tekst": "W budżecie trzymać hotele standard (ostrożnie), a równolegle zapytać o Hiyoshi i parafie. Jeśli tania opcja się potwierdzi, cena dla rodziców spada o ok. 1 200 zł.",
       "plusy": "Bezpiecznie dla budżetu, gdy tanie miejsca się wyczerpią.",
@@ -1128,17 +1180,40 @@
     {
       "id": "hotele_zachod",
       "decyzja": "Hotele w Hiroszimie i Osace",
-      "opcja_id": "standard",
-      "opcja": "Hotele w centrum",
-      "zmiany": "",
+      "opcja_id": "hostel",
+      "opcja": "Shin-Osaka Youth Hostel w Osace (126 miejsc) i hotel biznesowy w Hiroszimie",
+      "zmiany": "nocleg_osaka:=185; nocleg_hiroszima:=280",
       "efekt": "",
-      "wplyw": "Bez zmian względem bazy.",
+      "wplyw": "Osaka ok. 185 zł zamiast 760 zł za 2 noce, Hiroszima ok. 280 zł zamiast 450 zł [szacunek]. Hostel 5 min od stacji Shin-Osaka — dobry dojazd do Kioto i na lotnisko.",
       "termin": "31.01.2027",
       "domyslna": true,
       "rekomendacja": true,
       "kontekst": "",
       "opis": "Czy w Hiroszimie (1 noc) i Osace (2 noce) mieszkamy w centrum, czy taniej na obrzeżach.",
       "ograniczenia": "Blok ok. 45 pokoi; termin zapytań 31.01.2027.",
+      "wplyw_inne": "Ok. −480 zł na osobę [zgaduję]; dojazd 20–30 min dłuższy.",
+      "rekomendacja_tekst": "Zapytać równolegle o obie opcje.",
+      "plusy": "Blisko programu.",
+      "minusy": "Drożej.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "Po Obonie hotele w centrach są drogie. Na obrzeżach Osaki (Sakai, Higashi-Osaka) i w hotelach biznesowych jest taniej, a autokar i tak dowozi grupę."
+      ]
+    },
+    {
+      "id": "hotele_zachod",
+      "decyzja": "Hotele w Hiroszimie i Osace",
+      "opcja_id": "standard",
+      "opcja": "Hotele w centrum",
+      "zmiany": "",
+      "efekt": "",
+      "wplyw": "Bez zmian względem bazy.",
+      "termin": "31.01.2027",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "",
+      "opis": "Czy w Hiroszimie (1 noc) i Osace (2 noce) mieszkamy w centrum, czy taniej na obrzeżach.",
+      "ograniczenia": "Dom jezuitów Nagatsuka w Hiroszimie jest zamknięty od 03.2025. Ośrodek Kodomo-mura (650–1 330 ¥) jest ok. 1 h od centrum, a 17.08 to już ok. 435 km jazdy — dlatego hotel biznesowy.",
       "wplyw_inne": "Ok. −480 zł na osobę [zgaduję]; dojazd 20–30 min dłuższy.",
       "rekomendacja_tekst": "Zapytać równolegle o obie opcje.",
       "plusy": "Blisko programu.",
@@ -1161,7 +1236,7 @@
       "rekomendacja": false,
       "kontekst": "",
       "opis": "Czy w Hiroszimie (1 noc) i Osace (2 noce) mieszkamy w centrum, czy taniej na obrzeżach.",
-      "ograniczenia": "Blok ok. 45 pokoi; termin zapytań 31.01.2027.",
+      "ograniczenia": "Dom jezuitów Nagatsuka w Hiroszimie jest zamknięty od 03.2025. Ośrodek Kodomo-mura (650–1 330 ¥) jest ok. 1 h od centrum, a 17.08 to już ok. 435 km jazdy — dlatego hotel biznesowy.",
       "wplyw_inne": "Ok. −480 zł na osobę [zgaduję]; dojazd 20–30 min dłuższy.",
       "rekomendacja_tekst": "Zapytać równolegle o obie opcje.",
       "plusy": "Ok. −480 zł na osobę.",
@@ -1584,7 +1659,7 @@
     }
   ],
   "logistyka": {
-    "rytm": "Codziennie: jutrznia rano, Msza (celebruje kapłan grupy), krótka modlitwa wieczorna. Upał: zwiedzanie na zewnątrz do 11:00 i po 16:00, przerwa w klimatyzacji, woda i elektrolity w autokarze, nakrycia głowy; śledzić japońskie alerty upału. Podział grupy jest dopuszczalny tylko przy Fuji dla chętnych (ścieżka B) i przy kilku lotach do Seulu 5.08.",
+    "rytm": "Codziennie: jutrznia rano, Eucharystia wieczorem (celebruje kapłan grupy). Wyjątki: dni z lotem albo promem wieczorem (5.08, 11.08, 20.08) i Msze z Papieżem oraz w programie ŚDM. Upał: zwiedzanie na zewnątrz do 11:00 i po 16:00, przerwa w klimatyzacji, woda i elektrolity w autokarze, nakrycia głowy; śledzić japońskie alerty upału. Podział grupy jest dopuszczalny tylko przy Fuji dla chętnych (ścieżka B) i przy kilku lotach do Seulu 5.08.",
     "kierowcy": [
       "Japońskie limity czasu pracy kierowców są twarde — nie planujemy dłuższych dni bez drugiego kierowcy.",
       "2.08 transfer z Narity do Iwaki (przyjazd ok. 0:00): osobna załoga, inaczej 3.08 start dopiero ok. 9:15.",
@@ -1829,10 +1904,10 @@
       {
         "id": "nocleg_wschod",
         "grupa": "Noclegi",
-        "pozycja": "Noclegi 2/3, 3/4 i 4/5.08 (A: Iwaki, Akita, Nikkō; B: Iwaki, Sendai, Yamanakako)",
+        "pozycja": "Noclegi 2/3, 3/4 i 4/5.08 (A: hotel Iwaki, ośrodek w Akicie, Hotel Iroha w Nikkō; B: hotel Iwaki, ośrodek Matsushima, YMCA Tozanso)",
         "jednostka": "os",
-        "kwota": 600,
-        "zrodlo": "3 × ok. 200 zł/os [szacunek]; Akita w noc Kantō może być droższa.",
+        "kwota": 450,
+        "zrodlo": "[szacunek z pliku noclegów Groka, XI 2026] A: Iwaki ok. 200 zł + Akita ok. 50 zł + Iroha ok. 200 zł (z kolacją i śniadaniem); B: ok. 200 + 25 + 150 zł. Hotele zamiast ośrodków: decyzja „Noclegi na wschodzie”.",
         "status": "szacunek"
       },
       {
@@ -2006,8 +2081,8 @@
       "bagaz"
     ],
     "bez_rezerwy_uwaga": "Rezerwa kursowa liczy się tylko od pozycji jeszcze nieopłaconych i zależnych od kursu (JPY, KRW, USD). Bilety Qatar są kupione, polisa i materiały są w złotych.",
-    "fuji_na_osobe": 700,
-    "fuji_zrodlo": "[szacunek] schronisko z kolacją i śniadaniem ok. ¥14–20 tys., opłata 4 000 ¥, transfer na 5. stację, przewodnik/sprzęt → ok. ¥26–30 tys. ≈ 700 zł (kurs 0,025). Wcześniej 1 500 zł z shinkansenem 17–18.08 (już nieaktualne).",
+    "fuji_na_osobe": 550,
+    "fuji_zrodlo": "[szacunek] schronisko Taishikan 14 500 ¥ (niedz.–czw., z kolacją i śniadaniem) + opłata 4 000 ¥ + transfer i przewodnik ok. 3 500 ¥ → ok. 22 000 ¥ ≈ 550 zł (kurs 0,025).",
     "loty_rezygnacje": {
       "grupowe": 69,
       "imienne": 21,
@@ -2154,16 +2229,16 @@
       ],
       "pokaz": [
         "okago",
-        "sendai"
+        "tozanso"
       ],
       "dni": {
         "2027-08-03": {
           "miejsce": "Iwaki → Matsushima → Ōkago → Sendai",
-          "program": "Jutrznia 6:45, wyjazd 7:30. Matsushima ok. 10:00–11:30 (jak w ścieżce A). Ōkago (Fujisawa, Ichinoseki) ok. 13:00–15:30: park i muzeum męczenników — ponad 300 chrześcijan zabitych na początku epoki Edo, „Shimabara Tōhoku”. Kaplica Cruz Hall jest na górze (ponad 300 stromych stopni) — kto nie da rady, zostaje przy muzeum. Msza w Ōkago albo w Sendai. Hotel w Sendai ok. 17:30.",
-          "nocleg": "Sendai",
-          "km": "180 + 90 + 100",
+          "program": "Jutrznia 6:45, wyjazd 7:30. Matsushima ok. 10:00–11:30 (Zuiganji, Godaidō, katecheza o Hasekurze). Ōkago (Fujisawa, Ichinoseki) ok. 13:00–15:30: park i muzeum męczenników — ponad 300 chrześcijan zabitych na początku epoki Edo, „Shimabara Tōhoku”. Kaplica Cruz Hall jest na górze (ponad 300 stromych stopni) — kto nie da rady, zostaje przy muzeum. Modlitwa za męczenników. Wieczorem Eucharystia ok. 18:30 w kościele w Shiogamie, nocleg w ośrodku Matsushima Nature Retreat (Higashi-Matsushima).",
+          "nocleg": "Matsushima Nature Retreat (ośrodek publiczny, 160 miejsc)",
+          "km": "180 + 90 + 105",
           "czas_h": "ok. 5 jazdy",
-          "miejsca": "iwaki,matsushima,zuiganji,okago,sendai",
+          "miejsca": "iwaki,matsushima,zuiganji,okago",
           "status": "Msza i hotel do uzgodnienia; muzeum 9:00–16:00, w poniedziałki zamknięte (3.08 to wtorek)",
           "posilki": {
             "sniadanie": {
@@ -2179,18 +2254,18 @@
               "min": 30
             },
             "kolacja": {
-              "gdzie": "hotel w Sendai",
-              "jak": "restauracja",
-              "od": "18:30",
-              "min": 60
+              "gdzie": "ośrodek (stołówka)",
+              "jak": "stołówka",
+              "od": "19:30",
+              "min": 45
             }
           },
           "sens": "Od zatoki Matsushima do wioski męczenników Ōkago — wierność pod prześladowaniem.",
-          "uwagi": "Ścieżka B (siostry w Akicie odmówiły). Bez objazdu do Akity. Msza: zapytać kościół w Ōkago albo katedrę Mototerakōji w Sendai.",
+          "uwagi": "Ścieżka B (siostry w Akicie odmówiły). Ośrodek Matsushima Nature Retreat: 0225-90-4323, mtyagai@pref.miyagi.lg.jp; rezerwacja od lutego 2027; w poniedziałki zamknięty (3.08 to wtorek); ośrodek publiczny — zapytać o modlitwę grupową. Eucharystia: kościół w Shiogamie (022-362-3975).",
           "kierowcy": {
             "start": "07:00",
-            "koniec": "17:45",
-            "km": 370,
+            "koniec": "19:45",
+            "km": 380,
             "kierowcow": 2,
             "zaloga": "tohoku",
             "kraj": "jp"
@@ -2199,11 +2274,11 @@
         "2027-08-04": {
           "kraj": "Japonia",
           "miejsce": "Sendai → Yamanakako (Fuji dla chętnych)",
-          "program": "Śniadanie 5:15, wyjazd 6:00. Sendai–Yamanakako ok. 470 km (ok. 6–6,5 h z przerwami). Ok. 12:30 nad jeziorem. Chętni na Fuji (decyzja „Fuji”): autokar na 5. stację szlaku Yoshida, wyjście ok. 13:30, nocleg w schronisku na 7.–8. stacji. Reszta: popołudnie nad jeziorem albo Tokio (decyzja „Kto nie wchodzi na Fuji”). Nikkō w tej ścieżce odpada.",
-          "nocleg": "Yamanakako; chętni — schronisko na Fuji",
-          "km": "ok. 470",
+          "program": "Jutrznia i śniadanie 5:15, wyjazd 6:00. Higashi-Matsushima–Yamanakako ok. 480 km (ok. 6–6,5 h z przerwami). Ok. 12:30 nad jeziorem. Chętni na Fuji (decyzja „Fuji”): autokar na 5. stację szlaku Yoshida, wyjście ok. 13:30, nocleg w schronisku Taishikan na 8. stacji. Reszta: popołudnie nad jeziorem albo Tokio (decyzja „Kto nie wchodzi na Fuji”). Wieczorem Eucharystia w kaplicy YMCA Tozanso, tam nocleg. Nikkō w tej ścieżce odpada.",
+          "nocleg": "YMCA Tozanso, Gotemba (ośrodek chrześcijański z kaplicą, 14 km od jeziora); chętni — schronisko Taishikan",
+          "km": "ok. 480",
           "czas_h": "ok. 6–6,5 z przerwami",
-          "miejsca": "sendai,yamanaka",
+          "miejsca": "yamanaka,tozanso",
           "status": "km: szacunek; hotel nad jeziorem i schronisko do rezerwacji",
           "posilki": {
             "sniadanie": {
@@ -2239,10 +2314,10 @@
         },
         "2027-08-05": {
           "miejsce": "Yamanakako → Haneda → Gimpo → Seul",
-          "program": "Chętni: wschód słońca na szczycie ok. 4:45, zejście na 5. stację do ok. 11:00, autokar nad jezioro. Pozostali: Msza u sióstr salezjanek na odpust Matki Bożej Śnieżnej (albo w Tokio — decyzja „Kto nie wchodzi na Fuji”). Wyjazd wszystkich ok. 12:30, Haneda ok. 15:00, wieczorny lot do Gimpo (jak w ścieżce A), hotel w Mapo ok. 23:30.",
+          "program": "Chętni: wschód słońca na szczycie ok. 4:45, zejście na 5. stację do ok. 11:00, autokar nad jezioro. Pozostali: jutrznia w Tozanso, przedpołudnie nad jeziorem. Ok. 12:00 Eucharystia u sióstr salezjanek na odpust Matki Bożej Śnieżnej — już razem z wchodzącymi (wyjątek od rytmu: wieczorem jesteśmy w samolocie). Wyjazd ok. 13:15 (obiad bento w autokarze), Haneda ok. 15:30, wieczorny lot do Gimpo (jak w ścieżce A), hotel w Mapo ok. 23:30.",
           "km": "ok. 130",
           "czas_h": "ok. 2–2,5",
-          "miejsca": "yamanaka,haneda,gimpo,mapo",
+          "miejsca": "tozanso,yamanaka,haneda,gimpo,mapo",
           "posilki": {
             "sniadanie": {
               "gdzie": "hotel nad jeziorem / schronisko",
@@ -2251,10 +2326,10 @@
               "min": 40
             },
             "obiad": {
-              "gdzie": "nad jeziorem Yamanaka",
-              "jak": "restauracja",
-              "od": "11:30",
-              "min": 45
+              "gdzie": "w autokarze na Hanedę",
+              "jak": "bento",
+              "od": "13:15",
+              "min": 20
             },
             "kolacja": {
               "gdzie": "Haneda, strefa odlotów",
@@ -2874,22 +2949,22 @@
       }
     },
     "2027-08-03": {
-      "uwagi": "Ścieżka A. Msza w Akicie zależy od zgody sióstr — sanktuarium jest w sierpniu zamknięte. Prośba faksem (018-868-4728) do 30.11.2026, w dwóch stopniach: Msza, a jeśli nie — sama modlitwa grupy na terenie. Odmowa obu = ścieżka B. 3–6.08 trwa Kantō Matsuri: noclegi w Akicie są wtedy najtrudniejsze w roku (rezerwa: Ōmagari albo Kakunodate).",
+      "uwagi": "Ścieżka A. Godziny Mszy dla pielgrzymek w sanktuarium: 9:30, 10:00, 13:00, 13:30 (wg katalogu kościołów, XI 2026) — dlatego Akita jest 3.08 prosto z Iwaki, a Matsushima 4.08. Jeśli przejazd Iwaki–Akita trwa ponad 5 h 15 min, 13:30 przepada: wtedy wyjazd 7:00, co wymaga osobnej załogi na transfer z Narity 2.08. Sanktuarium: tel. 018-868-2139 (często nieodbierany), faks 018-868-4728. Ośrodek Training Center: 018-886-2822, a.toresen@lily.ocn.ne.jp; parking dla autokarów potwierdzony; ośrodek publiczny — zapytać, czy pozwala na modlitwę grupową. Kantō Matsuri 3–6.08: na paradę dojazd poza autokarem (kierowcy po pracy).",
       "kierowcy": {
         "start": "07:00",
-        "koniec": "19:00",
-        "km": 440,
+        "koniec": "17:00",
+        "km": 420,
         "kierowcow": 2,
         "zaloga": "tohoku",
         "kraj": "jp"
       }
     },
     "2027-08-04": {
-      "uwagi": "Ścieżka A. Najdłuższy przejazd pielgrzymki i trzeci dzień w autokarze z rzędu po długim locie. Jeśli korki albo przerwy się przeciągną, Tōshōgū skraca się do ok. 1 h — Nikkō zostaje (decyzja Jakuba z 26.11.2026). Km do przeliczenia z przewoźnikiem [szacunek: 120 km Akita–Kitakami + 385 km Kitakami–Nikkō z poprzedniego planu].",
+      "uwagi": "Ścieżka A. Najdłuższy przejazd pielgrzymki (ok. 500 km) — trasa z Akity do Nikkō i tak idzie przez okolice Sendai, więc Matsushima dokłada ok. 40 km [szacunek]. Jeśli korki, Tōshōgū skraca się do ok. 1 h; Nikkō zostaje (decyzja z 26.11.2026). Kościół w Nikkō ma Mszę raz w miesiącu i jest pewnie mały — Eucharystia w Imaichi albo w hotelu (zgoda diecezji Saitama). Hotel Iroha: rezerwacja przez agencję tabiplan.co.jp.",
       "kierowcy": {
         "start": "06:45",
-        "koniec": "17:15",
-        "km": 505,
+        "koniec": "17:30",
+        "km": 520,
         "kierowcow": 2,
         "zaloga": "tohoku",
         "kraj": "jp"
@@ -2897,7 +2972,7 @@
       "bufory": [
         {
           "co": "Tōshōgū — ostatnie wejście",
-          "przyjazd": "15:00",
+          "przyjazd": "15:15",
           "odjazd": "16:30",
           "min_h": 1
         }
@@ -2957,7 +3032,7 @@
       ]
     },
     "2027-08-12": {
-      "uwagi": "Start drogi Ksawerego: Hirado (1550) → Yamaguchi (1551) → Kioto. Msza na Hirado do weryfikacji.",
+      "uwagi": "Start drogi Ksawerego: Hirado (1550) → Yamaguchi (1551) → Kioto. Msza na Hirado do weryfikacji. ISAHAYA NIYE (0957-25-9111): zanim zarezerwujemy, trzy pytania — czy wolno modlić się grupowo na terenie (ośrodek państwowy; miejski Hiyoshi ma zakaz działalności religijnej), czy przyjmą program „pielgrzymka historyczna” jako zajęcia (NIYE nie przyjmuje na sam nocleg) i czy poniedziałek 16.08 (dzień zamknięcia) przerywa pobyt. Rezerwacje na VIII 2027 otwarte. Odpada → hotele w Nagasaki (decyzja „Noclegi w Nagasaki”). Codziennie ok. 40 min autokarem w każdą stronę.",
       "kierowcy": {
         "start": "07:15",
         "koniec": "19:00",
@@ -3023,7 +3098,7 @@
       }
     },
     "2027-08-18": {
-      "uwagi": "Czasy z wcześniejszego planu (4,5 h) były zaniżone. Wyjazd ok. 8:15. Godziny Himeji do weryfikacji.",
+      "uwagi": "Czasy z wcześniejszego planu (4,5 h) były zaniżone. Wyjazd ok. 8:15. Godziny Himeji do weryfikacji. Shin-Osaka Youth Hostel: 126 miejsc, 06-6370-5427, shin-osaka@osaka-yha.or.jp; rezerwacje grupowe już otwarte — rezerwować teraz.",
       "kierowcy": {
         "start": "07:45",
         "koniec": "19:30",

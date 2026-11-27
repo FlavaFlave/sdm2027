@@ -1067,3 +1067,11 @@ body.modal-open { overflow: hidden; }
 .zb-parinfo p { margin: 4px 0; font-weight: 400; }
 #spiew-par { margin-top: 28px; }
 @media (max-width: 700px) { .zb-map { height: 420px; } }
+/* Kontakty: kościoły i noclegi na mapach */
+.kt-pin { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: #fff; color: #6b3fa0; font: 700 11px/1 var(--font-sans); border: 2px solid #8a94a6; box-shadow: 0 1px 3px rgba(0,0,0,.3); }
+.kt-bed { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 4px; background: #fff; font-size: 11px; border: 1px solid #b9b2a6; opacity: .75; }
+.kt-bed.on { border: 2px solid #1f4e79; opacity: 1; }
+.kt-table tr.kt-first td { border-top: 2px solid var(--line); }
+.kt-table tr.kt-plan td { background: #f2f6fb; }
+.kt-msze { max-width: 240px; }
+.leaflet-control-layers { font: 13px var(--font-sans); }
