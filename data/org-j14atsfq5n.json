@@ -2,7 +2,7 @@
   "meta": {
     "tytul": "ŚDM 2027 — Japonia i Korea",
     "podtytul": "Strona organizatorów pielgrzymki",
-    "wersja_planu": "27.11.2026 — Akita 13:30, noclegi grupowe",
+    "wersja_planu": "27.11.2026 (2) — ścieżki A/B/C, 2 przewodników",
     "daty": "1–21 sierpnia 2027",
     "osob": 90,
     "cena_bazowa": 16170,
@@ -53,7 +53,8 @@
       "bez_wieku_glowna": 9
     },
     "lista_url": "https://docs.google.com/spreadsheets/d/1SEGl2NcbZMEkPQN7qO5v2knHl6xCdRRdZCIlYKK3stg/edit",
-    "sheet_id": "1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs"
+    "sheet_id": "1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42LsPZhB-l0MGvs",
+    "cel_cena": 14000
   },
   "transport": [
     {
@@ -382,7 +383,7 @@
   "decyzje": [
     {
       "id": "petla",
-      "decyzja": "Pierwsze dni w Japonii (2–5.08): ścieżka A z Akitą albo B bez sanktuarium",
+      "decyzja": "Pierwsze dni (2–5.08): A z Akitą, B Japonia bez Akity, C od razu do Korei",
       "opcja_id": "A",
       "opcja": "Ścieżka A — siostry się zgadzają: Iwaki → Akita (Msza 13:30) → Matsushima → Nikkō → Yamanakako",
       "zmiany": "",
@@ -392,7 +393,7 @@
       "domyslna": true,
       "rekomendacja": true,
       "kontekst": "Ustalone 26.11.2026: przylot do Seulu 5.08 wieczorem (warunkowo), Nikkō w ścieżce A zostaje nawet na ok. 1,5 h, Fuji tylko dla chętnych.",
-      "opis": "Pierwsze dni od lądowania na Naricie do lotu do Seulu. Wybór zależy od odpowiedzi sióstr z Akity. W obu ścieżkach 5.08 jest Msza u sióstr salezjanek nad jeziorem Yamanaka na odpust Matki Bożej Śnieżnej i wieczorny lot do Seulu.",
+      "opis": "Co robimy między lądowaniem na Naricie 2.08 a ŚDM. A i B zostają w Japonii do 5.08 (lot do Seulu wieczorem), C leci do Seulu już 3.08 i ma w Korei dwa dni więcej.",
       "ograniczenia": "Faks do sióstr w Akicie (018-868-4728) do 30.11.2026, prośba w dwóch stopniach: Msza, a jeśli nie — modlitwa grupy na terenie. Zgoda = A, odmowa obu = B. W ścieżce A Fuji odpada, w ścieżce B odpada Nikkō.",
       "wplyw_inne": "",
       "rekomendacja_tekst": "",
@@ -402,12 +403,32 @@
     },
     {
       "id": "petla",
-      "decyzja": "Pierwsze dni w Japonii (2–5.08): ścieżka A z Akitą albo B bez sanktuarium",
+      "decyzja": "Pierwsze dni (2–5.08): A z Akitą, B Japonia bez Akity, C od razu do Korei",
       "opcja_id": "B",
-      "opcja": "Ścieżka B — siostry odmawiają: Matsushima, Ōkago, Fuji dla chętnych (noclegi: hotel Iwaki, ośrodek Matsushima, YMCA Tozanso)",
+      "opcja": "Ścieżka B — bez Akity, ale Japonia: Matsushima, Ōkago, Fuji dla chętnych (noclegi: hotel Iwaki, ośrodek Matsushima, YMCA Tozanso)",
       "zmiany": "bus_wschod:-6000",
       "efekt": "sciezka_B",
       "wplyw": "Krótszy 3.08 (park męczenników Ōkago zamiast Akity), Nikkō odpada, 4.08 ok. 470 km pod Fuji. Mniej km łącznie [szacunek].",
+      "termin": "po odpowiedzi sióstr (faks do 30.11.2026)",
+      "domyslna": false,
+      "rekomendacja": false,
+      "kontekst": "Ustalone 26.11.2026: przylot do Seulu 5.08 wieczorem (warunkowo), Nikkō w ścieżce A zostaje nawet na ok. 1,5 h, Fuji tylko dla chętnych.",
+      "opis": "Co robimy między lądowaniem na Naricie 2.08 a ŚDM. A i B zostają w Japonii do 5.08 (lot do Seulu wieczorem), C leci do Seulu już 3.08 i ma w Korei dwa dni więcej.",
+      "ograniczenia": "Faks do sióstr w Akicie (018-868-4728) do 30.11.2026, prośba w dwóch stopniach: Msza, a jeśli nie — modlitwa grupy na terenie. Zgoda = A, odmowa obu = B. W ścieżce A Fuji odpada, w ścieżce B odpada Nikkō.",
+      "wplyw_inne": "",
+      "rekomendacja_tekst": "",
+      "plusy": "",
+      "minusy": "",
+      "tlo": ""
+    },
+    {
+      "id": "petla",
+      "decyzja": "Pierwsze dni (2–5.08): A z Akitą, B Japonia bez Akity, C od razu do Korei",
+      "opcja_id": "C",
+      "opcja": "Ścieżka C — bez Akity, do Korei już 3.08: w Seulu pałac Gyeongbokgung, Bukchon i Gahoedong, Jeoldusan, Saenamteo i powitanie Papieża",
+      "zmiany": "bus_wschod:=13500; nocleg_wschod:=200; jedzenie_jp:=1237.5; korea_extra:=950",
+      "efekt": "sciezka_C",
+      "wplyw": "Odpadają Akita, Matsushima, Nikkō, Yamanaka i Fuji oraz ok. 1 300 km autokarem. 2.08 nocleg przy lotnisku Narita, 3.08 lot do Incheon (poza szczytem przylotów ŚDM). Wraca powitanie Papieża 5.08.",
       "termin": "po odpowiedzi sióstr (faks do 30.11.2026)",
       "domyslna": false,
       "rekomendacja": false,
@@ -418,7 +439,8 @@
       "rekomendacja_tekst": "",
       "plusy": "",
       "minusy": "",
-      "tlo": ""
+      "tlo": "",
+      "wybrana": false
     },
     {
       "id": "przylot",
@@ -445,7 +467,7 @@
       "decyzja": "Przylot do Seulu",
       "opcja_id": "6_rano",
       "opcja": "6.08 rano — tylko gdy 5.08 wieczorem zabraknie miejsc",
-      "zmiany": "nocleg_seul:=0; nocleg_wschod:+320",
+      "zmiany": "nocleg_seul:=0; nocleg_extra:=320",
       "efekt": "przylot_6",
       "wplyw": "Dodatkowa noc przy Hanedzie, pobudka ok. 5:00, przepada poranek 6.08 w Seulu; prosto na rejestrację pakietu.",
       "termin": "teraz: zapytanie grupowe do linii",
@@ -1296,15 +1318,39 @@
     },
     {
       "id": "kadra_lok",
-      "decyzja": "Przewodnik na miejscu",
-      "opcja_id": "pelny",
-      "opcja": "Zawodowy pilot-przewodnik na całość",
-      "zmiany": "",
+      "decyzja": "Przewodnicy w Japonii",
+      "opcja_id": "dwoje",
+      "opcja": "Dwóch przewodników przez całą Japonię — po jednym na autokar (minimum wg Jakuba)",
+      "zmiany": "kadra:=37280",
       "efekt": "",
-      "wplyw": "Bez zmian.",
+      "wplyw": "Honoraria 2 × 13 dni × ok. 40 000 ¥ plus ich noclegi i wyżywienie ok. 12 000 ¥ dziennie; Korea bez zmian [szacunek].",
       "termin": "31.01.2027",
       "domyslna": true,
       "rekomendacja": true,
+      "kontekst": "",
+      "opis": "Czy przez całą Japonię i Koreę mamy zawodowego pilota-przewodnika, czy w części dni pomagają wolontariusze z Kościoła.",
+      "ograniczenia": "Znalezienie wiarygodnych wolontariuszy mówiących po angielsku.",
+      "wplyw_inne": "Ok. −100 zł na osobę [zgaduję].",
+      "rekomendacja_tekst": "Jeden pilot na całość + lokalni wolontariusze w Nagasaki.",
+      "plusy": "Jedna odpowiedzialna osoba.",
+      "minusy": "Drożej.",
+      "tlo": [
+        "To tańsza opcja, która nie usuwa żadnego punktu programu.",
+        "W Nagasaki działa wiele parafii i wspólnot, które znają miejsca męczenników lepiej niż przewodnik turystyczny."
+      ],
+      "wybrana": false
+    },
+    {
+      "id": "kadra_lok",
+      "decyzja": "Przewodnicy w Japonii",
+      "opcja_id": "pelny",
+      "opcja": "Jeden pilot-przewodnik na całość",
+      "zmiany": "kadra:=16480",
+      "efekt": "",
+      "wplyw": "Jeden przewodnik na dwa autokary — w drugim autokarze nikt nie mówi po japońsku.",
+      "termin": "31.01.2027",
+      "domyslna": false,
+      "rekomendacja": false,
       "kontekst": "",
       "opis": "Czy przez całą Japonię i Koreę mamy zawodowego pilota-przewodnika, czy w części dni pomagają wolontariusze z Kościoła.",
       "ograniczenia": "Znalezienie wiarygodnych wolontariuszy mówiących po angielsku.",
@@ -1319,7 +1365,7 @@
     },
     {
       "id": "kadra_lok",
-      "decyzja": "Przewodnik na miejscu",
+      "decyzja": "Przewodnicy w Japonii",
       "opcja_id": "wolontariusze",
       "opcja": "Pilot + wolontariusze z Kościoła w Nagasaki",
       "zmiany": "kadra:=6300",
@@ -1920,6 +1966,15 @@
         "status": "szacunek"
       },
       {
+        "id": "nocleg_extra",
+        "grupa": "Noclegi",
+        "pozycja": "Dodatkowa noc przy Hanedzie (tylko przy locie 6.08 rano)",
+        "jednostka": "os",
+        "kwota": 0,
+        "zrodlo": "[szacunek] ok. 13 000 ¥ = 320 zł; tylko w wariancie awaryjnym przylotu.",
+        "status": "szacunek"
+      },
+      {
         "id": "nocleg_busan",
         "grupa": "Noclegi",
         "pozycja": "Busan, 1 noc (10/11.08)",
@@ -1974,6 +2029,15 @@
         "status": "szacunek"
       },
       {
+        "id": "korea_extra",
+        "grupa": "Wyżywienie",
+        "pozycja": "Ścieżka C: 2 dodatkowe dni w Seulu (2 noce, wyżywienie, metro, wejścia)",
+        "jednostka": "os",
+        "kwota": 0,
+        "zrodlo": "[szacunek] 2 × 290 zł nocleg + 2 × 130 zł wyżywienie + ok. 110 zł metro, wejścia i pilot = ok. 950 zł na osobę; tylko w ścieżce C.",
+        "status": "szacunek"
+      },
+      {
         "id": "wstepy",
         "grupa": "Program i wstępy",
         "pozycja": "Wstępy, ofiary, muzea",
@@ -2021,10 +2085,10 @@
       {
         "id": "kadra",
         "grupa": "Kadra i obsługa",
-        "pozycja": "Pilot/przewodnik lokalny Japonia 13 dni + Korea 4 dni",
+        "pozycja": "Przewodnicy: 2 w Japonii (13 dni) + pilot w Korei (4 dni)",
         "jednostka": "grupa",
-        "kwota": 16480,
-        "zrodlo": "Założenie: ¥40 000/dzień w Japonii (13 000 zł) + ok. 870 zł/dzień w Korei (3 480 zł).",
+        "kwota": 37280,
+        "zrodlo": "[szacunek] Japonia: 2 × 13 dni × (40 000 ¥ honorarium + 12 000 ¥ nocleg i wyżywienie) = 1 352 000 ¥ ≈ 33 800 zł; Korea ok. 3 480 zł. W ścieżce C Japonia ma 11 dni (ok. −5 200 zł na grupę, nie liczone osobno).",
         "status": "szacunek"
       },
       {
@@ -2388,6 +2452,190 @@
       "dni": {},
       "log": [
         "Niewchodzący na Fuji: wycieczka do Tokio z drugim składem kierowców i powrót nad jezioro — łącznie ponad 9 h jazdy."
+      ]
+    },
+    "sciezka_C": {
+      "ukryj": [
+        "iwaki",
+        "akita",
+        "akita_noc",
+        "matsushima",
+        "zuiganji",
+        "nikko",
+        "yamanaka",
+        "haneda",
+        "gimpo",
+        "okago",
+        "tozanso",
+        "fuji"
+      ],
+      "pokaz": [
+        "incheon",
+        "gwanghwamun",
+        "gahoedong"
+      ],
+      "dni": {
+        "2027-08-02": {
+          "miejsce": "Doha → Narita (nocleg przy lotnisku)",
+          "program": "Lądowanie na Naritę o 19:10 (lot QR806). Odprawa paszportowa i celna, odbiór bagażu. Krótki transfer do hotelu przy lotnisku (ok. 15 min), kolacja, modlitwa wieczorna i sen po długiej podróży.",
+          "nocleg": "Narita, hotel przy lotnisku",
+          "km": "ok. 10",
+          "czas_h": "ok. 0,5",
+          "miejsca": "narita",
+          "status": "hotel przy lotnisku do rezerwacji",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "samolot",
+              "jak": "samolot"
+            },
+            "obiad": {
+              "gdzie": "samolot",
+              "jak": "samolot"
+            },
+            "kolacja": {
+              "gdzie": "hotel przy lotnisku",
+              "jak": "restauracja",
+              "od": "21:00",
+              "min": 45
+            }
+          },
+          "sens": "Lądujemy w Japonii i od razu odpoczywamy przed lotem do Seulu.",
+          "uwagi": "Ścieżka C. Zamiast Iwaki hotel przy lotnisku Narita — bez nocnej jazdy autokarem.",
+          "kierowcy": {
+            "start": "20:30",
+            "koniec": "21:30",
+            "km": 10,
+            "kierowcow": 1,
+            "zaloga": "narita",
+            "kraj": "jp"
+          }
+        },
+        "2027-08-03": {
+          "kraj": "Japonia / Korea",
+          "miejsce": "Narita → Incheon → Seul",
+          "program": "Jutrznia, śniadanie, ok. 8:00 transfer na lotnisko. Lot do Seulu przed południem (do zablokowania dla ok. 90 osób, możliwy podział na kilka lotów), przylot na Incheon ok. 13:00. Przejazd do Mapo (ok. 1 h), zakwaterowanie. Wieczorem Eucharystia w kościele Seogyodong w Mapo.",
+          "nocleg": "Seul, Mapo (ustalony hotel, noc 1/3)",
+          "transport": "Transfer na lotnisko; lot Narita–Incheon; autokar Incheon–Mapo",
+          "km": "ok. 10 + 60",
+          "czas_h": "ok. 1,5 jazdy",
+          "miejsca": "narita,incheon,mapo",
+          "status": "lot Narita–Incheon 3.08 do zablokowania",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel przy lotnisku",
+              "jak": "hotel",
+              "od": "06:45",
+              "min": 40
+            },
+            "obiad": {
+              "gdzie": "lotnisko / samolot",
+              "jak": "bento",
+              "od": "11:30",
+              "min": 30
+            },
+            "kolacja": {
+              "gdzie": "Mapo",
+              "jak": "restauracja",
+              "od": "19:00",
+              "min": 60
+            }
+          },
+          "sens": "Z Japonii prosto do Korei — mamy dwa dni więcej na Seul przed ŚDM.",
+          "uwagi": "Ścieżka C. Lot 3.08 jest poza szczytem przylotów na ŚDM — łatwiej o miejsca niż 5.08. Mapo: sprawdzić, czy ustalony hotel przyjmie nas od 3.08 (2 noce więcej).",
+          "kierowcy": {
+            "start": "07:45",
+            "koniec": "08:30",
+            "km": 10,
+            "kierowcow": 1,
+            "zaloga": "narita",
+            "kraj": "jp"
+          },
+          "bufory": [
+            {
+              "co": "lot Narita–Incheon",
+              "przyjazd": "08:30",
+              "odjazd": "11:00",
+              "min_h": 2
+            }
+          ]
+        },
+        "2027-08-04": {
+          "kraj": "Korea",
+          "miejsce": "Seul (pałac, Bukchon, Gahoedong, Myeongdong)",
+          "program": "Jutrznia. Pałac Gyeongbokgung i brama Gwanghwamun — miejsce beatyfikacji 124 męczenników przez papieża Franciszka (2014). Wioska Bukchon i kościół Gahoedong, przy którym w 1795 r. odprawiono pierwszą Mszę w Korei. Obiad na targu Gwangjang. Po południu katedra Myeongdong i czas wolny. Eucharystia wieczorem w katedrze Myeongdong (do uzgodnienia z parafią).",
+          "nocleg": "Seul, Mapo (noc 2/3)",
+          "transport": "Metro (karty miejskie)",
+          "km": "—",
+          "czas_h": "—",
+          "miejsca": "gwanghwamun,gahoedong,myeongdong",
+          "status": "Eucharystia w Myeongdong do uzgodnienia",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel Mapo",
+              "jak": "hotel",
+              "od": "07:30",
+              "min": 40
+            },
+            "obiad": {
+              "gdzie": "targ Gwangjang",
+              "jak": "restauracja",
+              "od": "12:30",
+              "min": 60
+            },
+            "kolacja": {
+              "gdzie": "Myeongdong",
+              "jak": "restauracja",
+              "od": "19:30",
+              "min": 60
+            }
+          },
+          "sens": "Pałace królów, którzy prześladowali chrześcijan, i miejsce pierwszej Mszy w Korei.",
+          "uwagi": "Ścieżka C. Upał: pałac i Bukchon rano, po południu kościoły w klimatyzacji.",
+          "kierowcy": null,
+          "bufory": []
+        },
+        "2027-08-05": {
+          "kraj": "Korea",
+          "miejsce": "Seul (Jeoldusan, Saenamteo, powitanie Papieża)",
+          "program": "Jutrznia. Rano sanktuaria męczenników nad rzeką Han: Jeoldusan i Saenamteo (blisko siebie). Po południu powitanie Papieża na stadionie Sangam (ŚDM). Eucharystia w programie ŚDM albo wieczorem w Jeoldusan.",
+          "nocleg": "Seul, Mapo (noc 3/3)",
+          "transport": "Metro (karty miejskie)",
+          "km": "—",
+          "czas_h": "—",
+          "miejsca": "jeoldusan,saenamteo,sangam",
+          "status": "rejestracja na powitanie (ŚDM)",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel Mapo",
+              "jak": "hotel",
+              "od": "07:30",
+              "min": 40
+            },
+            "obiad": {
+              "gdzie": "Mapo",
+              "jak": "restauracja",
+              "od": "12:30",
+              "min": 60
+            },
+            "kolacja": {
+              "gdzie": "Sangam",
+              "jak": "bento",
+              "od": "18:00",
+              "min": 30
+            }
+          },
+          "sens": "Miejsca męczeństwa świętych koreańskich i powitanie Papieża.",
+          "uwagi": "Ścieżka C. Powitanie Papieża wraca do planu (nie był obowiązkowy w A/B).",
+          "kierowcy": null,
+          "bufory": []
+        },
+        "2027-08-09": {
+          "program": "11:02 modlitwa w rocznicę Nagasaki. Spotkanie powołaniowe z Kiko Argüello (wołanie). Msza. Po spotkaniu Seosomun (jeśli 6.08 się nie udało) albo czas wolny — Jeoldusan i Saenamteo były już 5.08.",
+          "miejsca": "seosomun"
+        }
+      },
+      "log": [
+        "Ścieżka C: bez Akity i bez wschodniej Japonii — 3.08 lot z Narity do Seulu, w Korei dwa dni więcej (pałace, Bukchon, Gahoedong, Jeoldusan, Saenamteo, powitanie Papieża)."
       ]
     }
   },

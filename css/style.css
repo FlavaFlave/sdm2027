@@ -1075,3 +1075,15 @@ body.modal-open { overflow: hidden; }
 .kt-table tr.kt-plan td { background: #f2f6fb; }
 .kt-msze { max-width: 240px; }
 .leaflet-control-layers { font: 13px var(--font-sans); }
+/* Cel ceny i podpowiedzi */
+.hero-target { display: block; font-weight: 700; margin-top: 2px; }
+.hero-target.is-up { color: #f3c2a6; }
+.hero-target.is-ok { color: #b9e3c2; }
+.cost-target { margin: 10px 0; padding: 10px 12px; background: #f7f3ea; border-radius: 10px; }
+.cost-target .target-line { margin: 0 0 6px; }
+.cost-target .target-line.is-up { color: var(--warn); }
+.cost-target .target-line.is-ok { color: var(--ok); }
+.target-tips { margin: 6px 0 0 18px; padding: 0; }
+.target-tips li { margin: 0 0 8px; font-size: 0.9rem; }
+.korea-gap { background: #fbeff0; border-color: #e6c1c5; }
+.korea-gap .date-badge { background: #a3303a; color: #fff; }

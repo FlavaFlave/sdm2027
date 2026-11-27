@@ -1,7 +1,7 @@
 {
   "meta": {
     "opis": "Dane publiczne: plan dzień po dniu, miejsca i warianty trasy. Koszty, decyzje i ustawienia organizatorów są w osobnym pliku.",
-    "wersja_planu": "27.11.2026 — Akita 13:30, noclegi grupowe",
+    "wersja_planu": "27.11.2026 (2) — ścieżki A/B/C, 2 przewodników",
     "planAppUrl": "",
     "planAppUrl_uwaga": "Adres skryptu Zapis.gs (/exec). Strona jadących pyta go tylko o zatwierdzone opcje (?action=plan). Pusty = plan wstępny."
   },
@@ -1702,6 +1702,48 @@
       "zwiedzamy": "Nocleg 4/5.08 w ścieżce B; Eucharystia wieczorem w kaplicy.",
       "zdjecie_url": "",
       "zdjecie_zrodlo": ""
+    },
+    {
+      "id": "incheon",
+      "nazwa": "Lotnisko Incheon",
+      "kraj": "Korea Południowa",
+      "lat": 37.4602,
+      "lng": 126.4407,
+      "typ": "lotnisko",
+      "dni": "3.08 (ścieżka C)",
+      "wariant": true,
+      "opis": "Przylot z Narity w ścieżce C. Ok. 1 h autokarem do Mapo.",
+      "zwiedzamy": "Przylot 3.08.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": ""
+    },
+    {
+      "id": "gwanghwamun",
+      "nazwa": "Gyeongbokgung i brama Gwanghwamun",
+      "kraj": "Korea Południowa",
+      "lat": 37.5759,
+      "lng": 126.9768,
+      "typ": "zwiedzanie",
+      "dni": "4.08 (ścieżka C)",
+      "wariant": true,
+      "opis": "Główny pałac dynastii Joseon i plac przed bramą Gwanghwamun, gdzie papież Franciszek beatyfikował 124 męczenników koreańskich (16.08.2014).",
+      "zwiedzamy": "Pałac rano, przed upałem; plac beatyfikacji.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": ""
+    },
+    {
+      "id": "gahoedong",
+      "nazwa": "Kościół Gahoedong (Bukchon)",
+      "kraj": "Korea Południowa",
+      "lat": 37.5815,
+      "lng": 126.9852,
+      "typ": "kosciol",
+      "dni": "4.08 (ścieżka C)",
+      "wariant": true,
+      "opis": "Kościół w wiosce Bukchon, w miejscu, gdzie ks. Zhou Wenmo odprawił w 1795 r. pierwszą Mszę w Korei. Położenie przybliżone.",
+      "zwiedzamy": "Modlitwa, spacer po Bukchon.",
+      "zdjecie_url": "",
+      "zdjecie_zrodlo": ""
     }
   ],
   "warianty": {
@@ -1886,6 +1928,155 @@
       "ukryj": [],
       "pokaz": [],
       "dni": {}
+    },
+    "sciezka_C": {
+      "ukryj": [
+        "iwaki",
+        "akita",
+        "akita_noc",
+        "matsushima",
+        "zuiganji",
+        "nikko",
+        "yamanaka",
+        "haneda",
+        "gimpo",
+        "okago",
+        "tozanso",
+        "fuji"
+      ],
+      "pokaz": [
+        "incheon",
+        "gwanghwamun",
+        "gahoedong"
+      ],
+      "dni": {
+        "2027-08-02": {
+          "miejsce": "Doha → Narita (nocleg przy lotnisku)",
+          "program": "Lądowanie na Naritę o 19:10 (lot QR806). Odprawa paszportowa i celna, odbiór bagażu. Krótki transfer do hotelu przy lotnisku (ok. 15 min), kolacja, modlitwa wieczorna i sen po długiej podróży.",
+          "nocleg": "Narita, hotel przy lotnisku",
+          "km": "ok. 10",
+          "czas_h": "ok. 0,5",
+          "miejsca": "narita",
+          "status": "hotel przy lotnisku do rezerwacji",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "samolot",
+              "jak": "samolot"
+            },
+            "obiad": {
+              "gdzie": "samolot",
+              "jak": "samolot"
+            },
+            "kolacja": {
+              "gdzie": "hotel przy lotnisku",
+              "jak": "restauracja",
+              "od": "21:00",
+              "min": 45
+            }
+          },
+          "sens": "Lądujemy w Japonii i od razu odpoczywamy przed lotem do Seulu."
+        },
+        "2027-08-03": {
+          "kraj": "Japonia / Korea",
+          "miejsce": "Narita → Incheon → Seul",
+          "program": "Jutrznia, śniadanie, ok. 8:00 transfer na lotnisko. Lot do Seulu przed południem (do zablokowania dla ok. 90 osób, możliwy podział na kilka lotów), przylot na Incheon ok. 13:00. Przejazd do Mapo (ok. 1 h), zakwaterowanie. Wieczorem Eucharystia w kościele Seogyodong w Mapo.",
+          "nocleg": "Seul, Mapo (ustalony hotel, noc 1/3)",
+          "transport": "Transfer na lotnisko; lot Narita–Incheon; autokar Incheon–Mapo",
+          "km": "ok. 10 + 60",
+          "czas_h": "ok. 1,5 jazdy",
+          "miejsca": "narita,incheon,mapo",
+          "status": "lot Narita–Incheon 3.08 do zablokowania",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel przy lotnisku",
+              "jak": "hotel",
+              "od": "06:45",
+              "min": 40
+            },
+            "obiad": {
+              "gdzie": "lotnisko / samolot",
+              "jak": "bento",
+              "od": "11:30",
+              "min": 30
+            },
+            "kolacja": {
+              "gdzie": "Mapo",
+              "jak": "restauracja",
+              "od": "19:00",
+              "min": 60
+            }
+          },
+          "sens": "Z Japonii prosto do Korei — mamy dwa dni więcej na Seul przed ŚDM."
+        },
+        "2027-08-04": {
+          "kraj": "Korea",
+          "miejsce": "Seul (pałac, Bukchon, Gahoedong, Myeongdong)",
+          "program": "Jutrznia. Pałac Gyeongbokgung i brama Gwanghwamun — miejsce beatyfikacji 124 męczenników przez papieża Franciszka (2014). Wioska Bukchon i kościół Gahoedong, przy którym w 1795 r. odprawiono pierwszą Mszę w Korei. Obiad na targu Gwangjang. Po południu katedra Myeongdong i czas wolny. Eucharystia wieczorem w katedrze Myeongdong (do uzgodnienia z parafią).",
+          "nocleg": "Seul, Mapo (noc 2/3)",
+          "transport": "Metro (karty miejskie)",
+          "km": "—",
+          "czas_h": "—",
+          "miejsca": "gwanghwamun,gahoedong,myeongdong",
+          "status": "Eucharystia w Myeongdong do uzgodnienia",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel Mapo",
+              "jak": "hotel",
+              "od": "07:30",
+              "min": 40
+            },
+            "obiad": {
+              "gdzie": "targ Gwangjang",
+              "jak": "restauracja",
+              "od": "12:30",
+              "min": 60
+            },
+            "kolacja": {
+              "gdzie": "Myeongdong",
+              "jak": "restauracja",
+              "od": "19:30",
+              "min": 60
+            }
+          },
+          "sens": "Pałace królów, którzy prześladowali chrześcijan, i miejsce pierwszej Mszy w Korei."
+        },
+        "2027-08-05": {
+          "kraj": "Korea",
+          "miejsce": "Seul (Jeoldusan, Saenamteo, powitanie Papieża)",
+          "program": "Jutrznia. Rano sanktuaria męczenników nad rzeką Han: Jeoldusan i Saenamteo (blisko siebie). Po południu powitanie Papieża na stadionie Sangam (ŚDM). Eucharystia w programie ŚDM albo wieczorem w Jeoldusan.",
+          "nocleg": "Seul, Mapo (noc 3/3)",
+          "transport": "Metro (karty miejskie)",
+          "km": "—",
+          "czas_h": "—",
+          "miejsca": "jeoldusan,saenamteo,sangam",
+          "status": "rejestracja na powitanie (ŚDM)",
+          "posilki": {
+            "sniadanie": {
+              "gdzie": "hotel Mapo",
+              "jak": "hotel",
+              "od": "07:30",
+              "min": 40
+            },
+            "obiad": {
+              "gdzie": "Mapo",
+              "jak": "restauracja",
+              "od": "12:30",
+              "min": 60
+            },
+            "kolacja": {
+              "gdzie": "Sangam",
+              "jak": "bento",
+              "od": "18:00",
+              "min": 30
+            }
+          },
+          "sens": "Miejsca męczeństwa świętych koreańskich i powitanie Papieża."
+        },
+        "2027-08-09": {
+          "program": "11:02 modlitwa w rocznicę Nagasaki. Spotkanie powołaniowe z Kiko Argüello (wołanie). Msza. Po spotkaniu Seosomun (jeśli 6.08 się nie udało) albo czas wolny — Jeoldusan i Saenamteo były już 5.08.",
+          "miejsca": "seosomun"
+        }
+      }
     }
   },
   "decyzje": [
@@ -1901,6 +2092,14 @@
       "id": "petla",
       "opcja_id": "B",
       "efekt": "sciezka_B",
+      "domyslna": false,
+      "decyzja": "",
+      "opcja": ""
+    },
+    {
+      "id": "petla",
+      "opcja_id": "C",
+      "efekt": "sciezka_C",
       "domyslna": false,
       "decyzja": "",
       "opcja": ""
@@ -2203,9 +2402,17 @@
     },
     {
       "id": "kadra_lok",
-      "opcja_id": "pelny",
+      "opcja_id": "dwoje",
       "efekt": "",
       "domyslna": true,
+      "decyzja": "",
+      "opcja": ""
+    },
+    {
+      "id": "kadra_lok",
+      "opcja_id": "pelny",
+      "efekt": "",
+      "domyslna": false,
       "decyzja": "",
       "opcja": ""
     },

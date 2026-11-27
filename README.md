@@ -304,3 +304,11 @@ Arkusz: <https://docs.google.com/spreadsheets/d/1ZSGVRJc9BMXGkoJjPAwyjnynXTRn42L
 - Kosztorys zakłada, że tanie noclegi się udadzą: Isahaya NIYE (Nagasaki), Shin-Osaka Youth Hostel, hotel biznesowy w Hiroszimie, ośrodki/hotele grupowe na wschodzie (nowa decyzja „Noclegi na wschodzie”). Hotele zostają jako opcje zapasowe w Decyzjach. Usunięte: Hiyoshi, Nagatsuka, Centrum Katolickie w Nagasaki.
 - `data/kontakty.json` (z Excelów Groka): 69 kościołów, 32 noclegi grupowe, 12 biskupów. Nowa zakładka „Kościoły i noclegi” ze statusami rozmów (karta „Kontakty” w prywatnym arkuszu) i warstwy ✝/🛏 na mapach organizatorów.
 - Nowa wersja Excela: `python3 narzedzia/kontakty_json.py koscioly.xlsx noclegi.xlsx data/kontakty.json`.
+
+## Etap 16 (27.11.2026) — ścieżki A/B/C, przewodnicy, cel ceny
+
+- Decyzja „Pierwsze dni”: A (Akita), B (Japonia bez Akity), C (bez Akity, lot Narita–Incheon 3.08 i dwa dni więcej w Seulu: Gyeongbokgung/Gwanghwamun, Bukchon, Gahoedong, Myeongdong, Jeoldusan, Saenamteo, powitanie Papieża).
+- Przewodnicy: domyślnie dwóch przez całą Japonię (kadra 37 280 zł na grupę) [szacunek].
+- Cel ceny `meta.cel_cena` (14 000 zł) w nagłówku i w Decyzjach, z listą zmian, które obniżają cenę (kliknięcie przełącza opcję).
+- „Plan bazowy” → „plan wyjściowy” (= opcje domyślne). Zapisany w przeglądarce podgląd z poprzedniej wersji planu jest ignorowany.
+- Zakładka Japonia: między dniami w Japonii karta „Pobyt w Korei”.

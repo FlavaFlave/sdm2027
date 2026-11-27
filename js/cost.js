@@ -66,6 +66,11 @@ function applyChangeToken(amounts, token) {
 /** Decyzje, które w danym scenariuszu nie mają znaczenia (i nie doliczają się do kosztu). */
 export function disabledGroups(choices) {
   const off = {};
+  if (choices.petla === "C") {
+    off.przylot = "Nie dotyczy w ścieżce C: lecimy do Seulu już 3.08 z Narity.";
+    off.noclegi_wschod = "Nie dotyczy w ścieżce C: na wschodzie jest tylko nocleg przy lotnisku Narita.";
+    off.sen = "Nie dotyczy w ścieżce C: 2.08 nocujemy przy lotnisku.";
+  }
   if (choices.petla !== "B") {
     off.fuji = "Nie dotyczy: w ścieżce A (Akita) nie ma dnia na Fuji — wejście jest tylko w ścieżce B.";
     off.nie_fuji = "Nie dotyczy: tylko w ścieżce B, gdy część grupy wchodzi na Fuji.";
@@ -277,6 +282,7 @@ export function normalizeChoices(c) {
   const next = { ...c };
   // Stare warianty pętli (E1–E4, do 26.11.2026) → ścieżki A/B.
   if (["E1", "E2", "E3"].includes(next.petla)) next.petla = "A";
+  if (!["A", "B", "C"].includes(next.petla)) next.petla = "A";
   if (next.petla === "E4") next.petla = "B";
   if (next.petla === "B" && next.sen === "tokio") next.sen = "standard";
   delete next.noc_2;

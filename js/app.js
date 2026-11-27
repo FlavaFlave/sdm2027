@@ -278,11 +278,22 @@ function renderTimeline(days) {
     return `<li class="${g}" data-day="${escapeHtml(d.data || "")}" tabindex="0" title="Kliknij, żeby zobaczyć pełny opis dnia"><div class="when">${escapeHtml((d.data_pl || "").replace(".2027", ""))} · ${escapeHtml(d.dzien || "")}</div><div class="where">${escapeHtml(d.miejsce)}</div><div class="short">${escapeHtml(short)}${(d.program || "").length > 140 ? "…" : ""}</div>${d.sens ? `<div class="sens">${escapeHtml(d.sens)}</div>` : ""}<span class="more">Pełny opis dnia →</span></li>`;
   }).join("");
 }
+function koreaGapCard(krOnly) {
+  if (!krOnly.length) return "";
+  const a = (krOnly[0].data_pl || "").replace(".2027", ""), b = (krOnly[krOnly.length - 1].data_pl || "").replace(".2027", "");
+  return `<article class="day-card korea-gap"><div class="date-badge"><b>${escapeHtml(a.split(".")[0])}–${escapeHtml(b)}</b><span>Korea</span></div>
+    <div class="day-body"><h3>Pobyt w Korei: ŚDM w Seulu, Solmoe, Busan</h3>
+    <p>${krOnly.length} dni w Korei — od ${escapeHtml(a)} do ${escapeHtml(b)}. Wracamy do Japonii promem do Hakaty rano 12.08.</p>
+    <p><button type="button" class="btn" data-goto-tab="korea">Zobacz dni w Korei →</button></p></div></article>`;
+}
 function renderDays(days, places, changed, fujiN, checks, fujiPer) {
-  const jp = days.filter((d) => isJapanDay(d) || /^1\.08|^2\.08|^3\.08|^4\.08|^1[2-9]\.08|^20\.08|^21\.08/.test(d.data_pl || ""));
-  const kr = days.filter((d) => isKoreaDay(d) || /^5\.08|^6\.08|^7\.08|^8\.08|^9\.08|^10\.08|^11\.08/.test(d.data_pl || ""));
+  const jp = days.filter((d) => /Japonia|Polska|Katar/i.test(d.kraj || "") || !d.kraj);
+  const kr = days.filter((d) => isKoreaDay(d));
+  const krOnly = kr.filter((d) => !/Japonia/i.test(d.kraj || ""));
   const parts = [];
+  let gapDone = false;
   jp.forEach((d) => {
+    if (!gapDone && krOnly.length && d.data > krOnly[0].data) { parts.push(koreaGapCard(krOnly)); gapDone = true; }
     if (fujiN > 0 && d.data === "2027-08-04") parts.push(fujiModuleCard(places, fujiN, fujiPer));
     parts.push(dayCard(d, places, changed.has(d.data), checks));
   });
@@ -302,7 +313,8 @@ function warnings(choices, cost) {
   }
   if (cost && cost.lost) w.push(`Rezygnacje: ${cost.dropouts} os. względem ${cost.n + cost.dropouts}; przepada ok. ${cost.lost} biletów (${formatZl(cost.lostValue, 0)}). Pokrywa: ${cost.lossPolicy === "grupa" ? "grupa (wliczone w cenę)" : "osoby rezygnujące / ich polisa (poza ceną)"}.`);
   if (cost && cost.gratis) w.push(`${cost.gratis} miejsc bezpłatnych: ich koszt płacą pozostali (${cost.payers} płacących).`);
-  if (choices.petla !== "B") w.push("Ścieżka A: trzy długie dni w autokarze z rzędu (3–5.08), 4.08 ok. 500 km. Akita w noc Kantō — 90 łóżek to najtrudniejsza rezerwacja (rezerwa Ōmagari, Kakunodate). Odmowa sióstr = ścieżka B.");
+  if (choices.petla === "A" || !choices.petla) w.push("Ścieżka A: trzy długie dni w autokarze z rzędu (3–5.08), 4.08 ok. 500 km. Akita w noc Kantō — 90 łóżek to najtrudniejsza rezerwacja (rezerwa Ōmagari, Kakunodate). Odmowa sióstr = ścieżka B.");
+  if (choices.petla === "C") w.push("Ścieżka C: odpada cała wschodnia Japonia (Akita, Matsushima, Nikkō, Yamanaka, Fuji). Lot Narita–Incheon 3.08 dla ok. 90 osób do zablokowania; hotel w Mapo od 3.08 (2 noce więcej). Koszt przewodników liczony dla 13 dni w Japonii — w C jest ich 11.");
   if (choices.petla === "B") w.push("Ścieżka B: Nikkō odpada. Chętni na Fuji muszą mieć rezerwację schroniska (bramka Yoshida 14:00–3:00 tylko z rezerwacją).");
   if (choices.przylot === "6_rano") w.push("Przylot 6.08 rano: przepada poranek 6.08 w Seulu i zostaje ok. 1 doba zapasu przed czuwaniem. Jeśli i 6.08 nie ma miejsc — powrót do lotu 4.08.");
   if (choices.fuji === "tak" && choices.petla === "B") w.push(`Fuji dla chętnych (niepełnoletni za zgodą rodziców i z opiekunem). Koszt ${formatZl(cost ? cost.fujiPer : FUJI_PER, 0)} liczy się na wchodzącego [szacunek], nie na całą grupę.`);
@@ -379,13 +391,13 @@ function renderCostBoard(cost, base) {
   el.classList.remove("is-up", "is-down", "is-same");
   if (Math.abs(delta) < 0.005) {
     el.classList.add("is-same");
-    el.textContent = "wariant bazowy, bez różnicy względem " + formatZl(base.total);
+    el.textContent = "plan wyjściowy (opcje domyślne) — " + formatZl(base.total);
   } else if (delta > 0) {
     el.classList.add("is-up");
-    el.textContent = "dopłata " + formatZl(delta) + " względem bazy " + formatZl(base.total);
+    el.textContent = "dopłata " + formatZl(delta) + " względem planu wyjściowego " + formatZl(base.total);
   } else {
     el.classList.add("is-down");
-    el.textContent = "mniej o " + formatZl(Math.abs(delta)) + " względem bazy " + formatZl(base.total);
+    el.textContent = "mniej o " + formatZl(Math.abs(delta)) + " względem planu wyjściowego " + formatZl(base.total);
   }
   $("#cost-split").innerHTML =
     `<div><span>Bezpośrednie</span><strong>${formatZl(cost.direct)}</strong></div>` +
@@ -398,13 +410,43 @@ function renderCostBoard(cost, base) {
     fujiEl.hidden = true;
     fujiEl.textContent = "";
   }
-  $("#cost-note").textContent = `Baza ${formatZl(base.total, 0)} zakłada E1, Iwaki, B1+, standardowe hotele w Nagasaki (5 × 360 zł), Seul 290 zł/noc, ${base.n} osób (wszyscy płacą), bez Fuji, Generali Elastyczny 1, rezerwę ${base.reservePct}% od pozycji nieopłaconych i walutowych oraz licencjonowane biuro bez marży. Kwoty to szacunki — dokładność do złotówki jest pozorna.`;
+  $("#cost-note").textContent = `Plan wyjściowy ${formatZl(base.total, 0)} = wszystkie opcje oznaczone jako domyślne: ścieżka A (Akita), przylot do Seulu 5.08, tanie noclegi grupowe (ośrodki na wschodzie, Isahaya, Shin-Osaka YH — zakładamy, że się uda), dwóch przewodników w Japonii, B1+, Seul 290 zł/noc, ${base.n} osób, Generali Elastyczny 1, rezerwa ${base.reservePct}%. To punkt odniesienia do porównań, a nie osobna opcja. Kwoty to szacunki — dokładność do złotówki jest pozorna.`;
   const hero = $("#hero-cost");
   if (hero) hero.textContent = formatZl(cost.total, 0);
+  renderTarget(cost);
   const heroN = $("#hero-n");
   if (heroN) heroN.textContent = `${cost.n} osób`;
   const heroNs = $("#hero-n-sub");
   if (heroNs) heroNs.textContent = `pułap 90 · Japonia: ${cost.fleet.jp ? cost.fleet.jp.label : "—"}`;
+}
+
+/* Cel ceny (meta.cel_cena, domyślnie 14 000 zł) i podpowiedzi, co zmienić, żeby do niego zejść. */
+let tipsCtx = null;
+function renderTarget(cost) {
+  const target = (tipsCtx && tipsCtx.target) || 14000;
+  const gap = cost.total - target;
+  const el = $("#cost-target"), heroT = $("#hero-target");
+  const txt = gap > 0 ? `cel ${formatZl(target, 0)} — brakuje ${formatZl(gap, 0)}` : `cel ${formatZl(target, 0)} — zapas ${formatZl(-gap, 0)}`;
+  if (heroT) { heroT.textContent = txt; heroT.className = gap > 0 ? "hero-target is-up" : "hero-target is-ok"; }
+  if (!el || !tipsCtx) return;
+  const { groups, choices, deltaFor, off } = tipsCtx;
+  const tips = [];
+  groups.forEach((g) => {
+    if (off[g.id] || ["petla", "przylot", "sen"].includes(g.id)) return;
+    g.opcje.forEach((o) => {
+      if (o.opcja_id === choices[g.id]) return;
+      const d = deltaFor(g.id, o.opcja_id);
+      if (d < -20) tips.push({ g, o, d });
+    });
+  });
+  const best = {};
+  tips.forEach((t) => { if (!best[t.g.id] || t.d < best[t.g.id].d) best[t.g.id] = t; });
+  const list = Object.values(best).sort((a, b) => a.d - b.d).slice(0, 6);
+  let acc = 0, reached = false;
+  el.innerHTML = `<p class="target-line ${gap > 0 ? "is-up" : "is-ok"}"><strong>${escapeHtml(txt)}</strong></p>` + (gap > 0 && list.length ? `<p class="small muted">Co by obniżyło cenę (każda pozycja osobno, od największej; suma jest przybliżona):</p><ol class="target-tips">${list.map((t) => {
+    acc += -t.d;
+    return `<li><button type="button" class="btn-link" data-tip-g="${escapeHtml(t.g.id)}" data-tip-o="${escapeHtml(t.o.opcja_id)}">${escapeHtml(t.g.nazwa)}: ${escapeHtml(t.o.opcja.split(" (")[0])}</button> <strong class="diff-down">−${Math.round(-t.d).toLocaleString("pl-PL")} zł</strong>${t.o.wplyw ? `<br><span class="small muted">${escapeHtml(t.o.wplyw.slice(0, 160))}</span>` : ""}${!reached && acc >= gap ? ((reached = true), ` <span class="chip">do tego miejsca mieścimy się w celu</span>`) : ""}</li>`;
+  }).join("")}</ol>` : "");
 }
 
 function renderImpact(groups, choices, logs) {
@@ -456,7 +498,7 @@ function scenarioLabel(choices, fujiOsob, people) {
   if (choices.polisa === "e2r") bits.push("rezygnacja");
   if (choices.biuro === "marza") bits.push("marża 8%");
   if (choices.rezerwa && choices.rezerwa !== "6") bits.push("rezerwa " + choices.rezerwa + "%");
-  if (bits.length === 1) bits.push("wariant bazowy");
+  if (bits.length === 1) bits.push("plan wyjściowy");
   return bits.join(" · ");
 }
 function renderCompare(ctx) {
@@ -787,7 +829,9 @@ async function main() {
   const hashHasChoices = CHOICE_IDS.some((k) => hash[k]);
   if (!hashHasChoices && !hasApproved) {
     try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      let saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      // Zapisany podgląd z poprzedniej wersji planu nie nadpisuje nowych opcji domyślnych.
+      if (saved.v !== (data.meta && data.meta.wersja_planu)) saved = { people: saved.people };
       CHOICE_IDS.forEach((k) => {
         if (saved[k] && groups.some((g) => g.id === k && g.opcje.some((o) => o.opcja_id === saved[k]))) {
           choices[k] = saved[k];
@@ -836,6 +880,7 @@ async function main() {
     const vis = visiblePlaces(data.miejsca, data.warianty || {}, effects, choices);
     const lines = routeLines(choices);
 
+    tipsCtx = { groups, choices, deltaFor, off: disabledGroups(choices), target: Number(data.meta.cel_cena) || 14000 };
     renderCostBoard(cost, base);
     renderCostTable(cost, base);
     renderChart(cost);
@@ -869,7 +914,7 @@ async function main() {
     if (tab === "korea") focusMap("map-kr", krVis);
     if (tab === "przeglad") focusMap("map-all", vis);
 
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...choices, fuji_osob: fujiOsob, people })); } catch (_) {}
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...choices, fuji_osob: fujiOsob, people, v: data.meta && data.meta.wersja_planu })); } catch (_) {}
     const ref = hasApproved ? approvedChoices : baseChoices;
     const diff = groups.filter((g) => choices[g.id] !== ref[g.id]).map((g) => g.nazwa);
     const pd = defaultPeople(data.model);
@@ -877,8 +922,8 @@ async function main() {
     if (people.gratis) diff.push(`${people.gratis} gratis`);
     const sl = $("#state-line");
     if (sl) sl.innerHTML = diff.length
-      ? `<strong>Wariant roboczy:</strong> ${diff.length} ${diff.length === 1 ? "zmiana" : diff.length < 5 ? "zmiany" : "zmian"} względem ${hasApproved ? "obowiązującego planu" : "planu bazowego"} (${escapeHtml(diff.join(", "))}). Nic nie jest zapisane.`
-      : (hasApproved ? `<strong>Oglądasz obowiązujący plan</strong> (zatwierdzony w arkuszu). Tę wersję widzą jadący.` : `<strong>Oglądasz plan bazowy.</strong> Nic nie jest jeszcze zatwierdzone — jadący widzą plan bazowy.`);
+      ? `<strong>Wariant roboczy:</strong> ${diff.length} ${diff.length === 1 ? "zmiana" : diff.length < 5 ? "zmiany" : "zmian"} względem ${hasApproved ? "obowiązującego planu" : "planu wyjściowego"} (${escapeHtml(diff.join(", "))}). Nic nie jest zapisane.`
+      : (hasApproved ? `<strong>Oglądasz obowiązujący plan</strong> (zatwierdzony w arkuszu). Tę wersję widzą jadący.` : `<strong>Oglądasz plan wyjściowy</strong> (wszystkie opcje domyślne). Nic nie jest jeszcze zatwierdzone — jadący widzą ten plan.`);
     writeHash(tab, { choices, fujiOsob, people });
   }
 
@@ -899,11 +944,17 @@ async function main() {
     applyAll();
   };
   renderDecisionForm(groups, choices, fujiOsob, onDecision, deltaFor);
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-tip-g]");
+    if (t) { onDecision({ choices: { [t.dataset.tipG]: t.dataset.tipO } }); return; }
+    const g = e.target.closest("[data-goto-tab]");
+    if (g) { const b = document.querySelector(`.tab[data-tab="${g.dataset.gotoTab}"]`); if (b) { b.click(); window.scrollTo({ top: 0, behavior: "smooth" }); } }
+  });
 
   const official = $("#official-plan-note");
   if (official) {
     official.innerHTML = `<strong>Obowiązujący plan zapisuje się w arkuszu, nie na tej stronie.</strong>
-      Żeby wszyscy organizatorzy mieli ten sam, trwały wybór, otwórz kartę Decyzje i w kolumnie „Wybrana” wpisz TAK przy oficjalnie przyjętej opcji (jedna na każdą decyzję). Kolumna „Domyślna” to plan bazowy do porównań, „Rekomendacja” — wskazówka z planu v3.
+      Żeby wszyscy organizatorzy mieli ten sam, trwały wybór, otwórz kartę Decyzje i w kolumnie „Wybrana” wpisz TAK przy oficjalnie przyjętej opcji (jedna na każdą decyzję). Kolumna „Domyślna” to plan wyjściowy do porównań, „Rekomendacja” — wskazówka z planu v3.
       <a href="${sheetUrl(1865812908)}" target="_blank" rel="noopener">Otwórz kartę Decyzje w arkuszu</a>`;
   }
 
@@ -949,7 +1000,7 @@ async function main() {
     }
   });
   $("#btn-reset")?.addEventListener("click", () => {
-    if (!confirm("Wyczyścić wszystkie zmiany w podglądzie i wrócić do planu bazowego? Arkusz się nie zmieni.")) return;
+    if (!confirm("Wyczyścić wszystkie zmiany w podglądzie i wrócić do planu wyjściowego? Arkusz się nie zmieni.")) return;
     choices = { ...baseChoices };
     fujiOsob = 10;
     people = defaultPeople(data.model);

@@ -259,6 +259,7 @@ export function focusMap(elId) {
 }
 
 export function eastLine(choices) {
+  if (choices.petla === "C") return ["narita"];
   if (choices.petla === "B") return ["narita", "iwaki", "matsushima", "okago", "tozanso", "yamanaka", "haneda"];
   return ["narita", "iwaki", "akita", "akita_noc", "matsushima", "nikko", "yamanaka", "haneda"];
 }
@@ -289,11 +290,11 @@ export function routeLines(choices) {
   const east = eastLine(choices);
   const west = ["hakata", "tabira", "hirado", "nagasaki", "isahaya", "yamaguchi", "hiroshima", "miyajima", "himeji", "osaka", "fushimi", "kix"];
   const westJp = ["hakata", "tabira", "hirado", "nagasaki", "isahaya", "unzen", "yamaguchi", "hiroshima", "miyajima", "himeji", "osaka", "fushimi", "kiyomizu", "kix"];
-  const kr = ["gimpo", "mapo", "seosomun", "myeongdong", "sangam", "seongnam", "jeoldusan", "saenamteo", "solmoe", "jwadong", "haeundae", "gamcheon", "jagalchi", "prom"];
+  const kr = [choices.petla === "C" ? "incheon" : "gimpo", "mapo", ...(choices.petla === "C" ? ["gwanghwamun", "gahoedong"] : []), "seosomun", "myeongdong", "sangam", "seongnam", "jeoldusan", "saenamteo", "solmoe", "jwadong", "haeundae", "gamcheon", "jagalchi", "prom"];
   const all = [
     { ids: ["waw", "doha", "narita"], color: "#c6a15b", dash: "6 7" },
     { ids: east, color: "#1f4e79" },
-    { ids: ["haneda", "gimpo"], color: "#c6a15b", dash: "6 7" },
+    choices.petla === "C" ? { ids: ["narita", "incheon"], color: "#c6a15b", dash: "6 7" } : { ids: ["haneda", "gimpo"], color: "#c6a15b", dash: "6 7" },
     { ids: kr, color: "#a3303a" },
     { ids: ["prom", "hakata"], color: "#1f4e79", dash: "6 7" },
     { ids: west, color: "#1f4e79" },

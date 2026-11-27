@@ -31,7 +31,7 @@
       <ul class="facts" id="hero-facts">
         <li><strong>1–21 sierpnia 2027</strong><span>dwadzieścia jeden dni</span></li>
         <li><strong id="hero-n">90 osób</strong><span id="hero-n-sub">pułap 90 · autokary dobierane do liczby osób</span></li>
-        <li><strong id="hero-cost">ok. 15 900 zł</strong><span>na płacącego, bieżący scenariusz · szacunek z rezerwą</span></li>
+        <li><strong id="hero-cost">—</strong><span>na płacącego, bieżący scenariusz · szacunek z rezerwą</span><span id="hero-target" class="hero-target"></span></li>
       </ul>
     </div>
   </header>
@@ -102,7 +102,7 @@
         <div class="section-head">
           <p class="kicker">Symulacja, nie decyzja ostateczna</p>
           <h2 id="h-decyzje">Decyzje i koszt</h2>
-          <p class="lead">Tu oglądamy warianty: liczba osób (90 to górny pułap) i każda decyzja od razu przeliczają cenę na płacącego i na grupę, dobór autokarów w Japonii i Korei, pokazuje różnicę wobec planu bazowego i aktualizuje mapę, dni, logistykę oraz raty. To jest podgląd, nie trwały zapis. Obowiązujący plan zapisuje się w arkuszu Google (kolumna „Wybrana” na karcie Decyzje).</p>
+          <p class="lead">Tu oglądamy warianty: liczba osób (90 to górny pułap) i każda decyzja od razu przeliczają cenę na płacącego i na grupę, dobór autokarów w Japonii i Korei, pokazuje różnicę wobec planu wyjściowego i aktualizuje mapę, dni, logistykę oraz raty. To jest podgląd, nie trwały zapis. Obowiązujący plan zapisuje się w arkuszu Google (kolumna „Wybrana” na karcie Decyzje).</p>
         </div>
         <div class="people-box" id="people-box"></div>
         <div class="fleet-box" id="fleet-box"></div>
@@ -113,22 +113,23 @@
             <p class="cost-value" id="cost-value">—</p>
             <p class="cost-group" id="cost-group">na grupę (90 os.): —</p>
             <p class="cost-delta" id="cost-delta"></p>
+            <div class="cost-target" id="cost-target"></div>
             <div class="cost-split" id="cost-split"></div>
             <p class="cost-fuji" id="cost-fuji" hidden></p>
-            <p class="cost-note" id="preview-note">Podgląd zmian: cena powyżej i lista „Co się zmienia” liczą się na bieżąco względem planu bazowego. Nic z tego nie zapisuje się samo w arkuszu.</p>
+            <p class="cost-note" id="preview-note">Podgląd zmian: cena powyżej i lista „Co się zmienia” liczą się na bieżąco względem planu wyjściowego (wszystkie opcje domyślne). Nic z tego nie zapisuje się samo w arkuszu.</p>
             <div class="cost-actions">
-              <p class="state-line" id="state-line">Oglądasz plan bazowy.</p>
+              <p class="state-line" id="state-line">Oglądasz plan wyjściowy.</p>
               <p class="action-hint is-lead">Każda zmiana w decyzjach albo w liczbie osób od razu pokazuje skutki: cenę, trasę, dni i ostrzeżenia. Nic nie trzeba klikać, żeby sprawdzić wpływ — i nic się samo nie zapisuje.</p>
 
               <button type="button" class="btn btn-gold" id="btn-official">Pokaż obowiązujący plan</button>
-              <p class="action-hint">Wraca do planu zatwierdzonego w arkuszu (kolumna „Wybrana”). Gdy nic nie jest zatwierdzone — do planu bazowego. To tę wersję widzą jadący na swojej stronie.</p>
+              <p class="action-hint">Wraca do planu zatwierdzonego w arkuszu (kolumna „Wybrana”). Gdy nic nie jest zatwierdzone — do planu wyjściowego. To tę wersję widzą jadący na swojej stronie.</p>
               <p class="action-group">Porównywanie (tylko na tym komputerze)</p>
               <button type="button" class="btn btn-gold" id="btn-save-scenario">Zapamiętaj ten wariant do porównania</button>
               <p class="action-hint">Zapisuje obecne wybory pod nazwą w tej przeglądarce (do 3 wariantów) i pokazuje je w tabeli „Porównanie wariantów” niżej. Nie zmienia planu.</p>
               <button type="button" class="btn" id="btn-undo-save">Cofnij zmiany od ostatniego zapamiętania</button>
               <p class="action-hint">Wraca do ostatnio zapamiętanego wariantu.</p>
-              <button type="button" class="btn" id="btn-reset">Wyczyść wszystkie zmiany — wróć do planu bazowego</button>
-              <p class="action-hint">Plan bazowy to rekomendacja planu v3 dla 90 osób.</p>
+              <button type="button" class="btn" id="btn-reset">Wyczyść wszystkie zmiany — wróć do planu wyjściowego</button>
+              <p class="action-hint">Plan wyjściowy = wszystkie opcje oznaczone w Decyzjach jako domyślne (rekomendacja). To punkt odniesienia, nie osobna opcja.</p>
               <button type="button" class="btn" id="btn-preset-save">Pokaż wariant oszczędny</button>
               <p class="action-hint">Włącza tańsze opcje, które nie wycinają punktów programu (noclegi, posiłki, przewodnik, eSIM, przewoźnik). Każdą można potem cofnąć osobno.</p>
 
