@@ -15,10 +15,11 @@ import { initZbiorka, setCostInfo } from "./zbiorka.js";
 import { initKontakty, drawContactLayers, renderKontakty } from "./kontakty.js";
 import { setDetailState, bindDayClicks, openDay } from "./details.js";
 import { tileHtml, bestPhoto } from "./tiles.js";
-import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace, legendHtml } from "./maps.js";
+import { getMaps, updateMap, visiblePlaces, routeLines, focusMap, isJapanPlace, isKoreaPlace, legendHtml, setView } from "./maps.js";
 import { renderBudget, resizeBudgetChart } from "./budget.js";
 import { renderChecklist } from "./checklist.js";
 import { renderQuick } from "./quick.js";
+import { setOverrides, getOverrides } from "./cost.js";
 
 /* stałe localStorage — dopisane tutaj, gdyby util ich nie eksportował */
 const STORAGE_KEY = "sdm2027-org-decisions";
@@ -868,13 +869,22 @@ async function main() {
     } catch (_) {}
   }
 
-  const base = baselineCost(data.model, groups);
+  const OVR_KEY = "sdm2027-org-overrides";
+  try { const o = JSON.parse(localStorage.getItem(OVR_KEY) || "{}"); if (o.v === data.meta.wersja_planu) { delete o.v; setOverrides(o); } } catch (_) {}
+  const saveOvr = () => { try { localStorage.setItem(OVR_KEY, JSON.stringify({ ...getOverrides(), v: data.meta.wersja_planu })); } catch (_) {} };
+  const base = (() => { const keep = getOverrides(); setOverrides({}); const b = baselineCost(data.model, groups); setOverrides(keep); return b; })();
   renderCredits(data.miejsca, data.meta);
   renderLogistyka(data);
   renderChecklist(data.checklista || [], data.meta);
   initZbiorka(data.meta.zapisAppUrl || "");
   initKontakty(choices).then(() => drawContactLayers(getMaps(), choices));
   $("#legend-all").innerHTML = legendHtml();
+  const ktLeg = $("#legend-kt");
+  if (ktLeg) ktLeg.innerHTML = legendHtml() + `<span class="kt-leg"><span class="kt-pin">✝</span> kościół przy trasie (kolor ramki = status rozmowy)</span> <span class="kt-leg"><span class="kt-bed on">🛏</span> nocleg w planie</span> <span class="kt-leg"><span class="kt-bed">🛏</span> nocleg alternatywny</span> <span class="small muted">Warstwy włączasz i wyłączasz w prawym górnym rogu mapy.</span>`;
+  document.querySelectorAll("[data-ktview]").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll("[data-ktview]").forEach((x) => x.classList.toggle("is-on", x === b));
+    setView("map-kt", b.dataset.ktview);
+  }));
 
   const lastMapPlaces = { all: [], jp: [], kr: [] };
   const showTab = initTabs((id, write) => {
@@ -884,6 +894,7 @@ async function main() {
       if (id === "japonia") focusMap("map-jp", lastMapPlaces.jp);
       else if (id === "korea") focusMap("map-kr", lastMapPlaces.kr);
       else if (id === "przeglad") focusMap("map-all", lastMapPlaces.all);
+      else if (id === "kontakty") focusMap("map-kt", lastMapPlaces.all);
     });
   });
 
@@ -915,7 +926,9 @@ async function main() {
       total: (ch) => computeCost(data.model, groups, normalizeChoices({ ...ch }), fujiOsob, people).total,
       lines: (ch) => Object.fromEntries(computeCost(data.model, groups, normalizeChoices({ ...ch }), fujiOsob, people).lines.map((l) => [l.id, l.perOs])),
       onPick: (g, o) => onDecision({ choices: { [g]: o } }),
-      onReset: () => { const p = choices.petla; choices = { ...baseChoices, petla: p }; applyAll(); },
+      onReset: () => { const p = choices.petla; choices = { ...baseChoices, petla: p }; setOverrides({}); saveOvr(); applyAll(); },
+      onOverride: (patch) => { const o = getOverrides(); Object.entries(patch).forEach(([k, v]) => { if (v == null || !Number.isFinite(v)) delete o[k]; else o[k] = v; }); setOverrides(o); saveOvr(); applyAll(); },
+      rerender: () => applyAll(),
       onPeopleReset: () => { const d = defaultPeople(data.model); people = { ...people, n: d.n, gratis: d.gratis }; applyAll(); },
     });
     renderCostTable(cost, base);
@@ -942,6 +955,7 @@ async function main() {
     updateMap("map-all", vis, lines.all, mo);
     updateMap("map-jp", jpVis, lines.jp, mo);
     updateMap("map-kr", krVis, lines.kr, mo);
+    updateMap("map-kt", vis, lines.all, mo);
     drawContactLayers(getMaps(), choices);
     renderKontakty(choices);
     lastMapPlaces.all = vis;

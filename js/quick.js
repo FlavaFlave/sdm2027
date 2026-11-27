@@ -14,14 +14,17 @@ const PATHS = [
 ];
 
 const SUBS = [
-  { g: "przylot", label: "Lot do Seulu", when: (c) => c.petla !== "C" },
-  { g: "noclegi_wschod", label: "Noclegi 2–4.08", when: (c) => c.petla !== "C" },
+  { g: "przylot", label: "Lot do Seulu", lines: ["lot_seul"], when: (c) => c.petla !== "C" },
+  { g: "noclegi_wschod", label: "Noclegi 2–4.08", lines: ["nocleg_wschod"], when: (c) => c.petla !== "C" },
   { g: "fuji", label: "Wejście na Fuji", when: (c) => c.petla === "B" },
-  { g: "nagasaki", label: "Nagasaki 12–17.08" },
-  { g: "hotele_zachod", label: "Hiroszima i Osaka" },
-  { g: "seul_stawka", label: "Noclegi w Korei poza pakietem" },
-  { g: "kadra_lok", label: "Przewodnicy w Japonii" },
+  { g: "nagasaki", label: "Nagasaki 12–17.08", lines: ["nocleg_nagasaki"] },
+  { g: "hotele_zachod", label: "Hiroszima i Osaka", lines: ["nocleg_hiroszima", "nocleg_osaka"] },
+  { g: "seul_stawka", label: "Noclegi w Korei poza pakietem", lines: ["nocleg_seul", "nocleg_busan"] },
+  { g: null, key: "autokary", label: "Autokary (przewoźnicy)", lines: ["bus_wschod", "bus_korea", "bus_zachod"] },
+  { g: "kadra_lok", label: "Przewodnicy w Japonii", lines: ["kadra"] },
 ];
+const UNIT = { os: "zł/os", grupa: "zł/grupę" };
+const openRows = new Set();
 
 const short = (o) => o.krotko || String(o.opcja || o.opcja_id).split(" — ")[0].split(" (")[0].slice(0, 38);
 const zl = (v) => formatZl(v, 0);
@@ -51,17 +54,32 @@ export function renderQuick(ctx) {
   }).join("");
 
   // 2) Proste podopcje z różnicą ceny.
-  const subs = SUBS.filter((s) => G[s.g] && !off[s.g] && (!s.when || s.when(choices))).map((s) => {
-    const g = G[s.g];
-    const btns = g.opcje.map((o) => {
-      const on = choices[s.g] === o.opcja_id;
-      const d = on ? 0 : total({ ...choices, [s.g]: o.opcja_id }) - cost.total;
+  const L = Object.fromEntries(cost.lines.map((l) => [l.id, l]));
+  const subs = SUBS.filter((s) => (s.g ? G[s.g] && !off[s.g] : true) && (!s.when || s.when(choices))).map((s) => {
+    const key = s.g || s.key;
+    const lines = (s.lines || []).filter((id) => L[id]);
+    const manual = lines.some((id) => L[id].reczna);
+    const skipped = lines.length && lines.every((id) => L[id].reczna && Number(L[id].kwota) === 0);
+    const g = s.g && G[s.g];
+    const btns = g ? g.opcje.map((o) => {
+      const on = choices[s.g] === o.opcja_id && !manual;
+      const d = choices[s.g] === o.opcja_id ? 0 : total({ ...choices, [s.g]: o.opcja_id }) - cost.total;
       const def = baseChoices[s.g] === o.opcja_id;
-      return `<button type="button" class="q-opt${on ? " is-on" : ""}" data-q-g="${escapeHtml(s.g)}" data-q-o="${escapeHtml(o.opcja_id)}" aria-pressed="${on}">
+      return `<button type="button" class="q-opt${on ? " is-on" : ""}${manual ? " is-dim" : ""}" data-q-g="${escapeHtml(s.g)}" data-q-o="${escapeHtml(o.opcja_id)}" aria-pressed="${on}">
         ${escapeHtml(short(o))}${def ? ' <span class="q-def" title="opcja planu wyjściowego">●</span>' : ""}
-        <small>${on ? "wybrane" : Math.abs(d) < 5 ? "bez zmiany ceny" : sign(d)}</small></button>`;
-    }).join("");
-    return `<div class="q-sub"><span class="q-sub-label">${escapeHtml(s.label)}</span><div class="q-opts">${btns}</div></div>`;
+        <small>${on ? "wybrane" : manual ? "kwota ręczna" : Math.abs(d) < 5 ? "bez zmiany ceny" : sign(d)}</small></button>`;
+    }).join("") : "";
+    const extra = lines.length ? `
+      <button type="button" class="q-opt q-skip${skipped ? " is-on" : ""}" data-q-skip="${escapeHtml(key)}" data-q-lines="${lines.join(",")}" aria-pressed="${skipped}">✕ nie liczymy<small>${skipped ? "pominięte (0 zł)" : "pomija w cenie"}</small></button>
+      <button type="button" class="q-opt q-edit${manual && !skipped ? " is-on" : ""}" data-q-open="${escapeHtml(key)}">✎ własna kwota<small>${manual && !skipped ? "wpisana ręcznie" : "wpisz z palca"}</small></button>` : "";
+    const editor = lines.length && (openRows.has(key) || (manual && !skipped)) ? `<div class="q-edit-box">${lines.map((id) => {
+      const l = L[id];
+      return `<label class="q-in"><span>${escapeHtml(l.pozycja)}</span>
+        <input type="number" min="0" step="10" inputmode="decimal" data-q-ovr="${escapeHtml(id)}" value="${l.reczna ? Math.round(l.kwota) : ""}" placeholder="${Math.round(l.kwota)}">
+        <em>${UNIT[l.jednostka] || "zł"}${l.jednostka === "os" && /noc|nocleg/i.test(l.pozycja) ? " (cały pobyt)" : ""} · ${zl(l.perOs)} na płacącego</em>
+        ${l.reczna ? `<button type="button" class="btn-link" data-q-clear="${escapeHtml(id)}">usuń</button>` : ""}</label>`;
+    }).join("")}<p class="small muted">Puste pole = kwota z wybranej opcji (w polu szara). Wpisana kwota ma pierwszeństwo przed opcją, dopóki jej nie usuniesz. Enter albo kliknięcie obok zapisuje.</p></div>` : "";
+    return `<div class="q-sub${manual ? " is-manual" : ""}"><span class="q-sub-label">${escapeHtml(s.label)}${manual ? ' <span class="q-tag q-tag-man">ręcznie</span>' : ""}</span><div class="q-opts">${btns}${extra}</div>${editor}</div>`;
   }).join("");
 
   // 3) Odstępstwa od planu wyjściowego — tu widać, skąd bierze się cena ponad cel.
@@ -70,13 +88,15 @@ export function renderQuick(ctx) {
     const d = cost.total - total({ ...choices, [g.id]: baseChoices[g.id] });
     return { g, o, d };
   }).sort((a, b) => b.d - a.d);
+  const oDevs = cost.lines.filter((l) => l.reczna);
   const pDevs = [];
   if (people.n !== peopleDefault.n) pDevs.push(`${people.n} osób zamiast ${peopleDefault.n}`);
   if (people.gratis) pDevs.push(`${people.gratis} os. gratis (ich koszt dzielą płacący)`);
-  const devHtml = devs.length || pDevs.length
+  const devHtml = devs.length || pDevs.length || oDevs.length
     ? `<ul class="q-devs">${devs.map(({ g, o, d }) => `<li><span>${escapeHtml(g.nazwa)}: <b>${escapeHtml(o ? short(o) : choices[g.id])}</b></span>
         <span class="${d > 0 ? "diff-up" : "diff-down"}">${Math.abs(d) < 5 ? "0 zł" : sign(d)}</span>
         <button type="button" class="btn-link" data-q-g="${escapeHtml(g.id)}" data-q-o="${escapeHtml(baseChoices[g.id])}">przywróć</button></li>`).join("")}
+        ${oDevs.map((l) => `<li><span>Kwota ręczna: <b>${escapeHtml(l.pozycja)}</b> = ${zl(l.kwota)} ${UNIT[l.jednostka] || ""}</span><span></span><button type="button" class="btn-link" data-q-clear="${escapeHtml(l.id)}">przywróć</button></li>`).join("")}
         ${pDevs.map((t) => `<li><span>Osoby: <b>${escapeHtml(t)}</b></span><span></span><button type="button" class="btn-link" data-q-people="reset">przywróć</button></li>`).join("")}</ul>
        <button type="button" class="btn btn-gold" data-q-reset="1">Wróć do planu wyjściowego (zostaw ścieżkę ${escapeHtml(choices.petla)})</button>`
     : `<p class="small muted">Brak. Oglądasz plan wyjściowy dla ścieżki ${escapeHtml(choices.petla)}.</p>`;
@@ -86,11 +106,12 @@ export function renderQuick(ctx) {
   const lines = cost.lines.filter((l) => l.perOs > 1).sort((a, b) => b.perOs - a.perOs);
   const top = lines.slice(0, 9);
   const max = top.length ? top[0].perOs : 1;
-  const tag = (l) => /fakt|oferta|kupione|potwierdz/i.test(l.status || "") ? "fakt" : "szacunek";
+  const tag = (l) => l.reczna ? "man" : /fakt|oferta|kupione|potwierdz/i.test(l.status || "") ? "fakt" : "szacunek";
+  const tagTxt = { man: "ręcznie", fakt: "fakt", szacunek: "szacunek" };
   const drivers = top.map((l) => {
     const vals = PATHS.map((p) => (perPath[p.id][l.id] || 0));
     const varies = Math.max(...vals) - Math.min(...vals) > 20;
-    return `<li><span class="q-bar-label">${escapeHtml(l.pozycja)} <em class="q-tag q-tag-${tag(l)}">${tag(l)}</em>${varies ? ` <em class="q-tag q-tag-var" title="A / B / C">A ${Math.round(vals[0])} · B ${Math.round(vals[1])} · C ${Math.round(vals[2])}</em>` : ""}</span>
+    return `<li><span class="q-bar-label">${escapeHtml(l.pozycja)} <em class="q-tag q-tag-${tag(l)}">${tagTxt[tag(l)]}</em>${varies ? ` <em class="q-tag q-tag-var" title="A / B / C">A ${Math.round(vals[0])} · B ${Math.round(vals[1])} · C ${Math.round(vals[2])}</em>` : ""}</span>
       <span class="q-bar"><i style="width:${Math.max(3, (l.perOs / max) * 100).toFixed(1)}%"></i></span><span class="q-bar-val">${zl(l.perOs)}</span></li>`;
   }).join("");
   const restSum = lines.slice(9).reduce((a, l) => a + l.perOs, 0);
@@ -133,11 +154,20 @@ export function renderQuick(ctx) {
   if (!wired) {
     wired = true;
     document.addEventListener("click", (e) => {
-      const b = e.target.closest("[data-q-g],[data-q-reset],[data-q-people]");
+      const b = e.target.closest("[data-q-g],[data-q-reset],[data-q-people],[data-q-open],[data-q-skip],[data-q-clear]");
       if (!b || !b.closest("[data-quick]")) return;
+      if (b.dataset.qOpen) { const k = b.dataset.qOpen; openRows.has(k) ? openRows.delete(k) : openRows.add(k); cur.rerender(); return; }
+      if (b.dataset.qSkip) { const ids = b.dataset.qLines.split(","); const on = b.getAttribute("aria-pressed") === "true"; cur.onOverride(Object.fromEntries(ids.map((id) => [id, on ? null : 0]))); return; }
+      if (b.dataset.qClear) { cur.onOverride({ [b.dataset.qClear]: null }); return; }
       if (b.dataset.qReset) cur.onReset();
       else if (b.dataset.qPeople) cur.onPeopleReset();
       else cur.onPick(b.dataset.qG, b.dataset.qO);
+    });
+    document.addEventListener("change", (e) => {
+      const i = e.target.closest("[data-q-ovr]");
+      if (!i || !i.closest("[data-quick]")) return;
+      const v = i.value.trim();
+      cur.onOverride({ [i.dataset.qOvr]: v === "" ? null : Math.max(0, Number(v.replace(",", "."))) });
     });
   }
 }

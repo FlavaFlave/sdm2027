@@ -55,6 +55,11 @@ export function writeHash(tab, state) {
   if (location.hash !== next) history.replaceState(null, "", next);
 }
 
+/* Kwoty wpisane ręcznie (zł w jednostce pozycji: na osobę albo na grupę). Mają pierwszeństwo przed decyzjami. */
+let OVR = {};
+export function setOverrides(o) { OVR = { ...(o || {}) }; }
+export function getOverrides() { return { ...OVR }; }
+
 function applyChangeToken(amounts, token) {
   const t = token.trim();
   if (!t) return;
@@ -155,6 +160,7 @@ export function computeCost(model, groups, choices, fujiOsob, people) {
   additive.forEach((t) => applyChangeToken(amounts, t));
   multi.forEach((t) => applyChangeToken(amounts, t));
   if (choices.pakiet === "A1") amounts.nocleg_seul = 0;
+  Object.entries(OVR).forEach(([id, v]) => { if (v != null && v !== "" && Number.isFinite(Number(v)) && id in amounts) amounts[id] = Number(v); });
 
   const reservePct = (() => {
     const rec = pozycje.find((l) => l.id === "rezerwa" && l.jednostka === "proc");
@@ -187,7 +193,7 @@ export function computeCost(model, groups, choices, fujiOsob, people) {
     const perOs = group / payers;
     lines.push({
       id: l.id, grupa: l.grupa, pozycja: l.pozycja, jednostka: l.jednostka,
-      kwota, perOs, group, zrodlo: l.zrodlo, status: l.status, factor,
+      kwota, perOs, group, zrodlo: l.zrodlo, status: l.id in OVR ? "ręcznie" : l.status, factor, reczna: l.id in OVR,
       rezerwa: !noReserve.has(l.id),
     });
     groupSum += group;

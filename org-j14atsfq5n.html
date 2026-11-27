@@ -23,7 +23,7 @@
   <header class="hero">
     <div class="hero-ornament" aria-hidden="true"></div>
     <div class="hero-inner">
-      <p class="eyebrow">Strona organizatorów · ścieżki A/B/C · etap 17 · 27.11.2026</p>
+      <p class="eyebrow">Strona organizatorów · ścieżki A/B/C · etap 18 · 27.11.2026</p>
       <h1>ŚDM 2027</h1>
       <p class="pg-link"><a class="btn" href="./" target="_blank" rel="noopener">Strona dla jadących →</a> <span class="muted">pokazuje obowiązujący plan, bez kosztów i decyzji</span></p>
       <p class="lede">Pielgrzymka Japonia <span class="amp">&amp;</span> Korea</p>
@@ -264,7 +264,21 @@
         <div class="section-head">
           <p class="kicker">Eucharystia wieczorem · noclegi dla 90 osób · biskupi miejsca</p>
           <h2 id="h-kontakty">Kościoły i noclegi</h2>
-          <p class="lead">Lista kontaktów przy każdym punkcie trasy dla wybranej ścieżki: najbliższe kościoły (z proboszczem, telefonem i godzinami Mszy), opcje noclegów grupowych i biskupi diecezji. Przy każdej pozycji zapisujesz status rozmowy i notatkę.</p>
+          <p class="lead">Mapa pokazuje trasę wybranej ścieżki (A/B/C) razem z kościołami i noclegami — kliknij pinezkę, żeby zobaczyć kontakt, cenę i status. Przyciski nad mapą przybliżają odcinki trasy. Pod mapą lista kontaktów przy każdym punkcie trasy: najbliższe kościoły (z proboszczem, telefonem i godzinami Mszy), opcje noclegów grupowych i biskupi diecezji. Przy każdej pozycji zapisujesz status rozmowy i notatkę.</p>
+        </div>
+        <div class="map-switch kt-switch" role="group" aria-label="Widok mapy">
+          <button type="button" class="chip-btn is-on" data-ktview="all">Cała trasa</button>
+          <button type="button" class="chip-btn" data-ktview="jp">Japonia</button>
+          <button type="button" class="chip-btn" data-ktview="kr">Korea</button>
+          <button type="button" class="chip-btn" data-ktview="wschod">Tōhoku 2–4.08</button>
+          <button type="button" class="chip-btn" data-ktview="fuji">Fuji i Tokio</button>
+          <button type="button" class="chip-btn" data-ktview="seul">Seul</button>
+          <button type="button" class="chip-btn" data-ktview="kiusiu">Nagasaki i Hirado</button>
+          <button type="button" class="chip-btn" data-ktview="kansai">Hiroszima–Osaka</button>
+        </div>
+        <div class="map-card">
+          <div id="map-kt" class="map map-tall"></div>
+          <div class="map-legend" id="legend-kt"></div>
         </div>
         <div id="kontakty-app" class="zb-app"><p class="muted">Ładowanie…</p></div>
       </div>
